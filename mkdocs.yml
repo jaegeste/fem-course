@@ -1,12 +1,26 @@
-site_name: FEM Kurs
+site_name: FEM Course Prof. Jäger
+site_url: https://jaegeste.github.io/fem-course
+
 theme:
   name: material
   language: de
+  logo: media/logo/hfu_logo.svg
+  favicon: media/logo/hfu_logo.svg
+  palette:
+    primary: green
+    accent: light green
+  font:
+    text: Source Sans Pro
+    code: Source Code Pro
   features:
     - navigation.tabs
     - navigation.top
     - content.code.copy
     - content.tabs.link
+    
+extra_css:
+  - overrides/main.css
+
 nav:
   - Startseite: index.md
   - Deutsch:
