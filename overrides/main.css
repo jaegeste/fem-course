@@ -1,0 +1,19 @@
+.md-header {
+  background-color: #005739; /* HFU-Grün */
+}
+
+.md-footer {
+  background-color: #f1f1f1;
+  color: #333;
+  font-size: 0.9em;
+  text-align: center;
+  padding-top: 1em;
+}
+
+.md-nav__link--active {
+  color: #004d40 !important;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
