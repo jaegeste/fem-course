@@ -1,0 +1,17 @@
+site_name: FEM Kurs
+theme:
+  name: material
+  language: de
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+    - content.tabs.link
+nav:
+  - Startseite: index.md
+  - Deutsch:
+      - Einführung: de/einleitung.md
+      - Grundlagen: de/grundlagen.md
+  - English:
+      - Introduction: en/introduction.md
+      - Basics: en/basics.md
