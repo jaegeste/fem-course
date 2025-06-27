@@ -4,7 +4,6 @@ site_url: https://jaegeste.github.io/fem-course
 theme:
   name: material
   language: de
-  custom_dir: overrides
   logo: media/logo/hfu_logo.svg
   favicon: media/logo/hfu_logo.svg
   palette:
@@ -25,18 +24,21 @@ plugins:
   - search
   - i18n:
       default_language: de
-      docs_structure: folder
-      material_alternate: true
+      docs_structure: suffix
       languages:
         - locale: de
           name: 🇩🇪 Deutsch
           build: true
           default: true
+          nav:
+            - Startseite: index.md
+            - Einführung: einleitung.md
+            - Grundlagen: grundlagen.md
         - locale: en
           name: 🇬🇧 English
           build: true
-        
-nav:
-  - Home: index.md
-  - Einführung: einleitung.md
-  - Grundlagen: grundlagen.md
+          nav:
+            - Home: index.en.md
+            - Introduction: einleitung.en.md
+            - Basics: grundlagen.en.md
+          
