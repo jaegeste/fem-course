@@ -1,4 +1,4 @@
-# Introduction to the Finite Element Method (FEM)
+# Finite Element Method (FEM) Introduction
 
 ## Why CAx?
 
