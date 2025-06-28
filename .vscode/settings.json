@@ -1,0 +1,15 @@
+{
+  "files.associations": {
+    "*.md": "markdown",
+    "*.yml": "yaml"
+  },
+  "markdown-preview-enhanced.previewTheme": "github-light",
+  "markdown-preview-enhanced.liveUpdate": true,
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "yaml.validate": true,
+  "yaml.schemas": {
+    "https://json.schemastore.org/github-workflow.json": "/*.github/workflows/*.yml"
+  },
+  "terminal.integrated.defaultProfile.windows": "Command Prompt"
+}
