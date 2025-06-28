@@ -16,7 +16,7 @@ theme:
     - navigation.top
     - content.code.copy
     - content.tabs.link
-    
+
 extra_css:
   - overrides/main.css
   
@@ -32,13 +32,17 @@ plugins:
           default: true
           nav:
             - Startseite: index.md
-            - Einführung: einleitung.md
+            - Einführung:
+              - Einführung: einleitung.md
+              - Orga: einleitung_orga.md
             - Grundlagen: grundlagen.md
         - locale: en
           name: 🇬🇧 English
           build: true
           nav:
             - Home: index.en.md
-            - Introduction: einleitung.en.md
+            - Introduction: 
+              - Introduction: einleitung.en.md
+              - Orga: einleitung_orga.en.md
             - Basics: grundlagen.en.md
           
