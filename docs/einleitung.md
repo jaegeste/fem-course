@@ -1,5 +1,7 @@
 # Einführung in die Finite-Elemente-Methode (FEM)
 
+Test Literatur: [@Merkel2020], [@Spura2019], [@Frieske2019]
+
 ## Warum CAx?
 
 Die moderne Produktentwicklung nutzt zunehmend digitale Methoden. Ziel ist es, Produkte schneller und kostengünstiger zu entwickeln – insbesondere durch den Einsatz von CAx-Technologien wie CAD, FEM und PDM.
@@ -28,4 +30,9 @@ Diese Lehrveranstaltung vermittelt grundlegende Kenntnisse zur Anwendung der Fin
 Zur Verdeutlichung der typischen Workbench-Oberfläche in ANSYS:
 
 ![ANSYS Workbench Screenshot](../media/ansys/Clipboard01.jpg)
+
+
+## Literatur
+
+\bibliography
 

@@ -3,6 +3,7 @@ site_url: https://jaegeste.github.io/fem-course
 
 theme:
   name: material
+  custom_dir: overrides
   language: de
   logo: media/logo/hfu_logo.svg
   favicon: media/logo/hfu_logo.svg
@@ -19,11 +20,12 @@ theme:
 
 extra_css:
   - overrides/main.css
-  
+
 plugins:
   - search
+  - bibtex:
+      bib_file: "literatur.bib"
   - i18n:
-      default_language: de
       docs_structure: suffix
       languages:
         - locale: de
