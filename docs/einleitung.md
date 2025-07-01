@@ -2,6 +2,18 @@
 
 Test Literatur: [@Merkel2020], [@Spura2019], [@Frieske2019]
 
+??? info "Zusatzinfo"
+    Hier steht mehr Text, der sich aufklappen lässt.
+
+???+ warning "Achtung"
+    Diese Methode ist numerisch instabil.
+
+???+ danger "Fehlerquelle"
+    Ein häufiger Fehler: falsche Randbedingungen!
+
+!!! note "Achtung"
+    Diese Methode ist numerisch instabil
+
 ## Warum CAx?
 
 Die moderne Produktentwicklung nutzt zunehmend digitale Methoden. Ziel ist es, Produkte schneller und kostengünstiger zu entwickeln – insbesondere durch den Einsatz von CAx-Technologien wie CAD, FEM und PDM.
