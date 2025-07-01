@@ -23,6 +23,7 @@ extra_css:
   - overrides/main.css
 
 markdown_extensions:
+  - footnotes
   - toc:
       permalink: true
   - admonition
@@ -36,13 +37,9 @@ plugins:
       touchNavigation: true
       loop: false
       zoomable: true
-      autoplayVideos: false
       width: 90%
       height: auto
       slide_effect: "fade"
-      closeButton: true
-      moreText: "Mehr anzeigen"
-      moreLength: 60
       draggable: true
   - bibtex:
       bib_file: "literatur.bib"
