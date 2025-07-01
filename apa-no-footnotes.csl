@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" class="in-text" version="1.0">
+  <info>
+    <title>APA (in-text only)</title>
+    <id>http://www.zotero.org/styles/apa-intext-only</id>
+    <link href="http://www.zotero.org/styles/apa" rel="template"/>
+    <author>
+      <name>American Psychological Association</name>
+    </author>
+    <category citation-format="author-date"/>
+    <updated>2024-07-01T00:00:00+00:00</updated>
+  </info>
+
+  <macro name="author">
+    <names variable="author">
+      <name and="symbol" name-as-sort-order="all" sort-separator=", " delimiter=", " initialize-with=". "/>
+    </names>
+  </macro>
+
+  <macro name="issued">
+    <date variable="issued">
+      <date-part name="year"/>
+    </date>
+  </macro>
+
+  <citation>
+    <layout prefix="(" suffix=")" delimiter=", ">
+      <text macro="author"/>
+      <text macro="issued" prefix=", "/>
+    </layout>
+  </citation>
+
+  <bibliography>
+    <layout>
+      <text macro="author"/>
+      <text macro="issued" prefix=" (" suffix="). "/>
+      <text variable="title" font-style="italic"/>
+      <text variable="publisher" prefix=". "/>
+    </layout>
+  </bibliography>
+</style>

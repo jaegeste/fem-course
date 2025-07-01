@@ -1,6 +1,8 @@
 # Einführung in die Finite-Elemente-Methode (FEM)
 
-Test Literatur: [@Merkel2020], [@Spura2019], [@Frieske2019]
+Test Literatur: [@Merkel2020] [@Spura2019] [@Frieske2019]
+
+
 
 ??? info "Zusatzinfo"
     Hier steht mehr Text, der sich aufklappen lässt.
@@ -46,4 +48,3 @@ Zur Verdeutlichung der typischen Workbench-Oberfläche in ANSYS:
 ## Literatur
 
 \bibliography
-

@@ -7,7 +7,7 @@ iese Seite begleitet die Lehrveranstaltung **"Finite-Elemente-Methode"** bei Pro
 
 ## Themenübersicht
 
-> ### [📘 Einführung](de/einleitung.md)  
+> ### [📘 Einführung](einleitung.md)  
 > Überblick zur FEM, Motivation und Ziele der Veranstaltung
 
 > ### [🧮 Übung 01 – Kragbalken](de/übungen/01_kragbalken.md)  
