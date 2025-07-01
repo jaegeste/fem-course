@@ -2,42 +2,56 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
     <url>
         <loc>https://jaegeste.github.io/fem-course/</loc>
-        <lastmod>2025-06-27</lastmod>
+        <lastmod>2025-06-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/"/>
     </url>
     <url>
         <loc>https://jaegeste.github.io/fem-course/einleitung/</loc>
-        <lastmod>2025-06-27</lastmod>
+        <lastmod>2025-06-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/einleitung/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/einleitung/"/>
     </url>
     <url>
+        <loc>https://jaegeste.github.io/fem-course/einleitung_orga/</loc>
+        <lastmod>2025-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/einleitung_orga/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/einleitung_orga/"/>
+    </url>
+    <url>
         <loc>https://jaegeste.github.io/fem-course/grundlagen/</loc>
-        <lastmod>2025-06-27</lastmod>
+        <lastmod>2025-06-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/grundlagen/"/>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/grundlagen/"/>
     </url>
     <url>
         <loc>https://jaegeste.github.io/fem-course/en/</loc>
-        <lastmod>2025-06-27</lastmod>
+        <lastmod>2025-06-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/"/>
     </url>
     <url>
         <loc>https://jaegeste.github.io/fem-course/en/einleitung/</loc>
-        <lastmod>2025-06-27</lastmod>
+        <lastmod>2025-06-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/einleitung/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/einleitung/"/>
     </url>
     <url>
+        <loc>https://jaegeste.github.io/fem-course/en/einleitung_orga/</loc>
+        <lastmod>2025-06-30</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/einleitung_orga/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/einleitung_orga/"/>
+    </url>
+    <url>
         <loc>https://jaegeste.github.io/fem-course/en/grundlagen/</loc>
-        <lastmod>2025-06-27</lastmod>
+        <lastmod>2025-06-30</lastmod>
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/grundlagen/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/grundlagen/"/>
