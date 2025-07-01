@@ -57,7 +57,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -534,15 +543,15 @@
 
 
 
-<h1 id="einfuhrung-in-die-finite-elemente-methode-fem">Einführung in die Finite-Elemente-Methode (FEM)</h1>
+<h1 id="einfuhrung-in-die-finite-elemente-methode-fem">Einführung in die Finite-Elemente-Methode (FEM)<a class="headerlink" href="#einfuhrung-in-die-finite-elemente-methode-fem" title="Permanent link">&para;</a></h1>
 <p>Test Literatur: [^Merkel2020], [^Spura2019], [^Frieske2019]</p>
-<h2 id="warum-cax">Warum CAx?</h2>
+<h2 id="warum-cax">Warum CAx?<a class="headerlink" href="#warum-cax" title="Permanent link">&para;</a></h2>
 <p>Die moderne Produktentwicklung nutzt zunehmend digitale Methoden. Ziel ist es, Produkte schneller und kostengünstiger zu entwickeln – insbesondere durch den Einsatz von CAx-Technologien wie CAD, FEM und PDM.</p>
 <ul>
 <li><strong>Kleine und mittlere Unternehmen (KMU)</strong> haben oft keine eigene Berechnungsabteilung. → Der Konstrukteur selbst führt FEM-Analysen durch.</li>
 <li><strong>Große Unternehmen</strong> verfügen über spezialisierte Berechnungsabteilungen. → Enge Abstimmung mit Konstruktion ist notwendig.</li>
 </ul>
-<h2 id="ziel-der-lehrveranstaltung">Ziel der Lehrveranstaltung</h2>
+<h2 id="ziel-der-lehrveranstaltung">Ziel der Lehrveranstaltung<a class="headerlink" href="#ziel-der-lehrveranstaltung" title="Permanent link">&para;</a></h2>
 <p>Diese Lehrveranstaltung vermittelt grundlegende Kenntnisse zur Anwendung der Finite-Elemente-Methode im Maschinenbau:</p>
 <ul>
 <li>Simulation als Werkzeug in der Konstruktion</li>
@@ -550,17 +559,17 @@
 <li>Einblick in dynamische Betrachtungen (Modalanalyse)</li>
 <li>Praktische Arbeit mit ANSYS Workbench und Creo</li>
 </ul>
-<h2 id="typische-fragestellungen-in-fem">Typische Fragestellungen in FEM</h2>
+<h2 id="typische-fragestellungen-in-fem">Typische Fragestellungen in FEM<a class="headerlink" href="#typische-fragestellungen-in-fem" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Ist mein Bauteil stabil und belastbar?</li>
 <li>Wo entstehen kritische Spannungen?</li>
 <li>Wie kann ich das Bauteil leichter gestalten?</li>
 <li>Welche Eigenfrequenzen hat mein System?</li>
 </ul>
-<h2 id="ansys-benutzeroberflache">ANSYS Benutzeroberfläche</h2>
+<h2 id="ansys-benutzeroberflache">ANSYS Benutzeroberfläche<a class="headerlink" href="#ansys-benutzeroberflache" title="Permanent link">&para;</a></h2>
 <p>Zur Verdeutlichung der typischen Workbench-Oberfläche in ANSYS:</p>
-<p><img alt="ANSYS Workbench Screenshot" src="../media/ansys/Clipboard01.jpg" /></p>
-<h2 id="literatur">Literatur</h2>
+<p><a class="glightbox" href="../media/ansys/Clipboard01.jpg" title="ANSYS-Ergebnis"><img alt="Simulation" src="../media/ansys/Clipboard01.jpg" /></a></p>
+<h2 id="literatur">Literatur<a class="headerlink" href="#literatur" title="Permanent link">&para;</a></h2>
 <p>[^Merkel2020]: Markus Merkel and Andreas Öchsner. <em>Eindimensionale Finite Elemente: ein Einstieg in die Methode</em>. Springer Vieweg, Berlin [Heidelberg], 3., neu bearbeitete unnd ergänzte auflage edition, 2020. ISBN 978-3-662-57994-7 978-3-662-57993-0.
 [^Spura2019]: Christian Spura. <em>Technische Mechanik 2. Elastostatik</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2019. ISBN 978-3-658-19978-4 978-3-658-19979-1. URL: <a href="http://link.springer.com/10.1007/978-3-658-19979-1">http://link.springer.com/10.1007/978-3-658-19979-1</a> (visited on 2019-05-28), <a href="https://doi.org/10.1007/978-3-658-19979-1">doi:10.1007/978-3-658-19979-1</a>.
 [^Frieske2019]: Hans-Jürgen Frieske. <em>Technische Mechanik · Statik</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2019. ISBN 978-3-658-23929-9 978-3-658-23930-5. URL: <a href="http://link.springer.com/10.1007/978-3-658-23930-5">http://link.springer.com/10.1007/978-3-658-23930-5</a> (visited on 2019-05-28), <a href="https://doi.org/10.1007/978-3-658-23930-5">doi:10.1007/978-3-658-23930-5</a>.</p>
@@ -612,5 +621,7 @@
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
