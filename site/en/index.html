@@ -55,7 +55,16 @@
     
     
     
-  </head>
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -458,10 +467,10 @@
 
 
 
-<h1 id="welcome-to-the-fem-course-at-hfu">Welcome to the FEM course at HFU</h1>
+<h1 id="welcome-to-the-fem-course-at-hfu">Welcome to the FEM course at HFU<a class="headerlink" href="#welcome-to-the-fem-course-at-hfu" title="Permanent link">&para;</a></h1>
 <p>This site supports the lecture <strong>"Finite Element Method"</strong> by Prof. Dr.-Ing. Steffen Jäger at Hochschule Furtwangen.</p>
 <hr />
-<h2 id="overview">Overview</h2>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 <ul>
 <li>📚 <strong>Theory</strong> – Introduction, principles, and methods</li>
 <li>🛠️ <strong>Exercises</strong> – ANSYS simulations, beam mechanics, stress analysis</li>
@@ -518,5 +527,7 @@
       <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

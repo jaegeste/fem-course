@@ -57,7 +57,16 @@
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -498,14 +507,14 @@
 
 
 
-<h1 id="finite-element-method-fem-introduction">Finite Element Method (FEM) Introduction</h1>
-<h2 id="why-cax">Why CAx?</h2>
+<h1 id="finite-element-method-fem-introduction">Finite Element Method (FEM) Introduction<a class="headerlink" href="#finite-element-method-fem-introduction" title="Permanent link">&para;</a></h1>
+<h2 id="why-cax">Why CAx?<a class="headerlink" href="#why-cax" title="Permanent link">&para;</a></h2>
 <p>Modern product development increasingly relies on digital tools to reduce development time and cost. CAx technologies such as CAD, FEM, and PDM play a key role in this.</p>
 <ul>
 <li><strong>Small and medium-sized enterprises (SMEs)</strong> often lack a dedicated simulation team. → Designers perform FEM analysis themselves.</li>
 <li><strong>Large companies</strong> have specialized departments. → Close coordination with design is essential.</li>
 </ul>
-<h2 id="course-objectives">Course Objectives</h2>
+<h2 id="course-objectives">Course Objectives<a class="headerlink" href="#course-objectives" title="Permanent link">&para;</a></h2>
 <p>This course teaches the fundamentals of applying FEM in mechanical engineering:</p>
 <ul>
 <li>Using simulation as a design tool</li>
@@ -513,7 +522,7 @@
 <li>Introduction to dynamic analysis (modal analysis)</li>
 <li>Hands-on training with ANSYS Workbench and Creo</li>
 </ul>
-<h2 id="typical-fem-questions">Typical FEM Questions</h2>
+<h2 id="typical-fem-questions">Typical FEM Questions<a class="headerlink" href="#typical-fem-questions" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Is my component stable and strong enough?</li>
 <li>Where do critical stresses occur?</li>
@@ -568,5 +577,7 @@
       <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

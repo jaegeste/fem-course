@@ -18,13 +18,17 @@ theme:
     - content.code.copy
     - content.tabs.link
 
+
 extra_css:
   - overrides/main.css
 
 markdown_extensions:
   - toc:
       permalink: true
+  - admonition
   - attr_list
+  - pymdownx.details
+  - pymdownx.superfences
 
 plugins:
   - search

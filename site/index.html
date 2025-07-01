@@ -55,7 +55,16 @@
     
     
     
-  </head>
+   <link href="assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -524,16 +533,16 @@
 
 
 
-<h1 id="willkommen-zur-fem-vorlesung">Willkommen zur FEM-Vorlesung</h1>
+<h1 id="willkommen-zur-fem-vorlesung">Willkommen zur FEM-Vorlesung<a class="headerlink" href="#willkommen-zur-fem-vorlesung" title="Permanent link">&para;</a></h1>
 <p>iese Seite begleitet die Lehrveranstaltung <strong>"Finite-Elemente-Methode"</strong> bei Prof. Dr.-Ing. Steffen Jäger.</p>
 <hr />
-<h2 id="themenubersicht">Themenübersicht</h2>
+<h2 id="themenubersicht">Themenübersicht<a class="headerlink" href="#themenubersicht" title="Permanent link">&para;</a></h2>
 <blockquote>
-<h3 id="einfuhrung"><a href="de/einleitung.md">📘 Einführung</a></h3>
+<h3 id="einfuhrung"><a href="de/einleitung.md">📘 Einführung</a><a class="headerlink" href="#einfuhrung" title="Permanent link">&para;</a></h3>
 <p>Überblick zur FEM, Motivation und Ziele der Veranstaltung</p>
-<h3 id="ubung-01-kragbalken"><a href="de/übungen/01_kragbalken.md">🧮 Übung 01 – Kragbalken</a></h3>
+<h3 id="ubung-01-kragbalken"><a href="de/übungen/01_kragbalken.md">🧮 Übung 01 – Kragbalken</a><a class="headerlink" href="#ubung-01-kragbalken" title="Permanent link">&para;</a></h3>
 <p>Vergleich analytischer und numerischer Lösung mit ANSYS</p>
-<h3 id="ansys-screenshots"><a href="de/software/ansys_ui.md">🎥 ANSYS Screenshots</a></h3>
+<h3 id="ansys-screenshots"><a href="de/software/ansys_ui.md">🎥 ANSYS Screenshots</a><a class="headerlink" href="#ansys-screenshots" title="Permanent link">&para;</a></h3>
 <p>Workbench und typische Modellierungsoberfläche</p>
 </blockquote>
 <hr />
@@ -586,5 +595,7 @@
       <script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
