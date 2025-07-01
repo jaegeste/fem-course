@@ -29,8 +29,7 @@ Diese Lehrveranstaltung vermittelt grundlegende Kenntnisse zur Anwendung der Fin
 
 Zur Verdeutlichung der typischen Workbench-Oberfläche in ANSYS:
 
-![ANSYS Workbench Screenshot](../media/ansys/Clipboard01.jpg)
-
+[![Simulation](media/ansys/Clipboard01.jpg)](media/ansys/Clipboard01.jpg "ANSYS-Ergebnis"){.glightbox}
 
 ## Literatur
 
