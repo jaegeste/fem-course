@@ -15,5 +15,12 @@
 
   // Rechtschreibprüfung
   "cSpell.language": "en,de,de-DE",
-  "cSpell.dictionaries": ["en_US", "de-de"]
+  "cSpell.dictionaries": [
+    "en_US",
+    "de-de"
+  ],
+  "cSpell.words": [
+    "Creo",
+    "kontinuumsmechanische"
+  ]
 }
