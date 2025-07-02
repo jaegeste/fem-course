@@ -94,6 +94,7 @@ Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhal
 
 ### Ablauf einer FE-Berechnung (grob)
 
+
 *1.* Modell erstellen (CAD / Geometrie)  
 *2.* Netz generieren (Meshing)  
 *3.* Randbedingungen setzen (Lagerung, Lasten)  
@@ -102,9 +103,13 @@ Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhal
 
 [![Grobablauf der FEM](media/01_einfuehrung/01_Ablauf_FEM_grob.png){width=250px}](media/01_einfuehrung/01_Ablauf_FEM_grob.png "Grobablauf der FEM"){.glightbox}
 
+<span class="bildquelle">Bildquelle[@Klein2015]</span>
+
 ### Ablauf einer FE-Berechnung (detailliert)
 
 [![Detaillierter Ablauf einer FEM-Berechnung](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png){width=800px}](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png "Detaillierter Ablauf einer FEM-Berechnung"){.glightbox}
+
+<span class="bildquelle">Bildquelle[@Steinke2015]</span>
 
 ### Ergebnisinterpretation
 
