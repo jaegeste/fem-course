@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/einleitung_orga/">
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/07_modalanalyse/">
       
       
-        <link rel="prev" href="../einleitung/">
+        <link rel="prev" href="../06_optimierung/">
       
-      
-        <link rel="next" href="../grundlagen/">
       
       
       <link rel="icon" href="../../media/logo/hfu_logo.svg">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Orga - FEM Course Prof. Jäger</title>
+        <title>Modal Analysis - FEM Course Prof. Jäger</title>
       
     
     
@@ -49,6 +47,8 @@
     
     
       <link rel="stylesheet" href="../../overrides/main.css">
+    
+      <link rel="stylesheet" href="../../overrides/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -83,7 +83,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#orga-englisch" class="md-skip">
+        <a href="#07-modalanalyse" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Orga
+              Modal Analysis
             
           </span>
         </div>
@@ -139,7 +139,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../einleitung_orga/" hreflang="de" class="md-select__link">
+            <a href="../../07_modalanalyse/" hreflang="de" class="md-select__link">
               🇩🇪 Deutsch
             </a>
           </li>
@@ -258,55 +258,15 @@
       
   
   
-    
-  
-  
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Introduction
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Introduction
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
   
   
     <li class="md-nav__item">
-      <a href="../einleitung/" class="md-nav__link">
+      <a href="../01_einfuehrung/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Introduction
+    Introduction to FEM
     
   </span>
   
@@ -315,10 +275,119 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_ansys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ANSYS Installation & First Steps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_statisch_linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Static FEM Analyses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_netze_kerben/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Meshing, Convergence & Notches
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_schweiss_baugruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welds & Assemblies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_optimierung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimization
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
   
   
     
@@ -338,43 +407,13 @@
   
   
   <span class="md-ellipsis">
-    Orga
+    Modal Analysis
     
   </span>
   
 
       </a>
       
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../grundlagen/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Basics
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -413,7 +452,7 @@
 
 
 
-<h1 id="orga-englisch">Orga Englisch<a class="headerlink" href="#orga-englisch" title="Permanent link">&para;</a></h1>
+<h1 id="07-modalanalyse">07 Modalanalyse<a class="headerlink" href="#07-modalanalyse" title="Permanent link">&para;</a></h1>
 
 
 

@@ -8,22 +8,28 @@
       
       
       
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/02_installation_ansys/">
       
       
+        <link rel="prev" href="../01_einfuehrung/">
       
-      <link rel="icon" href="/fem-course/media/logo/hfu_logo.svg">
+      
+        <link rel="next" href="../03_statisch_linear/">
+      
+      
+      <link rel="icon" href="../../media/logo/hfu_logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
     
     
       
-        <title>FEM Course Prof. Jäger</title>
+        <title>ANSYS Installation & First Steps - FEM Course Prof. Jäger</title>
       
     
     
-      <link rel="stylesheet" href="/fem-course/assets/stylesheets/main.342714a4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
       
         
-        <link rel="stylesheet" href="/fem-course/assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -42,18 +48,27 @@
       
     
     
-      <link rel="stylesheet" href="/fem-course/overrides/main.css">
+      <link rel="stylesheet" href="../../overrides/main.css">
     
-      <link rel="stylesheet" href="/fem-course/overrides/extra.css">
+      <link rel="stylesheet" href="../../overrides/extra.css">
     
-    <script>__md_scope=new URL("/fem-course/",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
     
     
     
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     
@@ -69,6 +84,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#02-installation-ansys" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -81,9 +101,9 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/fem-course/en/" title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
       
-  <img src="/fem-course/media/logo/hfu_logo.svg" alt="logo">
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -100,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              ANSYS Installation & First Steps
             
           </span>
         </div>
@@ -121,13 +141,13 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="/fem-course/07_modalanalyse/" hreflang="de" class="md-select__link">
+            <a href="../../02_installation_ansys/" hreflang="de" class="md-select__link">
               🇩🇪 Deutsch
             </a>
           </li>
         
           <li class="md-select__item">
-            <a href="/fem-course/en/07_modalanalyse/" hreflang="en" class="md-select__link">
+            <a href="./" hreflang="en" class="md-select__link">
               🇬🇧 English
             </a>
           </li>
@@ -204,9 +224,9 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/fem-course/en/" title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
       
-  <img src="/fem-course/media/logo/hfu_logo.svg" alt="logo">
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
 
     </a>
     FEM Course Prof. Jäger
@@ -221,7 +241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fem-course/en/" class="md-nav__link">
+      <a href="../" class="md-nav__link">
         
   
   
@@ -243,7 +263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fem-course/en/01_einfuehrung/" class="md-nav__link">
+      <a href="../01_einfuehrung/" class="md-nav__link">
         
   
   
@@ -262,10 +282,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="/fem-course/en/02_installation_ansys/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -276,6 +305,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -287,7 +317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fem-course/en/03_statisch_linear/" class="md-nav__link">
+      <a href="../03_statisch_linear/" class="md-nav__link">
         
   
   
@@ -309,7 +339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fem-course/en/04_netze_kerben/" class="md-nav__link">
+      <a href="../04_netze_kerben/" class="md-nav__link">
         
   
   
@@ -331,7 +361,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fem-course/en/05_schweiss_baugruppen/" class="md-nav__link">
+      <a href="../05_schweiss_baugruppen/" class="md-nav__link">
         
   
   
@@ -353,7 +383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fem-course/en/06_optimierung/" class="md-nav__link">
+      <a href="../06_optimierung/" class="md-nav__link">
         
   
   
@@ -375,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/fem-course/en/07_modalanalyse/" class="md-nav__link">
+      <a href="../07_modalanalyse/" class="md-nav__link">
         
   
   
@@ -407,6 +437,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -418,8 +450,24 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+
+<h1 id="02-installation-ansys">02 Installation Ansys<a class="headerlink" href="#02-installation-ansys" title="Permanent link">&para;</a></h1>
+
+
+
+
+
+
+
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -449,11 +497,13 @@
     
     
       
-      <script id="__config" type="application/json">{"base": "/fem-course/", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "/fem-course/assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="/fem-course/assets/javascripts/bundle.13a4f30d.min.js"></script>
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
       
     
-  </body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

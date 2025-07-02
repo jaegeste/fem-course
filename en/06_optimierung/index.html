@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/einleitung/">
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/06_optimierung/">
       
       
-        <link rel="prev" href="../">
+        <link rel="prev" href="../05_schweiss_baugruppen/">
       
       
-        <link rel="next" href="../einleitung_orga/">
+        <link rel="next" href="../07_modalanalyse/">
       
       
       <link rel="icon" href="../../media/logo/hfu_logo.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Introduction - FEM Course Prof. Jäger</title>
+        <title>Optimization - FEM Course Prof. Jäger</title>
       
     
     
@@ -49,6 +49,8 @@
     
     
       <link rel="stylesheet" href="../../overrides/main.css">
+    
+      <link rel="stylesheet" href="../../overrides/extra.css">
     
     <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -83,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#finite-element-method-fem-introduction" class="md-skip">
+        <a href="#06-optimierung" class="md-skip">
           Skip to content
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Optimization
             
           </span>
         </div>
@@ -139,7 +141,7 @@
       <ul class="md-select__list">
         
           <li class="md-select__item">
-            <a href="../../einleitung/" hreflang="de" class="md-select__link">
+            <a href="../../06_optimierung/" hreflang="de" class="md-select__link">
               🇩🇪 Deutsch
             </a>
           </li>
@@ -258,44 +260,114 @@
       
   
   
-    
   
   
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
-    Introduction
+    Introduction to FEM
     
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_ansys/" class="md-nav__link">
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Introduction
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
+  
+  
+  <span class="md-ellipsis">
+    ANSYS Installation & First Steps
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_statisch_linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Static FEM Analyses
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_netze_kerben/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Meshing, Convergence & Notches
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_schweiss_baugruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Welds & Assemblies
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
   
   
     
@@ -310,107 +382,17 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Introduction
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Introduction
+    Optimization
     
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-cax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why CAx?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Course Objectives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typical-fem-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Typical FEM Questions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../einleitung_orga/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Orga
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -423,12 +405,12 @@
   
   
     <li class="md-nav__item">
-      <a href="../grundlagen/" class="md-nav__link">
+      <a href="../07_modalanalyse/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Basics
+    Modal Analysis
     
   </span>
   
@@ -458,41 +440,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#why-cax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Why CAx?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#course-objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      Course Objectives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typical-fem-questions" class="md-nav__link">
-    <span class="md-ellipsis">
-      Typical FEM Questions
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -507,28 +454,7 @@
 
 
 
-<h1 id="finite-element-method-fem-introduction">Finite Element Method (FEM) Introduction<a class="headerlink" href="#finite-element-method-fem-introduction" title="Permanent link">&para;</a></h1>
-<h2 id="why-cax">Why CAx?<a class="headerlink" href="#why-cax" title="Permanent link">&para;</a></h2>
-<p>Modern product development increasingly relies on digital tools to reduce development time and cost. CAx technologies such as CAD, FEM, and PDM play a key role in this.</p>
-<ul>
-<li><strong>Small and medium-sized enterprises (SMEs)</strong> often lack a dedicated simulation team. → Designers perform FEM analysis themselves.</li>
-<li><strong>Large companies</strong> have specialized departments. → Close coordination with design is essential.</li>
-</ul>
-<h2 id="course-objectives">Course Objectives<a class="headerlink" href="#course-objectives" title="Permanent link">&para;</a></h2>
-<p>This course teaches the fundamentals of applying FEM in mechanical engineering:</p>
-<ul>
-<li>Using simulation as a design tool</li>
-<li>Verifying strength and safety of components</li>
-<li>Introduction to dynamic analysis (modal analysis)</li>
-<li>Hands-on training with ANSYS Workbench and Creo</li>
-</ul>
-<h2 id="typical-fem-questions">Typical FEM Questions<a class="headerlink" href="#typical-fem-questions" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Is my component stable and strong enough?</li>
-<li>Where do critical stresses occur?</li>
-<li>How can I reduce weight?</li>
-<li>What are the natural frequencies of my system?</li>
-</ul>
+<h1 id="06-optimierung">06 Optimierung<a class="headerlink" href="#06-optimierung" title="Permanent link">&para;</a></h1>
 
 
 
