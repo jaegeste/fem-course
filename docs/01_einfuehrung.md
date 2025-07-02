@@ -44,7 +44,7 @@
 
 ### Vorlesungsplan
 
-Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhalte bauen aufeinander auf und dienen hier nur zur Orientierung.
+Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhalte bauen aufeinander auf und dienen hier lediglich der Orientierung.
 
 **Block 1**: Organisation, Einführung, Grundlagen  
 **Block 2**: Grundlagen der FEM, statisch lineare Analysen (Kragbalken unter Zug)  
@@ -81,6 +81,8 @@ Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhal
 - Heute: Lösung komplexer Gleichungssysteme mittels Hochleistungsrechnern
 
 [![Historische Entwicklung der FEM](media/01_einfuehrung/01_fem_historie.png){width=500px}](media/01_einfuehrung/01_fem_historie.png "Historische Entwicklung der FEM"){.glightbox}
+
+<span class="bildquelle">Bildquelle[@Klein2015]</span>
 
 ### Näherungsverfahren
 
