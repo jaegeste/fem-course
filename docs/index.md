@@ -1,22 +1,68 @@
 
 # Willkommen zur FEM-Vorlesung
 
-iese Seite begleitet die Lehrveranstaltung **"Finite-Elemente-Methode"** bei Prof. Dr.-Ing. Steffen Jäger.
+Diese Seite begleitet die Lehrveranstaltung **"Finite-Elemente-Methode"** bei Prof. Dr.-Ing. Steffen Jäger.
 
 ---
 
-## Themenübersicht
+# So arbeitet dieser Kurs
 
-> ### [📘 Einführung](einleitung.md)  
-> Überblick zur FEM, Motivation und Ziele der Veranstaltung
-
-> ### [🧮 Übung 01 – Kragbalken](de/übungen/01_kragbalken.md)  
-> Vergleich analytischer und numerischer Lösung mit ANSYS
-
-> ### [🎥 ANSYS Screenshots](de/software/ansys_ui.md)  
-> Workbench und typische Modellierungsoberfläche
-
+!!! note "Zweisprachigkeit"
+    Diese Seite ist auf Deutsch verfasst. Die englische Version findest du über das Sprachmenü.
 
 ---
 
-<small>© Hochschule Furtwangen – Fakultät M, Studiengang PEB</small>
+## 🎓 Ziel
+
+**Dieser Kurs basiert vollständig auf einer versionierten, digitalen Website.**
+Sie ersetzt klassische PowerPoint-Folien, PDF-Skripte und FELIX-Uploads. Alles, was du brauchst, findest du direkt auf dieser Seite; aktuell, übersichtlich, multimedial.
+
+---
+
+## 🧭 Struktur
+
+- 📂 **Navigation** oben links führt durch alle Kapitel  
+- 🔍 **Suchfunktion** findet jeden Begriff  
+- 🌐 **Sprache wechseln:** Klick auf „de“ oder „en“ in der Menüleiste  
+- 📄 **PDF-Export**: ausgewählte Seiten können als PDF heruntergeladen werden  
+
+---
+
+## 🧑‍🏫 Vorlesung
+
+**Die Vorlesung wird direkt von dieser Website gehalten.**  
+Kein PowerPoint, keine PDF-Projektion. Die Inhalte, die gezeigt werden, sind dieselben, die dir dauerhaft zur Verfügung stehen.
+
+---
+
+## 🛠️ Übungen
+
+- 📘 **Aufgaben** stehen direkt bei den Themen  
+- ✅ **Lösungshinweise** erscheinen als Klappboxen 
+- ⬇️ **Downloadbare Vorlagen (z. B. für Geometriedaten)** sind integriert  
+
+---
+
+## 🔁 Weiterentwicklung
+
+- 📅 Inhalte werden regelmäßig aktualisiert und erweitert  
+- 🧪 Feedback fließt direkt in die Seiten ein  
+- 📊 Neue Medien (Videos, Simulationen) werden eingebunden  
+
+---
+
+## 🧩 Technische Basis
+
+Dieses Angebot basiert auf:
+
+- `MkDocs` (Material Theme)
+- `Markdown` als editierbares Textformat
+- `GitHub Pages` zur Veröffentlichung
+- Plugins für 📚 Zitationen, 🌍 Mehrsprachigkeit, 🔦 Lightbox-Galerien u.v.m.
+- Gelegentlicher Einsatz KI-basierter Sprachmodelle (z. B. ChatGPT) zur Unterstützung bei Text, Übersetzung und Formatierung. Alle Inhalte werden manuell überprüft und entsprechen dem Stand der Technik sowie den Grundsätzen guter akademischer Praxis.
+
+---
+
+## ❓ Fragen
+
+Falls du Fragen oder Anregungen zum Aufbau oder zur Nutzung hast, melde dich gerne per E-Mail.
