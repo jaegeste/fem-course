@@ -24,7 +24,8 @@ Sie ersetzt klassische PowerPoint-Folien, PDF-Skripte und FELIX-Uploads. Alles, 
 - 📂 **Navigation** oben links führt durch alle Kapitel  
 - 🔍 **Suchfunktion** findet jeden Begriff  
 - 🌐 **Sprache wechseln:** Klick auf „de“ oder „en“ in der Menüleiste  
-- 📄 **PDF-Export**: ausgewählte Seiten können als PDF heruntergeladen werden  
+- 🖨️ **PDF/Print-Export**: Einzelne Seiten können direkt im Browser **gedruckt oder als PDF gespeichert** werden (z. B. über *Datei → Drucken* oder `Strg+P`).
+ 
 
 ---
 
