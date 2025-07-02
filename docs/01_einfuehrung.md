@@ -27,11 +27,11 @@
 ### Didaktischer Aufbau
 
 - Vorlesung mit Übungen  
-- Übungen am Rechner mit **ANSYS**[^hinweis_Version] und **Creo**[^hinweis_Version]
+- Übungen am Rechner mit **ANSYS**[^Hinweis_Version] und **Creo**[^Hinweis_Version]
 - Weiterführende Aufgaben für Zuhause  
 - FELIX, Vorlesungsmitschriebe, Übungsaufgaben, Forum, Tools …
 
-[^hinweis_Version]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_ansys.md)
+[^Hinweis_Version]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_ansys.md)
 
 
 ### Klausur
@@ -40,6 +40,30 @@
 - **E-Klausur, 120 Minuten**  
 - Keine Hilfsmittel  
 - FEM-Aufgaben am Rechner  
+
+[![Schnittstelle SPO](media/01_einfuehrung/01_SPO.png){width=900px}](media/01_einfuehrung/01_SPO.png "Auszug Prüfungsordnung (SPO)"){.glightbox}
+
+
+### Vorlesungsplan
+
+Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhalte bauen aufeinander auf und dienen hier nur zur Orientierung.
+
+**Block 1**: Organisation, Einführung, Grundlagen  
+**Block 2**: Grundlagen der FEM, statisch lineare Analysen (Kragbalken unter Zug)  
+**Block 3**: Statisch lineare Analysen (Zugversuch, Netzeinflussstudie)  
+**Block 4**: Statisch lineare Analysen (Kragbalken unter Biegung)  
+**Block 5**: Statisch lineare Analysen (Kerbformzahl)  
+**Block 6**: Statisch lineare Analysen (Biegelinien Dubbelfälle, Krafteinleitungsproblematik)  
+**Block 7**: Statisch lineare Analysen (Biegelinien Dubbelfälle, Krafteinleitungsproblematik)  
+**Block 8**: Statisch lineare Analysen **tbd, Schweißen, Kerbspannungsprinzip**  
+**Block 9**:  Statisch lineare Analysen **tbd, Schweißen, Kerbspannungsprinzip**  
+**Block 10**: Statisch lineare Analysen – Symmetrien ausnutzen  
+**Block 11**: Modalanalyse (Grundlagen, Freiheitsgrade, Eigenfrequenzen)  
+**Block 12**: Modalanalyse (Variation der Aufspannung, Materialkombinationen)  
+**Block 13**: **tdb CFD in Discovery/FLUENT??**  
+**Block 14**: **tdb CFD in Discovery/FLUENT??**  
+**Block 15**: **Wiederholung, offene Fragen, Klausurvorbereitung**
+
 
 ## Grundlagen der FEM
 
@@ -59,25 +83,30 @@
 - Mathematische Grundlagen: **Ritz-Ansatz**, ca. 1909
 - Heute: Lösung komplexer Gleichungssysteme mittels Hochleistungsrechnern
 
+[![Historische Entwicklung der FEM](media/01_einfuehrung/01_fem_historie.png){width=500px}](media/01_einfuehrung/01_fem_historie.png "Historische Entwicklung der FEM"){.glightbox}
+
 ### Näherungsverfahren
 
 - Näherung der wahren Lösung durch bekannte Elementeigenschaften
-- FEM ist ein **Verschiebungsverfahren**  
-  (Prinzip virtueller Verschiebungen)
+- FEM ist ein **Verschiebungsverfahren** (Prinzip virtueller Verschiebungen)
 - **Spannungen** resultieren aus einer **Nachlaufrechnung**
+
+[![Beispiel Näherung](media/01_einfuehrung/01_naeherung.png){width=300px}](media/01_einfuehrung/01_naeherung.png "Beispiel Näherung"){.glightbox}
 
 ### Ablauf einer FE-Berechnung (grob)
 
-1. Modell erstellen (CAD / Geometrie)
-2. Netz generieren (Meshing)
-3. Randbedingungen setzen (Lagerung, Lasten)
-4. Lösung berechnen (Solver)
-5. Ergebnisse interpretieren (Postprocessing)
+*1.* Modell erstellen (CAD / Geometrie)  
+*2.* Netz generieren (Meshing)  
+*3.* Randbedingungen setzen (Lagerung, Lasten)  
+*4.* Lösung berechnen (Solver)  
+*5.* Ergebnisse interpretieren (Postprocessing)  
+
+[![Grobablauf der FEM](media/01_einfuehrung/01_Ablauf_FEM_grob.png){width=250px}](media/01_einfuehrung/01_Ablauf_FEM_grob.png "Grobablauf der FEM"){.glightbox}
 
 ### Ablauf einer FE-Berechnung (detailliert)
 
-*(Siehe Folie „Ablauf einer FE-Berechnung, detailliert“)  
-→ Grafik ggf. per Lightbox ergänzen*
+[![Detaillierter Ablauf der FEM](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png){width=800px}](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png "Detaillierter Ablauf der FEM"){.glightbox}
+
 
 ### Ergebnisinterpretation
 
@@ -89,3 +118,4 @@
 - Netzeinfluss eliminiert?
 - Konvergenz erreicht?
 - Divergenzen bewusst berücksichtigt?
+- ...

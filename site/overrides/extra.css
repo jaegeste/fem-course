@@ -1,14 +1,14 @@
 /* Engere Listenabstände */
 .md-typeset ul li,
 .md-typeset ol li {
-  margin-bottom: 0.01em;
+  margin-bottom: 0.1em;
 }
 
-/* Moderner Aufzählungspunkt ▪ nur auf der obersten Ebene */
-.md-typeset > ul > li::marker,
-.md-typeset > ol > li::marker {
-  content: "▪  ";
+/* Moderner Aufzählungspunkt: ▪ für alle Ebenen */
+.md-typeset li::marker {
+  content: "▪ ";
   color: var(--md-primary-fg-color);
+  font-size: 0.8em;
 }
 
 /* Sichtbare Einrückung für verschachtelte Listen */
@@ -29,4 +29,34 @@
   margin-top: 0.2em;
 }
 
-/* Weniger Abstand zwischen Absätz*
+/* Weniger Abstand zwischen Absätzen */
+.md-typeset p {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+
+/* Weniger Abstand vor und nach Listenpunkten mit verschachtelten Listen */
+.md-typeset li > ul,
+.md-typeset li > ol {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+/* Kein Abstand bei Listeneinträgen mit Blockinhalten */
+.md-typeset li {
+  margin-top: 0;
+  margin-bottom: 0.1em;
+}
+
+/* Optional: straffer Zeilenabstand innerhalb von Listen */
+.md-typeset ul,
+.md-typeset ol {
+  line-height: 1.3;
+}
+
+/* Enger Abstand speziell für verschachtelte Listeneinträge */
+.md-typeset ul ul > li,
+.md-typeset ol ol > li {
+  margin-bottom: 0.05em;
+  margin-top: 0;
+}
