@@ -21,6 +21,7 @@ theme:
 
 extra_css:
   - overrides/main.css
+  - overrides/extra.css
 
 markdown_extensions:
   - footnotes

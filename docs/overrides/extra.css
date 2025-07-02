@@ -1,0 +1,29 @@
+/* Engere Listenabstände */
+.md-typeset ul li,
+.md-typeset ol li {
+  margin-bottom: 0.01em;
+}
+
+/* Modernerer Aufzählungspunkt */
+.md-typeset ul > li::marker {
+  content: "▪  ";
+  color: var(--md-primary-fg-color);
+}
+
+/* Weniger Abstand zwischen Überschriften und folgendem Absatz */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+}
+
+/* Weniger Abstand zwischen Absätzen */
+.md-typeset p {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+
