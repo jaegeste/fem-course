@@ -3,7 +3,7 @@
 This site supports the lecture **"Finite Element Method"** by Prof. Dr.-Ing. Steffen Jäger at Hochschule Furtwangen.
 
 ---
-# How this course works
+## How this course works
 
 !!! note "Bilingual"
     This page is written in English. You can switch to the German version via the language menu.
@@ -21,7 +21,7 @@ It replaces traditional PowerPoint slides, PDF scripts and FELIX uploads. Everyt
 
 - 📂 **Navigation** in the top-left guides you through all chapters  
 - 🔍 **Search function** helps you find any term  
-- 🌐 **Language switch:** Click “de” or “en” in the menu bar  
+- 🌐 **Language switch:** Click “🇩🇪 Deutsch” or “🇬🇧 English” in the menu bar  
 - 🖨️ **PDF/Print Export**: Individual pages can be **printed or saved as PDF** directly in the browser (e.g. via *File → Print* or `Ctrl+P`).
 
 
@@ -30,7 +30,7 @@ It replaces traditional PowerPoint slides, PDF scripts and FELIX uploads. Everyt
 ## 🧑‍🏫 Lectures
 
 **Lectures are held directly from this website.**  
-No PowerPoint, no PDF projection. The content shown is the same content available to you at any time.
+No PowerPoint, no PDF documents. The content shown is the same content available to you at any time.
 
 ---
 
