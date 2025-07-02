@@ -27,9 +27,12 @@
 ### Didaktischer Aufbau
 
 - Vorlesung mit Übungen  
-- Übungen am Rechner mit **ANSYS 2024R1** und **Creo 10.0.3.0**  
+- Übungen am Rechner mit **ANSYS**[^hinweis_Version] und **Creo**[^hinweis_Version]
 - Weiterführende Aufgaben für Zuhause  
 - FELIX, Vorlesungsmitschriebe, Übungsaufgaben, Forum, Tools …
+
+[^hinweis_Version]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_ansys.md)
+
 
 ### Klausur
 
@@ -45,9 +48,9 @@
 - Ziel: **Effizientere und schnellere Produktentwicklung**
 - In kleinen und mittleren Firmen: **Konstrukteur berechnet selbst**
 - In großen Firmen:
-  - **Abstimmung** zwischen Konstruktion und Berechnung entscheidend
-  - **Kommunikation** muss funktionieren
-  - Projektmanagement muss **Verständnis für alle Fachabteilungen** aufbauen
+    - **Abstimmung** zwischen Konstruktion und Berechnung entscheidend
+    - **Kommunikation** muss funktionieren
+    - Projektmanagement muss **Verständnis für alle Fachabteilungen** aufbauen
 
 ### Entstehung der FEM
 
