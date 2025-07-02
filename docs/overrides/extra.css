@@ -86,3 +86,11 @@
   font-size: 0.9em;
   margin-top: 1em;
 }
+
+.bildquelle {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 0.75em;
+  color: #666; /* Grau, Theme-kompatibel */
+  font-style: italic;
+}
