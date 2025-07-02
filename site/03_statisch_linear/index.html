@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jaegeste.github.io/fem-course/einleitung/">
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/03_statisch_linear/">
       
       
-        <link rel="prev" href="..">
+        <link rel="prev" href="../02_installation_ansys/">
       
       
-        <link rel="next" href="../einleitung_orga/">
+        <link rel="next" href="../04_netze_kerben/">
       
       
       <link rel="icon" href="../media/logo/hfu_logo.svg">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Einführung - FEM Course Prof. Jäger</title>
+        <title>Statische FEM-Analysen - FEM Course Prof. Jäger</title>
       
     
     
@@ -49,6 +49,8 @@
     
     
       <link rel="stylesheet" href="../overrides/main.css">
+    
+      <link rel="stylesheet" href="../overrides/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -83,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#einfuhrung-in-die-finite-elemente-methode-fem" class="md-skip">
+        <a href="#03-statisch-linear" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -118,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Einführung
+              Statische FEM-Analysen
             
           </span>
         </div>
@@ -145,7 +147,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../en/einleitung/" hreflang="en" class="md-select__link">
+            <a href="../en/03_statisch_linear/" hreflang="en" class="md-select__link">
               🇬🇧 English
             </a>
           </li>
@@ -258,44 +260,48 @@
       
   
   
-    
   
   
-  
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
-      
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
         
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
   
   
   <span class="md-ellipsis">
-    Einführung
+    Einführung in FEM
     
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_ansys/" class="md-nav__link">
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Einführung
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
+  
+  
+  <span class="md-ellipsis">
+    ANSYS Installation & Einstieg
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
   
   
     
@@ -310,125 +316,17 @@
         
       
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Einführung
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
   <span class="md-ellipsis">
-    Einführung
+    Statische FEM-Analysen
     
   </span>
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#warum-cax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Warum CAx?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ziel-der-lehrveranstaltung" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ziel der Lehrveranstaltung
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typische-fragestellungen-in-fem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Typische Fragestellungen in FEM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ansys-benutzeroberflache" class="md-nav__link">
-    <span class="md-ellipsis">
-      ANSYS Benutzeroberfläche
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#literatur" class="md-nav__link">
-    <span class="md-ellipsis">
-      Literatur
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../einleitung_orga/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Orga
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
       
     </li>
   
@@ -441,12 +339,78 @@
   
   
     <li class="md-nav__item">
-      <a href="../grundlagen/" class="md-nav__link">
+      <a href="../04_netze_kerben/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Grundlagen
+    Netze, Konvergenz & Kerben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_schweiss_baugruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schweißverbindungen & Baugruppen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_optimierung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_modalanalyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modalanalyse
     
   </span>
   
@@ -476,59 +440,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Inhaltsverzeichnis
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#warum-cax" class="md-nav__link">
-    <span class="md-ellipsis">
-      Warum CAx?
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ziel-der-lehrveranstaltung" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ziel der Lehrveranstaltung
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#typische-fragestellungen-in-fem" class="md-nav__link">
-    <span class="md-ellipsis">
-      Typische Fragestellungen in FEM
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#ansys-benutzeroberflache" class="md-nav__link">
-    <span class="md-ellipsis">
-      ANSYS Benutzeroberfläche
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#literatur" class="md-nav__link">
-    <span class="md-ellipsis">
-      Literatur
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -543,63 +454,7 @@
 
 
 
-<h1 id="einfuhrung-in-die-finite-elemente-methode-fem">Einführung in die Finite-Elemente-Methode (FEM)<a class="headerlink" href="#einfuhrung-in-die-finite-elemente-methode-fem" title="Permanent link">&para;</a></h1>
-<p>Test Literatur: <sup id="fnref:Merkel2020"><a class="footnote-ref" href="#fn:Merkel2020">1</a></sup> <sup id="fnref:Spura2019"><a class="footnote-ref" href="#fn:Spura2019">2</a></sup> <sup id="fnref:Frieske2019"><a class="footnote-ref" href="#fn:Frieske2019">3</a></sup></p>
-<details class="info">
-<summary>Zusatzinfo</summary>
-<p>Hier steht mehr Text, der sich aufklappen lässt.</p>
-</details>
-<details class="warning" open="open">
-<summary>Achtung</summary>
-<p>Diese Methode ist numerisch instabil.</p>
-</details>
-<details class="danger" open="open">
-<summary>Fehlerquelle</summary>
-<p>Ein häufiger Fehler: falsche Randbedingungen!</p>
-</details>
-<div class="admonition note">
-<p class="admonition-title">Achtung</p>
-<p>Diese Methode ist numerisch instabil</p>
-</div>
-<h2 id="warum-cax">Warum CAx?<a class="headerlink" href="#warum-cax" title="Permanent link">&para;</a></h2>
-<p>Die moderne Produktentwicklung nutzt zunehmend digitale Methoden. Ziel ist es, Produkte schneller und kostengünstiger zu entwickeln – insbesondere durch den Einsatz von CAx-Technologien wie CAD, FEM und PDM.</p>
-<ul>
-<li><strong>Kleine und mittlere Unternehmen (KMU)</strong> haben oft keine eigene Berechnungsabteilung. → Der Konstrukteur selbst führt FEM-Analysen durch.</li>
-<li><strong>Große Unternehmen</strong> verfügen über spezialisierte Berechnungsabteilungen. → Enge Abstimmung mit Konstruktion ist notwendig.</li>
-</ul>
-<h2 id="ziel-der-lehrveranstaltung">Ziel der Lehrveranstaltung<a class="headerlink" href="#ziel-der-lehrveranstaltung" title="Permanent link">&para;</a></h2>
-<p>Diese Lehrveranstaltung vermittelt grundlegende Kenntnisse zur Anwendung der Finite-Elemente-Methode im Maschinenbau:</p>
-<ul>
-<li>Simulation als Werkzeug in der Konstruktion</li>
-<li>Festigkeitsnachweise für Bauteile</li>
-<li>Einblick in dynamische Betrachtungen (Modalanalyse)</li>
-<li>Praktische Arbeit mit ANSYS Workbench und Creo</li>
-</ul>
-<h2 id="typische-fragestellungen-in-fem">Typische Fragestellungen in FEM<a class="headerlink" href="#typische-fragestellungen-in-fem" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Ist mein Bauteil stabil und belastbar?</li>
-<li>Wo entstehen kritische Spannungen?</li>
-<li>Wie kann ich das Bauteil leichter gestalten?</li>
-<li>Welche Eigenfrequenzen hat mein System?</li>
-</ul>
-<h2 id="ansys-benutzeroberflache">ANSYS Benutzeroberfläche<a class="headerlink" href="#ansys-benutzeroberflache" title="Permanent link">&para;</a></h2>
-<p>Zur Verdeutlichung der typischen Workbench-Oberfläche in ANSYS:</p>
-<p><a class="glightbox" href="../media/ansys/Clipboard01.jpg" title="ANSYS-Ergebnis"><img alt="Simulation" src="../media/ansys/Clipboard01.jpg" /></a></p>
-<h2 id="literatur">Literatur<a class="headerlink" href="#literatur" title="Permanent link">&para;</a></h2>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:Merkel2020">
-<p>Markus Merkel and Andreas Öchsner. <em>Eindimensionale Finite Elemente: Ein Einstieg in die Methode</em>. Springer Vieweg, Berlin, 2020.&#160;<a class="footnote-backref" href="#fnref:Merkel2020" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-<li id="fn:Spura2019">
-<p>Christian Spura. <em>Technische Mechanik 2. Elastostatik</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2019. ISBN 978-3-658-19978-4 978-3-658-19979-1. URL: <a href="http://link.springer.com/10.1007/978-3-658-19979-1">http://link.springer.com/10.1007/978-3-658-19979-1</a> (visited on 2019-05-28), <a href="https://doi.org/10.1007/978-3-658-19979-1">doi:10.1007/978-3-658-19979-1</a>.&#160;<a class="footnote-backref" href="#fnref:Spura2019" title="Jump back to footnote 2 in the text">&#8617;</a></p>
-</li>
-<li id="fn:Frieske2019">
-<p>Hans-Jürgen Frieske. <em>Technische Mechanik · Statik</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2019. ISBN 978-3-658-23929-9 978-3-658-23930-5. URL: <a href="http://link.springer.com/10.1007/978-3-658-23930-5">http://link.springer.com/10.1007/978-3-658-23930-5</a> (visited on 2019-05-28), <a href="https://doi.org/10.1007/978-3-658-23930-5">doi:10.1007/978-3-658-23930-5</a>.&#160;<a class="footnote-backref" href="#fnref:Frieske2019" title="Jump back to footnote 3 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
+<h1 id="03-statisch-linear">03 Statisch Linear<a class="headerlink" href="#03-statisch-linear" title="Permanent link">&para;</a></h1>
 
 
 

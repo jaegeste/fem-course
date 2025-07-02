@@ -8,11 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://jaegeste.github.io/fem-course/grundlagen/">
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/02_installation_ansys/">
       
       
-        <link rel="prev" href="../einleitung_orga/">
+        <link rel="prev" href="../01_einfuehrung/">
       
+      
+        <link rel="next" href="../03_statisch_linear/">
       
       
       <link rel="icon" href="../media/logo/hfu_logo.svg">
@@ -20,7 +22,7 @@
     
     
       
-        <title>Grundlagen - FEM Course Prof. Jäger</title>
+        <title>ANSYS Installation & Einstieg - FEM Course Prof. Jäger</title>
       
     
     
@@ -47,6 +49,8 @@
     
     
       <link rel="stylesheet" href="../overrides/main.css">
+    
+      <link rel="stylesheet" href="../overrides/extra.css">
     
     <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -81,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#theoretische-grundlagen-der-fem" class="md-skip">
+        <a href="#02-installation-ansys" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Grundlagen
+              ANSYS Installation & Einstieg
             
           </span>
         </div>
@@ -143,7 +147,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../en/grundlagen/" hreflang="en" class="md-select__link">
+            <a href="../en/02_installation_ansys/" hreflang="en" class="md-select__link">
               🇬🇧 English
             </a>
           </li>
@@ -258,87 +262,18 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Einführung
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Einführung
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="../einleitung/" class="md-nav__link">
+      <a href="../01_einfuehrung/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Einführung
+    Einführung in FEM
     
   </span>
   
 
       </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../einleitung_orga/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Orga
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-          </ul>
-        </nav>
-      
     </li>
   
 
@@ -364,13 +299,123 @@
   
   
   <span class="md-ellipsis">
-    Grundlagen
+    ANSYS Installation & Einstieg
     
   </span>
   
 
       </a>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_statisch_linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Statische FEM-Analysen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_netze_kerben/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Netze, Konvergenz & Kerben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_schweiss_baugruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schweißverbindungen & Baugruppen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_optimierung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_modalanalyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modalanalyse
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -409,7 +454,7 @@
 
 
 
-<h1 id="theoretische-grundlagen-der-fem">Theoretische Grundlagen der FEM<a class="headerlink" href="#theoretische-grundlagen-der-fem" title="Permanent link">&para;</a></h1>
+<h1 id="02-installation-ansys">02 Installation Ansys<a class="headerlink" href="#02-installation-ansys" title="Permanent link">&para;</a></h1>
 
 
 

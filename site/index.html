@@ -12,7 +12,7 @@
       
       
       
-        <link rel="next" href="einleitung/">
+        <link rel="next" href="01_einfuehrung/">
       
       
       <link rel="icon" href="media/logo/hfu_logo.svg">
@@ -47,6 +47,8 @@
     
     
       <link rel="stylesheet" href="overrides/main.css">
+    
+      <link rel="stylesheet" href="overrides/extra.css">
     
     <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
@@ -246,6 +248,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Startseite
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="." class="md-nav__link md-nav__link--active">
         
   
@@ -258,6 +273,97 @@
 
       </a>
       
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#so-arbeitet-dieser-kurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      So arbeitet dieser Kurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ziel" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Ziel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Struktur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vorlesung" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧑‍🏫 Vorlesung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Übungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterentwicklung" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Weiterentwicklung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technische-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Technische Basis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❓ Fragen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -268,51 +374,13 @@
   
   
   
-    
-    
-    
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
-        
-          
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
-  
-  
-  <span class="md-ellipsis">
-    Einführung
-    
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_2">
-            <span class="md-nav__icon md-icon"></span>
-            Einführung
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-  
     <li class="md-nav__item">
-      <a href="einleitung/" class="md-nav__link">
+      <a href="01_einfuehrung/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Einführung
+    Einführung in FEM
     
   </span>
   
@@ -321,21 +389,20 @@
     </li>
   
 
-              
-            
-              
-                
+    
+      
+      
   
   
   
   
     <li class="md-nav__item">
-      <a href="einleitung_orga/" class="md-nav__link">
+      <a href="02_installation_ansys/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Orga
+    ANSYS Installation & Einstieg
     
   </span>
   
@@ -344,11 +411,25 @@
     </li>
   
 
-              
-            
-          </ul>
-        </nav>
+    
       
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03_statisch_linear/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Statische FEM-Analysen
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -360,12 +441,78 @@
   
   
     <li class="md-nav__item">
-      <a href="grundlagen/" class="md-nav__link">
+      <a href="04_netze_kerben/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
-    Grundlagen
+    Netze, Konvergenz & Kerben
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05_schweiss_baugruppen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Schweißverbindungen & Baugruppen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06_optimierung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Optimierung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07_modalanalyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modalanalyse
     
   </span>
   
@@ -395,6 +542,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#so-arbeitet-dieser-kurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      So arbeitet dieser Kurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ziel" class="md-nav__link">
+    <span class="md-ellipsis">
+      🎓 Ziel
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#struktur" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧭 Struktur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vorlesung" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧑‍🏫 Vorlesung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ubungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛠️ Übungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterentwicklung" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔁 Weiterentwicklung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technische-basis" class="md-nav__link">
+    <span class="md-ellipsis">
+      🧩 Technische Basis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fragen" class="md-nav__link">
+    <span class="md-ellipsis">
+      ❓ Fragen
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -412,7 +639,7 @@
 <h1 id="willkommen-zur-fem-vorlesung">Willkommen zur FEM-Vorlesung<a class="headerlink" href="#willkommen-zur-fem-vorlesung" title="Permanent link">&para;</a></h1>
 <p>Diese Seite begleitet die Lehrveranstaltung <strong>"Finite-Elemente-Methode"</strong> bei Prof. Dr.-Ing. Steffen Jäger.</p>
 <hr />
-<h1 id="so-arbeitet-dieser-kurs">So arbeitet dieser Kurs<a class="headerlink" href="#so-arbeitet-dieser-kurs" title="Permanent link">&para;</a></h1>
+<h2 id="so-arbeitet-dieser-kurs">So arbeitet dieser Kurs<a class="headerlink" href="#so-arbeitet-dieser-kurs" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Zweisprachigkeit</p>
 <p>Diese Seite ist auf Deutsch verfasst. Die englische Version findest du über das Sprachmenü.</p>
@@ -426,7 +653,7 @@ Sie ersetzt klassische PowerPoint-Folien, PDF-Skripte und FELIX-Uploads. Alles, 
 <ul>
 <li>📂 <strong>Navigation</strong> oben links führt durch alle Kapitel  </li>
 <li>🔍 <strong>Suchfunktion</strong> findet jeden Begriff  </li>
-<li>🌐 <strong>Sprache wechseln:</strong> Klick auf „de“ oder „en“ in der Menüleiste  </li>
+<li>🌐 <strong>Sprache wechseln:</strong> Klick auf „🇩🇪 Deutsch“ oder „🇬🇧 English“ in der Menüleiste  </li>
 <li>🖨️ <strong>PDF/Print-Export</strong>: Einzelne Seiten können direkt im Browser <strong>gedruckt oder als PDF gespeichert</strong> werden (z. B. über <em>Datei → Drucken</em> oder <code>Strg+P</code>).</li>
 </ul>
 <hr />
