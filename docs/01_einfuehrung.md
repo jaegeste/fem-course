@@ -27,12 +27,11 @@
 ### Didaktischer Aufbau
 
 - Vorlesung mit Übungen  
-- Übungen am Rechner mit **ANSYS**[^Hinweis_Version] und **Creo**[^Hinweis_Version]
+- Übungen am Rechner mit **ANSYS**[^1] und **Creo**[^1]
 - Weiterführende Aufgaben für Zuhause  
 - FELIX, Vorlesungsmitschriebe, Übungsaufgaben, Forum, Tools …
 
-[^Hinweis_Version]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_ansys.md)
-
+[^1]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_ansys.md)
 
 ### Klausur
 
@@ -42,7 +41,6 @@
 - FEM-Aufgaben am Rechner  
 
 [![Schnittstelle SPO](media/01_einfuehrung/01_SPO.png){width=900px}](media/01_einfuehrung/01_SPO.png "Auszug Prüfungsordnung (SPO)"){.glightbox}
-
 
 ### Vorlesungsplan
 
@@ -63,7 +61,6 @@ Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhal
 **Block 13**: **tdb CFD in Discovery/FLUENT??**  
 **Block 14**: **tdb CFD in Discovery/FLUENT??**  
 **Block 15**: **Wiederholung, offene Fragen, Klausurvorbereitung**
-
 
 ## Grundlagen der FEM
 
@@ -105,8 +102,7 @@ Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhal
 
 ### Ablauf einer FE-Berechnung (detailliert)
 
-[![Detaillierter Ablauf der FEM](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png){width=800px}](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png "Detaillierter Ablauf der FEM"){.glightbox}
-
+[![Detaillierter Ablauf einer FEM-Berechnung](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png){width=800px}](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png "Detaillierter Ablauf einer FEM-Berechnung"){.glightbox}
 
 ### Ergebnisinterpretation
 

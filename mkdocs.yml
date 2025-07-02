@@ -24,7 +24,7 @@ extra_css:
   - overrides/extra.css
 
 markdown_extensions:
-  - footnotes
+  - pymdownx.extra
   - toc:
       permalink: true
   - admonition

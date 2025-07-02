@@ -4,11 +4,19 @@
   margin-bottom: 0.1em;
 }
 
-/* Moderner Aufzählungspunkt: ▪ für alle Ebenen */
-.md-typeset li::marker {
+/* Moderner Aufzählungspunkt: ▪ für normale Listen */
+.md-typeset ul li::marker,
+.md-typeset ol li::marker {
   content: "▪ ";
   color: var(--md-primary-fg-color);
   font-size: 0.8em;
+}
+
+/* Ausnahme: Fußnoten nicht überschreiben */
+.md-typeset .footnote li::marker {
+  content: counter(list-item) ". ";
+  color: inherit;
+  font-size: 1em;
 }
 
 /* Sichtbare Einrückung für verschachtelte Listen */
@@ -59,4 +67,22 @@
 .md-typeset ol ol > li {
   margin-bottom: 0.05em;
   margin-top: 0;
+}
+
+/* Korrekte Darstellung von Fußnotenreferenzen */
+.footnote-ref {
+  display: inline;
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.footnote-ref a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+/* Optional: Stil für Fußnotentext selbst */
+.md-typeset .footnote {
+  font-size: 0.9em;
+  margin-top: 1em;
 }
