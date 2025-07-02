@@ -5,7 +5,7 @@ Diese Seite begleitet die Lehrveranstaltung **"Finite-Elemente-Methode"** bei Pr
 
 ---
 
-# So arbeitet dieser Kurs
+## So arbeitet dieser Kurs
 
 !!! note "Zweisprachigkeit"
     Diese Seite ist auf Deutsch verfasst. Die englische Version findest du über das Sprachmenü.
@@ -23,7 +23,7 @@ Sie ersetzt klassische PowerPoint-Folien, PDF-Skripte und FELIX-Uploads. Alles, 
 
 - 📂 **Navigation** oben links führt durch alle Kapitel  
 - 🔍 **Suchfunktion** findet jeden Begriff  
-- 🌐 **Sprache wechseln:** Klick auf „de“ oder „en“ in der Menüleiste  
+- 🌐 **Sprache wechseln:** Klick auf „🇩🇪 Deutsch“ oder „🇬🇧 English“ in der Menüleiste  
 - 🖨️ **PDF/Print-Export**: Einzelne Seiten können direkt im Browser **gedruckt oder als PDF gespeichert** werden (z. B. über *Datei → Drucken* oder `Strg+P`).
  
 
