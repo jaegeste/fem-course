@@ -22,7 +22,8 @@ It replaces traditional PowerPoint slides, PDF scripts and FELIX uploads. Everyt
 - 📂 **Navigation** in the top-left guides you through all chapters  
 - 🔍 **Search function** helps you find any term  
 - 🌐 **Language switch:** Click “de” or “en” in the menu bar  
-- 📄 **PDF export**: Selected pages are available as downloadable PDF  
+- 🖨️ **PDF/Print Export**: Individual pages can be **printed or saved as PDF** directly in the browser (e.g. via *File → Print* or `Ctrl+P`).
+
 
 ---
 
