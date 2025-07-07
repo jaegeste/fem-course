@@ -94,7 +94,6 @@ Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhal
 
 ### Ablauf einer FE-Berechnung (grob)
 
-
 *1.* Modell erstellen (CAD / Geometrie)  
 *2.* Netz generieren (Meshing)  
 *3.* Randbedingungen setzen (Lagerung, Lasten)  

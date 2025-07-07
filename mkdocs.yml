@@ -53,8 +53,8 @@ plugins:
           default: true
           nav:
             - Startseite: index.md
-            - Einführung in FEM: 01_einfuehrung.md
-            - ANSYS Installation & Einstieg: 02_installation_ansys.md
+            - Einführung: 01_einfuehrung.md
+            - ANSYS Installation: 02_installation_ansys.md
             - Statische FEM-Analysen: 03_statisch_linear.md
             - Netze, Konvergenz & Kerben: 04_netze_kerben.md
             - Schweißverbindungen & Baugruppen: 05_schweiss_baugruppen.md
@@ -65,8 +65,8 @@ plugins:
           build: true
           nav:
             - Home: index.en.md
-            - Introduction to FEM: 01_einfuehrung.en.md
-            - ANSYS Installation & First Steps: 02_installation_ansys.en.md
+            - Introduction: 01_einfuehrung.en.md
+            - ANSYS Installation: 02_installation_ansys.en.md
             - Static FEM Analyses: 03_statisch_linear.en.md
             - Meshing, Convergence & Notches: 04_netze_kerben.en.md
             - Welds & Assemblies: 05_schweiss_baugruppen.en.md
