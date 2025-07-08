@@ -4,7 +4,6 @@ This guide describes the installation of ANSYS 2024R1 on a private Windows compu
 
 ???+ danger "FIXME"
     - Update to the current version!
-    - Adjust image captions
 
 ---
 
@@ -133,6 +132,15 @@ Download the following files (VPN not required):
 * Activate VPN connection (outside the HFU network).
 * Start ANSYS via the Windows Start menu.
 * If issues occur: right-click → “Run as administrator”.
+
+??? warning "Problems at Startup"
+
+    If ANSYS cannot acquire a license at startup despite a correct installation and VPN connection (error message appears), proceed as follows:
+
+    - Navigate to `C:\Windows\System32\drivers\etc`  
+    - At the very end of the `hosts` file, add the line: `10.10.13.101 Flex`  
+    - Save and you're done. If saving causes issues, you may need to copy the file to the desktop first. Make sure the file type does not change when saving.
+
 
 ---
 

@@ -4,7 +4,6 @@ Diese Anleitung beschreibt die Installation von ANSYS 2024R1 auf einem privaten 
 
 ???+ danger "FIXME"
     - auf aktuelle Version anpassen!
-    - Bildbeschriftungen anpassen
 
 ---
 
@@ -132,6 +131,15 @@ Folgende Dateien müssen heruntergeladen werden (VPN nicht erforderlich):
 * VPN-Verbindung aktivieren (außerhalb des HFU-Netzwerks).
 * Start über das Windows-Startmenü.
 * Bei Problemen: Rechtsklick → „Als Administrator ausführen“.
+
+??? warning "Probleme beim Starten"
+
+    Kann ANSYS trotz richtiger Installation und VPN-Verbindung keine Lizenz ziehen (Fehlermeldung beim Start), gehen Sie wie folgt vor:
+
+    - Navigieren Sie zu `C:\Windows\System32\drivers\etc`  
+    - Ergänzen Sie in der Datei `hosts` ganz am Ende die Zeile: `10.10.13.101 Flex`  
+    - Speichern und fertig. Falls das Speichern Probleme macht, müssen Sie die Datei evtl. erst auf den Desktop o. ä. kopieren. Und beachten Sie, dass der Dateityp sich nicht ändert.
+
 
 ---
 
