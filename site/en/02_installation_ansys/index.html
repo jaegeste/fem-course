@@ -656,7 +656,6 @@
 <summary>FIXME</summary>
 <ul>
 <li>Update to the current version!</li>
-<li>Adjust image captions</li>
 </ul>
 </details>
 <hr />
@@ -737,6 +736,15 @@
 <li>Start ANSYS via the Windows Start menu.</li>
 <li>If issues occur: right-click → “Run as administrator”.</li>
 </ul>
+<details class="warning">
+<summary>Problems at Startup</summary>
+<p>If ANSYS cannot acquire a license at startup despite a correct installation and VPN connection (error message appears), proceed as follows:</p>
+<ul>
+<li>Navigate to <code>C:\Windows\System32\drivers\etc</code>  </li>
+<li>At the very end of the <code>hosts</code> file, add the line: <code>10.10.13.101 Flex</code>  </li>
+<li>Save and you're done. If saving causes issues, you may need to copy the file to the desktop first. Make sure the file type does not change when saving.</li>
+</ul>
+</details>
 <hr />
 <h2 id="coupling-ansys-with-creo">Coupling ANSYS with Creo<a class="headerlink" href="#coupling-ansys-with-creo" title="Permanent link">&para;</a></h2>
 <p>A direct bidirectional link between ANSYS and PTC Creo is possible.</p>

@@ -1,7 +1,10 @@
 # Introduction to the Course
 
 ???+ danger "FIXME"
-    This paragraph still needs to be revised
+    1. SMA FEM regulations  
+    2. Abbildungen EN
+    3. Sources EN
+     
 
 ## Course Classification
 
