@@ -67,7 +67,7 @@ plugins:
             - Home: index.en.md
             - Introduction: 01_einfuehrung.en.md
             - ANSYS Installation: 02_installation_ansys.en.md
-            - First steps in Ansys: 03_erste_Schritte_Kragbalken.en.md
+            - Getting with ANSYS: 03_erste_Schritte_Kragbalken.en.md
             - Meshing, Convergence & Notches: 04_netze_kerben.en.md
             - Welds & Assemblies: 05_schweiss_baugruppen.en.md
             - Optimization: 06_optimierung.en.md
