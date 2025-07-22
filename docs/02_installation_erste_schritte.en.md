@@ -48,43 +48,43 @@ Download the following files (VPN not required):
 *3.*  Follow the installation steps as shown in the images below. Some settings must be adjusted. **Do not change any file paths.**  
 *4.*  Select “Install ANSYS Products”:
 
-[![Install start](media/02_Installation_ansys/02_01.png){width=600px}](media/02_Installation_ansys/02_01.png "Install start"){.glightbox}  
+[![Install start](media/02_Installation_ansys/02_01.en.png){width=600px}](media/02_Installation_ansys/02_01.en.png "Install start"){.glightbox}  
 
 *5.*  Accept settings:
 
-[![EULA](media/02_Installation_ansys/02_02.png){width=600px}](media/02_Installation_ansys/02_02.png "EULA"){.glightbox}  
+[![EULA](media/02_Installation_ansys/02_02.en.png){width=600px}](media/02_Installation_ansys/02_02.en.png "EULA"){.glightbox}  
 
 *6.*  Accept settings, do not change file paths:
 
-[![Path settings](media/02_Installation_ansys/02_03.png){width=600px}](media/02_Installation_ansys/02_03.png "Path settings"){.glightbox}  
+[![Path settings](media/02_Installation_ansys/02_03.en.png){width=600px}](media/02_Installation_ansys/02_03.en.png "Path settings"){.glightbox}  
 
 *7.*  Enter license server: `10.10.13.101`, VPN connection required:
 
-[![License server](media/02_Installation_ansys/02_04.png){width=600px}](media/02_Installation_ansys/02_04.png "License server"){.glightbox}  
+[![License server](media/02_Installation_ansys/02_04.en.png){width=600px}](media/02_Installation_ansys/02_04.en.png "License server"){.glightbox}  
 
 *8.*  Only select **Geometry Interfaces** and **Mechanical Products**:
 
-[![Components](media/02_Installation_ansys/02_05.png){width=600px}](media/02_Installation_ansys/02_05.png "Components"){.glightbox}  
+[![Components](media/02_Installation_ansys/02_05.en.png){width=600px}](media/02_Installation_ansys/02_05.en.png "Components"){.glightbox}  
 
 *9.*  Next:
 
-[![CAD interfaces](media/02_Installation_ansys/02_06.png){width=600px}](media/02_Installation_ansys/02_06.png "CAD interfaces"){.glightbox}  
+[![CAD interfaces](media/02_Installation_ansys/02_06.en.png){width=600px}](media/02_Installation_ansys/02_06.en.png "CAD interfaces"){.glightbox}  
 
 *10.*  Next (contents may vary by system):
 
-[![CAD interface configuration](media/02_Installation_ansys/02_07.png){width=600px}](media/02_Installation_ansys/02_07.png "CAD interface configuration"){.glightbox}  
+[![CAD interface configuration](media/02_Installation_ansys/02_07.en.png){width=600px}](media/02_Installation_ansys/02_07.en.png "CAD interface configuration"){.glightbox}  
 
 *11.*  Next (contents may vary by system):
 
-[![Review settings](media/02_Installation_ansys/02_08.png){width=600px}](media/02_Installation_ansys/02_08.png "Review settings"){.glightbox}  
+[![Review settings](media/02_Installation_ansys/02_08.en.png){width=600px}](media/02_Installation_ansys/02_08.en.png "Review settings"){.glightbox}  
 
 *12.*  Installation complete:
 
-[![Installation](media/02_Installation_ansys/02_09.png){width=600px}](media/02_Installation_ansys/02_09.png "Installation"){.glightbox}  
+[![Installation](media/02_Installation_ansys/02_09.en.png){width=600px}](media/02_Installation_ansys/02_09.en.png "Installation"){.glightbox}  
 
 *13.*  Installation finished (contents may vary by system):
 
-[![Finish](media/02_Installation_ansys/02_10.png){width=600px}](media/02_Installation_ansys/02_10.png "Finish"){.glightbox}  
+[![Finish](media/02_Installation_ansys/02_10.en.png){width=600px}](media/02_Installation_ansys/02_10.en.png "Finish"){.glightbox}  
 
 *14.*  To use ANSYS, a connection to the HFU license server is required. This is only possible outside the university via VPN. Inside the campus network, VPN is not necessary.  
 *15.*  Continue with the service update.
@@ -97,31 +97,31 @@ Download the following files (VPN not required):
 *2.*  Run `setup.exe` **as administrator**.  
 *3.*  Select “Install ANSYS Products”:
 
-[![Service update](media/02_Installation_ansys/02_11.png){width=600px}](media/02_Installation_ansys/02_11.png "Service update"){.glightbox}  
+[![Service update](media/02_Installation_ansys/02_11.en.png){width=600px}](media/02_Installation_ansys/02_11.en.png "Service update"){.glightbox}  
 
 *4.*  Accept settings:
 
-[![EULA](media/02_Installation_ansys/02_12.png){width=600px}](media/02_Installation_ansys/02_12.png "EULA"){.glightbox}  
+[![EULA](media/02_Installation_ansys/02_12.en.png){width=600px}](media/02_Installation_ansys/02_12.en.png "EULA"){.glightbox}  
 
 *5.*  Next, do not change file paths:
 
-[![Path settings](media/02_Installation_ansys/02_13.png){width=600px}](media/02_Installation_ansys/02_13.png "Path settings"){.glightbox}  
+[![Path settings](media/02_Installation_ansys/02_13.en.png){width=600px}](media/02_Installation_ansys/02_13.en.png "Path settings"){.glightbox}  
 
 *6.*  Accept settings and continue:
 
-[![Component selection](media/02_Installation_ansys/02_14.png){width=600px}](media/02_Installation_ansys/02_14.png "Component selection"){.glightbox}  
+[![Component selection](media/02_Installation_ansys/02_14.en.png){width=600px}](media/02_Installation_ansys/02_14.en.png "Component selection"){.glightbox}  
 
 *7.*  Next:
 
-[![Review settings](media/02_Installation_ansys/02_15.png){width=600px}](media/02_Installation_ansys/02_15.png "Review settings"){.glightbox}  
+[![Review settings](media/02_Installation_ansys/02_15.en.png){width=600px}](media/02_Installation_ansys/02_15.en.png "Review settings"){.glightbox}  
 
 *8.*  Installation complete:
 
-[![Service install](media/02_Installation_ansys/02_16.png){width=600px}](media/02_Installation_ansys/02_16.png "Service install"){.glightbox}  
+[![Service install](media/02_Installation_ansys/02_16.en.png){width=600px}](media/02_Installation_ansys/02_16.en.png "Service install"){.glightbox}  
 
 *9.*  Finish:
 
-[![Finish](media/02_Installation_ansys/02_17.png){width=600px}](media/02_Installation_ansys/02_17.png "Finish"){.glightbox}  
+[![Finish](media/02_Installation_ansys/02_17.en.png){width=600px}](media/02_Installation_ansys/02_17.en.png "Finish"){.glightbox}  
 
 *10.*  The ZIP file and extracted data can now be deleted.
 
