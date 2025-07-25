@@ -37,7 +37,7 @@
 - Additional homework assignments  
 - FELIX, lecture notes, exercise sheets, forum, tools …
 
-[^1]: We use the latest available versions of the software. See [Installing ANSYS](02_installation_ansys.md)
+[^1]: We use the latest available versions of the software. See [Installing ANSYS](02_installation_erste_schritte.en.md)
 
 ### Exam
 

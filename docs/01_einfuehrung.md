@@ -31,7 +31,7 @@
 - Weiterführende Aufgaben für Zuhause  
 - FELIX, Vorlesungsmitschriebe, Übungsaufgaben, Forum, Tools …
 
-[^1]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_ansys.md)
+[^1]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_erste_schritte.md)
 
 ### Klausur
 

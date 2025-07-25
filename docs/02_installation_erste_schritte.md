@@ -163,11 +163,11 @@ Dieses Informationen soll helfen, die ersten Schritte in ANSYS Workbench zu gehe
 
 ANSYS Workbench dient als zentrale Oberfläche, um Simulationsprojekte zu organisieren und durchzuführen. Alle Arbeitsschritte einer Simulation lassen sich aus dem folgenden Fenster heraus erledigen:
 
-[![Projektoberfläche in ANSYS Workbench](media\03_erste_Schritte\workbench.png){width=800px}](media\03_erste_Schritte\workbench.png "Projektoberfläche in ANSYS Workbench"){.glightbox}  
+[![Projektoberfläche in ANSYS Workbench](media\02_erste_Schritte\workbench.png){width=800px}](media\02_erste_Schritte\workbench.png "Projektoberfläche in ANSYS Workbench"){.glightbox}  
 
 Auf der linken Seite befinden sich verschiedene Analysearten, die per Drag-and-Drop ins Projektschema eingefügt werden können. Bereits vorhandene Analysen lassen sich verknüpfen, um beispielsweise dieselbe Geometrie mehrfach zu verwenden, siehe nächste Abbildung. So wird in System B die gleiche Geometrie wie in System A verwendet, System D bezieht sich auf Ergebnisse des Systems C. Auch können in der Projektoberfläche Parameter, die in den Einzelbausteinen ausgewiesen wurden, angezeigt und bearbeitet werden (Parametersatz).  
 
-[![Verknüpfte Analysen mit Parametersatz](media/03_erste_Schritte/verknuepfte_Analysen.png){width=800px}](media/03_erste_Schritte/verknuepfte_Analysen.png "Verknüpfte Analysen mit Parametersatz"){.glightbox}
+[![Verknüpfte Analysen mit Parametersatz](media/02_erste_Schritte/verknuepfte_Analysen.png){width=800px}](media/02_erste_Schritte/verknuepfte_Analysen.png "Verknüpfte Analysen mit Parametersatz"){.glightbox}
 
 Ein Analysesystem besteht typischerweise aus folgenden Komponenten. Um eine Simulation durchzuführen werden in der Regel die Punkte von oben nach unten abgearbeitet werden.
 
@@ -245,7 +245,7 @@ ANSYS Workbench bringt eine kleine Vorauswahl an Materialien mit vordefinierten 
 
 Oben links kann eine Datenquelle ausgewählt werden (siehe folgende Abbildung). Anschließend können Materialien dem aktuellen Projekt zugewiesen werden. Die Zuordnung erfolgt im mittleren Fensterbereich durch Klick auf das Plus-Symbol. Die Materialeigenschaften werden im unteren Bereich angezeigt.
 
-[![Materialdatenbank in Workbench](media/03_erste_Schritte/materialdatenbank.png){width=800px}](media/03_erste_Schritte/materialdatenbank.png "Materialdatenbank in Workbench"){.glightbox}  
+[![Materialdatenbank in Workbench](media/02_erste_Schritte/materialdatenbank.png){width=800px}](media/02_erste_Schritte/materialdatenbank.png "Materialdatenbank in Workbench"){.glightbox}  
 
 Zu beachten ist, dass die Datenbank im Wesentlichen auf US-amerikanischen Normen basiert.
 

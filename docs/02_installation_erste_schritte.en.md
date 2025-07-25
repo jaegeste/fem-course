@@ -168,12 +168,12 @@ This information is intended to help you get started with ANSYS Workbench. Befor
 ANSYS Workbench provides a central interface for organizing and managing simulation projects.  
 All steps of a simulation can be carried out from the following window:
 
-[![Project interface in ANSYS Workbench](media/03_erste_Schritte/workbench.en.png){width=800px}](media/03_erste_Schritte/workbench.en.png "Project interface in ANSYS Workbench"){.glightbox}  
+[![Project interface in ANSYS Workbench](media/02_erste_Schritte/workbench.en.png){width=800px}](media/02_erste_Schritte/workbench.en.png "Project interface in ANSYS Workbench"){.glightbox}  
 
 On the left-hand side, various analysis types are available and can be added to the project schematic using drag and drop. Existing analyses can be linked to reuse geometry, as shown in the next image.  
 In System B, the same geometry is used as in System A; System D refers to results from System C. Parameters defined in individual components can also be displayed and edited in the project interface.
 
-[![Linked analyses with parameter set](media/03_erste_Schritte/verknuepfte_Analysen.en.png){width=800px}](media/03_erste_Schritte/verknuepfte_Analysen.en.png "Linked analyses with parameter set"){.glightbox}
+[![Linked analyses with parameter set](media/02_erste_Schritte/verknuepfte_Analysen.en.png){width=800px}](media/02_erste_Schritte/verknuepfte_Analysen.en.png "Linked analyses with parameter set"){.glightbox}
 
 A typical analysis system consists of the following components.  
 To run a simulation, these are usually processed from top to bottom.
@@ -257,6 +257,6 @@ Double-click **Engineering Data** to open the material database, where materials
 A data source can be selected in the upper left (see image below).  
 Materials are assigned to the project in the center panel using the plus icon. Material properties are shown at the bottom.
 
-[![Material database in Workbench](media/03_erste_Schritte/materialdatenbank.en.png){width=800px}](media/03_erste_Schritte/materialdatenbank.en.png "Material database in Workbench"){.glightbox}  
+[![Material database in Workbench](media/02_erste_Schritte/materialdatenbank.en.png){width=800px}](media/02_erste_Schritte/materialdatenbank.en.png "Material database in Workbench"){.glightbox}  
 
 Note that the database is largely based on US standards.
