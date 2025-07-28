@@ -453,13 +453,13 @@ Ergebnisse aus ANSYS...
              \approx -8{,}9 \cdot 10^{-4} \,\text{mm}
     \]
 
-    **Ergebnis:**
+    **Ergebnis:**  
     * Normalspannung: ca. **52 N/mm²**  
     * Verlängerung des Balkens: ca. **0,037 mm**  
     * Verringerung der Kantenlänge: ca. **0,0009 mm**
 
-
 #### Einfluss des Netzes
+
 * Grobes Netz → geringere Genauigkeit.  
 * Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  
 * Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  
@@ -469,6 +469,7 @@ Ergebnisse aus ANSYS...
     Thema hier überhaupt sinnvoll? Divergenz an der Einspannung...
 
 #### Verhinderte Querkontraktion
+
 In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen.  
 Im FEM‑Modell mit fester Einspannung wird diese **Querkontraktion lokal verhindert**.  
 Dadurch entstehen **Randspannungsspitzen**, die analytisch nicht vorhergesagt werden.  
@@ -526,4 +527,4 @@ Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt
 ### Weiterführende Hinweise
 
 ???+ danger "FIXME"
-    Video hinzu? 
+    Video hinzu?  
