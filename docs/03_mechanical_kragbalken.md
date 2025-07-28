@@ -11,7 +11,8 @@ In ANSYS Workbench werden unter dem Begriff *Modell* sämtliche Definitionen zus
 * Netzdefinitionen sowie
 * Kombinationen mehrerer Lastfälle.
 
-Die **Mechanical-Applikation (ANSYS Mechanical)** dient dabei als zentrales FEM-Werkzeug. Hier werden physikalische Eigenschaften zugewiesen, Netze generiert, Berechnungen gestartet und Ergebnisse visualisiert. Ein Mechanical-Fenster kann mehrere Berechnungszweige mit unterschiedlichen Lastfällen enthalten. Der Aufbau dieser Struktur wird durch den Projektmanager festgelegt. Ein Doppelklick auf *Modell* öffnet die Mechanical-Applikation.
+Die **Mechanical-Applikation (ANSYS Mechanical)** dient dabei als zentrales FEM-Werkzeug. Hier werden physikalische Eigenschaften zugewiesen, Netze generiert, Berechnungen gestartet und Ergebnisse visualisiert. Ein Mechanical-Fenster kann mehrere Berechnungszweige mit unterschiedlichen Lastfällen enthalten. Der Aufbau dieser Struktur wird durch den Projektmanager festgelegt.  
+Ein Doppelklick auf *Modell* öffnet die Mechanical-Applikation.
 
 ---
 
@@ -143,7 +144,6 @@ Die globale Elementgröße – also die durchschnittliche Kantenlänge der Eleme
 
 [![Globale Elementgröße festlegen](media/03_mechanical_kragbalken/globale_elementgröße.png){width=400px}](media/03_mechanical_kragbalken/globale_elementgröße.png "Globale Elementgröße festlegen"){.glightbox}  
 
-
 Das Modell wird auf Basis dieses Wertes komplett mit Elementen vernetzt.  
 **Problematisch wird dieses Vorgehen**, wenn das relevante Ergebnis nur in einem lokalen Bereich auftritt:  
 Eine globale Verfeinerung erzeugt dann unnötig viele Elemente und verlängert die Rechenzeit erheblich – ohne zusätzlichen Nutzen.
@@ -156,7 +156,6 @@ Alternativ lässt sich das Netz auch **lokal verfeinern**:
   → Diese Auswahl sollte fundiert erfolgen – siehe Literatur.
 
 Das manuelle Vorgehen eignet sich besonders für einfache Modelle oder gezielte Voruntersuchungen.
-
 
 ---
 
@@ -213,8 +212,8 @@ Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie di
 Die Berechnung basiert auf dem **Hookeschen Gesetz**. Es beschreibt den linearen Zusammenhang zwischen Spannung und Dehnung im elastischen Bereich eines Werkstoffs.
 
 \[
-\sigma = \frac{F}{A}, 
-\quad \varepsilon = \frac{\Delta l}{l}, 
+\sigma = \frac{F}{A},  
+\quad \varepsilon = \frac{\Delta l}{l},  
 \quad E = \frac{\sigma}{\varepsilon}
 \]
 
@@ -249,7 +248,7 @@ Sie definiert das Verhältnis von Querdehnung zur Längsdehnung:
 mit  
 
 \[
-\varepsilon_l = \frac{\Delta l}{l}, 
+\varepsilon_l = \frac{\Delta l}{l},  
 \qquad
 \varepsilon_q = \frac{\Delta a}{a}
 \]
@@ -273,7 +272,8 @@ Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt q
 
 #### Spannungs-Dehnungs-Diagramm
 
-Das Hookesche Gesetz gilt nur im **linear-elastischen Bereich** eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs **ohne ausgeprägte Streckgrenze**. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über. Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:
+Das Hookesche Gesetz gilt nur im **linear-elastischen Bereich** eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs **ohne ausgeprägte Streckgrenze**. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über.  
+Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:
 
 [![Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg "Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze"){.glightbox}  
 <span class="bildquelle">Bildquelle[@Wikipedia2023]</span>
@@ -391,8 +391,8 @@ Ergebnisse aus ANSYS...
 ???+ danger "FIXME"
     Screenshots hinzu und Diskussion zu "was sieht man"
 
-??? note "Berechnung von ΔL, Δa und σ"
-    Für die analytische Lösung werden die Längenänderung ΔL, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
+??? note "Berechnung von Δl, Δa und σ"
+    Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
 
     **Spannung**
 
@@ -515,9 +515,9 @@ In ANSYS Mechanical stehen verschiedene Möglichkeiten zur Verfügung, eine äu�
 
 * **Vektoren und Richtungswahl**  
   In ANSYS kann die Richtung der Kraft gewählt werden:  
-    - globales Koordinatensystem (x, y, z)  
-    - lokales Koordinatensystem (z. B. Bauteilorientierung)  
-    - benutzerdefinierte Richtung über Vektor-Eingabe  
+    * globales Koordinatensystem (x, y, z)  
+    * lokales Koordinatensystem (z. B. Bauteilorientierung)  
+    * benutzerdefinierte Richtung über Vektor-Eingabe  
     → Wichtig, um sicherzustellen, dass die Kraft in der beabsichtigten Raumrichtung wirkt.  
 
 Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt und Typ sehr unterschiedliche Ergebnisse liefern kann. Die Entscheidung, wie eine Last angesetzt wird, gehört deshalb zu den wesentlichen Modellierungsaufgaben im FEM.
@@ -527,4 +527,4 @@ Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt
 ### Weiterführende Hinweise
 
 ???+ danger "FIXME"
-    Video hinzu?  
+    Video hinzu?
