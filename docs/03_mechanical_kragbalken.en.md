@@ -200,7 +200,7 @@ For the cantilever beam with square cross-section shown in the figure, calculate
 Download the file [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
 
 ???+ danger "FIXME"
-    rename file 
+    rename file  
 
 Compare your result with the analytical solution and discuss any deviations.  
 
@@ -215,8 +215,8 @@ Compare your result with the analytical solution and discuss any deviations.
 The calculation is based on **Hooke’s Law**. It describes the linear relationship between stress and strain in the elastic range of a material.
 
 \[
-\sigma = \frac{F}{A}, 
-\quad \varepsilon = \frac{\Delta l}{l}, 
+\sigma = \frac{F}{A},  
+\quad \varepsilon = \frac{\Delta l}{l},  
 \quad E = \frac{\sigma}{\varepsilon}
 \]
 
@@ -251,7 +251,7 @@ It defines the ratio of transverse strain to longitudinal strain:
 with  
 
 \[
-\varepsilon_l = \frac{\Delta l}{l}, 
+\varepsilon_l = \frac{\Delta l}{l},  
 \qquad
 \varepsilon_q = \frac{\Delta a}{a}
 \]
@@ -294,15 +294,17 @@ For the calculation of the cantilever beam in this exercise, the load lies withi
 ### Implementation in ANSYS Mechanical
 
 #### 1. Geometry Import
+
 Load the file [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) into ANSYS Workbench.  
 
 ???+ danger "FIXME"
-    rename file 
+    rename file  
 
 ???+ danger "FIXME"
     Screenshot?
 
-#### 2. Material Definition
+#### 2. Material Definition  
+
 Assign structural steel from the ANSYS database.  
 
 ???+ danger "FIXME"
@@ -390,8 +392,8 @@ Results from ANSYS...
 ???+ danger "FIXME"
     Add screenshots and discuss “what is observed”.
 
-??? note "Calculation of ΔL, Δa and σ"
-    For the analytical solution, the elongation ΔL, the cross-section change Δa, and the normal stress σ are calculated.
+??? note "Calculation of Δl, Δa and σ"
+    For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
 
     **Stress**
 
@@ -513,9 +515,9 @@ In ANSYS Mechanical, various options are available for applying loads. The choic
 
 * **Vectors and direction selection**  
   In ANSYS the direction of force can be chosen:  
-    - global coordinate system (x, y, z)  
-    - local coordinate system (part orientation)  
-    - user-defined vector input  
+    * global coordinate system (x, y, z)  
+    * local coordinate system (part orientation)  
+    * user-defined vector input  
   → Ensures the force acts in the intended direction.  
 
 These options illustrate that the “same” load can yield very different results depending on how it is applied. Choosing the correct method is a key part of FEM modeling.

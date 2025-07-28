@@ -456,11 +456,24 @@
 
 <h1 id="04-netze-kerben">04 Netze Kerben<a class="headerlink" href="#04-netze-kerben" title="Permanent link">&para;</a></h1>
 <h1 id="test-3d-viewer">Test 3D Viewer<a class="headerlink" href="#test-3d-viewer" title="Permanent link">&para;</a></h1>
-<p><model-viewer src="media/03_mechanical_kragbalken/kragbalken.glb"
-              alt="Kragbalken 3D"
+<p><model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+              alt="Astronaut"
               auto-rotate
               camera-controls
-              style="width:600px;height:400px;">
+              style="width:600px; height:400px;">
+</model-viewer></p>
+<p><model-viewer src="/fem-course/media/03_mechanical_kragbalken/kragbalken.glb"
+              alt="Kragbalken"
+              auto-rotate
+              camera-controls
+              camera-orbit="30deg 70deg 600mm"
+              field-of-view="20deg"
+              style="width:600px;height:400px; background-color: white;"
+              exposure="1.0"
+              shadow-intensity="1"
+              shadow-softness="0.7"
+              environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
+              poster="data:,">
 </model-viewer></p>
 
 
