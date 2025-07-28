@@ -24,11 +24,11 @@ extra_css:
   - overrides/extra.css
 
 markdown_extensions:
-  - pymdownx.extra
   - toc:
       permalink: true
   - admonition
   - attr_list
+  - pymdownx.extra
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.arithmatex:

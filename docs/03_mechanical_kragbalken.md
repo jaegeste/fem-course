@@ -269,7 +269,6 @@ Damit ergibt sich:
 Für Stahl gilt typischerweise \(\nu \approx 0{,}3\).  
 Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt quer um 0,3 %.  
 
-
 ---
 
 #### Spannungs-Dehnungs-Diagramm
@@ -291,12 +290,14 @@ Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im **el
 ### Umsetzung in ANSYS Mechanical
 
 #### 1. Geometrieimport
+
 Laden Sie die Datei [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) in ANSYS Workbench.  
 
 ???+ danger "FIXME"
     Screenshot sinnvoll?
 
 #### 2. Materialdefinition
+
 Weisen Sie Baustahl aus der ANSYS-Datenbank zu.
 
 ???+ danger "FIXME"
@@ -325,7 +326,6 @@ Im Zusammenspiel von **verschiebungsgebundenen** und **kraftgebundenen** Randbed
 ???+ note "Hinweis zur Modellierung"
     Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.
   
-
 ???+ danger "FIXME"
     Screenshots?
 
