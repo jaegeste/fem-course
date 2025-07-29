@@ -1135,7 +1135,8 @@
 <li>Netzdefinitionen sowie</li>
 <li>Kombinationen mehrerer Lastfälle.</li>
 </ul>
-<p>Die <strong>Mechanical-Applikation (ANSYS Mechanical)</strong> dient dabei als zentrales FEM-Werkzeug. Hier werden physikalische Eigenschaften zugewiesen, Netze generiert, Berechnungen gestartet und Ergebnisse visualisiert. Ein Mechanical-Fenster kann mehrere Berechnungszweige mit unterschiedlichen Lastfällen enthalten. Der Aufbau dieser Struktur wird durch den Projektmanager festgelegt. Ein Doppelklick auf <em>Modell</em> öffnet die Mechanical-Applikation.</p>
+<p>Die <strong>Mechanical-Applikation (ANSYS Mechanical)</strong> dient dabei als zentrales FEM-Werkzeug. Hier werden physikalische Eigenschaften zugewiesen, Netze generiert, Berechnungen gestartet und Ergebnisse visualisiert. Ein Mechanical-Fenster kann mehrere Berechnungszweige mit unterschiedlichen Lastfällen enthalten. Der Aufbau dieser Struktur wird durch den Projektmanager festgelegt.<br />
+Ein Doppelklick auf <em>Modell</em> öffnet die Mechanical-Applikation.</p>
 <hr />
 <h3 id="benutzeroberflache">Benutzeroberfläche<a class="headerlink" href="#benutzeroberflache" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="../media/03_mechanical_kragbalken/mechanical_ui.png" title="Mechanical-Applikation in ANSYS"><img alt="Mechanical-Applikation in ANSYS" src="../media/03_mechanical_kragbalken/mechanical_ui.png" width="700px" /></a>  </p>
@@ -1294,8 +1295,8 @@ Die konkrete Anwendung, Auswahl und Bewertung von Kontakten erfolgt in späteren
 <h4 id="hookesches-gesetz">Hookesches Gesetz<a class="headerlink" href="#hookesches-gesetz" title="Permanent link">&para;</a></h4>
 <p>Die Berechnung basiert auf dem <strong>Hookeschen Gesetz</strong>. Es beschreibt den linearen Zusammenhang zwischen Spannung und Dehnung im elastischen Bereich eines Werkstoffs.</p>
 <div class="arithmatex">\[
-\sigma = \frac{F}{A}, 
-\quad \varepsilon = \frac{\Delta l}{l}, 
+\sigma = \frac{F}{A},  
+\quad \varepsilon = \frac{\Delta l}{l},  
 \quad E = \frac{\sigma}{\varepsilon}
 \]</div>
 <p>mit  </p>
@@ -1323,7 +1324,7 @@ Sie definiert das Verhältnis von Querdehnung zur Längsdehnung:</p>
 \]</div>
 <p>mit  </p>
 <div class="arithmatex">\[
-\varepsilon_l = \frac{\Delta l}{l}, 
+\varepsilon_l = \frac{\Delta l}{l},  
 \qquad
 \varepsilon_q = \frac{\Delta a}{a}
 \]</div>
@@ -1342,7 +1343,8 @@ Sie definiert das Verhältnis von Querdehnung zur Längsdehnung:</p>
 Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt quer um 0,3 %.  </p>
 <hr />
 <h4 id="spannungs-dehnungs-diagramm">Spannungs-Dehnungs-Diagramm<a class="headerlink" href="#spannungs-dehnungs-diagramm" title="Permanent link">&para;</a></h4>
-<p>Das Hookesche Gesetz gilt nur im <strong>linear-elastischen Bereich</strong> eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs <strong>ohne ausgeprägte Streckgrenze</strong>. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über. Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
+<p>Das Hookesche Gesetz gilt nur im <strong>linear-elastischen Bereich</strong> eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs <strong>ohne ausgeprägte Streckgrenze</strong>. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über.<br />
+Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p><a class="glightbox" href="../media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" title="Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze"><img alt="Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze" src="../media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" width="450" /></a><br />
 <span class="bildquelle">Bildquelle<sup id="fnref:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>Das zweite Diagramm zeigt das Verhalten eines Werkstoffs <strong>mit ausgeprägter Streckgrenze</strong>, wie es für Baustahl typisch ist. Der lineare Bereich endet abrupt, es folgt ein Plateau mit nahezu konstanter Spannung, bevor der plastische Anstieg beginnt:</p>
@@ -1443,9 +1445,13 @@ Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt q
 <summary>FIXME</summary>
 <p>Screenshots hinzu und Diskussion zu "was sieht man"</p>
 </details>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Einheiten in Formeln ergänzen</p>
+</details>
 <details class="note">
-<summary>Berechnung von ΔL, Δa und σ</summary>
-<p>Für die analytische Lösung werden die Längenänderung ΔL, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.</p>
+<summary>Berechnung von Δl, Δa und σ</summary>
+<p>Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.</p>
 <p><strong>Spannung</strong></p>
 <div class="arithmatex">\[
 \sigma = \frac{F}{A}
@@ -1563,7 +1569,7 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 <h3 id="weiterfuhrende-hinweise">Weiterführende Hinweise<a class="headerlink" href="#weiterfuhrende-hinweise" title="Permanent link">&para;</a></h3>
 <details class="danger" open="open">
 <summary>FIXME</summary>
-<p>Video hinzu?  </p>
+<p>Video hinzu?</p>
 </details>
 <div class="footnote">
 <hr />
@@ -1626,8 +1632,6 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});

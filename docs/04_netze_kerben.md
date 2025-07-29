@@ -1,14 +1,6 @@
-# 04 Netze Kerben
-
 # Test 3D Viewer
 
-<model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
-              alt="Astronaut"
-              auto-rotate
-              camera-controls
-              style="width:600px; height:400px;">
-</model-viewer>
-
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 
 <model-viewer src="/fem-course/media/03_mechanical_kragbalken/kragbalken.glb"
               alt="Kragbalken"
@@ -22,4 +14,11 @@
               shadow-softness="0.7"
               environment-image="https://modelviewer.dev/shared-assets/environments/neutral.hdr"
               poster="data:,">
+</model-viewer>
+
+<model-viewer src="https://modelviewer.dev/shared-assets/models/Astronaut.glb"
+              alt="Astronaut"
+              auto-rotate
+              camera-controls
+              style="width:600px; height:400px;">
 </model-viewer>

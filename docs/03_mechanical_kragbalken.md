@@ -391,6 +391,9 @@ Ergebnisse aus ANSYS...
 ???+ danger "FIXME"
     Screenshots hinzu und Diskussion zu "was sieht man"
 
+???+ danger "FIXME"
+    Einheiten in Formeln ergänzen
+
 ??? note "Berechnung von Δl, Δa und σ"
     Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
 

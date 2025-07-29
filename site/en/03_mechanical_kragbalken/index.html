@@ -1290,7 +1290,7 @@ Detailed handling, selection, and evaluation will follow in later exercises.</p>
 <p>Download the file <a href="../../media/03_mechanical_kragbalken/kragbalken.stp">kragbalken.stp</a> and import it into ANSYS Workbench.</p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
-<p>rename file </p>
+<p>rename file  </p>
 </details>
 <p>Compare your result with the analytical solution and discuss any deviations.  </p>
 <p><a class="glightbox" href="../../media/03_mechanical_kragbalken/kragbalken_zug.svg" title="Cantilever beam under tension"><img alt="Cantilever beam under tension" src="../../media/03_mechanical_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
@@ -1299,8 +1299,8 @@ Detailed handling, selection, and evaluation will follow in later exercises.</p>
 <h4 id="hookes-law">Hooke’s Law<a class="headerlink" href="#hookes-law" title="Permanent link">&para;</a></h4>
 <p>The calculation is based on <strong>Hooke’s Law</strong>. It describes the linear relationship between stress and strain in the elastic range of a material.</p>
 <div class="arithmatex">\[
-\sigma = \frac{F}{A}, 
-\quad \varepsilon = \frac{\Delta l}{l}, 
+\sigma = \frac{F}{A},  
+\quad \varepsilon = \frac{\Delta l}{l},  
 \quad E = \frac{\sigma}{\varepsilon}
 \]</div>
 <p>with  </p>
@@ -1328,7 +1328,7 @@ It defines the ratio of transverse strain to longitudinal strain:</p>
 \]</div>
 <p>with  </p>
 <div class="arithmatex">\[
-\varepsilon_l = \frac{\Delta l}{l}, 
+\varepsilon_l = \frac{\Delta l}{l},  
 \qquad
 \varepsilon_q = \frac{\Delta a}{a}
 \]</div>
@@ -1361,7 +1361,7 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p>Load the file <a href="../../media/03_mechanical_kragbalken/kragbalken.stp">kragbalken.stp</a> into ANSYS Workbench.  </p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
-<p>rename file </p>
+<p>rename file  </p>
 </details>
 <details class="danger" open="open">
 <summary>FIXME</summary>
@@ -1445,9 +1445,13 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <summary>FIXME</summary>
 <p>Add screenshots and discuss “what is observed”.</p>
 </details>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Einheiten in Formeln ergänzen</p>
+</details>
 <details class="note">
-<summary>Calculation of ΔL, Δa and σ</summary>
-<p>For the analytical solution, the elongation ΔL, the cross-section change Δa, and the normal stress σ are calculated.</p>
+<summary>Calculation of Δl, Δa and σ</summary>
+<p>For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.</p>
 <p><strong>Stress</strong></p>
 <div class="arithmatex">\[
 \sigma = \frac{F}{A}
@@ -1627,8 +1631,6 @@ This results in a <strong>shear-free beam</strong> with a more uniform stress fi
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-      
-        <script src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
