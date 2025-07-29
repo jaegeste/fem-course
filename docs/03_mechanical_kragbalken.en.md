@@ -392,6 +392,9 @@ Results from ANSYS...
 ???+ danger "FIXME"
     Add screenshots and discuss “what is observed”.
 
+???+ danger "FIXME"
+    Einheiten in Formeln ergänzen
+
 ??? note "Calculation of Δl, Δa and σ"
     For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
 
