@@ -566,18 +566,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-randbedingungen" class="md-nav__link">
+  <a href="#3-netzgenerierung" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Randbedingungen
+      3. Netzgenerierung
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-netzgenerierung" class="md-nav__link">
+  <a href="#4-randbedingungen" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Netzgenerierung
+      4. Randbedingungen
     </span>
   </a>
   
@@ -1003,18 +1003,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-randbedingungen" class="md-nav__link">
+  <a href="#3-netzgenerierung" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Randbedingungen
+      3. Netzgenerierung
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-netzgenerierung" class="md-nav__link">
+  <a href="#4-randbedingungen" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Netzgenerierung
+      4. Randbedingungen
     </span>
   </a>
   
@@ -1360,36 +1360,12 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p>Screenshot sinnvoll?</p>
 </details>
 <h4 id="2-materialdefinition">2. Materialdefinition<a class="headerlink" href="#2-materialdefinition" title="Permanent link">&para;</a></h4>
-<p>Weisen Sie Baustahl aus der ANSYS-Datenbank zu.</p>
+<p>Als Standardmaterial wird von ANSYS Baustahl zugewiesen. Vor der weiteren Verwendung sollten die jeweiligen Materialeigenschaften überprüft werden, um die Eignung für die geplante Anwendung sicherzustellen.</p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
 <p>Screenshot</p>
 </details>
-<h4 id="3-randbedingungen">3. Randbedingungen<a class="headerlink" href="#3-randbedingungen" title="Permanent link">&para;</a></h4>
-<p>Für die Berechnung werden zwei Randbedingungen benötigt:</p>
-<ul>
-<li><strong>Feste Einspannung</strong> am linken Ende  </li>
-<li><strong>Zugkraft</strong> <span class="arithmatex">\( F \)</span> an der rechten Stirnfläche  </li>
-</ul>
-<p>Die feste Einspannung wird in ANSYS umgesetzt, indem <strong>alle Freiheitsgrade</strong> der ausgewählten Fläche blockiert werden. Das bedeutet konkret: Translationen in <span class="arithmatex">\(x\)</span>-, <span class="arithmatex">\(y\)</span>- und <span class="arithmatex">\(z\)</span>-Richtung sowie Rotationen um alle drei Achsen sind dort nicht mehr möglich. Im physikalischen Sinn wird so die Verbindung des Balkens mit einer starren Umgebung modelliert.</p>
-<p>Die Zugkraft wird an der rechten Stirnfläche aufgebracht. In ANSYS erfolgt dies über die Angabe einer <strong>Flächenlast (Druck)</strong> oder einer <strong>Gesamtkraft (Kraft)</strong>, die sich über die gesamte Fläche verteilt. Damit wird sichergestellt, dass die Kraft nicht punktförmig wirkt (was numerisch eine Singularität erzeugen würde), sondern gleichmäßig eingeleitet wird.</p>
-<p>Aus FEM-Sicht geschieht Folgendes:</p>
-<ul>
-<li>Die Einspannung erzeugt eine <strong>Verschiebungsrandbedingung</strong>:<br />
-  Knoten in diesem Bereich können sich nicht bewegen → Reaktionskräfte bilden sich aus.</li>
-<li>Die Zugkraft erzeugt eine <strong>Lastbedingung</strong>:<br />
-  Knoten in diesem Bereich erfahren zusätzliche äußere Kräfte → führen zu inneren Spannungen und Verformungen im gesamten Bauteil.</li>
-</ul>
-<p>Im Zusammenspiel von <strong>verschiebungsgebundenen</strong> und <strong>kraftgebundenen</strong> Randbedingungen entsteht ein <strong>geschlossenes Gleichungssystem</strong>, das im FEM‑Solver gelöst wird.</p>
-<details class="note" open="open">
-<summary>Hinweis zur Modellierung</summary>
-<p>Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.</p>
-</details>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Screenshots?</p>
-</details>
-<h4 id="4-netzgenerierung">4. Netzgenerierung<a class="headerlink" href="#4-netzgenerierung" title="Permanent link">&para;</a></h4>
+<h4 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h4>
 <p>Für die Berechnung wird das Bauteil in finite Elemente unterteilt, die über Knoten miteinander verbunden sind. Dieser Vorgang heißt <strong>Vernetzung</strong>.  </p>
 <ul>
 <li>
@@ -1414,10 +1390,34 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <summary>FIXME</summary>
 <p>Screenshot</p>
 </details>
+<h4 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h4>
+<p>Für die Berechnung werden zwei Randbedingungen benötigt:</p>
+<ul>
+<li><strong>Feste Einspannung</strong> am linken Ende  </li>
+<li><strong>Zugkraft</strong> <span class="arithmatex">\( F \)</span> an der rechten Stirnfläche  </li>
+</ul>
+<p>Die feste Einspannung wird in ANSYS umgesetzt, indem <strong>alle Freiheitsgrade</strong> der ausgewählten Fläche blockiert werden. Das bedeutet konkret: Translationen in <span class="arithmatex">\(x\)</span>-, <span class="arithmatex">\(y\)</span>- und <span class="arithmatex">\(z\)</span>-Richtung sowie Rotationen um alle drei Achsen sind dort nicht mehr möglich. Im physikalischen Sinn wird so die Verbindung des Balkens mit einer starren Umgebung modelliert.</p>
+<p>Die Zugkraft wird an der rechten Stirnfläche aufgebracht. In ANSYS erfolgt dies über die Angabe einer <strong>Flächenlast (Druck)</strong> oder einer <strong>Gesamtkraft (Kraft)</strong>, die sich über die gesamte Fläche verteilt. Damit wird sichergestellt, dass die Kraft nicht punktförmig wirkt (was numerisch eine Singularität erzeugen würde), sondern gleichmäßig eingeleitet wird.</p>
+<p>Aus FEM-Sicht geschieht Folgendes:</p>
+<ul>
+<li>Die Einspannung erzeugt eine <strong>Verschiebungsrandbedingung</strong>:<br />
+  Knoten in diesem Bereich können sich nicht bewegen → Reaktionskräfte bilden sich aus.</li>
+<li>Die Zugkraft erzeugt eine <strong>Lastbedingung</strong>:<br />
+  Knoten in diesem Bereich erfahren zusätzliche äußere Kräfte → führen zu inneren Spannungen und Verformungen im gesamten Bauteil.</li>
+</ul>
+<p>Im Zusammenspiel von <strong>verschiebungsgebundenen</strong> und <strong>kraftgebundenen</strong> Randbedingungen entsteht ein <strong>geschlossenes Gleichungssystem</strong>, das im FEM‑Solver gelöst wird.</p>
+<details class="note" open="open">
+<summary>Hinweis zur Modellierung</summary>
+<p>Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.</p>
+</details>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Screenshots?</p>
+</details>
 <h4 id="5-auswertung">5. Auswertung<a class="headerlink" href="#5-auswertung" title="Permanent link">&para;</a></h4>
 <p>Für die erste Auswertung in ANSYS werden zwei Ergebnisse betrachtet:</p>
 <ul>
-<li><strong>Verformung (Gesamtverschiebung)</strong>  </li>
+<li><strong>Verformung (Gesamtverformung)</strong>  </li>
 <li><strong>Spannung nach von Mises</strong></li>
 </ul>
 <p>Die Verformung zeigt die Gesamtauslenkung des Bauteils. In ANSYS wird sie üblicherweise in überhöhter Darstellung angezeigt, damit die Formänderung deutlich erkennbar ist. Wichtig ist, dass es sich dabei um eine <strong>Skalierung zur Visualisierung</strong> handelt – die Werte sind den Ergebnistabellen zu entnehmen.  </p>

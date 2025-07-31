@@ -566,18 +566,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-boundary-conditions" class="md-nav__link">
+  <a href="#3-meshing" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Boundary Conditions
+      3. Meshing
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-meshing" class="md-nav__link">
+  <a href="#4-boundary-conditions" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Meshing
+      4. Boundary Conditions
     </span>
   </a>
   
@@ -1003,18 +1003,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-boundary-conditions" class="md-nav__link">
+  <a href="#3-meshing" class="md-nav__link">
     <span class="md-ellipsis">
-      3. Boundary Conditions
+      3. Meshing
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#4-meshing" class="md-nav__link">
+  <a href="#4-boundary-conditions" class="md-nav__link">
     <span class="md-ellipsis">
-      4. Meshing
+      4. Boundary Conditions
     </span>
   </a>
   
@@ -1368,12 +1368,29 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p>Screenshot?</p>
 </details>
 <h4 id="2-material-definition">2. Material Definition<a class="headerlink" href="#2-material-definition" title="Permanent link">&para;</a></h4>
-<p>Assign structural steel from the ANSYS database.  </p>
+<p>By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.</p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
 <p>Screenshot</p>
 </details>
-<h4 id="3-boundary-conditions">3. Boundary Conditions<a class="headerlink" href="#3-boundary-conditions" title="Permanent link">&para;</a></h4>
+<h4 id="3-meshing">3. Meshing<a class="headerlink" href="#3-meshing" title="Permanent link">&para;</a></h4>
+<p>The part is divided into finite elements connected via nodes (<strong>meshing</strong>).  </p>
+<ul>
+<li>Start with a <strong>global automatic mesh</strong>.  </li>
+<li>Then vary the <strong>element size</strong> to study <strong>mesh influence</strong>.  </li>
+<li>Convergence is confirmed if results remain nearly unchanged with further refinement.  </li>
+</ul>
+<p>Rules of thumb:  </p>
+<ul>
+<li>Coarse mesh → low computation time, possibly inaccurate.  </li>
+<li>Fine mesh → high accuracy, but longer computation time.  </li>
+<li>Optimal mesh → sufficiently accurate without excessive elements.  </li>
+</ul>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Screenshot</p>
+</details>
+<h4 id="4-boundary-conditions">4. Boundary Conditions<a class="headerlink" href="#4-boundary-conditions" title="Permanent link">&para;</a></h4>
 <p>Two boundary conditions are required:</p>
 <ul>
 <li><strong>Fixed support</strong> at the left end  </li>
@@ -1396,23 +1413,6 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <details class="danger" open="open">
 <summary>FIXME</summary>
 <p>Screenshots?</p>
-</details>
-<h4 id="4-meshing">4. Meshing<a class="headerlink" href="#4-meshing" title="Permanent link">&para;</a></h4>
-<p>The part is divided into finite elements connected via nodes (<strong>meshing</strong>).  </p>
-<ul>
-<li>Start with a <strong>global automatic mesh</strong>.  </li>
-<li>Then vary the <strong>element size</strong> to study <strong>mesh influence</strong>.  </li>
-<li>Convergence is confirmed if results remain nearly unchanged with further refinement.  </li>
-</ul>
-<p>Rules of thumb:  </p>
-<ul>
-<li>Coarse mesh → low computation time, possibly inaccurate.  </li>
-<li>Fine mesh → high accuracy, but longer computation time.  </li>
-<li>Optimal mesh → sufficiently accurate without excessive elements.  </li>
-</ul>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Screenshot</p>
 </details>
 <h4 id="5-evaluation">5. Evaluation<a class="headerlink" href="#5-evaluation" title="Permanent link">&para;</a></h4>
 <p>Two results are examined in ANSYS:</p>
