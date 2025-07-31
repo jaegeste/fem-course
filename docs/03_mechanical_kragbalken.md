@@ -298,12 +298,36 @@ Laden Sie die Datei [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.s
 
 #### 2. Materialdefinition
 
-Weisen Sie Baustahl aus der ANSYS-Datenbank zu.
+Als Standardmaterial wird von ANSYS Baustahl zugewiesen. Vor der weiteren Verwendung sollten die jeweiligen Materialeigenschaften überprüft werden, um die Eignung für die geplante Anwendung sicherzustellen.
 
 ???+ danger "FIXME"
     Screenshot
 
-#### 3. Randbedingungen
+
+#### 3. Netzgenerierung
+
+Für die Berechnung wird das Bauteil in finite Elemente unterteilt, die über Knoten miteinander verbunden sind. Dieser Vorgang heißt **Vernetzung**.  
+
+* Zunächst wird eine **globale automatische Vernetzung** erzeugt.  
+  Dabei vergibt ANSYS eine Elementgröße, die für das gesamte Modell gilt.  
+  Das Netz entsteht schnell und gleichmäßig, ist aber oft nicht optimal für lokale Details.  
+
+* Im zweiten Schritt wird die **Elementgröße variiert**, um den **Netzeinfluss** zu untersuchen.  
+  Ziel ist zu prüfen, ob das Ergebnis (Spannung, Verformung) stabil bleibt, wenn das Netz feiner wird.  
+  Nur wenn sich die Ergebnisse kaum noch ändern, gilt die Lösung als verlässlich.  
+
+Aus FEM-Sicht gilt:  
+
+* Zu grobes Netz → geringe Rechenzeit, aber möglicherweise ungenaue Ergebnisse.  
+* Zu feines Netz → hohe Genauigkeit, aber deutlich längere Rechenzeit.  
+* Optimal ist ein Netz, das **ausreichend genaue Ergebnisse** liefert, ohne unnötig viele Elemente zu erzeugen.  
+
+Diese einfache Netzeinflussstudie vermittelt den Grundgedanken, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der **Diskretisierung** abhängen.
+
+???+ danger "FIXME"
+    Screenshot
+
+#### 4. Randbedingungen
 
 Für die Berechnung werden zwei Randbedingungen benötigt:
 
@@ -329,34 +353,12 @@ Im Zusammenspiel von **verschiebungsgebundenen** und **kraftgebundenen** Randbed
 ???+ danger "FIXME"
     Screenshots?
 
-#### 4. Netzgenerierung
-
-Für die Berechnung wird das Bauteil in finite Elemente unterteilt, die über Knoten miteinander verbunden sind. Dieser Vorgang heißt **Vernetzung**.  
-
-* Zunächst wird eine **globale automatische Vernetzung** erzeugt.  
-  Dabei vergibt ANSYS eine Elementgröße, die für das gesamte Modell gilt.  
-  Das Netz entsteht schnell und gleichmäßig, ist aber oft nicht optimal für lokale Details.  
-
-* Im zweiten Schritt wird die **Elementgröße variiert**, um den **Netzeinfluss** zu untersuchen.  
-  Ziel ist zu prüfen, ob das Ergebnis (Spannung, Verformung) stabil bleibt, wenn das Netz feiner wird.  
-  Nur wenn sich die Ergebnisse kaum noch ändern, gilt die Lösung als verlässlich.  
-
-Aus FEM-Sicht gilt:  
-
-* Zu grobes Netz → geringe Rechenzeit, aber möglicherweise ungenaue Ergebnisse.  
-* Zu feines Netz → hohe Genauigkeit, aber deutlich längere Rechenzeit.  
-* Optimal ist ein Netz, das **ausreichend genaue Ergebnisse** liefert, ohne unnötig viele Elemente zu erzeugen.  
-
-Diese einfache Netzeinflussstudie vermittelt den Grundgedanken, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der **Diskretisierung** abhängen.
-
-???+ danger "FIXME"
-    Screenshot
 
 #### 5. Auswertung
 
 Für die erste Auswertung in ANSYS werden zwei Ergebnisse betrachtet:
 
-* **Verformung (Gesamtverschiebung)**  
+* **Verformung (Gesamtverformung)**  
 * **Spannung nach von Mises**
 
 Die Verformung zeigt die Gesamtauslenkung des Bauteils. In ANSYS wird sie üblicherweise in überhöhter Darstellung angezeigt, damit die Formänderung deutlich erkennbar ist. Wichtig ist, dass es sich dabei um eine **Skalierung zur Visualisierung** handelt – die Werte sind den Ergebnistabellen zu entnehmen.  
