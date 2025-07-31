@@ -305,12 +305,29 @@ Load the file [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) in
 
 #### 2. Material Definition  
 
-Assign structural steel from the ANSYS database.  
+By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.
 
 ???+ danger "FIXME"
     Screenshot
 
-#### 3. Boundary Conditions
+#### 3. Meshing
+
+The part is divided into finite elements connected via nodes (**meshing**).  
+
+* Start with a **global automatic mesh**.  
+* Then vary the **element size** to study **mesh influence**.  
+* Convergence is confirmed if results remain nearly unchanged with further refinement.  
+
+Rules of thumb:  
+
+* Coarse mesh → low computation time, possibly inaccurate.  
+* Fine mesh → high accuracy, but longer computation time.  
+* Optimal mesh → sufficiently accurate without excessive elements.  
+
+???+ danger "FIXME"
+    Screenshot
+
+#### 4. Boundary Conditions
 
 Two boundary conditions are required:
 
@@ -335,23 +352,6 @@ Together, the combination of **displacement-controlled** and **force-controlled*
 
 ???+ danger "FIXME"
     Screenshots?
-
-#### 4. Meshing
-
-The part is divided into finite elements connected via nodes (**meshing**).  
-
-* Start with a **global automatic mesh**.  
-* Then vary the **element size** to study **mesh influence**.  
-* Convergence is confirmed if results remain nearly unchanged with further refinement.  
-
-Rules of thumb:  
-
-* Coarse mesh → low computation time, possibly inaccurate.  
-* Fine mesh → high accuracy, but longer computation time.  
-* Optimal mesh → sufficiently accurate without excessive elements.  
-
-???+ danger "FIXME"
-    Screenshot
 
 #### 5. Evaluation
 
