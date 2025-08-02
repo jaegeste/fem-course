@@ -17,7 +17,7 @@ The **Mechanical Application (ANSYS Mechanical)** is the central FEM tool. It is
 
 ### User Interface
 
-[![Mechanical-Applikation in ANSYS](media/03_mechanical_kragbalken/mechanical_ui.png){width=700px}](media/03_mechanical_kragbalken/mechanical_ui.png "Mechanical-Applikation in ANSYS"){.glightbox}  
+[![Mechanical-Applikation in ANSYS](media/03_mechanical_kragbalken/mechanical_ui.en.png){width=700px}](media/03_mechanical_kragbalken/mechanical_ui.en.png "Mechanical-Applikation in ANSYS"){.glightbox}  
 
 Key elements of the interface:
 
@@ -47,7 +47,7 @@ Key elements of the interface:
 
 ### View controls
 
-[![Steuerung der Ansichten](media/03_mechanical_kragbalken/ansichtsteuerung.png){width=500px}](media/03_mechanical_kragbalken/ansichtsteuerung.png "Steuerung der Ansichten"){.glightbox}  
+[![Steuerung der Ansichten](media/03_mechanical_kragbalken/ansichtssteuerung.en.png){width=500px}](media/03_mechanical_kragbalken/ansichtssteuerung.en.png "Steuerung der Ansichten"){.glightbox}  
 
 Typical functions:
 
@@ -96,7 +96,7 @@ Functions:
 
 ### Coordinate Systems
 
-After importing, the global coordinate system appears – usually matching the one from Creo.
+After importing, the global coordinate system appears, usually matching the one from Creo.
 
 Additional local systems can be added via the context menu:
 
@@ -111,7 +111,7 @@ Additional local systems can be added via the context menu:
 * Flat face → at the center of mass  
 * Cylindrical face → on the axis, axially centered
 
-[![Koordinatensysteme bearbeiten](media/03_mechanical_kragbalken/koordinaten.png){width=350px}](media/03_mechanical_kragbalken/koordinaten.png "Koordinatensysteme bearbeiten"){.glightbox}  
+[![Koordinatensysteme bearbeiten](media/03_mechanical_kragbalken/koordinaten.en.png){width=350px}](media/03_mechanical_kragbalken/koordinaten.en.png "Koordinatensysteme bearbeiten"){.glightbox}  
 
 Created systems can be moved or rotated.
 
@@ -123,7 +123,7 @@ Created systems can be moved or rotated.
 
 Meshing divides the component into finite elements, which are connected via nodes.
 
-In design-related FEM workflows, extensive mesh optimization is rarely needed – modern computers handle coarse meshes well.  
+In design-related FEM workflows, extensive mesh optimization is rarely needed, modern computers handle coarse meshes well.  
 What matters is the **mesh-independent quality of results**, not the visual perfection of the mesh.
 
 This requires a **mesh sensitivity study**, typically done by:
@@ -142,7 +142,7 @@ The goal is a balanced trade-off between result quality and computation time.
 
 The global element size – the average edge length for all elements – is defined in the tree under *Mesh*.
 
-[![Globale Elementgröße festlegen](media/03_mechanical_kragbalken/globale_elementgröße.en.png){width=400px}](media/03_mechanical_kragbalken/globale_elementgröße.en.png "Globale Elementgröße festlegen"){.glightbox}  
+[![Setting global element size](media/03_mechanical_kragbalken/globale_elementgröße.en.png){width=400px}](media/03_mechanical_kragbalken/globale_elementgröße.en.png "Setting global element size"){.glightbox}  
 
 The entire model is meshed using this value.  
 **This can be inefficient** if the area of interest is small: a fine mesh everywhere increases computation time without added benefit.
@@ -160,10 +160,13 @@ Manual meshing is useful for simple models or early-stage studies.
 
 ### Contacts
 
-When importing assemblies, ANSYS automatically defines contact regions between parts – optionally, these can be manually adjusted.
+When importing assemblies, ANSYS automatically defines contact regions between parts. Optionally, these can be manually adjusted.
 
-[![Kontakttypen in ANSYS](media/03_mechanical_kragbalken/kontakte.png){width=500px}](media/03_mechanical_kragbalken/kontakte.png "Kontakttypen in ANSYS"){.glightbox}  
+[![Contact in ANSYS](media/03_mechanical_kragbalken/kontakte.en.png){width=500px}](media/03_mechanical_kragbalken/kontakte.en.png "Contacts in ANSYS"){.glightbox}  
 <span class="bildquelle">Bildquelle[@Gebhardt2018]</span>
+
+???+ danger "FIXME"
+    check table content  
 
 Contacts serve two purposes:
 
@@ -279,12 +282,12 @@ Hooke’s Law applies only in the **linear elastic range** of a material. This r
 
 The first diagram shows the behavior of a material **without a distinct yield point**. After the linear increase up to the proof stress, the curve gradually transitions into the plastic range. This is typical for many non-ferrous metals such as aluminum:
 
-[![Stress-strain curve without distinct yield point](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg "Stress-strain curve without distinct yield point"){.glightbox}  
+[![Stress-strain curve without distinct yield point](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.en.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.en.svg "Stress-strain curve without distinct yield point"){.glightbox}  
 <span class="bildquelle">Image source based on[@Wikipedia2023]</span>
 
 The second diagram shows the behavior of a material **with a distinct yield point**, as is typical for structural steel. The linear range ends abruptly, followed by a plateau with nearly constant stress, before the plastic increase begins:
 
-[![Stress-strain curve with distinct yield point](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg "Stress-strain curve with distinct yield point"){.glightbox}  
+[![Stress-strain curve with distinct yield point](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.en.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.en.svg "Stress-strain curve with distinct yield point"){.glightbox}  
 <span class="bildquelle">Image source based on[@Wikipedia2023]</span>
 
 For the calculation of the cantilever beam in this exercise, the load lies within the **elastic range**. Hooke’s Law is therefore sufficient.
@@ -305,6 +308,9 @@ Load the file [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) in
 
 #### 2. Material Definition  
 
+???+ danger "FIXME"
+    Material definition ist glaube ich nicht richtig übersetzt. Es muss Materialzuweisung heißen
+
 By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.
 
 ???+ danger "FIXME"
@@ -313,6 +319,9 @@ By default, ANSYS assigns structural steel as the material. Before further use, 
 #### 3. Meshing
 
 The part is divided into finite elements connected via nodes (**meshing**).  
+
+???+ danger "FIXME"
+    vgl. deutsche Version. Ergänze wie wird das Netz erstellt
 
 * Start with a **global automatic mesh**.  
 * Then vary the **element size** to study **mesh influence**.  

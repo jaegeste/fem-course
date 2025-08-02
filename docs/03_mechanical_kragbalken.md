@@ -293,22 +293,25 @@ Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im **el
 
 Laden Sie die Datei [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) in ANSYS Workbench.  
 
-???+ danger "FIXME"
-    Screenshot sinnvoll?
+[![Kragbalken, Geometrieimport](media/03_mechanical_kragbalken/01_Kragbalken_Geometrieimport.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Geometrieimport.png "Kragbalken, Geometrieimport"){.glightbox}  
 
-#### 2. Materialdefinition
+#### 2. Materialzuweisung
 
 Als Standardmaterial wird von ANSYS Baustahl zugewiesen. Vor der weiteren Verwendung sollten die jeweiligen Materialeigenschaften überprüft werden, um die Eignung für die geplante Anwendung sicherzustellen.
 
+[![Kragbalken, Materialdefinition](media/03_mechanical_kragbalken/01_Kragbalken_Materialdefinition.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Materialdefinition.png "Kragbalken, Materialdefinition"){.glightbox}  
+
 ???+ danger "FIXME"
-    Screenshot
+    Ich würde zwei Screenshots machen.  
+    auf einem sieht man die Materialzuweisung unter "Geometrie"  
+    auf dem anderen sieht man wie bisher "Materialien" aber Baustahl angeklickt
 
 
 #### 3. Netzgenerierung
 
 Für die Berechnung wird das Bauteil in finite Elemente unterteilt, die über Knoten miteinander verbunden sind. Dieser Vorgang heißt **Vernetzung**.  
 
-* Zunächst wird eine **globale automatische Vernetzung** erzeugt.  
+* Zunächst wird über Netz/Erstellen eine **globale automatische Vernetzung** erzeugt.  
   Dabei vergibt ANSYS eine Elementgröße, die für das gesamte Modell gilt.  
   Das Netz entsteht schnell und gleichmäßig, ist aber oft nicht optimal für lokale Details.  
 
@@ -324,8 +327,7 @@ Aus FEM-Sicht gilt:
 
 Diese einfache Netzeinflussstudie vermittelt den Grundgedanken, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der **Diskretisierung** abhängen.
 
-???+ danger "FIXME"
-    Screenshot
+[![Kragbalken, Netzdefinition](media/03_mechanical_kragbalken/01_Kragbalken_Netzgenerierung.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Netzgenerierung.png "Kragbalken, Netzdefinition"){.glightbox}  
 
 #### 4. Randbedingungen
 
@@ -350,8 +352,9 @@ Im Zusammenspiel von **verschiebungsgebundenen** und **kraftgebundenen** Randbed
 ???+ note "Hinweis zur Modellierung"
     Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.
   
-???+ danger "FIXME"
-    Screenshots?
+[![Kragbalken, Randbedingungen](media/03_mechanical_kragbalken/01_Kragbalken_Randbedingungen.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
+
+[![Kragbalken, Randbedingungen](media/03_mechanical_kragbalken/02_Kragbalken_Randbedingungen.png){width=600px}](media/03_mechanical_kragbalken/02_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
 
 
 #### 5. Auswertung
@@ -377,8 +380,9 @@ Auswertungsschritte in ANSYS:
 2. Darstellung der **von-Mises-Spannung** → Vergleich mit analytisch berechneter Spannung.  
 3. Beurteilung der **Spannungsverteilung** im Bauteil.  
 
-???+ danger "FIXME"
-    Screenshot
+[![Kragbalken, Lösungen](media/03_mechanical_kragbalken/01_Kragbalken_Lösung.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Lösung.png "Kragbalken, Lösungen"){.glightbox}  
+
+[![Kragbalken, Lösungen](media/03_mechanical_kragbalken/02_Kragbalken_Lösung.png){width=600px}](media/03_mechanical_kragbalken/02_Kragbalken_Lösung.png "Kragbalken, Lösungen"){.glightbox}  
 
 ---
 
