@@ -357,9 +357,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#task" class="md-nav__link">
+  <a href="#task-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Task
+      Task tensile load
     </span>
   </a>
   
@@ -427,9 +427,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-material-definition" class="md-nav__link">
+  <a href="#2-material-assignment" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Material Definition
+      2. Material Assignment
     </span>
   </a>
   
@@ -510,18 +510,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-on-bending-moment-instead-of-force" class="md-nav__link">
+  <a href="#task-bending" class="md-nav__link">
     <span class="md-ellipsis">
-      Add-on: Bending Moment Instead of Force
+      Task bending
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#variants-of-load-application" class="md-nav__link">
+  <a href="#add-on-bending-moment-instead-of-force" class="md-nav__link">
     <span class="md-ellipsis">
-      Variants of Load Application
+      Add-on: Bending Moment Instead of Force
     </span>
   </a>
   
@@ -533,6 +533,21 @@
       Further Notes
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Further Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variants-of-load-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variants of Load Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -659,9 +674,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#task" class="md-nav__link">
+  <a href="#task-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Task
+      Task tensile load
     </span>
   </a>
   
@@ -729,9 +744,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-material-definition" class="md-nav__link">
+  <a href="#2-material-assignment" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Material Definition
+      2. Material Assignment
     </span>
   </a>
   
@@ -812,18 +827,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-on-bending-moment-instead-of-force" class="md-nav__link">
+  <a href="#task-bending" class="md-nav__link">
     <span class="md-ellipsis">
-      Add-on: Bending Moment Instead of Force
+      Task bending
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#variants-of-load-application" class="md-nav__link">
+  <a href="#add-on-bending-moment-instead-of-force" class="md-nav__link">
     <span class="md-ellipsis">
-      Variants of Load Application
+      Add-on: Bending Moment Instead of Force
     </span>
   </a>
   
@@ -835,6 +850,21 @@
       Further Notes
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Further Notes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variants-of-load-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variants of Load Application
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -855,7 +885,7 @@
 
 
 <h1 id="beam-exercise">Beam Exercise<a class="headerlink" href="#beam-exercise" title="Permanent link">&para;</a></h1>
-<h2 id="task">Task<a class="headerlink" href="#task" title="Permanent link">&para;</a></h2>
+<h2 id="task-tensile-load">Task tensile load<a class="headerlink" href="#task-tensile-load" title="Permanent link">&para;</a></h2>
 <p>For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  </p>
 <ul>
 <li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
@@ -864,12 +894,8 @@
 <li>Material: Structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
 </ul>
 <p>Download the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> and import it into ANSYS Workbench.</p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>rename file  </p>
-</details>
 <p>Compare your result with the analytical solution and discuss any deviations.  </p>
-<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_zug.svg" title="Cantilever beam under tension"><img alt="Cantilever beam under tension" src="../../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
+<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_zug.svg" title="Cantilever beam, tensile load"><img alt="Cantilever beam, tensile load" src="../../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
 <hr />
 <h2 id="theoretical-background">Theoretical Background<a class="headerlink" href="#theoretical-background" title="Permanent link">&para;</a></h2>
 <h3 id="hookes-law">Hooke’s Law<a class="headerlink" href="#hookes-law" title="Permanent link">&para;</a></h3>
@@ -893,12 +919,9 @@
 \]</div>
 <hr />
 <h3 id="lateral-contraction">Lateral Contraction<a class="headerlink" href="#lateral-contraction" title="Permanent link">&para;</a></h3>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Insert a schematic figure showing the relationship between longitudinal strain and lateral contraction.</p>
-</details>
-<p>In addition to the strain in the loading direction, a lateral contraction occurs. It is described by the <strong>Poisson’s ratio</strong> (<span class="arithmatex">\(\nu\)</span>).<br />
-It defines the ratio of transverse strain to longitudinal strain:</p>
+<p>In addition to the strain in the loading direction, a lateral contraction occurs. It is described by the <strong>Poisson’s ratio</strong> (<span class="arithmatex">\(\nu\)</span>). It defines the ratio of transverse strain to longitudinal strain.</p>
+<p><a class="glightbox" href="../../media/03_kragbalken/querkontraktion.svg" title="lateral contraction"><img alt="lateral contraction" src="../../media/03_kragbalken/querkontraktion.svg" width="700" /></a><br />
+<span class="bildquelle">Bildquelle nach <sup id="fnref:Altenbach2016"><a class="footnote-ref" href="#fn:Altenbach2016">1</a></sup></span></p>
 <div class="arithmatex">\[
 \nu \;=\; - \frac{\varepsilon_q}{\varepsilon_l}
 \]</div>
@@ -926,27 +949,19 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p>Hooke’s Law applies only in the <strong>linear elastic range</strong> of a material. This range appears as a straight line in the stress-strain diagram.  </p>
 <p>The first diagram shows the behavior of a material <strong>without a distinct yield point</strong>. After the linear increase up to the proof stress, the curve gradually transitions into the plastic range. This is typical for many non-ferrous metals such as aluminum:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" title="Stress-strain curve without distinct yield point"><img alt="Stress-strain curve without distinct yield point" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" width="450" /></a><br />
-<span class="bildquelle">Image source based on<sup id="fnref:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">1</a></sup></span></p>
+<span class="bildquelle">Image source based on<sup id="fnref:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>The second diagram shows the behavior of a material <strong>with a distinct yield point</strong>, as is typical for structural steel. The linear range ends abruptly, followed by a plateau with nearly constant stress, before the plastic increase begins:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" title="Stress-strain curve with distinct yield point"><img alt="Stress-strain curve with distinct yield point" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" width="450" /></a><br />
-<span class="bildquelle">Image source based on<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">1</a></sup></span></p>
+<span class="bildquelle">Image source based on<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>For the calculation of the cantilever beam in this exercise, the load lies within the <strong>elastic range</strong>. Hooke’s Law is therefore sufficient.</p>
 <hr />
 <h2 id="implementation-in-ansys-mechanical">Implementation in ANSYS Mechanical<a class="headerlink" href="#implementation-in-ansys-mechanical" title="Permanent link">&para;</a></h2>
 <h3 id="1-geometry-import">1. Geometry Import<a class="headerlink" href="#1-geometry-import" title="Permanent link">&para;</a></h3>
 <p>Load the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> into ANSYS Workbench.  </p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>rename file  </p>
-</details>
 <p><a class="glightbox" href="../media/03_kragbalken/01_Kragbalken_Geometrieimport.png" title="Cantilever beam, geometry import"><img alt="Cantilever beam, geometry import" src="../media/03_kragbalken/01_Kragbalken_Geometrieimport.png" width="600px" /></a>  </p>
 <p>The dimensions of the bounding box provide a quick indication of whether the imported geometry is in the correct units.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png" title="Cantilever beam, bounding box"><img alt="Cantilever beam, bounding box" src="../media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png" width="600px" /></a>  </p>
-<h3 id="2-material-definition">2. Material Definition<a class="headerlink" href="#2-material-definition" title="Permanent link">&para;</a></h3>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Material definition ist glaube ich nicht richtig übersetzt. Es muss Materialzuweisung heißen</p>
-</details>
+<h3 id="2-material-assignment">2. Material Assignment<a class="headerlink" href="#2-material-assignment" title="Permanent link">&para;</a></h3>
 <p>By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.</p>
 <p>View under <em>Geometry:</em></p>
 <p><a class="glightbox" href="../media/03_kragbalken/03_Kragbalken_Materialdefinition.png" title="Cantilever beam, material definition"><img alt="Cantilever beam, material definition" src="../media/03_kragbalken/03_Kragbalken_Materialdefinition.png" width="600px" /></a>  </p>
@@ -972,16 +987,16 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <li>Mesh too fine → high accuracy, but significantly longer computation time.  </li>
 <li>The optimal mesh provides <strong>sufficiently accurate results</strong> without generating an unnecessary number of elements.  </li>
 </ul>
-<p>This simple mesh sensitivity study illustrates the basic idea that FEM results are not automatically exact, but depend on the <strong>discretization</strong>.</p>
+<p>This simple mesh sensitivity study shows that FEM results are not automatically exact, but depend on the <strong>discretization</strong>.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" title="Cantilever beam, mesh definition"><img alt="Cantilever beam, mesh definition" src="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" width="600px" /></a>  </p>
 <h3 id="4-boundary-conditions">4. Boundary Conditions<a class="headerlink" href="#4-boundary-conditions" title="Permanent link">&para;</a></h3>
-<p>Two boundary conditions are required:</p>
+<p>Considering the problem statement, two boundary conditions are obvious:</p>
 <ul>
 <li><strong>Fixed support</strong> at the left end  </li>
 <li><strong>Tensile force</strong> <span class="arithmatex">\( F \)</span> at the right face  </li>
 </ul>
 <p>The fixed support is modeled in ANSYS by blocking <strong>all degrees of freedom</strong> of the selected face. Concretely: translations in <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, and <span class="arithmatex">\(z\)</span> directions as well as rotations about all three axes are prevented. Physically, this represents the connection of the beam to a rigid environment.  </p>
-<p>The tensile force is applied at the right face. In ANSYS this is done either as a <strong>surface load (pressure)</strong> or as a <strong>total force</strong>, distributed evenly over the entire face. This ensures the load is not applied at a point (which would cause a singularity) but is realistically distributed.  </p>
+<p>The tensile force is applied at the right face. In ANSYS this is done as a <strong>total force</strong>, distributed evenly over the entire face. This ensures the load is not applied at a point (which would cause a singularity) but is realistically distributed.  </p>
 <p>From an FEM perspective:</p>
 <ul>
 <li>The fixed support creates a <strong>displacement boundary condition</strong>:<br />
@@ -992,14 +1007,18 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p>Together, the combination of <strong>displacement-controlled</strong> and <strong>force-controlled</strong> conditions forms a <strong>closed system of equations</strong> for the FEM solver.  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" title="Cantilever beam, boundary conditions"><img alt="Cantilever beam, boundary conditions" src="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" title="Cantilever beam, boundary conditions"><img alt="Cantilever beam, boundary conditions" src="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
+<details class="note" open="open">
+<summary>Modelling note</summary>
+<p>If the force is applied only to a small edge or a single node, unrealistically high local stresses (singularities) will occur. Therefore, always select a surface to distribute the load realistically.</p>
+</details>
 <h3 id="5-evaluation">5. Evaluation<a class="headerlink" href="#5-evaluation" title="Permanent link">&para;</a></h3>
 <p>Two results are examined in ANSYS:</p>
 <ul>
 <li><strong>Total deformation</strong>  </li>
 <li><strong>von Mises stress</strong></li>
 </ul>
-<p>The deformation shows the total displacement. ANSYS usually displays it in an exaggerated scale for visualization. The actual numerical values must be read from the results tables.  </p>
-<p>The von Mises stress is an equivalent stress combining normal and shear stresses:</p>
+<p>The deformation shows the total displacement of the component. In ANSYS, it is usually displayed in an exaggerated form so that the shape change is clearly visible. It is important to note that this is a <strong>scaling for visualization purposes</strong> — the actual values can be found in the results tables.  </p>
+<p>The von Mises stress is a reference value that combines the effects of all normal and shear stresses into a single “equivalent” stress:</p>
 <div class="arithmatex">\[
 \sigma_\text{vM} = \sqrt{\frac{1}{2} \left[(\sigma_x-\sigma_y)^2 + (\sigma_y-\sigma_z)^2 + (\sigma_z-\sigma_x)^2 \right] + 3(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2)}
 \]</div>
@@ -1022,6 +1041,12 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/13_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/13_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Record the results<br />
+Describe the images<br />
+Create a table comparing ANSYS and analytical results</p>
+</details>
 <details class="note">
 <summary>Calculation of Δl, Δa and σ</summary>
 <p>For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.</p>
@@ -1085,6 +1110,8 @@ In the FEM model with fixed support, this <strong>lateral contraction is locally
 This leads to <strong>edge stress peaks</strong> not predicted analytically.<br />
 → Explains deviations near the support.</p>
 <hr />
+<h2 id="task-bending">Task bending<a class="headerlink" href="#task-bending" title="Permanent link">&para;</a></h2>
+<hr />
 <h2 id="add-on-bending-moment-instead-of-force">Add-on: Bending Moment Instead of Force<a class="headerlink" href="#add-on-bending-moment-instead-of-force" title="Permanent link">&para;</a></h2>
 <p>As an alternative, a <strong>pure bending moment</strong> can be applied.<br />
 This results in a <strong>shear-free beam</strong> with a more uniform stress field.  </p>
@@ -1103,7 +1130,8 @@ This results in a <strong>shear-free beam</strong> with a more uniform stress fi
 <p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <hr />
-<h2 id="variants-of-load-application">Variants of Load Application<a class="headerlink" href="#variants-of-load-application" title="Permanent link">&para;</a></h2>
+<h2 id="further-notes">Further Notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
+<h3 id="variants-of-load-application">Variants of Load Application<a class="headerlink" href="#variants-of-load-application" title="Permanent link">&para;</a></h3>
 <p>In ANSYS Mechanical, various options are available for applying loads. The choice strongly influences the stress distribution and physical plausibility.</p>
 <ul>
 <li>
@@ -1141,8 +1169,6 @@ This results in a <strong>shear-free beam</strong> with a more uniform stress fi
 </li>
 </ul>
 <p>These options illustrate that the “same” load can yield very different results depending on how it is applied. Choosing the correct method is a key part of FEM modeling.</p>
-<hr />
-<h2 id="further-notes">Further Notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
 <details class="danger" open="open">
 <summary>FIXME</summary>
 <p>Add video?</p>
@@ -1150,8 +1176,11 @@ This results in a <strong>shear-free beam</strong> with a more uniform stress fi
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:Altenbach2016">
+<p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:Wikipedia2023">
-<p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
