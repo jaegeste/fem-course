@@ -1,6 +1,6 @@
 # Übung Kragbalken
 
-## Aufgabenstellung
+## Aufgabenstellung Zugbelastung
 
 Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  
 
@@ -47,11 +47,10 @@ Die **Längenänderung** ergibt sich zu:
 
 ### Querkontraktion
 
-???+ danger "FIXME"
-    Hier noch eine Abbildung einfügen, die den Zusammenhang von Längsdehnung und Querkontraktion schematisch darstellt.
+Neben der Dehnung in Belastungsrichtung tritt eine Querkontraktion auf. Sie wird durch die **Querkontraktionszahl** (Poissonzahl) \(\nu\) beschrieben. Sie definiert das Verhältnis von Querdehnung zur Längsdehnung.
 
-Neben der Dehnung in Belastungsrichtung tritt eine Querkontraktion auf. Sie wird durch die **Querkontraktionszahl** (Poissonzahl) \(\nu\) beschrieben.  
-Sie definiert das Verhältnis von Querdehnung zur Längsdehnung:
+[![Querkontraktion](media/03_kragbalken/querkontraktion.svg){width=700}](media/03_kragbalken/querkontraktion.svg "Querkontraktion"){.glightbox}  
+<span class="bildquelle">Bildquelle nach [@Altenbach2016]</span>
 
 \[
 \nu \;=\; - \frac{\varepsilon_q}{\varepsilon_l}
@@ -141,20 +140,20 @@ Aus FEM-Sicht gilt:
 * Zu feines Netz → hohe Genauigkeit, aber deutlich längere Rechenzeit.  
 * Optimal ist ein Netz, das **ausreichend genaue Ergebnisse** liefert, ohne unnötig viele Elemente zu erzeugen.  
 
-Diese einfache Netzeinflussstudie vermittelt den Grundgedanken, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der **Diskretisierung** abhängen.
+Diese einfache Netzeinflussstudie zeigt, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der **Diskretisierung** abhängen.
 
 [![Kragbalken, Netzdefinition](media/03_kragbalken/05_Kragbalken_Netzgenerierung.png){width=600px}](media/03_kragbalken/05_Kragbalken_Netzgenerierung.png "Kragbalken, Netzdefinition"){.glightbox}  
 
 ### 4. Randbedingungen
 
-Für die Berechnung werden zwei Randbedingungen benötigt:
+Betrachtet man die Aufgabenstellung sind zwei Randbedingungen naheliegend:
 
 * **Feste Einspannung** am linken Ende  
 * **Zugkraft** \( F \) an der rechten Stirnfläche  
 
 Die feste Einspannung wird in ANSYS umgesetzt, indem **alle Freiheitsgrade** der ausgewählten Fläche blockiert werden. Das bedeutet konkret: Translationen in \(x\)-, \(y\)- und \(z\)-Richtung sowie Rotationen um alle drei Achsen sind dort nicht mehr möglich. Im physikalischen Sinn wird so die Verbindung des Balkens mit einer starren Umgebung modelliert.
 
-Die Zugkraft wird an der rechten Stirnfläche aufgebracht. In ANSYS erfolgt dies über die Angabe einer **Flächenlast (Druck)** oder einer **Gesamtkraft (Kraft)**, die sich über die gesamte Fläche verteilt. Damit wird sichergestellt, dass die Kraft nicht punktförmig wirkt (was numerisch eine Singularität erzeugen würde), sondern gleichmäßig eingeleitet wird.
+Die Zugkraft wird an der rechten Stirnfläche aufgebracht. In ANSYS erfolgt dies über die Angabe einer **Gesamtkraft (Kraft)**, die sich über die gesamte Fläche verteilt. Damit wird sichergestellt, dass die Kraft nicht punktförmig wirkt (was numerisch eine Singularität erzeugen würde), sondern gleichmäßig eingeleitet wird.
 
 Aus FEM-Sicht geschieht Folgendes:
 
@@ -165,12 +164,12 @@ Aus FEM-Sicht geschieht Folgendes:
 
 Im Zusammenspiel von **verschiebungsgebundenen** und **kraftgebundenen** Randbedingungen entsteht ein **geschlossenes Gleichungssystem**, das im FEM‑Solver gelöst wird.
 
-???+ note "Hinweis zur Modellierung"
-    Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.
-  
 [![Kragbalken, Randbedingungen](media/03_kragbalken/06_Kragbalken_Randbedingungen.png){width=600px}](media/03_kragbalken/06_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
 
 [![Kragbalken, Randbedingungen](media/03_kragbalken/07_Kragbalken_Randbedingungen.png){width=600px}](media/03_kragbalken/07_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
+
+???+ note "Hinweis zur Modellierung"
+    Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.
 
 ### 5. Auswertung
 
@@ -218,6 +217,11 @@ Ergebnisse aus ANSYS:
 [![Kragbalken, Lösungen](media/03_kragbalken/13_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 [![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+???+ danger "FIXME"
+    Ergebnisse aufschreiben
+    Bilder beschreiben
+    Tabelle Gegenüberstellung Ergebnisse ANSYS Analytisch
 
 ??? note "Berechnung von Δl, Δa und σ"
     Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
@@ -305,6 +309,10 @@ Dadurch entstehen **Randspannungsspitzen**, die analytisch nicht vorhergesagt we
 
 ---
 
+## Aufgabenstellung Biegung
+
+---
+
 ## Add-on: Biegemoment statt Kraft
 
 Als Alternative kann ein **reines Biegemoment** angesetzt werden.  
@@ -325,7 +333,9 @@ Dies führt zu einem **querkraftfreien Balken** mit gleichmäßigerem Spannungsf
 
 ---
 
-## Varianten der Krafteinleitung
+## Weiterführende Hinweise
+
+### Varianten der Krafteinleitung
 
 In ANSYS Mechanical stehen verschiedene Möglichkeiten zur Verfügung, eine äußere Belastung aufzubringen. Die Auswahl beeinflusst maßgeblich die Spannungsverteilung und die physikalische Plausibilität.
 
@@ -357,9 +367,13 @@ In ANSYS Mechanical stehen verschiedene Möglichkeiten zur Verfügung, eine äu�
 
 Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt und Typ sehr unterschiedliche Ergebnisse liefern kann. Die Entscheidung, wie eine Last angesetzt wird, gehört deshalb zu den wesentlichen Modellierungsaufgaben im FEM.
 
----
-
-## Weiterführende Hinweise
-
 ???+ danger "FIXME"
     Video hinzu?
+
+<iframe style="width:100%; aspect-ratio:16/9;"
+    src="https://www.youtube.com/embed/830iwn_xYlA"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
