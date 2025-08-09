@@ -557,9 +557,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-materialdefinition" class="md-nav__link">
+  <a href="#2-materialzuweisung" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Materialdefinition
+      2. Materialzuweisung
     </span>
   </a>
   
@@ -994,9 +994,9 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-materialdefinition" class="md-nav__link">
+  <a href="#2-materialzuweisung" class="md-nav__link">
     <span class="md-ellipsis">
-      2. Materialdefinition
+      2. Materialzuweisung
     </span>
   </a>
   
@@ -1355,21 +1355,21 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <h3 id="umsetzung-in-ansys-mechanical">Umsetzung in ANSYS Mechanical<a class="headerlink" href="#umsetzung-in-ansys-mechanical" title="Permanent link">&para;</a></h3>
 <h4 id="1-geometrieimport">1. Geometrieimport<a class="headerlink" href="#1-geometrieimport" title="Permanent link">&para;</a></h4>
 <p>Laden Sie die Datei <a href="../media/03_mechanical_kragbalken/kragbalken.stp">kragbalken.stp</a> in ANSYS Workbench.  </p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Screenshot sinnvoll?</p>
-</details>
-<h4 id="2-materialdefinition">2. Materialdefinition<a class="headerlink" href="#2-materialdefinition" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/01_Kragbalken_Geometrieimport.png" title="Kragbalken, Geometrieimport"><img alt="Kragbalken, Geometrieimport" src="../media/03_mechanical_kragbalken/01_Kragbalken_Geometrieimport.png" width="600px" /></a>  </p>
+<h4 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h4>
 <p>Als Standardmaterial wird von ANSYS Baustahl zugewiesen. Vor der weiteren Verwendung sollten die jeweiligen Materialeigenschaften überprüft werden, um die Eignung für die geplante Anwendung sicherzustellen.</p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/01_Kragbalken_Materialdefinition.png" title="Kragbalken, Materialdefinition"><img alt="Kragbalken, Materialdefinition" src="../media/03_mechanical_kragbalken/01_Kragbalken_Materialdefinition.png" width="600px" /></a>  </p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
-<p>Screenshot</p>
+<p>Ich würde zwei Screenshots machen.<br />
+auf einem sieht man die Materialzuweisung unter "Geometrie"<br />
+auf dem anderen sieht man wie bisher "Materialien" aber Baustahl angeklickt</p>
 </details>
 <h4 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h4>
 <p>Für die Berechnung wird das Bauteil in finite Elemente unterteilt, die über Knoten miteinander verbunden sind. Dieser Vorgang heißt <strong>Vernetzung</strong>.  </p>
 <ul>
 <li>
-<p>Zunächst wird eine <strong>globale automatische Vernetzung</strong> erzeugt.<br />
+<p>Zunächst wird über Netz/Erstellen eine <strong>globale automatische Vernetzung</strong> erzeugt.<br />
   Dabei vergibt ANSYS eine Elementgröße, die für das gesamte Modell gilt.<br />
   Das Netz entsteht schnell und gleichmäßig, ist aber oft nicht optimal für lokale Details.  </p>
 </li>
@@ -1386,10 +1386,7 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <li>Optimal ist ein Netz, das <strong>ausreichend genaue Ergebnisse</strong> liefert, ohne unnötig viele Elemente zu erzeugen.  </li>
 </ul>
 <p>Diese einfache Netzeinflussstudie vermittelt den Grundgedanken, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der <strong>Diskretisierung</strong> abhängen.</p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Screenshot</p>
-</details>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/01_Kragbalken_Netzgenerierung.png" title="Kragbalken, Netzdefinition"><img alt="Kragbalken, Netzdefinition" src="../media/03_mechanical_kragbalken/01_Kragbalken_Netzgenerierung.png" width="600px" /></a>  </p>
 <h4 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h4>
 <p>Für die Berechnung werden zwei Randbedingungen benötigt:</p>
 <ul>
@@ -1410,10 +1407,8 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <summary>Hinweis zur Modellierung</summary>
 <p>Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.</p>
 </details>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Screenshots?</p>
-</details>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/01_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_mechanical_kragbalken/01_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/02_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_mechanical_kragbalken/02_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
 <h4 id="5-auswertung">5. Auswertung<a class="headerlink" href="#5-auswertung" title="Permanent link">&para;</a></h4>
 <p>Für die erste Auswertung in ANSYS werden zwei Ergebnisse betrachtet:</p>
 <ul>
@@ -1432,10 +1427,8 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <li>Darstellung der <strong>von-Mises-Spannung</strong> → Vergleich mit analytisch berechneter Spannung.  </li>
 <li>Beurteilung der <strong>Spannungsverteilung</strong> im Bauteil.  </li>
 </ol>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Screenshot</p>
-</details>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/01_Kragbalken_L%C3%B6sung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_mechanical_kragbalken/01_Kragbalken_L%C3%B6sung.png" width="600px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/02_Kragbalken_L%C3%B6sung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_mechanical_kragbalken/02_Kragbalken_L%C3%B6sung.png" width="600px" /></a>  </p>
 <hr />
 <h3 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h3>
 <h4 id="vergleich-mit-analytischer-losung">Vergleich mit analytischer Lösung<a class="headerlink" href="#vergleich-mit-analytischer-losung" title="Permanent link">&para;</a></h4>

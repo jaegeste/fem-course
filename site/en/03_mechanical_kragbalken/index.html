@@ -1138,7 +1138,7 @@
 <p>The <strong>Mechanical Application (ANSYS Mechanical)</strong> is the central FEM tool. It is used to assign physical properties, generate meshes, run simulations, and visualize results. A single Mechanical window can contain multiple analysis branches with different load cases. The structure is defined via the project manager. Double-clicking <em>Model</em> opens the Mechanical Application.</p>
 <hr />
 <h3 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="../../media/03_mechanical_kragbalken/mechanical_ui.png" title="Mechanical-Applikation in ANSYS"><img alt="Mechanical-Applikation in ANSYS" src="../../media/03_mechanical_kragbalken/mechanical_ui.png" width="700px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/mechanical_ui.png" title="Mechanical-Applikation in ANSYS"><img alt="Mechanical-Applikation in ANSYS" src="../media/03_mechanical_kragbalken/mechanical_ui.png" width="700px" /></a>  </p>
 <p>Key elements of the interface:</p>
 <ul>
 <li><strong>Left</strong>: Tree structure with all analysis components  </li>
@@ -1166,7 +1166,7 @@
 <li>Red: Invalid (e.g., after model change without recalculation)</li>
 </ul>
 <h3 id="view-controls">View controls<a class="headerlink" href="#view-controls" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="../../media/03_mechanical_kragbalken/ansichtsteuerung.png" title="Steuerung der Ansichten"><img alt="Steuerung der Ansichten" src="../../media/03_mechanical_kragbalken/ansichtsteuerung.png" width="500px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/ansichtssteuerung.png" title="Steuerung der Ansichten"><img alt="Steuerung der Ansichten" src="../media/03_mechanical_kragbalken/ansichtssteuerung.png" width="500px" /></a>  </p>
 <p>Typical functions:</p>
 <ul>
 <li>Rotate, pan, zoom  </li>
@@ -1205,7 +1205,7 @@ In assemblies, surfaces are color-coded according to their part assignment.</p>
 </ul>
 <hr />
 <h3 id="coordinate-systems">Coordinate Systems<a class="headerlink" href="#coordinate-systems" title="Permanent link">&para;</a></h3>
-<p>After importing, the global coordinate system appears – usually matching the one from Creo.</p>
+<p>After importing, the global coordinate system appears, usually matching the one from Creo.</p>
 <p>Additional local systems can be added via the context menu:</p>
 <ul>
 <li>Select geometry  </li>
@@ -1219,13 +1219,13 @@ In assemblies, surfaces are color-coded according to their part assignment.</p>
 <li>Flat face → at the center of mass  </li>
 <li>Cylindrical face → on the axis, axially centered</li>
 </ul>
-<p><a class="glightbox" href="../../media/03_mechanical_kragbalken/koordinaten.png" title="Koordinatensysteme bearbeiten"><img alt="Koordinatensysteme bearbeiten" src="../../media/03_mechanical_kragbalken/koordinaten.png" width="350px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/koordinaten.png" title="Koordinatensysteme bearbeiten"><img alt="Koordinatensysteme bearbeiten" src="../media/03_mechanical_kragbalken/koordinaten.png" width="350px" /></a>  </p>
 <p>Created systems can be moved or rotated.</p>
 <hr />
 <h3 id="meshing">Meshing<a class="headerlink" href="#meshing" title="Permanent link">&para;</a></h3>
 <h4 id="basics-of-meshing">Basics of meshing<a class="headerlink" href="#basics-of-meshing" title="Permanent link">&para;</a></h4>
 <p>Meshing divides the component into finite elements, which are connected via nodes.</p>
-<p>In design-related FEM workflows, extensive mesh optimization is rarely needed – modern computers handle coarse meshes well.<br />
+<p>In design-related FEM workflows, extensive mesh optimization is rarely needed, modern computers handle coarse meshes well.<br />
 What matters is the <strong>mesh-independent quality of results</strong>, not the visual perfection of the mesh.</p>
 <p>This requires a <strong>mesh sensitivity study</strong>, typically done by:</p>
 <ul>
@@ -1241,7 +1241,7 @@ What matters is the <strong>mesh-independent quality of results</strong>, not th
 Manual meshing is the most direct way to control element size.</p>
 </div>
 <p>The global element size – the average edge length for all elements – is defined in the tree under <em>Mesh</em>.</p>
-<p><a class="glightbox" href="../media/03_mechanical_kragbalken/globale_elementgr%C3%B6%C3%9Fe.png" title="Globale Elementgröße festlegen"><img alt="Globale Elementgröße festlegen" src="../media/03_mechanical_kragbalken/globale_elementgr%C3%B6%C3%9Fe.png" width="400px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/globale_elementgr%C3%B6%C3%9Fe.png" title="Setting global element size"><img alt="Setting global element size" src="../media/03_mechanical_kragbalken/globale_elementgr%C3%B6%C3%9Fe.png" width="400px" /></a>  </p>
 <p>The entire model is meshed using this value.<br />
 <strong>This can be inefficient</strong> if the area of interest is small: a fine mesh everywhere increases computation time without added benefit.</p>
 <p>Instead, <strong>local refinement</strong> is often preferable:</p>
@@ -1254,9 +1254,13 @@ Manual meshing is the most direct way to control element size.</p>
 <p>Manual meshing is useful for simple models or early-stage studies.</p>
 <hr />
 <h3 id="contacts">Contacts<a class="headerlink" href="#contacts" title="Permanent link">&para;</a></h3>
-<p>When importing assemblies, ANSYS automatically defines contact regions between parts – optionally, these can be manually adjusted.</p>
-<p><a class="glightbox" href="../../media/03_mechanical_kragbalken/kontakte.png" title="Kontakttypen in ANSYS"><img alt="Kontakttypen in ANSYS" src="../../media/03_mechanical_kragbalken/kontakte.png" width="500px" /></a><br />
+<p>When importing assemblies, ANSYS automatically defines contact regions between parts. Optionally, these can be manually adjusted.</p>
+<p><a class="glightbox" href="../media/03_mechanical_kragbalken/kontakte.png" title="Contacts in ANSYS"><img alt="Contact in ANSYS" src="../media/03_mechanical_kragbalken/kontakte.png" width="500px" /></a><br />
 <span class="bildquelle">Bildquelle<sup id="fnref:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>check table content  </p>
+</details>
 <p>Contacts serve two purposes:</p>
 <ol>
 <li><strong>Transfer of forces</strong>  </li>
@@ -1368,6 +1372,10 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p>Screenshot?</p>
 </details>
 <h4 id="2-material-definition">2. Material Definition<a class="headerlink" href="#2-material-definition" title="Permanent link">&para;</a></h4>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Material definition ist glaube ich nicht richtig übersetzt. Es muss Materialzuweisung heißen</p>
+</details>
 <p>By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.</p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
@@ -1375,6 +1383,10 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 </details>
 <h4 id="3-meshing">3. Meshing<a class="headerlink" href="#3-meshing" title="Permanent link">&para;</a></h4>
 <p>The part is divided into finite elements connected via nodes (<strong>meshing</strong>).  </p>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>vgl. deutsche Version. Ergänze wie wird das Netz erstellt</p>
+</details>
 <ul>
 <li>Start with a <strong>global automatic mesh</strong>.  </li>
 <li>Then vary the <strong>element size</strong> to study <strong>mesh influence</strong>.  </li>

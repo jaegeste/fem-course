@@ -2,9 +2,6 @@
 
 Diese Anleitung beschreibt die Installation von ANSYS 2024R1 auf einem privaten Windows-Rechner.
 
-???+ danger "FIXME"
-    - auf aktuelle Version anpassen!
-
 ---
 
 ## Installation von ANSYS  
@@ -20,7 +17,8 @@ Diese Anleitung gilt für folgende Voraussetzungen:
 ---
 
 ### VPN
-Um ANSYS nutzen zu können, muss eine Verbindung zum Lizenzserver der HFU hergestellt werden. Das wird _außerhalb_ der Hochschule nur mit einer aktiven VPN-Verbindung erreicht. Innerhalb des Hochschulnetzwerks ist kein VPN erforderlich. 
+
+Um ANSYS nutzen zu können, muss eine Verbindung zum Lizenzserver der HFU hergestellt werden. Das wird _außerhalb_ der Hochschule nur mit einer aktiven VPN-Verbindung erreicht. Innerhalb des Hochschulnetzwerks ist kein VPN erforderlich.  
 
 * Anleitung zur VPN-Installation: [https://howto.hs-furtwangen.de/vpn](https://howto.hs-furtwangen.de/vpn)  
 * Bei Problemen: [it-support@hs-furtwangen.de](mailto:it-support@hs-furtwangen.de)
@@ -42,87 +40,87 @@ Folgende Dateien müssen heruntergeladen werden (VPN nicht erforderlich):
 
 ### Schritt 2: Entpacken und Installation von ANSYS
 
-*1.* **VPN-Verbindung aktivieren.**  
-*2.* `STRUCTURES_2024R1_WINX64.zip` entpacken. `setup.exe` **als Administrator** ausführen (Rechtsklick → Als Administrator ausführen).  
-*3.* Folgen Sie dem Installationsprozess wie in den folgenden Abbildungen angegeben. Die Einstellungen müssen z.T. angepasst werden, ändern Sie bitte keine Dateipfade  
-*4.* „Installation ANSYS Produkte“ auswählen:    
+_1._ **VPN-Verbindung aktivieren.**  
+_2._ `STRUCTURES_2024R1_WINX64.zip` entpacken. `setup.exe` **als Administrator** ausführen (Rechtsklick → Als Administrator ausführen).  
+_3._ Folgen Sie dem Installationsprozess wie in den folgenden Abbildungen angegeben. Die Einstellungen müssen z.T. angepasst werden, ändern Sie bitte keine Dateipfade  
+_4._ „Installation ANSYS Produkte“ auswählen:  
 
 [![Installationsstart](media/02_Installation_ansys/02_01.png){width=600px}](media/02_Installation_ansys/02_01.png "Installationsstart"){.glightbox}  
 
-*5.* Einstellungen übernehmen:
+_5._ Einstellungen übernehmen:
 
 [![EULA](media/02_Installation_ansys/02_02.png){width=600px}](media/02_Installation_ansys/02_02.png "EULA"){.glightbox}  
 
-*6.* Einstellungen übernehmen, keine Dateipfade ändern:  
+_6._ Einstellungen übernehmen, keine Dateipfade ändern:  
 
 [![Einstellungen Pfade](media/02_Installation_ansys/02_03.png){width=600px}](media/02_Installation_ansys/02_03.png "Einstellungen Pfade"){.glightbox}  
 
-*7.* Lizenzserver eintragen: `10.10.13.101`, VPN-Verbindung erforderlich.  
+_7._ Lizenzserver eintragen: `10.10.13.101`, VPN-Verbindung erforderlich.  
 
 [![Lizenzserver](media/02_Installation_ansys/02_04.png){width=600px}](media/02_Installation_ansys/02_04.png "Lizenzserver"){.glightbox}  
 
-*8.* Nur **Geometry Interfaces** und **Mechanical Products** auswählen:  
+_8._ Nur **Geometry Interfaces** und **Mechanical Products** auswählen:  
 
 [![Komponenten](media/02_Installation_ansys/02_05.png){width=600px}](media/02_Installation_ansys/02_05.png "Komponenten"){.glightbox}  
 
-*9.* Weiter:  
+_9._ Weiter:  
 
 [![CAD-Schnittstellen](media/02_Installation_ansys/02_06.png){width=600px}](media/02_Installation_ansys/02_06.png "CAD-Schnittstellen"){.glightbox}  
 
-*10.* Weiter (je nach System andere Inhalte):  
+_10._ Weiter (je nach System andere Inhalte):  
 
 [![CAD-Schnittstellen Konfiguration](media/02_Installation_ansys/02_07.png){width=600px}](media/02_Installation_ansys/02_07.png "CAD-Schnittstellen Konfiguration"){.glightbox}  
 
-*11.* Weiter (je nach System andere Inhalte):  
+_11._ Weiter (je nach System andere Inhalte):  
 
 [![Einstellungen prüfen](media/02_Installation_ansys/02_08.png){width=600px}](media/02_Installation_ansys/02_08.png "Einstellungen prüfen"){.glightbox}  
 
-*12.* Installation fertig:  
+_12._ Installation fertig:  
 
 [![Installation](media/02_Installation_ansys/02_09.png){width=600px}](media/02_Installation_ansys/02_09.png "Installation"){.glightbox}  
 
-*13.* Installation abgeschlossen (je nach System andere Inhalte):  
+_13._ Installation abgeschlossen (je nach System andere Inhalte):  
 
 [![Fertigstellung](media/02_Installation_ansys/02_10.png){width=600px}](media/02_Installation_ansys/02_10.png "Fertigstellung"){.glightbox}  
 
-*14.* Um ANSYS nutzen zu können, muss eine Verbindung zum Lizenzserver der HFU hergestellt werden. Das wird außerhalb der Hochschule nur mit einer aktiven VPN-Verbindung erreicht. Innerhalb des Hochschulnetzwerks ist kein VPN erforderlich.  
-*15.* Weiter mit dem Service-Update.  
+_14._ Um ANSYS nutzen zu können, muss eine Verbindung zum Lizenzserver der HFU hergestellt werden. Das wird außerhalb der Hochschule nur mit einer aktiven VPN-Verbindung erreicht. Innerhalb des Hochschulnetzwerks ist kein VPN erforderlich.  
+_15._ Weiter mit dem Service-Update.  
 
 ---
 
 ### Schritt 3: Installation des Service-Updates
 
-*1*. `ANSYS_2024R1.04_WINX64.zip` entpacken.  
-*2.* `setup.exe` **als Administrator** starten.  
-*3.* „Installation ANSYS Produkte“ wählen:  
+_1._ `ANSYS_2024R1.04_WINX64.zip` entpacken.  
+_2._ `setup.exe` **als Administrator** starten.  
+_3._ „Installation ANSYS Produkte“ wählen:  
 
 [![Serviceupdate](media/02_Installation_ansys/02_11.png){width=600px}](media/02_Installation_ansys/02_11.png "Serviceupdate"){.glightbox}  
 
-*4*. Einstellungen übernehmen:
+_4._ Einstellungen übernehmen:
 
 [![EULA](media/02_Installation_ansys/02_12.png){width=600px}](media/02_Installation_ansys/02_12.png "EULA"){.glightbox}  
 
-*5.* Weiter, keine Dateipfade ändern:
+_5._ Weiter, keine Dateipfade ändern:
 
 [![Einstellungen Pfade](media/02_Installation_ansys/02_13.png){width=600px}](media/02_Installation_ansys/02_13.png "Einstellungen Pfade"){.glightbox}  
 
-*6.* Einstellungen übernehmen und weiter:
+_6._ Einstellungen übernehmen und weiter:
 
 [![Auswahl Komponenten](media/02_Installation_ansys/02_14.png){width=600px}](media/02_Installation_ansys/02_14.png "Auswahl Komponenten"){.glightbox}  
 
-*7.* Weiter:
+_7._ Weiter:
 
-[![Einstellungen prüfen](media/02_Installation_ansys/02_15.png){width=600px}](media/02_Installation_ansys/02_15.png "Einstellungen prüfen"){.glightbox} 
+[![Einstellungen prüfen](media/02_Installation_ansys/02_15.png){width=600px}](media/02_Installation_ansys/02_15.png "Einstellungen prüfen"){.glightbox}  
 
-*8.* Installation abgeschlossen:
+_8._ Installation abgeschlossen:
 
-[![Installation Service](media/02_Installation_ansys/02_16.png){width=600px}](media/02_Installation_ansys/02_16.png "Installation Service"){.glightbox} 
+[![Installation Service](media/02_Installation_ansys/02_16.png){width=600px}](media/02_Installation_ansys/02_16.png "Installation Service"){.glightbox}  
 
-*9.* Fertig:
+_9._ Fertig:
 
-[![Fertigstellung](media/02_Installation_ansys/02_17.png){width=600px}](media/02_Installation_ansys/02_17.png "Fertigstellung"){.glightbox} 
+[![Fertigstellung](media/02_Installation_ansys/02_17.png){width=600px}](media/02_Installation_ansys/02_17.png "Fertigstellung"){.glightbox}  
 
-*10.* ZIP-Datei und entpackte Daten können gelöscht werden.
+_10._ ZIP-Datei und entpackte Daten können gelöscht werden.  
 
 ---
 
@@ -140,16 +138,15 @@ Folgende Dateien müssen heruntergeladen werden (VPN nicht erforderlich):
     - Ergänzen Sie in der Datei `hosts` ganz am Ende die Zeile: `10.10.13.101 Flex`  
     - Speichern und fertig. Falls das Speichern Probleme macht, müssen Sie die Datei evtl. erst auf den Desktop o. ä. kopieren. Und beachten Sie, dass der Dateityp sich nicht ändert.
 
-
 ---
 
 ### Kopplung von ANSYS mit Creo
 
 Eine direkte bidirektionale Kopplung zwischen ANSYS und PTC Creo ist möglich.
 
-*1.* Creo und die HFU-CAD-Umgebung gemäß Anleitung installieren.  
-*2.* Über den **ANSYS CAD Configuration Manager** die Workbench-assoziative Schnittstelle einrichten.  
-*3.* Einrichtung **als Administrator** ausführen.  
+_1._ Creo und die HFU-CAD-Umgebung gemäß Anleitung installieren.  
+_2._ Über den **ANSYS CAD Configuration Manager** die Workbench-assoziative Schnittstelle einrichten.  
+_3._ Einrichtung **als Administrator** ausführen.  
 
 ---
 
@@ -249,3 +246,184 @@ Oben links kann eine Datenquelle ausgewählt werden (siehe folgende Abbildung). 
 
 Zu beachten ist, dass die Datenbank im Wesentlichen auf US-amerikanischen Normen basiert.
 
+## ANSYS Mechanical
+
+In ANSYS Workbench werden unter dem Begriff _Modell_ sämtliche Definitionen zusammengefasst, die zwischen Geometrie und Lastfallbeschreibung liegen. Dazu gehören:
+
+* Materialeigenschaften und Zusatzmassen,
+* Hilfsgeometrien für Randbedingungen und Auswertungen,
+* virtuelle Topologien zur Vernetzungssteuerung,
+* Koordinatensysteme und Kontakte,
+* Netzdefinitionen sowie
+* Kombinationen mehrerer Lastfälle.
+
+Die **Mechanical-Applikation (ANSYS Mechanical)** dient dabei als zentrales FEM-Werkzeug. Hier werden physikalische Eigenschaften zugewiesen, Netze generiert, Berechnungen gestartet und Ergebnisse visualisiert. Ein Mechanical-Fenster kann mehrere Berechnungszweige mit unterschiedlichen Lastfällen enthalten. Der Aufbau dieser Struktur wird durch den Projektmanager festgelegt.  
+Ein Doppelklick auf _Modell_ öffnet die Mechanical-Applikation.
+
+---
+
+### Benutzeroberfläche
+
+[![Mechanical-Applikation in ANSYS](media/03_mechanical_kragbalken/mechanical_ui.png){width=700px}](media/03_mechanical_kragbalken/mechanical_ui.png "Mechanical-Applikation in ANSYS"){.glightbox}  
+
+Typische Elemente der Oberfläche:
+
+* **Links**: Strukturbaum mit Analyseobjekten  
+* **Darunter**: Detailfenster für das aktuell markierte Element  
+* **Oben**: Menü, Darstellungstools, Selektionseinstellungen  
+* **Über der Geometrieanzeige**: kontextsensitive Befehle
+
+### Statusanzeigen im Strukturbaum
+
+* Grüner Haken: Eingabe vollständig  
+* Blaues Fragezeichen: Eingabe fehlt  
+* Graues X: Element unterdrückt  
+* Rotes Ausrufezeichen: Unstimmigkeit  
+* Gelber Blitz: Bereit zur Berechnung  
+* Grüner Blitz: Berechnung läuft  
+* Roter Blitz: Berechnung abgebrochen  
+* Grüner Pfeil: Ausgelagerte Berechnung kann geladen werden  
+* Roter Pfeil: Ausgelagerte, abgebrochene Berechnung  
+
+### Farben im Detailfenster
+
+* Gelb: Eingabe unvollständig  
+* Weiß: Eingabe erlaubt  
+* Grau: Nur Anzeige (nicht änderbar)  
+* Rot: Ungültig, z. B. nach Änderung ohne Neuberechnung
+
+### Steuerung der Ansicht
+
+[![Steuerung der Ansichten](media/03_mechanical_kragbalken/ansichtsteuerung.png){width=500px}](media/03_mechanical_kragbalken/ansichtsteuerung.png "Steuerung der Ansichten"){.glightbox}  
+
+Typische Funktionen:
+
+* Rotieren, Verschieben, Zoomen  
+* In Rahmen oder Fenster einpassen  
+* Vorige/Nächste Ansicht  
+* ISO-Ansichten, Draufsicht  
+* Ansicht speichern oder verwalten
+
+### Selektionsmöglichkeiten
+
+Die Selektion erfolgt über Mausaktionen.
+
+* Auswahltyp über Icons festlegen: Punkt, Kante, Fläche, Körper  
+* Mouseover hebt Geometrien optisch hervor  
+* Mit Klick selektieren; mit `STRG` Mehrfachauswahl  
+* Entfernen durch erneuten Klick bei gedrückter `STRG`-Taste  
+* **Fortlaufende Selektion**: gedrückte Maustaste → Flächen überfahren  
+* **Auswahl erweitern**: tangential angrenzende Flächen hinzufügen  
+* Tangentenwinkel (Standard: 20°) in den Einstellungen einstellbar  
+* Doppelte Anwendung der Funktion erweitert tangential erneut  
+* **Angrenzend/Alle**: selektiert alle tangential verbundenen Flächen bis zur nächsten scharfen Kante
+
+[![Selektionsfunktionen](media/03_mechanical_kragbalken/selektion.png){width=600px}](media/03_mechanical_kragbalken/selektion.png "Selektionsfunktionen"){.glightbox}  
+
+**Verdeckte Objekte selektieren:**
+
+Beim Klick auf überlagerte Geometrie erscheint ein Auswahlfenster im 3D-Viewer. Mit der Maus kann eine der überlagerten Flächen gezielt ausgewählt werden.  
+Bei Baugruppen sind die Flächen farblich entsprechend ihrer Bauteilzugehörigkeit gekennzeichnet.
+
+---
+
+### Geometrie in Mechanical
+
+Im Abschnitt _Geometrie_ erscheinen alle importierten Bauteile mit ihren Eigenschaften.
+
+Funktionen:
+
+* Sichtbarkeit ein-/ausblenden  
+* Elemente unterdrücken oder wiederherstellen  
+* Materialzuweisung je Teil  
+* Hinzufügen von Punktmassen (verformbar oder starr)  
+  → Diese Entscheidung beeinflusst das Rechenergebnis erheblich.
+
+---
+
+### Koordinatensysteme
+
+Nach dem Geometrieimport erscheint zunächst das globale Koordinatensystem – meist identisch mit dem Creo-Koordinatensystem.
+
+Weitere lokale Koordinatensysteme lassen sich über das Kontextmenü erzeugen. Dazu:
+
+* Geometrie selektieren  
+* Einfügen → Koordinatensystem
+
+**Logik für den Ursprung:**
+
+* Punkt → exakt dort  
+* Linie → in der Mitte  
+* Kreis/Bogen → im Zentrum  
+* Fläche → Flächenschwerpunkt  
+* Zylinderfläche → Achse, axial mittig
+
+[![Koordinatensysteme bearbeiten](media/03_mechanical_kragbalken/koordinaten.png){width=350px}](media/03_mechanical_kragbalken/koordinaten.png "Koordinatensysteme bearbeiten"){.glightbox}  
+
+Erstellte Systeme lassen sich verschieben oder verdrehen.
+
+---
+
+### Grundlegendes zur Vernetzung
+
+Die Vernetzung unterteilt das Bauteil in finite Elemente, die über Knoten verbunden sind.
+
+In konstruktionsbegleitenden FEM-Anwendungen ist keine aufwendige Netzoptimierung erforderlich – moderne Rechner bewältigen auch gröbere Netze. Entscheidend ist hier die **Unabhängigkeit des Ergebnisses vom Netz**, nicht die perfekte Netzqualität.
+
+Dazu führt man eine **Netzeinflussstudie** durch:
+
+* Variation der globalen Elementgröße  
+* lokale Netzverfeinerung  
+* adaptive Vernetzung (siehe Übung)
+
+Ziel ist ein tragfähiger Kompromiss aus Ergebnisqualität und Rechenzeit.
+
+!!! note "Hinweis"
+    Dieser Abschnitt markiert den Einstieg in die praktische Arbeit mit Netzen in ANSYS.  
+    Die manuelle Vernetzung ist die einfachste Methode zur Steuerung der Elementgrößen.
+
+Die globale Elementgröße – also die durchschnittliche Kantenlänge der Elemente für das gesamte Modell – wird direkt im Strukturbaum unter dem Eintrag _Netz_ eingestellt.
+
+[![Globale Elementgröße festlegen](media/03_mechanical_kragbalken/globale_elementgröße.png){width=400px}](media/03_mechanical_kragbalken/globale_elementgröße.png "Globale Elementgröße festlegen"){.glightbox}  
+
+Das Modell wird auf Basis dieses Wertes komplett mit Elementen vernetzt.  
+**Problematisch wird dieses Vorgehen**, wenn das relevante Ergebnis nur in einem lokalen Bereich auftritt:  
+Eine globale Verfeinerung erzeugt dann unnötig viele Elemente und verlängert die Rechenzeit erheblich – ohne zusätzlichen Nutzen.
+
+Alternativ lässt sich das Netz auch **lokal verfeinern**:
+
+* Unter _Netzsteuerung_ kann man die **Elementgröße pro Bauteil oder Fläche** einzeln festlegen.
+* Einzelne Geometriebereiche (z. B. Kanten, Flächen) lassen sich gezielt mit feineren Elementen versehen.
+* Die Funktion *_Methode_ ermöglicht die Auswahl eines bestimmten **Elementtyps** (z. B. Tetraeder oder Hexaeder).  
+  → Diese Auswahl sollte fundiert erfolgen – siehe Literatur.
+
+Das manuelle Vorgehen eignet sich besonders für einfache Modelle oder gezielte Voruntersuchungen.
+
+---
+
+### Kontakte
+
+Bei Baugruppen erzeugt ANSYS automatisch Kontaktflächen zwischen Bauteilen – optional können sie auch manuell definiert werden.
+
+[![Kontakttypen in ANSYS](media/03_mechanical_kragbalken/kontakte.png){width=500px}](media/03_mechanical_kragbalken/kontakte.png "Kontakttypen in ANSYS"){.glightbox}  
+<span class="bildquelle">Bildquelle[@Gebhardt2018]</span>
+
+Kontakte erfüllen zwei Aufgaben:
+
+1. **Kraftübertragung**  
+2. **Verhinderung von Durchdringung**
+
+Typische Einstellungen:
+
+* **Verbund**  
+* **Keine Trennung**  
+* **Reibungsfrei**  
+* **Rau**  
+* **Reibungsbehaftet**
+
+Achtung bei komplexeren Kontaktmodellen:  
+Kontakte mit Reibung oder Abheben erfordern deutlich mehr Rechenzeit. Für die meisten Fälle sind _Verbund_ oder _Keine Trennung_ ein guter Kompromiss.
+
+!!! note "Hinweis"
+    Diese Übersicht vermittelt nur die Grundlagen der Kontaktdefinition.  
+    Die konkrete Anwendung, Auswahl und Bewertung von Kontakten erfolgt in späteren Übungen. 

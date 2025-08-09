@@ -2,11 +2,6 @@
 
 This guide describes the installation of ANSYS 2024R1 on a private Windows computer.
 
-???+ danger "FIXME"
-    - Update to the current version!
-
----
-
 ## ANSYS Installation
 
 ### Requirements
@@ -43,87 +38,87 @@ Download the following files (VPN not required):
 
 ### Step 2: Extract and install ANSYS
 
-*1.*  **Activate VPN connection.**  
-*2.*  Extract `STRUCTURES_2024R1_WINX64.zip`. Run `setup.exe` **as administrator** (right-click → Run as administrator).  
-*3.*  Follow the installation steps as shown in the images below. Some settings must be adjusted. **Do not change any file paths.**  
-*4.*  Select “Install ANSYS Products”:
+_1._ **Activate VPN connection.**  
+_2._  Extract `STRUCTURES_2024R1_WINX64.zip`. Run `setup.exe` **as administrator** (right-click → Run as administrator).  
+_3._  Follow the installation steps as shown in the images below. Some settings must be adjusted. **Do not change any file paths.**  
+_4._  Select “Install ANSYS Products”:
 
 [![Install start](media/02_Installation_ansys/02_01.en.png){width=600px}](media/02_Installation_ansys/02_01.en.png "Install start"){.glightbox}  
 
-*5.*  Accept settings:
+_5._ Accept settings:
 
 [![EULA](media/02_Installation_ansys/02_02.en.png){width=600px}](media/02_Installation_ansys/02_02.en.png "EULA"){.glightbox}  
 
-*6.*  Accept settings, do not change file paths:
+_6._  Accept settings, do not change file paths:
 
 [![Path settings](media/02_Installation_ansys/02_03.en.png){width=600px}](media/02_Installation_ansys/02_03.en.png "Path settings"){.glightbox}  
 
-*7.*  Enter license server: `10.10.13.101`, VPN connection required:
+_7._  Enter license server: `10.10.13.101`, VPN connection required:
 
 [![License server](media/02_Installation_ansys/02_04.en.png){width=600px}](media/02_Installation_ansys/02_04.en.png "License server"){.glightbox}  
 
-*8.*  Only select **Geometry Interfaces** and **Mechanical Products**:
+_8._  Only select **Geometry Interfaces** and **Mechanical Products**:
 
 [![Components](media/02_Installation_ansys/02_05.en.png){width=600px}](media/02_Installation_ansys/02_05.en.png "Components"){.glightbox}  
 
-*9.*  Next:
+_9._  Next:
 
 [![CAD interfaces](media/02_Installation_ansys/02_06.en.png){width=600px}](media/02_Installation_ansys/02_06.en.png "CAD interfaces"){.glightbox}  
 
-*10.*  Next (contents may vary by system):
+_10._  Next (contents may vary by system):
 
 [![CAD interface configuration](media/02_Installation_ansys/02_07.en.png){width=600px}](media/02_Installation_ansys/02_07.en.png "CAD interface configuration"){.glightbox}  
 
-*11.*  Next (contents may vary by system):
+_11._  Next (contents may vary by system):
 
 [![Review settings](media/02_Installation_ansys/02_08.en.png){width=600px}](media/02_Installation_ansys/02_08.en.png "Review settings"){.glightbox}  
 
-*12.*  Installation complete:
+_12._  Installation complete:
 
 [![Installation](media/02_Installation_ansys/02_09.en.png){width=600px}](media/02_Installation_ansys/02_09.en.png "Installation"){.glightbox}  
 
-*13.*  Installation finished (contents may vary by system):
+_13._  Installation finished (contents may vary by system):
 
 [![Finish](media/02_Installation_ansys/02_10.en.png){width=600px}](media/02_Installation_ansys/02_10.en.png "Finish"){.glightbox}  
 
-*14.*  To use ANSYS, a connection to the HFU license server is required. This is only possible outside the university via VPN. Inside the campus network, VPN is not necessary.  
-*15.*  Continue with the service update.
+_14._  To use ANSYS, a connection to the HFU license server is required. This is only possible outside the university via VPN. Inside the campus network, VPN is not necessary.  
+_15._  Continue with the service update.
 
 ---
 
 ### Step 3: Install the service update
 
-*1.*  Extract `ANSYS_2024R1.04_WINX64.zip`.  
-*2.*  Run `setup.exe` **as administrator**.  
-*3.*  Select “Install ANSYS Products”:
+_1._  Extract `ANSYS_2024R1.04_WINX64.zip`.  
+_2._  Run `setup.exe` **as administrator**.  
+_3._  Select “Install ANSYS Products”:
 
 [![Service update](media/02_Installation_ansys/02_11.en.png){width=600px}](media/02_Installation_ansys/02_11.en.png "Service update"){.glightbox}  
 
-*4.*  Accept settings:
+_4._  Accept settings:
 
 [![EULA](media/02_Installation_ansys/02_12.en.png){width=600px}](media/02_Installation_ansys/02_12.en.png "EULA"){.glightbox}  
 
-*5.*  Next, do not change file paths:
+_5._  Next, do not change file paths:
 
 [![Path settings](media/02_Installation_ansys/02_13.en.png){width=600px}](media/02_Installation_ansys/02_13.en.png "Path settings"){.glightbox}  
 
-*6.*  Accept settings and continue:
+_6._  Accept settings and continue:
 
 [![Component selection](media/02_Installation_ansys/02_14.en.png){width=600px}](media/02_Installation_ansys/02_14.en.png "Component selection"){.glightbox}  
 
-*7.*  Next:
+_7._  Next:
 
 [![Review settings](media/02_Installation_ansys/02_15.en.png){width=600px}](media/02_Installation_ansys/02_15.en.png "Review settings"){.glightbox}  
 
-*8.*  Installation complete:
+_8._  Installation complete:
 
 [![Service install](media/02_Installation_ansys/02_16.en.png){width=600px}](media/02_Installation_ansys/02_16.en.png "Service install"){.glightbox}  
 
-*9.*  Finish:
+_9._  Finish:
 
 [![Finish](media/02_Installation_ansys/02_17.en.png){width=600px}](media/02_Installation_ansys/02_17.en.png "Finish"){.glightbox}  
 
-*10.*  The ZIP file and extracted data can now be deleted.
+_10._  The ZIP file and extracted data can now be deleted.
 
 ---
 
@@ -141,16 +136,15 @@ Download the following files (VPN not required):
     - At the very end of the `hosts` file, add the line: `10.10.13.101 Flex`  
     - Save and you're done. If saving causes issues, you may need to copy the file to the desktop first. Make sure the file type does not change when saving.
 
-
 ---
 
 ### Coupling ANSYS with Creo
 
 A direct bidirectional link between ANSYS and PTC Creo is possible.
 
-*1.*  Install Creo and the HFU CAD environment as described in the relevant guide.  
-*2.*  Use the **ANSYS CAD Configuration Manager** to set up the associative Workbench interface.  
-*3.*  The setup must be run **as administrator**.
+_1._  Install Creo and the HFU CAD environment as described in the relevant guide.  
+_2._  Use the **ANSYS CAD Configuration Manager** to set up the associative Workbench interface.  
+_3._  The setup must be run **as administrator**.
 
 ---
 
@@ -260,3 +254,188 @@ Materials are assigned to the project in the center panel using the plus icon. M
 [![Material database in Workbench](media/02_erste_Schritte/materialdatenbank.en.png){width=800px}](media/02_erste_Schritte/materialdatenbank.en.png "Material database in Workbench"){.glightbox}  
 
 Note that the database is largely based on US standards.
+
+## ANSYS Mechanical
+
+In ANSYS Workbench, the term _Model_ encompasses all definitions between geometry creation and load case definition. This includes:
+
+* Material properties and additional masses  
+* Auxiliary geometry for boundary conditions and result evaluation  
+* Virtual topology for meshing control  
+* Coordinate systems and contacts  
+* Meshing definitions  
+* Combination of multiple load cases
+
+The **Mechanical Application (ANSYS Mechanical)** is the central FEM tool. It is used to assign physical properties, generate meshes, run simulations, and visualize results. A single Mechanical window can contain multiple analysis branches with different load cases. The structure is defined via the project manager. Double-clicking _Model_ opens the Mechanical Application.
+
+---
+
+### User Interface
+
+[![Mechanical-Applikation in ANSYS](media/03_mechanical_kragbalken/mechanical_ui.en.png){width=700px}](media/03_mechanical_kragbalken/mechanical_ui.en.png "Mechanical-Applikation in ANSYS"){.glightbox}  
+
+Key elements of the interface:
+
+* **Left**: Tree structure with all analysis components  
+* **Below**: Details of the currently selected element  
+* **Top**: Menu bar with display and selection tools  
+* **Above the geometry window**: Context-sensitive commands
+
+### Status indicators in the tree view
+
+* Green check: Definition complete  
+* Blue question mark: Input missing  
+* Grey X: Element suppressed  
+* Red exclamation mark: Warning or inconsistency  
+* Yellow lightning: Ready to solve  
+* Green lightning: Solving in progress  
+* Red lightning: Solution aborted  
+* Green arrow: Archived result ready to load  
+* Red arrow: Aborted result ready to load
+
+### Colors in the details pane
+
+* Yellow: Incomplete input  
+* White: Editable field  
+* Grey: Display only (read-only)  
+* Red: Invalid (e.g., after model change without recalculation)
+
+### View controls
+
+[![Steuerung der Ansichten](media/03_mechanical_kragbalken/ansichtssteuerung.en.png){width=500px}](media/03_mechanical_kragbalken/ansichtssteuerung.en.png "Steuerung der Ansichten"){.glightbox}  
+
+Typical functions:
+
+* Rotate, pan, zoom  
+* Fit to window or rectangle  
+* Previous/next view  
+* ISO and top views  
+* Save or manage views
+
+### Selection options
+
+Selections are made using mouse interaction.
+
+* Use icons to choose selection type: point, edge, face, or body  
+* Mouseover highlights geometry  
+* Click to select; use `CTRL` for multi-selection  
+* Remove elements with a second click while holding `CTRL`  
+* **Box selection**: hold mouse button and drag across model  
+* **Expand selection**: add tangential neighboring surfaces  
+* Tangent angle (default: 20°) can be adjusted  
+* Repeating the function adds further tangents  
+* **Adjacent/All**: selects all tangential surfaces until the next sharp edge
+
+[![Selektionsfunktionen](media/03_mechanical_kragbalken/selektion.png){width=600px}](media/03_mechanical_kragbalken/selektion.png "Selektionsfunktionen"){.glightbox}  
+
+**Selecting hidden elements:**
+
+When clicking on overlapping geometry, a selection menu appears in the 3D viewer. The mouse can be used to highlight and select individual layers.  
+In assemblies, surfaces are color-coded according to their part assignment.
+
+---
+
+### Geometry in Mechanical
+
+The _Geometry_ section lists all imported parts with their attributes.
+
+Functions:
+
+* Show/hide parts  
+* Suppress or restore elements  
+* Assign materials per part  
+* Add point masses (deformable or rigid)  
+  → This choice has a significant influence on results.
+
+---
+
+### Coordinate Systems
+
+After importing, the global coordinate system appears, usually matching the one from Creo.
+
+Additional local systems can be added via the context menu:
+
+* Select geometry  
+* Right-click → Insert → Coordinate System
+
+**Rules for defining the origin:**
+
+* Point → at the selected point  
+* Line → at the midpoint  
+* Circle/Arc → at the center  
+* Flat face → at the center of mass  
+* Cylindrical face → on the axis, axially centered
+
+[![Koordinatensysteme bearbeiten](media/03_mechanical_kragbalken/koordinaten.en.png){width=350px}](media/03_mechanical_kragbalken/koordinaten.en.png "Koordinatensysteme bearbeiten"){.glightbox}  
+
+Created systems can be moved or rotated.
+
+---
+
+### Basics of meshing
+
+Meshing divides the component into finite elements, which are connected via nodes.
+
+In design-related FEM workflows, extensive mesh optimization is rarely needed, modern computers handle coarse meshes well.  
+What matters is the **mesh-independent quality of results**, not the visual perfection of the mesh.
+
+This requires a **mesh sensitivity study**, typically done by:
+
+* Varying global element size  
+* Local mesh refinement  
+* Adaptive meshing (see exercise)
+
+The goal is a balanced trade-off between result quality and computation time.
+
+!!! note "Note"
+    This section marks the starting point for practical meshing work in ANSYS.  
+    Manual meshing is the most direct way to control element size.
+
+The global element size – the average edge length for all elements – is defined in the tree under _Mesh_.
+
+[![Setting global element size](media/03_mechanical_kragbalken/globale_elementgröße.en.png){width=400px}](media/03_mechanical_kragbalken/globale_elementgröße.en.png "Setting global element size"){.glightbox}  
+
+The entire model is meshed using this value.  
+**This can be inefficient** if the area of interest is small: a fine mesh everywhere increases computation time without added benefit.
+
+Instead, **local refinement** is often preferable:
+
+* Under _Mesh Control_, you can assign element sizes to specific parts or faces  
+* Edges or faces can be refined individually  
+* The _Method_ function forces a specific **element type** (e.g., tetrahedral or hexahedral)  
+  → Choose carefully, based on literature or application
+
+Manual meshing is useful for simple models or early-stage studies.
+
+---
+
+### Contacts
+
+When importing assemblies, ANSYS automatically defines contact regions between parts. Optionally, these can be manually adjusted.
+
+[![Contact in ANSYS](media/03_mechanical_kragbalken/kontakte.en.png){width=500px}](media/03_mechanical_kragbalken/kontakte.en.png "Contacts in ANSYS"){.glightbox}  
+<span class="bildquelle">Bildquelle[@Gebhardt2018]</span>
+
+???+ danger "FIXME"
+    check table content  
+
+Contacts serve two purposes:
+
+1. **Transfer of forces**  
+2. **Prevention of penetration**
+
+Typical types:
+
+* **Bonded**  
+* **No separation**  
+* **Frictionless**  
+* **Rough**  
+* **Frictional**
+
+Caution with complex contact models:  
+Contacts involving friction or separation greatly increase computation time.  
+In most cases, _Bonded_ or _No Separation_ provides a good balance.
+
+!!! note "Note"
+    This section provides only a basic overview of contact definitions.  
+    Detailed handling, selection, and evaluation will follow in later exercises.
