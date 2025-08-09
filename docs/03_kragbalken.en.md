@@ -1,10 +1,6 @@
-# ANSYS Mechanical and Beam Exercise
+# Beam Exercise
 
-
-
-## Beam Exercise
-
-### Task
+## Task
 
 For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  
 
@@ -13,20 +9,20 @@ For the cantilever beam with square cross-section shown in the figure, calculate
 * Force: \( F = 7{.}500 \,\text{N} \)  
 * Material: Structural steel with yield strength \( R_e = 250 \,\text{N/mm}^2 \)  
 
-Download the file [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
+Download the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
 
 ???+ danger "FIXME"
     rename file  
 
 Compare your result with the analytical solution and discuss any deviations.  
 
-[![Cantilever beam under tension](media/03_mechanical_kragbalken/kragbalken_zug.svg){width=500px}](media/03_mechanical_kragbalken/kragbalken_zug.svg "Cantilever beam under tension"){.glightbox}  
+[![Cantilever beam under tension](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Cantilever beam under tension"){.glightbox}  
 
 ---
 
-### Theoretical Background
+## Theoretical Background
 
-#### Hooke’s Law
+### Hooke’s Law
 
 The calculation is based on **Hooke’s Law**. It describes the linear relationship between stress and strain in the elastic range of a material.
 
@@ -52,7 +48,7 @@ The **elongation** is calculated as:
 
 ---
 
-#### Lateral Contraction
+### Lateral Contraction
 
 ???+ danger "FIXME"
     Insert a schematic figure showing the relationship between longitudinal strain and lateral contraction.
@@ -89,67 +85,77 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 
 ---
 
-#### Stress-Strain Diagram
+### Stress-Strain Diagram
 
 Hooke’s Law applies only in the **linear elastic range** of a material. This range appears as a straight line in the stress-strain diagram.  
 
 The first diagram shows the behavior of a material **without a distinct yield point**. After the linear increase up to the proof stress, the curve gradually transitions into the plastic range. This is typical for many non-ferrous metals such as aluminum:
 
-[![Stress-strain curve without distinct yield point](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.en.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.en.svg "Stress-strain curve without distinct yield point"){.glightbox}  
+[![Stress-strain curve without distinct yield point](media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.en.svg){width=450}](media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.en.svg "Stress-strain curve without distinct yield point"){.glightbox}  
 <span class="bildquelle">Image source based on[@Wikipedia2023]</span>
 
 The second diagram shows the behavior of a material **with a distinct yield point**, as is typical for structural steel. The linear range ends abruptly, followed by a plateau with nearly constant stress, before the plastic increase begins:
 
-[![Stress-strain curve with distinct yield point](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.en.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.en.svg "Stress-strain curve with distinct yield point"){.glightbox}  
+[![Stress-strain curve with distinct yield point](media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.en.svg){width=450}](media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.en.svg "Stress-strain curve with distinct yield point"){.glightbox}  
 <span class="bildquelle">Image source based on[@Wikipedia2023]</span>
 
 For the calculation of the cantilever beam in this exercise, the load lies within the **elastic range**. Hooke’s Law is therefore sufficient.
 
 ---
 
-### Implementation in ANSYS Mechanical
+## Implementation in ANSYS Mechanical
 
-#### 1. Geometry Import
+### 1. Geometry Import
 
-Load the file [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) into ANSYS Workbench.  
+Load the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) into ANSYS Workbench.  
 
 ???+ danger "FIXME"
     rename file  
 
-???+ danger "FIXME"
-    Screenshot?
+[![Cantilever beam, geometry import](media/03_kragbalken/01_Kragbalken_Geometrieimport.en.png){width=600px}](media/03_kragbalken/01_Kragbalken_Geometrieimport.en.png "Cantilever beam, geometry import"){.glightbox}  
 
-#### 2. Material Definition  
+The dimensions of the bounding box provide a quick indication of whether the imported geometry is in the correct units.
+
+[![Cantilever beam, bounding box](media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.en.png){width=600px}](media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.en.png "Cantilever beam, bounding box"){.glightbox}  
+
+### 2. Material Definition  
 
 ???+ danger "FIXME"
     Material definition ist glaube ich nicht richtig übersetzt. Es muss Materialzuweisung heißen
 
 By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.
 
-???+ danger "FIXME"
-    Screenshot
+View under _Geometry:_
 
-#### 3. Meshing
+[![Cantilever beam, material definition](media/03_kragbalken/03_Kragbalken_Materialdefinition.en.png){width=600px}](media/03_kragbalken/03_Kragbalken_Materialdefinition.en.png "Cantilever beam, material definition"){.glightbox}  
 
-The part is divided into finite elements connected via nodes (**meshing**).  
+View under _Materials:_
 
-???+ danger "FIXME"
-    vgl. deutsche Version. Ergänze wie wird das Netz erstellt
+[![Cantilever beam, material definition](media/03_kragbalken/04_Kragbalken_Materialdefinition.en.png){width=600px}](media/03_kragbalken/04_Kragbalken_Materialdefinition.en.png "Cantilever beam, material definition"){.glightbox}  
 
-* Start with a **global automatic mesh**.  
-* Then vary the **element size** to study **mesh influence**.  
-* Convergence is confirmed if results remain nearly unchanged with further refinement.  
+### 3. Meshing
 
-Rules of thumb:  
+For the calculation, the component is divided into finite elements connected by nodes. This process is called **meshing**.  
 
-* Coarse mesh → low computation time, possibly inaccurate.  
-* Fine mesh → high accuracy, but longer computation time.  
-* Optimal mesh → sufficiently accurate without excessive elements.  
+* First, use Mesh/Create to generate a **global automatic mesh**.  
+  ANSYS assigns an element size that applies to the entire model.  
+  The mesh is created quickly and uniformly but is often not optimal for local details.  
 
-???+ danger "FIXME"
-    Screenshot
+* In the second step, the **element size is varied** to investigate the **mesh sensitivity**.  
+  The goal is to check whether the results (stress, deformation) remain stable when the mesh is refined.  
+  Only when the results change minimally can the solution be considered reliable.  
 
-#### 4. Boundary Conditions
+From an FEM perspective:  
+
+* Mesh too coarse → short computation time, but potentially inaccurate results.  
+* Mesh too fine → high accuracy, but significantly longer computation time.  
+* The optimal mesh provides **sufficiently accurate results** without generating an unnecessary number of elements.  
+
+This simple mesh sensitivity study illustrates the basic idea that FEM results are not automatically exact, but depend on the **discretization**.
+
+[![Cantilever beam, mesh definition](media/03_kragbalken/05_Kragbalken_Netzgenerierung.en.png){width=600px}](media/03_kragbalken/05_Kragbalken_Netzgenerierung.en.png "Cantilever beam, mesh definition"){.glightbox}  
+
+### 4. Boundary Conditions
 
 Two boundary conditions are required:
 
@@ -169,13 +175,11 @@ From an FEM perspective:
 
 Together, the combination of **displacement-controlled** and **force-controlled** conditions forms a **closed system of equations** for the FEM solver.  
 
-???+ note "Modeling Note"
-    If the force is applied only to a small edge or a single node, unrealistically high local stresses (singularities) appear. Always use a surface to distribute the load realistically.
+[![Cantilever beam, boundary conditions](media/03_kragbalken/06_Kragbalken_Randbedingungen.en.png){width=600px}](media/03_kragbalken/06_Kragbalken_Randbedingungen.en.png "Cantilever beam, boundary conditions"){.glightbox}  
 
-???+ danger "FIXME"
-    Screenshots?
+[![Cantilever beam, boundary conditions](media/03_kragbalken/07_Kragbalken_Randbedingungen.en.png){width=600px}](media/03_kragbalken/07_Kragbalken_Randbedingungen.en.png "Cantilever beam, boundary conditions"){.glightbox}  
 
-#### 5. Evaluation
+### 5. Evaluation
 
 Two results are examined in ANSYS:
 
@@ -198,24 +202,29 @@ Steps in ANSYS:
 2. Display **von Mises stress** → compare with analytical stress.  
 3. Assess the **stress distribution**.  
 
-???+ danger "FIXME"
-    Screenshot
+[![Cantilever beam, add solutions](media/03_kragbalken/08_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/08_Kragbalken_Auswertung.en.png "Cantilever beam, add solutions"){.glightbox}  
+
+[![Cantilever beam, add solutions](media/03_kragbalken/10_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/10_Kragbalken_Auswertung.en.png "Cantilever beam, add solutions"){.glightbox}  
 
 ---
 
-### Discussion of Results
+## Discussion of Results
 
-#### Comparison with Analytical Solution
+### Comparison with Analytical Solution
 
 Expectation: very good agreement of average stress and deformation.
 
-Results from ANSYS...
+Results from ANSYS:
 
-???+ danger "FIXME"
-    Add screenshots and discuss “what is observed”.
+[![Cantilever beam, solutions](media/03_kragbalken/09_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/09_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-???+ danger "FIXME"
-    Einheiten in Formeln ergänzen
+[![Cantilever beam, solutions](media/03_kragbalken/11_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/11_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+[![Cantilever beam, solutions](media/03_kragbalken/12_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+[![Cantilever beam, solutions](media/03_kragbalken/13_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+[![Cantilever beam, solutions](media/03_kragbalken/14_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
 ??? note "Calculation of Δl, Δa and σ"
     For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
@@ -233,7 +242,7 @@ Results from ANSYS...
     \]
 
     \[
-    \sigma = \frac{7{.}500}{144} \approx 52{,}1 \,\text{N/mm}^2
+    \sigma = \frac{7{.}500 \,\text{N}}{144 \,\text{mm}^2} \approx 52{,}1 \,\text{N/mm}^2
     \]
 
     **Elongation**
@@ -249,8 +258,8 @@ Results from ANSYS...
     \]
 
     \[
-    \Delta l = \frac{7{.}500 \cdot 150}{144 \cdot 210{.}000} 
-            \approx 0{,}037 \,\text{mm}
+    \Delta l = \frac{7{.}500 \,\text{N}\cdot 150 \,\text{mm}}{144 \,\text{mm}^2\cdot 210{.}000 \,\text{N/mm}^2} 
+             \approx 0{,}037 \,\text{mm}
     \]
 
     **Cross-section Change**
@@ -264,7 +273,7 @@ Results from ANSYS...
     with  
 
     \[
-    \varepsilon_l = \frac{\Delta l}{l} = \frac{0{,}037}{150} \approx 2{,}47 \cdot 10^{-4}
+    \varepsilon_l = \frac{\Delta l}{l} = \frac{0{,}037 \,\text{mm}}{150 \,\text{mm}} \approx 2{,}47 \cdot 10^{-4}
     \]
 
     \[
@@ -275,7 +284,7 @@ Results from ANSYS...
     Thus, the cross-section change is:
 
     \[
-    \Delta a = \varepsilon_q \cdot a = -7{,}4 \cdot 10^{-5} \cdot 12
+    \Delta a = \varepsilon_q \cdot a = -7{,}4 \cdot 10^{-5} \cdot 12 \,\text{mm}
             \approx -8{,}9 \cdot 10^{-4} \,\text{mm}
     \]
 
@@ -284,16 +293,17 @@ Results from ANSYS...
     * Beam elongation: approx. **0.037 mm**  
     * Reduction of edge length: approx. **0.0009 mm**
 
-#### Mesh Influence
+### Mesh Influence
 
 * Coarse mesh → less accurate.  
 * Fine mesh → more accurate but longer time.  
 * Aim: results independent of mesh (mesh influence minimized).  
 
-???+ danger "FIXME"
-    Add screenshots. Relevant here? Divergence at the support...
+[![Cantilever beam, solutions](media/03_kragbalken/15_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/15_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-#### Prevented Lateral Contraction
+[![Cantilever beam, solutions](media/03_kragbalken/16_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/16_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+### Prevented Lateral Contraction
 
 In reality, the beam can contract laterally.  
 In the FEM model with fixed support, this **lateral contraction is locally prevented**.  
@@ -302,7 +312,7 @@ This leads to **edge stress peaks** not predicted analytically.
 
 ---
 
-### Add-on: Bending Moment Instead of Force
+## Add-on: Bending Moment Instead of Force
 
 As an alternative, a **pure bending moment** can be applied.  
 This results in a **shear-free beam** with a more uniform stress field.  
@@ -316,9 +326,13 @@ This results in a **shear-free beam** with a more uniform stress field.
 ???+ danger "FIXME"
     belongs more to exercise beam bending
 
+[![Cantilever beam, solutions](media/03_kragbalken/17_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/17_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+[![Cantilever beam, solutions](media/03_kragbalken/18_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/18_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
 ---
 
-### Variants of Load Application
+## Variants of Load Application
 
 In ANSYS Mechanical, various options are available for applying loads. The choice strongly influences the stress distribution and physical plausibility.
 
@@ -352,7 +366,7 @@ These options illustrate that the “same” load can yield very different resul
 
 ---
 
-### Further Notes
+## Further Notes
 
 ???+ danger "FIXME"
     Add video?

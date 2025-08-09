@@ -43,43 +43,43 @@ _2._  Extract `STRUCTURES_2024R1_WINX64.zip`. Run `setup.exe` **as administrator
 _3._  Follow the installation steps as shown in the images below. Some settings must be adjusted. **Do not change any file paths.**  
 _4._  Select “Install ANSYS Products”:
 
-[![Install start](media/02_Installation_ansys/02_01.en.png){width=600px}](media/02_Installation_ansys/02_01.en.png "Install start"){.glightbox}  
+[![Install start](media/02_Installation_erste_Schritte/02_01.en.png){width=600px}](media/02_Installation_erste_Schritte/02_01.en.png "Install start"){.glightbox}  
 
 _5._ Accept settings:
 
-[![EULA](media/02_Installation_ansys/02_02.en.png){width=600px}](media/02_Installation_ansys/02_02.en.png "EULA"){.glightbox}  
+[![EULA](media/02_Installation_erste_Schritte/02_02.en.png){width=600px}](media/02_Installation_erste_Schritte/02_02.en.png "EULA"){.glightbox}  
 
 _6._  Accept settings, do not change file paths:
 
-[![Path settings](media/02_Installation_ansys/02_03.en.png){width=600px}](media/02_Installation_ansys/02_03.en.png "Path settings"){.glightbox}  
+[![Path settings](media/02_Installation_erste_Schritte/02_03.en.png){width=600px}](media/02_Installation_erste_Schritte/02_03.en.png "Path settings"){.glightbox}  
 
 _7._  Enter license server: `10.10.13.101`, VPN connection required:
 
-[![License server](media/02_Installation_ansys/02_04.en.png){width=600px}](media/02_Installation_ansys/02_04.en.png "License server"){.glightbox}  
+[![License server](media/02_Installation_erste_Schritte/02_04.en.png){width=600px}](media/02_Installation_erste_Schritte/02_04.en.png "License server"){.glightbox}  
 
 _8._  Only select **Geometry Interfaces** and **Mechanical Products**:
 
-[![Components](media/02_Installation_ansys/02_05.en.png){width=600px}](media/02_Installation_ansys/02_05.en.png "Components"){.glightbox}  
+[![Components](media/02_Installation_erste_Schritte/02_05.en.png){width=600px}](media/02_Installation_erste_Schritte/02_05.en.png "Components"){.glightbox}  
 
 _9._  Next:
 
-[![CAD interfaces](media/02_Installation_ansys/02_06.en.png){width=600px}](media/02_Installation_ansys/02_06.en.png "CAD interfaces"){.glightbox}  
+[![CAD interfaces](media/02_Installation_erste_Schritte/02_06.en.png){width=600px}](media/02_Installation_erste_Schritte/02_06.en.png "CAD interfaces"){.glightbox}  
 
 _10._  Next (contents may vary by system):
 
-[![CAD interface configuration](media/02_Installation_ansys/02_07.en.png){width=600px}](media/02_Installation_ansys/02_07.en.png "CAD interface configuration"){.glightbox}  
+[![CAD interface configuration](media/02_Installation_erste_Schritte/02_07.en.png){width=600px}](media/02_Installation_erste_Schritte/02_07.en.png "CAD interface configuration"){.glightbox}  
 
 _11._  Next (contents may vary by system):
 
-[![Review settings](media/02_Installation_ansys/02_08.en.png){width=600px}](media/02_Installation_ansys/02_08.en.png "Review settings"){.glightbox}  
+[![Review settings](media/02_Installation_erste_Schritte/02_08.en.png){width=600px}](media/02_Installation_erste_Schritte/02_08.en.png "Review settings"){.glightbox}  
 
 _12._  Installation complete:
 
-[![Installation](media/02_Installation_ansys/02_09.en.png){width=600px}](media/02_Installation_ansys/02_09.en.png "Installation"){.glightbox}  
+[![Installation](media/02_Installation_erste_Schritte/02_09.en.png){width=600px}](media/02_Installation_erste_Schritte/02_09.en.png "Installation"){.glightbox}  
 
 _13._  Installation finished (contents may vary by system):
 
-[![Finish](media/02_Installation_ansys/02_10.en.png){width=600px}](media/02_Installation_ansys/02_10.en.png "Finish"){.glightbox}  
+[![Finish](media/02_Installation_erste_Schritte/02_10.en.png){width=600px}](media/02_Installation_erste_Schritte/02_10.en.png "Finish"){.glightbox}  
 
 _14._  To use ANSYS, a connection to the HFU license server is required. This is only possible outside the university via VPN. Inside the campus network, VPN is not necessary.  
 _15._  Continue with the service update.
@@ -92,31 +92,31 @@ _1._  Extract `ANSYS_2024R1.04_WINX64.zip`.
 _2._  Run `setup.exe` **as administrator**.  
 _3._  Select “Install ANSYS Products”:
 
-[![Service update](media/02_Installation_ansys/02_11.en.png){width=600px}](media/02_Installation_ansys/02_11.en.png "Service update"){.glightbox}  
+[![Service update](media/02_Installation_erste_Schritte/02_11.en.png){width=600px}](media/02_Installation_erste_Schritte/02_11.en.png "Service update"){.glightbox}  
 
 _4._  Accept settings:
 
-[![EULA](media/02_Installation_ansys/02_12.en.png){width=600px}](media/02_Installation_ansys/02_12.en.png "EULA"){.glightbox}  
+[![EULA](media/02_Installation_erste_Schritte/02_12.en.png){width=600px}](media/02_Installation_erste_Schritte/02_12.en.png "EULA"){.glightbox}  
 
 _5._  Next, do not change file paths:
 
-[![Path settings](media/02_Installation_ansys/02_13.en.png){width=600px}](media/02_Installation_ansys/02_13.en.png "Path settings"){.glightbox}  
+[![Path settings](media/02_Installation_erste_Schritte/02_13.en.png){width=600px}](media/02_Installation_erste_Schritte/02_13.en.png "Path settings"){.glightbox}  
 
 _6._  Accept settings and continue:
 
-[![Component selection](media/02_Installation_ansys/02_14.en.png){width=600px}](media/02_Installation_ansys/02_14.en.png "Component selection"){.glightbox}  
+[![Component selection](media/02_Installation_erste_Schritte/02_14.en.png){width=600px}](media/02_Installation_erste_Schritte/02_14.en.png "Component selection"){.glightbox}  
 
 _7._  Next:
 
-[![Review settings](media/02_Installation_ansys/02_15.en.png){width=600px}](media/02_Installation_ansys/02_15.en.png "Review settings"){.glightbox}  
+[![Review settings](media/02_Installation_erste_Schritte/02_15.en.png){width=600px}](media/02_Installation_erste_Schritte/02_15.en.png "Review settings"){.glightbox}  
 
 _8._  Installation complete:
 
-[![Service install](media/02_Installation_ansys/02_16.en.png){width=600px}](media/02_Installation_ansys/02_16.en.png "Service install"){.glightbox}  
+[![Service install](media/02_Installation_erste_Schritte/02_16.en.png){width=600px}](media/02_Installation_erste_Schritte/02_16.en.png "Service install"){.glightbox}  
 
 _9._  Finish:
 
-[![Finish](media/02_Installation_ansys/02_17.en.png){width=600px}](media/02_Installation_ansys/02_17.en.png "Finish"){.glightbox}  
+[![Finish](media/02_Installation_erste_Schritte/02_17.en.png){width=600px}](media/02_Installation_erste_Schritte/02_17.en.png "Finish"){.glightbox}  
 
 _10._  The ZIP file and extracted data can now be deleted.
 
@@ -162,12 +162,12 @@ This information is intended to help you get started with ANSYS Workbench. Befor
 ANSYS Workbench provides a central interface for organizing and managing simulation projects.  
 All steps of a simulation can be carried out from the following window:
 
-[![Project interface in ANSYS Workbench](media/02_erste_Schritte/workbench.en.png){width=800px}](media/02_erste_Schritte/workbench.en.png "Project interface in ANSYS Workbench"){.glightbox}  
+[![Project interface in ANSYS Workbench](media/02_Installation_erste_Schritte/workbench.en.png){width=800px}](media/02_Installation_erste_Schritte/workbench.en.png "Project interface in ANSYS Workbench"){.glightbox}  
 
 On the left-hand side, various analysis types are available and can be added to the project schematic using drag and drop. Existing analyses can be linked to reuse geometry, as shown in the next image.  
 In System B, the same geometry is used as in System A; System D refers to results from System C. Parameters defined in individual components can also be displayed and edited in the project interface.
 
-[![Linked analyses with parameter set](media/02_erste_Schritte/verknuepfte_Analysen.en.png){width=800px}](media/02_erste_Schritte/verknuepfte_Analysen.en.png "Linked analyses with parameter set"){.glightbox}
+[![Linked analyses with parameter set](media/02_Installation_erste_Schritte/verknuepfte_Analysen.en.png){width=800px}](media/02_Installation_erste_Schritte/verknuepfte_Analysen.en.png "Linked analyses with parameter set"){.glightbox}
 
 A typical analysis system consists of the following components.  
 To run a simulation, these are usually processed from top to bottom.
@@ -251,7 +251,7 @@ Double-click **Engineering Data** to open the material database, where materials
 A data source can be selected in the upper left (see image below).  
 Materials are assigned to the project in the center panel using the plus icon. Material properties are shown at the bottom.
 
-[![Material database in Workbench](media/02_erste_Schritte/materialdatenbank.en.png){width=800px}](media/02_erste_Schritte/materialdatenbank.en.png "Material database in Workbench"){.glightbox}  
+[![Material database in Workbench](media/02_Installation_erste_Schritte/materialdatenbank.en.png){width=800px}](media/02_Installation_erste_Schritte/materialdatenbank.en.png "Material database in Workbench"){.glightbox}  
 
 Note that the database is largely based on US standards.
 
@@ -272,7 +272,7 @@ The **Mechanical Application (ANSYS Mechanical)** is the central FEM tool. It is
 
 ### User Interface
 
-[![Mechanical-Applikation in ANSYS](media/03_mechanical_kragbalken/mechanical_ui.en.png){width=700px}](media/03_mechanical_kragbalken/mechanical_ui.en.png "Mechanical-Applikation in ANSYS"){.glightbox}  
+[![Mechanical-Applikation in ANSYS](media/02_Installation_erste_Schritte/mechanical_ui.en.png){width=700px}](media/02_Installation_erste_Schritte/mechanical_ui.en.png "Mechanical-Applikation in ANSYS"){.glightbox}  
 
 Key elements of the interface:
 
@@ -302,7 +302,7 @@ Key elements of the interface:
 
 ### View controls
 
-[![Steuerung der Ansichten](media/03_mechanical_kragbalken/ansichtssteuerung.en.png){width=500px}](media/03_mechanical_kragbalken/ansichtssteuerung.en.png "Steuerung der Ansichten"){.glightbox}  
+[![Steuerung der Ansichten](media/02_Installation_erste_Schritte/ansichtssteuerung.en.png){width=500px}](media/02_Installation_erste_Schritte/ansichtssteuerung.en.png "Steuerung der Ansichten"){.glightbox}  
 
 Typical functions:
 
@@ -326,7 +326,7 @@ Selections are made using mouse interaction.
 * Repeating the function adds further tangents  
 * **Adjacent/All**: selects all tangential surfaces until the next sharp edge
 
-[![Selektionsfunktionen](media/03_mechanical_kragbalken/selektion.png){width=600px}](media/03_mechanical_kragbalken/selektion.png "Selektionsfunktionen"){.glightbox}  
+[![Selektionsfunktionen](media/02_Installation_erste_Schritte/selektion.png){width=600px}](media/02_Installation_erste_Schritte/selektion.png "Selektionsfunktionen"){.glightbox}  
 
 **Selecting hidden elements:**
 
@@ -366,7 +366,7 @@ Additional local systems can be added via the context menu:
 * Flat face → at the center of mass  
 * Cylindrical face → on the axis, axially centered
 
-[![Koordinatensysteme bearbeiten](media/03_mechanical_kragbalken/koordinaten.en.png){width=350px}](media/03_mechanical_kragbalken/koordinaten.en.png "Koordinatensysteme bearbeiten"){.glightbox}  
+[![Koordinatensysteme bearbeiten](media/02_Installation_erste_Schritte/koordinaten.en.png){width=350px}](media/02_Installation_erste_Schritte/koordinaten.en.png "Koordinatensysteme bearbeiten"){.glightbox}  
 
 Created systems can be moved or rotated.
 
@@ -393,7 +393,7 @@ The goal is a balanced trade-off between result quality and computation time.
 
 The global element size – the average edge length for all elements – is defined in the tree under _Mesh_.
 
-[![Setting global element size](media/03_mechanical_kragbalken/globale_elementgröße.en.png){width=400px}](media/03_mechanical_kragbalken/globale_elementgröße.en.png "Setting global element size"){.glightbox}  
+[![Setting global element size](media/02_Installation_erste_Schritte/globale_elementgröße.en.png){width=400px}](media/02_Installation_erste_Schritte/globale_elementgröße.en.png "Setting global element size"){.glightbox}  
 
 The entire model is meshed using this value.  
 **This can be inefficient** if the area of interest is small: a fine mesh everywhere increases computation time without added benefit.
@@ -413,7 +413,7 @@ Manual meshing is useful for simple models or early-stage studies.
 
 When importing assemblies, ANSYS automatically defines contact regions between parts. Optionally, these can be manually adjusted.
 
-[![Contact in ANSYS](media/03_mechanical_kragbalken/kontakte.en.png){width=500px}](media/03_mechanical_kragbalken/kontakte.en.png "Contacts in ANSYS"){.glightbox}  
+[![Contact in ANSYS](media/02_Installation_erste_Schritte/kontakte.en.png){width=500px}](media/02_Installation_erste_Schritte/kontakte.en.png "Contacts in ANSYS"){.glightbox}  
 <span class="bildquelle">Bildquelle[@Gebhardt2018]</span>
 
 ???+ danger "FIXME"

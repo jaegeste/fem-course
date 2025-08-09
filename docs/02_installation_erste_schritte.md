@@ -45,43 +45,43 @@ _2._ `STRUCTURES_2024R1_WINX64.zip` entpacken. `setup.exe` **als Administrator**
 _3._ Folgen Sie dem Installationsprozess wie in den folgenden Abbildungen angegeben. Die Einstellungen müssen z.T. angepasst werden, ändern Sie bitte keine Dateipfade  
 _4._ „Installation ANSYS Produkte“ auswählen:  
 
-[![Installationsstart](media/02_Installation_ansys/02_01.png){width=600px}](media/02_Installation_ansys/02_01.png "Installationsstart"){.glightbox}  
+[![Installationsstart](media/02_Installation_erste_Schritte/02_01.png){width=600px}](media/02_Installation_erste_Schritte/02_01.png "Installationsstart"){.glightbox}  
 
 _5._ Einstellungen übernehmen:
 
-[![EULA](media/02_Installation_ansys/02_02.png){width=600px}](media/02_Installation_ansys/02_02.png "EULA"){.glightbox}  
+[![EULA](media/02_Installation_erste_Schritte/02_02.png){width=600px}](media/02_Installation_erste_Schritte/02_02.png "EULA"){.glightbox}  
 
 _6._ Einstellungen übernehmen, keine Dateipfade ändern:  
 
-[![Einstellungen Pfade](media/02_Installation_ansys/02_03.png){width=600px}](media/02_Installation_ansys/02_03.png "Einstellungen Pfade"){.glightbox}  
+[![Einstellungen Pfade](media/02_Installation_erste_Schritte/02_03.png){width=600px}](media/02_Installation_erste_Schritte/02_03.png "Einstellungen Pfade"){.glightbox}  
 
 _7._ Lizenzserver eintragen: `10.10.13.101`, VPN-Verbindung erforderlich.  
 
-[![Lizenzserver](media/02_Installation_ansys/02_04.png){width=600px}](media/02_Installation_ansys/02_04.png "Lizenzserver"){.glightbox}  
+[![Lizenzserver](media/02_Installation_erste_Schritte/02_04.png){width=600px}](media/02_Installation_erste_Schritte/02_04.png "Lizenzserver"){.glightbox}  
 
 _8._ Nur **Geometry Interfaces** und **Mechanical Products** auswählen:  
 
-[![Komponenten](media/02_Installation_ansys/02_05.png){width=600px}](media/02_Installation_ansys/02_05.png "Komponenten"){.glightbox}  
+[![Komponenten](media/02_Installation_erste_Schritte/02_05.png){width=600px}](media/02_Installation_erste_Schritte/02_05.png "Komponenten"){.glightbox}  
 
 _9._ Weiter:  
 
-[![CAD-Schnittstellen](media/02_Installation_ansys/02_06.png){width=600px}](media/02_Installation_ansys/02_06.png "CAD-Schnittstellen"){.glightbox}  
+[![CAD-Schnittstellen](media/02_Installation_erste_Schritte/02_06.png){width=600px}](media/02_Installation_erste_Schritte/02_06.png "CAD-Schnittstellen"){.glightbox}  
 
 _10._ Weiter (je nach System andere Inhalte):  
 
-[![CAD-Schnittstellen Konfiguration](media/02_Installation_ansys/02_07.png){width=600px}](media/02_Installation_ansys/02_07.png "CAD-Schnittstellen Konfiguration"){.glightbox}  
+[![CAD-Schnittstellen Konfiguration](media/02_Installation_erste_Schritte/02_07.png){width=600px}](media/02_Installation_erste_Schritte/02_07.png "CAD-Schnittstellen Konfiguration"){.glightbox}  
 
 _11._ Weiter (je nach System andere Inhalte):  
 
-[![Einstellungen prüfen](media/02_Installation_ansys/02_08.png){width=600px}](media/02_Installation_ansys/02_08.png "Einstellungen prüfen"){.glightbox}  
+[![Einstellungen prüfen](media/02_Installation_erste_Schritte/02_08.png){width=600px}](media/02_Installation_erste_Schritte/02_08.png "Einstellungen prüfen"){.glightbox}  
 
 _12._ Installation fertig:  
 
-[![Installation](media/02_Installation_ansys/02_09.png){width=600px}](media/02_Installation_ansys/02_09.png "Installation"){.glightbox}  
+[![Installation](media/02_Installation_erste_Schritte/02_09.png){width=600px}](media/02_Installation_erste_Schritte/02_09.png "Installation"){.glightbox}  
 
 _13._ Installation abgeschlossen (je nach System andere Inhalte):  
 
-[![Fertigstellung](media/02_Installation_ansys/02_10.png){width=600px}](media/02_Installation_ansys/02_10.png "Fertigstellung"){.glightbox}  
+[![Fertigstellung](media/02_Installation_erste_Schritte/02_10.png){width=600px}](media/02_Installation_erste_Schritte/02_10.png "Fertigstellung"){.glightbox}  
 
 _14._ Um ANSYS nutzen zu können, muss eine Verbindung zum Lizenzserver der HFU hergestellt werden. Das wird außerhalb der Hochschule nur mit einer aktiven VPN-Verbindung erreicht. Innerhalb des Hochschulnetzwerks ist kein VPN erforderlich.  
 _15._ Weiter mit dem Service-Update.  
@@ -94,31 +94,31 @@ _1._ `ANSYS_2024R1.04_WINX64.zip` entpacken.
 _2._ `setup.exe` **als Administrator** starten.  
 _3._ „Installation ANSYS Produkte“ wählen:  
 
-[![Serviceupdate](media/02_Installation_ansys/02_11.png){width=600px}](media/02_Installation_ansys/02_11.png "Serviceupdate"){.glightbox}  
+[![Serviceupdate](media/02_Installation_erste_Schritte/02_11.png){width=600px}](media/02_Installation_erste_Schritte/02_11.png "Serviceupdate"){.glightbox}  
 
 _4._ Einstellungen übernehmen:
 
-[![EULA](media/02_Installation_ansys/02_12.png){width=600px}](media/02_Installation_ansys/02_12.png "EULA"){.glightbox}  
+[![EULA](media/02_Installation_erste_Schritte/02_12.png){width=600px}](media/02_Installation_erste_Schritte/02_12.png "EULA"){.glightbox}  
 
 _5._ Weiter, keine Dateipfade ändern:
 
-[![Einstellungen Pfade](media/02_Installation_ansys/02_13.png){width=600px}](media/02_Installation_ansys/02_13.png "Einstellungen Pfade"){.glightbox}  
+[![Einstellungen Pfade](media/02_Installation_erste_Schritte/02_13.png){width=600px}](media/02_Installation_erste_Schritte/02_13.png "Einstellungen Pfade"){.glightbox}  
 
 _6._ Einstellungen übernehmen und weiter:
 
-[![Auswahl Komponenten](media/02_Installation_ansys/02_14.png){width=600px}](media/02_Installation_ansys/02_14.png "Auswahl Komponenten"){.glightbox}  
+[![Auswahl Komponenten](media/02_Installation_erste_Schritte/02_14.png){width=600px}](media/02_Installation_erste_Schritte/02_14.png "Auswahl Komponenten"){.glightbox}  
 
 _7._ Weiter:
 
-[![Einstellungen prüfen](media/02_Installation_ansys/02_15.png){width=600px}](media/02_Installation_ansys/02_15.png "Einstellungen prüfen"){.glightbox}  
+[![Einstellungen prüfen](media/02_Installation_erste_Schritte/02_15.png){width=600px}](media/02_Installation_erste_Schritte/02_15.png "Einstellungen prüfen"){.glightbox}  
 
 _8._ Installation abgeschlossen:
 
-[![Installation Service](media/02_Installation_ansys/02_16.png){width=600px}](media/02_Installation_ansys/02_16.png "Installation Service"){.glightbox}  
+[![Installation Service](media/02_Installation_erste_Schritte/02_16.png){width=600px}](media/02_Installation_erste_Schritte/02_16.png "Installation Service"){.glightbox}  
 
 _9._ Fertig:
 
-[![Fertigstellung](media/02_Installation_ansys/02_17.png){width=600px}](media/02_Installation_ansys/02_17.png "Fertigstellung"){.glightbox}  
+[![Fertigstellung](media/02_Installation_erste_Schritte/02_17.png){width=600px}](media/02_Installation_erste_Schritte/02_17.png "Fertigstellung"){.glightbox}  
 
 _10._ ZIP-Datei und entpackte Daten können gelöscht werden.  
 
@@ -160,11 +160,11 @@ Dieses Informationen soll helfen, die ersten Schritte in ANSYS Workbench zu gehe
 
 ANSYS Workbench dient als zentrale Oberfläche, um Simulationsprojekte zu organisieren und durchzuführen. Alle Arbeitsschritte einer Simulation lassen sich aus dem folgenden Fenster heraus erledigen:
 
-[![Projektoberfläche in ANSYS Workbench](media\02_erste_Schritte\workbench.png){width=800px}](media\02_erste_Schritte\workbench.png "Projektoberfläche in ANSYS Workbench"){.glightbox}  
+[![Projektoberfläche in ANSYS Workbench](media\02_Installation_erste_Schritte\workbench.png){width=800px}](media\02_Installation_erste_Schritte\workbench.png "Projektoberfläche in ANSYS Workbench"){.glightbox}  
 
 Auf der linken Seite befinden sich verschiedene Analysearten, die per Drag-and-Drop ins Projektschema eingefügt werden können. Bereits vorhandene Analysen lassen sich verknüpfen, um beispielsweise dieselbe Geometrie mehrfach zu verwenden, siehe nächste Abbildung. So wird in System B die gleiche Geometrie wie in System A verwendet, System D bezieht sich auf Ergebnisse des Systems C. Auch können in der Projektoberfläche Parameter, die in den Einzelbausteinen ausgewiesen wurden, angezeigt und bearbeitet werden (Parametersatz).  
 
-[![Verknüpfte Analysen mit Parametersatz](media/02_erste_Schritte/verknuepfte_Analysen.png){width=800px}](media/02_erste_Schritte/verknuepfte_Analysen.png "Verknüpfte Analysen mit Parametersatz"){.glightbox}
+[![Verknüpfte Analysen mit Parametersatz](media/02_Installation_erste_Schritte/verknuepfte_Analysen.png){width=800px}](media/02_Installation_erste_Schritte/verknuepfte_Analysen.png "Verknüpfte Analysen mit Parametersatz"){.glightbox}
 
 Ein Analysesystem besteht typischerweise aus folgenden Komponenten. Um eine Simulation durchzuführen werden in der Regel die Punkte von oben nach unten abgearbeitet werden.
 
@@ -193,7 +193,6 @@ Je nach Lizenz sind verschiedene Analysen verfügbar. Beispiele:
 * **Thermisch-transiente Analysen** bilden den zeitlichen Verlauf eines Temperaturfeldes ab.  
 * **Topologie-Optimierungen** helfen, die grundlegende Form eines Bauteils belastungsgerecht zu gestalten.  
 * **Transiente strukturmechanische Analysen auf Basis von Mehrkörperdynamik (MBD, Multi Body Dynamics)** erlauben kinematische und dynamische Analysen von Systemen aus Starrkörpern.  
-
 
 --
 
@@ -242,7 +241,7 @@ ANSYS Workbench bringt eine kleine Vorauswahl an Materialien mit vordefinierten 
 
 Oben links kann eine Datenquelle ausgewählt werden (siehe folgende Abbildung). Anschließend können Materialien dem aktuellen Projekt zugewiesen werden. Die Zuordnung erfolgt im mittleren Fensterbereich durch Klick auf das Plus-Symbol. Die Materialeigenschaften werden im unteren Bereich angezeigt.
 
-[![Materialdatenbank in Workbench](media/02_erste_Schritte/materialdatenbank.png){width=800px}](media/02_erste_Schritte/materialdatenbank.png "Materialdatenbank in Workbench"){.glightbox}  
+[![Materialdatenbank in Workbench](media/02_Installation_erste_Schritte/materialdatenbank.png){width=800px}](media/02_Installation_erste_Schritte/materialdatenbank.png "Materialdatenbank in Workbench"){.glightbox}  
 
 Zu beachten ist, dass die Datenbank im Wesentlichen auf US-amerikanischen Normen basiert.
 
@@ -264,7 +263,7 @@ Ein Doppelklick auf _Modell_ öffnet die Mechanical-Applikation.
 
 ### Benutzeroberfläche
 
-[![Mechanical-Applikation in ANSYS](media/03_mechanical_kragbalken/mechanical_ui.png){width=700px}](media/03_mechanical_kragbalken/mechanical_ui.png "Mechanical-Applikation in ANSYS"){.glightbox}  
+[![Mechanical-Applikation in ANSYS](media/02_Installation_erste_Schritte/mechanical_ui.png){width=700px}](media/02_Installation_erste_Schritte/mechanical_ui.png "Mechanical-Applikation in ANSYS"){.glightbox}  
 
 Typische Elemente der Oberfläche:
 
@@ -294,7 +293,7 @@ Typische Elemente der Oberfläche:
 
 ### Steuerung der Ansicht
 
-[![Steuerung der Ansichten](media/03_mechanical_kragbalken/ansichtsteuerung.png){width=500px}](media/03_mechanical_kragbalken/ansichtsteuerung.png "Steuerung der Ansichten"){.glightbox}  
+[![Steuerung der Ansichten](media/02_Installation_erste_Schritte/ansichtsteuerung.png){width=500px}](media/02_Installation_erste_Schritte/ansichtsteuerung.png "Steuerung der Ansichten"){.glightbox}  
 
 Typische Funktionen:
 
@@ -318,7 +317,7 @@ Die Selektion erfolgt über Mausaktionen.
 * Doppelte Anwendung der Funktion erweitert tangential erneut  
 * **Angrenzend/Alle**: selektiert alle tangential verbundenen Flächen bis zur nächsten scharfen Kante
 
-[![Selektionsfunktionen](media/03_mechanical_kragbalken/selektion.png){width=600px}](media/03_mechanical_kragbalken/selektion.png "Selektionsfunktionen"){.glightbox}  
+[![Selektionsfunktionen](media/02_Installation_erste_Schritte/selektion.png){width=600px}](media/02_Installation_erste_Schritte/selektion.png "Selektionsfunktionen"){.glightbox}  
 
 **Verdeckte Objekte selektieren:**
 
@@ -358,7 +357,7 @@ Weitere lokale Koordinatensysteme lassen sich über das Kontextmenü erzeugen. D
 * Fläche → Flächenschwerpunkt  
 * Zylinderfläche → Achse, axial mittig
 
-[![Koordinatensysteme bearbeiten](media/03_mechanical_kragbalken/koordinaten.png){width=350px}](media/03_mechanical_kragbalken/koordinaten.png "Koordinatensysteme bearbeiten"){.glightbox}  
+[![Koordinatensysteme bearbeiten](media/02_Installation_erste_Schritte/koordinaten.png){width=350px}](media/02_Installation_erste_Schritte/koordinaten.png "Koordinatensysteme bearbeiten"){.glightbox}  
 
 Erstellte Systeme lassen sich verschieben oder verdrehen.
 
@@ -384,7 +383,7 @@ Ziel ist ein tragfähiger Kompromiss aus Ergebnisqualität und Rechenzeit.
 
 Die globale Elementgröße – also die durchschnittliche Kantenlänge der Elemente für das gesamte Modell – wird direkt im Strukturbaum unter dem Eintrag _Netz_ eingestellt.
 
-[![Globale Elementgröße festlegen](media/03_mechanical_kragbalken/globale_elementgröße.png){width=400px}](media/03_mechanical_kragbalken/globale_elementgröße.png "Globale Elementgröße festlegen"){.glightbox}  
+[![Globale Elementgröße festlegen](media/02_Installation_erste_Schritte/globale_elementgröße.png){width=400px}](media/02_Installation_erste_Schritte/globale_elementgröße.png "Globale Elementgröße festlegen"){.glightbox}  
 
 Das Modell wird auf Basis dieses Wertes komplett mit Elementen vernetzt.  
 **Problematisch wird dieses Vorgehen**, wenn das relevante Ergebnis nur in einem lokalen Bereich auftritt:  
@@ -405,7 +404,7 @@ Das manuelle Vorgehen eignet sich besonders für einfache Modelle oder gezielte 
 
 Bei Baugruppen erzeugt ANSYS automatisch Kontaktflächen zwischen Bauteilen – optional können sie auch manuell definiert werden.
 
-[![Kontakttypen in ANSYS](media/03_mechanical_kragbalken/kontakte.png){width=500px}](media/03_mechanical_kragbalken/kontakte.png "Kontakttypen in ANSYS"){.glightbox}  
+[![Kontakttypen in ANSYS](media/02_Installation_erste_Schritte/kontakte.png){width=500px}](media/02_Installation_erste_Schritte/kontakte.png "Kontakttypen in ANSYS"){.glightbox}  
 <span class="bildquelle">Bildquelle[@Gebhardt2018]</span>
 
 Kontakte erfüllen zwei Aufgaben:
@@ -426,4 +425,4 @@ Kontakte mit Reibung oder Abheben erfordern deutlich mehr Rechenzeit. Für die m
 
 !!! note "Hinweis"
     Diese Übersicht vermittelt nur die Grundlagen der Kontaktdefinition.  
-    Die konkrete Anwendung, Auswahl und Bewertung von Kontakten erfolgt in späteren Übungen. 
+    Die konkrete Anwendung, Auswahl und Bewertung von Kontakten erfolgt in späteren Übungen.  
