@@ -61,7 +61,7 @@ plugins:
             - Startseite: index.md
             - Einführung: 01_einfuehrung.md
             - Installation und erste Schritte: 02_installation_erste_schritte.md
-            - ANSYS Mechanical und Übung Kragbalken: 03_mechanical_kragbalken.md
+            - Übung Kragbalken: 03_kragbalken.md
             - Netze, Konvergenz & Kerben: 04_netze_kerben.md
             - Schweißverbindungen & Baugruppen: 05_schweiss_baugruppen.md
             - Optimierung: 06_optimierung.md
@@ -73,7 +73,7 @@ plugins:
             - Home: index.en.md
             - Introduction: 01_einfuehrung.en.md
             - Installation and getting started: 02_installation_erste_schritte.en.md
-            - ANSYS Mechanical and Beam Exercise: 03_mechanical_kragbalken.en.md
+            - Beam Exercise: 03_kragbalken.en.md
             - Meshing, Convergence & Notches: 04_netze_kerben.en.md
             - Welds & Assemblies: 05_schweiss_baugruppen.en.md
             - Optimization: 06_optimierung.en.md

@@ -1,10 +1,6 @@
-# ANSYS Mechanical und Übung Kragbalken
+# Übung Kragbalken
 
-
-
-## Übung Kragbalken  
-
-### Aufgabenstellung
+## Aufgabenstellung
 
 Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  
 
@@ -13,17 +9,17 @@ Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Q
 * Kraft: \( F = 7{.}500 \,\text{N} \)  
 * Material: Baustahl mit Streckgrenze \( R_e = 250 \,\text{N/mm}^2 \)  
 
-Laden Sie die Datei [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) und importieren Sie sie in ANSYS Workbench.
+Laden Sie die Datei [kragbalken.stp](media/03_kragbalken/kragbalken.stp) und importieren Sie sie in ANSYS Workbench.
 
 Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  
 
-[![Kragbalken, Zug](media/03_mechanical_kragbalken/kragbalken_zug.svg){width=500px}](media/03_mechanical_kragbalken/kragbalken_zug.svg "Kragbalken, Zug"){.glightbox}  
+[![Kragbalken, Zug](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Kragbalken, Zug"){.glightbox}  
 
 ---
 
-### Theoretischer Hintergrund
+## Theoretischer Hintergrund
 
-#### Hookesches Gesetz
+### Hookesches Gesetz
 
 Die Berechnung basiert auf dem **Hookeschen Gesetz**. Es beschreibt den linearen Zusammenhang zwischen Spannung und Dehnung im elastischen Bereich eines Werkstoffs.
 
@@ -49,7 +45,7 @@ Die **Längenänderung** ergibt sich zu:
 
 ---
 
-#### Querkontraktion
+### Querkontraktion
 
 ???+ danger "FIXME"
     Hier noch eine Abbildung einfügen, die den Zusammenhang von Längsdehnung und Querkontraktion schematisch darstellt.
@@ -86,43 +82,48 @@ Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt q
 
 ---
 
-#### Spannungs-Dehnungs-Diagramm
+### Spannungs-Dehnungs-Diagramm
 
 Das Hookesche Gesetz gilt nur im **linear-elastischen Bereich** eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs **ohne ausgeprägte Streckgrenze**. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über.  
 Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:
 
-[![Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg "Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze"){.glightbox}  
+[![Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze](media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg){width=450}](media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg "Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze"){.glightbox}  
 <span class="bildquelle">Bildquelle[@Wikipedia2023]</span>
 
 Das zweite Diagramm zeigt das Verhalten eines Werkstoffs **mit ausgeprägter Streckgrenze**, wie es für Baustahl typisch ist. Der lineare Bereich endet abrupt, es folgt ein Plateau mit nahezu konstanter Spannung, bevor der plastische Anstieg beginnt:
 
-[![Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg){width=450}](media/03_mechanical_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg "Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze"){.glightbox}  
+[![Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze](media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg){width=450}](media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg "Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze"){.glightbox}  
 <span class="bildquelle">Bildquelle[@Wikipedia2023]</span>
 
 Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im **elastischen Bereich**. Das Hookesche Gesetz ist daher ausreichend.
 
 ---
 
-### Umsetzung in ANSYS Mechanical
+## Umsetzung in ANSYS Mechanical
 
-#### 1. Geometrieimport
+### 1. Geometrieimport
 
-Laden Sie die Datei [kragbalken.stp](media/03_mechanical_kragbalken/kragbalken.stp) in ANSYS Workbench.  
+Laden Sie die Datei [kragbalken.stp](media/03_kragbalken/kragbalken.stp) in ANSYS Workbench.  
 
-[![Kragbalken, Geometrieimport](media/03_mechanical_kragbalken/01_Kragbalken_Geometrieimport.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Geometrieimport.png "Kragbalken, Geometrieimport"){.glightbox}  
+[![Kragbalken, Geometrieimport](media/03_kragbalken/01_Kragbalken_Geometrieimport.png){width=600px}](media/03_kragbalken/01_Kragbalken_Geometrieimport.png "Kragbalken, Geometrieimport"){.glightbox}  
 
-#### 2. Materialzuweisung
+Anhand der Abmessungen des Begrenzungsrahmens lässt sich unmittelbar erkennen, ob die importierte Geometrie in den korrekten Einheiten vorliegt.
+
+[![Kragbalken, Begrenzungsrahmen](media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png){width=600px}](media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png "Kragbalken, Begrenzungsrahmen"){.glightbox}  
+
+### 2. Materialzuweisung
 
 Als Standardmaterial wird von ANSYS Baustahl zugewiesen. Vor der weiteren Verwendung sollten die jeweiligen Materialeigenschaften überprüft werden, um die Eignung für die geplante Anwendung sicherzustellen.
 
-[![Kragbalken, Materialdefinition](media/03_mechanical_kragbalken/01_Kragbalken_Materialdefinition.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Materialdefinition.png "Kragbalken, Materialdefinition"){.glightbox}  
+Ansicht unter _Geometrie:_
 
-???+ danger "FIXME"
-    Ich würde zwei Screenshots machen.  
-    auf einem sieht man die Materialzuweisung unter "Geometrie"  
-    auf dem anderen sieht man wie bisher "Materialien" aber Baustahl angeklickt
+[![Kragbalken, Materialdefinition](media/03_kragbalken/03_Kragbalken_Materialdefinition.png){width=600px}](media/03_kragbalken/03_Kragbalken_Materialdefinition.png "Kragbalken, Materialdefinition"){.glightbox}  
 
-#### 3. Netzgenerierung
+Ansicht unter _Materialien:_
+
+[![Kragbalken, Materialdefinition](media/03_kragbalken/04_Kragbalken_Materialdefinition.png){width=600px}](media/03_kragbalken/04_Kragbalken_Materialdefinition.png "Kragbalken, Materialdefinition"){.glightbox}  
+
+### 3. Netzgenerierung
 
 Für die Berechnung wird das Bauteil in finite Elemente unterteilt, die über Knoten miteinander verbunden sind. Dieser Vorgang heißt **Vernetzung**.  
 
@@ -142,9 +143,9 @@ Aus FEM-Sicht gilt:
 
 Diese einfache Netzeinflussstudie vermittelt den Grundgedanken, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der **Diskretisierung** abhängen.
 
-[![Kragbalken, Netzdefinition](media/03_mechanical_kragbalken/01_Kragbalken_Netzgenerierung.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Netzgenerierung.png "Kragbalken, Netzdefinition"){.glightbox}  
+[![Kragbalken, Netzdefinition](media/03_kragbalken/05_Kragbalken_Netzgenerierung.png){width=600px}](media/03_kragbalken/05_Kragbalken_Netzgenerierung.png "Kragbalken, Netzdefinition"){.glightbox}  
 
-#### 4. Randbedingungen
+### 4. Randbedingungen
 
 Für die Berechnung werden zwei Randbedingungen benötigt:
 
@@ -167,11 +168,11 @@ Im Zusammenspiel von **verschiebungsgebundenen** und **kraftgebundenen** Randbed
 ???+ note "Hinweis zur Modellierung"
     Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.
   
-[![Kragbalken, Randbedingungen](media/03_mechanical_kragbalken/01_Kragbalken_Randbedingungen.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
+[![Kragbalken, Randbedingungen](media/03_kragbalken/06_Kragbalken_Randbedingungen.png){width=600px}](media/03_kragbalken/06_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
 
-[![Kragbalken, Randbedingungen](media/03_mechanical_kragbalken/02_Kragbalken_Randbedingungen.png){width=600px}](media/03_mechanical_kragbalken/02_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
+[![Kragbalken, Randbedingungen](media/03_kragbalken/07_Kragbalken_Randbedingungen.png){width=600px}](media/03_kragbalken/07_Kragbalken_Randbedingungen.png "Kragbalken, Randbedingungen"){.glightbox}  
 
-#### 5. Auswertung
+### 5. Auswertung
 
 Für die erste Auswertung in ANSYS werden zwei Ergebnisse betrachtet:
 
@@ -194,25 +195,29 @@ Auswertungsschritte in ANSYS:
 2. Darstellung der **von-Mises-Spannung** → Vergleich mit analytisch berechneter Spannung.  
 3. Beurteilung der **Spannungsverteilung** im Bauteil.  
 
-[![Kragbalken, Lösungen](media/03_mechanical_kragbalken/01_Kragbalken_Lösung.png){width=600px}](media/03_mechanical_kragbalken/01_Kragbalken_Lösung.png "Kragbalken, Lösungen"){.glightbox}  
+[![Kragbalken, Lösungen hinzufügen](media/03_kragbalken/08_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/08_Kragbalken_Auswertung.png "Kragbalken, Lösungen hinzufügen"){.glightbox}  
 
-[![Kragbalken, Lösungen](media/03_mechanical_kragbalken/02_Kragbalken_Lösung.png){width=600px}](media/03_mechanical_kragbalken/02_Kragbalken_Lösung.png "Kragbalken, Lösungen"){.glightbox}  
+[![Kragbalken, Lösungen hinzufügen](media/03_kragbalken/10_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/10_Kragbalken_Auswertung.png "Kragbalken, Lösungen hinzufügen"){.glightbox}  
 
 ---
 
-### Diskussion der Ergebnisse
+## Diskussion der Ergebnisse
 
-#### Vergleich mit analytischer Lösung
+### Vergleich mit analytischer Lösung
 
 Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen
 
-Ergebnisse aus ANSYS...
+Ergebnisse aus ANSYS:
 
-???+ danger "FIXME"
-    Screenshots hinzu und Diskussion zu "was sieht man"
+[![Kragbalken, Lösungen](media/03_kragbalken/09_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/09_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
-???+ danger "FIXME"
-    Einheiten in Formeln ergänzen
+[![Kragbalken, Lösungen](media/03_kragbalken/11_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/11_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+[![Kragbalken, Lösungen](media/03_kragbalken/12_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+[![Kragbalken, Lösungen](media/03_kragbalken/13_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 ??? note "Berechnung von Δl, Δa und σ"
     Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
@@ -230,7 +235,7 @@ Ergebnisse aus ANSYS...
     \]
 
     \[
-    \sigma = \frac{7{.}500}{144} \approx 52{,}1 \,\text{N/mm}^2
+    \sigma = \frac{7{.}500 \,\text{N}}{144 \,\text{mm}^2} \approx 52{,}1 \,\text{N/mm}^2
     \]
 
     **Längenänderung**
@@ -246,7 +251,7 @@ Ergebnisse aus ANSYS...
     \]
 
     \[
-    \Delta l = \frac{7{.}500 \cdot 150}{144 \cdot 210{.}000} 
+    \Delta l = \frac{7{.}500 \,\text{N}\cdot 150 \,\text{mm}}{144 \,\text{mm}^2\cdot 210{.}000 \,\text{N/mm}^2} 
              \approx 0{,}037 \,\text{mm}
     \]
 
@@ -261,7 +266,7 @@ Ergebnisse aus ANSYS...
     mit  
 
     \[
-    \varepsilon_l = \frac{\Delta l}{l} = \frac{0{,}037}{150} \approx 2{,}47 \cdot 10^{-4}
+    \varepsilon_l = \frac{\Delta l}{l} = \frac{0{,}037 \,\text{mm}}{150 \,\text{mm}} \approx 2{,}47 \cdot 10^{-4}
     \]
 
     \[
@@ -272,7 +277,7 @@ Ergebnisse aus ANSYS...
     Daraus ergibt sich die Querschnittsänderung:
 
     \[
-    \Delta a = \varepsilon_q \cdot a = -7{,}4 \cdot 10^{-5} \cdot 12
+    \Delta a = \varepsilon_q \cdot a = -7{,}4 \cdot 10^{-5} \cdot 12 \,\text{mm}
              \approx -8{,}9 \cdot 10^{-4} \,\text{mm}
     \]
 
@@ -281,17 +286,17 @@ Ergebnisse aus ANSYS...
     * Verlängerung des Balkens: ca. **0,037 mm**  
     * Verringerung der Kantenlänge: ca. **0,0009 mm**
 
-#### Einfluss des Netzes
+### Einfluss des Netzes
 
 * Grobes Netz → geringere Genauigkeit.  
 * Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  
 * Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  
 
-???+ danger "FIXME"
-    Screenshots hinzu. Sinnvoll?
-    Thema hier überhaupt sinnvoll? Divergenz an der Einspannung...
+[![Kragbalken, Lösungen](media/03_kragbalken/15_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/15_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
-#### Verhinderte Querkontraktion
+[![Kragbalken, Lösungen](media/03_kragbalken/16_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/16_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+### Verhinderte Querkontraktion
 
 In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen.  
 Im FEM‑Modell mit fester Einspannung wird diese **Querkontraktion lokal verhindert**.  
@@ -300,7 +305,7 @@ Dadurch entstehen **Randspannungsspitzen**, die analytisch nicht vorhergesagt we
 
 ---
 
-### Add-on: Biegemoment statt Kraft
+## Add-on: Biegemoment statt Kraft
 
 Als Alternative kann ein **reines Biegemoment** angesetzt werden.  
 Dies führt zu einem **querkraftfreien Balken** mit gleichmäßigerem Spannungsfeld.
@@ -314,9 +319,13 @@ Dies führt zu einem **querkraftfreien Balken** mit gleichmäßigerem Spannungsf
 ???+ danger "FIXME"
     Das ist hier natürlich quatsch und gehört in die Übung Kragbalken Biegung
 
+[![Kragbalken, Lösungen](media/03_kragbalken/17_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/17_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+[![Kragbalken, Lösungen](media/03_kragbalken/18_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/18_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
 ---
 
-### Varianten der Krafteinleitung
+## Varianten der Krafteinleitung
 
 In ANSYS Mechanical stehen verschiedene Möglichkeiten zur Verfügung, eine äußere Belastung aufzubringen. Die Auswahl beeinflusst maßgeblich die Spannungsverteilung und die physikalische Plausibilität.
 
@@ -350,7 +359,7 @@ Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt
 
 ---
 
-### Weiterführende Hinweise
+## Weiterführende Hinweise
 
 ???+ danger "FIXME"
     Video hinzu?
