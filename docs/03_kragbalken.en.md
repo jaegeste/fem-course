@@ -1,6 +1,6 @@
 # Beam Exercise
 
-## Task
+## Task tensile load
 
 For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  
 
@@ -11,12 +11,9 @@ For the cantilever beam with square cross-section shown in the figure, calculate
 
 Download the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
 
-???+ danger "FIXME"
-    rename file  
-
 Compare your result with the analytical solution and discuss any deviations.  
 
-[![Cantilever beam under tension](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Cantilever beam under tension"){.glightbox}  
+[![Cantilever beam, tensile load](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Cantilever beam, tensile load"){.glightbox}  
 
 ---
 
@@ -50,11 +47,10 @@ The **elongation** is calculated as:
 
 ### Lateral Contraction
 
-???+ danger "FIXME"
-    Insert a schematic figure showing the relationship between longitudinal strain and lateral contraction.
+In addition to the strain in the loading direction, a lateral contraction occurs. It is described by the **Poisson’s ratio** (\(\nu\)). It defines the ratio of transverse strain to longitudinal strain.
 
-In addition to the strain in the loading direction, a lateral contraction occurs. It is described by the **Poisson’s ratio** (\(\nu\)).  
-It defines the ratio of transverse strain to longitudinal strain:
+[![lateral contraction](media/03_kragbalken/querkontraktion.svg){width=700}](media/03_kragbalken/querkontraktion.svg "lateral contraction"){.glightbox}  
+<span class="bildquelle">Bildquelle nach [@Altenbach2016]</span>
 
 \[
 \nu \;=\; - \frac{\varepsilon_q}{\varepsilon_l}
@@ -109,19 +105,13 @@ For the calculation of the cantilever beam in this exercise, the load lies withi
 
 Load the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) into ANSYS Workbench.  
 
-???+ danger "FIXME"
-    rename file  
-
 [![Cantilever beam, geometry import](media/03_kragbalken/01_Kragbalken_Geometrieimport.en.png){width=600px}](media/03_kragbalken/01_Kragbalken_Geometrieimport.en.png "Cantilever beam, geometry import"){.glightbox}  
 
 The dimensions of the bounding box provide a quick indication of whether the imported geometry is in the correct units.
 
 [![Cantilever beam, bounding box](media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.en.png){width=600px}](media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.en.png "Cantilever beam, bounding box"){.glightbox}  
 
-### 2. Material Definition  
-
-???+ danger "FIXME"
-    Material definition ist glaube ich nicht richtig übersetzt. Es muss Materialzuweisung heißen
+### 2. Material Assignment  
 
 By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.
 
@@ -151,20 +141,20 @@ From an FEM perspective:
 * Mesh too fine → high accuracy, but significantly longer computation time.  
 * The optimal mesh provides **sufficiently accurate results** without generating an unnecessary number of elements.  
 
-This simple mesh sensitivity study illustrates the basic idea that FEM results are not automatically exact, but depend on the **discretization**.
+This simple mesh sensitivity study shows that FEM results are not automatically exact, but depend on the **discretization**.
 
 [![Cantilever beam, mesh definition](media/03_kragbalken/05_Kragbalken_Netzgenerierung.en.png){width=600px}](media/03_kragbalken/05_Kragbalken_Netzgenerierung.en.png "Cantilever beam, mesh definition"){.glightbox}  
 
 ### 4. Boundary Conditions
 
-Two boundary conditions are required:
+Considering the problem statement, two boundary conditions are obvious:
 
 * **Fixed support** at the left end  
 * **Tensile force** \( F \) at the right face  
 
 The fixed support is modeled in ANSYS by blocking **all degrees of freedom** of the selected face. Concretely: translations in \(x\), \(y\), and \(z\) directions as well as rotations about all three axes are prevented. Physically, this represents the connection of the beam to a rigid environment.  
 
-The tensile force is applied at the right face. In ANSYS this is done either as a **surface load (pressure)** or as a **total force**, distributed evenly over the entire face. This ensures the load is not applied at a point (which would cause a singularity) but is realistically distributed.  
+The tensile force is applied at the right face. In ANSYS this is done as a **total force**, distributed evenly over the entire face. This ensures the load is not applied at a point (which would cause a singularity) but is realistically distributed.  
 
 From an FEM perspective:
 
@@ -179,6 +169,9 @@ Together, the combination of **displacement-controlled** and **force-controlled*
 
 [![Cantilever beam, boundary conditions](media/03_kragbalken/07_Kragbalken_Randbedingungen.en.png){width=600px}](media/03_kragbalken/07_Kragbalken_Randbedingungen.en.png "Cantilever beam, boundary conditions"){.glightbox}  
 
+???+ note "Modelling note"
+    If the force is applied only to a small edge or a single node, unrealistically high local stresses (singularities) will occur. Therefore, always select a surface to distribute the load realistically.
+
 ### 5. Evaluation
 
 Two results are examined in ANSYS:
@@ -186,9 +179,10 @@ Two results are examined in ANSYS:
 * **Total deformation**  
 * **von Mises stress**
 
-The deformation shows the total displacement. ANSYS usually displays it in an exaggerated scale for visualization. The actual numerical values must be read from the results tables.  
+The deformation shows the total displacement of the component. In ANSYS, it is usually displayed in an exaggerated form so that the shape change is clearly visible. It is important to note that this is a **scaling for visualization purposes** — the actual values can be found in the results tables.  
 
-The von Mises stress is an equivalent stress combining normal and shear stresses:
+The von Mises stress is a reference value that combines the effects of all normal and shear stresses into a single “equivalent” stress:
+
 
 \[
 \sigma_\text{vM} = \sqrt{\frac{1}{2} \left[(\sigma_x-\sigma_y)^2 + (\sigma_y-\sigma_z)^2 + (\sigma_z-\sigma_x)^2 \right] + 3(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2)}
@@ -225,6 +219,11 @@ Results from ANSYS:
 [![Cantilever beam, solutions](media/03_kragbalken/13_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
 [![Cantilever beam, solutions](media/03_kragbalken/14_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+???+ danger "FIXME"
+    Record the results  
+    Describe the images  
+    Create a table comparing ANSYS and analytical results
 
 ??? note "Calculation of Δl, Δa and σ"
     For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
@@ -312,6 +311,11 @@ This leads to **edge stress peaks** not predicted analytically.
 
 ---
 
+## Task bending
+
+---
+
+
 ## Add-on: Bending Moment Instead of Force
 
 As an alternative, a **pure bending moment** can be applied.  
@@ -332,7 +336,9 @@ This results in a **shear-free beam** with a more uniform stress field.
 
 ---
 
-## Variants of Load Application
+## Further Notes
+
+### Variants of Load Application
 
 In ANSYS Mechanical, various options are available for applying loads. The choice strongly influences the stress distribution and physical plausibility.
 
@@ -364,9 +370,6 @@ In ANSYS Mechanical, various options are available for applying loads. The choic
 
 These options illustrate that the “same” load can yield very different results depending on how it is applied. Choosing the correct method is a key part of FEM modeling.
 
----
-
-## Further Notes
-
 ???+ danger "FIXME"
     Add video?
+
