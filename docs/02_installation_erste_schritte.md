@@ -1,6 +1,11 @@
 # Installation von ANSYS und erste Schritte
 
-Diese Anleitung beschreibt die Installation von ANSYS 2024R1 auf einem privaten Windows-Rechner.
+## Lernziele
+
+* der Installationsprozess unter Windows Schritt für Schritt durchgeführt werden  
+* die VPN-Verbindung zur HFU-Lizenzverwaltung eingerichtet und geprüft werden  
+* ANSYS Workbench gestartet und die grundlegende Programmoberfläche identifiziert werden  
+* erste Projekte in ANSYS Workbench angelegt und gespeichert werden  
 
 ## Installation von ANSYS  
 
@@ -425,3 +430,62 @@ Kontakte mit Reibung oder Abheben erfordern deutlich mehr Rechenzeit. Für die m
     Diese Übersicht vermittelt nur die Grundlagen der Kontaktdefinition.  
     Die konkrete Anwendung, Auswahl und Bewertung von Kontakten erfolgt in späteren Übungen.  
 
+## Quiz zur Selbstkontrolle  
+
+<!-- markdownlint-disable MD033 -->
+
+<?quiz?>
+question: Welche Verbindung ist außerhalb des Campus notwendig, um ANSYS nutzen zu können?
+answer: WLAN der Hochschule
+answer: Mobile Datenverbindung
+answer-correct: VPN-Verbindung zur HFU
+content:
+<strong>Hinweis:</strong> Der Lizenzserver ist nur im Campusnetz oder über VPN erreichbar.
+<?/quiz?>
+
+<?quiz?>
+question: Wo befindet sich die Liste der verfügbaren Analysearten in ANSYS Workbench?
+answer: Im unteren Bereich des Fensters
+answer: Im rechten Bereich des Fensters
+answer-correct: Im linken Bereich des Fensters
+content:
+<strong>Hinweis:</strong> Die Analysearten werden links in der Projektoberfläche angezeigt und können per Drag-and-drop verwendet werden.
+<?/quiz?>
+
+<?quiz?>
+question: Wie können Blöcke in ANSYS Workbench verknüpft werden?
+answer: Durch Rechtsklick und <em>Verbinden</em>
+answer: Durch Ziehen einer Datei in das Fenster
+answer-correct: Per Drag-and-drop einer Verbindungslinie zwischen den Systemen
+content:
+<strong>Hinweis:</strong> Verbindungslinien ermöglichen den Datenaustausch zwischen den Systemen (z. B. Geometrie oder Ergebnisse).
+<?/quiz?>
+
+<?quiz?>
+question: Wie wird Geometrie in ein ANSYS-Projekt importiert?
+answer: Über den Menüpunkt <em>Materialeigenschaften</em>
+answer-correct: Über Rechtsklick auf <em>Geometrie</em> und Auswahl <em>Geometrie importieren</em>
+answer: Durch Ziehen einer STEP-Datei ins Projektfenster
+content:
+<strong>Hinweis:</strong> Importformate wie STEP, IGES oder Parasolid können verwendet werden.
+<?/quiz?>
+
+<?quiz?>
+question: Wie wird die Mechanical-Umgebung gestartet?
+answer: Über Rechtsklick auf <em>Lösung</em>
+answer: Automatisch nach dem Projektstart
+answer-correct: Durch Doppelklick auf <em>Modell</em>
+content:
+<strong>Hinweis:</strong> Mechanical öffnet sich in einem eigenen Fenster zur Definition von Randbedingungen, Netzen und Auswertungen.
+<?/quiz?>
+
+<?quiz?>
+question: Welche Elemente im Strukturbaum müssen typischerweise durchgegangen werden?
+answer: Nur <em>Geometrie</em> und <em>Lösung</em>
+answer-correct: <em>Geometrie</em>, <em>Materialzuweisungen</em>, <em>Netz</em>, <em>Setup</em>, <em>Lösung</em>
+answer: Nur <em>Netz</em> und <em>Lösung</em>
+content:
+<strong>Hinweis:</strong> Diese Schritte sichern eine vollständige Definition der Simulation, bevor sie berechnet wird.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
