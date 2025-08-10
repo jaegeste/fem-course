@@ -357,9 +357,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aufgabenstellung" class="md-nav__link">
+  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
     <span class="md-ellipsis">
-      Aufgabenstellung
+      Aufgabenstellung Zugbelastung
     </span>
   </a>
   
@@ -510,18 +510,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-on-biegemoment-statt-kraft" class="md-nav__link">
+  <a href="#aufgabenstellung-biegung" class="md-nav__link">
     <span class="md-ellipsis">
-      Add-on: Biegemoment statt Kraft
+      Aufgabenstellung Biegung
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#varianten-der-krafteinleitung" class="md-nav__link">
+  <a href="#add-on-biegemoment-statt-kraft" class="md-nav__link">
     <span class="md-ellipsis">
-      Varianten der Krafteinleitung
+      Add-on: Biegemoment statt Kraft
     </span>
   </a>
   
@@ -533,6 +533,21 @@
       Weiterführende Hinweise
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Weiterführende Hinweise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianten-der-krafteinleitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianten der Krafteinleitung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -659,9 +674,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#aufgabenstellung" class="md-nav__link">
+  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
     <span class="md-ellipsis">
-      Aufgabenstellung
+      Aufgabenstellung Zugbelastung
     </span>
   </a>
   
@@ -812,18 +827,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#add-on-biegemoment-statt-kraft" class="md-nav__link">
+  <a href="#aufgabenstellung-biegung" class="md-nav__link">
     <span class="md-ellipsis">
-      Add-on: Biegemoment statt Kraft
+      Aufgabenstellung Biegung
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#varianten-der-krafteinleitung" class="md-nav__link">
+  <a href="#add-on-biegemoment-statt-kraft" class="md-nav__link">
     <span class="md-ellipsis">
-      Varianten der Krafteinleitung
+      Add-on: Biegemoment statt Kraft
     </span>
   </a>
   
@@ -835,6 +850,21 @@
       Weiterführende Hinweise
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Weiterführende Hinweise">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#varianten-der-krafteinleitung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Varianten der Krafteinleitung
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -855,7 +885,7 @@
 
 
 <h1 id="ubung-kragbalken">Übung Kragbalken<a class="headerlink" href="#ubung-kragbalken" title="Permanent link">&para;</a></h1>
-<h2 id="aufgabenstellung">Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Permanent link">&para;</a></h2>
+<h2 id="aufgabenstellung-zugbelastung">Aufgabenstellung Zugbelastung<a class="headerlink" href="#aufgabenstellung-zugbelastung" title="Permanent link">&para;</a></h2>
 <p>Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  </p>
 <ul>
 <li>Länge: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
@@ -889,12 +919,9 @@
 \]</div>
 <hr />
 <h3 id="querkontraktion">Querkontraktion<a class="headerlink" href="#querkontraktion" title="Permanent link">&para;</a></h3>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Hier noch eine Abbildung einfügen, die den Zusammenhang von Längsdehnung und Querkontraktion schematisch darstellt.</p>
-</details>
-<p>Neben der Dehnung in Belastungsrichtung tritt eine Querkontraktion auf. Sie wird durch die <strong>Querkontraktionszahl</strong> (Poissonzahl) <span class="arithmatex">\(\nu\)</span> beschrieben.<br />
-Sie definiert das Verhältnis von Querdehnung zur Längsdehnung:</p>
+<p>Neben der Dehnung in Belastungsrichtung tritt eine Querkontraktion auf. Sie wird durch die <strong>Querkontraktionszahl</strong> (Poissonzahl) <span class="arithmatex">\(\nu\)</span> beschrieben. Sie definiert das Verhältnis von Querdehnung zur Längsdehnung.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/querkontraktion.svg" title="Querkontraktion"><img alt="Querkontraktion" src="../media/03_kragbalken/querkontraktion.svg" width="700" /></a><br />
+<span class="bildquelle">Bildquelle nach <sup id="fnref:Altenbach2016"><a class="footnote-ref" href="#fn:Altenbach2016">1</a></sup></span></p>
 <div class="arithmatex">\[
 \nu \;=\; - \frac{\varepsilon_q}{\varepsilon_l}
 \]</div>
@@ -922,10 +949,10 @@ Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt q
 <p>Das Hookesche Gesetz gilt nur im <strong>linear-elastischen Bereich</strong> eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs <strong>ohne ausgeprägte Streckgrenze</strong>. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über.<br />
 Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" title="Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze"><img alt="Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" width="450" /></a><br />
-<span class="bildquelle">Bildquelle<sup id="fnref:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">1</a></sup></span></p>
+<span class="bildquelle">Bildquelle<sup id="fnref:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>Das zweite Diagramm zeigt das Verhalten eines Werkstoffs <strong>mit ausgeprägter Streckgrenze</strong>, wie es für Baustahl typisch ist. Der lineare Bereich endet abrupt, es folgt ein Plateau mit nahezu konstanter Spannung, bevor der plastische Anstieg beginnt:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" title="Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze"><img alt="Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" width="450" /></a><br />
-<span class="bildquelle">Bildquelle<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">1</a></sup></span></p>
+<span class="bildquelle">Bildquelle<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im <strong>elastischen Bereich</strong>. Das Hookesche Gesetz ist daher ausreichend.</p>
 <hr />
 <h2 id="umsetzung-in-ansys-mechanical">Umsetzung in ANSYS Mechanical<a class="headerlink" href="#umsetzung-in-ansys-mechanical" title="Permanent link">&para;</a></h2>
@@ -960,16 +987,16 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <li>Zu feines Netz → hohe Genauigkeit, aber deutlich längere Rechenzeit.  </li>
 <li>Optimal ist ein Netz, das <strong>ausreichend genaue Ergebnisse</strong> liefert, ohne unnötig viele Elemente zu erzeugen.  </li>
 </ul>
-<p>Diese einfache Netzeinflussstudie vermittelt den Grundgedanken, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der <strong>Diskretisierung</strong> abhängen.</p>
+<p>Diese einfache Netzeinflussstudie zeigt, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der <strong>Diskretisierung</strong> abhängen.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" title="Kragbalken, Netzdefinition"><img alt="Kragbalken, Netzdefinition" src="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" width="600px" /></a>  </p>
 <h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
-<p>Für die Berechnung werden zwei Randbedingungen benötigt:</p>
+<p>Betrachtet man die Aufgabenstellung sind zwei Randbedingungen naheliegend:</p>
 <ul>
 <li><strong>Feste Einspannung</strong> am linken Ende  </li>
 <li><strong>Zugkraft</strong> <span class="arithmatex">\( F \)</span> an der rechten Stirnfläche  </li>
 </ul>
 <p>Die feste Einspannung wird in ANSYS umgesetzt, indem <strong>alle Freiheitsgrade</strong> der ausgewählten Fläche blockiert werden. Das bedeutet konkret: Translationen in <span class="arithmatex">\(x\)</span>-, <span class="arithmatex">\(y\)</span>- und <span class="arithmatex">\(z\)</span>-Richtung sowie Rotationen um alle drei Achsen sind dort nicht mehr möglich. Im physikalischen Sinn wird so die Verbindung des Balkens mit einer starren Umgebung modelliert.</p>
-<p>Die Zugkraft wird an der rechten Stirnfläche aufgebracht. In ANSYS erfolgt dies über die Angabe einer <strong>Flächenlast (Druck)</strong> oder einer <strong>Gesamtkraft (Kraft)</strong>, die sich über die gesamte Fläche verteilt. Damit wird sichergestellt, dass die Kraft nicht punktförmig wirkt (was numerisch eine Singularität erzeugen würde), sondern gleichmäßig eingeleitet wird.</p>
+<p>Die Zugkraft wird an der rechten Stirnfläche aufgebracht. In ANSYS erfolgt dies über die Angabe einer <strong>Gesamtkraft (Kraft)</strong>, die sich über die gesamte Fläche verteilt. Damit wird sichergestellt, dass die Kraft nicht punktförmig wirkt (was numerisch eine Singularität erzeugen würde), sondern gleichmäßig eingeleitet wird.</p>
 <p>Aus FEM-Sicht geschieht Folgendes:</p>
 <ul>
 <li>Die Einspannung erzeugt eine <strong>Verschiebungsrandbedingung</strong>:<br />
@@ -978,12 +1005,12 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
   Knoten in diesem Bereich erfahren zusätzliche äußere Kräfte → führen zu inneren Spannungen und Verformungen im gesamten Bauteil.</li>
 </ul>
 <p>Im Zusammenspiel von <strong>verschiebungsgebundenen</strong> und <strong>kraftgebundenen</strong> Randbedingungen entsteht ein <strong>geschlossenes Gleichungssystem</strong>, das im FEM‑Solver gelöst wird.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
 <details class="note" open="open">
 <summary>Hinweis zur Modellierung</summary>
 <p>Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.</p>
 </details>
-<p><a class="glightbox" href="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
-<p><a class="glightbox" href="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
 <h3 id="5-auswertung">5. Auswertung<a class="headerlink" href="#5-auswertung" title="Permanent link">&para;</a></h3>
 <p>Für die erste Auswertung in ANSYS werden zwei Ergebnisse betrachtet:</p>
 <ul>
@@ -1014,6 +1041,12 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/13_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/13_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Ergebnisse aufschreiben
+Bilder beschreiben
+Tabelle Gegenüberstellung Ergebnisse ANSYS Analytisch</p>
+</details>
 <details class="note">
 <summary>Berechnung von Δl, Δa und σ</summary>
 <p>Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.</p>
@@ -1077,6 +1110,8 @@ Im FEM‑Modell mit fester Einspannung wird diese <strong>Querkontraktion lokal 
 Dadurch entstehen <strong>Randspannungsspitzen</strong>, die analytisch nicht vorhergesagt werden.<br />
 → Erklärung für Abweichungen zwischen analytischer und numerischer Lösung nahe der Einspannung.</p>
 <hr />
+<h2 id="aufgabenstellung-biegung">Aufgabenstellung Biegung<a class="headerlink" href="#aufgabenstellung-biegung" title="Permanent link">&para;</a></h2>
+<hr />
 <h2 id="add-on-biegemoment-statt-kraft">Add-on: Biegemoment statt Kraft<a class="headerlink" href="#add-on-biegemoment-statt-kraft" title="Permanent link">&para;</a></h2>
 <p>Als Alternative kann ein <strong>reines Biegemoment</strong> angesetzt werden.<br />
 Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßigerem Spannungsfeld.</p>
@@ -1095,7 +1130,8 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 <p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <hr />
-<h2 id="varianten-der-krafteinleitung">Varianten der Krafteinleitung<a class="headerlink" href="#varianten-der-krafteinleitung" title="Permanent link">&para;</a></h2>
+<h2 id="weiterfuhrende-hinweise">Weiterführende Hinweise<a class="headerlink" href="#weiterfuhrende-hinweise" title="Permanent link">&para;</a></h2>
+<h3 id="varianten-der-krafteinleitung">Varianten der Krafteinleitung<a class="headerlink" href="#varianten-der-krafteinleitung" title="Permanent link">&para;</a></h3>
 <p>In ANSYS Mechanical stehen verschiedene Möglichkeiten zur Verfügung, eine äußere Belastung aufzubringen. Die Auswahl beeinflusst maßgeblich die Spannungsverteilung und die physikalische Plausibilität.</p>
 <ul>
 <li>
@@ -1133,17 +1169,25 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 </li>
 </ul>
 <p>Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt und Typ sehr unterschiedliche Ergebnisse liefern kann. Die Entscheidung, wie eine Last angesetzt wird, gehört deshalb zu den wesentlichen Modellierungsaufgaben im FEM.</p>
-<hr />
-<h2 id="weiterfuhrende-hinweise">Weiterführende Hinweise<a class="headerlink" href="#weiterfuhrende-hinweise" title="Permanent link">&para;</a></h2>
 <details class="danger" open="open">
 <summary>FIXME</summary>
 <p>Video hinzu?</p>
 </details>
+<iframe style="width:100%; aspect-ratio:16/9;"
+    src="https://www.youtube.com/embed/830iwn_xYlA"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen>
+</iframe>
 <div class="footnote">
 <hr />
 <ol>
+<li id="fn:Altenbach2016">
+<p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
 <li id="fn:Wikipedia2023">
-<p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>

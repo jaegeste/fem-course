@@ -40,6 +40,7 @@ extra_javascript:
 
 plugins:
   - search
+  - mkdocs_quiz
   - glightbox:
       touchNavigation: true
       loop: false

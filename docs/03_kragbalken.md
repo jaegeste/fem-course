@@ -1,21 +1,12 @@
 # Übung Kragbalken
 
-## Aufgabenstellung Zugbelastung
+## Lernziele
 
-Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  
-
-* Länge: \( L = 150 \,\text{mm} \)  
-* Kantenlänge: \( a = 12 \,\text{mm} \)  
-* Kraft: \( F = 7{.}500 \,\text{N} \)  
-* Material: Baustahl mit Streckgrenze \( R_e = 250 \,\text{N/mm}^2 \)  
-
-Laden Sie die Datei [kragbalken.stp](media/03_kragbalken/kragbalken.stp) und importieren Sie sie in ANSYS Workbench.
-
-Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  
-
-[![Kragbalken, Zug](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Kragbalken, Zug"){.glightbox}  
-
----
+* Erstes Arbeiten mit ANSYS Workbench und ANSYS Mechanical.
+* Verständnis der Randbedingungen und Lastfälle bei einem Kragbalken.
+* Anwendung der von-Mises-Spannung zur Beurteilung der Festigkeit.
+* Vergleich von Simulationsergebnissen mit analytischen Berechnungen.
+* Einfluss der Einspannung und Wahl der Randbedingungen verstehen.
 
 ## Theoretischer Hintergrund
 
@@ -42,8 +33,6 @@ Die **Längenänderung** ergibt sich zu:
 \[
 \Delta l = \frac{F \cdot l}{A \cdot E}
 \]
-
----
 
 ### Querkontraktion
 
@@ -79,8 +68,6 @@ Damit ergibt sich:
 Für Stahl gilt typischerweise \(\nu \approx 0{,}3\).  
 Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt quer um 0,3 %.  
 
----
-
 ### Spannungs-Dehnungs-Diagramm
 
 Das Hookesche Gesetz gilt nur im **linear-elastischen Bereich** eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs **ohne ausgeprägte Streckgrenze**. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über.  
@@ -95,6 +82,23 @@ Das zweite Diagramm zeigt das Verhalten eines Werkstoffs **mit ausgeprägter Str
 <span class="bildquelle">Bildquelle[@Wikipedia2023]</span>
 
 Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im **elastischen Bereich**. Das Hookesche Gesetz ist daher ausreichend.
+
+---
+
+## Aufgabenstellung Zugbelastung
+
+Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  
+
+* Länge: \( L = 150 \,\text{mm} \)  
+* Kantenlänge: \( a = 12 \,\text{mm} \)  
+* Kraft: \( F = 7{.}500 \,\text{N} \)  
+* Material: Baustahl mit Streckgrenze \( R_e = 250 \,\text{N/mm}^2 \)  
+
+Laden Sie die Datei [kragbalken.stp](media/03_kragbalken/kragbalken.stp) und importieren Sie sie in ANSYS Workbench.
+
+Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  
+
+[![Kragbalken, Zug](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Kragbalken, Zug"){.glightbox}  
 
 ---
 
@@ -370,10 +374,44 @@ Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt
 ???+ danger "FIXME"
     Video hinzu?
 
-<iframe style="width:100%; aspect-ratio:16/9;"
-    src="https://www.youtube.com/embed/830iwn_xYlA"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowfullscreen>
-</iframe>
+## Quiz zur Selbstkontrolle
+
+<!-- markdownlint-disable MD033 -->
+
+<?quiz?>
+question: Warum sollte die Kraft im FEM-Modell nicht nur auf eine Kante oder einen einzelnen Knoten angesetzt werden?
+answer: Damit die Berechnung schneller läuft.
+answer-correct: Weil sonst unrealistisch hohe lokale Spannungen (Singularitäten) entstehen.
+answer: Um die von-Mises-Spannung zu verringern.
+content:
+<strong>Hinweis:</strong> Lasten immer auf Flächen verteilen, um realistische Ergebnisse zu erhalten.
+<?/quiz?>
+
+<?quiz?>
+question: Warum wird die Verformung in ANSYS oft überhöht dargestellt?
+answer-correct: Damit die Formänderung visuell deutlich erkennbar ist.
+answer: Weil das Netz zu grob ist.
+answer: Um die Spannungen zu erhöhen.
+content:
+<em>Tipp:</em> Der Skalierungsfaktor dient nur der Visualisierung; die Werte sind in den Ergebnistabellen zu finden.
+<?/quiz?>
+
+<?quiz?>
+question: Welche Einheit hat die von-Mises-Spannung?
+answer: Newton
+answer-correct: Pascal (N/m²)
+answer: Meter pro Sekunde
+content:
+<em>Tipp:</em> Es handelt sich um eine Spannungseinheit.
+<?/quiz?>
+
+<?quiz?>
+question: Welcher Einfluss hat die Wahl der Randbedingungen auf das Simulationsergebnis?
+answer: Gar keinen.
+answer: Sie beeinflusst nur die Farbe der Darstellung.
+answer-correct: Sie bestimmt maßgeblich die Verformungen und Spannungsverteilung.
+content:
+<strong>Hinweis:</strong> Falsche Randbedingungen führen zu physikalisch falschen Ergebnissen.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
