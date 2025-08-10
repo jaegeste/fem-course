@@ -47,7 +47,7 @@ plugins:
       loop: false
       zoomable: true
       width: 90vw    # Viewport-Breite statt 90 Prozent
-      height: 90vh   # statt "auto"
+      height: auto   
       slide_effect: "fade"
       draggable: true
   - bibtex:
