@@ -335,6 +335,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ansys-installation" class="md-nav__link">
     <span class="md-ellipsis">
       ANSYS Installation
@@ -574,6 +583,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-assessment quiz
+    </span>
+  </a>
   
 </li>
       
@@ -722,6 +740,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#ansys-installation" class="md-nav__link">
     <span class="md-ellipsis">
       ANSYS Installation
@@ -964,6 +991,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-assessment quiz
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -981,7 +1017,13 @@
 
 
 <h1 id="installation-and-getting-started-with-ansys">Installation and getting started with ANSYS<a class="headerlink" href="#installation-and-getting-started-with-ansys" title="Permanent link">&para;</a></h1>
-<p>This guide describes the installation of ANSYS 2024R1 on a private Windows computer.</p>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>perform the installation process on Windows step by step  </li>
+<li>set up and verify the VPN connection to the HFU license server  </li>
+<li>start ANSYS Workbench and identify the basic user interface  </li>
+<li>create and save initial projects in ANSYS Workbench  </li>
+</ul>
 <h2 id="ansys-installation">ANSYS Installation<a class="headerlink" href="#ansys-installation" title="Permanent link">&para;</a></h2>
 <h3 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h3>
 <p>This guide applies to the following requirements:</p>
@@ -1088,8 +1130,7 @@
 <p>ANSYS Workbench provides a central interface for organizing and managing simulation projects.<br />
 All steps of a simulation can be carried out from the following window:</p>
 <p><a class="glightbox" href="../media/02_Installation_erste_Schritte/workbench.png" title="Project interface in ANSYS Workbench"><img alt="Project interface in ANSYS Workbench" src="../media/02_Installation_erste_Schritte/workbench.png" width="800px" /></a>  </p>
-<p>On the left-hand side, various analysis types are available and can be added to the project schematic using drag and drop. Existing analyses can be linked to reuse geometry, as shown in the next image.<br />
-In System B, the same geometry is used as in System A; System D refers to results from System C. Parameters defined in individual components can also be displayed and edited in the project interface.</p>
+<p>On the left side, various analysis types are available that can be inserted into the project schematic via drag-and-drop. Existing analyses can be linked, for example, to reuse the same geometry multiple times (see next figure). In this way, System B uses the same geometry as System A, while System D refers to the results of System C. The project interface can also display and edit parameters defined within individual modules (parameter set).</p>
 <p><a class="glightbox" href="../media/02_Installation_erste_Schritte/verknuepfte_Analysen.png" title="Linked analyses with parameter set"><img alt="Linked analyses with parameter set" src="../media/02_Installation_erste_Schritte/verknuepfte_Analysen.png" width="800px" /></a></p>
 <p>A typical analysis system consists of the following components.<br />
 To run a simulation, these are usually processed from top to bottom.</p>
@@ -1139,7 +1180,7 @@ To run a simulation, these are usually processed from top to bottom.</p>
 <li><strong>Explicit Dynamics</strong>: Solves highly nonlinear transient problems, such as drop tests or containment simulations.  </li>
 <li><strong>Harmonic Analysis</strong>: Analyzes the steady-state response to harmonic excitation.  </li>
 <li><strong>Modal Analysis</strong>: Identifies natural frequencies and mode shapes of a structure.  </li>
-<li><strong>Static Structural</strong>: Calculates deformations, stresses, and strains under static loading. Fatigue life prediction is also possible. Geometric nonlinearity can be considered for nonlinear buckling.  </li>
+<li><strong>Static Structural</strong>: Calculates the deformation, stresses, and strains in components under external, static loads without dynamic or damping effects. Optionally, fatigue analysis provides the service life of a design under dynamic loads. Taking geometric nonlinearities into account, static structural analyses can also be used to perform nonlinear buckling calculations.</li>
 <li><strong>Steady-State Thermal</strong>: Calculates temperature distribution under constant thermal load.  </li>
 <li><strong>Transient Thermal</strong>: Captures the time-dependent evolution of the temperature field.  </li>
 <li><strong>Topology Optimization</strong>: Helps derive load-adapted shapes of components.  </li>
@@ -1342,6 +1383,22 @@ In most cases, <em>Bonded</em> or <em>No Separation</em> provides a good balance
 <p>This section provides only a basic overview of contact definitions.<br />
 Detailed handling, selection, and evaluation will follow in later exercises.</p>
 </div>
+<h2 id="self-assessment-quiz">Self-assessment quiz<a class="headerlink" href="#self-assessment-quiz" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+
+<div class="quiz"><h3>Which connection is required outside the campus to use ANSYS?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">University Wi-Fi</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Mobile data connection</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" correct><label for="quiz-0-2">VPN connection to HFU</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> The license server is only accessible on campus or via VPN.</section></div>
+
+<div class="quiz"><h3>Where is the list of available analysis types located in ANSYS Workbench?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">At the bottom of the window</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">On the right side of the window</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" correct><label for="quiz-1-2">On the left side of the window</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> The analysis types are displayed on the left in the project interface and can be used via drag-and-drop.</section></div>
+
+<div class="quiz"><h3>How can blocks be linked in ANSYS Workbench?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">By right-clicking and <em>Connect</em></label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" ><label for="quiz-2-1">By dragging a file into the window</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">By drag-and-dropping a connection line between the systems</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> Connection lines allow data exchange between systems (e.g., geometry or results).</section></div>
+
+<div class="quiz"><h3>How is geometry imported into an ANSYS project?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">Via the <em>Engineering Data</em> menu</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" correct><label for="quiz-3-1">By right-clicking on <em>Geometry</em> and selecting <em>Import Geometry</em></label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" ><label for="quiz-3-2">By dragging a STEP file into the project window</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> Import formats such as STEP, IGES, or Parasolid can be used.</section></div>
+
+<div class="quiz"><h3>How is the Mechanical environment started?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">By right-clicking on <em>Solution</em></label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">Automatically after starting the project</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" correct><label for="quiz-4-2">By double-clicking on <em>Model</em></label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> Mechanical opens in a separate window for defining boundary conditions, meshes, and evaluations.</section></div>
+
+<div class="quiz"><h3>Which elements in the tree outline typically need to be processed?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Only <em>Geometry</em> and <em>Solution</em></label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1"><em>Geometry</em>, <em>Material Assignments</em>, <em>Mesh</em>, <em>Setup</em>, <em>Solution</em></label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Only <em>Mesh</em> and <em>Solution</em></label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> These steps ensure a complete definition of the simulation before it is calculated.</section></div>
+
+<!-- markdownlint-enable MD033 -->
 <div class="footnote">
 <hr />
 <ol>
