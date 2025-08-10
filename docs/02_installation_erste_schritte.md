@@ -2,8 +2,6 @@
 
 Diese Anleitung beschreibt die Installation von ANSYS 2024R1 auf einem privaten Windows-Rechner.
 
----
-
 ## Installation von ANSYS  
 
 ### Voraussetzungen  
@@ -426,3 +424,4 @@ Kontakte mit Reibung oder Abheben erfordern deutlich mehr Rechenzeit. Für die m
 !!! note "Hinweis"
     Diese Übersicht vermittelt nur die Grundlagen der Kontaktdefinition.  
     Die konkrete Anwendung, Auswahl und Bewertung von Kontakten erfolgt in späteren Übungen.  
+

@@ -22,3 +22,25 @@
               camera-controls
               style="width:600px; height:400px;">
 </model-viewer>
+
+## Quiz-Test
+
+<?quiz?>
+question: Was beschreibt die von Mises Spannung?
+answer: Nur Normalspannungen
+answer-correct: Eine äquivalente Spannung aus Normal- und Schubspannungen
+answer: Nur Schubspannungen
+content:
+<p><strong>Hinweis:</strong> Siehe Theorieabschnitt im Kapitel Spannungsarten.</p>
+<?/quiz?>
+
+---
+
+<?quiz?>
+question: Welche Einheit hat die von Mises Spannung?
+answer: Newton
+answer: Meter
+answer-correct: Pascal (N/m²)
+content:
+<p><em>Tipp:</em> Es handelt sich um eine Spannungseinheit.</p>
+<?/quiz?>

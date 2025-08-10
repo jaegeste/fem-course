@@ -1,21 +1,12 @@
 # Beam Exercise
 
-## Task tensile load
+## Learning objectives
 
-For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  
-
-* Length: \( L = 150 \,\text{mm} \)  
-* Edge length: \( a = 12 \,\text{mm} \)  
-* Force: \( F = 7{.}500 \,\text{N} \)  
-* Material: Structural steel with yield strength \( R_e = 250 \,\text{N/mm}^2 \)  
-
-Download the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
-
-Compare your result with the analytical solution and discuss any deviations.  
-
-[![Cantilever beam, tensile load](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Cantilever beam, tensile load"){.glightbox}  
-
----
+* First use of ANSYS Workbench and ANSYS Mechanical.
+* Understanding boundary conditions and load cases for a cantilever beam.
+* Application of the von Mises stress to assess strength.
+* Comparison of simulation results with analytical calculations.
+* Understanding the influence of the type of support and the choice of boundary conditions.
 
 ## Theoretical Background
 
@@ -42,8 +33,6 @@ The **elongation** is calculated as:
 \[
 \Delta l = \frac{F \cdot l}{A \cdot E}
 \]
-
----
 
 ### Lateral Contraction
 
@@ -79,8 +68,6 @@ Thus:
 For steel, \(\nu \approx 0{,}3\).  
 This means that with a longitudinal strain of 1 %, the cross-section shortens transversely by about 0.3 %.  
 
----
-
 ### Stress-Strain Diagram
 
 Hooke’s Law applies only in the **linear elastic range** of a material. This range appears as a straight line in the stress-strain diagram.  
@@ -96,6 +83,23 @@ The second diagram shows the behavior of a material **with a distinct yield poin
 <span class="bildquelle">Image source based on[@Wikipedia2023]</span>
 
 For the calculation of the cantilever beam in this exercise, the load lies within the **elastic range**. Hooke’s Law is therefore sufficient.
+
+---
+
+## Task tensile load
+
+For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  
+
+* Length: \( L = 150 \,\text{mm} \)  
+* Edge length: \( a = 12 \,\text{mm} \)  
+* Force: \( F = 7{.}500 \,\text{N} \)  
+* Material: Structural steel with yield strength \( R_e = 250 \,\text{N/mm}^2 \)  
+
+Download the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
+
+Compare your result with the analytical solution and discuss any deviations.  
+
+[![Cantilever beam, tensile load](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Cantilever beam, tensile load"){.glightbox}  
 
 ---
 
@@ -182,7 +186,6 @@ Two results are examined in ANSYS:
 The deformation shows the total displacement of the component. In ANSYS, it is usually displayed in an exaggerated form so that the shape change is clearly visible. It is important to note that this is a **scaling for visualization purposes** — the actual values can be found in the results tables.  
 
 The von Mises stress is a reference value that combines the effects of all normal and shear stresses into a single “equivalent” stress:
-
 
 \[
 \sigma_\text{vM} = \sqrt{\frac{1}{2} \left[(\sigma_x-\sigma_y)^2 + (\sigma_y-\sigma_z)^2 + (\sigma_z-\sigma_x)^2 \right] + 3(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2)}
@@ -373,3 +376,44 @@ These options illustrate that the “same” load can yield very different resul
 ???+ danger "FIXME"
     Add video?
 
+## Self-assessment quiz
+
+<!-- markdownlint-disable MD033 -->
+
+<?quiz?>
+question: Why should the force in the FEM model not be applied only to an edge or a single node?
+answer: To make the calculation run faster.
+answer-correct: Because otherwise unrealistically high local stresses (singularities) occur.
+answer: To reduce the von Mises stress.
+content:
+<strong>Hint:</strong> Always distribute loads over surfaces to obtain realistic results.
+<?/quiz?>
+
+<?quiz?>
+question: Why is deformation often shown exaggerated in ANSYS?
+answer-correct: To make the shape change visually more apparent.
+answer: Because the mesh is too coarse.
+answer: To increase the stresses.
+content:
+<em>Tip:</em> The scaling factor is only for visualization; the actual values can be found in the results tables.
+<?/quiz?>
+
+<?quiz?>
+question: What is the unit of the von Mises stress?
+answer: Newton
+answer-correct: Pascal (N/m²)
+answer: Meters per second
+content:
+<em>Tip:</em> It is a stress unit.
+<?/quiz?>
+
+<?quiz?>
+question: What influence does the choice of boundary conditions have on the simulation result?
+answer: None at all.
+answer: It only affects the color of the display.
+answer-correct: It has a decisive influence on the deformations and stress distribution.
+content:
+<strong>Hint:</strong> Incorrect boundary conditions lead to physically incorrect results.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
