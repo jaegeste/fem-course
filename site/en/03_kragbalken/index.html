@@ -357,9 +357,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#task-tensile-load" class="md-nav__link">
+  <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Task tensile load
+      Learning objectives
     </span>
   </a>
   
@@ -404,6 +404,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task tensile load
+    </span>
+  </a>
   
 </li>
       
@@ -548,6 +557,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-assessment quiz
+    </span>
+  </a>
   
 </li>
       
@@ -674,9 +692,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#task-tensile-load" class="md-nav__link">
+  <a href="#learning-objectives" class="md-nav__link">
     <span class="md-ellipsis">
-      Task tensile load
+      Learning objectives
     </span>
   </a>
   
@@ -721,6 +739,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task tensile load
+    </span>
+  </a>
   
 </li>
       
@@ -868,6 +895,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-assessment quiz
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -885,18 +921,14 @@
 
 
 <h1 id="beam-exercise">Beam Exercise<a class="headerlink" href="#beam-exercise" title="Permanent link">&para;</a></h1>
-<h2 id="task-tensile-load">Task tensile load<a class="headerlink" href="#task-tensile-load" title="Permanent link">&para;</a></h2>
-<p>For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  </p>
+<h2 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
-<li>Edge length: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
-<li>Force: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
-<li>Material: Structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+<li>First use of ANSYS Workbench and ANSYS Mechanical.</li>
+<li>Understanding boundary conditions and load cases for a cantilever beam.</li>
+<li>Application of the von Mises stress to assess strength.</li>
+<li>Comparison of simulation results with analytical calculations.</li>
+<li>Understanding the influence of the type of support and the choice of boundary conditions.</li>
 </ul>
-<p>Download the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> and import it into ANSYS Workbench.</p>
-<p>Compare your result with the analytical solution and discuss any deviations.  </p>
-<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_zug.svg" title="Cantilever beam, tensile load"><img alt="Cantilever beam, tensile load" src="../../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
-<hr />
 <h2 id="theoretical-background">Theoretical Background<a class="headerlink" href="#theoretical-background" title="Permanent link">&para;</a></h2>
 <h3 id="hookes-law">Hooke’s Law<a class="headerlink" href="#hookes-law" title="Permanent link">&para;</a></h3>
 <p>The calculation is based on <strong>Hooke’s Law</strong>. It describes the linear relationship between stress and strain in the elastic range of a material.</p>
@@ -917,7 +949,6 @@
 <div class="arithmatex">\[
 \Delta l = \frac{F \cdot l}{A \cdot E}
 \]</div>
-<hr />
 <h3 id="lateral-contraction">Lateral Contraction<a class="headerlink" href="#lateral-contraction" title="Permanent link">&para;</a></h3>
 <p>In addition to the strain in the loading direction, a lateral contraction occurs. It is described by the <strong>Poisson’s ratio</strong> (<span class="arithmatex">\(\nu\)</span>). It defines the ratio of transverse strain to longitudinal strain.</p>
 <p><a class="glightbox" href="../../media/03_kragbalken/querkontraktion.svg" title="lateral contraction"><img alt="lateral contraction" src="../../media/03_kragbalken/querkontraktion.svg" width="700" /></a><br />
@@ -944,7 +975,6 @@
 \]</div>
 <p>For steel, <span class="arithmatex">\(\nu \approx 0{,}3\)</span>.<br />
 This means that with a longitudinal strain of 1 %, the cross-section shortens transversely by about 0.3 %.  </p>
-<hr />
 <h3 id="stress-strain-diagram">Stress-Strain Diagram<a class="headerlink" href="#stress-strain-diagram" title="Permanent link">&para;</a></h3>
 <p>Hooke’s Law applies only in the <strong>linear elastic range</strong> of a material. This range appears as a straight line in the stress-strain diagram.  </p>
 <p>The first diagram shows the behavior of a material <strong>without a distinct yield point</strong>. After the linear increase up to the proof stress, the curve gradually transitions into the plastic range. This is typical for many non-ferrous metals such as aluminum:</p>
@@ -954,6 +984,18 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" title="Stress-strain curve with distinct yield point"><img alt="Stress-strain curve with distinct yield point" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" width="450" /></a><br />
 <span class="bildquelle">Image source based on<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>For the calculation of the cantilever beam in this exercise, the load lies within the <strong>elastic range</strong>. Hooke’s Law is therefore sufficient.</p>
+<hr />
+<h2 id="task-tensile-load">Task tensile load<a class="headerlink" href="#task-tensile-load" title="Permanent link">&para;</a></h2>
+<p>For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  </p>
+<ul>
+<li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Edge length: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Force: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
+<li>Material: Structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+</ul>
+<p>Download the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> and import it into ANSYS Workbench.</p>
+<p>Compare your result with the analytical solution and discuss any deviations.  </p>
+<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_zug.svg" title="Cantilever beam, tensile load"><img alt="Cantilever beam, tensile load" src="../../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
 <hr />
 <h2 id="implementation-in-ansys-mechanical">Implementation in ANSYS Mechanical<a class="headerlink" href="#implementation-in-ansys-mechanical" title="Permanent link">&para;</a></h2>
 <h3 id="1-geometry-import">1. Geometry Import<a class="headerlink" href="#1-geometry-import" title="Permanent link">&para;</a></h3>
@@ -1173,6 +1215,18 @@ This results in a <strong>shear-free beam</strong> with a more uniform stress fi
 <summary>FIXME</summary>
 <p>Add video?</p>
 </details>
+<h2 id="self-assessment-quiz">Self-assessment quiz<a class="headerlink" href="#self-assessment-quiz" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+
+<div class="quiz"><h3>Why should the force in the FEM model not be applied only to an edge or a single node?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">To make the calculation run faster.</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">Because otherwise unrealistically high local stresses (singularities) occur.</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">To reduce the von Mises stress.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hint:</strong> Always distribute loads over surfaces to obtain realistic results.</section></div>
+
+<div class="quiz"><h3>Why is deformation often shown exaggerated in ANSYS?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" correct><label for="quiz-1-0">To make the shape change visually more apparent.</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Because the mesh is too coarse.</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">To increase the stresses.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> The scaling factor is only for visualization; the actual values can be found in the results tables.</section></div>
+
+<div class="quiz"><h3>What is the unit of the von Mises stress?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Newton</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">Pascal (N/m²)</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" ><label for="quiz-2-2">Meters per second</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> It is a stress unit.</section></div>
+
+<div class="quiz"><h3>What influence does the choice of boundary conditions have on the simulation result?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">None at all.</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">It only affects the color of the display.</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" correct><label for="quiz-3-2">It has a decisive influence on the deformations and stress distribution.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hint:</strong> Incorrect boundary conditions lead to physically incorrect results.</section></div>
+
+<!-- markdownlint-enable MD033 -->
 <div class="footnote">
 <hr />
 <ol>
@@ -1183,7 +1237,117 @@ This results in a <strong>shear-free beam</strong> with a more uniform stress fi
 <p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a></p>
 </li>
 </ol>
-</div>
+</div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
 
 
 

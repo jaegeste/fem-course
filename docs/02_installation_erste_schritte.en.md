@@ -1,6 +1,11 @@
 # Installation and getting started with ANSYS
 
-This guide describes the installation of ANSYS 2024R1 on a private Windows computer.
+## Learning Objectives
+
+* perform the installation process on Windows step by step  
+* set up and verify the VPN connection to the HFU license server  
+* start ANSYS Workbench and identify the basic user interface  
+* create and save initial projects in ANSYS Workbench  
 
 ## ANSYS Installation
 
@@ -164,8 +169,7 @@ All steps of a simulation can be carried out from the following window:
 
 [![Project interface in ANSYS Workbench](media/02_Installation_erste_Schritte/workbench.en.png){width=800px}](media/02_Installation_erste_Schritte/workbench.en.png "Project interface in ANSYS Workbench"){.glightbox}  
 
-On the left-hand side, various analysis types are available and can be added to the project schematic using drag and drop. Existing analyses can be linked to reuse geometry, as shown in the next image.  
-In System B, the same geometry is used as in System A; System D refers to results from System C. Parameters defined in individual components can also be displayed and edited in the project interface.
+On the left side, various analysis types are available that can be inserted into the project schematic via drag-and-drop. Existing analyses can be linked, for example, to reuse the same geometry multiple times (see next figure). In this way, System B uses the same geometry as System A, while System D refers to the results of System C. The project interface can also display and edit parameters defined within individual modules (parameter set).
 
 [![Linked analyses with parameter set](media/02_Installation_erste_Schritte/verknuepfte_Analysen.en.png){width=800px}](media/02_Installation_erste_Schritte/verknuepfte_Analysen.en.png "Linked analyses with parameter set"){.glightbox}
 
@@ -192,7 +196,7 @@ Available analysis types depend on the license. Examples include:
 * **Explicit Dynamics**: Solves highly nonlinear transient problems, such as drop tests or containment simulations.  
 * **Harmonic Analysis**: Analyzes the steady-state response to harmonic excitation.  
 * **Modal Analysis**: Identifies natural frequencies and mode shapes of a structure.  
-* **Static Structural**: Calculates deformations, stresses, and strains under static loading. Fatigue life prediction is also possible. Geometric nonlinearity can be considered for nonlinear buckling.  
+* **Static Structural**: Calculates the deformation, stresses, and strains in components under external, static loads without dynamic or damping effects. Optionally, fatigue analysis provides the service life of a design under dynamic loads. Taking geometric nonlinearities into account, static structural analyses can also be used to perform nonlinear buckling calculations.
 * **Steady-State Thermal**: Calculates temperature distribution under constant thermal load.  
 * **Transient Thermal**: Captures the time-dependent evolution of the temperature field.  
 * **Topology Optimization**: Helps derive load-adapted shapes of components.  
@@ -439,3 +443,63 @@ In most cases, _Bonded_ or _No Separation_ provides a good balance.
 !!! note "Note"
     This section provides only a basic overview of contact definitions.  
     Detailed handling, selection, and evaluation will follow in later exercises.
+
+## Self-assessment quiz
+
+<!-- markdownlint-disable MD033 -->
+
+<?quiz?>
+question: Which connection is required outside the campus to use ANSYS?
+answer: University Wi-Fi
+answer: Mobile data connection
+answer-correct: VPN connection to HFU
+content:
+<strong>Note:</strong> The license server is only accessible on campus or via VPN.
+<?/quiz?>
+
+<?quiz?>
+question: Where is the list of available analysis types located in ANSYS Workbench?
+answer: At the bottom of the window
+answer: On the right side of the window
+answer-correct: On the left side of the window
+content:
+<strong>Note:</strong> The analysis types are displayed on the left in the project interface and can be used via drag-and-drop.
+<?/quiz?>
+
+<?quiz?>
+question: How can blocks be linked in ANSYS Workbench?
+answer: By right-clicking and <em>Connect</em>
+answer: By dragging a file into the window
+answer-correct: By drag-and-dropping a connection line between the systems
+content:
+<strong>Note:</strong> Connection lines allow data exchange between systems (e.g., geometry or results).
+<?/quiz?>
+
+<?quiz?>
+question: How is geometry imported into an ANSYS project?
+answer: Via the <em>Engineering Data</em> menu
+answer-correct: By right-clicking on <em>Geometry</em> and selecting <em>Import Geometry</em>
+answer: By dragging a STEP file into the project window
+content:
+<strong>Note:</strong> Import formats such as STEP, IGES, or Parasolid can be used.
+<?/quiz?>
+
+<?quiz?>
+question: How is the Mechanical environment started?
+answer: By right-clicking on <em>Solution</em>
+answer: Automatically after starting the project
+answer-correct: By double-clicking on <em>Model</em>
+content:
+<strong>Note:</strong> Mechanical opens in a separate window for defining boundary conditions, meshes, and evaluations.
+<?/quiz?>
+
+<?quiz?>
+question: Which elements in the tree outline typically need to be processed?
+answer: Only <em>Geometry</em> and <em>Solution</em>
+answer-correct: <em>Geometry</em>, <em>Material Assignments</em>, <em>Mesh</em>, <em>Setup</em>, <em>Solution</em>
+answer: Only <em>Mesh</em> and <em>Solution</em>
+content:
+<strong>Note:</strong> These steps ensure a complete definition of the simulation before it is calculated.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
