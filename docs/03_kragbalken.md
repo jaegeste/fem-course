@@ -208,20 +208,23 @@ Auswertungsschritte in ANSYS:
 
 Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen.
 
-???+ danger "FIXME"
-    Bilder beschreiben
+**Ergebnisse in ANSYS:**
 
-Ergebnisse aus ANSYS:
+Die **Gesamtverformung** zeigt eine Längung des Balkens um 0,03895 mm.
 
 [![Kragbalken, Lösungen](media/03_kragbalken/09_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/09_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
+Die **maximale Vergleichsspanunng** (von Mises) ist 57,528 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  
+
 [![Kragbalken, Lösungen](media/03_kragbalken/11_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/11_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+Nutzt man eine _Stichprobe_ etwas von der Einspannung entfernt ist die **Vergleichsspanunng** (von Mises) 52,082 MPa.  
+
+**Hinweis:** Die Stichprobe ist im Kontextmenü _Ergebnis_ zu finden. Dort lässt sich auch der minimale und maximale Wert des jeweiligen Ergebnisses anzeigen.  
 
 [![Kragbalken, Lösungen](media/03_kragbalken/12_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
-[![Kragbalken, Lösungen](media/03_kragbalken/13_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
-
-[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die [oben vorgestellte Theorie](#theoretischer-hintergrund).
 
 ??? note "Berechnung von Δl, Δa und σ"
     Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
@@ -295,8 +298,8 @@ Ergebnisse aus ANSYS:
 
 | Größe (Formelzeichen)         | Analytische Lösung | FEM-Ergebnis |
 |--------------------------------|--------------------|--------------|
-| Normalspannung ($\sigma_\mathrm{max}$)    | 52,1 N/mm²           |   52,53 N/mm²    |
-| Normalspannung (σ) Stichprobe           |           |   52,08 N/mm²    |
+| max. Spannung ($\sigma_\mathrm{max}$)    | 52,1 N/mm²    |   52,53 N/mm²   |
+| Spannung (σ) Stichprobe           |           |   52,08 N/mm²    |
 | Verlängerung des Balkens (Δl) | 0,037 mm           |   0,039 mm        |
 | Verringerung der Kantenlänge (Δa) | 0,0009 mm          |              |
 
@@ -305,6 +308,8 @@ Ergebnisse aus ANSYS:
 * Grobes Netz → geringere Genauigkeit.  
 * Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  
 * Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  
+
+[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}   
 
 [![Kragbalken, Lösungen](media/03_kragbalken/15_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/15_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
