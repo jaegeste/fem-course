@@ -145,8 +145,6 @@ From an FEM perspective:
 * Mesh too fine → high accuracy, but significantly longer computation time.  
 * The optimal mesh provides **sufficiently accurate results** without generating an unnecessary number of elements.  
 
-This simple mesh sensitivity study shows that FEM results are not automatically exact, but depend on the **discretization**.
-
 [![Cantilever beam, mesh definition](media/03_kragbalken/05_Kragbalken_Netzgenerierung.en.png){width=600px}](media/03_kragbalken/05_Kragbalken_Netzgenerierung.en.png "Cantilever beam, mesh definition"){.glightbox}  
 
 ### 4. Boundary Conditions
@@ -211,6 +209,9 @@ Steps in ANSYS:
 
 Expectation: very good agreement of average stress and deformation.
 
+???+ danger "FIXME"
+    Describe images
+
 Results from ANSYS:
 
 [![Cantilever beam, solutions](media/03_kragbalken/09_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/09_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
@@ -222,11 +223,6 @@ Results from ANSYS:
 [![Cantilever beam, solutions](media/03_kragbalken/13_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
 [![Cantilever beam, solutions](media/03_kragbalken/14_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
-
-???+ danger "FIXME"
-    Record the results  
-    Describe the images  
-    Create a table comparing ANSYS and analytical results
 
 ??? note "Calculation of Δl, Δa and σ"
     For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
@@ -294,6 +290,16 @@ Results from ANSYS:
     * Normal stress: approx. **52 N/mm²**  
     * Beam elongation: approx. **0.037 mm**  
     * Reduction of edge length: approx. **0.0009 mm**
+
+???+ danger "FIXME"
+    A result for the reduction of the edge length is still missing
+
+| Quantity                              | Analytical solution | FEM result     |
+|---------------------------------------|---------------------|----------------|
+| Normal stress $\sigma_\mathrm{max}$   | 52.1 N/mm²          | 52.53 N/mm²    |
+| Normal stress $\sigma$ (sample)       | –                   | 52.08 N/mm²    |
+| Beam elongation (Δl)            | 0.037 mm            | 0.039 mm       |
+| Edge length reduction (Δa)      | 0.0009 mm           |                |
 
 ### Mesh Influence
 

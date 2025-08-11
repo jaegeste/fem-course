@@ -144,8 +144,6 @@ Aus FEM-Sicht gilt:
 * Zu feines Netz → hohe Genauigkeit, aber deutlich längere Rechenzeit.  
 * Optimal ist ein Netz, das **ausreichend genaue Ergebnisse** liefert, ohne unnötig viele Elemente zu erzeugen.  
 
-Diese einfache Netzeinflussstudie zeigt, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der **Diskretisierung** abhängen.
-
 [![Kragbalken, Netzdefinition](media/03_kragbalken/05_Kragbalken_Netzgenerierung.png){width=600px}](media/03_kragbalken/05_Kragbalken_Netzgenerierung.png "Kragbalken, Netzdefinition"){.glightbox}  
 
 ### 4. Randbedingungen
@@ -208,7 +206,10 @@ Auswertungsschritte in ANSYS:
 
 ### Vergleich mit analytischer Lösung
 
-Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen
+Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen.
+
+???+ danger "FIXME"
+    Bilder beschreiben
 
 Ergebnisse aus ANSYS:
 
@@ -221,11 +222,6 @@ Ergebnisse aus ANSYS:
 [![Kragbalken, Lösungen](media/03_kragbalken/13_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 [![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
-
-???+ danger "FIXME"
-    Ergebnisse aufschreiben
-    Bilder beschreiben
-    Tabelle Gegenüberstellung Ergebnisse ANSYS Analytisch
 
 ??? note "Berechnung von Δl, Δa und σ"
     Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
@@ -293,6 +289,16 @@ Ergebnisse aus ANSYS:
     * Normalspannung: ca. **52 N/mm²**  
     * Verlängerung des Balkens: ca. **0,037 mm**  
     * Verringerung der Kantenlänge: ca. **0,0009 mm**
+
+???+ danger "FIXME"
+    es fehlt noch ein Ergebnis zur Verringerung der Kantenlänge
+
+| Größe (Formelzeichen)         | Analytische Lösung | FEM-Ergebnis |
+|--------------------------------|--------------------|--------------|
+| Normalspannung ($\sigma_\mathrm{max}$)    | 52,1 N/mm²           |   52,53 N/mm²    |
+| Normalspannung (σ) Stichprobe           |           |   52,08 N/mm²    |
+| Verlängerung des Balkens (Δl) | 0,037 mm           |   0,039 mm        |
+| Verringerung der Kantenlänge (Δa) | 0,0009 mm          |              |
 
 ### Einfluss des Netzes
 
