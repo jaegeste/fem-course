@@ -225,8 +225,10 @@ Using a _Probe_ taken slightly away from the fixed support, the equivalent stres
 
 [![Cantilever beam, solutions](media/03_kragbalken/12_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background).
+???+ danger "FIXME"
+    A result for the reduction of the edge length is still missing
 
+The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background).
 
 ??? note "Calculation of Δl, Δa and σ"
     For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
@@ -295,15 +297,21 @@ The following box contains the analytical solution. First, carry out the calcula
     * Beam elongation: approx. **0.037 mm**  
     * Reduction of edge length: approx. **0.0009 mm**
 
-???+ danger "FIXME"
-    A result for the reduction of the edge length is still missing
+The following table shows the analytical results, the FEM results, and the resulting percentage deviations. The percentage deviation is calculated as:
 
-| Quantity                              | Analytical solution | FEM result     |
-|---------------------------------------|---------------------|----------------|
-| max. stress $\sigma_\mathrm{max}$   | 52.1 N/mm²          | 52.53 N/mm²    |
-| stress (σ) (probe)       |                    | 52.08 N/mm²    |
-| Beam elongation (Δl)            | 0.037 mm            | 0.039 mm       |
-| Edge length reduction (Δa)      | 0.0009 mm           |                |
+\[
+\text{Deviation} = \frac{\text{FEM} - \text{Analytical}}{\text{Analytical}} \times 100
+\]
+
+| Quantity (Symbol)                     | Analytical Result  | FEM Result     | Deviation [%] |
+|----------------------------------------|--------------------|----------------|---------------|
+| max. stress ($\sigma_\mathrm{max}$)    | 52.1 N/mm²          | 52.53 N/mm²    | 0.83 %        |
+| stress (σ) sample                      | –                  | 52.08 N/mm²    | –             |
+| beam elongation (Δl)                   | 0.037 mm            | 0.039 mm       | 5.41 %        |
+| edge length reduction (Δa)             | 0.0009 mm           | –              | –             |
+
+???+ danger "FIXME"
+    add text here for the discussion of the results
 
 ### Mesh Influence
 
