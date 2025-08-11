@@ -209,20 +209,24 @@ Steps in ANSYS:
 
 Expectation: very good agreement of average stress and deformation.
 
-???+ danger "FIXME"
-    Describe images
+**Results from ANSYS:**
 
-Results from ANSYS:
+The total deformation shows an elongation of the beam by 0.03895 mm.
 
 [![Cantilever beam, solutions](media/03_kragbalken/09_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/09_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
+The **maximum equivalent stress** (von Mises) is 57.528 MPa. It appears as a stress peak at the corners of the fixed surface (red area).
+
 [![Cantilever beam, solutions](media/03_kragbalken/11_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/11_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+Using a _Probe_ taken slightly away from the fixed support, the equivalent stress (von Mises) is 52.082 MPa.
+
+**Note:** The _Probe_ can be found in the _Result_ context menu. There, the minimum and maximum values of the respective result can also be displayed.  
 
 [![Cantilever beam, solutions](media/03_kragbalken/12_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-[![Cantilever beam, solutions](media/03_kragbalken/13_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/13_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background).
 
-[![Cantilever beam, solutions](media/03_kragbalken/14_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
 ??? note "Calculation of Δl, Δa and σ"
     For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
@@ -296,8 +300,8 @@ Results from ANSYS:
 
 | Quantity                              | Analytical solution | FEM result     |
 |---------------------------------------|---------------------|----------------|
-| Normal stress $\sigma_\mathrm{max}$   | 52.1 N/mm²          | 52.53 N/mm²    |
-| Normal stress $\sigma$ (sample)       | –                   | 52.08 N/mm²    |
+| max. stress $\sigma_\mathrm{max}$   | 52.1 N/mm²          | 52.53 N/mm²    |
+| stress (σ) (probe)       |                    | 52.08 N/mm²    |
 | Beam elongation (Δl)            | 0.037 mm            | 0.039 mm       |
 | Edge length reduction (Δa)      | 0.0009 mm           |                |
 
@@ -305,7 +309,9 @@ Results from ANSYS:
 
 * Coarse mesh → less accurate.  
 * Fine mesh → more accurate but longer time.  
-* Aim: results independent of mesh (mesh influence minimized).  
+* Aim: results independent of mesh (mesh influence minimized). 
+
+[![Cantilever beam, solutions](media/03_kragbalken/14_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
 [![Cantilever beam, solutions](media/03_kragbalken/15_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/15_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
