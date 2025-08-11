@@ -224,6 +224,9 @@ Nutzt man eine _Stichprobe_ etwas von der Einspannung entfernt ist die **Verglei
 
 [![Kragbalken, Lösungen](media/03_kragbalken/12_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
+???+ danger "FIXME"
+    es fehlt noch ein Ergebnis zur Verringerung der Kantenlänge
+
 Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die [oben vorgestellte Theorie](#theoretischer-hintergrund).
 
 ??? note "Berechnung von Δl, Δa und σ"
@@ -293,15 +296,21 @@ Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zu
     * Verlängerung des Balkens: ca. **0,037 mm**  
     * Verringerung der Kantenlänge: ca. **0,0009 mm**
 
-???+ danger "FIXME"
-    es fehlt noch ein Ergebnis zur Verringerung der Kantenlänge
+Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie die daraus ermittelten prozentualen Abweichungen. Die prozentuale Abweichung wird berechnet als:
 
-| Größe (Formelzeichen)         | Analytische Lösung | FEM-Ergebnis |
-|--------------------------------|--------------------|--------------|
-| max. Spannung ($\sigma_\mathrm{max}$)    | 52,1 N/mm²    |   52,53 N/mm²   |
-| Spannung (σ) Stichprobe           |           |   52,08 N/mm²    |
-| Verlängerung des Balkens (Δl) | 0,037 mm           |   0,039 mm        |
-| Verringerung der Kantenlänge (Δa) | 0,0009 mm          |              |
+\[
+\text{Abweichung} = \frac{\text{FEM} - \text{Analytisch}}{\text{Analytisch}} \times 100
+\]
+
+| Größe (Formelzeichen)                | Analytische Lösung | FEM-Ergebnis   | Abweichung [%] |
+|---------------------------------------|--------------------|----------------|----------------|
+| max. Spannung ($\sigma_\mathrm{max}$) | 52,1 N/mm²          | 52,53 N/mm²    | 0,83 %         |
+| Spannung (σ) Stichprobe               | –                  | 52,08 N/mm²    | –              |
+| Verlängerung des Balkens (Δl)         | 0,037 mm            | 0,039 mm       | 5,41 %         |
+| Verringerung der Kantenlänge (Δa)     | 0,0009 mm           | –              | –              |
+
+???+ danger "FIXME"
+    hier noch Text zur Diskussion der Ergebnisse
 
 ### Einfluss des Netzes
 
