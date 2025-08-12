@@ -1,4 +1,4 @@
-# Beam Exercise
+#  Module 1 Cantilever Beam
 
 ## Learning objectives
 

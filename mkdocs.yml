@@ -63,8 +63,8 @@ plugins:
             - Startseite: index.md
             - Einführung: 01_einfuehrung.md
             - Installation und erste Schritte: 02_installation_erste_schritte.md
-            - Übung Kragbalken: 03_kragbalken.md
-            - Netze, Konvergenz & Kerben: 04_netze_kerben.md
+            - Modul 1 Kragbalken: 03_kragbalken.md
+            - Modul 2 Kerbwirkung: 04_kerbwirkung.md
             - Schweißverbindungen & Baugruppen: 05_schweiss_baugruppen.md
             - Optimierung: 06_optimierung.md
             - Modalanalyse: 07_modalanalyse.md
@@ -75,8 +75,8 @@ plugins:
             - Home: index.en.md
             - Introduction: 01_einfuehrung.en.md
             - Installation and getting started: 02_installation_erste_schritte.en.md
-            - Beam Exercise: 03_kragbalken.en.md
-            - Meshing, Convergence & Notches: 04_netze_kerben.en.md
+            - Module 1 Cantilever Beam: 03_kragbalken.en.md
+            - Module 2 Stress Concentration: 04_kerbwirkung.en.md
             - Welds & Assemblies: 05_schweiss_baugruppen.en.md
             - Optimization: 06_optimierung.en.md
             - Modal Analysis: 07_modalanalyse.en.md
