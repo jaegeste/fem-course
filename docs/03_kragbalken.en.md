@@ -356,8 +356,26 @@ This leads to **edge stress peaks** not predicted analytically.
 
 ## Task bending
 
+Implement the following model for the cantilever beam and compute the maximum stress and the maximum deflection. Also use the geometry from [kragbalken.stp](media/03_kragbalken/kragbalken.stp).
+
+* Length: \( L = 150 \,\text{mm} \)  
+* Edge length: \( a = 12 \,\text{mm} \)  
+* Force: \( F_B = 750 \,\text{N} \)  
+* Material: structural steel with yield strength \( R_e = 250 \,\text{N/mm}^2 \)
+
+Address the following topics:
+
+* Comparison with the analytical solution (maximum stress and deflection)  
+* Identification of the location of maximum stress (numerically and analytically)  
+* Display of tensile and compressive stresses in ANSYS  
+
+[![Cantilever beam, bending](media/03_kragbalken/kragbalken_biegung.svg){width=500px}](media/03_kragbalken/kragbalken_biegung.svg "Cantilever beam, bending"){.glightbox}
+
 ---
 
+## Implementation in ANSYS
+
+## Discussion of the results, bending
 
 ## Add-on: Bending Moment Instead of Force
 
@@ -369,9 +387,6 @@ This results in a **shear-free beam** with a more uniform stress field.
 
 ???+ danger "FIXME"
     Add screenshot: moment at face.
-
-???+ danger "FIXME"
-    belongs more to exercise beam bending
 
 [![Cantilever beam, solutions](media/03_kragbalken/17_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/17_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
