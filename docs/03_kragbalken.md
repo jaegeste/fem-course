@@ -360,6 +360,55 @@ Betrachtet man die maximale Vergleichsspannung, ist eine deutliche Zunahme von V
 | 1 mm          | 105,38 MPa   | 97 981       | 21 600         |
 | 0,5 mm        | 136,92 MPa   | 736 825      | 172 800        |
 
+<!-- markdownlint-disable MD033 -->
+
+<div id="meshPlot" style="width:100%;height:500px;"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+var trace1 = {
+  x: ["Standardnetz", "5 mm", "1 mm", "0,5 mm"],
+  y: [57.528, 61.47, 105.38, 136.92],
+  name: "Max. Spannung (MPa)",
+  type: "scatter",
+  mode: "lines+markers",
+  yaxis: "y1"
+};
+
+var trace2 = {
+  x: ["Standardnetz", "5 mm", "1 mm", "0,5 mm"],
+  y: [621, 1720, 97981, 736825],
+  name: "Anzahl Knoten",
+  type: "scatter",
+  mode: "lines+markers",
+  yaxis: "y2"
+};
+
+var trace3 = {
+  x: ["Standardnetz", "5 mm", "1 mm", "0,5 mm"],
+  y: [80, 270, 21600, 172800],
+  name: "Anzahl Elemente",
+  type: "scatter",
+  mode: "lines+markers",
+  yaxis: "y2"
+};
+
+var layout = {
+  title: "Netzgröße vs. maximale Spannung, Knoten- und Elementeanzahl",
+  xaxis: { title: "Netzgröße" },
+  yaxis: { title: "Max. Spannung (MPa)" },
+  yaxis2: {
+    title: "Knoten / Elemente",
+    overlaying: "y",
+    side: "right"
+  },
+  legend: { x: 0.01, y: 0.99 }
+};
+
+Plotly.newPlot("meshPlot", [trace1, trace2, trace3], layout);
+</script>
+
+<!-- markdownlint-disable MD033 -->
+
 ### Einfluss der Einspannung
 
 In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen.  
