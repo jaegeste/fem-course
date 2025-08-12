@@ -348,11 +348,33 @@ Im FEM‑Modell mit fester Einspannung wird diese **Querkontraktion lokal verhin
 Dadurch entstehen **Randspannungsspitzen**, die analytisch nicht vorhergesagt werden.  
 → Erklärung für Abweichungen zwischen analytischer und numerischer Lösung nahe der Einspannung.
 
+???+ danger "FIXME"
+    Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)
+
 ---
 
 ## Aufgabenstellung Biegung
 
+Implementieren Sie für den Kragbalken folgendes Modell und berechnen Sie die maximale Spannung und die maximale Verformung. Verwenden Sie auch die Geometrie aus [kragbalken.stp](media/03_kragbalken/kragbalken.stp).  
+
+* Länge: \( L = 150 \,\text{mm} \)  
+* Kantenlänge: \( a = 12 \,\text{mm} \)  
+* Kraft: \( F_B = 750 \,\text{N} \)  
+* Material: Baustahl mit Streckgrenze \( R_e = 250 \,\text{N/mm}^2 \)  
+
+Bearbeiten Sie folgende Themen:
+
+* Vergleich der Ergebnisse mit der analytischen Lösung (maximale Spannung und Verformung)  
+* Bestimmung der Stelle maximaler Spannung (numerisch und analytisch)  
+* Darstellung von Zug- und Druckspannungen in ANSYS  
+
+[![Kragbalken, Biegung](media/03_kragbalken/kragbalken_biegung.svg){width=500px}](media/03_kragbalken/kragbalken_biegung.svg "Kragbalken, Biegung"){.glightbox}
+
 ---
+
+## Umsetzung ANSYS
+
+## Diskussion der Ergebnisse, Biegung
 
 ## Add-on: Biegemoment statt Kraft
 
@@ -364,9 +386,6 @@ Dies führt zu einem **querkraftfreien Balken** mit gleichmäßigerem Spannungsf
 
 ???+ danger "FIXME"
     Screenshots hinzufügen: Moment an Stirnfläche.
-
-???+ danger "FIXME"
-    Das ist hier natürlich quatsch und gehört in die Übung Kragbalken Biegung
 
 [![Kragbalken, Lösungen](media/03_kragbalken/17_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/17_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
