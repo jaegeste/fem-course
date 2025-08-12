@@ -6,4 +6,4 @@ Inhalt:
 2. Theorie Stabmathematik
 3. Theorie Kerbwirkung
 4. Aufgabe Kerbwirkung
-5. Umsetzung ANSYS, Verfeinerung, Konvergenz, lokale Ergebnisse
+5. Umsetzung ANSYS, Verfeinerung, Konvergenz, lokale Ergebnisse 

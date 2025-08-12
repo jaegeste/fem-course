@@ -1,4 +1,4 @@
-# Übung Kragbalken
+# Modul 1 Kragbalken
 
 ## Lernziele
 
