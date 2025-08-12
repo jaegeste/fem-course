@@ -393,9 +393,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+  <a href="#diskussion-der-ergebnisse-zug" class="md-nav__link">
     <span class="md-ellipsis">
-      Diskussion der Ergebnisse
+      Diskussion der Ergebnisse, Zug
     </span>
   </a>
   
@@ -614,9 +614,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+  <a href="#diskussion-der-ergebnisse-zug" class="md-nav__link">
     <span class="md-ellipsis">
-      Diskussion der Ergebnisse
+      Diskussion der Ergebnisse, Zug
     </span>
   </a>
   
@@ -850,7 +850,7 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p>Hier mit Auswahl der globalen x-Achse zur Auswertung der Querschnittsänderung:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <hr />
-<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
+<h2 id="diskussion-der-ergebnisse-zug">Diskussion der Ergebnisse, Zug<a class="headerlink" href="#diskussion-der-ergebnisse-zug" title="Permanent link">&para;</a></h2>
 <h3 id="vergleich-mit-analytischer-losung">Vergleich mit analytischer Lösung<a class="headerlink" href="#vergleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
 <p>Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen.</p>
 <p><strong>Ergebnisse in ANSYS:</strong></p>
@@ -975,42 +975,6 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 <p>Ergebnis nahe der Einspannung mit globaler Elementgröße <strong>0,5 mm</strong></p>
 <p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p>Betrachtet man die maximale Vergleichsspannung, ist eine deutliche Zunahme von Verfeinerungsschritt zu Verfeinerungsschritt zu erkennen. Dies kann auf eine <strong>Divergenz</strong> hindeuten, also darauf, dass der berechnete Wert mit zunehmender Netzverfeinerung nicht gegen einen festen Grenzwert konvergiert, sondern stetig weiter ansteigt (vgl. <a href="./#4-randbedingungen">Singularitäten bei Krafteinleitung auf Punkt oder Kante</a>).</p>
-<table>
-<thead>
-<tr>
-<th>Netzgröße</th>
-<th>Max. Spannung</th>
-<th>Anzahl Knoten</th>
-<th>Anzahl Elemente</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Standardnetz</td>
-<td>57,528 MPa</td>
-<td>621</td>
-<td>80</td>
-</tr>
-<tr>
-<td>5 mm</td>
-<td>61,47 MPa</td>
-<td>1 720</td>
-<td>270</td>
-</tr>
-<tr>
-<td>1 mm</td>
-<td>105,38 MPa</td>
-<td>97 981</td>
-<td>21 600</td>
-</tr>
-<tr>
-<td>0,5 mm</td>
-<td>136,92 MPa</td>
-<td>736 825</td>
-<td>172 800</td>
-</tr>
-</tbody>
-</table>
 <!-- markdownlint-disable MD033 -->
 
 <div id="meshPlot" style="width:100%;height:500px;"></div>
@@ -1060,6 +1024,45 @@ Plotly.newPlot("meshPlot", [trace1, trace2, trace3], layout);
 
 <!-- markdownlint-disable MD033 -->
 
+<details class="note">
+<summary>Ergebnisse Netzverfeinerung als Tabelle</summary>
+<table>
+<thead>
+<tr>
+<th>Netzgröße</th>
+<th>Max. Spannung</th>
+<th>Anzahl Knoten</th>
+<th>Anzahl Elemente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standardnetz</td>
+<td>57,528 MPa</td>
+<td>621</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5 mm</td>
+<td>61,47 MPa</td>
+<td>1 720</td>
+<td>270</td>
+</tr>
+<tr>
+<td>1 mm</td>
+<td>105,38 MPa</td>
+<td>97 981</td>
+<td>21 600</td>
+</tr>
+<tr>
+<td>0,5 mm</td>
+<td>136,92 MPa</td>
+<td>736 825</td>
+<td>172 800</td>
+</tr>
+</tbody>
+</table>
+</details>
 <h3 id="einfluss-der-einspannung">Einfluss der Einspannung<a class="headerlink" href="#einfluss-der-einspannung" title="Permanent link">&para;</a></h3>
 <p>In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen.<br />
 Im FEM‑Modell mit fester Einspannung wird diese <strong>Querkontraktion lokal verhindert</strong>.<br />
@@ -1067,8 +1070,7 @@ Dadurch entstehen <strong>Randspannungsspitzen</strong>, die analytisch nicht vo
 → Erklärung für Abweichungen zwischen analytischer und numerischer Lösung nahe der Einspannung.</p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
-<p>Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)
-Divergenz anteasern</p>
+<p>Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)</p>
 </details>
 <hr />
 <h2 id="aufgabenstellung-biegung">Aufgabenstellung Biegung<a class="headerlink" href="#aufgabenstellung-biegung" title="Permanent link">&para;</a></h2>

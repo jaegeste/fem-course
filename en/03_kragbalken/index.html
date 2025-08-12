@@ -393,9 +393,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discussion-of-results" class="md-nav__link">
+  <a href="#discussion-of-results-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Discussion of Results
+      Discussion of Results, Tensile Load
     </span>
   </a>
   
@@ -614,9 +614,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discussion-of-results" class="md-nav__link">
+  <a href="#discussion-of-results-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Discussion of Results
+      Discussion of Results, Tensile Load
     </span>
   </a>
   
@@ -850,7 +850,7 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p>Here with selection of the global x-axis to evaluate the cross-section change:  </p>
 <p><a class="glightbox" href="../../media/03_kragbalken/10b_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="media/03_kragbalken/10b_Kragbalken_Auswertung.en.png" width="600px" /></a>  </p>
 <hr />
-<h2 id="discussion-of-results">Discussion of Results<a class="headerlink" href="#discussion-of-results" title="Permanent link">&para;</a></h2>
+<h2 id="discussion-of-results-tensile-load">Discussion of Results, Tensile Load<a class="headerlink" href="#discussion-of-results-tensile-load" title="Permanent link">&para;</a></h2>
 <h3 id="comparison-with-analytical-solution">Comparison with Analytical Solution<a class="headerlink" href="#comparison-with-analytical-solution" title="Permanent link">&para;</a></h3>
 <p>Expectation: very good agreement of average stress and deformation.</p>
 <p><strong>Results from ANSYS:</strong></p>
@@ -975,42 +975,6 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 <p>Result near the fixed support with a global element size of <strong>0.5 mm</strong></p>
 <p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p>Considering the maximum equivalent stress, there is a clear increase from one refinement step to the next. This may indicate <strong>divergence</strong>, meaning that the calculated value does not converge to a fixed limit as the mesh is refined, but instead continues to increase (cf. <a href="./#4-boundary-conditions">singularities caused by applying a load to a point or an edge</a>).</p>
-<table>
-<thead>
-<tr>
-<th>Mesh size</th>
-<th>Max. stress</th>
-<th>Number of nodes</th>
-<th>Number of elements</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Standard mesh</td>
-<td>57.528 MPa</td>
-<td>621</td>
-<td>80</td>
-</tr>
-<tr>
-<td>5 mm</td>
-<td>61.47 MPa</td>
-<td>1,720</td>
-<td>270</td>
-</tr>
-<tr>
-<td>1 mm</td>
-<td>105.38 MPa</td>
-<td>97,981</td>
-<td>21,600</td>
-</tr>
-<tr>
-<td>0.5 mm</td>
-<td>136.92 MPa</td>
-<td>736,825</td>
-<td>172,800</td>
-</tr>
-</tbody>
-</table>
 <!-- markdownlint-disable MD033 -->
 
 <div id="meshPlot" style="width:100%;height:500px;"></div>
@@ -1060,6 +1024,45 @@ Plotly.newPlot("meshPlot", [trace1, trace2, trace3], layout);
 
 <!-- markdownlint-disable MD033 -->
 
+<details class="note">
+<summary>Mesh refinement results as a table</summary>
+<table>
+<thead>
+<tr>
+<th>Mesh size</th>
+<th>Max. stress</th>
+<th>Number of nodes</th>
+<th>Number of elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard mesh</td>
+<td>57.528 MPa</td>
+<td>621</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5 mm</td>
+<td>61.47 MPa</td>
+<td>1,720</td>
+<td>270</td>
+</tr>
+<tr>
+<td>1 mm</td>
+<td>105.38 MPa</td>
+<td>97,981</td>
+<td>21,600</td>
+</tr>
+<tr>
+<td>0.5 mm</td>
+<td>136.92 MPa</td>
+<td>736,825</td>
+<td>172,800</td>
+</tr>
+</tbody>
+</table>
+</details>
 <h3 id="influence-of-the-support">Influence of the support<a class="headerlink" href="#influence-of-the-support" title="Permanent link">&para;</a></h3>
 <p>In reality, the beam can contract laterally.<br />
 In the FEM model with fixed support, this <strong>lateral contraction is locally prevented</strong>.<br />
