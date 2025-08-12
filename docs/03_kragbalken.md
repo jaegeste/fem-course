@@ -194,11 +194,21 @@ Auswertungsschritte in ANSYS:
 
 1. Auswahl der **Gesamtverformung** → Kontrolle der Größenordnung und Plausibilität.  
 2. Darstellung der **von-Mises-Spannung** → Vergleich mit analytisch berechneter Spannung.  
-3. Beurteilung der **Spannungsverteilung** im Bauteil.  
+3. **Verformungsergebnis** mit Auswahl einer Richtung (hier globale x-Achse) → Auswertung der Querkontraktion.  
+
+Auswahl über Kontextmenü _Lösung_:
 
 [![Kragbalken, Lösungen hinzufügen](media/03_kragbalken/08_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/08_Kragbalken_Auswertung.png "Kragbalken, Lösungen hinzufügen"){.glightbox}  
 
 [![Kragbalken, Lösungen hinzufügen](media/03_kragbalken/10_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/10_Kragbalken_Auswertung.png "Kragbalken, Lösungen hinzufügen"){.glightbox}  
+
+Alternativ über Klick (rechte Maustaste) auf _Lösung_ im Strukturbaum:
+
+[![Kragbalken, Lösungen hinzufügen](media/03_kragbalken/10a_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/10a_Kragbalken_Auswertung.png "Kragbalken, Lösungen hinzufügen"){.glightbox}  
+
+Hier mit Auswahl der globalen x-Achse zur Auswertung der Querschnittsänderung:
+
+[![Kragbalken, Lösungen hinzufügen](media/03_kragbalken/10b_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/10b_Kragbalken_Auswertung.png "Kragbalken, Lösungen hinzufügen"){.glightbox}  
 
 ---
 
@@ -224,8 +234,9 @@ Nutzt man eine _Stichprobe_ etwas von der Einspannung entfernt ist die **Verglei
 
 [![Kragbalken, Lösungen](media/03_kragbalken/12_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
-???+ danger "FIXME"
-    es fehlt noch ein Ergebnis zur Verringerung der Kantenlänge
+Das **Verformungsergebnis** in Richtung der x-Achse ist 0,000472 mm.
+
+[![Kragbalken, Lösungen](media/03_kragbalken/12a_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/12a_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die [oben vorgestellte Theorie](#theoretischer-hintergrund).
 
@@ -302,15 +313,21 @@ Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie
 \text{Abweichung} = \frac{\text{FEM} - \text{Analytisch}}{\text{Analytisch}} \times 100
 \]
 
-| Größe (Formelzeichen)                | Analytische Lösung | FEM-Ergebnis   | Abweichung [%] |
-|---------------------------------------|--------------------|----------------|----------------|
-| max. Spannung ($\sigma_\mathrm{max}$) | 52,1 N/mm²          | 52,53 N/mm²    | 0,83 %         |
-| Spannung (σ) Stichprobe               | –                  | 52,08 N/mm²    | –              |
-| Verlängerung des Balkens (Δl)         | 0,037 mm            | 0,039 mm       | 5,41 %         |
-| Verringerung der Kantenlänge (Δa)     | 0,0009 mm           | –              | –              |
+| Größe (Formelzeichen)                  | Analytische Lösung | FEM-Ergebnis                 | Abweichung [%] |
+|-----------------------------------------|--------------------|------------------------------|----------------|
+| max. Spannung ($\sigma_\mathrm{max}$)   | 52,1 N/mm²          | 52,53 N/mm²                   | 0,83 %         |
+| Spannung (σ) Stichprobe                 | 52,1 N/mm²          | 52,08 N/mm²                   | −0,04 %        |
+| Verlängerung des Balkens (Δl)           | 0,037 mm            | 0,039 mm                      | 5,41 %         |
+| Verringerung der Kantenlänge (Δa)       | 0,00089 mm          | 0,000944 mm (2 × 0,000472 mm)  | 6,07 %         |
 
-???+ danger "FIXME"
-    hier noch Text zur Diskussion der Ergebnisse
+Die Ergebnisse stimmen insgesamt gut mit der analytischen Lösung überein. Deutlichere Abweichungen treten nur bei der maximalen Vergleichsspannung auf, verursacht durch lokale Spannungsspitzen (Singularitäten) an den Ecken der Einspannung.  
+
+Für ein derart einfaches Problem sind Abweichungen von 5–6 % relativ hoch, es wäre eine nahezu exakte Übereinstimmung zu erwarten. Die beobachtete Differenz ist vor allem auf die Spannungsspitzen an der Ecke zurückzuführen und sollte weiter untersucht werden.
+
+Mögliche Maßnahmen zur Verbesserung zunächst:  
+
+* Analyse des Einflusses der **Vernetzung**
+* Analyse des Einflusses der **Einspannung**
 
 ### Einfluss des Netzes
 
@@ -318,13 +335,13 @@ Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie
 * Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  
 * Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  
 
-[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}   
+[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 [![Kragbalken, Lösungen](media/03_kragbalken/15_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/15_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 [![Kragbalken, Lösungen](media/03_kragbalken/16_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/16_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
-### Verhinderte Querkontraktion
+### Einfluss der Einspannung
 
 In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen.  
 Im FEM‑Modell mit fester Einspannung wird diese **Querkontraktion lokal verhindert**.  
