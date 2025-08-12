@@ -361,6 +361,55 @@ Considering the maximum equivalent stress, there is a clear increase from one re
 | 1 mm          | 105.38 MPa   | 97,981          | 21,600             |
 | 0.5 mm        | 136.92 MPa   | 736,825         | 172,800            |
 
+<!-- markdownlint-disable MD033 -->
+
+<div id="meshPlot" style="width:100%;height:500px;"></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+var trace1 = {
+  x: ["Standard mesh", "5 mm", "1 mm", "0.5 mm"],
+  y: [57.528, 61.47, 105.38, 136.92],
+  name: "Max. stress (MPa)",
+  type: "scatter",
+  mode: "lines+markers",
+  yaxis: "y1"
+};
+
+var trace2 = {
+  x: ["Standard mesh", "5 mm", "1 mm", "0.5 mm"],
+  y: [621, 1720, 97981, 736825],
+  name: "Number of nodes",
+  type: "scatter",
+  mode: "lines+markers",
+  yaxis: "y2"
+};
+
+var trace3 = {
+  x: ["Standard mesh", "5 mm", "1 mm", "0.5 mm"],
+  y: [80, 270, 21600, 172800],
+  name: "Number of elements",
+  type: "scatter",
+  mode: "lines+markers",
+  yaxis: "y2"
+};
+
+var layout = {
+  title: "Mesh size vs. maximum stress, number of nodes and elements",
+  xaxis: { title: "Mesh size" },
+  yaxis: { title: "Max. stress (MPa)" },
+  yaxis2: {
+    title: "Nodes / Elements",
+    overlaying: "y",
+    side: "right"
+  },
+  legend: { x: 0.01, y: 0.99 }
+};
+
+Plotly.newPlot("meshPlot", [trace1, trace2, trace3], layout);
+</script>
+
+<!-- markdownlint-disable MD033 -->
+
 ### Influence of the support
 
 In reality, the beam can contract laterally.  
