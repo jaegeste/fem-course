@@ -331,15 +331,34 @@ Mögliche Maßnahmen zur Verbesserung zunächst:
 
 ### Einfluss des Netzes
 
+Generell gilt:
+
 * Grobes Netz → geringere Genauigkeit.  
 * Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  
 * Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  
 
-[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+Wie unter [Grundlegendes zur Vernetzung](02_installation_erste_schritte.md#grundlegendes-zur-vernetzung) eingeführt, ist die manuelle Festlegung der globalen Elementgröße die einfachste Möglichkeit zur Netzverfeinerung.  
+
+Ergebnis nahe der Einspannung mit globaler Elementgröße **5 mm**
+
+[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox} 
+
+Ergebnis nahe der Einspannung mit globaler Elementgröße **1 mm**
 
 [![Kragbalken, Lösungen](media/03_kragbalken/15_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/15_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
+Ergebnis nahe der Einspannung mit globaler Elementgröße **0,5 mm**
+
 [![Kragbalken, Lösungen](media/03_kragbalken/16_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/16_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
+
+Betrachtet man die maximale Vergleichsspannung, ist eine deutliche Zunahme von Verfeinerungsschritt zu Verfeinerungsschritt zu erkennen. Dies kann auf eine **Divergenz** hindeuten, also darauf, dass der berechnete Wert mit zunehmender Netzverfeinerung nicht gegen einen festen Grenzwert konvergiert, sondern stetig weiter ansteigt (vgl. [Singularitäten bei Krafteinleitung auf Punkt oder Kante](03_kragbalken.md#4-randbedingungen)).
+
+| Netzgröße     | Max. Spannung | Anzahl Knoten | Anzahl Elemente |
+|---------------|--------------|--------------|----------------|
+| Standardnetz  | 57,528 MPa   | 621          | 80             |
+| 5 mm          | 61,47 MPa    | 1 720        | 270            |
+| 1 mm          | 105,38 MPa   | 97 981       | 21 600         |
+| 0,5 mm        | 136,92 MPa   | 736 825      | 172 800        |
 
 ### Einfluss der Einspannung
 
@@ -350,6 +369,7 @@ Dadurch entstehen **Randspannungsspitzen**, die analytisch nicht vorhergesagt we
 
 ???+ danger "FIXME"
     Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)
+    Divergenz anteasern
 
 ---
 

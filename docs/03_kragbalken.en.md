@@ -211,7 +211,6 @@ Here with selection of the global x-axis to evaluate the cross-section change:
 
 [![Cantilever beam, add solutions](media/03_kragbalken/10b_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/10b_Kragbalken_Auswertung.png "Cantilever beam, add solutions"){.glightbox}  
 
-
 ---
 
 ## Discussion of Results
@@ -238,7 +237,7 @@ Using a _Probe_ taken slightly away from the fixed support, the equivalent stres
 
 The **deformation result** in the x-axis direction is 0.000472 mm.  
 
-[![Cantilever beam, solutions](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox} 
+[![Cantilever beam, solutions](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
 The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background).
 
@@ -322,11 +321,9 @@ The following table shows the analytical results, the FEM results, and the resul
 | beam elongation (Δl)                   | 0.037 mm            | 0.039 mm                          | 5.41 %        |
 | edge length reduction (Δa)             | 0.00089 mm          | 0.000944 mm (2 × 0.000472 mm)     | 6.07 %        |
 
-The results are generally in good agreement with the analytical solution.  
-More noticeable deviations occur only for the maximum equivalent stress, caused by local stress peaks (singularities) at the corners of the fixed support.  
+The results are generally in good agreement with the analytical solution. More noticeable deviations occur only for the maximum equivalent stress, caused by local stress peaks (singularities) at the corners of the fixed support.  
 
-For such a simple problem, deviations of 5–6% are relatively high, and a nearly exact match would be expected.  
-The observed difference is primarily due to stress peaks at the corner and should be further investigated.
+For such a simple problem, deviations of 5–6% are relatively high, and a nearly exact match would be expected. The observed difference is primarily due to stress peaks at the corner and should be further investigated.
 
 Possible initial measures for improvement:  
 
@@ -335,17 +332,36 @@ Possible initial measures for improvement:
 
 ### Mesh Influence
 
+As a general rule:
+
 * Coarse mesh → less accurate.  
 * Fine mesh → more accurate but longer time.  
-* Aim: results independent of mesh (mesh influence minimized). 
+* Aim: results independent of mesh (mesh influence minimized).  
+
+As introduced in [Basics of Meshing](02_installation_erste_schritte.en.md/#basics-of-meshing), manually specifying the global element size is the simplest way to refine the mesh.
+
+Result near the fixed support with a global element size of **5 mm**
 
 [![Cantilever beam, solutions](media/03_kragbalken/14_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
+Result near the fixed support with a global element size of **1 mm**
+
 [![Cantilever beam, solutions](media/03_kragbalken/15_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/15_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+
+Result near the fixed support with a global element size of **0.5 mm**
 
 [![Cantilever beam, solutions](media/03_kragbalken/16_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/16_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-### Influence of the fixed support
+Considering the maximum equivalent stress, there is a clear increase from one refinement step to the next. This may indicate **divergence**, meaning that the calculated value does not converge to a fixed limit as the mesh is refined, but instead continues to increase (cf. [singularities caused by applying a load to a point or an edge](03_kragbalken.en.md#4-boundary-conditions)).
+
+| Mesh size     | Max. stress  | Number of nodes | Number of elements |
+|---------------|--------------|-----------------|--------------------|
+| Standard mesh | 57.528 MPa   | 621             | 80                 |
+| 5 mm          | 61.47 MPa    | 1,720           | 270                |
+| 1 mm          | 105.38 MPa   | 97,981          | 21,600             |
+| 0.5 mm        | 136.92 MPa   | 736,825         | 172,800            |
+
+### Influence of the support
 
 In reality, the beam can contract laterally.  
 In the FEM model with fixed support, this **lateral contraction is locally prevented**.  
