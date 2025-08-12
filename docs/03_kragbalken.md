@@ -341,7 +341,7 @@ Wie unter [Grundlegendes zur Vernetzung](02_installation_erste_schritte.md#grund
 
 Ergebnis nahe der Einspannung mit globaler Elementgröße **5 mm**
 
-[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox} 
+[![Kragbalken, Lösungen](media/03_kragbalken/14_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/14_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 Ergebnis nahe der Einspannung mit globaler Elementgröße **1 mm**
 
