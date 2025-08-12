@@ -765,7 +765,6 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <li>Zu feines Netz → hohe Genauigkeit, aber deutlich längere Rechenzeit.  </li>
 <li>Optimal ist ein Netz, das <strong>ausreichend genaue Ergebnisse</strong> liefert, ohne unnötig viele Elemente zu erzeugen.  </li>
 </ul>
-<p>Diese einfache Netzeinflussstudie zeigt, dass FEM-Ergebnisse nicht automatisch exakt sind, sondern von der <strong>Diskretisierung</strong> abhängen.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" title="Kragbalken, Netzdefinition"><img alt="Kragbalken, Netzdefinition" src="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" width="600px" /></a>  </p>
 <h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
 <p>Betrachtet man die Aufgabenstellung sind zwei Randbedingungen naheliegend:</p>
@@ -812,19 +811,20 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <hr />
 <h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
 <h3 id="vergleich-mit-analytischer-losung">Vergleich mit analytischer Lösung<a class="headerlink" href="#vergleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
-<p>Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen</p>
-<p>Ergebnisse aus ANSYS:</p>
+<p>Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen.</p>
+<p><strong>Ergebnisse in ANSYS:</strong></p>
+<p>Die <strong>Gesamtverformung</strong> zeigt eine Längung des Balkens um 0,03895 mm.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/09_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/09_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Die <strong>maximale Vergleichsspanunng</strong> (von Mises) ist 57,528 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/11_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/11_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Nutzt man eine <em>Stichprobe</em> etwas von der Einspannung entfernt ist die <strong>Vergleichsspanunng</strong> (von Mises) 52,082 MPa.  </p>
+<p><strong>Hinweis:</strong> Die Stichprobe ist im Kontextmenü <em>Ergebnis</em> zu finden. Dort lässt sich auch der minimale und maximale Wert des jeweiligen Ergebnisses anzeigen.  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<p><a class="glightbox" href="../media/03_kragbalken/13_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/13_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
-<p>Ergebnisse aufschreiben
-Bilder beschreiben
-Tabelle Gegenüberstellung Ergebnisse ANSYS Analytisch</p>
+<p>es fehlt noch ein Ergebnis zur Verringerung der Kantenlänge</p>
 </details>
+<p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die <a href="#theoretischer-hintergrund">oben vorgestellte Theorie</a>.</p>
 <details class="note">
 <summary>Berechnung von Δl, Δa und σ</summary>
 <p>Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.</p>
@@ -874,12 +874,57 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 * Verlängerung des Balkens: ca. <strong>0,037 mm</strong><br />
 * Verringerung der Kantenlänge: ca. <strong>0,0009 mm</strong></p>
 </details>
+<p>Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie die daraus ermittelten prozentualen Abweichungen. Die prozentuale Abweichung wird berechnet als:</p>
+<div class="arithmatex">\[
+\text{Abweichung} = \frac{\text{FEM} - \text{Analytisch}}{\text{Analytisch}} \times 100
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Größe (Formelzeichen)</th>
+<th>Analytische Lösung</th>
+<th>FEM-Ergebnis</th>
+<th>Abweichung [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max. Spannung (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
+<td>52,1 N/mm²</td>
+<td>52,53 N/mm²</td>
+<td>0,83 %</td>
+</tr>
+<tr>
+<td>Spannung (σ) Stichprobe</td>
+<td>–</td>
+<td>52,08 N/mm²</td>
+<td>–</td>
+</tr>
+<tr>
+<td>Verlängerung des Balkens (Δl)</td>
+<td>0,037 mm</td>
+<td>0,039 mm</td>
+<td>5,41 %</td>
+</tr>
+<tr>
+<td>Verringerung der Kantenlänge (Δa)</td>
+<td>0,0009 mm</td>
+<td>–</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>hier noch Text zur Diskussion der Ergebnisse</p>
+</details>
 <h3 id="einfluss-des-netzes">Einfluss des Netzes<a class="headerlink" href="#einfluss-des-netzes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Grobes Netz → geringere Genauigkeit.  </li>
 <li>Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  </li>
 <li>Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  </li>
 </ul>
+<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>   </p>
 <p><a class="glightbox" href="../media/03_kragbalken/15_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/15_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <h3 id="verhinderte-querkontraktion">Verhinderte Querkontraktion<a class="headerlink" href="#verhinderte-querkontraktion" title="Permanent link">&para;</a></h3>

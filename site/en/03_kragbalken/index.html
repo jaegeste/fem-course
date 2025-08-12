@@ -765,7 +765,6 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <li>Mesh too fine → high accuracy, but significantly longer computation time.  </li>
 <li>The optimal mesh provides <strong>sufficiently accurate results</strong> without generating an unnecessary number of elements.  </li>
 </ul>
-<p>This simple mesh sensitivity study shows that FEM results are not automatically exact, but depend on the <strong>discretization</strong>.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" title="Cantilever beam, mesh definition"><img alt="Cantilever beam, mesh definition" src="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" width="600px" /></a>  </p>
 <h3 id="4-boundary-conditions">4. Boundary Conditions<a class="headerlink" href="#4-boundary-conditions" title="Permanent link">&para;</a></h3>
 <p>Considering the problem statement, two boundary conditions are obvious:</p>
@@ -813,18 +812,19 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <h2 id="discussion-of-results">Discussion of Results<a class="headerlink" href="#discussion-of-results" title="Permanent link">&para;</a></h2>
 <h3 id="comparison-with-analytical-solution">Comparison with Analytical Solution<a class="headerlink" href="#comparison-with-analytical-solution" title="Permanent link">&para;</a></h3>
 <p>Expectation: very good agreement of average stress and deformation.</p>
-<p>Results from ANSYS:</p>
+<p><strong>Results from ANSYS:</strong></p>
+<p>The total deformation shows an elongation of the beam by 0.03895 mm.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/09_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/09_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>The <strong>maximum equivalent stress</strong> (von Mises) is 57.528 MPa. It appears as a stress peak at the corners of the fixed surface (red area).</p>
 <p><a class="glightbox" href="../media/03_kragbalken/11_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/11_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Using a <em>Probe</em> taken slightly away from the fixed support, the equivalent stress (von Mises) is 52.082 MPa.</p>
+<p><strong>Note:</strong> The <em>Probe</em> can be found in the <em>Result</em> context menu. There, the minimum and maximum values of the respective result can also be displayed.  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<p><a class="glightbox" href="../media/03_kragbalken/13_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/13_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <details class="danger" open="open">
 <summary>FIXME</summary>
-<p>Record the results<br />
-Describe the images<br />
-Create a table comparing ANSYS and analytical results</p>
+<p>A result for the reduction of the edge length is still missing</p>
 </details>
+<p>The following box contains the analytical solution. First, carry out the calculation yourself and use the <a href="#theoretical-background">theory presented above</a>.</p>
 <details class="note">
 <summary>Calculation of Δl, Δa and σ</summary>
 <p>For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.</p>
@@ -874,12 +874,57 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 * Beam elongation: approx. <strong>0.037 mm</strong><br />
 * Reduction of edge length: approx. <strong>0.0009 mm</strong></p>
 </details>
+<p>The following table shows the analytical results, the FEM results, and the resulting percentage deviations. The percentage deviation is calculated as:</p>
+<div class="arithmatex">\[
+\text{Deviation} = \frac{\text{FEM} - \text{Analytical}}{\text{Analytical}} \times 100
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Quantity (Symbol)</th>
+<th>Analytical Result</th>
+<th>FEM Result</th>
+<th>Deviation [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max. stress (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
+<td>52.1 N/mm²</td>
+<td>52.53 N/mm²</td>
+<td>0.83 %</td>
+</tr>
+<tr>
+<td>stress (σ) sample</td>
+<td>–</td>
+<td>52.08 N/mm²</td>
+<td>–</td>
+</tr>
+<tr>
+<td>beam elongation (Δl)</td>
+<td>0.037 mm</td>
+<td>0.039 mm</td>
+<td>5.41 %</td>
+</tr>
+<tr>
+<td>edge length reduction (Δa)</td>
+<td>0.0009 mm</td>
+<td>–</td>
+<td>–</td>
+</tr>
+</tbody>
+</table>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>add text here for the discussion of the results</p>
+</details>
 <h3 id="mesh-influence">Mesh Influence<a class="headerlink" href="#mesh-influence" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Coarse mesh → less accurate.  </li>
 <li>Fine mesh → more accurate but longer time.  </li>
-<li>Aim: results independent of mesh (mesh influence minimized).  </li>
+<li>Aim: results independent of mesh (mesh influence minimized). </li>
 </ul>
+<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/15_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/15_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <h3 id="prevented-lateral-contraction">Prevented Lateral Contraction<a class="headerlink" href="#prevented-lateral-contraction" title="Permanent link">&para;</a></h3>

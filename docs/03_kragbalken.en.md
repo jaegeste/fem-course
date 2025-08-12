@@ -195,11 +195,22 @@ Steps in ANSYS:
 
 1. Select **total deformation** → check magnitude and plausibility.  
 2. Display **von Mises stress** → compare with analytical stress.  
-3. Assess the **stress distribution**.  
+3. . **Deformation result** with selection of a direction (here: global x-axis) → evaluation of lateral contraction.  
+
+Selection via the context menu of _Solution_:  
 
 [![Cantilever beam, add solutions](media/03_kragbalken/08_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/08_Kragbalken_Auswertung.en.png "Cantilever beam, add solutions"){.glightbox}  
 
 [![Cantilever beam, add solutions](media/03_kragbalken/10_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/10_Kragbalken_Auswertung.en.png "Cantilever beam, add solutions"){.glightbox}  
+
+Alternatively, by right-clicking on _Solution_ in the tree structure:  
+
+[![Cantilever beam, add solutions](media/03_kragbalken/10a_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/10a_Kragbalken_Auswertung.png "Cantilever beam, add solutions"){.glightbox}  
+
+Here with selection of the global x-axis to evaluate the cross-section change:  
+
+[![Cantilever beam, add solutions](media/03_kragbalken/10b_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/10b_Kragbalken_Auswertung.png "Cantilever beam, add solutions"){.glightbox}  
+
 
 ---
 
@@ -225,8 +236,9 @@ Using a _Probe_ taken slightly away from the fixed support, the equivalent stres
 
 [![Cantilever beam, solutions](media/03_kragbalken/12_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-???+ danger "FIXME"
-    A result for the reduction of the edge length is still missing
+The **deformation result** in the x-axis direction is 0.000472 mm.  
+
+[![Cantilever beam, solutions](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox} 
 
 The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background).
 
@@ -303,15 +315,23 @@ The following table shows the analytical results, the FEM results, and the resul
 \text{Deviation} = \frac{\text{FEM} - \text{Analytical}}{\text{Analytical}} \times 100
 \]
 
-| Quantity (Symbol)                     | Analytical Result  | FEM Result     | Deviation [%] |
-|----------------------------------------|--------------------|----------------|---------------|
-| max. stress ($\sigma_\mathrm{max}$)    | 52.1 N/mm²          | 52.53 N/mm²    | 0.83 %        |
-| stress (σ) sample                      | –                  | 52.08 N/mm²    | –             |
-| beam elongation (Δl)                   | 0.037 mm            | 0.039 mm       | 5.41 %        |
-| edge length reduction (Δa)             | 0.0009 mm           | –              | –             |
+| Quantity (Symbol)                     | Analytical Result  | FEM Result                       | Deviation [%] |
+|----------------------------------------|--------------------|-----------------------------------|---------------|
+| max. stress ($\sigma_\mathrm{max}$)    | 52.1 N/mm²          | 52.53 N/mm²                       | 0.83 %        |
+| stress (σ) sample                      | 52.1 N/mm²          | 52.08 N/mm²                       | −0.04 %       |
+| beam elongation (Δl)                   | 0.037 mm            | 0.039 mm                          | 5.41 %        |
+| edge length reduction (Δa)             | 0.00089 mm          | 0.000944 mm (2 × 0.000472 mm)     | 6.07 %        |
 
-???+ danger "FIXME"
-    add text here for the discussion of the results
+The results are generally in good agreement with the analytical solution.  
+More noticeable deviations occur only for the maximum equivalent stress, caused by local stress peaks (singularities) at the corners of the fixed support.  
+
+For such a simple problem, deviations of 5–6% are relatively high, and a nearly exact match would be expected.  
+The observed difference is primarily due to stress peaks at the corner and should be further investigated.
+
+Possible initial measures for improvement:  
+
+* Analysis of the influence of **meshing**  
+* Analysis of the influence of the **fixed support**
 
 ### Mesh Influence
 
@@ -325,7 +345,7 @@ The following table shows the analytical results, the FEM results, and the resul
 
 [![Cantilever beam, solutions](media/03_kragbalken/16_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/16_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-### Prevented Lateral Contraction
+### Influence of the fixed support
 
 In reality, the beam can contract laterally.  
 In the FEM model with fixed support, this **lateral contraction is locally prevented**.  
