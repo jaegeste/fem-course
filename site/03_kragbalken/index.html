@@ -411,6 +411,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#umsetzung-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-on-biegemoment-statt-kraft" class="md-nav__link">
     <span class="md-ellipsis">
       Add-on: Biegemoment statt Kraft
@@ -608,6 +626,24 @@
   <a href="#aufgabenstellung-biegung" class="md-nav__link">
     <span class="md-ellipsis">
       Aufgabenstellung Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse, Biegung
     </span>
   </a>
   
@@ -938,9 +974,29 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 Im FEM‑Modell mit fester Einspannung wird diese <strong>Querkontraktion lokal verhindert</strong>.<br />
 Dadurch entstehen <strong>Randspannungsspitzen</strong>, die analytisch nicht vorhergesagt werden.<br />
 → Erklärung für Abweichungen zwischen analytischer und numerischer Lösung nahe der Einspannung.</p>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)</p>
+</details>
 <hr />
 <h2 id="aufgabenstellung-biegung">Aufgabenstellung Biegung<a class="headerlink" href="#aufgabenstellung-biegung" title="Permanent link">&para;</a></h2>
+<p>Implementieren Sie für den Kragbalken folgendes Modell und berechnen Sie die maximale Spannung und die maximale Verformung. Verwenden Sie auch die Geometrie aus <a href="../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a>.  </p>
+<ul>
+<li>Länge: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Kantenlänge: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Kraft: <span class="arithmatex">\( F_B = 750 \,\text{N} \)</span>  </li>
+<li>Material: Baustahl mit Streckgrenze <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+</ul>
+<p>Bearbeiten Sie folgende Themen:</p>
+<ul>
+<li>Vergleich der Ergebnisse mit der analytischen Lösung (maximale Spannung und Verformung)  </li>
+<li>Bestimmung der Stelle maximaler Spannung (numerisch und analytisch)  </li>
+<li>Darstellung von Zug- und Druckspannungen in ANSYS  </li>
+</ul>
+<p><a class="glightbox" href="../media/03_kragbalken/kragbalken_biegung.svg" title="Kragbalken, Biegung"><img alt="Kragbalken, Biegung" src="../media/03_kragbalken/kragbalken_biegung.svg" width="500px" /></a></p>
 <hr />
+<h2 id="umsetzung-ansys">Umsetzung ANSYS<a class="headerlink" href="#umsetzung-ansys" title="Permanent link">&para;</a></h2>
+<h2 id="diskussion-der-ergebnisse-biegung">Diskussion der Ergebnisse, Biegung<a class="headerlink" href="#diskussion-der-ergebnisse-biegung" title="Permanent link">&para;</a></h2>
 <h2 id="add-on-biegemoment-statt-kraft">Add-on: Biegemoment statt Kraft<a class="headerlink" href="#add-on-biegemoment-statt-kraft" title="Permanent link">&para;</a></h2>
 <p>Als Alternative kann ein <strong>reines Biegemoment</strong> angesetzt werden.<br />
 Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßigerem Spannungsfeld.</p>
@@ -951,10 +1007,6 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 <details class="danger" open="open">
 <summary>FIXME</summary>
 <p>Screenshots hinzufügen: Moment an Stirnfläche.</p>
-</details>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Das ist hier natürlich quatsch und gehört in die Übung Kragbalken Biegung</p>
 </details>
 <p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
