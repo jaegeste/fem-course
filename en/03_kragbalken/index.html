@@ -411,6 +411,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-the-results-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of the results, bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#add-on-bending-moment-instead-of-force" class="md-nav__link">
     <span class="md-ellipsis">
       Add-on: Bending Moment Instead of Force
@@ -608,6 +626,24 @@
   <a href="#task-bending" class="md-nav__link">
     <span class="md-ellipsis">
       Task bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-the-results-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of the results, bending
     </span>
   </a>
   
@@ -942,7 +978,23 @@ This leads to <strong>edge stress peaks</strong> not predicted analytically.<br 
 → Explains deviations near the support.</p>
 <hr />
 <h2 id="task-bending">Task bending<a class="headerlink" href="#task-bending" title="Permanent link">&para;</a></h2>
+<p>Implement the following model for the cantilever beam and compute the maximum stress and the maximum deflection. Also use the geometry from <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a>.</p>
+<ul>
+<li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Edge length: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Force: <span class="arithmatex">\( F_B = 750 \,\text{N} \)</span>  </li>
+<li>Material: structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span></li>
+</ul>
+<p>Address the following topics:</p>
+<ul>
+<li>Comparison with the analytical solution (maximum stress and deflection)  </li>
+<li>Identification of the location of maximum stress (numerically and analytically)  </li>
+<li>Display of tensile and compressive stresses in ANSYS  </li>
+</ul>
+<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_biegung.svg" title="Cantilever beam, bending"><img alt="Cantilever beam, bending" src="../../media/03_kragbalken/kragbalken_biegung.svg" width="500px" /></a></p>
 <hr />
+<h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
+<h2 id="discussion-of-the-results-bending">Discussion of the results, bending<a class="headerlink" href="#discussion-of-the-results-bending" title="Permanent link">&para;</a></h2>
 <h2 id="add-on-bending-moment-instead-of-force">Add-on: Bending Moment Instead of Force<a class="headerlink" href="#add-on-bending-moment-instead-of-force" title="Permanent link">&para;</a></h2>
 <p>As an alternative, a <strong>pure bending moment</strong> can be applied.<br />
 This results in a <strong>shear-free beam</strong> with a more uniform stress field.  </p>
@@ -953,10 +1005,6 @@ This results in a <strong>shear-free beam</strong> with a more uniform stress fi
 <details class="danger" open="open">
 <summary>FIXME</summary>
 <p>Add screenshot: moment at face.</p>
-</details>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>belongs more to exercise beam bending</p>
 </details>
 <p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
