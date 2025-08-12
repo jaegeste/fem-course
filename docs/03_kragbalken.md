@@ -212,7 +212,7 @@ Hier mit Auswahl der globalen x-Achse zur Auswertung der Querschnittsänderung:
 
 ---
 
-## Diskussion der Ergebnisse
+## Diskussion der Ergebnisse, Zug
 
 ### Vergleich mit analytischer Lösung
 
@@ -353,13 +353,6 @@ Ergebnis nahe der Einspannung mit globaler Elementgröße **0,5 mm**
 
 Betrachtet man die maximale Vergleichsspannung, ist eine deutliche Zunahme von Verfeinerungsschritt zu Verfeinerungsschritt zu erkennen. Dies kann auf eine **Divergenz** hindeuten, also darauf, dass der berechnete Wert mit zunehmender Netzverfeinerung nicht gegen einen festen Grenzwert konvergiert, sondern stetig weiter ansteigt (vgl. [Singularitäten bei Krafteinleitung auf Punkt oder Kante](03_kragbalken.md#4-randbedingungen)).
 
-| Netzgröße     | Max. Spannung | Anzahl Knoten | Anzahl Elemente |
-|---------------|--------------|--------------|----------------|
-| Standardnetz  | 57,528 MPa   | 621          | 80             |
-| 5 mm          | 61,47 MPa    | 1 720        | 270            |
-| 1 mm          | 105,38 MPa   | 97 981       | 21 600         |
-| 0,5 mm        | 136,92 MPa   | 736 825      | 172 800        |
-
 <!-- markdownlint-disable MD033 -->
 
 <div id="meshPlot" style="width:100%;height:500px;"></div>
@@ -409,6 +402,14 @@ Plotly.newPlot("meshPlot", [trace1, trace2, trace3], layout);
 
 <!-- markdownlint-disable MD033 -->
 
+??? note "Ergebnisse Netzverfeinerung als Tabelle"
+    | Netzgröße     | Max. Spannung | Anzahl Knoten | Anzahl Elemente |
+    |---------------|--------------|--------------|----------------|
+    | Standardnetz  | 57,528 MPa   | 621          | 80             |
+    | 5 mm          | 61,47 MPa    | 1 720        | 270            |
+    | 1 mm          | 105,38 MPa   | 97 981       | 21 600         |
+    | 0,5 mm        | 136,92 MPa   | 736 825      | 172 800        |
+
 ### Einfluss der Einspannung
 
 In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen.  
@@ -418,7 +419,6 @@ Dadurch entstehen **Randspannungsspitzen**, die analytisch nicht vorhergesagt we
 
 ???+ danger "FIXME"
     Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)
-    Divergenz anteasern
 
 ---
 

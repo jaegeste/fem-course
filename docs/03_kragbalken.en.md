@@ -213,7 +213,7 @@ Here with selection of the global x-axis to evaluate the cross-section change:
 
 ---
 
-## Discussion of Results
+## Discussion of Results, Tensile Load
 
 ### Comparison with Analytical Solution
 
@@ -354,13 +354,6 @@ Result near the fixed support with a global element size of **0.5 mm**
 
 Considering the maximum equivalent stress, there is a clear increase from one refinement step to the next. This may indicate **divergence**, meaning that the calculated value does not converge to a fixed limit as the mesh is refined, but instead continues to increase (cf. [singularities caused by applying a load to a point or an edge](03_kragbalken.en.md#4-boundary-conditions)).
 
-| Mesh size     | Max. stress  | Number of nodes | Number of elements |
-|---------------|--------------|-----------------|--------------------|
-| Standard mesh | 57.528 MPa   | 621             | 80                 |
-| 5 mm          | 61.47 MPa    | 1,720           | 270                |
-| 1 mm          | 105.38 MPa   | 97,981          | 21,600             |
-| 0.5 mm        | 136.92 MPa   | 736,825         | 172,800            |
-
 <!-- markdownlint-disable MD033 -->
 
 <div id="meshPlot" style="width:100%;height:500px;"></div>
@@ -409,6 +402,14 @@ Plotly.newPlot("meshPlot", [trace1, trace2, trace3], layout);
 </script>
 
 <!-- markdownlint-disable MD033 -->
+
+??? note "Mesh refinement results as a table"
+    | Mesh size     | Max. stress  | Number of nodes | Number of elements |
+    |---------------|--------------|-----------------|--------------------|
+    | Standard mesh | 57.528 MPa   | 621             | 80                 |
+    | 5 mm          | 61.47 MPa    | 1,720           | 270                |
+    | 1 mm          | 105.38 MPa   | 97,981          | 21,600             |
+    | 0.5 mm        | 136.92 MPa   | 736,825         | 172,800            |
 
 ### Influence of the support
 
