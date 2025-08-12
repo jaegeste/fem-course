@@ -804,10 +804,15 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <ol>
 <li>Auswahl der <strong>Gesamtverformung</strong> → Kontrolle der Größenordnung und Plausibilität.  </li>
 <li>Darstellung der <strong>von-Mises-Spannung</strong> → Vergleich mit analytisch berechneter Spannung.  </li>
-<li>Beurteilung der <strong>Spannungsverteilung</strong> im Bauteil.  </li>
+<li><strong>Verformungsergebnis</strong> mit Auswahl einer Richtung (hier globale x-Achse) → Auswertung der Querkontraktion.  </li>
 </ol>
+<p>Auswahl über Kontextmenü <em>Lösung</em>:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/08_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/08_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/10_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/10_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Alternativ über Klick (rechte Maustaste) auf <em>Lösung</em> im Strukturbaum:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/10a_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/10a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Hier mit Auswahl der globalen x-Achse zur Auswertung der Querschnittsänderung:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <hr />
 <h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
 <h3 id="vergleich-mit-analytischer-losung">Vergleich mit analytischer Lösung<a class="headerlink" href="#vergleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
@@ -820,10 +825,8 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p>Nutzt man eine <em>Stichprobe</em> etwas von der Einspannung entfernt ist die <strong>Vergleichsspanunng</strong> (von Mises) 52,082 MPa.  </p>
 <p><strong>Hinweis:</strong> Die Stichprobe ist im Kontextmenü <em>Ergebnis</em> zu finden. Dort lässt sich auch der minimale und maximale Wert des jeweiligen Ergebnisses anzeigen.  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>es fehlt noch ein Ergebnis zur Verringerung der Kantenlänge</p>
-</details>
+<p>Das <strong>Verformungsergebnis</strong> in Richtung der x-Achse ist 0,000472 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die <a href="#theoretischer-hintergrund">oben vorgestellte Theorie</a>.</p>
 <details class="note">
 <summary>Berechnung von Δl, Δa und σ</summary>
@@ -896,9 +899,9 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 </tr>
 <tr>
 <td>Spannung (σ) Stichprobe</td>
-<td>–</td>
+<td>52,1 N/mm²</td>
 <td>52,08 N/mm²</td>
-<td>–</td>
+<td>−0,04 %</td>
 </tr>
 <tr>
 <td>Verlängerung des Balkens (Δl)</td>
@@ -908,26 +911,29 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 </tr>
 <tr>
 <td>Verringerung der Kantenlänge (Δa)</td>
-<td>0,0009 mm</td>
-<td>–</td>
-<td>–</td>
+<td>0,00089 mm</td>
+<td>0,000944 mm (2 × 0,000472 mm)</td>
+<td>6,07 %</td>
 </tr>
 </tbody>
 </table>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>hier noch Text zur Diskussion der Ergebnisse</p>
-</details>
+<p>Die Ergebnisse stimmen insgesamt gut mit der analytischen Lösung überein. Deutlichere Abweichungen treten nur bei der maximalen Vergleichsspannung auf, verursacht durch lokale Spannungsspitzen (Singularitäten) an den Ecken der Einspannung.  </p>
+<p>Für ein derart einfaches Problem sind Abweichungen von 5–6 % relativ hoch, es wäre eine nahezu exakte Übereinstimmung zu erwarten. Die beobachtete Differenz ist vor allem auf die Spannungsspitzen an der Ecke zurückzuführen und sollte weiter untersucht werden.</p>
+<p>Mögliche Maßnahmen zur Verbesserung zunächst:  </p>
+<ul>
+<li>Analyse des Einflusses der <strong>Vernetzung</strong></li>
+<li>Analyse des Einflusses der <strong>Einspannung</strong></li>
+</ul>
 <h3 id="einfluss-des-netzes">Einfluss des Netzes<a class="headerlink" href="#einfluss-des-netzes" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Grobes Netz → geringere Genauigkeit.  </li>
 <li>Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  </li>
 <li>Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  </li>
 </ul>
-<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>   </p>
+<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/15_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/15_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<h3 id="verhinderte-querkontraktion">Verhinderte Querkontraktion<a class="headerlink" href="#verhinderte-querkontraktion" title="Permanent link">&para;</a></h3>
+<h3 id="einfluss-der-einspannung">Einfluss der Einspannung<a class="headerlink" href="#einfluss-der-einspannung" title="Permanent link">&para;</a></h3>
 <p>In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen.<br />
 Im FEM‑Modell mit fester Einspannung wird diese <strong>Querkontraktion lokal verhindert</strong>.<br />
 Dadurch entstehen <strong>Randspannungsspitzen</strong>, die analytisch nicht vorhergesagt werden.<br />

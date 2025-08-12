@@ -804,10 +804,15 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <ol>
 <li>Select <strong>total deformation</strong> → check magnitude and plausibility.  </li>
 <li>Display <strong>von Mises stress</strong> → compare with analytical stress.  </li>
-<li>Assess the <strong>stress distribution</strong>.  </li>
+<li>. <strong>Deformation result</strong> with selection of a direction (here: global x-axis) → evaluation of lateral contraction.  </li>
 </ol>
+<p>Selection via the context menu of <em>Solution</em>:  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/08_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="../media/03_kragbalken/08_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/10_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="../media/03_kragbalken/10_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Alternatively, by right-clicking on <em>Solution</em> in the tree structure:  </p>
+<p><a class="glightbox" href="../../media/03_kragbalken/10a_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="media/03_kragbalken/10a_Kragbalken_Auswertung.en.png" width="600px" /></a>  </p>
+<p>Here with selection of the global x-axis to evaluate the cross-section change:  </p>
+<p><a class="glightbox" href="../../media/03_kragbalken/10b_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="media/03_kragbalken/10b_Kragbalken_Auswertung.en.png" width="600px" /></a>  </p>
 <hr />
 <h2 id="discussion-of-results">Discussion of Results<a class="headerlink" href="#discussion-of-results" title="Permanent link">&para;</a></h2>
 <h3 id="comparison-with-analytical-solution">Comparison with Analytical Solution<a class="headerlink" href="#comparison-with-analytical-solution" title="Permanent link">&para;</a></h3>
@@ -820,10 +825,8 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p>Using a <em>Probe</em> taken slightly away from the fixed support, the equivalent stress (von Mises) is 52.082 MPa.</p>
 <p><strong>Note:</strong> The <em>Probe</em> can be found in the <em>Result</em> context menu. There, the minimum and maximum values of the respective result can also be displayed.  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>A result for the reduction of the edge length is still missing</p>
-</details>
+<p>The <strong>deformation result</strong> in the x-axis direction is 0.000472 mm.  </p>
+<p><a class="glightbox" href="media/03_kragbalken/12a_Kragbalken_Auswertung.en.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="media/03_kragbalken/12a_Kragbalken_Auswertung.en.png" width="600px" /></a> </p>
 <p>The following box contains the analytical solution. First, carry out the calculation yourself and use the <a href="#theoretical-background">theory presented above</a>.</p>
 <details class="note">
 <summary>Calculation of Δl, Δa and σ</summary>
@@ -896,9 +899,9 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 </tr>
 <tr>
 <td>stress (σ) sample</td>
-<td>–</td>
+<td>52.1 N/mm²</td>
 <td>52.08 N/mm²</td>
-<td>–</td>
+<td>−0.04 %</td>
 </tr>
 <tr>
 <td>beam elongation (Δl)</td>
@@ -908,16 +911,21 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 </tr>
 <tr>
 <td>edge length reduction (Δa)</td>
-<td>0.0009 mm</td>
-<td>–</td>
-<td>–</td>
+<td>0.00089 mm</td>
+<td>0.000944 mm (2 × 0.000472 mm)</td>
+<td>6.07 %</td>
 </tr>
 </tbody>
 </table>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>add text here for the discussion of the results</p>
-</details>
+<p>The results are generally in good agreement with the analytical solution.<br />
+More noticeable deviations occur only for the maximum equivalent stress, caused by local stress peaks (singularities) at the corners of the fixed support.  </p>
+<p>For such a simple problem, deviations of 5–6% are relatively high, and a nearly exact match would be expected.<br />
+The observed difference is primarily due to stress peaks at the corner and should be further investigated.</p>
+<p>Possible initial measures for improvement:  </p>
+<ul>
+<li>Analysis of the influence of <strong>meshing</strong>  </li>
+<li>Analysis of the influence of the <strong>fixed support</strong></li>
+</ul>
 <h3 id="mesh-influence">Mesh Influence<a class="headerlink" href="#mesh-influence" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Coarse mesh → less accurate.  </li>
@@ -927,7 +935,7 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 <p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/15_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/15_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<h3 id="prevented-lateral-contraction">Prevented Lateral Contraction<a class="headerlink" href="#prevented-lateral-contraction" title="Permanent link">&para;</a></h3>
+<h3 id="influence-of-the-fixed-support">Influence of the fixed support<a class="headerlink" href="#influence-of-the-fixed-support" title="Permanent link">&para;</a></h3>
 <p>In reality, the beam can contract laterally.<br />
 In the FEM model with fixed support, this <strong>lateral contraction is locally prevented</strong>.<br />
 This leads to <strong>edge stress peaks</strong> not predicted analytically.<br />
