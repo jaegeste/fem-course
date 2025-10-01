@@ -430,6 +430,7 @@ This leads to **edge stress peaks** not predicted analytically.
 !!! danger "FIXME"
     Figure missing in the English version.
 
+
 ---
 
 ## Task bending
