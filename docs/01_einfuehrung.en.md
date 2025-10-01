@@ -80,9 +80,9 @@ This overview shows the planned structure of the 15 lecture blocks. The content 
 - Mathematical foundation: **Ritz method**, around 1909  
 - Today: Solving complex systems of equations using high-performance computing  
 
-[![Historical development of FEM](media/01_einfuehrung/01_fem_historie.png){width=500px}](media/01_einfuehrung/01_fem_historie.png "Historical development of FEM"){.glightbox}
+[![Historical development of FEM](media/01_einfuehrung/01_fem_historie.en.svg){width=500px}](media/01_einfuehrung/01_fem_historie.en.svg "Historical development of FEM"){.glightbox}
 
-<span class="bildquelle">Image source[@Klein2015]</span>
+<span class="bildquelle">Image source based on[@Klein2015]</span>
 
 ### Approximation Method
 

@@ -417,11 +417,13 @@ Manual meshing is useful for simple models or early-stage studies.
 
 When importing assemblies, ANSYS automatically defines contact regions between parts. Optionally, these can be manually adjusted.
 
-[![Contact in ANSYS](media/02_Installation_erste_Schritte/kontakte.en.png){width=500px}](media/02_Installation_erste_Schritte/kontakte.en.png "Contacts in ANSYS"){.glightbox}  
-<span class="bildquelle">Bildquelle[@Gebhardt2018]</span>
-
-???+ danger "FIXME"
-    check table content  
+| Contact Type | Property / Behavior |
+|--------------|----------------------|
+| Bonded       | no separation or sliding, as if glued/welded |
+| No Separation | no normal separation, tangential sliding allowed (frictionless) |
+| Frictionless | separation allowed, sliding without friction |
+| Rough        | separation allowed, but no sliding (infinite friction coefficient) |
+| Frictional   | separation allowed, sliding resisted, friction coefficient user-defined |
 
 Contacts serve two purposes:
 
