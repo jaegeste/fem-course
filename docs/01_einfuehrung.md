@@ -1,12 +1,5 @@
 # Einführung in die Vorlesung
 
-## Einordnung der Vorlesung
-
-- WING-Studierende im 5. Semester, Studiengang PEB  
-- Teil des Moduls **Angewandte Maschinenkonstruktion**
-- 6 Leistungspunkte  
-- Zusammen mit **Maschinenelemente 2**
-
 ## Organisation
 
 ### Vorkenntnisse
@@ -23,13 +16,14 @@
 - Konstruktionsbegleitende Simulation von Maschinenbauteilen  
 - Festigkeitsberechnung  
 - Einfachste Maschinendynamik  
+- ...  
 
 ### Didaktischer Aufbau
 
 - Vorlesung mit Übungen  
 - Übungen am Rechner mit **ANSYS**[^1] und **Creo**[^1]
 - Weiterführende Aufgaben für Zuhause  
-- FELIX, Vorlesungsmitschriebe, Übungsaufgaben, Forum, Tools …
+- FELIX nur zur Kommunikation
 
 [^1]: Die Programme verwenden wir in der jeweils aktuellen Version, siehe [Installation von ANSYS](02_installation_erste_schritte.md)
 
@@ -40,8 +34,9 @@
 - Keine Hilfsmittel  
 - FEM-Aufgaben am Rechner  
 
-[![Schnittstelle SPO](media/01_einfuehrung/01_SPO.png){width=900px}](media/01_einfuehrung/01_SPO.png "Auszug Prüfungsordnung (SPO)"){.glightbox}
+[![SPO](media/01_einfuehrung/01_SPO.png){width=900px}](media/01_einfuehrung/01_SPO.png "Auszug Prüfungsordnung (SPO)"){.glightbox}
 
+<!--
 ### Vorlesungsplan
 
 Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhalte bauen aufeinander auf und dienen hier lediglich der Orientierung.
@@ -61,6 +56,7 @@ Diese Übersicht zeigt die geplante Struktur der 15 Vorlesungsblöcke. Die Inhal
 **Block 13**: **tdb CFD in Discovery/FLUENT??**  
 **Block 14**: **tdb CFD in Discovery/FLUENT??**  
 **Block 15**: **Wiederholung, offene Fragen, Klausurvorbereitung**
+-->
 
 ## Grundlagen der FEM
 
