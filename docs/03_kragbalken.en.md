@@ -1,4 +1,4 @@
-#  Module 1 Cantilever Beam
+# Module 1 Cantilever Beam
 
 ## Learning objectives
 

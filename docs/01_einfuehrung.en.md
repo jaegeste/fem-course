@@ -1,17 +1,8 @@
 # Introduction to the Course
 
 ???+ danger "FIXME"
-    1. SMA FEM regulations  
     2. Abbildungen EN
     3. Sources EN
-     
-
-## Course Classification
-
-- WING students in the 5th semester, PEB program  
-- Part of the **Applied Mechanical Design** module  
-- 6 ECTS credits  
-- Together with **Machine Elements 2**
 
 ## Organization
 
@@ -29,25 +20,27 @@
 - Simulation to support the mechanical design process  
 - Strength calculation  
 - Basic machine dynamics  
+- ...
 
 ### Didactic Concept
 
 - Lecture with exercises  
 - Computer-based exercises using **ANSYS**[^1] and **Creo**[^1]  
 - Additional homework assignments  
-- FELIX, lecture notes, exercise sheets, forum, tools …
+- FELIX for communication only
 
 [^1]: We use the latest available versions of the software. See [Installing ANSYS](02_installation_erste_schritte.en.md)
 
 ### Exam
 
-- Combined with **Machine Elements 2**  
-- **E-exam, 120 minutes**  
+- Combined with **Simulation of dynamical Systems**  
+- **Exam, 90 minutes**  
 - No aids allowed  
 - FEM tasks on the computer  
 
-[![SPO interface](media/01_einfuehrung/01_SPO.png){width=900px}](media/01_einfuehrung/01_SPO.png "Excerpt from examination regulations (SPO)"){.glightbox}
+[![SPO interface](media/01_einfuehrung/01_SPO.en.png){width=900px}](media/01_einfuehrung/01_SPO.en.png "Excerpt from examination regulations (SPO)"){.glightbox}
 
+<!--
 ### Course Schedule
 
 This overview shows the planned structure of the 15 lecture blocks. The content builds on each other and serves as general orientation.
@@ -67,6 +60,7 @@ This overview shows the planned structure of the 15 lecture blocks. The content 
 **Block 13**: **tbd CFD in Discovery/FLUENT??**  
 **Block 14**: **tbd CFD in Discovery/FLUENT??**  
 **Block 15**: **Review, open questions, exam preparation**
+-->
 
 ## Fundamentals of FEM
 
