@@ -207,15 +207,9 @@ Alternatively, by right-clicking on _Solution_ in the tree structure:
 
 [![Cantilever beam, add solutions](media/03_kragbalken/10a_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/10a_Kragbalken_Auswertung.en.png "Cantilever beam, add solutions"){.glightbox}  
 
-!!! danger "FIXME"
-    Figure missing in the English version.
-
 Here with selection of the global x-axis to evaluate the cross-section change:  
 
 [![Cantilever beam, add solutions](media/03_kragbalken/10b_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/10b_Kragbalken_Auswertung.en.png "Cantilever beam, add solutions"){.glightbox}  
-
-!!! danger "FIXME"
-    Figure missing in the English version.
 
 ---
 
@@ -244,9 +238,6 @@ Using a _Probe_ taken slightly away from the fixed support, the equivalent stres
 The **deformation result** in the x-axis direction is 0.000472 mm.  
 
 [![Cantilever beam, solutions](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
-
-!!! danger "FIXME"
-    Figure missing in the English version.
 
 The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background).
 

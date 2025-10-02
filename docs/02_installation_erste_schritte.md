@@ -226,7 +226,8 @@ Steht ein CAD-System zur Verfügung, ist der direkte Import von CAD-Daten empfeh
 In diesem Kurs wird die Verwendung der ANSYS-eigenen Programme zur Geometrieerzeugung, **DesignModeler** und **SpaceClaim**, **nicht empfohlen**. Beide Werkzeuge ermöglichen zwar das Erstellen und Vereinfachen von Geometrie, sind jedoch im Vergleich zu vollwertigen CAD-Systemen wie **PTC Creo** funktional deutlich eingeschränkt.
 
 !!! info "Geometrie Import"
-    Die Geometrie wird über einen Rechtsklick auf **Geometrie → Geometrie importieren** eingebunden.
+    Die Geometrie wird über einen Rechtsklick auf **Geometrie → Geometrie importieren** eingebunden.  
+    Wurde bereits Geometrie importiert, ändert sich die Bezeichnung zu **Geometrie ersetzen**.
 
 !!! warning "**Wichtig:**"
     Kein Doppelklick auf „Geometrie“, wenn keine Bearbeitung im ANSYS-Editor gewünscht ist.  
