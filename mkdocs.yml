@@ -65,9 +65,6 @@ plugins:
             - Installation und erste Schritte: 02_installation_erste_schritte.md
             - Modul 1 Kragbalken: 03_kragbalken.md
             - Modul 2 Kerbwirkung: 04_kerbwirkung.md
-            - Schweißverbindungen & Baugruppen: 05_schweiss_baugruppen.md
-            - Optimierung: 06_optimierung.md
-            - Modalanalyse: 07_modalanalyse.md
         - locale: en
           name: 🇬🇧 English
           build: true
@@ -77,7 +74,5 @@ plugins:
             - Installation and getting started: 02_installation_erste_schritte.en.md
             - Module 1 Cantilever Beam: 03_kragbalken.en.md
             - Module 2 Stress Concentration: 04_kerbwirkung.en.md
-            - Welds & Assemblies: 05_schweiss_baugruppen.en.md
-            - Optimization: 06_optimierung.en.md
-            - Modal Analysis: 07_modalanalyse.en.md
+
           
