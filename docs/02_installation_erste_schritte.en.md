@@ -155,9 +155,6 @@ _3._  The setup must be run **as administrator**.
 
 ## Getting Started with ANSYS Workbench
 
-???+ danger "FIXME"
-    - Import Geometrie wirklich so benannt?
-
 This information is intended to help you get started with ANSYS Workbench. Before performing any simulations, a project must be created, the analysis type selected, geometry imported or created, and material properties defined.
 
 ---
@@ -233,7 +230,8 @@ If direct or bidirectional associative transfer is not possible, a neutral excha
 In this course, using ANSYS tools for geometry creation — **DesignModeler** or **SpaceClaim** — is **not recommended**. These tools are suitable for basic geometry creation and simplification, but they are significantly less powerful than full-featured CAD systems like **PTC Creo**.
 
 !!! info "Importing geometry"
-    Geometry is imported via right-click on **Geometry → Import Geometry**.
+    Geometry is imported via right-click on **Geometry → Import Geometry**.  
+    If geometry has already been imported, the label changes to **Replace Geometry**.
 
 !!! warning "Important"
     Do not double-click on **Geometry** unless editing in an ANSYS tool is intended.  

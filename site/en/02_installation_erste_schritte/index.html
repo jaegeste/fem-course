@@ -924,12 +924,36 @@ Manual meshing is the most direct way to control element size.</p>
 <hr />
 <h3 id="contacts">Contacts<a class="headerlink" href="#contacts" title="Permanent link">&para;</a></h3>
 <p>When importing assemblies, ANSYS automatically defines contact regions between parts. Optionally, these can be manually adjusted.</p>
-<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/kontakte.png" title="Contacts in ANSYS"><img alt="Contact in ANSYS" src="../media/02_Installation_erste_Schritte/kontakte.png" width="500px" /></a><br />
-<span class="bildquelle">Bildquelle<sup id="fnref2:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>check table content  </p>
-</details>
+<table>
+<thead>
+<tr>
+<th>Contact Type</th>
+<th>Property / Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bonded</td>
+<td>no separation or sliding, as if glued/welded</td>
+</tr>
+<tr>
+<td>No Separation</td>
+<td>no normal separation, tangential sliding allowed (frictionless)</td>
+</tr>
+<tr>
+<td>Frictionless</td>
+<td>separation allowed, sliding without friction</td>
+</tr>
+<tr>
+<td>Rough</td>
+<td>separation allowed, but no sliding (infinite friction coefficient)</td>
+</tr>
+<tr>
+<td>Frictional</td>
+<td>separation allowed, sliding resisted, friction coefficient user-defined</td>
+</tr>
+</tbody>
+</table>
 <p>Contacts serve two purposes:</p>
 <ol>
 <li><strong>Transfer of forces</strong>  </li>
@@ -971,7 +995,7 @@ Detailed handling, selection, and evaluation will follow in later exercises.</p>
 <hr />
 <ol>
 <li id="fn:Gebhardt2018">
-<p>Christof Gebhardt. <em>Praxisbuch FEM mit ANSYS Workbench</em>. Carl Hanser Verlag GmbH &amp; Co. KG, München, 2018. ISBN 978-3-446-45001-1. URL: <a href="https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409">https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409</a> (visited on 2019-03-18), <a href="https://doi.org/10.3139/9783446457409">doi:10.3139/9783446457409</a>.&#160;<a class="footnote-backref" href="#fnref:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Christof Gebhardt. <em>Praxisbuch FEM mit ANSYS Workbench</em>. Carl Hanser Verlag GmbH &amp; Co. KG, München, 2018. ISBN 978-3-446-45001-1. URL: <a href="https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409">https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409</a> (visited on 2019-03-18), <a href="https://doi.org/10.3139/9783446457409">doi:10.3139/9783446457409</a>.&#160;<a class="footnote-backref" href="#fnref:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
