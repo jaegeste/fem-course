@@ -143,16 +143,6 @@ _10._ ZIP-Datei und entpackte Daten können gelöscht werden.
 
 ---
 
-### Kopplung von ANSYS mit Creo
-
-Eine direkte bidirektionale Kopplung zwischen ANSYS und PTC Creo ist möglich.
-
-_1._ Creo und die HFU-CAD-Umgebung gemäß Anleitung installieren.  
-_2._ Über den **ANSYS CAD Configuration Manager** die Workbench-assoziative Schnittstelle einrichten.  
-_3._ Einrichtung **als Administrator** ausführen.  
-
----
-
 ## Erste Schritte mit ANSYS Workbench
 
 Dieses Informationen soll helfen, die ersten Schritte in ANSYS Workbench zu gehen. Bevor Analysen durchgeführt werden, muss ein Projekt mit seinen Analysearten angelegt, Geometrie importiert oder erstellt und die technischen Daten des Projekts festgelegt werden.
@@ -197,7 +187,7 @@ Je nach Lizenz sind verschiedene Analysen verfügbar. Beispiele:
 * **Topologie-Optimierungen** helfen, die grundlegende Form eines Bauteils belastungsgerecht zu gestalten.  
 * **Transiente strukturmechanische Analysen auf Basis von Mehrkörperdynamik (MBD, Multi Body Dynamics)** erlauben kinematische und dynamische Analysen von Systemen aus Starrkörpern.  
 
---
+---
 
 ### Dateiablage und -struktur
 

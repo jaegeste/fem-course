@@ -1,10 +1,5 @@
 # Introduction to the Course
 
-???+ danger "FIXME"
-    1. sbA Erläuterungen, Aufgaben, Peer-Teaching, dok in md
-    2. Abbildungen EN
-    3. Sources EN
-
 ## Organization
 
 ### Prerequisites
@@ -13,7 +8,7 @@
 - Technical Drawing  
 - Engineering Mechanics  
 - Materials and Manufacturing Technology  
-- CAD using Creo  
+- CAD  
 - Machine Elements 1  
 
 ### Topics
@@ -26,8 +21,9 @@
 ### Didactic Concept
 
 - Lecture with exercises  
-- Computer-based exercises using **ANSYS**[^1] and **Creo**[^1]  
-- Additional homework assignments  
+- Computer-based exercises using **ANSYS**[^1]  
+- Additional homework assignments
+- Peer-teaching Sessions  
 - FELIX for communication only
 
 [^1]: We use the latest available versions of the software. See [Installing ANSYS](02_installation_erste_schritte.en.md)
@@ -101,15 +97,11 @@ This overview shows the planned structure of the 15 lecture blocks. The content 
 *4.* Solve the system (solver)  
 *5.* Interpret results (postprocessing)
 
-[![Basic workflow of FEM](media/01_einfuehrung/01_Ablauf_FEM_grob.png){width=250px}](media/01_einfuehrung/01_Ablauf_FEM_grob.png "Basic workflow of FEM"){.glightbox}
-
-<span class="bildquelle">Image source[@Klein2015]</span>
-
 ### Detailed Workflow of an FE Simulation
 
-[![Detailed workflow of FEM](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png){width=800px}](media/01_einfuehrung/01_Ablauf_FEM_detailliert.png "Detailed workflow of FEM"){.glightbox}
+[![Detailed workflow of FEM](media/01_einfuehrung/01_Ablauf_FEM_detailliert.en.svg){width=800px}](media/01_einfuehrung/01_Ablauf_FEM_detailliert.en.svg "Detailed workflow of FEM"){.glightbox}
 
-<span class="bildquelle">Image source[@Steinke2015]</span>
+<span class="bildquelle">Image source based on[@Steinke2015]</span>
 
 ### Result Interpretation
 
