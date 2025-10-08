@@ -143,16 +143,6 @@ _10._  The ZIP file and extracted data can now be deleted.
 
 ---
 
-### Coupling ANSYS with Creo
-
-A direct bidirectional link between ANSYS and PTC Creo is possible.
-
-_1._  Install Creo and the HFU CAD environment as described in the relevant guide.  
-_2._  Use the **ANSYS CAD Configuration Manager** to set up the associative Workbench interface.  
-_3._  The setup must be run **as administrator**.
-
----
-
 ## Getting Started with ANSYS Workbench
 
 This information is intended to help you get started with ANSYS Workbench. Before performing any simulations, a project must be created, the analysis type selected, geometry imported or created, and material properties defined.

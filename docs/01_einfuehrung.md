@@ -21,7 +21,7 @@
 ### Didaktischer Aufbau
 
 - Vorlesung mit Übungen  
-- Übungen am Rechner mit **ANSYS**[^1] und **Creo**[^1]
+- Übungen am Rechner mit **ANSYS**[^1]  
 - Weiterführende Aufgaben für Zuhause  
 - FELIX nur zur Kommunikation
 
