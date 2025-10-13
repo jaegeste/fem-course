@@ -8,6 +8,25 @@
 * Comparison of simulation results with analytical calculations.
 * Understanding the influence of the type of support and the choice of boundary conditions.
 
+---
+
+## Task tensile load
+
+For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  
+
+* Length: \( L = 150 \,\text{mm} \)  
+* Edge length: \( a = 12 \,\text{mm} \)  
+* Force: \( F = 7{.}500 \,\text{N} \)  
+* Material: Structural steel with yield strength \( R_e = 250 \,\text{N/mm}^2 \)  
+
+Download the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
+
+Compare your result with the analytical solution and discuss any deviations.  
+
+[![Cantilever beam, tensile load](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Cantilever beam, tensile load"){.glightbox}  
+
+---
+
 ## Theoretical Background
 
 ### Hooke’s Law
@@ -83,23 +102,6 @@ The second diagram shows the behavior of a material **with a distinct yield poin
 <span class="bildquelle">Image source based on[@Wikipedia2023]</span>
 
 For the calculation of the cantilever beam in this exercise, the load lies within the **elastic range**. Hooke’s Law is therefore sufficient.
-
----
-
-## Task tensile load
-
-For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  
-
-* Length: \( L = 150 \,\text{mm} \)  
-* Edge length: \( a = 12 \,\text{mm} \)  
-* Force: \( F = 7{.}500 \,\text{N} \)  
-* Material: Structural steel with yield strength \( R_e = 250 \,\text{N/mm}^2 \)  
-
-Download the file [kragbalken.stp](media/03_kragbalken/kragbalken.stp) and import it into ANSYS Workbench.
-
-Compare your result with the analytical solution and discuss any deviations.  
-
-[![Cantilever beam, tensile load](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Cantilever beam, tensile load"){.glightbox}  
 
 ---
 
@@ -421,7 +423,6 @@ This leads to **edge stress peaks** not predicted analytically.
 !!! danger "FIXME"
     Figure missing in the English version.
 
-
 ---
 
 ## Task bending
@@ -442,6 +443,8 @@ Address the following topics:
 [![Cantilever beam, bending](media/03_kragbalken/kragbalken_biegung.svg){width=500px}](media/03_kragbalken/kragbalken_biegung.svg "Cantilever beam, bending"){.glightbox}
 
 ---
+
+## Theoretischer Hintergrund, Biegung
 
 ## Implementation in ANSYS
 
