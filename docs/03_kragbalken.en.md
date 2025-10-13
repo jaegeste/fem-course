@@ -27,7 +27,7 @@ Compare your result with the analytical solution and discuss any deviations.
 
 ---
 
-## Theoretical Background
+## Theoretical Background, tensile load
 
 ### Hooke’s Law
 
@@ -241,7 +241,7 @@ The **deformation result** in the x-axis direction is 0.000472 mm.
 
 [![Cantilever beam, solutions](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/12a_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
 
-The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background).
+The following box contains the analytical solution. First, carry out the calculation yourself and use the [theory presented above](#theoretical-background-tensile-load).
 
 ??? note "Calculation of Δl, Δa and σ"
     For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.
