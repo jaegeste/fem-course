@@ -8,7 +8,26 @@
 * Vergleich von Simulationsergebnissen mit analytischen Berechnungen.
 * Einfluss der Einspannung und Wahl der Randbedingungen verstehen.
 
-## Theoretischer Hintergrund
+---
+
+## Aufgabenstellung Zugbelastung
+
+Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  
+
+* Länge: \( L = 150 \,\text{mm} \)  
+* Kantenlänge: \( a = 12 \,\text{mm} \)  
+* Kraft: \( F = 7{.}500 \,\text{N} \)  
+* Material: Baustahl mit Streckgrenze \( R_e = 250 \,\text{N/mm}^2 \)  
+
+Laden Sie die Datei [kragbalken.stp](media/03_kragbalken/kragbalken.stp) und importieren Sie sie in ANSYS Workbench.
+
+Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  
+
+[![Kragbalken, Zug](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Kragbalken, Zug"){.glightbox}  
+
+---
+
+## Theoretischer Hintergrund, Zug
 
 ### Hookesches Gesetz
 
@@ -82,23 +101,6 @@ Das zweite Diagramm zeigt das Verhalten eines Werkstoffs **mit ausgeprägter Str
 <span class="bildquelle">Bildquelle[@Wikipedia2023]</span>
 
 Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im **elastischen Bereich**. Das Hookesche Gesetz ist daher ausreichend.
-
----
-
-## Aufgabenstellung Zugbelastung
-
-Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  
-
-* Länge: \( L = 150 \,\text{mm} \)  
-* Kantenlänge: \( a = 12 \,\text{mm} \)  
-* Kraft: \( F = 7{.}500 \,\text{N} \)  
-* Material: Baustahl mit Streckgrenze \( R_e = 250 \,\text{N/mm}^2 \)  
-
-Laden Sie die Datei [kragbalken.stp](media/03_kragbalken/kragbalken.stp) und importieren Sie sie in ANSYS Workbench.
-
-Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  
-
-[![Kragbalken, Zug](media/03_kragbalken/kragbalken_zug.svg){width=500px}](media/03_kragbalken/kragbalken_zug.svg "Kragbalken, Zug"){.glightbox}  
 
 ---
 
@@ -441,11 +443,95 @@ Bearbeiten Sie folgende Themen:
 
 ---
 
-## Umsetzung ANSYS
+## Theoretischer Hintergrund, Biegung
+
+Bei der Biegung entsteht infolge einer quer zur Balkenachse wirkenden Kraft ein Moment, das in den äußeren Fasern Zug- und Druckspannungen verursacht. Die neutrale Faser bleibt spannungsfrei. Für kleine Durchbiegungen und lineares Materialverhalten gilt die Bernoulli-Hypothese, wonach Querschnitte eben bleiben und sich nur drehen.
+
+Das **maximale Biegemoment** an einem Kragbalken mit Kraft \(F_B\) und der Länge \(l\) ergibt sich zu
+
+\[
+M_B = F_B \cdot l
+\]
+
+Das **Widerstandsmoment** \(W_b\) beschreibt die Geometrieabhängigkeit des Querschnitts und ergibt sich für einen quadratischen Querschnitt der Seitenlänge \(a\) zu
+
+\[
+W_b = \frac{a^3}{6}
+\]
+
+Die **maximale Normalspannung infolge Biegung** ist damit
+
+\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{6\,F_B\,l}{a^3}
+\]
+
+Sie tritt an den äußersten Fasern des Querschnitts auf – auf der einen Seite als Zugspannung, auf der gegenüberliegenden als Druckspannung. In der neutralen Faser ist die Normalspannung gleich null.
+
+Die **maximale Durchbiegung** an der freien Spitze ist
+
+\[
+w_\text{max} = \frac{F_B\,l^3}{3\,E\,I} = \frac{4\,F_B\,l^3}{E\,a^4}
+\]
+
+Die resultierenden Spannungen sind linear über den Querschnitt verteilt, wobei eine Seite Zug-, die andere Druckspannungen aufnimmt. Im Unterschied zum Zugversuch ergibt sich bei der Biegung eine **nicht konstante Spannung über den Querschnitt**, sondern ein linearer Verlauf mit Nullpunkt in der neutralen Faser.  
+
+---
+
+## Umsetzung in ANSYS  
+
+**Voraussetzungen**  
+Geometrieimport, Materialzuweisung und Netzerstellung erfolgen identisch wie bei der Aufgabe Zugbelastung. Siehe dazu:
+
+* [*Geometrieimport*](#1-geometrieimport)
+* [*Materialzuweisung*](#2-materialzuweisung)
+* [*Netzgenerierung*](#3-netzgenerierung)
+
+### Lastfall und Randbedingungen
+
+Betrachtet man die Aufgabenstellung sind zwei auch hier Randbedingungen naheliegend:
+
+* **Feste Einspannung** an der linken Stirnfläche  
+* **Kraft (Biegung)** an der rechten Stirnfläche  
+
+Richtung der Kraft senkrecht zur Balkenachse, Betrag \(F_B\) gemäß Aufgabenstellung. Die Richtung kann entweder über **Definieren durch Vektor** eingestellt werden, indem eine geeignete Kante zur Richtungsangabe ausgewählt wird (Pfeile beachten), oder über **Definieren durch Komponenten**, wobei die Beträge direkt in den globalen Koordinaten eingetragen werden.  
+
+[![Kragbalken Biegung – Randbedingungen](media/03_kragbalken/22_Kragbalken_Biegung_Randbedingungen.png){width=800px}](22_Kragbalken_Biegung_Randbedingungen.png "Kragbalken Biegung – Randbedingungen"){.glightbox}  
+
+### Auswertung
+
+Wie [oben](#5-auswertung) beschrieben, werden hier auch zunächst folgende zwei Ergebnisse betrachtet:
+
+* **Verformung (Gesamtverformung)**
+* **Spannung nach von Mises**
+
+Zur Auswertung der **Normalspannung** kann über das Kontextmenü unter _Lösung_ die Normalspannung in Balkenlängsrichtung eingefügt werden. _Ausrichtung_ der Koordinatenachse beachten. Ein linearer Spannungsverlauf über den Querschnitt mit Zug- und Druckseite wird erwartet.
+
+[![Kragbalken Biegung – Normalspannung](media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png){width=800px}](media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png "Kragbalken Biegung – Pfad für Spannungsverlauf"){.glightbox}  
 
 ## Diskussion der Ergebnisse, Biegung
 
+### Abgleich mit analytischer Lösung
+
+Die Gesamtverformung zeigt eine maximale **Durchbiegung** des Balkens um 2,438 mm.
+
+[![Kragbalken Biegung – Pfad für Spannungsverlauf](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png){width=800px}](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png "Kragbalken Biegung – Pfad für Spannungsverlauf"){.glightbox}  
+
+Die maximale Vergleichsspanunng (von Mises) ist 399,31 MPa bzw. mit einem feineren Netz (Elementgröße 1mm) 580,04 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  
+
+[![Kragbalken Biegung – Pfad für Spannungsverlauf](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png){width=800px}](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png "Kragbalken Biegung – Pfad für Spannungsverlauf"){.glightbox}  
+
+Die maximale Normalspannung gemäß Abbildung oben ist 426,83 MPa.  
+
+### Netzeinfluss
+
+### Einfluss Einspannung
+
+
 ## Add-on: Biegemoment statt Kraft
+
+!!! note "Hinweis"
+    Alternativ kann statt einer Kraft auch ein reines *Biegemoment* an der freien Stirnfläche angesetzt werden.  
+    Dadurch entfallen Querkräfte, und das Spannungsfeld wird gleichmäßiger. Beide Varianten zeigen jedoch denselben charakteristischen linearen Spannungsverlauf über den Querschnitt.
 
 Als Alternative kann ein **reines Biegemoment** angesetzt werden.  
 Dies führt zu einem **querkraftfreien Balken** mit gleichmäßigerem Spannungsfeld.

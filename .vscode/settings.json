@@ -20,20 +20,26 @@
     "de-de"
   ],
   "cSpell.words": [
+    "Ansetzpunkt",
+    "Auflagerkante",
     "Biegemoment",
     "Creo",
+    "Elementeanzahl",
     "Festigkeitsberechnung",
     "Gebhardt",
     "glightbox",
     "Hookesche",
     "Hookeschen",
     "Hookesches",
+    "kerbwirkung",
     "kontinuumsmechanische",
     "kragbalken",
     "Kragbalken",
     "Kragbalkens",
+    "Längung",
     "Mises",
     "Modellierungsaufgaben",
+    "Plotly",
     "Poissonzahl",
     "Querkontraktionszahl",
     "Querschnittsänderung",
@@ -42,7 +48,11 @@
     "Selektionsfunktionen",
     "STRG",
     "Tangentenwinkel",
+    "Verfeinerungsschritt",
+    "Verformungsergebnis",
     "Vergleichsspanunng",
-    "Verschiebungsrandbedingung"
+    "Verschiebungsrandbedingung",
+    "xaxis",
+    "yaxis"
   ]
 }
