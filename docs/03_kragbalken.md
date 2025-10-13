@@ -240,7 +240,7 @@ Das **Verformungsergebnis** in Richtung der x-Achse ist 0,000472 mm.
 
 [![Kragbalken, Lösungen](media/03_kragbalken/12a_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/12a_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
-Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die [oben vorgestellte Theorie](#theoretischer-hintergrund).
+Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die [oben vorgestellte Theorie](#theoretischer-hintergrund-zug).
 
 ??? note "Berechnung von Δl, Δa und σ"
     Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.
@@ -459,6 +459,11 @@ Das **Widerstandsmoment** \(W_b\) beschreibt die Geometrieabhängigkeit des Quer
 W_b = \frac{a^3}{6}
 \]
 
+Tabelle weiterer Widerstandsmomente und axialer Flächenmomente 2. Grades:
+
+[![Axiale Flächenmomente 2. Grades und Widerstandsmomente](media/03_kragbalken/29_Flächenmomente_Dubbel.png){width=250px}](media/03_kragbalken/29_Flächenmomente_Dubbel.png "Axiale Flächenmomente 2. Grades und Widerstandsmomente"){.glightbox}
+<span class="bildquelle">Bildquelle nach [@Dubbel2020]</span>
+
 Die **maximale Normalspannung infolge Biegung** ist damit
 
 \[
@@ -470,8 +475,13 @@ Sie tritt an den äußersten Fasern des Querschnitts auf – auf der einen Seite
 Die **maximale Durchbiegung** an der freien Spitze ist
 
 \[
-w_\text{max} = \frac{F_B\,l^3}{3\,E\,I} = \frac{4\,F_B\,l^3}{E\,a^4}
+f = \frac{F_B\,l^3}{3\,E\,I} = \frac{4\,F_B\,l^3}{E\,a^4}
 \]
+
+Tabelle weiterer Biegelinien. Hier relevant Belastungsfall 6.
+
+[![Biegelinien von statisch bestimmt gelagerten Trägern mit konstantem Querschnitt](media/03_kragbalken/28_Biegelinie_Dubbel.png){width=250px}](media/03_kragbalken/28_Biegelinie_Dubbel.png "Biegelinien von statisch bestimmt gelagerten Trägern mit konstantem Querschnitt"){.glightbox}
+<span class="bildquelle">Bildquelle nach [@Dubbel2020]</span>
 
 Die resultierenden Spannungen sind linear über den Querschnitt verteilt, wobei eine Seite Zug-, die andere Druckspannungen aufnimmt. Im Unterschied zum Zugversuch ergibt sich bei der Biegung eine **nicht konstante Spannung über den Querschnitt**, sondern ein linearer Verlauf mit Nullpunkt in der neutralen Faser.  
 
@@ -482,9 +492,9 @@ Die resultierenden Spannungen sind linear über den Querschnitt verteilt, wobei 
 **Voraussetzungen**  
 Geometrieimport, Materialzuweisung und Netzerstellung erfolgen identisch wie bei der Aufgabe Zugbelastung. Siehe dazu:
 
-* [*Geometrieimport*](#1-geometrieimport)
-* [*Materialzuweisung*](#2-materialzuweisung)
-* [*Netzgenerierung*](#3-netzgenerierung)
+* [Geometrieimport](#1-geometrieimport)
+* [Materialzuweisung](#2-materialzuweisung)
+* [Netzgenerierung](#3-netzgenerierung)
 
 ### Lastfall und Randbedingungen
 
@@ -516,21 +526,79 @@ Die Gesamtverformung zeigt eine maximale **Durchbiegung** des Balkens um 2,438 m
 
 [![Kragbalken Biegung – Pfad für Spannungsverlauf](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png){width=800px}](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png "Kragbalken Biegung – Pfad für Spannungsverlauf"){.glightbox}  
 
-Die maximale Vergleichsspanunng (von Mises) ist 399,31 MPa bzw. mit einem feineren Netz (Elementgröße 1mm) 580,04 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  
+Die **maximale Vergleichsspanunng (von Mises)** ist 399,31 MPa bzw. mit einem feineren Netz (Elementgröße 1mm) 580,04 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  
 
 [![Kragbalken Biegung – Pfad für Spannungsverlauf](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png){width=800px}](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png "Kragbalken Biegung – Pfad für Spannungsverlauf"){.glightbox}  
 
-Die maximale Normalspannung gemäß Abbildung oben ist 426,83 MPa.  
+Die **maximale Normalspannung** gemäß Abbildung oben ist 426,83 MPa.  
+
+Bei der Auswertung ist zu beachten, dass eine _Stichprobe_ der Spannung hier nicht zielführend ist. Die maximale Spannung tritt in einem sehr kleinen Bereich an der Einspannung auf und ist lokal stark konzentriert.
+
+Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die oben vorgestellte [Theorie zur Biegung](#theoretischer-hintergrund-biegung).
+
+??? note "Berechnung von \(\sigma_\text{max}\) und f"
+    Für die analytische Lösung werden die maximale Normalspannung \(\sigma_\text{max}\) und die Durchbiegung \(f\) des Kragbalkens bestimmt.
+
+    **Gegeben:**
+    
+    \[
+    F_B = 750 \,\text{N}, \quad l = 150 \,\text{mm}, \quad a = 12 \,\text{mm}, \quad E = 210.000 \,\text{N/mm}^2
+    \]
+
+    **Biegemoment**
+    
+    \[
+    M_B = F_B \cdot l = 750 \,\text{N} \cdot 150 \,\text{mm} = 112.500 \,\text{Nmm}
+    \]
+
+    **Widerstandsmoment (Quadratquerschnitt)**
+    
+    \[
+    W_b = \frac{a^3}{6} = \frac{12^3 \,\text{mm}^3}{6} = 288 \,\text{mm}^3
+    \]
+
+    **Maximale Normalspannung**
+    
+    \[
+    \sigma_\text{max} = \frac{M_B}{W_b} = \frac{112.500 \,\text{Nmm}}{288 \,\text{mm}^3}
+                     = 390,6 \,\text{N/mm}^2
+    \]
+
+    **Durchbiegung an der freien Spitze**
+    
+    \[
+    I = \frac{a^4}{12} = \frac{12^4 \,\text{mm}^4}{12} = 1.728 \,\text{mm}^4
+    \]
+
+    \[
+    f = \frac{F_B \cdot l^3}{3 \cdot E \cdot I}
+      = \frac{750 \,\text{N} \cdot (150 \,\text{mm})^3}{3 \cdot 210.000 \,\text{N/mm}^2 \cdot 1.728 \,\text{mm}^4}
+      \approx 2,33 \,\text{mm}
+    \]
+
+    **Hinweis:**  
+    \(\sigma_\text{max}\) tritt an den äußersten Fasern an der Einspannung auf, eine Seite im Zug, die gegenüberliegende im Druck.  
+    Die Durchbiegung \(f\) ist an der freien Spitze maximal.
+
+???+ danger "FIXME"
+    Tabelle erstellen, zum Abgleich wie oben.  
 
 ### Netzeinfluss
 
+Im numerischen Modell führt daher eine Netzverfeinerung nicht zu einer Konvergenz gegen den theoretischen Wert, sondern zu einer zunehmenden Abweichung durch sehr lokale Spannungsspitze.
+
+???+ danger "FIXME"
+    Tabelle erstellen
+
 ### Einfluss Einspannung
 
+???+ danger "FIXME"
+    Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)
 
 ## Add-on: Biegemoment statt Kraft
 
 !!! note "Hinweis"
-    Alternativ kann statt einer Kraft auch ein reines *Biegemoment* an der freien Stirnfläche angesetzt werden.  
+    Alternativ kann statt einer Kraft auch ein reines _Biegemoment_ an der freien Stirnfläche angesetzt werden.  
     Dadurch entfallen Querkräfte, und das Spannungsfeld wird gleichmäßiger. Beide Varianten zeigen jedoch denselben charakteristischen linearen Spannungsverlauf über den Querschnitt.
 
 Als Alternative kann ein **reines Biegemoment** angesetzt werden.  
@@ -541,10 +609,6 @@ Dies führt zu einem **querkraftfreien Balken** mit gleichmäßigerem Spannungsf
 
 ???+ danger "FIXME"
     Screenshots hinzufügen: Moment an Stirnfläche.
-
-[![Kragbalken, Lösungen](media/03_kragbalken/17_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/17_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
-
-[![Kragbalken, Lösungen](media/03_kragbalken/18_Kragbalken_Auswertung.png){width=600px}](media/03_kragbalken/18_Kragbalken_Auswertung.png "Kragbalken, Lösungen"){.glightbox}  
 
 ---
 
