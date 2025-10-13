@@ -366,18 +366,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#theoretical-background" class="md-nav__link">
+  <a href="#task-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Theoretical Background
+      Task tensile load
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-tensile-load" class="md-nav__link">
+  <a href="#theoretical-background-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Task tensile load
+      Theoretical Background, tensile load
     </span>
   </a>
   
@@ -405,6 +405,15 @@
   <a href="#task-bending" class="md-nav__link">
     <span class="md-ellipsis">
       Task bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund, Biegung
     </span>
   </a>
   
@@ -521,18 +530,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#theoretical-background" class="md-nav__link">
+  <a href="#task-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Theoretical Background
+      Task tensile load
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#task-tensile-load" class="md-nav__link">
+  <a href="#theoretical-background-tensile-load" class="md-nav__link">
     <span class="md-ellipsis">
-      Task tensile load
+      Theoretical Background, tensile load
     </span>
   </a>
   
@@ -560,6 +569,15 @@
   <a href="#task-bending" class="md-nav__link">
     <span class="md-ellipsis">
       Task bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund, Biegung
     </span>
   </a>
   
@@ -635,7 +653,20 @@
 <li>Comparison of simulation results with analytical calculations.</li>
 <li>Understanding the influence of the type of support and the choice of boundary conditions.</li>
 </ul>
-<h2 id="theoretical-background">Theoretical Background<a class="headerlink" href="#theoretical-background" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="task-tensile-load">Task tensile load<a class="headerlink" href="#task-tensile-load" title="Permanent link">&para;</a></h2>
+<p>For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  </p>
+<ul>
+<li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Edge length: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Force: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
+<li>Material: Structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+</ul>
+<p>Download the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> and import it into ANSYS Workbench.</p>
+<p>Compare your result with the analytical solution and discuss any deviations.  </p>
+<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_zug.svg" title="Cantilever beam, tensile load"><img alt="Cantilever beam, tensile load" src="../../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
+<hr />
+<h2 id="theoretical-background-tensile-load">Theoretical Background, tensile load<a class="headerlink" href="#theoretical-background-tensile-load" title="Permanent link">&para;</a></h2>
 <h3 id="hookes-law">Hooke’s Law<a class="headerlink" href="#hookes-law" title="Permanent link">&para;</a></h3>
 <p>The calculation is based on <strong>Hooke’s Law</strong>. It describes the linear relationship between stress and strain in the elastic range of a material.</p>
 <div class="arithmatex">\[
@@ -690,18 +721,6 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" title="Stress-strain curve with distinct yield point"><img alt="Stress-strain curve with distinct yield point" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" width="450" /></a><br />
 <span class="bildquelle">Image source based on<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>For the calculation of the cantilever beam in this exercise, the load lies within the <strong>elastic range</strong>. Hooke’s Law is therefore sufficient.</p>
-<hr />
-<h2 id="task-tensile-load">Task tensile load<a class="headerlink" href="#task-tensile-load" title="Permanent link">&para;</a></h2>
-<p>For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  </p>
-<ul>
-<li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
-<li>Edge length: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
-<li>Force: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
-<li>Material: Structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
-</ul>
-<p>Download the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> and import it into ANSYS Workbench.</p>
-<p>Compare your result with the analytical solution and discuss any deviations.  </p>
-<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_zug.svg" title="Cantilever beam, tensile load"><img alt="Cantilever beam, tensile load" src="../../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
 <hr />
 <h2 id="implementation-in-ansys-mechanical">Implementation in ANSYS Mechanical<a class="headerlink" href="#implementation-in-ansys-mechanical" title="Permanent link">&para;</a></h2>
 <h3 id="1-geometry-import">1. Geometry Import<a class="headerlink" href="#1-geometry-import" title="Permanent link">&para;</a></h3>
@@ -797,7 +816,7 @@ This means that with a longitudinal strain of 1 %, the cross-section shortens 
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p>The <strong>deformation result</strong> in the x-axis direction is 0.000472 mm.  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<p>The following box contains the analytical solution. First, carry out the calculation yourself and use the <a href="#theoretical-background">theory presented above</a>.</p>
+<p>The following box contains the analytical solution. First, carry out the calculation yourself and use the <a href="#theoretical-background-tensile-load">theory presented above</a>.</p>
 <details class="note">
 <summary>Calculation of Δl, Δa and σ</summary>
 <p>For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.</p>
@@ -1023,6 +1042,7 @@ This leads to <strong>edge stress peaks</strong> not predicted analytically.<br 
 </ul>
 <p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_biegung.svg" title="Cantilever beam, bending"><img alt="Cantilever beam, bending" src="../../media/03_kragbalken/kragbalken_biegung.svg" width="500px" /></a></p>
 <hr />
+<h2 id="theoretischer-hintergrund-biegung">Theoretischer Hintergrund, Biegung<a class="headerlink" href="#theoretischer-hintergrund-biegung" title="Permanent link">&para;</a></h2>
 <h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
 <h2 id="discussion-of-the-results-bending">Discussion of the results, bending<a class="headerlink" href="#discussion-of-the-results-bending" title="Permanent link">&para;</a></h2>
 <h2 id="add-on-bending-moment-instead-of-force">Add-on: Bending Moment Instead of Force<a class="headerlink" href="#add-on-bending-moment-instead-of-force" title="Permanent link">&para;</a></h2>

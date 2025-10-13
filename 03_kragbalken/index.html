@@ -366,18 +366,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#theoretischer-hintergrund" class="md-nav__link">
+  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
     <span class="md-ellipsis">
-      Theoretischer Hintergrund
+      Aufgabenstellung Zugbelastung
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
+  <a href="#theoretischer-hintergrund-zug" class="md-nav__link">
     <span class="md-ellipsis">
-      Aufgabenstellung Zugbelastung
+      Theoretischer Hintergrund, Zug
     </span>
   </a>
   
@@ -411,9 +411,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#umsetzung-ansys" class="md-nav__link">
+  <a href="#theoretischer-hintergrund-biegung" class="md-nav__link">
     <span class="md-ellipsis">
-      Umsetzung ANSYS
+      Theoretischer Hintergrund, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
     </span>
   </a>
   
@@ -521,18 +530,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#theoretischer-hintergrund" class="md-nav__link">
+  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
     <span class="md-ellipsis">
-      Theoretischer Hintergrund
+      Aufgabenstellung Zugbelastung
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
+  <a href="#theoretischer-hintergrund-zug" class="md-nav__link">
     <span class="md-ellipsis">
-      Aufgabenstellung Zugbelastung
+      Theoretischer Hintergrund, Zug
     </span>
   </a>
   
@@ -566,9 +575,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#umsetzung-ansys" class="md-nav__link">
+  <a href="#theoretischer-hintergrund-biegung" class="md-nav__link">
     <span class="md-ellipsis">
-      Umsetzung ANSYS
+      Theoretischer Hintergrund, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
     </span>
   </a>
   
@@ -635,7 +653,20 @@
 <li>Vergleich von Simulationsergebnissen mit analytischen Berechnungen.</li>
 <li>Einfluss der Einspannung und Wahl der Randbedingungen verstehen.</li>
 </ul>
-<h2 id="theoretischer-hintergrund">Theoretischer Hintergrund<a class="headerlink" href="#theoretischer-hintergrund" title="Permanent link">&para;</a></h2>
+<hr />
+<h2 id="aufgabenstellung-zugbelastung">Aufgabenstellung Zugbelastung<a class="headerlink" href="#aufgabenstellung-zugbelastung" title="Permanent link">&para;</a></h2>
+<p>Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  </p>
+<ul>
+<li>Länge: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Kantenlänge: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Kraft: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
+<li>Material: Baustahl mit Streckgrenze <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+</ul>
+<p>Laden Sie die Datei <a href="../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> und importieren Sie sie in ANSYS Workbench.</p>
+<p>Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/kragbalken_zug.svg" title="Kragbalken, Zug"><img alt="Kragbalken, Zug" src="../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
+<hr />
+<h2 id="theoretischer-hintergrund-zug">Theoretischer Hintergrund, Zug<a class="headerlink" href="#theoretischer-hintergrund-zug" title="Permanent link">&para;</a></h2>
 <h3 id="hookesches-gesetz">Hookesches Gesetz<a class="headerlink" href="#hookesches-gesetz" title="Permanent link">&para;</a></h3>
 <p>Die Berechnung basiert auf dem <strong>Hookeschen Gesetz</strong>. Es beschreibt den linearen Zusammenhang zwischen Spannung und Dehnung im elastischen Bereich eines Werkstoffs.</p>
 <div class="arithmatex">\[
@@ -690,18 +721,6 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" title="Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze"><img alt="Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" width="450" /></a><br />
 <span class="bildquelle">Bildquelle<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
 <p>Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im <strong>elastischen Bereich</strong>. Das Hookesche Gesetz ist daher ausreichend.</p>
-<hr />
-<h2 id="aufgabenstellung-zugbelastung">Aufgabenstellung Zugbelastung<a class="headerlink" href="#aufgabenstellung-zugbelastung" title="Permanent link">&para;</a></h2>
-<p>Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  </p>
-<ul>
-<li>Länge: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
-<li>Kantenlänge: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
-<li>Kraft: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
-<li>Material: Baustahl mit Streckgrenze <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
-</ul>
-<p>Laden Sie die Datei <a href="../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> und importieren Sie sie in ANSYS Workbench.</p>
-<p>Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  </p>
-<p><a class="glightbox" href="../media/03_kragbalken/kragbalken_zug.svg" title="Kragbalken, Zug"><img alt="Kragbalken, Zug" src="../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
 <hr />
 <h2 id="umsetzung-in-ansys-mechanical">Umsetzung in ANSYS Mechanical<a class="headerlink" href="#umsetzung-in-ansys-mechanical" title="Permanent link">&para;</a></h2>
 <h3 id="1-geometrieimport">1. Geometrieimport<a class="headerlink" href="#1-geometrieimport" title="Permanent link">&para;</a></h3>
@@ -797,7 +816,7 @@ Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
 <p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <p>Das <strong>Verformungsergebnis</strong> in Richtung der x-Achse ist 0,000472 mm.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die <a href="#theoretischer-hintergrund">oben vorgestellte Theorie</a>.</p>
+<p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die <a href="#theoretischer-hintergrund-zug">oben vorgestellte Theorie</a>.</p>
 <details class="note">
 <summary>Berechnung von Δl, Δa und σ</summary>
 <p>Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.</p>
@@ -1023,9 +1042,120 @@ Dadurch entstehen <strong>Randspannungsspitzen</strong>, die analytisch nicht vo
 </ul>
 <p><a class="glightbox" href="../media/03_kragbalken/kragbalken_biegung.svg" title="Kragbalken, Biegung"><img alt="Kragbalken, Biegung" src="../media/03_kragbalken/kragbalken_biegung.svg" width="500px" /></a></p>
 <hr />
-<h2 id="umsetzung-ansys">Umsetzung ANSYS<a class="headerlink" href="#umsetzung-ansys" title="Permanent link">&para;</a></h2>
+<h2 id="theoretischer-hintergrund-biegung">Theoretischer Hintergrund, Biegung<a class="headerlink" href="#theoretischer-hintergrund-biegung" title="Permanent link">&para;</a></h2>
+<p>Bei der Biegung entsteht infolge einer quer zur Balkenachse wirkenden Kraft ein Moment, das in den äußeren Fasern Zug- und Druckspannungen verursacht. Die neutrale Faser bleibt spannungsfrei. Für kleine Durchbiegungen und lineares Materialverhalten gilt die Bernoulli-Hypothese, wonach Querschnitte eben bleiben und sich nur drehen.</p>
+<p>Das <strong>maximale Biegemoment</strong> an einem Kragbalken mit Kraft <span class="arithmatex">\(F_B\)</span> und der Länge <span class="arithmatex">\(l\)</span> ergibt sich zu</p>
+<div class="arithmatex">\[
+M_B = F_B \cdot l
+\]</div>
+<p>Das <strong>Widerstandsmoment</strong> <span class="arithmatex">\(W_b\)</span> beschreibt die Geometrieabhängigkeit des Querschnitts und ergibt sich für einen quadratischen Querschnitt der Seitenlänge <span class="arithmatex">\(a\)</span> zu</p>
+<div class="arithmatex">\[
+W_b = \frac{a^3}{6}
+\]</div>
+<p>Tabelle weiterer Widerstandsmomente und axialer Flächenmomente 2. Grades:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/29_Fl%C3%A4chenmomente_Dubbel.png" title="Axiale Flächenmomente 2. Grades und Widerstandsmomente"><img alt="Axiale Flächenmomente 2. Grades und Widerstandsmomente" src="../media/03_kragbalken/29_Fl%C3%A4chenmomente_Dubbel.png" width="250px" /></a>
+<span class="bildquelle">Bildquelle nach <sup id="fnref:Dubbel2020"><a class="footnote-ref" href="#fn:Dubbel2020">3</a></sup></span></p>
+<p>Die <strong>maximale Normalspannung infolge Biegung</strong> ist damit</p>
+<div class="arithmatex">\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{6\,F_B\,l}{a^3}
+\]</div>
+<p>Sie tritt an den äußersten Fasern des Querschnitts auf – auf der einen Seite als Zugspannung, auf der gegenüberliegenden als Druckspannung. In der neutralen Faser ist die Normalspannung gleich null.</p>
+<p>Die <strong>maximale Durchbiegung</strong> an der freien Spitze ist</p>
+<div class="arithmatex">\[
+f = \frac{F_B\,l^3}{3\,E\,I} = \frac{4\,F_B\,l^3}{E\,a^4}
+\]</div>
+<p>Tabelle weiterer Biegelinien. Hier relevant Belastungsfall 6.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/28_Biegelinie_Dubbel.png" title="Biegelinien von statisch bestimmt gelagerten Trägern mit konstantem Querschnitt"><img alt="Biegelinien von statisch bestimmt gelagerten Trägern mit konstantem Querschnitt" src="../media/03_kragbalken/28_Biegelinie_Dubbel.png" width="250px" /></a>
+<span class="bildquelle">Bildquelle nach <sup id="fnref2:Dubbel2020"><a class="footnote-ref" href="#fn:Dubbel2020">3</a></sup></span></p>
+<p>Die resultierenden Spannungen sind linear über den Querschnitt verteilt, wobei eine Seite Zug-, die andere Druckspannungen aufnimmt. Im Unterschied zum Zugversuch ergibt sich bei der Biegung eine <strong>nicht konstante Spannung über den Querschnitt</strong>, sondern ein linearer Verlauf mit Nullpunkt in der neutralen Faser.  </p>
+<hr />
+<h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
+<p><strong>Voraussetzungen</strong><br />
+Geometrieimport, Materialzuweisung und Netzerstellung erfolgen identisch wie bei der Aufgabe Zugbelastung. Siehe dazu:</p>
+<ul>
+<li><a href="#1-geometrieimport">Geometrieimport</a></li>
+<li><a href="#2-materialzuweisung">Materialzuweisung</a></li>
+<li><a href="#3-netzgenerierung">Netzgenerierung</a></li>
+</ul>
+<h3 id="lastfall-und-randbedingungen">Lastfall und Randbedingungen<a class="headerlink" href="#lastfall-und-randbedingungen" title="Permanent link">&para;</a></h3>
+<p>Betrachtet man die Aufgabenstellung sind zwei auch hier Randbedingungen naheliegend:</p>
+<ul>
+<li><strong>Feste Einspannung</strong> an der linken Stirnfläche  </li>
+<li><strong>Kraft (Biegung)</strong> an der rechten Stirnfläche  </li>
+</ul>
+<p>Richtung der Kraft senkrecht zur Balkenachse, Betrag <span class="arithmatex">\(F_B\)</span> gemäß Aufgabenstellung. Die Richtung kann entweder über <strong>Definieren durch Vektor</strong> eingestellt werden, indem eine geeignete Kante zur Richtungsangabe ausgewählt wird (Pfeile beachten), oder über <strong>Definieren durch Komponenten</strong>, wobei die Beträge direkt in den globalen Koordinaten eingetragen werden.  </p>
+<p><a class="glightbox" href="22_Kragbalken_Biegung_Randbedingungen.png" title="Kragbalken Biegung – Randbedingungen"><img alt="Kragbalken Biegung – Randbedingungen" src="../media/03_kragbalken/22_Kragbalken_Biegung_Randbedingungen.png" width="800px" /></a>  </p>
+<h3 id="auswertung">Auswertung<a class="headerlink" href="#auswertung" title="Permanent link">&para;</a></h3>
+<p>Wie <a href="#5-auswertung">oben</a> beschrieben, werden hier auch zunächst folgende zwei Ergebnisse betrachtet:</p>
+<ul>
+<li><strong>Verformung (Gesamtverformung)</strong></li>
+<li><strong>Spannung nach von Mises</strong></li>
+</ul>
+<p>Zur Auswertung der <strong>Normalspannung</strong> kann über das Kontextmenü unter <em>Lösung</em> die Normalspannung in Balkenlängsrichtung eingefügt werden. <em>Ausrichtung</em> der Koordinatenachse beachten. Ein linearer Spannungsverlauf über den Querschnitt mit Zug- und Druckseite wird erwartet.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Pfad für Spannungsverlauf"><img alt="Kragbalken Biegung – Normalspannung" src="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
 <h2 id="diskussion-der-ergebnisse-biegung">Diskussion der Ergebnisse, Biegung<a class="headerlink" href="#diskussion-der-ergebnisse-biegung" title="Permanent link">&para;</a></h2>
+<h3 id="abgleich-mit-analytischer-losung">Abgleich mit analytischer Lösung<a class="headerlink" href="#abgleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
+<p>Die Gesamtverformung zeigt eine maximale <strong>Durchbiegung</strong> des Balkens um 2,438 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Pfad für Spannungsverlauf"><img alt="Kragbalken Biegung – Pfad für Spannungsverlauf" src="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<p>Die <strong>maximale Vergleichsspanunng (von Mises)</strong> ist 399,31 MPa bzw. mit einem feineren Netz (Elementgröße 1mm) 580,04 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Pfad für Spannungsverlauf"><img alt="Kragbalken Biegung – Pfad für Spannungsverlauf" src="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<p>Die <strong>maximale Normalspannung</strong> gemäß Abbildung oben ist 426,83 MPa.  </p>
+<p>Bei der Auswertung ist zu beachten, dass eine <em>Stichprobe</em> der Spannung hier nicht zielführend ist. Die maximale Spannung tritt in einem sehr kleinen Bereich an der Einspannung auf und ist lokal stark konzentriert.</p>
+<p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die oben vorgestellte <a href="#theoretischer-hintergrund-biegung">Theorie zur Biegung</a>.</p>
+<details class="note">
+<summary>Berechnung von <span class="arithmatex">\(\sigma_\text{max}\)</span> und f</summary>
+<p>Für die analytische Lösung werden die maximale Normalspannung <span class="arithmatex">\(\sigma_\text{max}\)</span> und die Durchbiegung <span class="arithmatex">\(f\)</span> des Kragbalkens bestimmt.</p>
+<p><strong>Gegeben:</strong></p>
+<div class="arithmatex">\[
+F_B = 750 \,\text{N}, \quad l = 150 \,\text{mm}, \quad a = 12 \,\text{mm}, \quad E = 210.000 \,\text{N/mm}^2
+\]</div>
+<p><strong>Biegemoment</strong></p>
+<div class="arithmatex">\[
+M_B = F_B \cdot l = 750 \,\text{N} \cdot 150 \,\text{mm} = 112.500 \,\text{Nmm}
+\]</div>
+<p><strong>Widerstandsmoment (Quadratquerschnitt)</strong></p>
+<div class="arithmatex">\[
+W_b = \frac{a^3}{6} = \frac{12^3 \,\text{mm}^3}{6} = 288 \,\text{mm}^3
+\]</div>
+<p><strong>Maximale Normalspannung</strong></p>
+<div class="arithmatex">\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{112.500 \,\text{Nmm}}{288 \,\text{mm}^3}
+                 = 390,6 \,\text{N/mm}^2
+\]</div>
+<p><strong>Durchbiegung an der freien Spitze</strong></p>
+<div class="arithmatex">\[
+I = \frac{a^4}{12} = \frac{12^4 \,\text{mm}^4}{12} = 1.728 \,\text{mm}^4
+\]</div>
+<div class="arithmatex">\[
+f = \frac{F_B \cdot l^3}{3 \cdot E \cdot I}
+  = \frac{750 \,\text{N} \cdot (150 \,\text{mm})^3}{3 \cdot 210.000 \,\text{N/mm}^2 \cdot 1.728 \,\text{mm}^4}
+  \approx 2,33 \,\text{mm}
+\]</div>
+<p><strong>Hinweis:</strong><br />
+<span class="arithmatex">\(\sigma_\text{max}\)</span> tritt an den äußersten Fasern an der Einspannung auf, eine Seite im Zug, die gegenüberliegende im Druck.<br />
+Die Durchbiegung <span class="arithmatex">\(f\)</span> ist an der freien Spitze maximal.</p>
+</details>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Tabelle erstellen, zum Abgleich wie oben.  </p>
+</details>
+<h3 id="netzeinfluss">Netzeinfluss<a class="headerlink" href="#netzeinfluss" title="Permanent link">&para;</a></h3>
+<p>Im numerischen Modell führt daher eine Netzverfeinerung nicht zu einer Konvergenz gegen den theoretischen Wert, sondern zu einer zunehmenden Abweichung durch sehr lokale Spannungsspitze.</p>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Tabelle erstellen</p>
+</details>
+<h3 id="einfluss-einspannung">Einfluss Einspannung<a class="headerlink" href="#einfluss-einspannung" title="Permanent link">&para;</a></h3>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Screenshots hinzufügen: externe Verschiebung, verformbar (sollte Querkontraktion zulassen)</p>
+</details>
 <h2 id="add-on-biegemoment-statt-kraft">Add-on: Biegemoment statt Kraft<a class="headerlink" href="#add-on-biegemoment-statt-kraft" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Hinweis</p>
+<p>Alternativ kann statt einer Kraft auch ein reines <em>Biegemoment</em> an der freien Stirnfläche angesetzt werden.<br />
+Dadurch entfallen Querkräfte, und das Spannungsfeld wird gleichmäßiger. Beide Varianten zeigen jedoch denselben charakteristischen linearen Spannungsverlauf über den Querschnitt.</p>
+</div>
 <p>Als Alternative kann ein <strong>reines Biegemoment</strong> angesetzt werden.<br />
 Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßigerem Spannungsfeld.</p>
 <ul>
@@ -1036,8 +1166,6 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 <summary>FIXME</summary>
 <p>Screenshots hinzufügen: Moment an Stirnfläche.</p>
 </details>
-<p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
-<p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
 <hr />
 <h2 id="weiterfuhrende-hinweise">Weiterführende Hinweise<a class="headerlink" href="#weiterfuhrende-hinweise" title="Permanent link">&para;</a></h2>
 <h3 id="varianten-der-krafteinleitung">Varianten der Krafteinleitung<a class="headerlink" href="#varianten-der-krafteinleitung" title="Permanent link">&para;</a></h3>
@@ -1102,6 +1230,9 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 </li>
 <li id="fn:Wikipedia2023">
 <p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Dubbel2020">
+<p>Beate Bender and Dietmar Göhlich. <em>Dubbel Taschenbuch für den Maschinenbau 1: Grundlagen und Tabellen</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2020. ISBN 978-3-662-59710-1. <a href="https://doi.org/10.1007/978-3-662-59711-8">doi:10.1007/978-3-662-59711-8</a>.&#160;<a class="footnote-backref" href="#fnref:Dubbel2020" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Dubbel2020" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
