@@ -719,12 +719,39 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Welcher Einfluss hat die Wahl der Randbedingungen auf das Simulationsergebnis?
-answer: Gar keinen.
-answer: Sie beeinflusst nur die Farbe der Darstellung.
-answer-correct: Sie bestimmt maßgeblich die Verformungen und Spannungsverteilung.
+question: Wie kann eine Divergenz im FEM-Ergebnis erkannt werden?
+answer: Wenn die Verformung kleiner wird.
+answer: Wenn die Spannungen gleich bleiben.
+answer-correct: Wenn sich die Spannungen bei weiterer Verfeinerung immer weiter erhöhen.
 content:
-<strong>Hinweis:</strong> Falsche Randbedingungen führen zu physikalisch falschen Ergebnissen.
+<em>Tipp:</em> Divergentes Verhalten weist oft auf geometrische oder lastbedingte Singularitäten hin.
+<?/quiz?>
+
+<?quiz?>
+question: Warum ist die analytische Lösung bei der Biegung eines Kragbalkens wichtig?
+answer-correct: Sie dient als Referenz zur Überprüfung der FEM-Ergebnisse.
+answer: Sie ersetzt die Simulation vollständig.
+answer: Sie zeigt nur qualitative Trends.
+content:
+<strong>Hinweis:</strong> Analytische Vergleiche helfen, Modellfehler und Abweichungen im FEM-Modell zu erkennen.
+<?/quiz?>
+
+<?quiz?>
+question: Warum lässt eine fixe Einspannung keine Querkontraktion zu?
+answer: Weil das Material komplett starr wird.
+answer-correct: Weil alle Freiheitsgrade festgehalten sind, auch Querdehnungen sind verhindert.
+answer: Weil die Last dadurch nicht mehr wirkt.
+content:
+<strong>Hinweis:</strong> Bei fester Einspannung sind *alle* Verschiebungen, auch in Querrichtung, gesperrt – somit ist keine Querkontraktion möglich.
+<?/quiz?>
+
+<?quiz?>
+question: Was kann man stattdessen einstellen, wenn man Querkontraktion zulassen will?
+answer: Nichts, es bleibt immer fix.
+answer-correct: Man lässt die Querverschiebung als Freiheitsgrad zu (_externe Verschiebung_).
+answer: Man ändert den Werkstoff auf viskos.
+content:
+<em>Tipp:</em> Wenn Querkontraktion gewünscht ist, darf die Querverschiebung an der Einspannung nicht gesperrt sein.
 <?/quiz?>
 
 <!-- markdownlint-enable MD033 -->
