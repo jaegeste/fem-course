@@ -883,8 +883,8 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 <tr>
 <td>max. Spannung (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
 <td>52,1 N/mm²</td>
-<td>52,53 N/mm²</td>
-<td>0,83 %</td>
+<td>57,53 N/mm²</td>
+<td>10,4 %</td>
 </tr>
 <tr>
 <td>Spannung (σ) Stichprobe</td>
@@ -933,26 +933,35 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 <div class="plotly-chart" style="width:100%;height:500px"
      data-fig='{
        "data": [
-         { "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
+         {
+           "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
            "y": [57.528,61.47,105.38,136.92],
            "name": "Max. Spannung (MPa)",
            "type": "scatter",
            "mode": "lines+markers",
-           "yaxis": "y"
+           "yaxis": "y",
+           "text": ["57,528 MPa","61,47 MPa","105,38 MPa","136,92 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
          },
-         { "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
+         {
+           "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
            "y": [621,1720,97981,736825],
            "name": "Anzahl Knoten",
            "type": "scatter",
            "mode": "lines+markers",
-           "yaxis": "y2"
+           "yaxis": "y2",
+           "text": ["621","1\u00A0720","97\u00A0981","736\u00A0825"],
+           "hovertemplate": "%{text}<extra></extra>"
          },
-         { "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
+         {
+           "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
            "y": [80,270,21600,172800],
            "name": "Anzahl Elemente",
            "type": "scatter",
            "mode": "lines+markers",
-           "yaxis": "y2"
+           "yaxis": "y2",
+           "text": ["80","270","21\u00A0600","172\u00A0800"],
+           "hovertemplate": "%{text}<extra></extra>"
          }
        ],
        "layout": {
@@ -960,7 +969,13 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
          "xaxis": {"title": "Netzgröße"},
          "yaxis": {"title": "Max. Spannung (MPa)"},
          "yaxis2": {"title": "Knoten / Elemente", "overlaying": "y", "side": "right"},
-         "legend": {"x": 0.01, "y": 0.99}
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
        }
      }'>
 </div>
@@ -1010,7 +1025,13 @@ l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
 <p>In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen. Im FEM-Modell mit fester Einspannung wird diese <strong>Querkontraktion lokal verhindert</strong>. Dadurch entstehen <strong>Randspannungsspitzen</strong>, die analytisch nicht vorhergesagt werden.<br />
 → Erklärung für Abweichungen zwischen analytischer und numerischer Lösung nahe der Einspannung.  </p>
 <p>Eine <em>externe Einspannung</em> bietet dagegen mehr Einstellmöglichkeiten, da einzelne <strong>Translations- und Rotationsfreiheitsgrade</strong> gezielt freigegeben oder begrenzt werden können und sich die <strong>Querkontraktion</strong> wahlweise zulassen oder unterdrücken lässt. Letzteres über die Einstellung <em>Verhalten: verformbar</em>.</p>
-<p><a class="glightbox" href="../media/03_kragbalken/28_Krakbalken_Biegung_Auswertung.png" title="Kragbalken, Biegung"><img alt="Kragbalken, Biegung" src="../media/03_kragbalken/28_Krakbalken_Biegung_Auswertung.png" width="600px" /></a></p>
+<p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="Externe Verschiebung"><img alt="Externe Verschiebung" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>Mit einer <em>verformbaren externen Verschiebung</em> als Einspannung ist die <strong>Gesamtverformung</strong> 0,0391 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Gesamtverformung mit externer Verschiebung"><img alt="Gesamtverformung mit externer Verschiebung" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>Die <strong>Vergleichsspannung</strong> zeigt den erwarteten konstanten Verlauf über das gesamte Bauteil. Es gibt keine Spannungsspitzen mehr im Bereich der Einspannung; die Querkontraktion ist freigegeben. Die Vergleichsspannung ist 52,083 MPa.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/20_Kragbalken_Auswertung.png" title="Vergleichsspannung mit externer Verschiebung"><img alt="Vergleichsspannung mit externer Verschiebung" src="../media/03_kragbalken/20_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>Das <strong>Verformungsergebnis</strong> in Richtung der x-Achse ist 0,000469 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/19_Kragbalken_Auswertung.png" title="Vergleichsspannung mit externer Verschiebung"><img alt="Vergleichsspannung mit externer Verschiebung" src="../media/03_kragbalken/19_Kragbalken_Auswertung.png" width="600px" /></a></p>
 <hr />
 <h2 id="aufgabenstellung-biegung">Aufgabenstellung Biegung<a class="headerlink" href="#aufgabenstellung-biegung" title="Permanent link">&para;</a></h2>
 <p>Implementieren Sie für den Kragbalken folgendes Modell und berechnen Sie die maximale Spannung und die maximale Verformung. Verwenden Sie auch die Geometrie aus <a href="../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a>.  </p>
@@ -1064,13 +1085,15 @@ Geometrieimport, Materialzuweisung und Netzerstellung erfolgen identisch wie bei
 <li><a href="#3-netzgenerierung">Netzgenerierung</a></li>
 </ul>
 <h3 id="lastfall-und-randbedingungen">Lastfall und Randbedingungen<a class="headerlink" href="#lastfall-und-randbedingungen" title="Permanent link">&para;</a></h3>
-<p>Betrachtet man die Aufgabenstellung sind zwei auch hier Randbedingungen naheliegend:</p>
+<p>Aufgrund der Erfahrungen von oben sind hier Randbedingungen naheliegend:</p>
 <ul>
-<li><strong>Feste Einspannung</strong> an der linken Stirnfläche  </li>
+<li><strong>Externe Verschiebung</strong> an der linken Stirnfläche  </li>
 <li><strong>Kraft (Biegung)</strong> an der rechten Stirnfläche  </li>
 </ul>
 <p>Richtung der Kraft senkrecht zur Balkenachse, Betrag <span class="arithmatex">\(F_B\)</span> gemäß Aufgabenstellung. Die Richtung kann entweder über <strong>Definieren durch Vektor</strong> eingestellt werden, indem eine geeignete Kante zur Richtungsangabe ausgewählt wird (Pfeile beachten), oder über <strong>Definieren durch Komponenten</strong>, wobei die Beträge direkt in den globalen Koordinaten eingetragen werden.  </p>
-<p><a class="glightbox" href="22_kragbalken_biegung_randbedingungen.png" title="Kragbalken Biegung – Randbedingungen"><img alt="Kragbalken Biegung – Randbedingungen" src="../media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png" width="800px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png" title="Kragbalken Biegung – Kraft"><img alt="Kragbalken Biegung – Kraft" src="../media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png" width="800px" /></a>  </p>
+<p>Die Randbedingungen sind somit wie folgt:  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/21_kragbalken_biegung.png" title="Kragbalken Biegung – Randbedingungen"><img alt="Kragbalken Biegung – Randbedingungen" src="../media/03_kragbalken/21_kragbalken_biegung.png" width="800px" /></a>  </p>
 <h3 id="auswertung">Auswertung<a class="headerlink" href="#auswertung" title="Permanent link">&para;</a></h3>
 <p>Wie <a href="#5-auswertung">oben</a> beschrieben, werden hier auch zunächst folgende zwei Ergebnisse betrachtet:</p>
 <ul>
@@ -1078,16 +1101,17 @@ Geometrieimport, Materialzuweisung und Netzerstellung erfolgen identisch wie bei
 <li><strong>Spannung nach von Mises</strong></li>
 </ul>
 <p>Zur Auswertung der <strong>Normalspannung</strong> kann über das Kontextmenü unter <em>Lösung</em> die Normalspannung in Balkenlängsrichtung eingefügt werden. <em>Ausrichtung</em> der Koordinatenachse beachten. Ein linearer Spannungsverlauf über den Querschnitt mit Zug- und Druckseite wird erwartet.</p>
-<p><a class="glightbox" href="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Pfad für Spannungsverlauf"><img alt="Kragbalken Biegung – Normalspannung" src="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Normalspannung"><img alt="Kragbalken Biegung – Normalspannung" src="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
 <h2 id="diskussion-der-ergebnisse-biegung">Diskussion der Ergebnisse, Biegung<a class="headerlink" href="#diskussion-der-ergebnisse-biegung" title="Permanent link">&para;</a></h2>
 <h3 id="abgleich-mit-analytischer-losung">Abgleich mit analytischer Lösung<a class="headerlink" href="#abgleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
-<p>Die Gesamtverformung zeigt eine maximale <strong>Durchbiegung</strong> des Balkens um 2,438 mm.</p>
+<p>Die Gesamtverformung zeigt eine maximale <strong>Durchbiegung</strong> des Balkens um 2,5143 mm.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – maximale Durchbiegung"><img alt="Kragbalken Biegung – maximale Durchbiegung" src="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
-<p>Die <strong>maximale Vergleichsspanunng (von Mises)</strong> ist 399,31 MPa bzw. mit einem feineren Netz (Elementgröße 1mm) 580,04 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  </p>
+<p>Die <strong>maximale Vergleichsspanunng (von Mises)</strong> ist 479,71 MPa Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – maximale Vergleichsspanunng"><img alt="Kragbalken Biegung – maximale Vergleichsspanunng" src="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
-<p>Die <strong>maximale Normalspannung</strong> gemäß Abbildung oben ist 426,83 MPa.  </p>
+<p>Die <strong>maximale Normalspannung</strong> gemäß Abbildung oben ist 437,36 MPa.  </p>
 <p>Bei der Auswertung ist zu beachten, dass eine <em>Stichprobe</em> der Spannung hier nicht zielführend ist. Die maximale Spannung tritt in einem sehr kleinen Bereich an der Einspannung auf und ist lokal stark konzentriert.</p>
 <p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die oben vorgestellte <a href="#theoretischer-hintergrund-biegung">Theorie zur Biegung</a>.</p>
+<p><strong>Hinweis:</strong> Die Schubspannung infolge Querkraft wird hier vernachlässigt.</p>
 <details class="note">
 <summary>Berechnung von <span class="arithmatex">\(\sigma_\text{max}\)</span> und f</summary>
 <p>Für die analytische Lösung werden die maximale Normalspannung <span class="arithmatex">\(\sigma_\text{max}\)</span> und die Durchbiegung <span class="arithmatex">\(f\)</span> des Kragbalkens bestimmt.</p>
@@ -1117,8 +1141,8 @@ f = \frac{F_B \cdot l^3}{3 \cdot E \cdot I}
   = \frac{750 \,\text{N} \cdot (150 \,\text{mm})^3}{3 \cdot 210.000 \,\text{N/mm}^2 \cdot 1.728 \,\text{mm}^4}
   \approx 2,33 \,\text{mm}
 \]</div>
-<p><strong>Hinweis:</strong><br />
-<span class="arithmatex">\(\sigma_\text{max}\)</span> tritt an den äußersten Fasern an der Einspannung auf, eine Seite im Zug, die gegenüberliegende im Druck.<br />
+<p><strong>Hinweise:</strong><br />
+<span class="arithmatex">\(\sigma_\text{max}\)</span> tritt an den äußersten Fasern an der Einspannung auf (eine Seite Zug, gegenüberliegende Druck).
 Die Durchbiegung <span class="arithmatex">\(f\)</span> ist an der freien Spitze maximal.</p>
 </details>
 <p>Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie die daraus ermittelten prozentualen Abweichungen. Die prozentuale Abweichung wird berechnet als:</p>
@@ -1138,52 +1162,70 @@ Die Durchbiegung <span class="arithmatex">\(f\)</span> ist an der freien Spitze 
 <tr>
 <td>max. Normalspannung (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
 <td>390,6 N/mm²</td>
-<td>426,83 N/mm²</td>
-<td>9,28 %</td>
+<td>437,36 N/mm²</td>
+<td>11,97 %</td>
 </tr>
 <tr>
 <td>max. Durchbiegung (f)</td>
 <td>2,33 mm</td>
-<td>2,438 mm</td>
-<td>4,64 %</td>
+<td>2,5143 mm</td>
+<td>7,91 %</td>
 </tr>
 </tbody>
 </table>
 <h3 id="netzeinfluss">Netzeinfluss<a class="headerlink" href="#netzeinfluss" title="Permanent link">&para;</a></h3>
-<p>Im numerischen Modell führt daher eine Netzverfeinerung nicht zu einer Konvergenz gegen den theoretischen Wert, sondern zu einer zunehmenden Abweichung durch sehr lokale Spannungsspitze.</p>
+<p>Hier soll erneut der Einfluss der Vernetzung auf das Ergebnis untersucht werden. Ausgangspunkt ist das Standardnetz, das in mehreren Schritten weiter verfeinert wird.</p>
 <!-- markdownlint-disable MD033 -->
 
-<div class="plotly-chart" style="width:100%;height:500px"
-     data-fig='{
-       "data": [
-         { "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
-           "y": [57.528,61.47,105.38,136.92],
-           "name": "Max. Spannung (MPa)",
-           "type": "scatter", "mode": "lines+markers", "yaxis": "y"
-         },
-         { "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
-           "y": [621,1720,97981,736825],
-           "name": "Anzahl Knoten",
-           "type": "scatter", "mode": "lines+markers", "yaxis": "y2"
-         },
-         { "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
-           "y": [80,270,21600,172800],
-           "name": "Anzahl Elemente",
-           "type": "scatter", "mode": "lines+markers", "yaxis": "y2"
-         }
-       ],
-       "layout": {
-         "title": "Netzgröße vs. maximale Spannung, Knoten- und Elementeanzahl",
-         "xaxis": { "title": "Netzgröße", "showspikes": true, "spikemode": "across" },
-         "yaxis":  { "title": "Max. Spannung (MPa)" },
-         "yaxis2": { "title": "Knoten / Elemente", "overlaying": "y", "side": "right", "type": "log" },
-         "legend": { "x": 0.01, "y": 0.99 },
-         "hovermode": "x unified",
-         "hoverlabel": { "namelength": -1 }
-       },
-       "config": { "responsive": true }
-     }'>
-</div>
+<div class="plotly-chart" data-fig='{
+  "data": [
+    {
+      "x": ["Standardnetz", "5 mm", "2 mm", "1 mm", "0,5 mm"],
+      "y": [437.36, 406.62, 400.01, 394.11, 391.22],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Max. Spannung (MPa)",
+      "hovertemplate": "Netzgröße: %{x}<br>Max. Spannung: %{y:.2f} MPa"
+    },
+    {
+      "x": ["Standardnetz", "5 mm", "2 mm", "1 mm", "0,5 mm"],
+      "y": [621, 1720, 13873, 97981, 736825],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Anzahl Knoten",
+      "yaxis": "y2",
+      "hovertemplate": "Netzgröße: %{x}<br>Knoten: %{y:,d}"
+    },
+    {
+      "x": ["Standardnetz", "5 mm", "2 mm", "1 mm", "0,5 mm"],
+      "y": [80, 270, 2700, 21600, 172800],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Anzahl Elemente",
+      "yaxis": "y2",
+      "hovertemplate": "Netzgröße: %{x}<br>Elemente: %{y:,d}"
+    }
+  ],
+  "layout": {
+    "title": {"text": "Netzgröße vs. maximale Spannung, Knoten und Elemente", "x": 0.5},
+    "xaxis": {"title": "Netzgröße"},
+    "yaxis": {
+      "title": "Max. Spannung (MPa)",
+      "type": "linear"
+    },
+    "yaxis2": {
+      "title": "Knoten / Elemente",
+      "overlaying": "y",
+      "side": "right",
+      "type": "linear",
+      "tickformat": ",d"
+    },
+    "hovermode": "x unified",
+    "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"},
+    "margin": {"l": 80, "r": 80, "t": 80, "b": 80},
+    "legend": {"x": 0.02, "y": 0.98}
+  }
+}'></div>
 
 <!-- markdownlint-enable MD033 -->
 
@@ -1193,7 +1235,7 @@ Die Durchbiegung <span class="arithmatex">\(f\)</span> ist an der freien Spitze 
 <thead>
 <tr>
 <th>Netzgröße</th>
-<th>Max. Spannung</th>
+<th>Max. Normalspannung</th>
 <th>Anzahl Knoten</th>
 <th>Anzahl Elemente</th>
 </tr>
@@ -1201,34 +1243,38 @@ Die Durchbiegung <span class="arithmatex">\(f\)</span> ist an der freien Spitze 
 <tbody>
 <tr>
 <td>Standardnetz</td>
-<td>399,31 MPa</td>
+<td>437,36 MPa</td>
 <td>621</td>
 <td>80</td>
 </tr>
 <tr>
 <td>5 mm</td>
-<td>396,52 MPa</td>
+<td>406,62 MPa</td>
 <td>1 720</td>
 <td>270</td>
 </tr>
 <tr>
+<td>2 mm</td>
+<td>400,01 MPa</td>
+<td>13 873</td>
+<td>2 700</td>
+</tr>
+<tr>
 <td>1 mm</td>
-<td>580,04 MPa</td>
+<td>394,11 MPa</td>
 <td>97 981</td>
 <td>21 600</td>
 </tr>
 <tr>
 <td>0,5 mm</td>
-<td>746,88 MPa</td>
+<td>391,22 MPa</td>
 <td>736 825</td>
 <td>172 800</td>
 </tr>
 </tbody>
 </table>
 </details>
-<p>Auch bei der Biegung zeigt sich ein ähnliches Verhalten wie bei Zug: Die maximale Vergleichsspannung nimmt mit zunehmender Netzverfeinerung deutlich zu. Dieses Verhalten entspricht dem in der Zugaufgabe beobachteten Verlauf (vgl. <a href="#einfluss-des-netzes">Aufgabe Zug</a>).</p>
-<h3 id="einfluss-einspannung">Einfluss Einspannung<a class="headerlink" href="#einfluss-einspannung" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="../media/03_kragbalken/29_Krakbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Einfluss Einspannung"><img alt="Kragbalken Biegung – Einfluss Einspannung" src="../media/03_kragbalken/29_Krakbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<p>Im Rahmen dieser Studie zum Netzeinfluss wird folgendes Verhalten deutlich: Die maximale Vergleichsspannung sinkt mit zunehmender Netzverfeinerung und strebt gegen den in der analytischen Lösung gefundenen Wert. Dem entgegen steigt die Rechenzeit spürbar an.  </p>
 <h2 id="add-on-biegemoment-statt-kraft">Add-on: Biegemoment statt Kraft<a class="headerlink" href="#add-on-biegemoment-statt-kraft" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Hinweis</p>
@@ -1267,7 +1313,7 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 </li>
 <li>
 <p><strong>Moment</strong><br />
-  Lasttyp „Moment“ auf Fläche oder Kante.<br />
+  Lasttyp Moment auf Fläche oder Kante.<br />
   → Besonders geeignet, wenn gezielt ein konstantes Biegemoment ohne Querkraft wirken soll.  </p>
 </li>
 <li>
@@ -1282,10 +1328,11 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 </li>
 </ul>
 <p>Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt und Typ sehr unterschiedliche Ergebnisse liefern kann. Die Entscheidung, wie eine Last angesetzt wird, gehört deshalb zu den wesentlichen Modellierungsaufgaben im FEM.</p>
-<details class="danger" open="open">
-<summary>FIXME</summary>
-<p>Video hinzu?</p>
-</details>
+<h3 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Video hinzu</p>
+</div>
 <h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
 
@@ -1299,9 +1346,9 @@ Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßiger
 
 <div class="quiz"><h3>Warum ist die analytische Lösung bei der Biegung eines Kragbalkens wichtig?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" correct><label for="quiz-4-0">Sie dient als Referenz zur Überprüfung der FEM-Ergebnisse.</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">Sie ersetzt die Simulation vollständig.</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" ><label for="quiz-4-2">Sie zeigt nur qualitative Trends.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Analytische Vergleiche helfen, Modellfehler und Abweichungen im FEM-Modell zu erkennen.</section></div>
 
-<div class="quiz"><h3>Warum lässt eine fixe Einspannung keine Querkontraktion zu?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Weil das Material komplett starr wird.</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">Weil alle Freiheitsgrade festgehalten sind, auch Querdehnungen sind verhindert.</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Weil die Last dadurch nicht mehr wirkt.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Bei fester Einspannung sind *alle* Verschiebungen, auch in Querrichtung, gesperrt – somit ist keine Querkontraktion möglich.</section></div>
+<div class="quiz"><h3>Warum lässt eine fixe Einspannung keine Querkontraktion zu?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Weil das Material komplett starr wird.</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">Weil alle Freiheitsgrade festgehalten sind, auch Querdehnungen sind verhindert.</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Weil die Last dadurch nicht mehr wirkt.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Bei fester Einspannung sind alle Verschiebungen, auch in Querrichtung, gesperrt – somit ist keine Querkontraktion möglich.</section></div>
 
-<div class="quiz"><h3>Was kann man stattdessen einstellen, wenn man Querkontraktion zulassen will?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">Nichts, es bleibt immer fix.</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">Man lässt die Querverschiebung als Freiheitsgrad zu (_externe Verschiebung_).</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">Man ändert den Werkstoff auf viskos.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tipp:</em> Wenn Querkontraktion gewünscht ist, darf die Querverschiebung an der Einspannung nicht gesperrt sein.</section></div>
+<div class="quiz"><h3>Was kann man stattdessen einstellen, wenn man Querkontraktion zulassen will?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">Nichts, es bleibt immer fix.</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">Man lässt die Querverschiebung als Freiheitsgrad zu (externe Verschiebung).</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">Man ändert den Werkstoff auf viskos.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tipp:</em> Wenn Querkontraktion gewünscht ist, darf die Querverschiebung an der Einspannung nicht gesperrt sein.</section></div>
 
 <!-- markdownlint-enable MD033 -->
 <div class="footnote">
