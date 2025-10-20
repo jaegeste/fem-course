@@ -318,7 +318,7 @@ The following table shows the analytical results, the FEM results, and the resul
 
 | Quantity (Symbol)                     | Analytical Result  | FEM Result                       | Deviation [%] |
 |----------------------------------------|--------------------|-----------------------------------|---------------|
-| max. stress ($\sigma_\mathrm{max}$)    | 52.1 N/mm²          | 52.53 N/mm²                       | 0.83 %        |
+| max. stress ($\sigma_\mathrm{max}$)    | 52.1 N/mm²          | 57.53 N/mm²                   | 10.4 %        |
 | stress (σ) sample                      | 52.1 N/mm²          | 52.08 N/mm²                       | −0.04 %       |
 | beam elongation (Δl)                   | 0.037 mm            | 0.039 mm                          | 5.41 %        |
 | edge length reduction (Δa)             | 0.00089 mm          | 0.000944 mm (2 × 0.000472 mm)     | 6.07 %        |

@@ -7,6 +7,9 @@
   "markdown-preview-enhanced.liveUpdate": true,
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
+  "markdown.preview.scrollPreviewWithEditor": true,
+  "markdown.preview.scrollEditorWithPreview": true,
+  "markdown.preview.markEditorSelection": true
   "yaml.validate": true,
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "/*.github/workflows/*.yml"
