@@ -23,7 +23,7 @@ Inhalt:
 
     → Lernziele bitte überprüfen, anpassen und final freigeben.
 
-## Mathematische Grundlagen
+## Mathematische Grundlagen zur FEM
 
 Die FEM ist ein numerisches Verfahren zur näherungsweisen Lösung kontinuierlicher Feldprobleme. Dieses Kapitel erläutert die grundlegenden mathematischen Zusammenhänge der Methode. Betrachtet man die FEM als konstruktionsbegleitendes Werkzeug, spielt das Detailwissen zur Aufbereitung und Auswertung einer Simulation eine wichtige Rolle. Noch entscheidender ist jedoch das physikalische Verständnis des zugrunde liegenden Problems [@Gebhardt2018].
 
@@ -313,6 +313,36 @@ F_1 = -F
 Die hier gezeigten Beispiele sind analytisch lösbar. In realen Anwendungen entstehen jedoch sehr große Gleichungssysteme (oft mehrere Millionen Knoten), die nur näherungsweise und iterativ gelöst werden können. Etablierte Näherungsverfahren sind etwa die **Ritz-** und **Galerkin-Methoden** [@Betten2003].
 
 ---
+
+## Konvergenz und Divergenz
+
+## Aufgabe Kerbwirkung  
+
+## Theorie Kerbwirkung  
+
+## Umsetzung in ANSYS
+
+### 1. Projektverwaltung und Geometrieimport
+
+### 2. Materialzuweisung
+
+### 3. Netzgenerierung
+
+### 4. Randbedingungen
+
+### 5. Auswertung
+
+## Diskussion der Ergebnisse
+
+### Abgleich mit analytischer Lösung
+
+vielleicht auch erst nach dem Netzeinfluss
+
+### Netzeinfluss
+
+hier dann Diskussion Rechenzeit, Darstellung in Tabelle
+Konvergenz
+Reduktion der Rechenzeit
 
 <!-- 
 ## Literatur
