@@ -1029,19 +1029,11 @@ This leads to <strong>edge stress peaks</strong> not predicted analytically.<br 
 <p>An <em>external displacement</em> offers more configuration options since individual <strong>translational and rotational degrees of freedom</strong> can be selectively released or constrained, and <strong>Poisson’s effect</strong> can either be allowed or suppressed. The latter is controlled via the setting <em>Behavior: Deformable</em>.</p>
 <p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="External displacement"><img alt="External displacement" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a></p>
 <p>With a <em>deformable external displacement</em> as boundary condition, the <strong>total deformation</strong> is 0.0391 mm.</p>
-<p><a class="glightbox" href="media/03_kragbalken/18_Kragbalken_Auswertung.en.png" title="Total deformation with external displacement"><img alt="Total deformation with external displacement" src="media/03_kragbalken/18_Kragbalken_Auswertung.en.png" width="600px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot missing – 18_Kragbalken_Auswertung.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Total deformation with external displacement"><img alt="Total deformation with external displacement" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a></p>
 <p>The <strong>von Mises stress</strong> shows the expected constant distribution across the entire component. There are no longer any stress peaks in the fixed region; Poisson’s effect is enabled. The von Mises stress is 52.083 MPa.  </p>
 <p><a class="glightbox" href="../media/03_kragbalken/20_Kragbalken_Auswertung.png" title="von Mises stress with external displacement"><img alt="von Mises stress with external displacement" src="../media/03_kragbalken/20_Kragbalken_Auswertung.png" width="600px" /></a></p>
 <p>The <strong>deformation result</strong> in the x-direction is 0.000469 mm.</p>
-<p><a class="glightbox" href="media/03_kragbalken/19_Kragbalken_Auswertung.en.png" title="Deformation in x-direction with external displacement"><img alt="Deformation in x-direction with external displacement" src="media/03_kragbalken/19_Kragbalken_Auswertung.en.png" width="600px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot missing – 19_Kragbalken_Auswertung.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/03_kragbalken/19_Kragbalken_Auswertung.png" title="Deformation in x-direction with external displacement"><img alt="Deformation in x-direction with external displacement" src="../media/03_kragbalken/19_Kragbalken_Auswertung.png" width="600px" /></a></p>
 <hr />
 <h2 id="task-bending">Task bending<a class="headerlink" href="#task-bending" title="Permanent link">&para;</a></h2>
 <p>Implement the following model for the cantilever beam and compute the maximum stress and the maximum deflection. Also use the geometry from <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a>.</p>
@@ -1100,17 +1092,9 @@ Geometry import, material assignment, and mesh generation are identical to the t
 <li><strong>Force (bending)</strong> on the right end face  </li>
 </ul>
 <p>The direction of the force is perpendicular to the beam axis, with magnitude <span class="arithmatex">\(F_B\)</span> according to the task definition. The direction can either be defined via <strong>Define by vector</strong>, by selecting an appropriate edge to specify the direction (note the arrow orientation), or via <strong>Define by components</strong>, where the magnitude is entered directly in global coordinates.  </p>
-<p><a class="glightbox" href="media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png" title="Cantilever bending – force"><img alt="Cantilever bending – force" src="media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png" width="800px" /></a>  </p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot missing – 22_kragbalken_biegung_randbedingungen.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png" title="Cantilever bending – force"><img alt="Cantilever bending – force" src="../media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png" width="800px" /></a>  </p>
 <p>The boundary conditions are thus as follows:  </p>
-<p><a class="glightbox" href="media/03_kragbalken/21_kragbalken_biegung.en.png" title="Cantilever bending – boundary conditions"><img alt="Cantilever bending – boundary conditions" src="media/03_kragbalken/21_kragbalken_biegung.en.png" width="800px" /></a>  </p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot missing – 21_kragbalken_biegung.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/03_kragbalken/21_kragbalken_biegung.png" title="Cantilever bending – boundary conditions"><img alt="Cantilever bending – boundary conditions" src="../media/03_kragbalken/21_kragbalken_biegung.png" width="800px" /></a>  </p>
 <h3 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h3>
 <p>As described <a href="#5-evaluation">above</a>, the following two results are first examined:</p>
 <ul>
@@ -1126,17 +1110,9 @@ Geometry import, material assignment, and mesh generation are identical to the t
 <h2 id="discussion-of-the-results-bending">Discussion of the results, bending<a class="headerlink" href="#discussion-of-the-results-bending" title="Permanent link">&para;</a></h2>
 <h3 id="comparison-with-analytical-solution_1">Comparison with analytical solution<a class="headerlink" href="#comparison-with-analytical-solution_1" title="Permanent link">&para;</a></h3>
 <p>The total deformation shows a maximum <strong>deflection</strong> of the beam of 2.5143 mm.</p>
-<p><a class="glightbox" href="media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png" title="Cantilever bending – maximum deflection"><img alt="Cantilever bending – maximum deflection" src="media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png" width="800px" /></a>  </p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot missing – 23_Kragbalken_Biegung_Auswertung.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" title="Cantilever bending – maximum deflection"><img alt="Cantilever bending – maximum deflection" src="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
 <p>The <strong>maximum von Mises stress</strong> is 479.71 MPa and appears as a stress peak at the corners of the fixed face (red region).  </p>
-<p><a class="glightbox" href="media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png" title="Cantilever bending – maximum von Mises stress"><img alt="Cantilever bending – maximum von Mises stress" src="media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png" width="800px" /></a>  </p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot missing – 24_Kragbalken_Biegung_Auswertung.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" title="Cantilever bending – maximum von Mises stress"><img alt="Cantilever bending – maximum von Mises stress" src="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
 <p>The <strong>maximum normal stress</strong> according to the figure above is 437.36 MPa.  </p>
 <p>When evaluating the results, note that a <em>probe</em> of the stress field is not meaningful here. The maximum stress occurs in a very small region near the fixed end and is highly localized.</p>
 <p>The following box contains the analytical solution. Perform the calculation yourself first, using the <a href="#theoretical-background-bending">bending theory</a> presented above.</p>
@@ -1316,11 +1292,7 @@ This results in a beam <strong>free of shear forces</strong> with a more uniform
 <li>Implementation: Load type <em>Moment</em> applied to the end face.  </li>
 <li>Observation: Uniform distribution, no singularity caused by force introduction.  </li>
 </ul>
-<p><a class="glightbox" href="media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.en.png" title="Cantilever bending – bending moment"><img alt="Cantilever bending – bending moment" src="media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.en.png" width="800px" /></a>  </p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot missing – 30_Kragbalken_Biegung_Auswertung.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.png" title="Cantilever bending – bending moment"><img alt="Cantilever bending – bending moment" src="../media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
 <hr />
 <h2 id="further-notes">Further Notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
 <h3 id="variants-of-load-application">Variants of Load Application<a class="headerlink" href="#variants-of-load-application" title="Permanent link">&para;</a></h3>
