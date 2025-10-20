@@ -1,0 +1,92 @@
+/* Engere Listenabstände */
+.md-typeset ul li,
+.md-typeset ol li {
+  margin-bottom: 0.1em;
+}
+
+/* Moderner Aufzählungspunkt: ▪ für normale Listen */
+.md-typeset ul li::marker,
+.md-typeset ol li::marker {
+  content: "▪  ";
+  color: var(--md-primary-fg-color);
+  font-size: 1em;
+}
+
+/* Ausnahme: Fußnoten nicht überschreiben */
+.md-typeset .footnote li::marker {
+  content: counter(list-item) ". ";
+  color: inherit;
+  font-size: 1em;
+}
+
+/* Weniger Abstand zwischen Überschriften und folgendem Absatz */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  margin-bottom: 0.2em;
+  margin-top: 0.2em;
+}
+
+/* Weniger Abstand zwischen Absätzen */
+.md-typeset p {
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+
+/* straffer Zeilenabstand innerhalb von Listen */
+.md-typeset ul,
+.md-typeset ol {
+  line-height: 1.3;
+}
+
+/* Korrekte Darstellung von Fußnotenreferenzen */
+.footnote-ref {
+  display: inline;
+  font-size: 0.8em;
+  vertical-align: super;
+}
+
+.footnote-ref a {
+  color: var(--md-default-fg-color);
+  text-decoration: none;
+}
+
+/* Optional: Stil für Fußnotentext selbst */
+.md-typeset .footnote {
+  font-size: 0.9em;
+  margin-top: 1em;
+}
+
+.bildquelle {
+  display: block;
+  margin-top: 0.2em;
+  font-size: 0.75em;
+  color: #666; /* Grau, Theme-kompatibel */
+  font-style: italic;
+}
+
+/* === Klarere Abhebung der Überschriften H1–H3 === */
+.md-typeset h1 {
+  border-bottom: 2px solid #aaa;
+  padding-bottom: 0.3em;
+  margin-bottom: 0.6em;
+  margin-top: 1.2em;
+}
+
+.md-typeset h2 {
+  border-bottom: 1px solid #bbb;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.5em;
+  margin-top: 1.0em; /* << hier steuerst du den Abstand nach oben */
+}
+
+.md-typeset h3 {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.2em;
+  margin-bottom: 0.4em;
+  margin-top: 0.8em;
+}
+

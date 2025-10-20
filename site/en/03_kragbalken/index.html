@@ -1,0 +1,1568 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/03_kragbalken/">
+      
+      
+        <link rel="prev" href="../02_installation_erste_schritte/">
+      
+      
+        <link rel="next" href="../04_kerbwirkung/">
+      
+      
+      <link rel="icon" href="../../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Module 1 Cantilever Beam - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../overrides/main.css">
+    
+      <link rel="stylesheet" href="../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-1-cantilever-beam" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 1 Cantilever Beam
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../03_kragbalken/" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation and getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Module 1 Cantilever Beam
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 1 Cantilever Beam
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task tensile load
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-background-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Background, tensile load
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys-mechanical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS Mechanical
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-results-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of Results, Tensile Load
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-background-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Background, Bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-the-results-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of the results, bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-on-bending-moment-instead-of-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add-on: Bending Moment Instead of Force
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-assessment quiz
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 2 Stress Concentration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task tensile load
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-background-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Background, tensile load
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys-mechanical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS Mechanical
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-results-tensile-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of Results, Tensile Load
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-background-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Background, Bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-the-results-bending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of the results, bending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-on-bending-moment-instead-of-force" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add-on: Bending Moment Instead of Force
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#further-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Further Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Self-assessment quiz
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-1-cantilever-beam">Module 1 Cantilever Beam<a class="headerlink" href="#module-1-cantilever-beam" title="Permanent link">&para;</a></h1>
+<h2 id="learning-objectives">Learning objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>First use of ANSYS Workbench and ANSYS Mechanical.</li>
+<li>Understanding boundary conditions and load cases for a cantilever beam.</li>
+<li>Application of the von Mises stress to assess strength.</li>
+<li>Comparison of simulation results with analytical calculations.</li>
+<li>Understanding the influence of the type of support and the choice of boundary conditions.</li>
+</ul>
+<hr />
+<h2 id="task-tensile-load">Task tensile load<a class="headerlink" href="#task-tensile-load" title="Permanent link">&para;</a></h2>
+<p>For the cantilever beam with square cross-section shown in the figure, calculate the maximum stress and deformation using ANSYS Mechanical.  </p>
+<ul>
+<li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Edge length: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Force: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
+<li>Material: Structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+</ul>
+<p>Download the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> and import it into ANSYS Workbench.</p>
+<p>Compare your result with the analytical solution and discuss any deviations.  </p>
+<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_zug.svg" title="Cantilever beam, tensile load"><img alt="Cantilever beam, tensile load" src="../../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
+<hr />
+<h2 id="theoretical-background-tensile-load">Theoretical Background, tensile load<a class="headerlink" href="#theoretical-background-tensile-load" title="Permanent link">&para;</a></h2>
+<h3 id="hookes-law">Hooke’s Law<a class="headerlink" href="#hookes-law" title="Permanent link">&para;</a></h3>
+<p>The calculation is based on <strong>Hooke’s Law</strong>. It describes the linear relationship between stress and strain in the elastic range of a material.</p>
+<div class="arithmatex">\[
+\sigma = \frac{F}{A},  
+\quad \varepsilon = \frac{\Delta l}{l},  
+\quad E = \frac{\sigma}{\varepsilon}
+\]</div>
+<p>with  </p>
+<ul>
+<li><span class="arithmatex">\( \sigma \)</span>: normal stress  </li>
+<li><span class="arithmatex">\( F \)</span>: applied force  </li>
+<li><span class="arithmatex">\( A = a^2 \)</span>: cross-sectional area of the beam  </li>
+<li><span class="arithmatex">\( \varepsilon \)</span>: strain in the direction of loading  </li>
+<li><span class="arithmatex">\( E \)</span>: modulus of elasticity (material constant)  </li>
+</ul>
+<p>The <strong>elongation</strong> is calculated as:</p>
+<div class="arithmatex">\[
+\Delta l = \frac{F \cdot l}{A \cdot E}
+\]</div>
+<h3 id="lateral-contraction">Lateral Contraction<a class="headerlink" href="#lateral-contraction" title="Permanent link">&para;</a></h3>
+<p>In addition to the strain in the loading direction, a lateral contraction occurs. It is described by the <strong>Poisson’s ratio</strong> (<span class="arithmatex">\(\nu\)</span>). It defines the ratio of transverse strain to longitudinal strain.</p>
+<p><a class="glightbox" href="../../media/03_kragbalken/querkontraktion.svg" title="lateral contraction"><img alt="lateral contraction" src="../../media/03_kragbalken/querkontraktion.svg" width="700" /></a><br />
+<span class="bildquelle">Bildquelle nach <sup id="fnref:Altenbach2016"><a class="footnote-ref" href="#fn:Altenbach2016">1</a></sup></span></p>
+<div class="arithmatex">\[
+\nu \;=\; - \frac{\varepsilon_q}{\varepsilon_l}
+\]</div>
+<p>with  </p>
+<div class="arithmatex">\[
+\varepsilon_l = \frac{\Delta l}{l},  
+\qquad
+\varepsilon_q = \frac{\Delta a}{a}
+\]</div>
+<ul>
+<li><span class="arithmatex">\( \varepsilon_l \)</span>: longitudinal strain  </li>
+<li><span class="arithmatex">\( \varepsilon_q \)</span>: transverse strain  </li>
+<li><span class="arithmatex">\( \Delta l \)</span>: elongation  </li>
+<li><span class="arithmatex">\( \Delta a \)</span>: change in cross-section (e.g. edge length for a square beam)  </li>
+<li><span class="arithmatex">\( l, a \)</span>: original length and cross-section dimension  </li>
+</ul>
+<p>Thus:</p>
+<div class="arithmatex">\[
+\varepsilon_q = -\nu \cdot \varepsilon_l
+\]</div>
+<p>For steel, <span class="arithmatex">\(\nu \approx 0{,}3\)</span>.<br />
+This means that with a longitudinal strain of 1 %, the cross-section shortens transversely by about 0.3 %.  </p>
+<h3 id="stress-strain-diagram">Stress-Strain Diagram<a class="headerlink" href="#stress-strain-diagram" title="Permanent link">&para;</a></h3>
+<p>Hooke’s Law applies only in the <strong>linear elastic range</strong> of a material. This range appears as a straight line in the stress-strain diagram.  </p>
+<p>The first diagram shows the behavior of a material <strong>without a distinct yield point</strong>. After the linear increase up to the proof stress, the curve gradually transitions into the plastic range. This is typical for many non-ferrous metals such as aluminum:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" title="Stress-strain curve without distinct yield point"><img alt="Stress-strain curve without distinct yield point" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" width="450" /></a><br />
+<span class="bildquelle">Image source based on<sup id="fnref:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
+<p>The second diagram shows the behavior of a material <strong>with a distinct yield point</strong>, as is typical for structural steel. The linear range ends abruptly, followed by a plateau with nearly constant stress, before the plastic increase begins:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" title="Stress-strain curve with distinct yield point"><img alt="Stress-strain curve with distinct yield point" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" width="450" /></a><br />
+<span class="bildquelle">Image source based on<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
+<p>For the calculation of the cantilever beam in this exercise, the load lies within the <strong>elastic range</strong>. Hooke’s Law is therefore sufficient.</p>
+<hr />
+<h2 id="implementation-in-ansys-mechanical">Implementation in ANSYS Mechanical<a class="headerlink" href="#implementation-in-ansys-mechanical" title="Permanent link">&para;</a></h2>
+<h3 id="1-geometry-import">1. Geometry Import<a class="headerlink" href="#1-geometry-import" title="Permanent link">&para;</a></h3>
+<p>Load the file <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> into ANSYS Workbench.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/01_Kragbalken_Geometrieimport.png" title="Cantilever beam, geometry import"><img alt="Cantilever beam, geometry import" src="../media/03_kragbalken/01_Kragbalken_Geometrieimport.png" width="600px" /></a>  </p>
+<p>The dimensions of the bounding box provide a quick indication of whether the imported geometry is in the correct units.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png" title="Cantilever beam, bounding box"><img alt="Cantilever beam, bounding box" src="../media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png" width="600px" /></a>  </p>
+<h3 id="2-material-assignment">2. Material Assignment<a class="headerlink" href="#2-material-assignment" title="Permanent link">&para;</a></h3>
+<p>By default, ANSYS assigns structural steel as the material. Before further use, the respective material properties should be verified to ensure suitability for the intended application.</p>
+<p>View under <em>Geometry:</em></p>
+<p><a class="glightbox" href="../media/03_kragbalken/03_Kragbalken_Materialdefinition.png" title="Cantilever beam, material definition"><img alt="Cantilever beam, material definition" src="../media/03_kragbalken/03_Kragbalken_Materialdefinition.png" width="600px" /></a>  </p>
+<p>View under <em>Materials:</em></p>
+<p><a class="glightbox" href="../media/03_kragbalken/04_Kragbalken_Materialdefinition.png" title="Cantilever beam, material definition"><img alt="Cantilever beam, material definition" src="../media/03_kragbalken/04_Kragbalken_Materialdefinition.png" width="600px" /></a>  </p>
+<h3 id="3-meshing">3. Meshing<a class="headerlink" href="#3-meshing" title="Permanent link">&para;</a></h3>
+<p>For the calculation, the component is divided into finite elements connected by nodes. This process is called <strong>meshing</strong>.  </p>
+<ul>
+<li>
+<p>First, use Mesh/Create to generate a <strong>global automatic mesh</strong>.<br />
+  ANSYS assigns an element size that applies to the entire model.<br />
+  The mesh is created quickly and uniformly but is often not optimal for local details.  </p>
+</li>
+<li>
+<p>In the second step, the <strong>element size is varied</strong> to investigate the <strong>mesh sensitivity</strong>.<br />
+  The goal is to check whether the results (stress, deformation) remain stable when the mesh is refined.<br />
+  Only when the results change minimally can the solution be considered reliable.  </p>
+</li>
+</ul>
+<p>From an FEM perspective:  </p>
+<ul>
+<li>Mesh too coarse → short computation time, but potentially inaccurate results.  </li>
+<li>Mesh too fine → high accuracy, but significantly longer computation time.  </li>
+<li>The optimal mesh provides <strong>sufficiently accurate results</strong> without generating an unnecessary number of elements.  </li>
+</ul>
+<p><a class="glightbox" href="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" title="Cantilever beam, mesh definition"><img alt="Cantilever beam, mesh definition" src="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" width="600px" /></a>  </p>
+<h3 id="4-boundary-conditions">4. Boundary Conditions<a class="headerlink" href="#4-boundary-conditions" title="Permanent link">&para;</a></h3>
+<p>Considering the problem statement, two boundary conditions are obvious:</p>
+<ul>
+<li><strong>Fixed support</strong> at the left end  </li>
+<li><strong>Tensile force</strong> <span class="arithmatex">\( F \)</span> at the right face  </li>
+</ul>
+<p>The fixed support is modeled in ANSYS by blocking <strong>all degrees of freedom</strong> of the selected face. Concretely: translations in <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, and <span class="arithmatex">\(z\)</span> directions as well as rotations about all three axes are prevented. Physically, this represents the connection of the beam to a rigid environment.  </p>
+<p>The tensile force is applied at the right face. In ANSYS this is done as a <strong>total force</strong>, distributed evenly over the entire face. This ensures the load is not applied at a point (which would cause a singularity) but is realistically distributed.  </p>
+<p>From an FEM perspective:</p>
+<ul>
+<li>The fixed support creates a <strong>displacement boundary condition</strong>:<br />
+  Nodes cannot move → reaction forces develop.</li>
+<li>The tensile force creates a <strong>load condition</strong>:<br />
+  Nodes experience additional external forces → leading to stresses and deformations.  </li>
+</ul>
+<p>Together, the combination of <strong>displacement-controlled</strong> and <strong>force-controlled</strong> conditions forms a <strong>closed system of equations</strong> for the FEM solver.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" title="Cantilever beam, boundary conditions"><img alt="Cantilever beam, boundary conditions" src="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" title="Cantilever beam, boundary conditions"><img alt="Cantilever beam, boundary conditions" src="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
+<details class="note" open="open">
+<summary>Modelling note</summary>
+<p>If the force is applied only to a small edge or a single node, unrealistically high local stresses (singularities) will occur. Therefore, always select a surface to distribute the load realistically.</p>
+</details>
+<h3 id="5-evaluation">5. Evaluation<a class="headerlink" href="#5-evaluation" title="Permanent link">&para;</a></h3>
+<p>Two results are examined in ANSYS:</p>
+<ul>
+<li><strong>Total deformation</strong>  </li>
+<li><strong>von Mises stress</strong></li>
+</ul>
+<p>The deformation shows the total displacement of the component. In ANSYS, it is usually displayed in an exaggerated form so that the shape change is clearly visible. It is important to note that this is a <strong>scaling for visualization purposes</strong> — the actual values can be found in the results tables.  </p>
+<p>The von Mises stress is a reference value that combines the effects of all normal and shear stresses into a single “equivalent” stress:</p>
+<div class="arithmatex">\[
+\sigma_\text{vM} = \sqrt{\frac{1}{2} \left[(\sigma_x-\sigma_y)^2 + (\sigma_y-\sigma_z)^2 + (\sigma_z-\sigma_x)^2 \right] + 3(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2)}
+\]</div>
+<p>This value is useful for comparing with allowable stresses. For this tensile beam in the elastic range, the von Mises stress should be close to the analytical normal stress.  </p>
+<p>Steps in ANSYS:</p>
+<ol>
+<li>Select <strong>total deformation</strong> → check magnitude and plausibility.  </li>
+<li>Display <strong>von Mises stress</strong> → compare with analytical stress.  </li>
+<li>. <strong>Deformation result</strong> with selection of a direction (here: global x-axis) → evaluation of lateral contraction.  </li>
+</ol>
+<p>Selection via the context menu of <em>Solution</em>:  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/08_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="../media/03_kragbalken/08_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/10_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="../media/03_kragbalken/10_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Alternatively, by right-clicking on <em>Solution</em> in the tree structure:  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/10a_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="../media/03_kragbalken/10a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Here with selection of the global x-axis to evaluate the cross-section change:  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" title="Cantilever beam, add solutions"><img alt="Cantilever beam, add solutions" src="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<hr />
+<h2 id="discussion-of-results-tensile-load">Discussion of Results, Tensile Load<a class="headerlink" href="#discussion-of-results-tensile-load" title="Permanent link">&para;</a></h2>
+<h3 id="comparison-with-analytical-solution">Comparison with Analytical Solution<a class="headerlink" href="#comparison-with-analytical-solution" title="Permanent link">&para;</a></h3>
+<p>Expectation: very good agreement of average stress and deformation.</p>
+<p><strong>Results from ANSYS:</strong></p>
+<p>The total deformation shows an elongation of the beam by 0.03895 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/09_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/09_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>The <strong>maximum equivalent stress</strong> (von Mises) is 57.528 MPa. It appears as a stress peak at the corners of the fixed surface (red area).</p>
+<p><a class="glightbox" href="../media/03_kragbalken/11_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/11_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Using a <em>Probe</em> taken slightly away from the fixed support, the equivalent stress (von Mises) is 52.082 MPa.</p>
+<p><strong>Note:</strong> The <em>Probe</em> can be found in the <em>Result</em> context menu. There, the minimum and maximum values of the respective result can also be displayed.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>The <strong>deformation result</strong> in the x-axis direction is 0.000472 mm.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>The following box contains the analytical solution. First, carry out the calculation yourself and use the <a href="#theoretical-background-tensile-load">theory presented above</a>.</p>
+<details class="note">
+<summary>Calculation of Δl, Δa and σ</summary>
+<p>For the analytical solution, the elongation Δl, the cross-section change Δa, and the normal stress σ are calculated.</p>
+<p><strong>Stress</strong></p>
+<div class="arithmatex">\[
+\sigma = \frac{F}{A}
+\]</div>
+<p>With the given values:</p>
+<div class="arithmatex">\[
+F = 7{.}500 \,\text{N}, \quad A = 144 \,\text{mm}^2
+\]</div>
+<div class="arithmatex">\[
+\sigma = \frac{7{.}500 \,\text{N}}{144 \,\text{mm}^2} \approx 52{,}1 \,\text{N/mm}^2
+\]</div>
+<p><strong>Elongation</strong></p>
+<div class="arithmatex">\[
+\Delta l = \frac{F \cdot l}{A \cdot E}
+\]</div>
+<p>Using the given values:</p>
+<div class="arithmatex">\[
+l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
+\]</div>
+<div class="arithmatex">\[
+\Delta l = \frac{7{.}500 \,\text{N}\cdot 150 \,\text{mm}}{144 \,\text{mm}^2\cdot 210{.}000 \,\text{N/mm}^2} 
+         \approx 0{,}037 \,\text{mm}
+\]</div>
+<p><strong>Cross-section Change</strong></p>
+<p>Using the Poisson’s ratio <span class="arithmatex">\(\nu = 0{,}3\)</span>:</p>
+<div class="arithmatex">\[
+\varepsilon_q = - \nu \cdot \varepsilon_l
+\]</div>
+<p>with  </p>
+<div class="arithmatex">\[
+\varepsilon_l = \frac{\Delta l}{l} = \frac{0{,}037 \,\text{mm}}{150 \,\text{mm}} \approx 2{,}47 \cdot 10^{-4}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_q = -0{,}3 \cdot 2{,}47 \cdot 10^{-4}
+              \approx -7{,}4 \cdot 10^{-5}
+\]</div>
+<p>Thus, the cross-section change is:</p>
+<div class="arithmatex">\[
+\Delta a = \varepsilon_q \cdot a = -7{,}4 \cdot 10^{-5} \cdot 12 \,\text{mm}
+        \approx -8{,}9 \cdot 10^{-4} \,\text{mm}
+\]</div>
+<p><strong>Result:</strong><br />
+* Normal stress: approx. <strong>52 N/mm²</strong><br />
+* Beam elongation: approx. <strong>0.037 mm</strong><br />
+* Reduction of edge length: approx. <strong>0.0009 mm</strong></p>
+</details>
+<p>The following table shows the analytical results, the FEM results, and the resulting percentage deviations. The percentage deviation is calculated as:</p>
+<div class="arithmatex">\[
+\text{Deviation} = \frac{\text{FEM} - \text{Analytical}}{\text{Analytical}} \times 100
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Quantity (Symbol)</th>
+<th>Analytical Result</th>
+<th>FEM Result</th>
+<th>Deviation [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max. stress (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
+<td>52.1 N/mm²</td>
+<td>57.53 N/mm²</td>
+<td>10.4 %</td>
+</tr>
+<tr>
+<td>stress (σ) sample</td>
+<td>52.1 N/mm²</td>
+<td>52.08 N/mm²</td>
+<td>−0.04 %</td>
+</tr>
+<tr>
+<td>beam elongation (Δl)</td>
+<td>0.037 mm</td>
+<td>0.039 mm</td>
+<td>5.41 %</td>
+</tr>
+<tr>
+<td>edge length reduction (Δa)</td>
+<td>0.00089 mm</td>
+<td>0.000944 mm (2 × 0.000472 mm)</td>
+<td>6.07 %</td>
+</tr>
+</tbody>
+</table>
+<p>The results are generally in good agreement with the analytical solution. More noticeable deviations occur only for the maximum equivalent stress, caused by local stress peaks (singularities) at the corners of the fixed support.  </p>
+<p>For such a simple problem, deviations of 5–6% are relatively high, and a nearly exact match would be expected. The observed difference is primarily due to stress peaks at the corner and should be further investigated.</p>
+<p>Possible initial measures for improvement:  </p>
+<ul>
+<li>Analysis of the influence of <strong>meshing</strong>  </li>
+<li>Analysis of the influence of the <strong>fixed support</strong></li>
+</ul>
+<h3 id="mesh-influence">Mesh Influence<a class="headerlink" href="#mesh-influence" title="Permanent link">&para;</a></h3>
+<p>As a general rule:</p>
+<ul>
+<li>Coarse mesh → less accurate.  </li>
+<li>Fine mesh → more accurate but longer time.  </li>
+<li>Aim: results independent of mesh (mesh influence minimized).  </li>
+</ul>
+<p>As introduced in <a href="../02_installation_erste_schritte/#basics-of-meshing">Basics of Meshing</a>, manually specifying the global element size is the simplest way to refine the mesh.</p>
+<p>Result near the fixed support with a global element size of <strong>5 mm</strong></p>
+<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Result near the fixed support with a global element size of <strong>1 mm</strong></p>
+<p><a class="glightbox" href="../media/03_kragbalken/15_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/15_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Result near the fixed support with a global element size of <strong>0.5 mm</strong></p>
+<p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Cantilever beam, solutions"><img alt="Cantilever beam, solutions" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Considering the maximum equivalent stress, there is a clear increase from one refinement step to the next. This may indicate <strong>divergence</strong>, meaning that the calculated value does not converge to a fixed limit as the mesh is refined, but instead continues to increase (cf. <a href="./#4-boundary-conditions">singularities caused by applying a load to a point or an edge</a>).</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Standard mesh","5 mm","1 mm","0.5 mm"],
+           "y": [57.528,61.47,105.38,136.92],
+           "name": "Max. stress (MPa)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["57.528 MPa","61.47 MPa","105.38 MPa","136.92 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard mesh","5 mm","1 mm","0.5 mm"],
+           "y": [621,1720,97981,736825],
+           "name": "Number of nodes",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["621","1 720","97 981","736 825"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard mesh","5 mm","1 mm","0.5 mm"],
+           "y": [80,270,21600,172800],
+           "name": "Number of elements",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["80","270","21 600","172 800"],
+           "hovertemplate": "%{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Mesh size vs. maximum stress, number of nodes and elements",
+         "xaxis": {"title": "Mesh size"},
+         "yaxis": {"title": "Max. stress (MPa)"},
+         "yaxis2": {"title": "Nodes / Elements", "overlaying": "y", "side": "right"},
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Mesh refinement results as a table</summary>
+<table>
+<thead>
+<tr>
+<th>Mesh size</th>
+<th>Max. stress</th>
+<th>Number of nodes</th>
+<th>Number of elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard mesh</td>
+<td>57.528 MPa</td>
+<td>621</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5 mm</td>
+<td>61.47 MPa</td>
+<td>1,720</td>
+<td>270</td>
+</tr>
+<tr>
+<td>1 mm</td>
+<td>105.38 MPa</td>
+<td>97,981</td>
+<td>21,600</td>
+</tr>
+<tr>
+<td>0.5 mm</td>
+<td>136.92 MPa</td>
+<td>736,825</td>
+<td>172,800</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="influence-of-the-support">Influence of the support<a class="headerlink" href="#influence-of-the-support" title="Permanent link">&para;</a></h3>
+<p>In reality, the beam can contract laterally.<br />
+In the FEM model with fixed support, this <strong>lateral contraction is locally prevented</strong>.<br />
+This leads to <strong>edge stress peaks</strong> not predicted analytically.<br />
+→ Explains deviations near the support.</p>
+<p>An <em>external displacement</em> offers more configuration options since individual <strong>translational and rotational degrees of freedom</strong> can be selectively released or constrained, and <strong>Poisson’s effect</strong> can either be allowed or suppressed. The latter is controlled via the setting <em>Behavior: Deformable</em>.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="External displacement"><img alt="External displacement" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>With a <em>deformable external displacement</em> as boundary condition, the <strong>total deformation</strong> is 0.0391 mm.</p>
+<p><a class="glightbox" href="media/03_kragbalken/18_Kragbalken_Auswertung.en.png" title="Total deformation with external displacement"><img alt="Total deformation with external displacement" src="media/03_kragbalken/18_Kragbalken_Auswertung.en.png" width="600px" /></a></p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 18_Kragbalken_Auswertung.en.png</p>
+</div>
+<p>The <strong>von Mises stress</strong> shows the expected constant distribution across the entire component. There are no longer any stress peaks in the fixed region; Poisson’s effect is enabled. The von Mises stress is 52.083 MPa.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/20_Kragbalken_Auswertung.png" title="von Mises stress with external displacement"><img alt="von Mises stress with external displacement" src="../media/03_kragbalken/20_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>The <strong>deformation result</strong> in the x-direction is 0.000469 mm.</p>
+<p><a class="glightbox" href="media/03_kragbalken/19_Kragbalken_Auswertung.en.png" title="Deformation in x-direction with external displacement"><img alt="Deformation in x-direction with external displacement" src="media/03_kragbalken/19_Kragbalken_Auswertung.en.png" width="600px" /></a></p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 19_Kragbalken_Auswertung.en.png</p>
+</div>
+<hr />
+<h2 id="task-bending">Task bending<a class="headerlink" href="#task-bending" title="Permanent link">&para;</a></h2>
+<p>Implement the following model for the cantilever beam and compute the maximum stress and the maximum deflection. Also use the geometry from <a href="../../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a>.</p>
+<ul>
+<li>Length: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Edge length: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Force: <span class="arithmatex">\( F_B = 750 \,\text{N} \)</span>  </li>
+<li>Material: structural steel with yield strength <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span></li>
+</ul>
+<p>Address the following topics:</p>
+<ul>
+<li>Comparison with the analytical solution (maximum stress and deflection)  </li>
+<li>Identification of the location of maximum stress (numerically and analytically)  </li>
+<li>Display of tensile and compressive stresses in ANSYS  </li>
+</ul>
+<p><a class="glightbox" href="../../media/03_kragbalken/kragbalken_biegung.svg" title="Cantilever beam, bending"><img alt="Cantilever beam, bending" src="../../media/03_kragbalken/kragbalken_biegung.svg" width="500px" /></a></p>
+<hr />
+<h2 id="theoretical-background-bending">Theoretical Background, Bending<a class="headerlink" href="#theoretical-background-bending" title="Permanent link">&para;</a></h2>
+<p>In bending, a force acting perpendicular to the beam axis generates a moment that causes tensile and compressive stresses in the outer fibers. The neutral axis remains free of stress. For small deflections and linear material behavior, the Bernoulli hypothesis applies, stating that cross sections remain plane and only rotate.</p>
+<p>The <strong>maximum bending moment</strong> of a cantilever beam with an applied force <span class="arithmatex">\(F_B\)</span> and length <span class="arithmatex">\(l\)</span> is given by</p>
+<div class="arithmatex">\[
+M_B = F_B \cdot l
+\]</div>
+<p>The <strong>section modulus</strong> <span class="arithmatex">\(W_b\)</span> describes the geometry-dependent stiffness of the cross section. For a square cross section with side length <span class="arithmatex">\(a\)</span>, it is</p>
+<div class="arithmatex">\[
+W_b = \frac{a^3}{6}
+\]</div>
+<p>Table of additional section moduli and second moments of area:</p>
+<p><a class="glightbox" href="../../media/03_kragbalken/29_Fl%C3%A4chenmomente_Dubbel.png" title="Second moments of area and section moduli"><img alt="Second moments of area and section moduli" src="../../media/03_kragbalken/29_Fl%C3%A4chenmomente_Dubbel.png" width="250px" /></a>
+<span class="bildquelle">Image source<sup id="fnref:Dubbel2020"><a class="footnote-ref" href="#fn:Dubbel2020">3</a></sup></span></p>
+<p>The <strong>maximum normal stress due to bending</strong> is</p>
+<div class="arithmatex">\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{6\,F_B\,l}{a^3}
+\]</div>
+<p>It occurs in the outermost fibers of the cross section – tensile stress on one side and compressive stress on the opposite side. The normal stress in the neutral axis is zero.</p>
+<p>The <strong>maximum deflection</strong> at the free end is</p>
+<div class="arithmatex">\[
+f = \frac{F_B\,l^3}{3\,E\,I} = \frac{4\,F_B\,l^3}{E\,a^4}
+\]</div>
+<p>Table of additional deflection curves. The relevant load case here is case 6.</p>
+<p><a class="glightbox" href="../../media/03_kragbalken/28_Biegelinie_Dubbel.png" title="Deflection curves of beams with constant cross section"><img alt="Deflection curves of beams with constant cross section" src="../../media/03_kragbalken/28_Biegelinie_Dubbel.png" width="250px" /></a>
+<span class="bildquelle">Image source<sup id="fnref2:Dubbel2020"><a class="footnote-ref" href="#fn:Dubbel2020">3</a></sup></span></p>
+<p>The resulting stresses are distributed linearly over the cross section: one side is under tension, the other under compression. In contrast to the tensile test, bending produces a <strong>non-uniform stress distribution</strong></p>
+<h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
+<p><strong>Requirements</strong><br />
+Geometry import, material assignment, and mesh generation are identical to the tensile loading task. See:</p>
+<ul>
+<li><a href="#1-geometry-import">Geometry import</a></li>
+<li><a href="#2-material-assignment">Material assignment</a></li>
+<li><a href="#3-meshing">Mesh generation</a></li>
+</ul>
+<h3 id="load-case-and-boundary-conditions">Load case and boundary conditions<a class="headerlink" href="#load-case-and-boundary-conditions" title="Permanent link">&para;</a></h3>
+<p>Based on the previous results, the following boundary conditions are appropriate here:</p>
+<ul>
+<li><strong>External displacement</strong> on the left end face  </li>
+<li><strong>Force (bending)</strong> on the right end face  </li>
+</ul>
+<p>The direction of the force is perpendicular to the beam axis, with magnitude <span class="arithmatex">\(F_B\)</span> according to the task definition. The direction can either be defined via <strong>Define by vector</strong>, by selecting an appropriate edge to specify the direction (note the arrow orientation), or via <strong>Define by components</strong>, where the magnitude is entered directly in global coordinates.  </p>
+<p><a class="glightbox" href="media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png" title="Cantilever bending – force"><img alt="Cantilever bending – force" src="media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png" width="800px" /></a>  </p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 22_kragbalken_biegung_randbedingungen.en.png</p>
+</div>
+<p>The boundary conditions are thus as follows:  </p>
+<p><a class="glightbox" href="media/03_kragbalken/21_kragbalken_biegung.en.png" title="Cantilever bending – boundary conditions"><img alt="Cantilever bending – boundary conditions" src="media/03_kragbalken/21_kragbalken_biegung.en.png" width="800px" /></a>  </p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 21_kragbalken_biegung.en.png</p>
+</div>
+<h3 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h3>
+<p>As described <a href="#5-evaluation">above</a>, the following two results are first examined:</p>
+<ul>
+<li><strong>Deformation (total deformation)</strong></li>
+<li><strong>von Mises stress</strong></li>
+</ul>
+<p>To evaluate the <strong>normal stress</strong>, it can be added under <em>Solution</em> via the context menu by selecting normal stress in the beam’s longitudinal direction. Pay attention to the <em>orientation</em> of the coordinate axis. A linear stress distribution across the cross section with tension and compression sides is expected.</p>
+<p><a class="glightbox" href="media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.en.png" title="Cantilever bending – normal stress"><img alt="Cantilever bending – normal stress" src="media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.en.png" width="800px" /></a>  </p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 25_Kragbalken_Biegung_Auswertung.en.png</p>
+</div>
+<h2 id="discussion-of-the-results-bending">Discussion of the results, bending<a class="headerlink" href="#discussion-of-the-results-bending" title="Permanent link">&para;</a></h2>
+<h3 id="comparison-with-analytical-solution_1">Comparison with analytical solution<a class="headerlink" href="#comparison-with-analytical-solution_1" title="Permanent link">&para;</a></h3>
+<p>The total deformation shows a maximum <strong>deflection</strong> of the beam of 2.5143 mm.</p>
+<p><a class="glightbox" href="media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png" title="Cantilever bending – maximum deflection"><img alt="Cantilever bending – maximum deflection" src="media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png" width="800px" /></a>  </p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 23_Kragbalken_Biegung_Auswertung.en.png</p>
+</div>
+<p>The <strong>maximum von Mises stress</strong> is 479.71 MPa and appears as a stress peak at the corners of the fixed face (red region).  </p>
+<p><a class="glightbox" href="media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png" title="Cantilever bending – maximum von Mises stress"><img alt="Cantilever bending – maximum von Mises stress" src="media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png" width="800px" /></a>  </p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 24_Kragbalken_Biegung_Auswertung.en.png</p>
+</div>
+<p>The <strong>maximum normal stress</strong> according to the figure above is 437.36 MPa.  </p>
+<p>When evaluating the results, note that a <em>probe</em> of the stress field is not meaningful here. The maximum stress occurs in a very small region near the fixed end and is highly localized.</p>
+<p>The following box contains the analytical solution. Perform the calculation yourself first, using the <a href="#theoretical-background-bending">bending theory</a> presented above.</p>
+<p><strong>Note:</strong> Shear stress due to shear force is neglected here.</p>
+<details class="note">
+<summary>Calculation of <span class="arithmatex">\(\sigma_\text{max}\)</span> and <span class="arithmatex">\(f\)</span></summary>
+<p>For the analytical solution, the maximum normal stress <span class="arithmatex">\(\sigma_\text{max}\)</span> and the deflection <span class="arithmatex">\(f\)</span> of the cantilever beam are determined.</p>
+<p><strong>Given:</strong></p>
+<div class="arithmatex">\[
+F_B = 750 \,\text{N}, \quad l = 150 \,\text{mm}, \quad a = 12 \,\text{mm}, \quad E = 210000 \,\text{N/mm}^2
+\]</div>
+<p><strong>Bending moment</strong></p>
+<div class="arithmatex">\[
+M_B = F_B \cdot l = 750 \,\text{N} \cdot 150 \,\text{mm} = 112500 \,\text{Nmm}
+\]</div>
+<p><strong>Section modulus (square cross section)</strong></p>
+<div class="arithmatex">\[
+W_b = \frac{a^3}{6} = \frac{12^3 \,\text{mm}^3}{6} = 288 \,\text{mm}^3
+\]</div>
+<p><strong>Maximum normal stress</strong></p>
+<div class="arithmatex">\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{112500 \,\text{Nmm}}{288 \,\text{mm}^3}
+                 = 390.6 \,\text{N/mm}^2
+\]</div>
+<p><strong>Deflection at the free end</strong></p>
+<div class="arithmatex">\[
+I = \frac{a^4}{12} = \frac{12^4 \,\text{mm}^4}{12} = 1728 \,\text{mm}^4
+\]</div>
+<div class="arithmatex">\[
+f = \frac{F_B \cdot l^3}{3 \cdot E \cdot I}
+  = \frac{750 \,\text{N} \cdot (150 \,\text{mm})^3}{3 \cdot 210000 \,\text{N/mm}^2 \cdot 1728 \,\text{mm}^4}
+  \approx 2.33 \,\text{mm}
+\]</div>
+<p><strong>Notes:</strong><br />
+<span class="arithmatex">\(\sigma_\text{max}\)</span> occurs in the outermost fibers at the clamped end (tension on one side, compression on the opposite).<br />
+The deflection <span class="arithmatex">\(f\)</span> is maximum at the free end.</p>
+</details>
+<p>The following table shows the analytical results, the FEM results, and the resulting percentage deviations. The percentage deviation is calculated as:</p>
+<div class="arithmatex">\[
+\text{Deviation} = \frac{\text{FEM} - \text{Analytical}}{\text{Analytical}} \times 100
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Quantity (symbol)</th>
+<th>Analytical solution</th>
+<th>FEM result</th>
+<th>Deviation [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Max. normal stress (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
+<td>390.6 N/mm²</td>
+<td>437.36 N/mm²</td>
+<td>11.97 %</td>
+</tr>
+<tr>
+<td>Max. deflection (f)</td>
+<td>2.33 mm</td>
+<td>2.5143 mm</td>
+<td>7.91 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mesh-influence_1">Mesh influence<a class="headerlink" href="#mesh-influence_1" title="Permanent link">&para;</a></h3>
+<p>The influence of the meshing on the result is examined again here. The starting point is the standard mesh, which is successively refined in several steps.</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" data-fig='{
+  "data": [
+    {
+      "x": ["Standard mesh", "5 mm", "2 mm", "1 mm", "0.5 mm"],
+      "y": [437.36, 406.62, 400.01, 394.11, 391.22],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Max. stress (MPa)",
+      "hovertemplate": "Mesh size: %{x}<br>Max. stress: %{y:.2f} MPa"
+    },
+    {
+      "x": ["Standard mesh", "5 mm", "2 mm", "1 mm", "0.5 mm"],
+      "y": [621, 1720, 13873, 97981, 736825],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Number of nodes",
+      "yaxis": "y2",
+      "hovertemplate": "Mesh size: %{x}<br>Nodes: %{y:,d}"
+    },
+    {
+      "x": ["Standard mesh", "5 mm", "2 mm", "1 mm", "0.5 mm"],
+      "y": [80, 270, 2700, 21600, 172800],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Number of elements",
+      "yaxis": "y2",
+      "hovertemplate": "Mesh size: %{x}<br>Elements: %{y:,d}"
+    }
+  ],
+  "layout": {
+    "title": {"text": "Mesh size vs. maximum stress, nodes and elements", "x": 0.5},
+    "xaxis": {"title": "Mesh size"},
+    "yaxis": {
+      "title": "Max. stress (MPa)",
+      "type": "linear"
+    },
+    "yaxis2": {
+      "title": "Nodes / Elements",
+      "overlaying": "y",
+      "side": "right",
+      "type": "linear",
+      "tickformat": ",d"
+    },
+    "hovermode": "x unified",
+    "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"},
+    "margin": {"l": 80, "r": 80, "t": 80, "b": 80},
+    "legend": {"x": 0.02, "y": 0.98}
+  }
+}'></div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Mesh refinement results as table</summary>
+<table>
+<thead>
+<tr>
+<th>Mesh size</th>
+<th>Max. normal stress</th>
+<th>Number of nodes</th>
+<th>Number of elements</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standard mesh</td>
+<td>437.36 MPa</td>
+<td>621</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5 mm</td>
+<td>406.62 MPa</td>
+<td>1,720</td>
+<td>270</td>
+</tr>
+<tr>
+<td>2 mm</td>
+<td>400.01 MPa</td>
+<td>13,873</td>
+<td>2,700</td>
+</tr>
+<tr>
+<td>1 mm</td>
+<td>394.11 MPa</td>
+<td>97,981</td>
+<td>21,600</td>
+</tr>
+<tr>
+<td>0.5 mm</td>
+<td>391.22 MPa</td>
+<td>736,825</td>
+<td>172,800</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>The following trend becomes evident from this mesh study: the maximum normal stress decreases with increasing mesh refinement and approaches the value obtained from the analytical solution. In contrast, the computation time increases significantly.</p>
+<h2 id="add-on-bending-moment-instead-of-force">Add-on: Bending Moment Instead of Force<a class="headerlink" href="#add-on-bending-moment-instead-of-force" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Alternatively, instead of a force, a pure <em>bending moment</em> can be applied to the free end face.<br />
+This eliminates shear forces and results in a more uniform stress field. However, both variants show the same characteristic linear stress distribution across the cross section.</p>
+</div>
+<p>As an alternative, a pure <strong>bending moment</strong> can be applied.<br />
+This results in a beam <strong>free of shear forces</strong> with a more uniform stress field.</p>
+<ul>
+<li>Implementation: Load type <em>Moment</em> applied to the end face.  </li>
+<li>Observation: Uniform distribution, no singularity caused by force introduction.  </li>
+</ul>
+<p><a class="glightbox" href="media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.en.png" title="Cantilever bending – bending moment"><img alt="Cantilever bending – bending moment" src="media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.en.png" width="800px" /></a>  </p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot missing – 30_Krakbalken_Biegung_Auswertung.en.png</p>
+</div>
+<hr />
+<h2 id="further-notes">Further Notes<a class="headerlink" href="#further-notes" title="Permanent link">&para;</a></h2>
+<h3 id="variants-of-load-application">Variants of Load Application<a class="headerlink" href="#variants-of-load-application" title="Permanent link">&para;</a></h3>
+<p>In ANSYS Mechanical, various options are available for applying loads. The choice strongly influences the stress distribution and physical plausibility.</p>
+<ul>
+<li>
+<p><strong>Force on surface</strong><br />
+  Recommended for this cantilever beam:<br />
+  A total force evenly distributed over a face.<br />
+  → Prevents unrealistic high stresses from point loading.  </p>
+</li>
+<li>
+<p><strong>Edge load</strong><br />
+  Force along an edge.<br />
+  Used when real application is along a weld seam or support edge.<br />
+  → Note: higher stress gradients, mesh quality critical.  </p>
+</li>
+<li>
+<p><strong>Point load</strong><br />
+  Force at a single node.<br />
+  → Usually to be avoided, as it leads to singularities.<br />
+  Only for special theoretical models.  </p>
+</li>
+<li>
+<p><strong>Moment</strong><br />
+  Load type “Moment” on face or edge.<br />
+  → Suitable for applying a constant bending moment without shear.  </p>
+</li>
+<li>
+<p><strong>Vectors and direction selection</strong><br />
+  In ANSYS the direction of force can be chosen:  </p>
+<ul>
+<li>global coordinate system (x, y, z)  </li>
+<li>local coordinate system (part orientation)  </li>
+<li>user-defined vector input<br />
+  → Ensures the force acts in the intended direction.  </li>
+</ul>
+</li>
+</ul>
+<p>These options illustrate that the “same” load can yield very different results depending on how it is applied. Choosing the correct method is a key part of FEM modeling.</p>
+<h3 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h3>
+<details class="danger" open="open">
+<summary>FIXME</summary>
+<p>Add video?</p>
+</details>
+<h2 id="self-assessment-quiz">Self-assessment quiz<a class="headerlink" href="#self-assessment-quiz" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+
+<div class="quiz"><h3>Why should a force in an FEM model not be applied only to an edge or a single node?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">To make the calculation run faster.</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">Because otherwise unrealistically high local stresses (singularities) occur.</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">To reduce the von Mises stress.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> Always apply loads to surfaces to obtain realistic results.</section></div>
+
+<div class="quiz"><h3>Why is deformation in ANSYS often shown exaggerated?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" correct><label for="quiz-1-0">To make the shape change visually more apparent.</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Because the mesh is too coarse.</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">To increase the stresses.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> The scale factor is only for visualization; the numerical values are shown in the results tables.</section></div>
+
+<div class="quiz"><h3>What is the unit of the von Mises stress?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Newton</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">Pascal (N/m²)</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" ><label for="quiz-2-2">Meter per second</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> It is a unit of stress.</section></div>
+
+<div class="quiz"><h3>How can divergence in an FEM result be recognized?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">When the deformation decreases.</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">When the stresses remain constant.</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" correct><label for="quiz-3-2">When the stresses keep increasing with further mesh refinement.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> Divergent behavior often indicates geometric or load-related singularities.</section></div>
+
+<div class="quiz"><h3>Why is the analytical solution important for the bending of a cantilever beam?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" correct><label for="quiz-4-0">It serves as a reference for verifying the FEM results.</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">It completely replaces the simulation.</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" ><label for="quiz-4-2">It shows only qualitative trends.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> Analytical comparisons help identify modeling errors and deviations in FEM results.</section></div>
+
+<div class="quiz"><h3>Why does a fixed constraint not allow Poisson’s effect?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Because the material becomes completely rigid.</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">Because all degrees of freedom are fixed, including lateral deformations.</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Because the load no longer acts.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Note:</strong> With a fixed constraint, all displacements—including lateral ones—are locked, so Poisson’s effect cannot occur.</section></div>
+
+<div class="quiz"><h3>What can be set instead if Poisson’s effect should be allowed?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">Nothing, it always remains fixed.</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">The lateral displacement degree of freedom can be released (external displacement).</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">The material can be changed to viscous.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> If Poisson’s effect is desired, the lateral displacement at the constraint must not be fixed.</section></div>
+
+<!-- markdownlint-enable MD033 -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Altenbach2016">
+<p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Wikipedia2023">
+<p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Dubbel2020">
+<p>Beate Bender and Dietmar Göhlich. <em>Dubbel Taschenbuch für den Maschinenbau 1: Grundlagen und Tabellen</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2020. ISBN 978-3-662-59710-1. <a href="https://doi.org/10.1007/978-3-662-59711-8">doi:10.1007/978-3-662-59711-8</a>.&#160;<a class="footnote-backref" href="#fnref:Dubbel2020" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Dubbel2020" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

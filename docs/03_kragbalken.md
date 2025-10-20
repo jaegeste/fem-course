@@ -694,7 +694,7 @@ Dies führt zu einem **querkraftfreien Balken** mit gleichmäßigerem Spannungsf
 * Umsetzung: Lasttyp „Moment“ an der Stirnfläche.  
 * Beobachtung: Gleichmäßiger Verlauf, keine Singularität durch Krafteinleitung.  
 
-[![Kragbalken Biegung – Biegemoment](media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.png){width=800px}](media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.png "Kragbalken Biegung – Biegemoment"){.glightbox}  
+[![Kragbalken Biegung – Biegemoment](media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.png){width=800px}](media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.png "Kragbalken Biegung – Biegemoment"){.glightbox}  
 
 ---
 

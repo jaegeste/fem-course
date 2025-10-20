@@ -1,0 +1,1056 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/02_installation_erste_schritte/">
+      
+      
+        <link rel="prev" href="../01_einfuehrung/">
+      
+      
+        <link rel="next" href="../03_kragbalken/">
+      
+      
+      <link rel="icon" href="../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Installation und erste Schritte - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../overrides/main.css">
+    
+      <link rel="stylesheet" href="../overrides/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installation-von-ansys-und-erste-schritte" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installation und erste Schritte
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/02_installation_erste_schritte/" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Startseite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Einführung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Installation und erste Schritte
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation und erste Schritte
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-von-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation von ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erste-schritte-mit-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erste Schritte mit ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansys-mechanical" class="md-nav__link">
+    <span class="md-ellipsis">
+      ANSYS Mechanical
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_kragbalken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 1 Kragbalken
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 2 Kerbwirkung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-von-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation von ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#erste-schritte-mit-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Erste Schritte mit ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansys-mechanical" class="md-nav__link">
+    <span class="md-ellipsis">
+      ANSYS Mechanical
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="installation-von-ansys-und-erste-schritte">Installation von ANSYS und erste Schritte<a class="headerlink" href="#installation-von-ansys-und-erste-schritte" title="Permanent link">&para;</a></h1>
+<h2 id="lernziele">Lernziele<a class="headerlink" href="#lernziele" title="Permanent link">&para;</a></h2>
+<ul>
+<li>der Installationsprozess unter Windows Schritt für Schritt durchgeführt werden  </li>
+<li>die VPN-Verbindung zur HFU-Lizenzverwaltung eingerichtet und geprüft werden  </li>
+<li>ANSYS Workbench gestartet und die grundlegende Programmoberfläche identifiziert werden  </li>
+<li>erste Projekte in ANSYS Workbench angelegt und gespeichert werden  </li>
+</ul>
+<h2 id="installation-von-ansys">Installation von ANSYS<a class="headerlink" href="#installation-von-ansys" title="Permanent link">&para;</a></h2>
+<h3 id="voraussetzungen">Voraussetzungen<a class="headerlink" href="#voraussetzungen" title="Permanent link">&para;</a></h3>
+<p>Diese Anleitung gilt für folgende Voraussetzungen:</p>
+<ul>
+<li>ANSYS 2024R1  </li>
+<li>Windows 11 (andere Systeme nicht getestet)  </li>
+<li>Aktive HFU-VPN-Verbindung (nur außerhalb des Campus erforderlich)</li>
+</ul>
+<hr />
+<h3 id="vpn">VPN<a class="headerlink" href="#vpn" title="Permanent link">&para;</a></h3>
+<p>Um ANSYS nutzen zu können, muss eine Verbindung zum Lizenzserver der HFU hergestellt werden. Das wird <em>außerhalb</em> der Hochschule nur mit einer aktiven VPN-Verbindung erreicht. Innerhalb des Hochschulnetzwerks ist kein VPN erforderlich.  </p>
+<ul>
+<li>Anleitung zur VPN-Installation: <a href="https://howto.hs-furtwangen.de/vpn">https://howto.hs-furtwangen.de/vpn</a>  </li>
+<li>Bei Problemen: <a href="mailto:it-support@hs-furtwangen.de">it-support@hs-furtwangen.de</a></li>
+</ul>
+<hr />
+<h3 id="schritt-1-herunterladen-der-installationsdateien">Schritt 1: Herunterladen der Installationsdateien<a class="headerlink" href="#schritt-1-herunterladen-der-installationsdateien" title="Permanent link">&para;</a></h3>
+<p>Die Installationsdaten finden sich unter:</p>
+<p><a href="https://bwsyncandshare.kit.edu/s/5P9a3FnCCfMgnbC">https://bwsyncandshare.kit.edu/s/5P9a3FnCCfMgnbC</a></p>
+<p>Folgende Dateien müssen heruntergeladen werden (VPN nicht erforderlich):</p>
+<ul>
+<li><code>STRUCTURES_2024R1_WINX64.zip</code> (Hauptprogramm)</li>
+<li><code>ANSYS_2024R1.04_WINX64.zip</code> (aktuelles Service-Update)</li>
+</ul>
+<hr />
+<h3 id="schritt-2-entpacken-und-installation-von-ansys">Schritt 2: Entpacken und Installation von ANSYS<a class="headerlink" href="#schritt-2-entpacken-und-installation-von-ansys" title="Permanent link">&para;</a></h3>
+<p><em>1.</em> <strong>VPN-Verbindung aktivieren.</strong><br />
+<em>2.</em> <code>STRUCTURES_2024R1_WINX64.zip</code> entpacken. <code>setup.exe</code> <strong>als Administrator</strong> ausführen (Rechtsklick → Als Administrator ausführen).<br />
+<em>3.</em> Folgen Sie dem Installationsprozess wie in den folgenden Abbildungen angegeben. Die Einstellungen müssen z.T. angepasst werden, ändern Sie bitte keine Dateipfade<br />
+<em>4.</em> „Installation ANSYS Produkte“ auswählen:  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_01.png" title="Installationsstart"><img alt="Installationsstart" src="../media/02_Installation_erste_Schritte/02_01.png" width="600px" /></a>  </p>
+<p><em>5.</em> Einstellungen übernehmen:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_02.png" title="EULA"><img alt="EULA" src="../media/02_Installation_erste_Schritte/02_02.png" width="600px" /></a>  </p>
+<p><em>6.</em> Einstellungen übernehmen, keine Dateipfade ändern:  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_03.png" title="Einstellungen Pfade"><img alt="Einstellungen Pfade" src="../media/02_Installation_erste_Schritte/02_03.png" width="600px" /></a>  </p>
+<p><em>7.</em> Lizenzserver eintragen: <code>10.10.13.101</code>, VPN-Verbindung erforderlich.  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_04.png" title="Lizenzserver"><img alt="Lizenzserver" src="../media/02_Installation_erste_Schritte/02_04.png" width="600px" /></a>  </p>
+<p><em>8.</em> Nur <strong>Geometry Interfaces</strong> und <strong>Mechanical Products</strong> auswählen:  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_05.png" title="Komponenten"><img alt="Komponenten" src="../media/02_Installation_erste_Schritte/02_05.png" width="600px" /></a>  </p>
+<p><em>9.</em> Weiter:  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_06.png" title="CAD-Schnittstellen"><img alt="CAD-Schnittstellen" src="../media/02_Installation_erste_Schritte/02_06.png" width="600px" /></a>  </p>
+<p><em>10.</em> Weiter (je nach System andere Inhalte):  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_07.png" title="CAD-Schnittstellen Konfiguration"><img alt="CAD-Schnittstellen Konfiguration" src="../media/02_Installation_erste_Schritte/02_07.png" width="600px" /></a>  </p>
+<p><em>11.</em> Weiter (je nach System andere Inhalte):  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_08.png" title="Einstellungen prüfen"><img alt="Einstellungen prüfen" src="../media/02_Installation_erste_Schritte/02_08.png" width="600px" /></a>  </p>
+<p><em>12.</em> Installation fertig:  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_09.png" title="Installation"><img alt="Installation" src="../media/02_Installation_erste_Schritte/02_09.png" width="600px" /></a>  </p>
+<p><em>13.</em> Installation abgeschlossen (je nach System andere Inhalte):  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_10.png" title="Fertigstellung"><img alt="Fertigstellung" src="../media/02_Installation_erste_Schritte/02_10.png" width="600px" /></a>  </p>
+<p><em>14.</em> Um ANSYS nutzen zu können, muss eine Verbindung zum Lizenzserver der HFU hergestellt werden. Das wird außerhalb der Hochschule nur mit einer aktiven VPN-Verbindung erreicht. Innerhalb des Hochschulnetzwerks ist kein VPN erforderlich.<br />
+<em>15.</em> Weiter mit dem Service-Update.  </p>
+<hr />
+<h3 id="schritt-3-installation-des-service-updates">Schritt 3: Installation des Service-Updates<a class="headerlink" href="#schritt-3-installation-des-service-updates" title="Permanent link">&para;</a></h3>
+<p><em>1.</em> <code>ANSYS_2024R1.04_WINX64.zip</code> entpacken.<br />
+<em>2.</em> <code>setup.exe</code> <strong>als Administrator</strong> starten.<br />
+<em>3.</em> „Installation ANSYS Produkte“ wählen:  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_11.png" title="Serviceupdate"><img alt="Serviceupdate" src="../media/02_Installation_erste_Schritte/02_11.png" width="600px" /></a>  </p>
+<p><em>4.</em> Einstellungen übernehmen:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_12.png" title="EULA"><img alt="EULA" src="../media/02_Installation_erste_Schritte/02_12.png" width="600px" /></a>  </p>
+<p><em>5.</em> Weiter, keine Dateipfade ändern:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_13.png" title="Einstellungen Pfade"><img alt="Einstellungen Pfade" src="../media/02_Installation_erste_Schritte/02_13.png" width="600px" /></a>  </p>
+<p><em>6.</em> Einstellungen übernehmen und weiter:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_14.png" title="Auswahl Komponenten"><img alt="Auswahl Komponenten" src="../media/02_Installation_erste_Schritte/02_14.png" width="600px" /></a>  </p>
+<p><em>7.</em> Weiter:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_15.png" title="Einstellungen prüfen"><img alt="Einstellungen prüfen" src="../media/02_Installation_erste_Schritte/02_15.png" width="600px" /></a>  </p>
+<p><em>8.</em> Installation abgeschlossen:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_16.png" title="Installation Service"><img alt="Installation Service" src="../media/02_Installation_erste_Schritte/02_16.png" width="600px" /></a>  </p>
+<p><em>9.</em> Fertig:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/02_17.png" title="Fertigstellung"><img alt="Fertigstellung" src="../media/02_Installation_erste_Schritte/02_17.png" width="600px" /></a>  </p>
+<p><em>10.</em> ZIP-Datei und entpackte Daten können gelöscht werden.  </p>
+<hr />
+<h3 id="start-von-ansys">Start von ANSYS<a class="headerlink" href="#start-von-ansys" title="Permanent link">&para;</a></h3>
+<ul>
+<li>VPN-Verbindung aktivieren (außerhalb des HFU-Netzwerks).</li>
+<li>Start über das Windows-Startmenü.</li>
+<li>Bei Problemen: Rechtsklick → „Als Administrator ausführen“.</li>
+</ul>
+<details class="warning">
+<summary>Probleme beim Starten</summary>
+<p>Kann ANSYS trotz richtiger Installation und VPN-Verbindung keine Lizenz ziehen (Fehlermeldung beim Start), gehen Sie wie folgt vor:</p>
+<ul>
+<li>Navigieren Sie zu <code>C:\Windows\System32\drivers\etc</code>  </li>
+<li>Ergänzen Sie in der Datei <code>hosts</code> ganz am Ende die Zeile: <code>10.10.13.101 Flex</code>  </li>
+<li>Speichern und fertig. Falls das Speichern Probleme macht, müssen Sie die Datei evtl. erst auf den Desktop o. ä. kopieren. Und beachten Sie, dass der Dateityp sich nicht ändert.</li>
+</ul>
+</details>
+<hr />
+<h2 id="erste-schritte-mit-ansys-workbench">Erste Schritte mit ANSYS Workbench<a class="headerlink" href="#erste-schritte-mit-ansys-workbench" title="Permanent link">&para;</a></h2>
+<p>Dieses Informationen soll helfen, die ersten Schritte in ANSYS Workbench zu gehen. Bevor Analysen durchgeführt werden, muss ein Projekt mit seinen Analysearten angelegt, Geometrie importiert oder erstellt und die technischen Daten des Projekts festgelegt werden.</p>
+<hr />
+<h3 id="projektoberflache">Projektoberfläche<a class="headerlink" href="#projektoberflache" title="Permanent link">&para;</a></h3>
+<p>ANSYS Workbench dient als zentrale Oberfläche, um Simulationsprojekte zu organisieren und durchzuführen. Alle Arbeitsschritte einer Simulation lassen sich aus dem folgenden Fenster heraus erledigen:</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/workbench.png" title="Projektoberfläche in ANSYS Workbench"><img alt="Projektoberfläche in ANSYS Workbench" src="../media/02_Installation_erste_Schritte/workbench.png" width="800px" /></a>  </p>
+<p>Auf der linken Seite befinden sich verschiedene Analysearten, die per Drag-and-Drop ins Projektschema eingefügt werden können. Bereits vorhandene Analysen lassen sich verknüpfen, um beispielsweise dieselbe Geometrie mehrfach zu verwenden, siehe nächste Abbildung. So wird in System B die gleiche Geometrie wie in System A verwendet, System D bezieht sich auf Ergebnisse des Systems C. Auch können in der Projektoberfläche Parameter, die in den Einzelbausteinen ausgewiesen wurden, angezeigt und bearbeitet werden (Parametersatz).  </p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/verknuepfte_Analysen.png" title="Verknüpfte Analysen mit Parametersatz"><img alt="Verknüpfte Analysen mit Parametersatz" src="../media/02_Installation_erste_Schritte/verknuepfte_Analysen.png" width="800px" /></a></p>
+<p>Ein Analysesystem besteht typischerweise aus folgenden Komponenten. Um eine Simulation durchzuführen werden in der Regel die Punkte von oben nach unten abgearbeitet werden.</p>
+<table>
+<thead>
+<tr>
+<th>Komponente</th>
+<th>Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Analyse-Art</strong></td>
+<td>Hier wird festgelegt, welche Physik und welches numerische Verfahren verwendet werden.</td>
+</tr>
+<tr>
+<td><strong>Technische Daten</strong></td>
+<td>Hiermit werden Materialdaten für das Bauteil oder die Baugruppe beschrieben. Es wird ein Standardmaterial verwendet, sofern die Materialdaten vom CAD-System nicht mit übernommen werden. Daher ist diese Komponente auch ohne eine Materialauswahl durch den Anwender mit einem grünen Haken versehen.</td>
+</tr>
+<tr>
+<td><strong>Geometrie</strong></td>
+<td>Hier können die Dateien eines CAD-Systems eingeladen, ein neutrales Format wie z.B. IGES, STEP oder Parasolid importiert oder eine Geometrie mit dem ANSYS DesignModeler oder SpaceClaim neu erstellt werden. Auch die Übernahme eines in einem CAD-System geladenen Modells ist möglich.</td>
+</tr>
+<tr>
+<td><strong>Modell</strong></td>
+<td>Alle Definitionen, die neben der Geometrie notwendig sind, um ein FE-Modell zu beschreiben, wie z. B. die Vernetzungseinstellungen, Kontakte oder auch lokale Koordinatensysteme, werden unter dem Begriff Modell zusammengefasst.</td>
+</tr>
+<tr>
+<td><strong>Setup</strong></td>
+<td>Die Analyse-Einstellungen, die Belastung und die sonstigen Randbedingungen werden in den Setup-Einstellungen zusammengefasst.</td>
+</tr>
+<tr>
+<td><strong>Lösung</strong></td>
+<td>Die Rückmeldungen des Gleichungslösers sind unter der Lösung verfügbar.</td>
+</tr>
+<tr>
+<td><strong>Ergebnisse</strong></td>
+<td>Unter Ergebnisse sind die durch die FEM-Analyse ermittelten Resultate zu finden.</td>
+</tr>
+</tbody>
+</table>
+<p><span class="bildquelle">Quelle<sup id="fnref:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
+<h3 id="analysearten">Analysearten<a class="headerlink" href="#analysearten" title="Permanent link">&para;</a></h3>
+<p>Je nach Lizenz sind verschiedene Analysen verfügbar. Beispiele:</p>
+<ul>
+<li><strong>Eigenwert-Beulen</strong> bietet ein lineares Knicken/Beulen dünnwandiger Strukturen unter hohen Druckbelastungen.  </li>
+<li><strong>Explizite Dynamik</strong> ermöglicht es, transiente Dynamik mit nichtlinearen Effekten zu beschreiben z. B. für Falltests oder Containment-Tests.  </li>
+<li><strong>Harmonische Analysen</strong> bieten die Untersuchung von schwingenden Systemen auf eine harmonische Anregung.  </li>
+<li><strong>Modalanalysen</strong> ermitteln die Eigenfrequenzen und die Schwingungsformen einer Struktur.  </li>
+<li><strong>Statisch-strukturmechanische Analysen</strong> ermitteln die Verformung, Spannungen und Dehnungen in Bauteilen in Abhängigkeit von äußeren, ruhenden Lasten ohne dynamische oder dämpfende Effekte. Optional liefert die Betriebsfestigkeitsanalyse die Lebensdauer eines Designs unter dynamischen Lasten. Unter Berücksichtigung von geometrischen Nichtlinearitäten können mit statisch-mechanischen Analysen auch nichtlineare Beulberechnungen durchgeführt werden.  </li>
+<li><strong>Thermisch-stationäre Analysen</strong> dienen dazu, die Temperaturverteilung unter thermischen Lasten im eingeschwungenen (stationären) Zustand zu ermitteln.  </li>
+<li><strong>Thermisch-transiente Analysen</strong> bilden den zeitlichen Verlauf eines Temperaturfeldes ab.  </li>
+<li><strong>Topologie-Optimierungen</strong> helfen, die grundlegende Form eines Bauteils belastungsgerecht zu gestalten.  </li>
+<li><strong>Transiente strukturmechanische Analysen auf Basis von Mehrkörperdynamik (MBD, Multi Body Dynamics)</strong> erlauben kinematische und dynamische Analysen von Systemen aus Starrkörpern.  </li>
+</ul>
+<hr />
+<h3 id="dateiablage-und-struktur">Dateiablage und -struktur<a class="headerlink" href="#dateiablage-und-struktur" title="Permanent link">&para;</a></h3>
+<p>Nach dem Anlegen eines Projekts sollte es sofort gespeichert werden. Die Datei hat die Endung <code>.wbpj</code> und erzeugt ein Projektverzeichnis <code>&lt;projektname&gt;_files</code>. Darin speichert ANSYS strukturierte Daten, was die Berechnungsgeschwindigkeit beeinflusst.  </p>
+<p><strong>Hinweis:</strong> Nutze zur Berechnung unbedingt eine schnelle, lokale Festplatte – nicht das Netzlaufwerk oder einen USB-Stick.</p>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Wichtig:</strong></p>
+<p>Vermeide Umlaute und Leerzeichen in Dateinamen.</p>
+</div>
+<hr />
+<h3 id="einstellungen-uberprufen-und-anpassen">Einstellungen überprüfen und anpassen<a class="headerlink" href="#einstellungen-uberprufen-und-anpassen" title="Permanent link">&para;</a></h3>
+<p>ANSYS Workbench funktioniert auch ohne weitere Anpassungen. Zwei Empfehlungen:</p>
+<ul>
+<li><strong>Maßeinheiten umstellen</strong>: In der Projektoberfläche auf ein gängigeres System wechseln, z. B. <strong>kg und mm</strong>.</li>
+<li><strong>Einstellungen prüfen</strong>: Unter <strong>Extras → Optionen</strong> können Parameter angepasst werden, die Rechenleistung und Berechnungsdauer beeinflussen.</li>
+</ul>
+<hr />
+<h3 id="geometrie">Geometrie<a class="headerlink" href="#geometrie" title="Permanent link">&para;</a></h3>
+<p>Steht ein CAD-System zur Verfügung, ist der direkte Import von CAD-Daten empfehlenswert. Falls eine direkte oder bidirektional assoziative Verbindung nicht möglich ist, genügt in vielen Fällen der Weg über ein gängiges Austauschformat, zum Beispiel <code>.step</code>.</p>
+<p>In diesem Kurs wird die Verwendung der ANSYS-eigenen Programme zur Geometrieerzeugung, <strong>DesignModeler</strong> und <strong>SpaceClaim</strong>, <strong>nicht empfohlen</strong>. Beide Werkzeuge ermöglichen zwar das Erstellen und Vereinfachen von Geometrie, sind jedoch im Vergleich zu vollwertigen CAD-Systemen wie <strong>PTC Creo</strong> funktional deutlich eingeschränkt.</p>
+<div class="admonition info">
+<p class="admonition-title">Geometrie Import</p>
+<p>Die Geometrie wird über einen Rechtsklick auf <strong>Geometrie → Geometrie importieren</strong> eingebunden.<br />
+Wurde bereits Geometrie importiert, ändert sich die Bezeichnung zu <strong>Geometrie ersetzen</strong>.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title"><strong>Wichtig:</strong></p>
+<p>Kein Doppelklick auf „Geometrie“, wenn keine Bearbeitung im ANSYS-Editor gewünscht ist.  </p>
+</div>
+<p>Ein Doppelklick würde die Geometrie automatisch in <strong>DesignModeler</strong> oder <strong>SpaceClaim</strong> laden und dabei unter Umständen die Verbindung zum ursprünglichen CAD-System aufheben.</p>
+<p>Beim Import über ein Austauschformat kann es sinnvoll sein, die Geometrie in <strong>DesignModeler</strong> oder <strong>SpaceClaim</strong> zu betrachten oder anzupassen. Für unparametrische Modelle wie <code>.step</code> bietet sich <strong>ANSYS SpaceClaim</strong> an, da es als direkter Modellierer auch Änderungen an historienfreien Geometrien erlaubt.</p>
+<p>Bei parametrischer Geometrie, die über eine bidirektionale CAD-Schnittstelle eingebunden ist, lassen sich Änderungen im CAD-System über <strong>Geometrie aktualisieren</strong> (Rechtsklick auf „Geometrie“) nach ANSYS übernehmen. Auch bei Parameterstudien ist es möglich, die Geometrie ausgehend von ANSYS im CAD-System zu verändern und anschließend zurückzuspielen.</p>
+<hr />
+<h3 id="technische-daten">Technische Daten<a class="headerlink" href="#technische-daten" title="Permanent link">&para;</a></h3>
+<p>ANSYS Workbench bringt eine kleine Vorauswahl an Materialien mit vordefinierten Eigenschaften mit. Mit einem Doppelklick auf <strong>Technische Daten</strong> kann auf die Materialdatenbank zugegriffen werden. Dort lassen sich Materialien bearbeiten oder neu erstellen.</p>
+<p>Oben links kann eine Datenquelle ausgewählt werden (siehe folgende Abbildung). Anschließend können Materialien dem aktuellen Projekt zugewiesen werden. Die Zuordnung erfolgt im mittleren Fensterbereich durch Klick auf das Plus-Symbol. Die Materialeigenschaften werden im unteren Bereich angezeigt.</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/materialdatenbank.png" title="Materialdatenbank in Workbench"><img alt="Materialdatenbank in Workbench" src="../media/02_Installation_erste_Schritte/materialdatenbank.png" width="800px" /></a>  </p>
+<p>Zu beachten ist, dass die Datenbank im Wesentlichen auf US-amerikanischen Normen basiert.</p>
+<h2 id="ansys-mechanical">ANSYS Mechanical<a class="headerlink" href="#ansys-mechanical" title="Permanent link">&para;</a></h2>
+<p>In ANSYS Workbench werden unter dem Begriff <em>Modell</em> sämtliche Definitionen zusammengefasst, die zwischen Geometrie und Lastfallbeschreibung liegen. Dazu gehören:</p>
+<ul>
+<li>Materialeigenschaften und Zusatzmassen,</li>
+<li>Hilfsgeometrien für Randbedingungen und Auswertungen,</li>
+<li>virtuelle Topologien zur Vernetzungssteuerung,</li>
+<li>Koordinatensysteme und Kontakte,</li>
+<li>Netzdefinitionen sowie</li>
+<li>Kombinationen mehrerer Lastfälle.</li>
+</ul>
+<p>Die <strong>Mechanical-Applikation (ANSYS Mechanical)</strong> dient dabei als zentrales FEM-Werkzeug. Hier werden physikalische Eigenschaften zugewiesen, Netze generiert, Berechnungen gestartet und Ergebnisse visualisiert. Ein Mechanical-Fenster kann mehrere Berechnungszweige mit unterschiedlichen Lastfällen enthalten. Der Aufbau dieser Struktur wird durch den Projektmanager festgelegt.<br />
+Ein Doppelklick auf <em>Modell</em> öffnet die Mechanical-Applikation.</p>
+<hr />
+<h3 id="benutzeroberflache">Benutzeroberfläche<a class="headerlink" href="#benutzeroberflache" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/mechanical_ui.png" title="Mechanical-Applikation in ANSYS"><img alt="Mechanical-Applikation in ANSYS" src="../media/02_Installation_erste_Schritte/mechanical_ui.png" width="700px" /></a>  </p>
+<p>Typische Elemente der Oberfläche:</p>
+<ul>
+<li><strong>Links</strong>: Strukturbaum mit Analyseobjekten  </li>
+<li><strong>Darunter</strong>: Detailfenster für das aktuell markierte Element  </li>
+<li><strong>Oben</strong>: Menü, Darstellungstools, Selektionseinstellungen  </li>
+<li><strong>Über der Geometrieanzeige</strong>: kontextsensitive Befehle</li>
+</ul>
+<h3 id="statusanzeigen-im-strukturbaum">Statusanzeigen im Strukturbaum<a class="headerlink" href="#statusanzeigen-im-strukturbaum" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Grüner Haken: Eingabe vollständig  </li>
+<li>Blaues Fragezeichen: Eingabe fehlt  </li>
+<li>Graues X: Element unterdrückt  </li>
+<li>Rotes Ausrufezeichen: Unstimmigkeit  </li>
+<li>Gelber Blitz: Bereit zur Berechnung  </li>
+<li>Grüner Blitz: Berechnung läuft  </li>
+<li>Roter Blitz: Berechnung abgebrochen  </li>
+<li>Grüner Pfeil: Ausgelagerte Berechnung kann geladen werden  </li>
+<li>Roter Pfeil: Ausgelagerte, abgebrochene Berechnung  </li>
+</ul>
+<h3 id="farben-im-detailfenster">Farben im Detailfenster<a class="headerlink" href="#farben-im-detailfenster" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Gelb: Eingabe unvollständig  </li>
+<li>Weiß: Eingabe erlaubt  </li>
+<li>Grau: Nur Anzeige (nicht änderbar)  </li>
+<li>Rot: Ungültig, z. B. nach Änderung ohne Neuberechnung</li>
+</ul>
+<h3 id="steuerung-der-ansicht">Steuerung der Ansicht<a class="headerlink" href="#steuerung-der-ansicht" title="Permanent link">&para;</a></h3>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/ansichtsteuerung.png" title="Steuerung der Ansichten"><img alt="Steuerung der Ansichten" src="../media/02_Installation_erste_Schritte/ansichtsteuerung.png" width="500px" /></a>  </p>
+<p>Typische Funktionen:</p>
+<ul>
+<li>Rotieren, Verschieben, Zoomen  </li>
+<li>In Rahmen oder Fenster einpassen  </li>
+<li>Vorige/Nächste Ansicht  </li>
+<li>ISO-Ansichten, Draufsicht  </li>
+<li>Ansicht speichern oder verwalten</li>
+</ul>
+<h3 id="selektionsmoglichkeiten">Selektionsmöglichkeiten<a class="headerlink" href="#selektionsmoglichkeiten" title="Permanent link">&para;</a></h3>
+<p>Die Selektion erfolgt über Mausaktionen.</p>
+<ul>
+<li>Auswahltyp über Icons festlegen: Punkt, Kante, Fläche, Körper  </li>
+<li>Mouseover hebt Geometrien optisch hervor  </li>
+<li>Mit Klick selektieren; mit <code>STRG</code> Mehrfachauswahl  </li>
+<li>Entfernen durch erneuten Klick bei gedrückter <code>STRG</code>-Taste  </li>
+<li><strong>Fortlaufende Selektion</strong>: gedrückte Maustaste → Flächen überfahren  </li>
+<li><strong>Auswahl erweitern</strong>: tangential angrenzende Flächen hinzufügen  </li>
+<li>Tangentenwinkel (Standard: 20°) in den Einstellungen einstellbar  </li>
+<li>Doppelte Anwendung der Funktion erweitert tangential erneut  </li>
+<li><strong>Angrenzend/Alle</strong>: selektiert alle tangential verbundenen Flächen bis zur nächsten scharfen Kante</li>
+</ul>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/selektion.png" title="Selektionsfunktionen"><img alt="Selektionsfunktionen" src="../media/02_Installation_erste_Schritte/selektion.png" width="600px" /></a>  </p>
+<p><strong>Verdeckte Objekte selektieren:</strong></p>
+<p>Beim Klick auf überlagerte Geometrie erscheint ein Auswahlfenster im 3D-Viewer. Mit der Maus kann eine der überlagerten Flächen gezielt ausgewählt werden.<br />
+Bei Baugruppen sind die Flächen farblich entsprechend ihrer Bauteilzugehörigkeit gekennzeichnet.</p>
+<hr />
+<h3 id="geometrie-in-mechanical">Geometrie in Mechanical<a class="headerlink" href="#geometrie-in-mechanical" title="Permanent link">&para;</a></h3>
+<p>Im Abschnitt <em>Geometrie</em> erscheinen alle importierten Bauteile mit ihren Eigenschaften.</p>
+<p>Funktionen:</p>
+<ul>
+<li>Sichtbarkeit ein-/ausblenden  </li>
+<li>Elemente unterdrücken oder wiederherstellen  </li>
+<li>Materialzuweisung je Teil  </li>
+<li>Hinzufügen von Punktmassen (verformbar oder starr)<br />
+  → Diese Entscheidung beeinflusst das Rechenergebnis erheblich.</li>
+</ul>
+<hr />
+<h3 id="koordinatensysteme">Koordinatensysteme<a class="headerlink" href="#koordinatensysteme" title="Permanent link">&para;</a></h3>
+<p>Nach dem Geometrieimport erscheint zunächst das globale Koordinatensystem – meist identisch mit dem Creo-Koordinatensystem.</p>
+<p>Weitere lokale Koordinatensysteme lassen sich über das Kontextmenü erzeugen. Dazu:</p>
+<ul>
+<li>Geometrie selektieren  </li>
+<li>Einfügen → Koordinatensystem</li>
+</ul>
+<p><strong>Logik für den Ursprung:</strong></p>
+<ul>
+<li>Punkt → exakt dort  </li>
+<li>Linie → in der Mitte  </li>
+<li>Kreis/Bogen → im Zentrum  </li>
+<li>Fläche → Flächenschwerpunkt  </li>
+<li>Zylinderfläche → Achse, axial mittig</li>
+</ul>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/koordinaten.png" title="Koordinatensysteme bearbeiten"><img alt="Koordinatensysteme bearbeiten" src="../media/02_Installation_erste_Schritte/koordinaten.png" width="350px" /></a>  </p>
+<p>Erstellte Systeme lassen sich verschieben oder verdrehen.</p>
+<hr />
+<h3 id="grundlegendes-zur-vernetzung">Grundlegendes zur Vernetzung<a class="headerlink" href="#grundlegendes-zur-vernetzung" title="Permanent link">&para;</a></h3>
+<p>Die Vernetzung unterteilt das Bauteil in finite Elemente, die über Knoten verbunden sind.</p>
+<p>In konstruktionsbegleitenden FEM-Anwendungen ist keine aufwendige Netzoptimierung erforderlich – moderne Rechner bewältigen auch gröbere Netze. Entscheidend ist hier die <strong>Unabhängigkeit des Ergebnisses vom Netz</strong>, nicht die perfekte Netzqualität.</p>
+<p>Dazu führt man eine <strong>Netzeinflussstudie</strong> durch:</p>
+<ul>
+<li>Variation der globalen Elementgröße  </li>
+<li>lokale Netzverfeinerung  </li>
+<li>adaptive Vernetzung (siehe Übung)</li>
+</ul>
+<p>Ziel ist ein tragfähiger Kompromiss aus Ergebnisqualität und Rechenzeit.</p>
+<div class="admonition note">
+<p class="admonition-title">Hinweis</p>
+<p>Dieser Abschnitt markiert den Einstieg in die praktische Arbeit mit Netzen in ANSYS.<br />
+Die manuelle Vernetzung ist die einfachste Methode zur Steuerung der Elementgrößen.</p>
+</div>
+<p>Die globale Elementgröße – also die durchschnittliche Kantenlänge der Elemente für das gesamte Modell – wird direkt im Strukturbaum unter dem Eintrag <em>Netz</em> eingestellt.</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/globale_elementgr%C3%B6%C3%9Fe.png" title="Globale Elementgröße festlegen"><img alt="Globale Elementgröße festlegen" src="../media/02_Installation_erste_Schritte/globale_elementgr%C3%B6%C3%9Fe.png" width="400px" /></a>  </p>
+<p>Das Modell wird auf Basis dieses Wertes komplett mit Elementen vernetzt.<br />
+<strong>Problematisch wird dieses Vorgehen</strong>, wenn das relevante Ergebnis nur in einem lokalen Bereich auftritt:<br />
+Eine globale Verfeinerung erzeugt dann unnötig viele Elemente und verlängert die Rechenzeit erheblich – ohne zusätzlichen Nutzen.</p>
+<p>Alternativ lässt sich das Netz auch <strong>lokal verfeinern</strong>:</p>
+<ul>
+<li>Unter <em>Netzsteuerung</em> kann man die <strong>Elementgröße pro Bauteil oder Fläche</strong> einzeln festlegen.</li>
+<li>Einzelne Geometriebereiche (z. B. Kanten, Flächen) lassen sich gezielt mit feineren Elementen versehen.</li>
+<li>Die Funktion <em><em>Methode</em> ermöglicht die Auswahl eines bestimmten *</em>Elementtyps** (z. B. Tetraeder oder Hexaeder).<br />
+  → Diese Auswahl sollte fundiert erfolgen – siehe Literatur.</li>
+</ul>
+<p>Das manuelle Vorgehen eignet sich besonders für einfache Modelle oder gezielte Voruntersuchungen.</p>
+<hr />
+<h3 id="kontakte">Kontakte<a class="headerlink" href="#kontakte" title="Permanent link">&para;</a></h3>
+<p>Bei Baugruppen erzeugt ANSYS automatisch Kontaktflächen zwischen Bauteilen – optional können sie auch manuell definiert werden.</p>
+<p><a class="glightbox" href="../media/02_Installation_erste_Schritte/kontakte.png" title="Kontakttypen in ANSYS"><img alt="Kontakttypen in ANSYS" src="../media/02_Installation_erste_Schritte/kontakte.png" width="500px" /></a><br />
+<span class="bildquelle">Bildquelle<sup id="fnref2:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
+<p>Kontakte erfüllen zwei Aufgaben:</p>
+<ol>
+<li><strong>Kraftübertragung</strong>  </li>
+<li><strong>Verhinderung von Durchdringung</strong></li>
+</ol>
+<p>Typische Einstellungen:</p>
+<ul>
+<li><strong>Verbund</strong>  </li>
+<li><strong>Keine Trennung</strong>  </li>
+<li><strong>Reibungsfrei</strong>  </li>
+<li><strong>Rau</strong>  </li>
+<li><strong>Reibungsbehaftet</strong></li>
+</ul>
+<p>Achtung bei komplexeren Kontaktmodellen:<br />
+Kontakte mit Reibung oder Abheben erfordern deutlich mehr Rechenzeit. Für die meisten Fälle sind <em>Verbund</em> oder <em>Keine Trennung</em> ein guter Kompromiss.</p>
+<div class="admonition note">
+<p class="admonition-title">Hinweis</p>
+<p>Diese Übersicht vermittelt nur die Grundlagen der Kontaktdefinition.<br />
+Die konkrete Anwendung, Auswahl und Bewertung von Kontakten erfolgt in späteren Übungen.  </p>
+</div>
+<h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+
+<div class="quiz"><h3>Welche Verbindung ist außerhalb des Campus notwendig, um ANSYS nutzen zu können?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">WLAN der Hochschule</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Mobile Datenverbindung</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" correct><label for="quiz-0-2">VPN-Verbindung zur HFU</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Der Lizenzserver ist nur im Campusnetz oder über VPN erreichbar.</section></div>
+
+<div class="quiz"><h3>Wo befindet sich die Liste der verfügbaren Analysearten in ANSYS Workbench?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">Im unteren Bereich des Fensters</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Im rechten Bereich des Fensters</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" correct><label for="quiz-1-2">Im linken Bereich des Fensters</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Die Analysearten werden links in der Projektoberfläche angezeigt und können per Drag-and-drop verwendet werden.</section></div>
+
+<div class="quiz"><h3>Wie können Blöcke in ANSYS Workbench verknüpft werden?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Durch Rechtsklick und <em>Verbinden</em></label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" ><label for="quiz-2-1">Durch Ziehen einer Datei in das Fenster</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">Per Drag-and-drop einer Verbindungslinie zwischen den Systemen</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Verbindungslinien ermöglichen den Datenaustausch zwischen den Systemen (z. B. Geometrie oder Ergebnisse).</section></div>
+
+<div class="quiz"><h3>Wie wird Geometrie in ein ANSYS-Projekt importiert?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">Über den Menüpunkt <em>Materialeigenschaften</em></label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" correct><label for="quiz-3-1">Über Rechtsklick auf <em>Geometrie</em> und Auswahl <em>Geometrie importieren</em></label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" ><label for="quiz-3-2">Durch Ziehen einer STEP-Datei ins Projektfenster</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Importformate wie STEP, IGES oder Parasolid können verwendet werden.</section></div>
+
+<div class="quiz"><h3>Wie wird die Mechanical-Umgebung gestartet?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">Über Rechtsklick auf <em>Lösung</em></label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">Automatisch nach dem Projektstart</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" correct><label for="quiz-4-2">Durch Doppelklick auf <em>Modell</em></label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Mechanical öffnet sich in einem eigenen Fenster zur Definition von Randbedingungen, Netzen und Auswertungen.</section></div>
+
+<div class="quiz"><h3>Welche Elemente im Strukturbaum müssen typischerweise durchgegangen werden?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Nur <em>Geometrie</em> und <em>Lösung</em></label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1"><em>Geometrie</em>, <em>Materialzuweisungen</em>, <em>Netz</em>, <em>Setup</em>, <em>Lösung</em></label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Nur <em>Netz</em> und <em>Lösung</em></label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Diese Schritte sichern eine vollständige Definition der Simulation, bevor sie berechnet wird.</section></div>
+
+<!-- markdownlint-enable MD033 -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Gebhardt2018">
+<p>Christof Gebhardt. <em>Praxisbuch FEM mit ANSYS Workbench</em>. Carl Hanser Verlag GmbH &amp; Co. KG, München, 2018. ISBN 978-3-446-45001-1. URL: <a href="https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409">https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409</a> (visited on 2019-03-18), <a href="https://doi.org/10.3139/9783446457409">doi:10.3139/9783446457409</a>.&#160;<a class="footnote-backref" href="#fnref:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

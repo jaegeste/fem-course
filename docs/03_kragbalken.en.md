@@ -410,7 +410,6 @@ Considering the maximum equivalent stress, there is a clear increase from one re
 
 <!-- markdownlint-enable MD033 -->
 
-
 ??? note "Mesh refinement results as a table"
     | Mesh size     | Max. stress  | Number of nodes | Number of elements |
     |---------------|--------------|-----------------|--------------------|
@@ -717,10 +716,10 @@ This results in a beam **free of shear forces** with a more uniform stress field
 * Implementation: Load type _Moment_ applied to the end face.  
 * Observation: Uniform distribution, no singularity caused by force introduction.  
 
-[![Cantilever bending – bending moment](media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.en.png "Cantilever bending – bending moment"){.glightbox}  
+[![Cantilever bending – bending moment](media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – bending moment"){.glightbox}  
 
 !!! danger "FIXME"
-    Screenshot missing – 30_Krakbalken_Biegung_Auswertung.en.png
+    Screenshot missing – 30_Kragbalken_Biegung_Auswertung.en.png
 
 ---
 

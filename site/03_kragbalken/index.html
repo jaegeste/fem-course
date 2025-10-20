@@ -1,0 +1,1535 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/03_kragbalken/">
+      
+      
+        <link rel="prev" href="../02_installation_erste_schritte/">
+      
+      
+        <link rel="next" href="../04_kerbwirkung/">
+      
+      
+      <link rel="icon" href="../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Modul 1 Kragbalken - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../overrides/main.css">
+    
+      <link rel="stylesheet" href="../overrides/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modul-1-kragbalken" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modul 1 Kragbalken
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/03_kragbalken/" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Startseite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Einführung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation und erste Schritte
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Modul 1 Kragbalken
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 1 Kragbalken
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Zugbelastung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-zug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund, Zug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys-mechanical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS Mechanical
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse-zug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse, Zug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-on-biegemoment-statt-kraft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add-on: Biegemoment statt Kraft
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterfuhrende-hinweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weiterführende Hinweise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 2 Kerbwirkung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-zugbelastung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Zugbelastung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-zug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund, Zug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys-mechanical" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS Mechanical
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse-zug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse, Zug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#add-on-biegemoment-statt-kraft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Add-on: Biegemoment statt Kraft
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterfuhrende-hinweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weiterführende Hinweise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="modul-1-kragbalken">Modul 1 Kragbalken<a class="headerlink" href="#modul-1-kragbalken" title="Permanent link">&para;</a></h1>
+<h2 id="lernziele">Lernziele<a class="headerlink" href="#lernziele" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Erstes Arbeiten mit ANSYS Workbench und ANSYS Mechanical.</li>
+<li>Verständnis der Randbedingungen und Lastfälle bei einem Kragbalken.</li>
+<li>Anwendung der von-Mises-Spannung zur Beurteilung der Festigkeit.</li>
+<li>Vergleich von Simulationsergebnissen mit analytischen Berechnungen.</li>
+<li>Einfluss der Einspannung und Wahl der Randbedingungen verstehen.</li>
+</ul>
+<hr />
+<h2 id="aufgabenstellung-zugbelastung">Aufgabenstellung Zugbelastung<a class="headerlink" href="#aufgabenstellung-zugbelastung" title="Permanent link">&para;</a></h2>
+<p>Berechnen Sie für den in der Abbildung dargestellten Kragbalken quadratischen Querschnitts die maximale Spannung und die Verformung mit ANSYS Mechanical.  </p>
+<ul>
+<li>Länge: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Kantenlänge: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Kraft: <span class="arithmatex">\( F = 7{.}500 \,\text{N} \)</span>  </li>
+<li>Material: Baustahl mit Streckgrenze <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+</ul>
+<p>Laden Sie die Datei <a href="../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> und importieren Sie sie in ANSYS Workbench.</p>
+<p>Gleichen Sie Ihr Ergebnis mit der analytischen Lösung ab und diskutieren Sie die etwaige Abweichung.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/kragbalken_zug.svg" title="Kragbalken, Zug"><img alt="Kragbalken, Zug" src="../media/03_kragbalken/kragbalken_zug.svg" width="500px" /></a>  </p>
+<hr />
+<h2 id="theoretischer-hintergrund-zug">Theoretischer Hintergrund, Zug<a class="headerlink" href="#theoretischer-hintergrund-zug" title="Permanent link">&para;</a></h2>
+<h3 id="hookesches-gesetz">Hookesches Gesetz<a class="headerlink" href="#hookesches-gesetz" title="Permanent link">&para;</a></h3>
+<p>Die Berechnung basiert auf dem <strong>Hookeschen Gesetz</strong>. Es beschreibt den linearen Zusammenhang zwischen Spannung und Dehnung im elastischen Bereich eines Werkstoffs.</p>
+<div class="arithmatex">\[
+\sigma = \frac{F}{A},  
+\quad \varepsilon = \frac{\Delta l}{l},  
+\quad E = \frac{\sigma}{\varepsilon}
+\]</div>
+<p>mit  </p>
+<ul>
+<li><span class="arithmatex">\( \sigma \)</span>: Normalspannung  </li>
+<li><span class="arithmatex">\( F \)</span>: aufgebrachte Kraft  </li>
+<li><span class="arithmatex">\( A = a^2 \)</span>: Querschnittsfläche des Balkens  </li>
+<li><span class="arithmatex">\( \varepsilon \)</span>: Dehnung in Belastungsrichtung  </li>
+<li><span class="arithmatex">\( E \)</span>: Elastizitätsmodul (Materialkonstante)  </li>
+</ul>
+<p>Die <strong>Längenänderung</strong> ergibt sich zu:</p>
+<div class="arithmatex">\[
+\Delta l = \frac{F \cdot l}{A \cdot E}
+\]</div>
+<h3 id="querkontraktion">Querkontraktion<a class="headerlink" href="#querkontraktion" title="Permanent link">&para;</a></h3>
+<p>Neben der Dehnung in Belastungsrichtung tritt eine Querkontraktion auf. Sie wird durch die <strong>Querkontraktionszahl</strong> (Poissonzahl) <span class="arithmatex">\(\nu\)</span> beschrieben. Sie definiert das Verhältnis von Querdehnung zur Längsdehnung.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/querkontraktion.svg" title="Querkontraktion"><img alt="Querkontraktion" src="../media/03_kragbalken/querkontraktion.svg" width="700" /></a><br />
+<span class="bildquelle">Bildquelle nach <sup id="fnref:Altenbach2016"><a class="footnote-ref" href="#fn:Altenbach2016">1</a></sup></span></p>
+<div class="arithmatex">\[
+\nu \;=\; - \frac{\varepsilon_q}{\varepsilon_l}
+\]</div>
+<p>mit  </p>
+<div class="arithmatex">\[
+\varepsilon_l = \frac{\Delta l}{l},  
+\qquad
+\varepsilon_q = \frac{\Delta a}{a}
+\]</div>
+<ul>
+<li><span class="arithmatex">\( \varepsilon_l \)</span>: Längsdehnung  </li>
+<li><span class="arithmatex">\( \varepsilon_q \)</span>: Querdehnung  </li>
+<li><span class="arithmatex">\( \Delta l \)</span>: Längenänderung  </li>
+<li><span class="arithmatex">\( \Delta a \)</span>: Querschnittsänderung (z. B. Kantenlänge bei quadratischem Balken)  </li>
+<li><span class="arithmatex">\( l, a \)</span>: ursprüngliche Länge bzw. Querschnittsmaß  </li>
+</ul>
+<p>Damit ergibt sich:</p>
+<div class="arithmatex">\[
+\varepsilon_q = -\nu \cdot \varepsilon_l
+\]</div>
+<p>Für Stahl gilt typischerweise <span class="arithmatex">\(\nu \approx 0{,}3\)</span>.<br />
+Das bedeutet: Bei einer Längsdehnung von 1 % verkürzt sich der Querschnitt quer um 0,3 %.  </p>
+<h3 id="spannungs-dehnungs-diagramm">Spannungs-Dehnungs-Diagramm<a class="headerlink" href="#spannungs-dehnungs-diagramm" title="Permanent link">&para;</a></h3>
+<p>Das Hookesche Gesetz gilt nur im <strong>linear-elastischen Bereich</strong> eines Werkstoffes. Dieser Bereich ist im Spannungs-Dehnungs-Diagramm als gerade Linie erkennbar. Das erste Diagramm zeigt das Verhalten eines Werkstoffs <strong>ohne ausgeprägte Streckgrenze</strong>. Nach dem linearen Anstieg bis zur Dehngrenze geht die Kurve allmählich in den plastischen Bereich über.<br />
+Typisch ist dieses Verhalten bei vielen NE-Metallen, etwa Aluminium:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" title="Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze"><img alt="Spannungs-Dehnungs-Kurve ohne ausgeprägte Streckgrenze" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Dehngrenze.svg" width="450" /></a><br />
+<span class="bildquelle">Bildquelle<sup id="fnref:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
+<p>Das zweite Diagramm zeigt das Verhalten eines Werkstoffs <strong>mit ausgeprägter Streckgrenze</strong>, wie es für Baustahl typisch ist. Der lineare Bereich endet abrupt, es folgt ein Plateau mit nahezu konstanter Spannung, bevor der plastische Anstieg beginnt:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" title="Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze"><img alt="Spannungs-Dehnungs-Kurve mit ausgeprägter Streckgrenze" src="../media/03_kragbalken/Spgs-Dehnungs-Kurve_Streckgrenze.svg" width="450" /></a><br />
+<span class="bildquelle">Bildquelle<sup id="fnref2:Wikipedia2023"><a class="footnote-ref" href="#fn:Wikipedia2023">2</a></sup></span></p>
+<p>Für die Berechnung des Kragbalkens in dieser Übung liegt die Belastung im <strong>elastischen Bereich</strong>. Das Hookesche Gesetz ist daher ausreichend.</p>
+<hr />
+<h2 id="umsetzung-in-ansys-mechanical">Umsetzung in ANSYS Mechanical<a class="headerlink" href="#umsetzung-in-ansys-mechanical" title="Permanent link">&para;</a></h2>
+<h3 id="1-geometrieimport">1. Geometrieimport<a class="headerlink" href="#1-geometrieimport" title="Permanent link">&para;</a></h3>
+<p>Laden Sie die Datei <a href="../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a> in ANSYS Workbench.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/01_Kragbalken_Geometrieimport.png" title="Kragbalken, Geometrieimport"><img alt="Kragbalken, Geometrieimport" src="../media/03_kragbalken/01_Kragbalken_Geometrieimport.png" width="600px" /></a>  </p>
+<p>Anhand der Abmessungen des Begrenzungsrahmens lässt sich unmittelbar erkennen, ob die importierte Geometrie in den korrekten Einheiten vorliegt.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png" title="Kragbalken, Begrenzungsrahmen"><img alt="Kragbalken, Begrenzungsrahmen" src="../media/03_kragbalken/02_Kragbalken_Begrenzungsrahmen.png" width="600px" /></a>  </p>
+<h3 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h3>
+<p>Als Standardmaterial wird von ANSYS Baustahl zugewiesen. Vor der weiteren Verwendung sollten die jeweiligen Materialeigenschaften überprüft werden, um die Eignung für die geplante Anwendung sicherzustellen.</p>
+<p>Ansicht unter <em>Geometrie:</em></p>
+<p><a class="glightbox" href="../media/03_kragbalken/03_Kragbalken_Materialdefinition.png" title="Kragbalken, Materialdefinition"><img alt="Kragbalken, Materialdefinition" src="../media/03_kragbalken/03_Kragbalken_Materialdefinition.png" width="600px" /></a>  </p>
+<p>Ansicht unter <em>Materialien:</em></p>
+<p><a class="glightbox" href="../media/03_kragbalken/04_Kragbalken_Materialdefinition.png" title="Kragbalken, Materialdefinition"><img alt="Kragbalken, Materialdefinition" src="../media/03_kragbalken/04_Kragbalken_Materialdefinition.png" width="600px" /></a>  </p>
+<h3 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h3>
+<p>Für die Berechnung wird das Bauteil in finite Elemente unterteilt, die über Knoten miteinander verbunden sind. Dieser Vorgang heißt <strong>Vernetzung</strong>.  </p>
+<ul>
+<li>
+<p>Zunächst wird über Netz/Erstellen eine <strong>globale automatische Vernetzung</strong> erzeugt.<br />
+  Dabei vergibt ANSYS eine Elementgröße, die für das gesamte Modell gilt.<br />
+  Das Netz entsteht schnell und gleichmäßig, ist aber oft nicht optimal für lokale Details.  </p>
+</li>
+<li>
+<p>Im zweiten Schritt wird die <strong>Elementgröße variiert</strong>, um den <strong>Netzeinfluss</strong> zu untersuchen.<br />
+  Ziel ist zu prüfen, ob das Ergebnis (Spannung, Verformung) stabil bleibt, wenn das Netz feiner wird.<br />
+  Nur wenn sich die Ergebnisse kaum noch ändern, gilt die Lösung als verlässlich.  </p>
+</li>
+</ul>
+<p>Aus FEM-Sicht gilt:  </p>
+<ul>
+<li>Zu grobes Netz → geringe Rechenzeit, aber möglicherweise ungenaue Ergebnisse.  </li>
+<li>Zu feines Netz → hohe Genauigkeit, aber deutlich längere Rechenzeit.  </li>
+<li>Optimal ist ein Netz, das <strong>ausreichend genaue Ergebnisse</strong> liefert, ohne unnötig viele Elemente zu erzeugen.  </li>
+</ul>
+<p><a class="glightbox" href="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" title="Kragbalken, Netzdefinition"><img alt="Kragbalken, Netzdefinition" src="../media/03_kragbalken/05_Kragbalken_Netzgenerierung.png" width="600px" /></a>  </p>
+<h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
+<p>Betrachtet man die Aufgabenstellung sind zwei Randbedingungen naheliegend:</p>
+<ul>
+<li><strong>Feste Einspannung</strong> am linken Ende  </li>
+<li><strong>Zugkraft</strong> <span class="arithmatex">\( F \)</span> an der rechten Stirnfläche  </li>
+</ul>
+<p>Die feste Einspannung wird in ANSYS umgesetzt, indem <strong>alle Freiheitsgrade</strong> der ausgewählten Fläche blockiert werden. Das bedeutet konkret: Translationen in <span class="arithmatex">\(x\)</span>-, <span class="arithmatex">\(y\)</span>- und <span class="arithmatex">\(z\)</span>-Richtung sowie Rotationen um alle drei Achsen sind dort nicht mehr möglich. Im physikalischen Sinn wird so die Verbindung des Balkens mit einer starren Umgebung modelliert.</p>
+<p>Die Zugkraft wird an der rechten Stirnfläche aufgebracht. In ANSYS erfolgt dies über die Angabe einer <strong>Gesamtkraft (Kraft)</strong>, die sich über die gesamte Fläche verteilt. Damit wird sichergestellt, dass die Kraft nicht punktförmig wirkt (was numerisch eine Singularität erzeugen würde), sondern gleichmäßig eingeleitet wird.</p>
+<p>Aus FEM-Sicht geschieht Folgendes:</p>
+<ul>
+<li>Die Einspannung erzeugt eine <strong>Verschiebungsrandbedingung</strong>:<br />
+  Knoten in diesem Bereich können sich nicht bewegen → Reaktionskräfte bilden sich aus.</li>
+<li>Die Zugkraft erzeugt eine <strong>Lastbedingung</strong>:<br />
+  Knoten in diesem Bereich erfahren zusätzliche äußere Kräfte → führen zu inneren Spannungen und Verformungen im gesamten Bauteil.</li>
+</ul>
+<p>Im Zusammenspiel von <strong>verschiebungsgebundenen</strong> und <strong>kraftgebundenen</strong> Randbedingungen entsteht ein <strong>geschlossenes Gleichungssystem</strong>, das im FEM‑Solver gelöst wird.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_kragbalken/06_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" title="Kragbalken, Randbedingungen"><img alt="Kragbalken, Randbedingungen" src="../media/03_kragbalken/07_Kragbalken_Randbedingungen.png" width="600px" /></a>  </p>
+<details class="note" open="open">
+<summary>Hinweis zur Modellierung</summary>
+<p>Wird die Kraft nur auf eine kleine Kante oder einen einzelnen Knoten angesetzt, entstehen unrealistisch hohe lokale Spannungen (Singularitäten). Deshalb immer eine Fläche auswählen, um die Last realistisch zu verteilen.</p>
+</details>
+<h3 id="5-auswertung">5. Auswertung<a class="headerlink" href="#5-auswertung" title="Permanent link">&para;</a></h3>
+<p>Für die erste Auswertung in ANSYS werden zwei Ergebnisse betrachtet:</p>
+<ul>
+<li><strong>Verformung (Gesamtverformung)</strong>  </li>
+<li><strong>Spannung nach von Mises</strong></li>
+</ul>
+<p>Die Verformung zeigt die Gesamtauslenkung des Bauteils. In ANSYS wird sie üblicherweise in überhöhter Darstellung angezeigt, damit die Formänderung deutlich erkennbar ist. Wichtig ist, dass es sich dabei um eine <strong>Skalierung zur Visualisierung</strong> handelt – die Werte sind den Ergebnistabellen zu entnehmen.  </p>
+<p>Die von-Mises-Spannung ist ein Vergleichswert, der die kombinierte Wirkung aller Normal- und Schubspannungen zu einer einzigen „äquivalenten“ Spannung zusammenfasst:</p>
+<div class="arithmatex">\[
+\sigma_\text{vM} = \sqrt{\frac{1}{2} \left[(\sigma_x-\sigma_y)^2 + (\sigma_y-\sigma_z)^2 + (\sigma_z-\sigma_x)^2 \right] + 3(\tau_{xy}^2+\tau_{yz}^2+\tau_{zx}^2)}
+\]</div>
+<p>Dieser Wert eignet sich besonders gut, um in der späteren Festigkeitsbewertung mit einer zulässigen Spannung zu vergleichen, auch wenn verschiedene Spannungsanteile gleichzeitig wirken. Für den hier betrachteten Zugbalken im linearen Bereich sollte die von-Mises-Spannung nahe bei der Normalspannung aus der analytischen Lösung liegen.  </p>
+<p>Auswertungsschritte in ANSYS:</p>
+<ol>
+<li>Auswahl der <strong>Gesamtverformung</strong> → Kontrolle der Größenordnung und Plausibilität.  </li>
+<li>Darstellung der <strong>von-Mises-Spannung</strong> → Vergleich mit analytisch berechneter Spannung.  </li>
+<li><strong>Verformungsergebnis</strong> mit Auswahl einer Richtung (hier globale x-Achse) → Auswertung der Querkontraktion.  </li>
+</ol>
+<p>Auswahl über Kontextmenü <em>Lösung</em>:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/08_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/08_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/10_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/10_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Alternativ über Klick (rechte Maustaste) auf <em>Lösung</em> im Strukturbaum:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/10a_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/10a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Hier mit Auswahl der globalen x-Achse zur Auswertung der Querschnittsänderung:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen hinzufügen"><img alt="Kragbalken, Lösungen hinzufügen" src="../media/03_kragbalken/10b_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<hr />
+<h2 id="diskussion-der-ergebnisse-zug">Diskussion der Ergebnisse, Zug<a class="headerlink" href="#diskussion-der-ergebnisse-zug" title="Permanent link">&para;</a></h2>
+<h3 id="vergleich-mit-analytischer-losung">Vergleich mit analytischer Lösung<a class="headerlink" href="#vergleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
+<p>Erwartung: Sehr gute Übereinstimmung der mittleren Spannung und der Verformungen.</p>
+<p><strong>Ergebnisse in ANSYS:</strong></p>
+<p>Die <strong>Gesamtverformung</strong> zeigt eine Längung des Balkens um 0,03895 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/09_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/09_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Die <strong>maximale Vergleichsspanunng</strong> (von Mises) ist 57,528 MPa. Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/11_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/11_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Nutzt man eine <em>Stichprobe</em> etwas von der Einspannung entfernt ist die <strong>Vergleichsspanunng</strong> (von Mises) 52,082 MPa.  </p>
+<p><strong>Hinweis:</strong> Die Stichprobe ist im Kontextmenü <em>Ergebnis</em> zu finden. Dort lässt sich auch der minimale und maximale Wert des jeweiligen Ergebnisses anzeigen.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/12_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Das <strong>Verformungsergebnis</strong> in Richtung der x-Achse ist 0,000472 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/12a_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die <a href="#theoretischer-hintergrund-zug">oben vorgestellte Theorie</a>.</p>
+<details class="note">
+<summary>Berechnung von Δl, Δa und σ</summary>
+<p>Für die analytische Lösung werden die Längenänderung Δl, die Querschnittsänderung Δa und die Normalspannung σ bestimmt.</p>
+<p><strong>Spannung</strong></p>
+<div class="arithmatex">\[
+\sigma = \frac{F}{A}
+\]</div>
+<p>Mit den gegebenen Werten:</p>
+<div class="arithmatex">\[
+F = 7{.}500 \,\text{N}, \quad A = 144 \,\text{mm}^2
+\]</div>
+<div class="arithmatex">\[
+\sigma = \frac{7{.}500 \,\text{N}}{144 \,\text{mm}^2} \approx 52{,}1 \,\text{N/mm}^2
+\]</div>
+<p><strong>Längenänderung</strong></p>
+<div class="arithmatex">\[
+\Delta l = \frac{F \cdot l}{A \cdot E}
+\]</div>
+<p>Eingesetzt mit den Werten der Aufgabe:</p>
+<div class="arithmatex">\[
+l = 150 \,\text{mm}, \quad E = 210{.}000 \,\text{N/mm}^2
+\]</div>
+<div class="arithmatex">\[
+\Delta l = \frac{7{.}500 \,\text{N}\cdot 150 \,\text{mm}}{144 \,\text{mm}^2\cdot 210{.}000 \,\text{N/mm}^2} 
+         \approx 0{,}037 \,\text{mm}
+\]</div>
+<p><strong>Querschnittsänderung</strong></p>
+<p>Über die Querkontraktionszahl <span class="arithmatex">\(\nu = 0{,}3\)</span>:</p>
+<div class="arithmatex">\[
+\varepsilon_q = - \nu \cdot \varepsilon_l
+\]</div>
+<p>mit  </p>
+<div class="arithmatex">\[
+\varepsilon_l = \frac{\Delta l}{l} = \frac{0{,}037 \,\text{mm}}{150 \,\text{mm}} \approx 2{,}47 \cdot 10^{-4}
+\]</div>
+<div class="arithmatex">\[
+\varepsilon_q = -0{,}3 \cdot 2{,}47 \cdot 10^{-4}
+              \approx -7{,}4 \cdot 10^{-5}
+\]</div>
+<p>Daraus ergibt sich die Querschnittsänderung:</p>
+<div class="arithmatex">\[
+\Delta a = \varepsilon_q \cdot a = -7{,}4 \cdot 10^{-5} \cdot 12 \,\text{mm}
+         \approx -8{,}9 \cdot 10^{-4} \,\text{mm}
+\]</div>
+<p><strong>Ergebnis:</strong><br />
+* Normalspannung: ca. <strong>52 N/mm²</strong><br />
+* Verlängerung des Balkens: ca. <strong>0,037 mm</strong><br />
+* Verringerung der Kantenlänge: ca. <strong>0,0009 mm</strong></p>
+</details>
+<p>Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie die daraus ermittelten prozentualen Abweichungen. Die prozentuale Abweichung wird berechnet als:</p>
+<div class="arithmatex">\[
+\text{Abweichung} = \frac{\text{FEM} - \text{Analytisch}}{\text{Analytisch}} \times 100
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Größe (Formelzeichen)</th>
+<th>Analytische Lösung</th>
+<th>FEM-Ergebnis</th>
+<th>Abweichung [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max. Spannung (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
+<td>52,1 N/mm²</td>
+<td>57,53 N/mm²</td>
+<td>10,4 %</td>
+</tr>
+<tr>
+<td>Spannung (σ) Stichprobe</td>
+<td>52,1 N/mm²</td>
+<td>52,08 N/mm²</td>
+<td>−0,04 %</td>
+</tr>
+<tr>
+<td>Verlängerung des Balkens (Δl)</td>
+<td>0,037 mm</td>
+<td>0,039 mm</td>
+<td>5,41 %</td>
+</tr>
+<tr>
+<td>Verringerung der Kantenlänge (Δa)</td>
+<td>0,00089 mm</td>
+<td>0,000944 mm (2 × 0,000472 mm)</td>
+<td>6,07 %</td>
+</tr>
+</tbody>
+</table>
+<p>Die Ergebnisse stimmen insgesamt gut mit der analytischen Lösung überein. Deutlichere Abweichungen treten nur bei der maximalen Vergleichsspannung auf, verursacht durch lokale Spannungsspitzen (Singularitäten) an den Ecken der Einspannung.  </p>
+<p>Für ein derart einfaches Problem sind Abweichungen von 5–6 % relativ hoch, es wäre eine nahezu exakte Übereinstimmung zu erwarten. Die beobachtete Differenz ist vor allem auf die Spannungsspitzen an der Ecke zurückzuführen und sollte weiter untersucht werden.</p>
+<p>Mögliche Maßnahmen zur Verbesserung zunächst:  </p>
+<ul>
+<li>Analyse des Einflusses der <strong>Vernetzung</strong></li>
+<li>Analyse des Einflusses der <strong>Einspannung</strong></li>
+</ul>
+<h3 id="einfluss-des-netzes">Einfluss des Netzes<a class="headerlink" href="#einfluss-des-netzes" title="Permanent link">&para;</a></h3>
+<p>Generell gilt:</p>
+<ul>
+<li>Grobes Netz → geringere Genauigkeit.  </li>
+<li>Feines Netz → längere Rechenzeit, bessere Übereinstimmung.  </li>
+<li>Ziel: Ergebnis unabhängig vom Netz (Netzeinfluss weitgehend eliminiert).  </li>
+</ul>
+<p>Wie unter <a href="../02_installation_erste_schritte/#grundlegendes-zur-vernetzung">Grundlegendes zur Vernetzung</a> eingeführt, ist die manuelle Festlegung der globalen Elementgröße die einfachste Möglichkeit zur Netzverfeinerung.  </p>
+<p>Ergebnis nahe der Einspannung mit globaler Elementgröße <strong>5 mm</strong></p>
+<p><a class="glightbox" href="../media/03_kragbalken/14_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/14_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Ergebnis nahe der Einspannung mit globaler Elementgröße <strong>1 mm</strong></p>
+<p><a class="glightbox" href="../media/03_kragbalken/15_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/15_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Ergebnis nahe der Einspannung mit globaler Elementgröße <strong>0,5 mm</strong></p>
+<p><a class="glightbox" href="../media/03_kragbalken/16_Kragbalken_Auswertung.png" title="Kragbalken, Lösungen"><img alt="Kragbalken, Lösungen" src="../media/03_kragbalken/16_Kragbalken_Auswertung.png" width="600px" /></a>  </p>
+<p>Betrachtet man die maximale Vergleichsspannung, ist eine deutliche Zunahme von Verfeinerungsschritt zu Verfeinerungsschritt zu erkennen. Dies kann auf eine <strong>Divergenz</strong> hindeuten, also darauf, dass der berechnete Wert mit zunehmender Netzverfeinerung nicht gegen einen festen Grenzwert konvergiert, sondern stetig weiter ansteigt (vgl. <a href="./#4-randbedingungen">Singularitäten bei Krafteinleitung auf Punkt oder Kante</a>).</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
+           "y": [57.528,61.47,105.38,136.92],
+           "name": "Max. Spannung (MPa)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["57,528 MPa","61,47 MPa","105,38 MPa","136,92 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
+           "y": [621,1720,97981,736825],
+           "name": "Anzahl Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["621","1\u00A0720","97\u00A0981","736\u00A0825"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standardnetz","5 mm","1 mm","0,5 mm"],
+           "y": [80,270,21600,172800],
+           "name": "Anzahl Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["80","270","21\u00A0600","172\u00A0800"],
+           "hovertemplate": "%{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Netzgröße vs. maximale Spannung, Knoten- und Elementeanzahl",
+         "xaxis": {"title": "Netzgröße"},
+         "yaxis": {"title": "Max. Spannung (MPa)"},
+         "yaxis2": {"title": "Knoten / Elemente", "overlaying": "y", "side": "right"},
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Ergebnisse Netzverfeinerung als Tabelle</summary>
+<table>
+<thead>
+<tr>
+<th>Netzgröße</th>
+<th>Max. Spannung</th>
+<th>Anzahl Knoten</th>
+<th>Anzahl Elemente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standardnetz</td>
+<td>57,528 MPa</td>
+<td>621</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5 mm</td>
+<td>61,47 MPa</td>
+<td>1 720</td>
+<td>270</td>
+</tr>
+<tr>
+<td>1 mm</td>
+<td>105,38 MPa</td>
+<td>97 981</td>
+<td>21 600</td>
+</tr>
+<tr>
+<td>0,5 mm</td>
+<td>136,92 MPa</td>
+<td>736 825</td>
+<td>172 800</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h3 id="einfluss-der-einspannung">Einfluss der Einspannung<a class="headerlink" href="#einfluss-der-einspannung" title="Permanent link">&para;</a></h3>
+<p>In der Realität kann sich der Balken quer zur Belastungsrichtung verkürzen. Im FEM-Modell mit fester Einspannung wird diese <strong>Querkontraktion lokal verhindert</strong>. Dadurch entstehen <strong>Randspannungsspitzen</strong>, die analytisch nicht vorhergesagt werden.<br />
+→ Erklärung für Abweichungen zwischen analytischer und numerischer Lösung nahe der Einspannung.  </p>
+<p>Eine <em>externe Einspannung</em> bietet dagegen mehr Einstellmöglichkeiten, da einzelne <strong>Translations- und Rotationsfreiheitsgrade</strong> gezielt freigegeben oder begrenzt werden können und sich die <strong>Querkontraktion</strong> wahlweise zulassen oder unterdrücken lässt. Letzteres über die Einstellung <em>Verhalten: verformbar</em>.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/17_Kragbalken_Auswertung.png" title="Externe Verschiebung"><img alt="Externe Verschiebung" src="../media/03_kragbalken/17_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>Mit einer <em>verformbaren externen Verschiebung</em> als Einspannung ist die <strong>Gesamtverformung</strong> 0,0391 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/18_Kragbalken_Auswertung.png" title="Gesamtverformung mit externer Verschiebung"><img alt="Gesamtverformung mit externer Verschiebung" src="../media/03_kragbalken/18_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>Die <strong>Vergleichsspannung</strong> zeigt den erwarteten konstanten Verlauf über das gesamte Bauteil. Es gibt keine Spannungsspitzen mehr im Bereich der Einspannung; die Querkontraktion ist freigegeben. Die Vergleichsspannung ist 52,083 MPa.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/20_Kragbalken_Auswertung.png" title="Vergleichsspannung mit externer Verschiebung"><img alt="Vergleichsspannung mit externer Verschiebung" src="../media/03_kragbalken/20_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<p>Das <strong>Verformungsergebnis</strong> in Richtung der x-Achse ist 0,000469 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/19_Kragbalken_Auswertung.png" title="Vergleichsspannung mit externer Verschiebung"><img alt="Vergleichsspannung mit externer Verschiebung" src="../media/03_kragbalken/19_Kragbalken_Auswertung.png" width="600px" /></a></p>
+<hr />
+<h2 id="aufgabenstellung-biegung">Aufgabenstellung Biegung<a class="headerlink" href="#aufgabenstellung-biegung" title="Permanent link">&para;</a></h2>
+<p>Implementieren Sie für den Kragbalken folgendes Modell und berechnen Sie die maximale Spannung und die maximale Verformung. Verwenden Sie auch die Geometrie aus <a href="../media/03_kragbalken/kragbalken.stp">kragbalken.stp</a>.  </p>
+<ul>
+<li>Länge: <span class="arithmatex">\( L = 150 \,\text{mm} \)</span>  </li>
+<li>Kantenlänge: <span class="arithmatex">\( a = 12 \,\text{mm} \)</span>  </li>
+<li>Kraft: <span class="arithmatex">\( F_B = 750 \,\text{N} \)</span>  </li>
+<li>Material: Baustahl mit Streckgrenze <span class="arithmatex">\( R_e = 250 \,\text{N/mm}^2 \)</span>  </li>
+</ul>
+<p>Bearbeiten Sie folgende Themen:</p>
+<ul>
+<li>Vergleich der Ergebnisse mit der analytischen Lösung (maximale Spannung und Verformung)  </li>
+<li>Bestimmung der Stelle maximaler Spannung (numerisch und analytisch)  </li>
+<li>Darstellung von Zug- und Druckspannungen in ANSYS  </li>
+</ul>
+<p><a class="glightbox" href="../media/03_kragbalken/kragbalken_biegung.svg" title="Kragbalken, Biegung"><img alt="Kragbalken, Biegung" src="../media/03_kragbalken/kragbalken_biegung.svg" width="500px" /></a></p>
+<hr />
+<h2 id="theoretischer-hintergrund-biegung">Theoretischer Hintergrund, Biegung<a class="headerlink" href="#theoretischer-hintergrund-biegung" title="Permanent link">&para;</a></h2>
+<p>Bei der Biegung entsteht infolge einer quer zur Balkenachse wirkenden Kraft ein Moment, das in den äußeren Fasern Zug- und Druckspannungen verursacht. Die neutrale Faser bleibt spannungsfrei. Für kleine Durchbiegungen und lineares Materialverhalten gilt die Bernoulli-Hypothese, wonach Querschnitte eben bleiben und sich nur drehen.</p>
+<p>Das <strong>maximale Biegemoment</strong> an einem Kragbalken mit Kraft <span class="arithmatex">\(F_B\)</span> und der Länge <span class="arithmatex">\(l\)</span> ergibt sich zu</p>
+<div class="arithmatex">\[
+M_B = F_B \cdot l
+\]</div>
+<p>Das <strong>Widerstandsmoment</strong> <span class="arithmatex">\(W_b\)</span> beschreibt die Geometrieabhängigkeit des Querschnitts und ergibt sich für einen quadratischen Querschnitt der Seitenlänge <span class="arithmatex">\(a\)</span> zu</p>
+<div class="arithmatex">\[
+W_b = \frac{a^3}{6}
+\]</div>
+<p>Tabelle weiterer Widerstandsmomente und axialer Flächenmomente 2. Grades:</p>
+<p><a class="glightbox" href="../media/03_kragbalken/29_Fl%C3%A4chenmomente_Dubbel.png" title="Axiale Flächenmomente 2. Grades und Widerstandsmomente"><img alt="Axiale Flächenmomente 2. Grades und Widerstandsmomente" src="../media/03_kragbalken/29_Fl%C3%A4chenmomente_Dubbel.png" width="250px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref:Dubbel2020"><a class="footnote-ref" href="#fn:Dubbel2020">3</a></sup></span></p>
+<p>Die <strong>maximale Normalspannung infolge Biegung</strong> ist damit</p>
+<div class="arithmatex">\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{6\,F_B\,l}{a^3}
+\]</div>
+<p>Sie tritt an den äußersten Fasern des Querschnitts auf – auf der einen Seite als Zugspannung, auf der gegenüberliegenden als Druckspannung. In der neutralen Faser ist die Normalspannung gleich null.</p>
+<p>Die <strong>maximale Durchbiegung</strong> an der freien Spitze ist</p>
+<div class="arithmatex">\[
+f = \frac{F_B\,l^3}{3\,E\,I} = \frac{4\,F_B\,l^3}{E\,a^4}
+\]</div>
+<p>Tabelle weiterer Biegelinien. Hier relevant Belastungsfall 6.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/28_Biegelinie_Dubbel.png" title="Biegelinien von statisch bestimmt gelagerten Trägern mit konstantem Querschnitt"><img alt="Biegelinien von statisch bestimmt gelagerten Trägern mit konstantem Querschnitt" src="../media/03_kragbalken/28_Biegelinie_Dubbel.png" width="250px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref2:Dubbel2020"><a class="footnote-ref" href="#fn:Dubbel2020">3</a></sup></span></p>
+<p>Die resultierenden Spannungen sind linear über den Querschnitt verteilt, wobei eine Seite Zug-, die andere Druckspannungen aufnimmt. Im Unterschied zum Zugversuch ergibt sich bei der Biegung eine <strong>nicht konstante Spannung über den Querschnitt</strong>, sondern ein linearer Verlauf mit Nullpunkt in der neutralen Faser.  </p>
+<hr />
+<h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
+<p><strong>Voraussetzungen</strong><br />
+Geometrieimport, Materialzuweisung und Netzerstellung erfolgen identisch wie bei der Aufgabe Zugbelastung. Siehe dazu:</p>
+<ul>
+<li><a href="#1-geometrieimport">Geometrieimport</a></li>
+<li><a href="#2-materialzuweisung">Materialzuweisung</a></li>
+<li><a href="#3-netzgenerierung">Netzgenerierung</a></li>
+</ul>
+<h3 id="lastfall-und-randbedingungen">Lastfall und Randbedingungen<a class="headerlink" href="#lastfall-und-randbedingungen" title="Permanent link">&para;</a></h3>
+<p>Aufgrund der Erfahrungen von oben sind hier Randbedingungen naheliegend:</p>
+<ul>
+<li><strong>Externe Verschiebung</strong> an der linken Stirnfläche  </li>
+<li><strong>Kraft (Biegung)</strong> an der rechten Stirnfläche  </li>
+</ul>
+<p>Richtung der Kraft senkrecht zur Balkenachse, Betrag <span class="arithmatex">\(F_B\)</span> gemäß Aufgabenstellung. Die Richtung kann entweder über <strong>Definieren durch Vektor</strong> eingestellt werden, indem eine geeignete Kante zur Richtungsangabe ausgewählt wird (Pfeile beachten), oder über <strong>Definieren durch Komponenten</strong>, wobei die Beträge direkt in den globalen Koordinaten eingetragen werden.  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png" title="Kragbalken Biegung – Kraft"><img alt="Kragbalken Biegung – Kraft" src="../media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png" width="800px" /></a>  </p>
+<p>Die Randbedingungen sind somit wie folgt:  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/21_kragbalken_biegung.png" title="Kragbalken Biegung – Randbedingungen"><img alt="Kragbalken Biegung – Randbedingungen" src="../media/03_kragbalken/21_kragbalken_biegung.png" width="800px" /></a>  </p>
+<h3 id="auswertung">Auswertung<a class="headerlink" href="#auswertung" title="Permanent link">&para;</a></h3>
+<p>Wie <a href="#5-auswertung">oben</a> beschrieben, werden hier auch zunächst folgende zwei Ergebnisse betrachtet:</p>
+<ul>
+<li><strong>Verformung (Gesamtverformung)</strong></li>
+<li><strong>Spannung nach von Mises</strong></li>
+</ul>
+<p>Zur Auswertung der <strong>Normalspannung</strong> kann über das Kontextmenü unter <em>Lösung</em> die Normalspannung in Balkenlängsrichtung eingefügt werden. <em>Ausrichtung</em> der Koordinatenachse beachten. Ein linearer Spannungsverlauf über den Querschnitt mit Zug- und Druckseite wird erwartet.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Normalspannung"><img alt="Kragbalken Biegung – Normalspannung" src="../media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<h2 id="diskussion-der-ergebnisse-biegung">Diskussion der Ergebnisse, Biegung<a class="headerlink" href="#diskussion-der-ergebnisse-biegung" title="Permanent link">&para;</a></h2>
+<h3 id="abgleich-mit-analytischer-losung">Abgleich mit analytischer Lösung<a class="headerlink" href="#abgleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
+<p>Die Gesamtverformung zeigt eine maximale <strong>Durchbiegung</strong> des Balkens um 2,5143 mm.</p>
+<p><a class="glightbox" href="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – maximale Durchbiegung"><img alt="Kragbalken Biegung – maximale Durchbiegung" src="../media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<p>Die <strong>maximale Vergleichsspanunng (von Mises)</strong> ist 479,71 MPa Sie zeigt sich in einer Spannungsspitze an den Ecken bei der fest eingespannten Fläche (roter Bereich).  </p>
+<p><a class="glightbox" href="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – maximale Vergleichsspanunng"><img alt="Kragbalken Biegung – maximale Vergleichsspanunng" src="../media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<p>Die <strong>maximale Normalspannung</strong> gemäß Abbildung oben ist 437,36 MPa.  </p>
+<p>Bei der Auswertung ist zu beachten, dass eine <em>Stichprobe</em> der Spannung hier nicht zielführend ist. Die maximale Spannung tritt in einem sehr kleinen Bereich an der Einspannung auf und ist lokal stark konzentriert.</p>
+<p>Die folgende Box enthält die analytische Lösung. Führen Sie die Berechnung zunächst selbst durch und nutzen Sie dabei die oben vorgestellte <a href="#theoretischer-hintergrund-biegung">Theorie zur Biegung</a>.</p>
+<p><strong>Hinweis:</strong> Die Schubspannung infolge Querkraft wird hier vernachlässigt.</p>
+<details class="note">
+<summary>Berechnung von <span class="arithmatex">\(\sigma_\text{max}\)</span> und f</summary>
+<p>Für die analytische Lösung werden die maximale Normalspannung <span class="arithmatex">\(\sigma_\text{max}\)</span> und die Durchbiegung <span class="arithmatex">\(f\)</span> des Kragbalkens bestimmt.</p>
+<p><strong>Gegeben:</strong></p>
+<div class="arithmatex">\[
+F_B = 750 \,\text{N}, \quad l = 150 \,\text{mm}, \quad a = 12 \,\text{mm}, \quad E = 210.000 \,\text{N/mm}^2
+\]</div>
+<p><strong>Biegemoment</strong></p>
+<div class="arithmatex">\[
+M_B = F_B \cdot l = 750 \,\text{N} \cdot 150 \,\text{mm} = 112.500 \,\text{Nmm}
+\]</div>
+<p><strong>Widerstandsmoment (Quadratquerschnitt)</strong></p>
+<div class="arithmatex">\[
+W_b = \frac{a^3}{6} = \frac{12^3 \,\text{mm}^3}{6} = 288 \,\text{mm}^3
+\]</div>
+<p><strong>Maximale Normalspannung</strong></p>
+<div class="arithmatex">\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{112.500 \,\text{Nmm}}{288 \,\text{mm}^3}
+                 = 390,6 \,\text{N/mm}^2
+\]</div>
+<p><strong>Durchbiegung an der freien Spitze</strong></p>
+<div class="arithmatex">\[
+I = \frac{a^4}{12} = \frac{12^4 \,\text{mm}^4}{12} = 1.728 \,\text{mm}^4
+\]</div>
+<div class="arithmatex">\[
+f = \frac{F_B \cdot l^3}{3 \cdot E \cdot I}
+  = \frac{750 \,\text{N} \cdot (150 \,\text{mm})^3}{3 \cdot 210.000 \,\text{N/mm}^2 \cdot 1.728 \,\text{mm}^4}
+  \approx 2,33 \,\text{mm}
+\]</div>
+<p><strong>Hinweise:</strong><br />
+<span class="arithmatex">\(\sigma_\text{max}\)</span> tritt an den äußersten Fasern an der Einspannung auf (eine Seite Zug, gegenüberliegende Druck).
+Die Durchbiegung <span class="arithmatex">\(f\)</span> ist an der freien Spitze maximal.</p>
+</details>
+<p>Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie die daraus ermittelten prozentualen Abweichungen. Die prozentuale Abweichung wird berechnet als:</p>
+<div class="arithmatex">\[
+\text{Abweichung} = \frac{\text{FEM} - \text{Analytisch}}{\text{Analytisch}} \times 100
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Größe (Formelzeichen)</th>
+<th>Analytische Lösung</th>
+<th>FEM-Ergebnis</th>
+<th>Abweichung [%]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>max. Normalspannung (<span class="arithmatex">\(\sigma_\mathrm{max}\)</span>)</td>
+<td>390,6 N/mm²</td>
+<td>437,36 N/mm²</td>
+<td>11,97 %</td>
+</tr>
+<tr>
+<td>max. Durchbiegung (f)</td>
+<td>2,33 mm</td>
+<td>2,5143 mm</td>
+<td>7,91 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="netzeinfluss">Netzeinfluss<a class="headerlink" href="#netzeinfluss" title="Permanent link">&para;</a></h3>
+<p>Hier soll erneut der Einfluss der Vernetzung auf das Ergebnis untersucht werden. Ausgangspunkt ist das Standardnetz, das in mehreren Schritten weiter verfeinert wird.</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" data-fig='{
+  "data": [
+    {
+      "x": ["Standardnetz", "5 mm", "2 mm", "1 mm", "0,5 mm"],
+      "y": [437.36, 406.62, 400.01, 394.11, 391.22],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Max. Spannung (MPa)",
+      "hovertemplate": "Netzgröße: %{x}<br>Max. Spannung: %{y:.2f} MPa"
+    },
+    {
+      "x": ["Standardnetz", "5 mm", "2 mm", "1 mm", "0,5 mm"],
+      "y": [621, 1720, 13873, 97981, 736825],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Anzahl Knoten",
+      "yaxis": "y2",
+      "hovertemplate": "Netzgröße: %{x}<br>Knoten: %{y:,d}"
+    },
+    {
+      "x": ["Standardnetz", "5 mm", "2 mm", "1 mm", "0,5 mm"],
+      "y": [80, 270, 2700, 21600, 172800],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Anzahl Elemente",
+      "yaxis": "y2",
+      "hovertemplate": "Netzgröße: %{x}<br>Elemente: %{y:,d}"
+    }
+  ],
+  "layout": {
+    "title": {"text": "Netzgröße vs. maximale Spannung, Knoten und Elemente", "x": 0.5},
+    "xaxis": {"title": "Netzgröße"},
+    "yaxis": {
+      "title": "Max. Spannung (MPa)",
+      "type": "linear"
+    },
+    "yaxis2": {
+      "title": "Knoten / Elemente",
+      "overlaying": "y",
+      "side": "right",
+      "type": "linear",
+      "tickformat": ",d"
+    },
+    "hovermode": "x unified",
+    "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"},
+    "margin": {"l": 80, "r": 80, "t": 80, "b": 80},
+    "legend": {"x": 0.02, "y": 0.98}
+  }
+}'></div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Ergebnisse Netzverfeinerung als Tabelle</summary>
+<table>
+<thead>
+<tr>
+<th>Netzgröße</th>
+<th>Max. Normalspannung</th>
+<th>Anzahl Knoten</th>
+<th>Anzahl Elemente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Standardnetz</td>
+<td>437,36 MPa</td>
+<td>621</td>
+<td>80</td>
+</tr>
+<tr>
+<td>5 mm</td>
+<td>406,62 MPa</td>
+<td>1 720</td>
+<td>270</td>
+</tr>
+<tr>
+<td>2 mm</td>
+<td>400,01 MPa</td>
+<td>13 873</td>
+<td>2 700</td>
+</tr>
+<tr>
+<td>1 mm</td>
+<td>394,11 MPa</td>
+<td>97 981</td>
+<td>21 600</td>
+</tr>
+<tr>
+<td>0,5 mm</td>
+<td>391,22 MPa</td>
+<td>736 825</td>
+<td>172 800</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Im Rahmen dieser Studie zum Netzeinfluss wird folgendes Verhalten deutlich: Die maximale Vergleichsspannung sinkt mit zunehmender Netzverfeinerung und strebt gegen den in der analytischen Lösung gefundenen Wert. Dem entgegen steigt die Rechenzeit spürbar an.  </p>
+<h2 id="add-on-biegemoment-statt-kraft">Add-on: Biegemoment statt Kraft<a class="headerlink" href="#add-on-biegemoment-statt-kraft" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Hinweis</p>
+<p>Alternativ kann statt einer Kraft auch ein reines <em>Biegemoment</em> an der freien Stirnfläche angesetzt werden.<br />
+Dadurch entfallen Querkräfte, und das Spannungsfeld wird gleichmäßiger. Beide Varianten zeigen jedoch denselben charakteristischen linearen Spannungsverlauf über den Querschnitt.</p>
+</div>
+<p>Als Alternative kann ein <strong>reines Biegemoment</strong> angesetzt werden.<br />
+Dies führt zu einem <strong>querkraftfreien Balken</strong> mit gleichmäßigerem Spannungsfeld.</p>
+<ul>
+<li>Umsetzung: Lasttyp „Moment“ an der Stirnfläche.  </li>
+<li>Beobachtung: Gleichmäßiger Verlauf, keine Singularität durch Krafteinleitung.  </li>
+</ul>
+<p><a class="glightbox" href="../media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.png" title="Kragbalken Biegung – Biegemoment"><img alt="Kragbalken Biegung – Biegemoment" src="../media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.png" width="800px" /></a>  </p>
+<hr />
+<h2 id="weiterfuhrende-hinweise">Weiterführende Hinweise<a class="headerlink" href="#weiterfuhrende-hinweise" title="Permanent link">&para;</a></h2>
+<h3 id="varianten-der-krafteinleitung">Varianten der Krafteinleitung<a class="headerlink" href="#varianten-der-krafteinleitung" title="Permanent link">&para;</a></h3>
+<p>In ANSYS Mechanical stehen verschiedene Möglichkeiten zur Verfügung, eine äußere Belastung aufzubringen. Die Auswahl beeinflusst maßgeblich die Spannungsverteilung und die physikalische Plausibilität.</p>
+<ul>
+<li>
+<p><strong>Kraft auf Fläche</strong><br />
+  Die empfohlene Variante für den Kragbalken:<br />
+  Eine Gesamtkraft wird gleichmäßig über eine Fläche verteilt.<br />
+  → Verhindert unrealistisch hohe Spannungen, die bei punktförmiger Last entstehen würden.  </p>
+</li>
+<li>
+<p><strong>Kantenlast</strong><br />
+  Belastung entlang einer Kante.<br />
+  Wird verwendet, wenn eine reale Krafteinleitung tatsächlich über eine Linie erfolgt, z. B. durch eine Schweißnaht oder Auflagerkante.<br />
+  → Achtung: höhere Spannungsgradienten, Netzqualität besonders wichtig.  </p>
+</li>
+<li>
+<p><strong>Punktlast</strong><br />
+  Kraft wirkt in einem einzelnen Knoten.<br />
+  → In der Praxis meist zu vermeiden, da dies numerisch zu Singularitäten führt.<br />
+  Nur in Spezialfällen für theoretische Modellierungen sinnvoll.  </p>
+</li>
+<li>
+<p><strong>Moment</strong><br />
+  Lasttyp Moment auf Fläche oder Kante.<br />
+  → Besonders geeignet, wenn gezielt ein konstantes Biegemoment ohne Querkraft wirken soll.  </p>
+</li>
+<li>
+<p><strong>Vektoren und Richtungswahl</strong><br />
+  In ANSYS kann die Richtung der Kraft gewählt werden:  </p>
+<ul>
+<li>globales Koordinatensystem (x, y, z)  </li>
+<li>lokales Koordinatensystem (z. B. Bauteilorientierung)  </li>
+<li>benutzerdefinierte Richtung über Vektor-Eingabe<br />
+→ Wichtig, um sicherzustellen, dass die Kraft in der beabsichtigten Raumrichtung wirkt.  </li>
+</ul>
+</li>
+</ul>
+<p>Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt und Typ sehr unterschiedliche Ergebnisse liefern kann. Die Entscheidung, wie eine Last angesetzt wird, gehört deshalb zu den wesentlichen Modellierungsaufgaben im FEM.</p>
+<h3 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Video hinzu</p>
+</div>
+<h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+
+<div class="quiz"><h3>Warum sollte die Kraft im FEM-Modell nicht nur auf eine Kante oder einen einzelnen Knoten angesetzt werden?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Damit die Berechnung schneller läuft.</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">Weil sonst unrealistisch hohe lokale Spannungen (Singularitäten) entstehen.</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">Um die von-Mises-Spannung zu verringern.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Lasten immer auf Flächen verteilen, um realistische Ergebnisse zu erhalten.</section></div>
+
+<div class="quiz"><h3>Warum wird die Verformung in ANSYS oft überhöht dargestellt?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" correct><label for="quiz-1-0">Damit die Formänderung visuell deutlich erkennbar ist.</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Weil das Netz zu grob ist.</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">Um die Spannungen zu erhöhen.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tipp:</em> Der Skalierungsfaktor dient nur der Visualisierung; die Werte sind in den Ergebnistabellen zu finden.</section></div>
+
+<div class="quiz"><h3>Welche Einheit hat die von-Mises-Spannung?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Newton</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">Pascal (N/m²)</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" ><label for="quiz-2-2">Meter pro Sekunde</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tipp:</em> Es handelt sich um eine Spannungseinheit.</section></div>
+
+<div class="quiz"><h3>Wie kann eine Divergenz im FEM-Ergebnis erkannt werden?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">Wenn die Verformung kleiner wird.</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">Wenn die Spannungen gleich bleiben.</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" correct><label for="quiz-3-2">Wenn sich die Spannungen bei weiterer Verfeinerung immer weiter erhöhen.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tipp:</em> Divergentes Verhalten weist oft auf geometrische oder lastbedingte Singularitäten hin.</section></div>
+
+<div class="quiz"><h3>Warum ist die analytische Lösung bei der Biegung eines Kragbalkens wichtig?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" correct><label for="quiz-4-0">Sie dient als Referenz zur Überprüfung der FEM-Ergebnisse.</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">Sie ersetzt die Simulation vollständig.</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" ><label for="quiz-4-2">Sie zeigt nur qualitative Trends.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Analytische Vergleiche helfen, Modellfehler und Abweichungen im FEM-Modell zu erkennen.</section></div>
+
+<div class="quiz"><h3>Warum lässt eine fixe Einspannung keine Querkontraktion zu?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Weil das Material komplett starr wird.</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">Weil alle Freiheitsgrade festgehalten sind, auch Querdehnungen sind verhindert.</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Weil die Last dadurch nicht mehr wirkt.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Hinweis:</strong> Bei fester Einspannung sind alle Verschiebungen, auch in Querrichtung, gesperrt – somit ist keine Querkontraktion möglich.</section></div>
+
+<div class="quiz"><h3>Was kann man stattdessen einstellen, wenn man Querkontraktion zulassen will?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">Nichts, es bleibt immer fix.</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">Man lässt die Querverschiebung als Freiheitsgrad zu (externe Verschiebung).</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">Man ändert den Werkstoff auf viskos.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tipp:</em> Wenn Querkontraktion gewünscht ist, darf die Querverschiebung an der Einspannung nicht gesperrt sein.</section></div>
+
+<!-- markdownlint-enable MD033 -->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Altenbach2016">
+<p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Wikipedia2023">
+<p>Spannungs-dehnungs-diagramm. 2023. URL: <a href="https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045">https://de.wikipedia.org/w/index.php?title=Spannungs-Dehnungs-Diagramm&amp;oldid=237920045</a> (visited on 28.07.2025).&#160;<a class="footnote-backref" href="#fnref:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wikipedia2023" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Dubbel2020">
+<p>Beate Bender and Dietmar Göhlich. <em>Dubbel Taschenbuch für den Maschinenbau 1: Grundlagen und Tabellen</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2020. ISBN 978-3-662-59710-1. <a href="https://doi.org/10.1007/978-3-662-59711-8">doi:10.1007/978-3-662-59711-8</a>.&#160;<a class="footnote-backref" href="#fnref:Dubbel2020" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Dubbel2020" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
