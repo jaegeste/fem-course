@@ -433,9 +433,6 @@ With a _deformable external displacement_ as boundary condition, the **total def
 
 [![Total deformation with external displacement](media/03_kragbalken/18_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/18_Kragbalken_Auswertung.en.png "Total deformation with external displacement"){.glightbox}
 
-!!! danger "FIXME"
-    Screenshot missing – 18_Kragbalken_Auswertung.en.png
-
 The **von Mises stress** shows the expected constant distribution across the entire component. There are no longer any stress peaks in the fixed region; Poisson’s effect is enabled. The von Mises stress is 52.083 MPa.  
 
 [![von Mises stress with external displacement](media/03_kragbalken/20_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/20_Kragbalken_Auswertung.en.png "von Mises stress with external displacement"){.glightbox}
@@ -443,9 +440,6 @@ The **von Mises stress** shows the expected constant distribution across the ent
 The **deformation result** in the x-direction is 0.000469 mm.
 
 [![Deformation in x-direction with external displacement](media/03_kragbalken/19_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/19_Kragbalken_Auswertung.en.png "Deformation in x-direction with external displacement"){.glightbox}
-
-!!! danger "FIXME"
-    Screenshot missing – 19_Kragbalken_Auswertung.en.png
 
 ---
 
@@ -530,15 +524,9 @@ The direction of the force is perpendicular to the beam axis, with magnitude \(F
 
 [![Cantilever bending – force](media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png){width=800px}](media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png "Cantilever bending – force"){.glightbox}  
 
-!!! danger "FIXME"
-    Screenshot missing – 22_kragbalken_biegung_randbedingungen.en.png
-
 The boundary conditions are thus as follows:  
 
 [![Cantilever bending – boundary conditions](media/03_kragbalken/21_kragbalken_biegung.en.png){width=800px}](media/03_kragbalken/21_kragbalken_biegung.en.png "Cantilever bending – boundary conditions"){.glightbox}  
-
-!!! danger "FIXME"
-    Screenshot missing – 21_kragbalken_biegung.en.png
 
 ### Evaluation
 
@@ -562,15 +550,9 @@ The total deformation shows a maximum **deflection** of the beam of 2.5143 mm.
 
 [![Cantilever bending – maximum deflection](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – maximum deflection"){.glightbox}  
 
-!!! danger "FIXME"
-    Screenshot missing – 23_Kragbalken_Biegung_Auswertung.en.png
-
 The **maximum von Mises stress** is 479.71 MPa and appears as a stress peak at the corners of the fixed face (red region).  
 
 [![Cantilever bending – maximum von Mises stress](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – maximum von Mises stress"){.glightbox}  
-
-!!! danger "FIXME"
-    Screenshot missing – 24_Kragbalken_Biegung_Auswertung.en.png
 
 The **maximum normal stress** according to the figure above is 437.36 MPa.  
 
@@ -717,9 +699,6 @@ This results in a beam **free of shear forces** with a more uniform stress field
 * Observation: Uniform distribution, no singularity caused by force introduction.  
 
 [![Cantilever bending – bending moment](media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/30_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – bending moment"){.glightbox}  
-
-!!! danger "FIXME"
-    Screenshot missing – 30_Kragbalken_Biegung_Auswertung.en.png
 
 ---
 
