@@ -409,10 +409,6 @@ Betrachtet man die maximale Vergleichsspannung, ist eine deutliche Zunahme von V
 
 <!-- markdownlint-enable MD033 -->
 
-
-
-
-
 ??? note "Ergebnisse Netzverfeinerung als Tabelle"
     | Netzgröße     | Max. Spannung | Anzahl Knoten | Anzahl Elemente |
     |---------------|--------------|--------------|----------------|
@@ -619,7 +615,7 @@ Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie
 
 ### Netzeinfluss
 
-Im numerischen Modell führt daher eine Netzverfeinerung nicht zu einer Konvergenz gegen den theoretischen Wert, sondern zu einer zunehmenden Abweichung durch sehr lokale Spannungsspitze.
+Hier soll erneut der Einfluss der Vernetzung auf das Ergebnis untersucht werden. Ausgangspunkt ist das Standardnetz, das in mehreren Schritten weiter verfeinert wird.
 
 <!-- markdownlint-disable MD033 -->
 

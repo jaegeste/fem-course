@@ -358,52 +358,58 @@ Considering the maximum equivalent stress, there is a clear increase from one re
 
 <!-- markdownlint-disable MD033 -->
 
-<div id="meshPlot" style="width:100%;height:500px;"></div>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-<script>
-var trace1 = {
-  x: ["Standard mesh", "5 mm", "1 mm", "0.5 mm"],
-  y: [57.528, 61.47, 105.38, 136.92],
-  name: "Max. stress (MPa)",
-  type: "scatter",
-  mode: "lines+markers",
-  yaxis: "y1"
-};
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Standard mesh","5 mm","1 mm","0.5 mm"],
+           "y": [57.528,61.47,105.38,136.92],
+           "name": "Max. stress (MPa)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["57.528 MPa","61.47 MPa","105.38 MPa","136.92 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard mesh","5 mm","1 mm","0.5 mm"],
+           "y": [621,1720,97981,736825],
+           "name": "Number of nodes",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["621","1 720","97 981","736 825"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard mesh","5 mm","1 mm","0.5 mm"],
+           "y": [80,270,21600,172800],
+           "name": "Number of elements",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["80","270","21 600","172 800"],
+           "hovertemplate": "%{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Mesh size vs. maximum stress, number of nodes and elements",
+         "xaxis": {"title": "Mesh size"},
+         "yaxis": {"title": "Max. stress (MPa)"},
+         "yaxis2": {"title": "Nodes / Elements", "overlaying": "y", "side": "right"},
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
+       }
+     }'>
+</div>
 
-var trace2 = {
-  x: ["Standard mesh", "5 mm", "1 mm", "0.5 mm"],
-  y: [621, 1720, 97981, 736825],
-  name: "Number of nodes",
-  type: "scatter",
-  mode: "lines+markers",
-  yaxis: "y2"
-};
+<!-- markdownlint-enable MD033 -->
 
-var trace3 = {
-  x: ["Standard mesh", "5 mm", "1 mm", "0.5 mm"],
-  y: [80, 270, 21600, 172800],
-  name: "Number of elements",
-  type: "scatter",
-  mode: "lines+markers",
-  yaxis: "y2"
-};
-
-var layout = {
-  title: "Mesh size vs. maximum stress, number of nodes and elements",
-  xaxis: { title: "Mesh size" },
-  yaxis: { title: "Max. stress (MPa)" },
-  yaxis2: {
-    title: "Nodes / Elements",
-    overlaying: "y",
-    side: "right"
-  },
-  legend: { x: 0.01, y: 0.99 }
-};
-
-Plotly.newPlot("meshPlot", [trace1, trace2, trace3], layout);
-</script>
-
-<!-- markdownlint-disable MD033 -->
 
 ??? note "Mesh refinement results as a table"
     | Mesh size     | Max. stress  | Number of nodes | Number of elements |
@@ -420,8 +426,27 @@ In the FEM model with fixed support, this **lateral contraction is locally preve
 This leads to **edge stress peaks** not predicted analytically.  
 → Explains deviations near the support.
 
+An _external displacement_ offers more configuration options since individual **translational and rotational degrees of freedom** can be selectively released or constrained, and **Poisson’s effect** can either be allowed or suppressed. The latter is controlled via the setting _Behavior: Deformable_.
+
+[![External displacement](media/03_kragbalken/17_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/17_Kragbalken_Auswertung.en.png "External displacement"){.glightbox}
+
+With a _deformable external displacement_ as boundary condition, the **total deformation** is 0.0391 mm.
+
+[![Total deformation with external displacement](media/03_kragbalken/18_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/18_Kragbalken_Auswertung.en.png "Total deformation with external displacement"){.glightbox}
+
 !!! danger "FIXME"
-    Figure missing in the English version.
+    Screenshot missing – 18_Kragbalken_Auswertung.en.png
+
+The **von Mises stress** shows the expected constant distribution across the entire component. There are no longer any stress peaks in the fixed region; Poisson’s effect is enabled. The von Mises stress is 52.083 MPa.  
+
+[![von Mises stress with external displacement](media/03_kragbalken/20_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/20_Kragbalken_Auswertung.en.png "von Mises stress with external displacement"){.glightbox}
+
+The **deformation result** in the x-direction is 0.000469 mm.
+
+[![Deformation in x-direction with external displacement](media/03_kragbalken/19_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/19_Kragbalken_Auswertung.en.png "Deformation in x-direction with external displacement"){.glightbox}
+
+!!! danger "FIXME"
+    Screenshot missing – 19_Kragbalken_Auswertung.en.png
 
 ---
 
@@ -444,26 +469,258 @@ Address the following topics:
 
 ---
 
-## Theoretischer Hintergrund, Biegung
+## Theoretical Background, Bending
+
+In bending, a force acting perpendicular to the beam axis generates a moment that causes tensile and compressive stresses in the outer fibers. The neutral axis remains free of stress. For small deflections and linear material behavior, the Bernoulli hypothesis applies, stating that cross sections remain plane and only rotate.
+
+The **maximum bending moment** of a cantilever beam with an applied force \(F_B\) and length \(l\) is given by
+
+\[
+M_B = F_B \cdot l
+\]
+
+The **section modulus** \(W_b\) describes the geometry-dependent stiffness of the cross section. For a square cross section with side length \(a\), it is
+
+\[
+W_b = \frac{a^3}{6}
+\]
+
+Table of additional section moduli and second moments of area:
+
+[![Second moments of area and section moduli](media/03_kragbalken/29_Flächenmomente_Dubbel.png){width=250px}](media/03_kragbalken/29_Flächenmomente_Dubbel.png "Second moments of area and section moduli"){.glightbox}
+<span class="bildquelle">Image source[@Dubbel2020]</span>
+
+The **maximum normal stress due to bending** is
+
+\[
+\sigma_\text{max} = \frac{M_B}{W_b} = \frac{6\,F_B\,l}{a^3}
+\]
+
+It occurs in the outermost fibers of the cross section – tensile stress on one side and compressive stress on the opposite side. The normal stress in the neutral axis is zero.
+
+The **maximum deflection** at the free end is
+
+\[
+f = \frac{F_B\,l^3}{3\,E\,I} = \frac{4\,F_B\,l^3}{E\,a^4}
+\]
+
+Table of additional deflection curves. The relevant load case here is case 6.
+
+[![Deflection curves of beams with constant cross section](media/03_kragbalken/28_Biegelinie_Dubbel.png){width=250px}](media/03_kragbalken/28_Biegelinie_Dubbel.png "Deflection curves of beams with constant cross section"){.glightbox}
+<span class="bildquelle">Image source[@Dubbel2020]</span>
+
+The resulting stresses are distributed linearly over the cross section: one side is under tension, the other under compression. In contrast to the tensile test, bending produces a **non-uniform stress distribution**
 
 ## Implementation in ANSYS
 
+**Requirements**  
+Geometry import, material assignment, and mesh generation are identical to the tensile loading task. See:
+
+* [Geometry import](#1-geometry-import)
+* [Material assignment](#2-material-assignment)
+* [Mesh generation](#3-meshing)
+
+### Load case and boundary conditions
+
+Based on the previous results, the following boundary conditions are appropriate here:
+
+* **External displacement** on the left end face  
+* **Force (bending)** on the right end face  
+
+The direction of the force is perpendicular to the beam axis, with magnitude \(F_B\) according to the task definition. The direction can either be defined via **Define by vector**, by selecting an appropriate edge to specify the direction (note the arrow orientation), or via **Define by components**, where the magnitude is entered directly in global coordinates.  
+
+[![Cantilever bending – force](media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png){width=800px}](media/03_kragbalken/22_kragbalken_biegung_randbedingungen.en.png "Cantilever bending – force"){.glightbox}  
+
+!!! danger "FIXME"
+    Screenshot missing – 22_kragbalken_biegung_randbedingungen.en.png
+
+The boundary conditions are thus as follows:  
+
+[![Cantilever bending – boundary conditions](media/03_kragbalken/21_kragbalken_biegung.en.png){width=800px}](media/03_kragbalken/21_kragbalken_biegung.en.png "Cantilever bending – boundary conditions"){.glightbox}  
+
+!!! danger "FIXME"
+    Screenshot missing – 21_kragbalken_biegung.en.png
+
+### Evaluation
+
+As described [above](#5-evaluation), the following two results are first examined:
+
+* **Deformation (total deformation)**
+* **von Mises stress**
+
+To evaluate the **normal stress**, it can be added under _Solution_ via the context menu by selecting normal stress in the beam’s longitudinal direction. Pay attention to the _orientation_ of the coordinate axis. A linear stress distribution across the cross section with tension and compression sides is expected.
+
+[![Cantilever bending – normal stress](media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – normal stress"){.glightbox}  
+
+!!! danger "FIXME"
+    Screenshot missing – 25_Kragbalken_Biegung_Auswertung.en.png
+
 ## Discussion of the results, bending
+
+### Comparison with analytical solution
+
+The total deformation shows a maximum **deflection** of the beam of 2.5143 mm.
+
+[![Cantilever bending – maximum deflection](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/23_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – maximum deflection"){.glightbox}  
+
+!!! danger "FIXME"
+    Screenshot missing – 23_Kragbalken_Biegung_Auswertung.en.png
+
+The **maximum von Mises stress** is 479.71 MPa and appears as a stress peak at the corners of the fixed face (red region).  
+
+[![Cantilever bending – maximum von Mises stress](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/24_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – maximum von Mises stress"){.glightbox}  
+
+!!! danger "FIXME"
+    Screenshot missing – 24_Kragbalken_Biegung_Auswertung.en.png
+
+The **maximum normal stress** according to the figure above is 437.36 MPa.  
+
+When evaluating the results, note that a _probe_ of the stress field is not meaningful here. The maximum stress occurs in a very small region near the fixed end and is highly localized.
+
+The following box contains the analytical solution. Perform the calculation yourself first, using the [bending theory](#theoretical-background-bending) presented above.
+
+**Note:** Shear stress due to shear force is neglected here.
+
+??? note "Calculation of \(\sigma_\text{max}\) and \(f\)"
+    For the analytical solution, the maximum normal stress \(\sigma_\text{max}\) and the deflection \(f\) of the cantilever beam are determined.
+
+    **Given:**
+    
+    \[
+    F_B = 750 \,\text{N}, \quad l = 150 \,\text{mm}, \quad a = 12 \,\text{mm}, \quad E = 210000 \,\text{N/mm}^2
+    \]
+
+    **Bending moment**
+    
+    \[
+    M_B = F_B \cdot l = 750 \,\text{N} \cdot 150 \,\text{mm} = 112500 \,\text{Nmm}
+    \]
+
+    **Section modulus (square cross section)**
+    
+    \[
+    W_b = \frac{a^3}{6} = \frac{12^3 \,\text{mm}^3}{6} = 288 \,\text{mm}^3
+    \]
+
+    **Maximum normal stress**
+    
+    \[
+    \sigma_\text{max} = \frac{M_B}{W_b} = \frac{112500 \,\text{Nmm}}{288 \,\text{mm}^3}
+                     = 390.6 \,\text{N/mm}^2
+    \]
+
+    **Deflection at the free end**
+    
+    \[
+    I = \frac{a^4}{12} = \frac{12^4 \,\text{mm}^4}{12} = 1728 \,\text{mm}^4
+    \]
+
+    \[
+    f = \frac{F_B \cdot l^3}{3 \cdot E \cdot I}
+      = \frac{750 \,\text{N} \cdot (150 \,\text{mm})^3}{3 \cdot 210000 \,\text{N/mm}^2 \cdot 1728 \,\text{mm}^4}
+      \approx 2.33 \,\text{mm}
+    \]
+
+    **Notes:**  
+    \(\sigma_\text{max}\) occurs in the outermost fibers at the clamped end (tension on one side, compression on the opposite).  
+    The deflection \(f\) is maximum at the free end.
+
+The following table shows the analytical results, the FEM results, and the resulting percentage deviations. The percentage deviation is calculated as:
+
+\[
+\text{Deviation} = \frac{\text{FEM} - \text{Analytical}}{\text{Analytical}} \times 100
+\]
+
+| Quantity (symbol)                     | Analytical solution | FEM result | Deviation [%] |
+|--------------------------------------|----------------------|-------------|----------------|
+| Max. normal stress ($\sigma_\mathrm{max}$) | 390.6 N/mm²          | 437.36 N/mm² | 11.97 %        |
+| Max. deflection (f)                  | 2.33 mm              | 2.5143 mm   | 7.91 %         |
+
+### Mesh influence
+
+The influence of the meshing on the result is examined again here. The starting point is the standard mesh, which is successively refined in several steps.
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" data-fig='{
+  "data": [
+    {
+      "x": ["Standard mesh", "5 mm", "2 mm", "1 mm", "0.5 mm"],
+      "y": [437.36, 406.62, 400.01, 394.11, 391.22],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Max. stress (MPa)",
+      "hovertemplate": "Mesh size: %{x}<br>Max. stress: %{y:.2f} MPa"
+    },
+    {
+      "x": ["Standard mesh", "5 mm", "2 mm", "1 mm", "0.5 mm"],
+      "y": [621, 1720, 13873, 97981, 736825],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Number of nodes",
+      "yaxis": "y2",
+      "hovertemplate": "Mesh size: %{x}<br>Nodes: %{y:,d}"
+    },
+    {
+      "x": ["Standard mesh", "5 mm", "2 mm", "1 mm", "0.5 mm"],
+      "y": [80, 270, 2700, 21600, 172800],
+      "type": "scatter",
+      "mode": "lines+markers",
+      "name": "Number of elements",
+      "yaxis": "y2",
+      "hovertemplate": "Mesh size: %{x}<br>Elements: %{y:,d}"
+    }
+  ],
+  "layout": {
+    "title": {"text": "Mesh size vs. maximum stress, nodes and elements", "x": 0.5},
+    "xaxis": {"title": "Mesh size"},
+    "yaxis": {
+      "title": "Max. stress (MPa)",
+      "type": "linear"
+    },
+    "yaxis2": {
+      "title": "Nodes / Elements",
+      "overlaying": "y",
+      "side": "right",
+      "type": "linear",
+      "tickformat": ",d"
+    },
+    "hovermode": "x unified",
+    "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"},
+    "margin": {"l": 80, "r": 80, "t": 80, "b": 80},
+    "legend": {"x": 0.02, "y": 0.98}
+  }
+}'></div>
+
+<!-- markdownlint-enable MD033 -->
+
+??? note "Mesh refinement results as table"
+    | Mesh size     | Max. normal stress | Number of nodes | Number of elements |
+    |---------------|--------------------|-----------------|--------------------|
+    | Standard mesh | 437.36 MPa         | 621             | 80                 |
+    | 5 mm          | 406.62 MPa         | 1,720           | 270                |
+    | 2 mm          | 400.01 MPa         | 13,873          | 2,700              |
+    | 1 mm          | 394.11 MPa         | 97,981          | 21,600             |
+    | 0.5 mm        | 391.22 MPa         | 736,825         | 172,800            |
+
+The following trend becomes evident from this mesh study: the maximum normal stress decreases with increasing mesh refinement and approaches the value obtained from the analytical solution. In contrast, the computation time increases significantly.
 
 ## Add-on: Bending Moment Instead of Force
 
-As an alternative, a **pure bending moment** can be applied.  
-This results in a **shear-free beam** with a more uniform stress field.  
+!!! note "Note"
+    Alternatively, instead of a force, a pure _bending moment_ can be applied to the free end face.  
+    This eliminates shear forces and results in a more uniform stress field. However, both variants show the same characteristic linear stress distribution across the cross section.
 
-* Implementation: load type “Moment” on the face.  
-* Observation: smoother distribution, no singularity from force application.  
+As an alternative, a pure **bending moment** can be applied.  
+This results in a beam **free of shear forces** with a more uniform stress field.
 
-???+ danger "FIXME"
-    Add screenshot: moment at face.
+* Implementation: Load type _Moment_ applied to the end face.  
+* Observation: Uniform distribution, no singularity caused by force introduction.  
 
-[![Cantilever beam, solutions](media/03_kragbalken/17_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/17_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+[![Cantilever bending – bending moment](media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/30_Krakbalken_Biegung_Auswertung.en.png "Cantilever bending – bending moment"){.glightbox}  
 
-[![Cantilever beam, solutions](media/03_kragbalken/18_Kragbalken_Auswertung.en.png){width=600px}](media/03_kragbalken/18_Kragbalken_Auswertung.en.png "Cantilever beam, solutions"){.glightbox}  
+!!! danger "FIXME"
+    Screenshot missing – 30_Krakbalken_Biegung_Auswertung.en.png
 
 ---
 
@@ -501,6 +758,8 @@ In ANSYS Mechanical, various options are available for applying loads. The choic
 
 These options illustrate that the “same” load can yield very different results depending on how it is applied. Choosing the correct method is a key part of FEM modeling.
 
+### Videos
+
 ???+ danger "FIXME"
     Add video?
 
@@ -509,39 +768,66 @@ These options illustrate that the “same” load can yield very different resul
 <!-- markdownlint-disable MD033 -->
 
 <?quiz?>
-question: Why should the force in the FEM model not be applied only to an edge or a single node?
+question: Why should a force in an FEM model not be applied only to an edge or a single node?
 answer: To make the calculation run faster.
 answer-correct: Because otherwise unrealistically high local stresses (singularities) occur.
 answer: To reduce the von Mises stress.
 content:
-<strong>Hint:</strong> Always distribute loads over surfaces to obtain realistic results.
+<strong>Note:</strong> Always apply loads to surfaces to obtain realistic results.
 <?/quiz?>
 
 <?quiz?>
-question: Why is deformation often shown exaggerated in ANSYS?
+question: Why is deformation in ANSYS often shown exaggerated?
 answer-correct: To make the shape change visually more apparent.
 answer: Because the mesh is too coarse.
 answer: To increase the stresses.
 content:
-<em>Tip:</em> The scaling factor is only for visualization; the actual values can be found in the results tables.
+<em>Tip:</em> The scale factor is only for visualization; the numerical values are shown in the results tables.
 <?/quiz?>
 
 <?quiz?>
 question: What is the unit of the von Mises stress?
 answer: Newton
 answer-correct: Pascal (N/m²)
-answer: Meters per second
+answer: Meter per second
 content:
-<em>Tip:</em> It is a stress unit.
+<em>Tip:</em> It is a unit of stress.
 <?/quiz?>
 
 <?quiz?>
-question: What influence does the choice of boundary conditions have on the simulation result?
-answer: None at all.
-answer: It only affects the color of the display.
-answer-correct: It has a decisive influence on the deformations and stress distribution.
+question: How can divergence in an FEM result be recognized?
+answer: When the deformation decreases.
+answer: When the stresses remain constant.
+answer-correct: When the stresses keep increasing with further mesh refinement.
 content:
-<strong>Hint:</strong> Incorrect boundary conditions lead to physically incorrect results.
+<em>Tip:</em> Divergent behavior often indicates geometric or load-related singularities.
+<?/quiz?>
+
+<?quiz?>
+question: Why is the analytical solution important for the bending of a cantilever beam?
+answer-correct: It serves as a reference for verifying the FEM results.
+answer: It completely replaces the simulation.
+answer: It shows only qualitative trends.
+content:
+<strong>Note:</strong> Analytical comparisons help identify modeling errors and deviations in FEM results.
+<?/quiz?>
+
+<?quiz?>
+question: Why does a fixed constraint not allow Poisson’s effect?
+answer: Because the material becomes completely rigid.
+answer-correct: Because all degrees of freedom are fixed, including lateral deformations.
+answer: Because the load no longer acts.
+content:
+<strong>Note:</strong> With a fixed constraint, all displacements—including lateral ones—are locked, so Poisson’s effect cannot occur.
+<?/quiz?>
+
+<?quiz?>
+question: What can be set instead if Poisson’s effect should be allowed?
+answer: Nothing, it always remains fixed.
+answer-correct: The lateral displacement degree of freedom can be released (external displacement).
+answer: The material can be changed to viscous.
+content:
+<em>Tip:</em> If Poisson’s effect is desired, the lateral displacement at the constraint must not be fixed.
 <?/quiz?>
 
 <!-- markdownlint-enable MD033 -->
