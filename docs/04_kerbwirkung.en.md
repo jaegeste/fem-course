@@ -303,9 +303,32 @@ The examples shown here are analytically solvable. In real applications, however
 
 ## Convergence and Divergence
 
+### Convergence
+
+The Finite Element Method (FEM) is an approximation technique in which a continuous physical system is represented by a finite number of elements. Within each element, the result quantity — such as displacement or temperature — is approximated by a shape function.
+
+When strong gradients occur in the results, for example in regions of stress concentration, a sufficiently accurate representation can only be achieved if these regions are meshed finely enough. Local mesh refinement increases the accuracy of the calculation, and the result asymptotically approaches the physically correct value.
+
+[![Convergence behavior with increasing mesh refinement](media/04_kerbwirkung/konvergenz.en.svg){width=350px}](media/04_kerbwirkung/konvergenz.en.svg "Convergence behavior with increasing mesh refinement"){.glightbox}  
+<span class="bildquelle">Image source based on[@Gebhardt2018]</span>
+
+Plotting the calculated stress against the mesh density yields a curve that approaches a limiting value. This approach is referred to as _convergence_. In ANSYS Workbench, convergence can be checked automatically by performing multiple solution steps with increasing mesh refinement until the results change only slightly (e.g. < 10%).
+
+### Divergence
+
+_Divergence_ occurs when the result does **not** approach a limiting value with increasing mesh refinement but instead increases without bound.
+
+A typical example is a sharp notch with a theoretical notch radius of zero. In reality, no infinite stresses occur because real notches always have a small rounding and the material undergoes local plastic deformation. If these effects are not considered in the model, the calculated stress value increases continuously with increasing mesh density — the solution _diverges_.
+
+[![Divergence](media/04_kerbwirkung/divergenz.en.svg){width=350px}](media/04_kerbwirkung/divergenz.en.svg "Divergence"){.glightbox}  
+<span class="bildquelle">Image source based on[@Gebhardt2018]</span>
+
+Such singular regions cannot be meaningfully evaluated. Instead, the evaluation should focus on physically meaningful areas, or the geometry should be modified with a fillet to restore a realistic stress state.
+
+
 ## Task: Stress Concentration  
 
-## Theory: Stress Concentrationt  
+## Theory: Stress Concentration  
 
 ## Implementation in ANSYS
 

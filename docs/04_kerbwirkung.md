@@ -313,6 +313,30 @@ Die hier gezeigten Beispiele sind analytisch lösbar. In realen Anwendungen ents
 
 ## Konvergenz und Divergenz
 
+### Konvergenz
+
+Die Finite-Elemente-Methode (FEM) ist ein Näherungsverfahren, bei dem ein kontinuierliches physikalisches System durch eine endliche Anzahl von Elementen beschrieben wird. Innerhalb eines Elements wird die Ergebnisgröße, etwa Verschiebung oder Temperatur, durch eine Ansatzfunktion angenähert.
+
+Treten starke Gradienten im Ergebnis auf, beispielsweise bei Spannungskonzentrationen, kann eine hinreichend genaue Abbildung nur erreicht werden, wenn die betroffenen Bereiche ausreichend fein vernetzt sind. Durch lokale Netzverfeinerungen steigt die Genauigkeit der Berechnung, und das Ergebnis nähert sich asymptotisch dem physikalisch korrekten Wert an.
+
+[![Konvergenzverlauf bei zunehmender Netzverfeinerung](media/04_kerbwirkung/konvergenz.svg){width=350px}](media/04_kerbwirkung/konvergenz.svg "Konvergenzverlauf bei zunehmender Netzverfeinerung"){.glightbox}  
+<span class="bildquelle">Bildquelle nach[@Gebhardt2018]</span>
+
+Zeichnet man die berechnete Spannung in Abhängigkeit von der Netzdichte, ergibt sich eine Kurve, die sich einem Grenzwert annähert. Diese Annäherung bezeichnet man als _Konvergenz_. In ANSYS Workbench kann Konvergenz automatisch überprüft werden, indem mehrere Berechnungsschritte mit zunehmender Netzfeinheit durchgeführt werden, bis sich das Ergebnis nur noch geringfügig (z. B. < 10 %) ändert.
+
+### Divergenz
+
+Von _Divergenz_ spricht man, wenn sich das Berechnungsergebnis mit zunehmender Netzverfeinerung **nicht** einem Grenzwert annähert, sondern stattdessen unbegrenzt ansteigt.
+
+Ein typisches Beispiel ist eine scharfkantige Kerbe mit theoretischem Kerbradius = 0. In der Realität treten dort keine unendlichen Spannungen auf, da reale Kerben immer eine kleine Rundungen besitzen und das Material lokal plastifiziert. Werden diese Effekte im Modell jedoch nicht berücksichtigt, steigt der berechnete Spannungswert mit zunehmender Netzdichte weiter an – die Lösung _divergiert_.
+
+[![Divergenz](media/04_kerbwirkung/divergenz.svg){width=350px}](media/04_kerbwirkung/divergenz.svg "Divergenz"){.glightbox}  
+<span class="bildquelle">Bildquelle nach[@Gebhardt2018]</span>
+
+Solche singulären Bereiche können nicht sinnvoll ausgewertet werden. Stattdessen sollte die Auswertung auf physikalisch sinnvolle Regionen fokussiert oder durch Verrundung der Geometrie eine realistische Spannungssituation wiederhergestellt werden.
+
+---
+
 ## Aufgabe Kerbwirkung  
 
 ## Theorie Kerbwirkung  
