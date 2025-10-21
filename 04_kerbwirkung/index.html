@@ -806,6 +806,19 @@ F_1 = -F
 <p>Die hier gezeigten Beispiele sind analytisch lösbar. In realen Anwendungen entstehen jedoch sehr große Gleichungssysteme (oft mehrere Millionen Knoten), die nur näherungsweise und iterativ gelöst werden können. Etablierte Näherungsverfahren sind etwa die <strong>Ritz-</strong> und <strong>Galerkin-Methoden</strong><sup id="fnref:Betten2003"><a class="footnote-ref" href="#fn:Betten2003">3</a></sup>.</p>
 <hr />
 <h2 id="konvergenz-und-divergenz">Konvergenz und Divergenz<a class="headerlink" href="#konvergenz-und-divergenz" title="Permanent link">&para;</a></h2>
+<h3 id="konvergenz">Konvergenz<a class="headerlink" href="#konvergenz" title="Permanent link">&para;</a></h3>
+<p>Die Finite-Elemente-Methode (FEM) ist ein Näherungsverfahren, bei dem ein kontinuierliches physikalisches System durch eine endliche Anzahl von Elementen beschrieben wird. Innerhalb eines Elements wird die Ergebnisgröße, etwa Verschiebung oder Temperatur, durch eine Ansatzfunktion angenähert.</p>
+<p>Treten starke Gradienten im Ergebnis auf, beispielsweise bei Spannungskonzentrationen, kann eine hinreichend genaue Abbildung nur erreicht werden, wenn die betroffenen Bereiche ausreichend fein vernetzt sind. Durch lokale Netzverfeinerungen steigt die Genauigkeit der Berechnung, und das Ergebnis nähert sich asymptotisch dem physikalisch korrekten Wert an.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/konvergenz.svg" title="Konvergenzverlauf bei zunehmender Netzverfeinerung"><img alt="Konvergenzverlauf bei zunehmender Netzverfeinerung" src="../media/04_kerbwirkung/konvergenz.svg" width="350px" /></a><br />
+<span class="bildquelle">Bildquelle nach<sup id="fnref2:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
+<p>Zeichnet man die berechnete Spannung in Abhängigkeit von der Netzdichte, ergibt sich eine Kurve, die sich einem Grenzwert annähert. Diese Annäherung bezeichnet man als <em>Konvergenz</em>. In ANSYS Workbench kann Konvergenz automatisch überprüft werden, indem mehrere Berechnungsschritte mit zunehmender Netzfeinheit durchgeführt werden, bis sich das Ergebnis nur noch geringfügig (z. B. &lt; 10 %) ändert.</p>
+<h3 id="divergenz">Divergenz<a class="headerlink" href="#divergenz" title="Permanent link">&para;</a></h3>
+<p>Von <em>Divergenz</em> spricht man, wenn sich das Berechnungsergebnis mit zunehmender Netzverfeinerung <strong>nicht</strong> einem Grenzwert annähert, sondern stattdessen unbegrenzt ansteigt.</p>
+<p>Ein typisches Beispiel ist eine scharfkantige Kerbe mit theoretischem Kerbradius = 0. In der Realität treten dort keine unendlichen Spannungen auf, da reale Kerben immer eine kleine Rundungen besitzen und das Material lokal plastifiziert. Werden diese Effekte im Modell jedoch nicht berücksichtigt, steigt der berechnete Spannungswert mit zunehmender Netzdichte weiter an – die Lösung <em>divergiert</em>.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/divergenz.svg" title="Divergenz"><img alt="Divergenz" src="../media/04_kerbwirkung/divergenz.svg" width="350px" /></a><br />
+<span class="bildquelle">Bildquelle nach<sup id="fnref3:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
+<p>Solche singulären Bereiche können nicht sinnvoll ausgewertet werden. Stattdessen sollte die Auswertung auf physikalisch sinnvolle Regionen fokussiert oder durch Verrundung der Geometrie eine realistische Spannungssituation wiederhergestellt werden.</p>
+<hr />
 <h2 id="aufgabe-kerbwirkung">Aufgabe Kerbwirkung<a class="headerlink" href="#aufgabe-kerbwirkung" title="Permanent link">&para;</a></h2>
 <h2 id="theorie-kerbwirkung">Theorie Kerbwirkung<a class="headerlink" href="#theorie-kerbwirkung" title="Permanent link">&para;</a></h2>
 <h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
@@ -830,7 +843,7 @@ Reduktion der Rechenzeit
 <hr />
 <ol>
 <li id="fn:Gebhardt2018">
-<p>Christof Gebhardt. <em>Praxisbuch FEM mit ANSYS Workbench</em>. Carl Hanser Verlag GmbH &amp; Co. KG, München, 2018. ISBN 978-3-446-45001-1. URL: <a href="https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409">https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409</a> (visited on 2019-03-18), <a href="https://doi.org/10.3139/9783446457409">doi:10.3139/9783446457409</a>.&#160;<a class="footnote-backref" href="#fnref:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Christof Gebhardt. <em>Praxisbuch FEM mit ANSYS Workbench</em>. Carl Hanser Verlag GmbH &amp; Co. KG, München, 2018. ISBN 978-3-446-45001-1. URL: <a href="https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409">https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409</a> (visited on 2019-03-18), <a href="https://doi.org/10.3139/9783446457409">doi:10.3139/9783446457409</a>.&#160;<a class="footnote-backref" href="#fnref:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Merkel2020">
 <p>Markus Merkel and Andreas Öchsner. <em>Eindimensionale Finite Elemente: ein Einstieg in die Methode</em>. Springer Vieweg, Berlin [Heidelberg], 3., neu bearbeitete unnd ergänzte auflage edition, 2020. ISBN 978-3-662-57994-7 978-3-662-57993-0.&#160;<a class="footnote-backref" href="#fnref:Merkel2020" title="Jump back to footnote 2 in the text">&#8617;</a></p>
