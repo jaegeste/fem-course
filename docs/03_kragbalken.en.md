@@ -539,9 +539,6 @@ To evaluate the **normal stress**, it can be added under _Solution_ via the cont
 
 [![Cantilever bending – normal stress](media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.en.png){width=800px}](media/03_kragbalken/25_Kragbalken_Biegung_Auswertung.en.png "Cantilever bending – normal stress"){.glightbox}  
 
-!!! danger "FIXME"
-    Screenshot missing – 25_Kragbalken_Biegung_Auswertung.en.png
-
 ## Discussion of the results, bending
 
 ### Comparison with analytical solution

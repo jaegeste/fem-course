@@ -10,6 +10,8 @@ Inhalt:
 
 # Modul 2 Kerbwirkung
 
+[![Under Construction mit FEM-Bezug](media/under_construction.png){width=700px}](media/under_construction.png "Under Construction"){.glightbox} 
+
 ## Lernziele
 
 ??? note "FIXME: Lernziele definieren"
@@ -21,17 +23,15 @@ Inhalt:
     * Zusammenhang zwischen Kräften, Verschiebungen und Steifigkeiten in Matrixform  
     * Anwendung einfacher analytischer Beispiele (1- und 2-Element-Systeme)  
 
-    → Lernziele bitte überprüfen, anpassen und final freigeben.
-
 ## Mathematische Grundlagen zur FEM
 
-Die FEM ist ein numerisches Verfahren zur näherungsweisen Lösung kontinuierlicher Feldprobleme. Dieses Kapitel erläutert die grundlegenden mathematischen Zusammenhänge der Methode. Betrachtet man die FEM als konstruktionsbegleitendes Werkzeug, spielt das Detailwissen zur Aufbereitung und Auswertung einer Simulation eine wichtige Rolle. Noch entscheidender ist jedoch das physikalische Verständnis des zugrunde liegenden Problems [@Gebhardt2018].
+Die FEM ist ein numerisches Verfahren zur näherungsweisen Lösung kontinuierlicher Feldprobleme. Dieses Kapitel erläutert die grundlegenden mathematischen Zusammenhänge der Methode. Betrachtet man die FEM als konstruktionsbegleitendes Werkzeug, spielt das Detailwissen zur Aufbereitung und Auswertung einer Simulation eine wichtige Rolle. Noch entscheidender ist jedoch das physikalische Verständnis des zugrunde liegenden Problems[@Gebhardt2018].
 
 Zur vollständigen Beschreibung eines physikalischen Problems gehören:
 
 * die **Geometrie** zur Definition des Gebiets  
 * die **Feldgleichungen** im Gebiet  
-* die **Randbedingungen** [@Merkel2020]  
+* die **Randbedingungen**[@Merkel2020]  
 
 Die folgenden Abschnitte zeigen das Vorgehen anhand einfacher Beispiele.
 
@@ -39,8 +39,7 @@ Die folgenden Abschnitte zeigen das Vorgehen anhand einfacher Beispiele.
 
 ### Berechnung mit einem Element
 
-Ein einzelnes Stab-Element wird durch zwei äußere Kräfte belastet. Es wirken die Kräfte _F₁_ und _F₂_, die Längenänderungen _u₁_ bzw. _u₂_ verursachen.  
-Der Stab habe die Länge _l_. Die Knoten begrenzen das Element und definieren dessen Bewegungsmöglichkeiten, also die Knotenfreiheitsgrade.
+Ein einzelnes Stab-Element wird durch zwei äußere Kräfte belastet. Es wirken die Kräfte _F₁_ und _F₂_, die Längenänderungen _u₁_ bzw. _u₂_ verursachen. Der Stab habe die Länge _l_. Die Knoten begrenzen das Element und definieren dessen Bewegungsmöglichkeiten, also die Knotenfreiheitsgrade.
 
 [![Stab-Element](media/04_kerbwirkung/Stab-Element_1.png){width=700px}](media/04_kerbwirkung/Stab-Element_1.png "Stab-Element"){.glightbox}  
 
@@ -64,8 +63,7 @@ Mit \(\sigma_z = \frac{F_z}{A}\) folgt für die Federsteifigkeit:
 c = \frac{E \cdot A}{l}
 \]
 
-Damit gilt:  
-Das Produkt aus Elastizitätsmodul _E_ und Querschnittsfläche _A_ geteilt durch die Länge _l_ ergibt die Federsteifigkeit _c_.
+Damit gilt: Das Produkt aus Elastizitätsmodul _E_ und Querschnittsfläche _A_ geteilt durch die Länge _l_ ergibt die Federsteifigkeit _c_.
 
 #### Kräftegleichgewicht
 
@@ -146,8 +144,7 @@ $$
 
 #### Gesamtsteifigkeitsmatrix
 
-Die Elementsteifigkeitsmatrix beschreibt die Steifigkeit eines Elements in Abhängigkeit von Länge, Querschnitt und Materialparametern.  
-Die Gesamtsteifigkeitsmatrix ergibt sich als Summe aller Elementsteifigkeitsmatrizen:
+Die Elementsteifigkeitsmatrix beschreibt die Steifigkeit eines Elements in Abhängigkeit von Länge, Querschnitt und Materialparametern. Die Gesamtsteifigkeitsmatrix ergibt sich als Summe aller Elementsteifigkeitsmatrizen:
 
 \[
 k = \sum_{i=1}^{z} k_i
@@ -310,7 +307,7 @@ F_1 = -F
 
 ### Hinweis zur praktischen Berechnung
 
-Die hier gezeigten Beispiele sind analytisch lösbar. In realen Anwendungen entstehen jedoch sehr große Gleichungssysteme (oft mehrere Millionen Knoten), die nur näherungsweise und iterativ gelöst werden können. Etablierte Näherungsverfahren sind etwa die **Ritz-** und **Galerkin-Methoden** [@Betten2003].
+Die hier gezeigten Beispiele sind analytisch lösbar. In realen Anwendungen entstehen jedoch sehr große Gleichungssysteme (oft mehrere Millionen Knoten), die nur näherungsweise und iterativ gelöst werden können. Etablierte Näherungsverfahren sind etwa die **Ritz-** und **Galerkin-Methoden**[@Betten2003].
 
 ---
 
@@ -336,10 +333,14 @@ Die hier gezeigten Beispiele sind analytisch lösbar. In realen Anwendungen ents
 
 ### Abgleich mit analytischer Lösung
 
+<!-- 
 vielleicht auch erst nach dem Netzeinfluss
+-->
 
 ### Netzeinfluss
 
+<!-- 
 hier dann Diskussion Rechenzeit, Darstellung in Tabelle
 Konvergenz
 Reduktion der Rechenzeit
+-->

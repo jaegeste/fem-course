@@ -1,3 +1,335 @@
 # Module 2 Stress Concentration
 
 [![Under Construction mit FEM-Bezug](media/under_construction.png){width=700px}](media/under_construction.png "Under Construction"){.glightbox}  
+
+## Learning Objectives
+
+??? note "FIXME: Define learning objectives"
+    The **learning objectives** for this section still need to be formulated.  
+    Suggested placeholder:
+
+    * Understanding of the fundamental mathematical principles of the Finite Element Method  
+    * Derivation and significance of the element stiffness matrix  
+    * Relationship between forces, displacements, and stiffnesses in matrix form  
+    * Application of simple analytical examples (1- and 2-element systems)  
+
+## Mathematical Fundamentals of FEM
+
+The FEM is a numerical method for the approximate solution of continuous field problems. This chapter explains the basic mathematical relationships of the method. Considering FEM as a design-supporting tool, detailed knowledge of simulation setup and evaluation plays an important role. Even more crucial, however, is the physical understanding of the underlying problem[@Gebhardt2018].
+
+A complete description of a physical problem includes:
+
+* the **geometry** defining the domain  
+* the **field equations** within the domain  
+* the **boundary conditions**[@Merkel2020]  
+
+The following sections illustrate the procedure using simple examples.
+
+---
+
+### Calculation with One Element
+
+A single bar element is subjected to two external forces. The forces _F₁_ and _F₂_ cause elongations _u₁_ and _u₂_. The bar has a length _l_. The nodes define the element boundaries and its degrees of freedom.
+
+[![Bar element](media/04_kerbwirkung/Stab-Element_1.png){width=700px}](media/04_kerbwirkung/Stab-Element_1.png "Bar element"){.glightbox}  
+
+#### Fundamental Finite Equation
+
+\[
+F = c \cdot \Delta u
+\]
+
+The total force _F_ is obtained as the product of the spring stiffness _c_ and the elongation \(\Delta u = u_1 - u_2\).  
+
+According to Hooke’s law:
+
+\[
+\sigma = \varepsilon \cdot E \quad \text{and} \quad \varepsilon = \frac{\Delta l}{l}
+\]
+
+With \(\sigma_z = \frac{F_z}{A}\), the spring stiffness is:
+
+\[
+c = \frac{E \cdot A}{l}
+\]
+
+Hence: The product of the elastic modulus _E_ and cross-sectional area _A_ divided by the length _l_ gives the spring stiffness _c_.
+
+#### Force Equilibrium
+
+\[
+\begin{aligned}
+F_1 &= c \cdot (u_1 - u_2) = c \cdot u_1 - c \cdot u_2 \\
+F_2 &= c \cdot (-u_1 + u_2) = -c \cdot u_1 + c \cdot u_2
+\end{aligned}
+\]
+
+In matrix form:
+
+$$
+\begin{bmatrix}
+F_1 \\[4pt]
+F_2
+\end{bmatrix}
+=
+c
+\begin{bmatrix}
+1 & -1 \\[4pt]
+-1 & 1
+\end{bmatrix}
+\begin{bmatrix}
+u_1 \\[4pt]
+u_2
+\end{bmatrix}
+$$
+
+For a fixed support at the left end, \(u_1 = 0\). The system simplifies to:
+
+\[
+F_2 = c \cdot u_2
+\]
+
+and therefore:
+
+\[
+u_2 = \frac{F_2}{c}
+\]
+
+---
+
+### Calculation with Two Elements
+
+The example is extended to two bar elements with one fixed support.
+
+[![Bar element](media/04_kerbwirkung/Stab-Element_2.png){width=700px}](media/04_kerbwirkung/Stab-Element_2.png "Bar element"){.glightbox}  
+
+Given:
+
+* \(u_1 = 0\)
+* \(c_1, c_2\)
+* \(F_2 = 2F\)
+* \(F_3 = -F\)
+
+Find:
+
+* \(F_1\) (reaction force)
+* \(u_2, u_3\)
+
+#### Force Vector
+
+$$
+\vec{f} =
+\begin{bmatrix}
+F_1 \\[4pt]
+F_2 \\[4pt]
+F_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+F_1 \\[4pt]
+2F \\[4pt]
+- F
+\end{bmatrix}
+$$
+
+#### Global Stiffness Matrix
+
+The element stiffness matrix describes the stiffness of an element as a function of its length, cross-section, and material parameters. The global stiffness matrix is obtained as the sum of all element stiffness matrices:
+
+\[
+k = \sum_{i=1}^{z} k_i
+\]
+
+For two bars:
+
+\[
+k =
+\begin{bmatrix}
+c_1 & -c_1 & 0 \\[4pt]
+-c_1 & c_1 + c_2 & -c_2 \\[4pt]
+0 & -c_2 & c_2
+\end{bmatrix}
+\]
+
+For identical stiffness values \(c_1 = c_2 = c\):
+
+\[
+k =
+\begin{bmatrix}
+c & -c & 0 \\[4pt]
+-c & 2c & -c \\[4pt]
+0 & -c & c
+\end{bmatrix}
+\]
+
+#### Fundamental Equation in Vector Form
+
+The fundamental equation in vector form is:
+
+\[
+\vec{f} = k \cdot \vec{d}
+\]
+
+The matrix–vector product of the displacement vector \(\vec{d}\) and the stiffness matrix \(k\) yields the force vector \(\vec{f}\). As in the first example, a force equilibrium is established, which is directly written in matrix form:
+
+$$
+\begin{bmatrix}
+F_1 \\[4pt]
+F_2 \\[4pt]
+F_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+c & -c & 0 \\[4pt]
+-c & 2c & -c \\[4pt]
+0 & -c & c
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+u_1 \\[4pt]
+u_2 \\[4pt]
+u_3
+\end{bmatrix}
+$$
+
+As stated above, \(u_1 = 0\). Thus:
+
+$$
+\begin{bmatrix}
+F_1 \\[4pt]
+F_2 \\[4pt]
+F_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+\cancel{c} & \cancel{-c} & 0 \\[4pt]
+\cancel{-c} & 2c & -c \\[4pt]
+0 & -c & c
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+\cancel{u_1} \\[4pt]
+u_2 \\[4pt]
+u_3
+\end{bmatrix}
+$$
+
+and therefore:
+
+$$
+\begin{bmatrix}
+F_2 \\[4pt]
+F_3
+\end{bmatrix}
+=
+\begin{bmatrix}
+2F \\[4pt]
+- F
+\end{bmatrix}
+=
+\begin{bmatrix}
+2c & -c \\[4pt]
+-c & c
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+u_2 \\[4pt]
+u_3
+\end{bmatrix}
+$$
+
+The matrix representation is then transformed into a system of linear equations, which can be solved by addition:
+
+\[
+\begin{aligned}
+\text{I:} & \quad 2F = 2c \cdot u_2 - c \cdot u_3 \\[4pt]
+\text{II:} & \quad -F = -c \cdot u_2 + c \cdot u_3
+\end{aligned}
+\]
+
+Adding yields:
+
+\[
+u_2 = \frac{F}{c}, \quad u_3 = 0
+\]
+
+In vector form:
+
+$$
+\vec{d} =
+\begin{bmatrix}
+u_2 \\[4pt]
+u_3
+\end{bmatrix}
+=
+\frac{F}{c}
+\cdot
+\begin{bmatrix}
+1 \\[4pt]
+0
+\end{bmatrix}.
+$$
+
+Substituting into the eliminated equation gives:
+
+\[
+F_1 =
+\begin{bmatrix}
+c & -c & 0
+\end{bmatrix}
+\cdot
+\begin{bmatrix}
+u_1 \\[4pt]
+u_2 \\[4pt]
+u_3
+\end{bmatrix}
+\]
+
+and for the reaction force:
+
+\[
+F_1 = -c \cdot u_2 = -c \cdot \frac{F}{c}
+\]
+
+\[
+F_1 = -F
+\]
+
+### Note on Practical Computation
+
+The examples shown here are analytically solvable. In real applications, however, very large systems of equations arise (often several million nodes) that can only be solved approximately and iteratively. Established approximation methods include the **Ritz** and **Galerkin methods**[@Betten2003].
+
+---
+
+## Convergence and Divergence
+
+## Task: Stress Concentration  
+
+## Theory: Stress Concentrationt  
+
+## Implementation in ANSYS
+
+### 1. Project Management and Geometry Import
+
+### 2. Material Assignment
+
+### 3. Mesh Generation
+
+### 4. Boundary Conditions
+
+### 5. Evaluation
+
+## Discussion of Results
+
+### Comparison with Analytical Solution
+
+<!--  
+Possibly to be placed after the mesh refinement section.
+-->
+
+### Mesh Refinement
+
+<!--  
+This section then discusses computation time, tabular representation,  
+convergence, and reduction of computation time.
+-->
