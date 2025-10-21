@@ -31,7 +31,7 @@ Zur vollständigen Beschreibung eines physikalischen Problems gehören:
 
 * die **Geometrie** zur Definition des Gebiets  
 * die **Feldgleichungen** im Gebiet  
-* die **Randbedingungen** [@MerkelOechsner2020]  
+* die **Randbedingungen** [@Merkel2020]  
 
 Die folgenden Abschnitte zeigen das Vorgehen anhand einfacher Beispiele.
 
@@ -343,12 +343,3 @@ vielleicht auch erst nach dem Netzeinfluss
 hier dann Diskussion Rechenzeit, Darstellung in Tabelle
 Konvergenz
 Reduktion der Rechenzeit
-
-<!-- 
-## Literatur
-
-* [@Betten2003] Betten, Josef (2003): *Finite Elemente für Ingenieure 1: Grundlagen, Matrixmethoden, Elastisches Kontinuum.*  
-* [@Gebhardt2018] Gebhardt, Christof (2018): *Praxisbuch FEM mit ANSYS Workbench 2018.* Hanser Verlag.  
-* [@Klein2015] Klein, Bernd (2015): *FEM – Grundlagen und Anwendungen der Finite-Element-Methode im Maschinen- und Fahrzeugbau.* Springer Vieweg, Wiesbaden.  
-* [@MerkelOechsner2020] Merkel, Markus / Öchsner, Andreas (2020): *Eindimensionale Finite Elemente: Ein Einstieg in die Methode.* 3., neu bearbeitete Auflage, Springer Vieweg, Berlin [Heidelberg].
--->
