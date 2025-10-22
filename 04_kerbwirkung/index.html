@@ -820,25 +820,78 @@ F_1 = -F
 <p>Solche singulären Bereiche können nicht sinnvoll ausgewertet werden. Stattdessen sollte die Auswertung auf physikalisch sinnvolle Regionen fokussiert oder durch Verrundung der Geometrie eine realistische Spannungssituation wiederhergestellt werden.</p>
 <hr />
 <h2 id="aufgabe-kerbwirkung">Aufgabe Kerbwirkung<a class="headerlink" href="#aufgabe-kerbwirkung" title="Permanent link">&para;</a></h2>
+<p>Für Bauteile mit Kerben stehen in der Festigkeitsberechnung Kerbformzahlen zur Berechnung der maximalen Spannung im Kerbgrund zur Verfügung (Stichwort Spannungsüberhöhung im Kerbgrund).  </p>
+<ul>
+<li>Rechnen Sie mittels FEM die Kerbformzahlen für den unten gegebenen Fall nach, siehe Abbildung.  </li>
+<li>Gleichen Sie die ermittelten Kerbformzahlen mit der Theorie ab.</li>
+<li>Verwenden Sie Radien für <span class="arithmatex">\(r/b = 0{,}1 \text{ bis } 0{,}5\)</span> (Geometrie siehe unten).  </li>
+<li>Achten Sie auf eine konvergierende Lösung.</li>
+</ul>
+<p><a class="glightbox" href="../media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg" title="Aufgabenstellung Kerbformzahl"><img alt="Aufgabenstellung Kerbformzahl" src="../media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg" width="400" /></a></p>
+<p>Die Geometrie ist  </p>
+<ul>
+<li><a href="../media/04_kerbwirkung/kerbformzahl_01.stp">kerbformzahl_01.stp</a></li>
+<li><a href="../media/04_kerbwirkung/kerbformzahl_02.stp">kerbformzahl_02.stp</a>  </li>
+<li><a href="../media/04_kerbwirkung/kerbformzahl_03.stp">kerbformzahl_03.stp</a></li>
+<li><a href="../media/04_kerbwirkung/kerbformzahl_04.stp">kerbformzahl_04.stp</a>  </li>
+<li><a href="../media/04_kerbwirkung/kerbformzahl_05.stp">kerbformzahl_05.stp</a></li>
+</ul>
 <h2 id="theorie-kerbwirkung">Theorie Kerbwirkung<a class="headerlink" href="#theorie-kerbwirkung" title="Permanent link">&para;</a></h2>
+<p>Kerben entstehen an Querschnittsänderungen, Bohrungen, Einstichen oder anderen geometrischen Übergängen. Sie führen zu einer lokalen <strong>Kraftflussverdichtung</strong>, das heißt zu einer <strong>Verdichtung der Kraftflusslinien</strong> und damit zu einer <strong>Erhöhung der lokalen Spannung</strong>. </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/Kerbwirkung.svg" title="Kraftfluss und Spannungsverteilung im gekerbten und ungekerbten Bauteil"><img alt="Kraftfluss und Spannungsverteilung im gekerbten und ungekerbten Bauteil" src="../media/04_kerbwirkung/Kerbwirkung.svg" width="400px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p>Im Gegensatz zu ungekerbten Bauteilen, in denen der Kraftfluss gleichmäßig verläuft und die Nennspannung über den Querschnitt annähernd konstant ist, wird der Kraftfluss durch die Kerbe gestört. Dadurch entstehen Spannungsspitzen im Kerbgrund, die durch die <strong>Kerbformzahl</strong> <span class="arithmatex">\(\alpha_k\)</span> beschrieben werden:<sup id="fnref2:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></p>
+<div class="arithmatex">\[
+\alpha_k = \frac{\sigma_\text{max}}{\sigma_\text{n}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\alpha_k\)</span> – Kerbformzahl (dimensionsloses Maß für die Spannungsüberhöhung)  </li>
+<li><span class="arithmatex">\(\sigma_k=\sigma_\text{max}\)</span> – maximale Spannung im Kerbgrund  </li>
+<li><span class="arithmatex">\(\sigma_\text{n}\)</span> – <strong>nominelle Spannung im Kerbgrund</strong>, Nennspannung im ungestörten Kerb-Querschnitt  </li>
+</ul>
+<p><a class="glightbox" href="../media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg" title="Bezeichnungen bei Kerbwirkung"><img alt="Bezeichnungen bei Kerbwirkung" src="../media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg" width="200px" /></a>
+<span class="bildquelle">Bild in Anlehnung an<sup id="fnref:Altenbach2016"><a class="footnote-ref" href="#fn:Altenbach2016">5</a></sup></span></p>
+<p>Die Kerbformzahl <span class="arithmatex">\(\alpha_k\)</span> ist ein Maß für die festigkeitsmindernde Wirkung der Kerbe. Sie hängt im elastischen Bereich ausschließlich von der <strong>Kerbgeometrie</strong> und der <strong>Beanspruchungsart</strong> ab. Mit zunehmender Kerbschärfe steigt <span class="arithmatex">\(\alpha_k\)</span> und somit auch die lokale Spannung <span class="arithmatex">\(\sigma_\text{max}\)</span>. Werkstoffe mit hoher Duktilität zeigen eine geringere Empfindlichkeit gegenüber Kerben, da plastische Verformungen Spannungsspitzen teilweise abbauen können.</p>
+<h3 id="einfluss-der-kerbform">Einfluss der Kerbform<a class="headerlink" href="#einfluss-der-kerbform" title="Permanent link">&para;</a></h3>
+<p>Je spitzer eine Kerbe ausgeführt wird, desto stärker konzentriert sich der Kraftfluss im Kerbgrund. Dadurch entstehen höhere Spannungsspitzen <em>σₘₐₓ</em> und größere Werte der Kerbformzahl <span class="arithmatex">\(\alpha_k\)</span>. Eine Verrundung der Kerbe führt hingegen zu einer Entspannung des Kraftflusses und verringert die lokale Spannungsüberhöhung.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg" title="Einfluss der Kerbform auf die Spannungskonzentration"><img alt="Einfluss der Kerbform auf die Spannungskonzentration" src="../media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref3:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<h3 id="tabellen-zur-bestimmung-von-alpha_k">Tabellen zur Bestimmung von <span class="arithmatex">\(\alpha_k\)</span><a class="headerlink" href="#tabellen-zur-bestimmung-von-alpha_k" title="Permanent link">&para;</a></h3>
+<p>Die nachfolgenden Diagramme zeigen die Abhängigkeit der Kerbformzahl <span class="arithmatex">\(\alpha_k\)</span> vom Verhältnis der Kerbrundung <span class="arithmatex">\(r\)</span> zur Bauteilgröße (<span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(d\)</span>) für unterschiedliche Belastungsarten. Mit abnehmendem Verhältnis <span class="arithmatex">\(r/b\)</span> bzw. <span class="arithmatex">\(r/d\)</span> steigt <span class="arithmatex">\(\alpha_k\)</span> stark an, was den Einfluss der Kerbschärfe verdeutlicht.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/01_kerbformzahlen_flachstab.png" title="Kerbformzahlen für Flachstäbe unter Zugbelastung"><img alt="Kerbformzahlen für Flachstäbe unter Zugbelastung" src="../media/04_kerbwirkung/01_kerbformzahlen_flachstab.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref4:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png" title="Kerbformzahlen für abgesetzte Flachstäbe"><img alt="Kerbformzahlen für abgesetzte Flachstäbe" src="../media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref5:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png" title="Kerbformzahlen für Rundstäbe unter Zugbelastung"><img alt="Kerbformzahlen für Rundstäbe unter Zugbelastung" src="../media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref6:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png" title="Kerbformzahlen für Rundstäbe unter Biegung"><img alt="Kerbformzahlen für Rundstäbe unter Biegung" src="../media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref7:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png" title="Kerbformzahlen für Rundstäbe unter Torsion"><img alt="Kerbformzahlen für Rundstäbe unter Torsion" src="../media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref8:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
 <h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
 <h3 id="1-projektverwaltung-und-geometrieimport">1. Projektverwaltung und Geometrieimport<a class="headerlink" href="#1-projektverwaltung-und-geometrieimport" title="Permanent link">&para;</a></h3>
 <h3 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h3>
 <h3 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h3>
 <h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
 <h3 id="5-auswertung">5. Auswertung<a class="headerlink" href="#5-auswertung" title="Permanent link">&para;</a></h3>
-<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
-<h3 id="abgleich-mit-analytischer-losung">Abgleich mit analytischer Lösung<a class="headerlink" href="#abgleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
+<h3 id="5-analyseeinstellungen">5. Analyseeinstellungen<a class="headerlink" href="#5-analyseeinstellungen" title="Permanent link">&para;</a></h3>
 <!-- 
-vielleicht auch erst nach dem Netzeinfluss
+schwache Federn! 
 -->
 
+<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
 <h3 id="netzeinfluss">Netzeinfluss<a class="headerlink" href="#netzeinfluss" title="Permanent link">&para;</a></h3>
 <!-- 
 hier dann Diskussion Rechenzeit, Darstellung in Tabelle
 Konvergenz
 Reduktion der Rechenzeit
 -->
+
+<h3 id="abgleich-mit-analytischer-losung">Abgleich mit analytischer Lösung<a class="headerlink" href="#abgleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
+<!-- 
+vielleicht auch erst nach dem Netzeinfluss
+-->
+
 <div class="footnote">
 <hr />
 <ol>
@@ -850,6 +903,12 @@ Reduktion der Rechenzeit
 </li>
 <li id="fn:Betten2003">
 <p>Josef Betten. <em>Finite Elemente für Ingenieure 1</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2003. ISBN 978-3-642-62443-8. <a href="https://doi.org/10.1007/978-3-642-55536-7">doi:10.1007/978-3-642-55536-7</a>.&#160;<a class="footnote-backref" href="#fnref:Betten2003" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Wittel2021">
+<p>Herbert Wittel, Christian Spura, and Dieter Jannasch. <em>Roloff/Matek Maschinenelemente</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2021. ISBN 978-3-658-34159-6. <a href="https://doi.org/10.1007/978-3-658-34160-2">doi:10.1007/978-3-658-34160-2</a>.&#160;<a class="footnote-backref" href="#fnref:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Altenbach2016">
+<p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
