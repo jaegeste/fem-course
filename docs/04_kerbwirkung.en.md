@@ -325,10 +325,73 @@ A typical example is a sharp notch with a theoretical notch radius of zero. In r
 
 Such singular regions cannot be meaningfully evaluated. Instead, the evaluation should focus on physically meaningful areas, or the geometry should be modified with a fillet to restore a realistic stress state.
 
-
 ## Task: Stress Concentration  
 
+For components with notches, stress concentration factors are available in strength analysis to determine the maximum stress in the notch root (keyword: stress concentration).  
+
+* Use the FEM to calculate the stress concentration factors for the case shown below, see figure.  
+* Compare the calculated stress concentration factors with the theoretical values.  
+* Use radii for $r/b = 0.1$ to $0.5$ (see geometry below).  
+* Ensure that the solution is convergent.
+
+[![Task: Stress concentration factor](media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg){width=400}](media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg "Task: Stress concentration factor"){.glightbox}
+
+The geometry files are:  
+
+* [kerbformzahl_01.stp](media/04_kerbwirkung/kerbformzahl_01.stp)
+* [kerbformzahl_02.stp](media/04_kerbwirkung/kerbformzahl_02.stp)  
+* [kerbformzahl_03.stp](media/04_kerbwirkung/kerbformzahl_03.stp)
+* [kerbformzahl_04.stp](media/04_kerbwirkung/kerbformzahl_04.stp)  
+* [kerbformzahl_05.stp](media/04_kerbwirkung/kerbformzahl_05.stp)
+
 ## Theory: Stress Concentration  
+
+Notches occur at cross-section changes, holes, grooves, or other geometric transitions. They cause a local **concentration of the stress flow**, meaning a **concentration of the force flow lines**, which leads to an **increase in local stress**.  
+
+[![Stress flow and stress distribution in a notched and unnotched component](media/04_kerbwirkung/Kerbwirkung.en.svg){width=400px}](media/04_kerbwirkung/Kerbwirkung.en.svg "Stress flow and stress distribution in a notched and unnotched component"){.glightbox}
+<span class="bildquelle">Image source[@Wittel2021]</span>
+
+In contrast to unnotched components, where the stress flow is uniform and the nominal stress is approximately constant across the cross-section, the presence of a notch disturbs the force flow. This disturbance causes stress peaks at the notch root, which are described by the **stress concentration factor** $\alpha_k$:[@Wittel2021]
+
+\[
+\alpha_k = \frac{\sigma_\text{max}}{\sigma_\text{n}}
+\]
+
+* $\alpha_k$ – stress concentration factor (dimensionless measure of stress increase)  
+* $\sigma_k=\sigma_\text{max}$ – maximum stress at the notch root  
+* $\sigma_\text{n}$ – **nominal stress at the notch root**, i.e., the nominal stress in the undisturbed notch cross-section  
+
+[![Definitions related to stress concentration](media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg){width=200px}](media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg "Definitions related to stress concentration"){.glightbox}
+<span class="bildquelle">Image adapted from[@Altenbach2016]</span>
+
+The stress concentration factor $\alpha_k$ is a measure of the strength-reducing effect of the notch. In the elastic range, it depends only on the **notch geometry** and the **type of loading**. As the notch becomes sharper, $\alpha_k$ increases, and so does the local stress $\sigma_\text{max}$. Materials with high ductility show less sensitivity to notches, since plastic deformation can partially reduce stress peaks.
+
+### Influence of the notch shape
+
+The sharper the notch, the more the stress flow is concentrated at the notch root. This leads to higher stress peaks $\sigma_\text{max}$ and greater values of the stress concentration factor $\alpha_k$. A rounded notch, on the other hand, relaxes the force flow and reduces the local stress increase.
+
+[![Influence of notch geometry on stress concentration](media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg){width=600px}](media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg "Influence of notch geometry on stress concentration"){.glightbox}
+<span class="bildquelle">Image source[@Wittel2021]</span>
+
+### Charts for determining $\alpha_k$
+
+The following diagrams show the dependence of the stress concentration factor $\alpha_k$ on the ratio of the notch radius $r$ to the component dimension ($b$, $d$) for different types of loading. As the ratio $r/b$ or $r/d$ decreases, $\alpha_k$ increases significantly, illustrating the influence of notch sharpness.  
+
+[![Stress concentration factors for flat bars under tension](media/04_kerbwirkung/01_kerbformzahlen_flachstab.png){width=600px}](media/04_kerbwirkung/01_kerbformzahlen_flachstab.png "Stress concentration factors for flat bars under tension"){.glightbox}
+<span class="bildquelle">Image source[@Wittel2021]</span>
+
+[![Stress concentration factors for stepped flat bars](media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png){width=600px}](media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png "Stress concentration factors for stepped flat bars"){.glightbox}
+<span class="bildquelle">Image source[@Wittel2021]</span>
+
+[![Stress concentration factors for round bars under tension](media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png){width=600px}](media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png "Stress concentration factors for round bars under tension"){.glightbox}
+<span class="bildquelle">Image source[@Wittel2021]</span>
+
+[![Stress concentration factors for round bars under bending](media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png){width=600px}](media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png "Stress concentration factors for round bars under bending"){.glightbox}
+<span class="bildquelle">Image source[@Wittel2021]</span>
+
+[![Stress concentration factors for round bars under torsion](media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png){width=600px}](media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png "Stress concentration factors for round bars under torsion"){.glightbox}
+<span class="bildquelle">Image source[@Wittel2021]</span>
+
 
 ## Implementation in ANSYS
 

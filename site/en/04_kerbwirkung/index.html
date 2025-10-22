@@ -413,9 +413,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#theory-stress-concentrationt" class="md-nav__link">
+  <a href="#theory-stress-concentration" class="md-nav__link">
     <span class="md-ellipsis">
-      Theory: Stress Concentrationt
+      Theory: Stress Concentration
     </span>
   </a>
   
@@ -510,9 +510,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#theory-stress-concentrationt" class="md-nav__link">
+  <a href="#theory-stress-concentration" class="md-nav__link">
     <span class="md-ellipsis">
-      Theory: Stress Concentrationt
+      Theory: Stress Concentration
     </span>
   </a>
   
@@ -796,8 +796,20 @@ F_1 = -F
 <p>The examples shown here are analytically solvable. In real applications, however, very large systems of equations arise (often several million nodes) that can only be solved approximately and iteratively. Established approximation methods include the <strong>Ritz</strong> and <strong>Galerkin methods</strong><sup id="fnref:Betten2003"><a class="footnote-ref" href="#fn:Betten2003">3</a></sup>.</p>
 <hr />
 <h2 id="convergence-and-divergence">Convergence and Divergence<a class="headerlink" href="#convergence-and-divergence" title="Permanent link">&para;</a></h2>
+<h3 id="convergence">Convergence<a class="headerlink" href="#convergence" title="Permanent link">&para;</a></h3>
+<p>The Finite Element Method (FEM) is an approximation technique in which a continuous physical system is represented by a finite number of elements. Within each element, the result quantity — such as displacement or temperature — is approximated by a shape function.</p>
+<p>When strong gradients occur in the results, for example in regions of stress concentration, a sufficiently accurate representation can only be achieved if these regions are meshed finely enough. Local mesh refinement increases the accuracy of the calculation, and the result asymptotically approaches the physically correct value.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/konvergenz.svg" title="Convergence behavior with increasing mesh refinement"><img alt="Convergence behavior with increasing mesh refinement" src="../media/04_kerbwirkung/konvergenz.svg" width="350px" /></a><br />
+<span class="bildquelle">Image source based on<sup id="fnref2:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
+<p>Plotting the calculated stress against the mesh density yields a curve that approaches a limiting value. This approach is referred to as <em>convergence</em>. In ANSYS Workbench, convergence can be checked automatically by performing multiple solution steps with increasing mesh refinement until the results change only slightly (e.g. &lt; 10%).</p>
+<h3 id="divergence">Divergence<a class="headerlink" href="#divergence" title="Permanent link">&para;</a></h3>
+<p><em>Divergence</em> occurs when the result does <strong>not</strong> approach a limiting value with increasing mesh refinement but instead increases without bound.</p>
+<p>A typical example is a sharp notch with a theoretical notch radius of zero. In reality, no infinite stresses occur because real notches always have a small rounding and the material undergoes local plastic deformation. If these effects are not considered in the model, the calculated stress value increases continuously with increasing mesh density — the solution <em>diverges</em>.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/divergenz.svg" title="Divergence"><img alt="Divergence" src="../media/04_kerbwirkung/divergenz.svg" width="350px" /></a><br />
+<span class="bildquelle">Image source based on<sup id="fnref3:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
+<p>Such singular regions cannot be meaningfully evaluated. Instead, the evaluation should focus on physically meaningful areas, or the geometry should be modified with a fillet to restore a realistic stress state.</p>
 <h2 id="task-stress-concentration">Task: Stress Concentration<a class="headerlink" href="#task-stress-concentration" title="Permanent link">&para;</a></h2>
-<h2 id="theory-stress-concentrationt">Theory: Stress Concentrationt<a class="headerlink" href="#theory-stress-concentrationt" title="Permanent link">&para;</a></h2>
+<h2 id="theory-stress-concentration">Theory: Stress Concentration<a class="headerlink" href="#theory-stress-concentration" title="Permanent link">&para;</a></h2>
 <h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
 <h3 id="1-project-management-and-geometry-import">1. Project Management and Geometry Import<a class="headerlink" href="#1-project-management-and-geometry-import" title="Permanent link">&para;</a></h3>
 <h3 id="2-material-assignment">2. Material Assignment<a class="headerlink" href="#2-material-assignment" title="Permanent link">&para;</a></h3>
@@ -819,7 +831,7 @@ convergence, and reduction of computation time.
 <hr />
 <ol>
 <li id="fn:Gebhardt2018">
-<p>Christof Gebhardt. <em>Praxisbuch FEM mit ANSYS Workbench</em>. Carl Hanser Verlag GmbH &amp; Co. KG, München, 2018. ISBN 978-3-446-45001-1. URL: <a href="https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409">https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409</a> (visited on 2019-03-18), <a href="https://doi.org/10.3139/9783446457409">doi:10.3139/9783446457409</a>.&#160;<a class="footnote-backref" href="#fnref:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p>Christof Gebhardt. <em>Praxisbuch FEM mit ANSYS Workbench</em>. Carl Hanser Verlag GmbH &amp; Co. KG, München, 2018. ISBN 978-3-446-45001-1. URL: <a href="https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409">https://www.hanser-elibrary.com/doi/book/10.3139/9783446457409</a> (visited on 2019-03-18), <a href="https://doi.org/10.3139/9783446457409">doi:10.3139/9783446457409</a>.&#160;<a class="footnote-backref" href="#fnref:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Gebhardt2018" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Merkel2020">
 <p>Markus Merkel and Andreas Öchsner. <em>Eindimensionale Finite Elemente: ein Einstieg in die Methode</em>. Springer Vieweg, Berlin [Heidelberg], 3., neu bearbeitete unnd ergänzte auflage edition, 2020. ISBN 978-3-662-57994-7 978-3-662-57993-0.&#160;<a class="footnote-backref" href="#fnref:Merkel2020" title="Jump back to footnote 2 in the text">&#8617;</a></p>

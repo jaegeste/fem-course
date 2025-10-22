@@ -339,7 +339,70 @@ Solche singulären Bereiche können nicht sinnvoll ausgewertet werden. Stattdess
 
 ## Aufgabe Kerbwirkung  
 
-## Theorie Kerbwirkung  
+Für Bauteile mit Kerben stehen in der Festigkeitsberechnung Kerbformzahlen zur Berechnung der maximalen Spannung im Kerbgrund zur Verfügung (Stichwort Spannungsüberhöhung im Kerbgrund).  
+
+* Rechnen Sie mittels FEM die Kerbformzahlen für den unten gegebenen Fall nach, siehe Abbildung.  
+* Gleichen Sie die ermittelten Kerbformzahlen mit der Theorie ab.
+* Verwenden Sie Radien für $r/b = 0{,}1 \text{ bis } 0{,}5$ (Geometrie siehe unten).  
+* Achten Sie auf eine konvergierende Lösung.
+
+[![Aufgabenstellung Kerbformzahl](media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg){width=400}](media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg "Aufgabenstellung Kerbformzahl"){.glightbox}
+
+Die Geometrie ist  
+
+* [kerbformzahl_01.stp](media/04_kerbwirkung/kerbformzahl_01.stp)
+* [kerbformzahl_02.stp](media/04_kerbwirkung/kerbformzahl_02.stp)  
+* [kerbformzahl_03.stp](media/04_kerbwirkung/kerbformzahl_03.stp)
+* [kerbformzahl_04.stp](media/04_kerbwirkung/kerbformzahl_04.stp)  
+* [kerbformzahl_05.stp](media/04_kerbwirkung/kerbformzahl_05.stp)
+
+## Theorie Kerbwirkung
+
+Kerben entstehen an Querschnittsänderungen, Bohrungen, Einstichen oder anderen geometrischen Übergängen. Sie führen zu einer lokalen **Kraftflussverdichtung**, das heißt zu einer **Verdichtung der Kraftflusslinien** und damit zu einer **Erhöhung der lokalen Spannung**. 
+
+[![Kraftfluss und Spannungsverteilung im gekerbten und ungekerbten Bauteil](media/04_kerbwirkung/Kerbwirkung.svg){width=400px}](media/04_kerbwirkung/Kerbwirkung.svg "Kraftfluss und Spannungsverteilung im gekerbten und ungekerbten Bauteil"){.glightbox}
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
+
+Im Gegensatz zu ungekerbten Bauteilen, in denen der Kraftfluss gleichmäßig verläuft und die Nennspannung über den Querschnitt annähernd konstant ist, wird der Kraftfluss durch die Kerbe gestört. Dadurch entstehen Spannungsspitzen im Kerbgrund, die durch die **Kerbformzahl** $\alpha_k$ beschrieben werden:[@Wittel2021]
+
+\[
+\alpha_k = \frac{\sigma_\text{max}}{\sigma_\text{n}}
+\]
+
+* $\alpha_k$ – Kerbformzahl (dimensionsloses Maß für die Spannungsüberhöhung)  
+* $\sigma_k=\sigma_\text{max}$ – maximale Spannung im Kerbgrund  
+* $\sigma_\text{n}$ – **nominelle Spannung im Kerbgrund**, Nennspannung im ungestörten Kerb-Querschnitt  
+
+[![Bezeichnungen bei Kerbwirkung](media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg){width=200px}](media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg "Bezeichnungen bei Kerbwirkung"){.glightbox}
+<span class="bildquelle">Bild in Anlehnung an[@Altenbach2016]</span>
+
+Die Kerbformzahl $\alpha_k$ ist ein Maß für die festigkeitsmindernde Wirkung der Kerbe. Sie hängt im elastischen Bereich ausschließlich von der **Kerbgeometrie** und der **Beanspruchungsart** ab. Mit zunehmender Kerbschärfe steigt $\alpha_k$ und somit auch die lokale Spannung $\sigma_\text{max}$. Werkstoffe mit hoher Duktilität zeigen eine geringere Empfindlichkeit gegenüber Kerben, da plastische Verformungen Spannungsspitzen teilweise abbauen können.
+
+### Einfluss der Kerbform
+
+Je spitzer eine Kerbe ausgeführt wird, desto stärker konzentriert sich der Kraftfluss im Kerbgrund. Dadurch entstehen höhere Spannungsspitzen _σₘₐₓ_ und größere Werte der Kerbformzahl $\alpha_k$. Eine Verrundung der Kerbe führt hingegen zu einer Entspannung des Kraftflusses und verringert die lokale Spannungsüberhöhung.
+
+[![Einfluss der Kerbform auf die Spannungskonzentration](media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg){width=600px}](media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg "Einfluss der Kerbform auf die Spannungskonzentration"){.glightbox}
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
+
+### Tabellen zur Bestimmung von $\alpha_k$
+
+Die nachfolgenden Diagramme zeigen die Abhängigkeit der Kerbformzahl $\alpha_k$ vom Verhältnis der Kerbrundung $r$ zur Bauteilgröße ($b$, $d$) für unterschiedliche Belastungsarten. Mit abnehmendem Verhältnis $r/b$ bzw. $r/d$ steigt $\alpha_k$ stark an, was den Einfluss der Kerbschärfe verdeutlicht.  
+
+[![Kerbformzahlen für Flachstäbe unter Zugbelastung](media/04_kerbwirkung/01_kerbformzahlen_flachstab.png){width=600px}](media/04_kerbwirkung/01_kerbformzahlen_flachstab.png "Kerbformzahlen für Flachstäbe unter Zugbelastung"){.glightbox}
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
+
+[![Kerbformzahlen für abgesetzte Flachstäbe](media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png){width=600px}](media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png "Kerbformzahlen für abgesetzte Flachstäbe"){.glightbox}
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
+
+[![Kerbformzahlen für Rundstäbe unter Zugbelastung](media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png){width=600px}](media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png "Kerbformzahlen für Rundstäbe unter Zugbelastung"){.glightbox}
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
+
+[![Kerbformzahlen für Rundstäbe unter Biegung](media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png){width=600px}](media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png "Kerbformzahlen für Rundstäbe unter Biegung"){.glightbox}
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
+
+[![Kerbformzahlen für Rundstäbe unter Torsion](media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png){width=600px}](media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png "Kerbformzahlen für Rundstäbe unter Torsion"){.glightbox}
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
 
 ## Umsetzung in ANSYS
 
@@ -353,13 +416,13 @@ Solche singulären Bereiche können nicht sinnvoll ausgewertet werden. Stattdess
 
 ### 5. Auswertung
 
-## Diskussion der Ergebnisse
-
-### Abgleich mit analytischer Lösung
+### 5. Analyseeinstellungen
 
 <!-- 
-vielleicht auch erst nach dem Netzeinfluss
--->
+schwache Federn! 
+--> 
+
+## Diskussion der Ergebnisse
 
 ### Netzeinfluss
 
@@ -368,3 +431,10 @@ hier dann Diskussion Rechenzeit, Darstellung in Tabelle
 Konvergenz
 Reduktion der Rechenzeit
 -->
+
+### Abgleich mit analytischer Lösung
+
+<!-- 
+vielleicht auch erst nach dem Netzeinfluss
+-->
+
