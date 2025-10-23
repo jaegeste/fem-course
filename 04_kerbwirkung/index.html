@@ -431,6 +431,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#netzeinfluss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Netzeinfluss
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#diskussion-der-ergebnisse" class="md-nav__link">
     <span class="md-ellipsis">
       Diskussion der Ergebnisse
@@ -522,6 +531,15 @@
   <a href="#umsetzung-in-ansys" class="md-nav__link">
     <span class="md-ellipsis">
       Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#netzeinfluss" class="md-nav__link">
+    <span class="md-ellipsis">
+      Netzeinfluss
     </span>
   </a>
   
@@ -824,6 +842,7 @@ F_1 = -F
 <ul>
 <li>Rechnen Sie mittels FEM die Kerbformzahlen für den unten gegebenen Fall nach, siehe Abbildung.  </li>
 <li>Gleichen Sie die ermittelten Kerbformzahlen mit der Theorie ab.</li>
+<li>Der Werkstoff sei <em>Baustahl</em> gemäß ANSYS-Datenbank.  </li>
 <li>Verwenden Sie Radien für <span class="arithmatex">\(r/b = 0{,}1 \text{ bis } 0{,}5\)</span> (Geometrie siehe unten).  </li>
 <li>Achten Sie auf eine konvergierende Lösung.</li>
 </ul>
@@ -870,23 +889,369 @@ F_1 = -F
 <span class="bildquelle">Bildquelle<sup id="fnref8:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
 <h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
 <h3 id="1-projektverwaltung-und-geometrieimport">1. Projektverwaltung und Geometrieimport<a class="headerlink" href="#1-projektverwaltung-und-geometrieimport" title="Permanent link">&para;</a></h3>
+<p>Für die Untersuchung der Kerbformzahlen werden fünf Geometrievarianten mit unterschiedlichen Kerbradien (<span class="arithmatex">\(r/b = 0{,}1\)</span> bis <span class="arithmatex">\(0{,}5\)</span>) benötigt. Jede Variante kann in einem eigenen Projekt oder über ein gemeinsames Projekt mit mehreren Geometrieversionen verwaltet werden.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/06_Kerbwirkung_Projekt.png" title="Projektverwaltung und Geometrieimport in ANSYS Workbench"><img alt="Projektverwaltung und Geometrieimport in ANSYS Workbench" src="../media/04_kerbwirkung/06_Kerbwirkung_Projekt.png" width="750px" /></a>  </p>
+<p><strong>Vorgehensweise:</strong></p>
+<ul>
+<li>Die Geometrien werden im <em>Projekt Schema</em> einzeln importiert oder nacheinander eingelesen. Dabei sollte die gleiche Materialdefinition verwendet werden, um vergleichbare Ergebnisse zu gewährleisten.  </li>
+<li>Ein gemeinsames Material kann über die <em>Technische Daten</em>-Datenbank verknüpft werden. Änderungen im Materialmodell wirken sich dann automatisch auf alle Varianten aus.  </li>
+<li>Um Redundanz zu vermeiden, kann das Grundmodell einmal vollständig aufgebaut und anschließend dupliziert werden. Danach wird lediglich die Geometrie getauscht (<em>Geometrie ersetzen</em>). So bleiben Randbedingungen, Netzdefinitionen und Auswertungen erhalten.  </li>
+<li>Wichtig ist, die Resultate jeder Variante eindeutig zu kennzeichnen (z. B. „r01“, „r02“ …). So lassen sich die Spannungsverteilungen und Kerbformzahlen später systematisch vergleichen.  </li>
+</ul>
+<p><strong>Hinweis:</strong><br />
+Beim Austausch einer Geometrie kann es zu Zuordnungsproblemen kommen, wenn Flächen oder Kanten im neuen Modell nicht exakt mit den ursprünglichen  übereinstimmen. In diesem Fall müssen die entsprechenden Bereiche in ANSYS neu definiert werden.</p>
 <h3 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h3>
+<p>Für diese Aufgabe ist keine manuelle Materialzuweisung erforderlich. ANSYS weist der importierten Geometrie automatisch das Standardmaterial <em>Baustahl</em> zu.  </p>
+<p>Es empfiehlt sich dennoch, die Materialeigenschaften in den <em>Technischen Daten</em> zu überprüfen. Dabei sollte insbesondere kontrolliert werden, ob Elastizitätsmodul, Querkontraktionszahl und Streckgrenze mit den Werten der analytischen Berechnung übereinstimmen. Bei Bedarf kann das Materialmodell angepasst oder ein eigenes Material mit definierten Kennwerten angelegt werden.</p>
 <h3 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h3>
+<p>Zu Beginn sollte mit der automatischen <em>Standardvernetzung</em> gearbeitet werden, um zu prüfen, ob die Geometrie überhaupt erfolgreich vernetzt werden kann. Eine erste visuelle Beurteilung des Netzes ist dabei hilfreich.  </p>
+<p>Auffällig <strong>große Elemente</strong> oder <strong>stark verzerrte Netzbereiche</strong> deuten häufig auf problematische Geometrieübergänge hin und können zu ungenauen Ergebnissen führen.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png" title="Standardvernetzung in ANSYS Mechanical"><img alt="Standardvernetzung in ANSYS Mechanical" src="../media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png" width="750px" /></a>  </p>
 <h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
-<h3 id="5-auswertung">5. Auswertung<a class="headerlink" href="#5-auswertung" title="Permanent link">&para;</a></h3>
+<p>Für die Simulation bietet sich eine Randbedingung ohne feste Einspannung an. Statt einer starren Lagerung wird die Kraft direkt auf eine verformbare Fläche aufgebracht. Dadurch kann das System ein realistisches Kräftegleichgewicht ausbilden und das lokale Spannungsfeld im Kerbgrund wird physikalisch korrekt erfasst.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/08_Kerbwirkung_Randbedingungen.png" title="Randbedingungen im Modell zur Bestimmung der Kerbformzahl"><img alt="Randbedingungen im Modell zur Bestimmung der Kerbformzahl" src="../media/04_kerbwirkung/08_Kerbwirkung_Randbedingungen.png" width="750px" /></a>  </p>
+<p><strong>Empfohlene Einstellungen in ANSYS Mechanical:</strong>  </p>
+<ul>
+<li>Verwendung einer <em>Kraft</em> an beiden Seite  </li>
+<li>keine <em>Einspannung</em>, um unrealistische Spannungsspitzen zu vermeiden  </li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Frage</p>
+<p>Ist hier der Betrag der Kraft relevant?<br />
+Die analytische Lösung hilf das zu beantworten.  </p>
+</div>
+<details class="success">
+<summary>Antwort</summary>
+<p>Nein. Für die Bestimmung der Kerbformzahl kürzt sich die aufgebrachte Kraft heraus. Entscheidend ist nur das Verhältnis zwischen lokaler Spannung im Kerbgrund und Nennspannung.</p>
+</details>
 <h3 id="5-analyseeinstellungen">5. Analyseeinstellungen<a class="headerlink" href="#5-analyseeinstellungen" title="Permanent link">&para;</a></h3>
-<!-- 
-schwache Federn! 
--->
+<p>In den <em>Analyseeinstellungen</em> sollten die standardmäßigen Parameter zunächst beibehalten werden. Für lineare statische Analysen ist in der Regel keine zusätzliche Anpassung erforderlich.  </p>
+<p>Besonderes Augenmerk gilt jedoch den sogenannten <strong>schwachen Federn</strong>. Diese müssen aktiviert werden, wenn das System keine eindeutige Lagerung besitzt. Sie verhindern numerische Instabilitäten, indem sie eine minimale Federsteifigkeit zu den Freiheitsgraden ohne Zwangsbedingungen hinzufügen.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/09_Kerbwirkung_Analyseeinstellungen.png" title="Analyseeinstellungen in ANSYS Mechanical"><img alt="Analyseeinstellungen in ANSYS Mechanical" src="../media/04_kerbwirkung/09_Kerbwirkung_Analyseeinstellungen.png" width="300px" /></a>  </p>
+<p><strong>Hinweise:</strong>  </p>
+<ul>
+<li>Die <em>schwachen Federn</em> beeinflussen das physikalische Ergebnis nicht, solange das Modell korrekt gelagert ist.  </li>
+<li>Falls die Analyse dennoch instabil läuft oder kritische Fehlermeldungen zu „Starrkörperbewegungen“ erscheinen, sollte die Lagerung überprüft und ggf. minimal ergänzt werden.  </li>
+<li>Die Meldung, dass schwache Federn eingesetzt wurden, ist nicht als kritisch zu bewerten.  </li>
+</ul>
+<h3 id="6-auswertung">6. Auswertung<a class="headerlink" href="#6-auswertung" title="Permanent link">&para;</a></h3>
+<p>Zur ersten Beurteilung werden die <em>Gesamtverformung</em> und die <em>Vergleichsspannung</em> betrachtet.  </p>
+<h2 id="netzeinfluss">Netzeinfluss<a class="headerlink" href="#netzeinfluss" title="Permanent link">&para;</a></h2>
+<h3 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h3>
+<p>Das Ergebnis einer Simulation hängt von der gewählten Netzgröße ab. Ziel einer Netzeinflussuntersuchung ist es, ein Ergebnis zu finden, das <strong>vom Netz unabhängig</strong> ist.  </p>
+<p>Besonders in Bereichen mit <strong>hohen Spannungsgradienten</strong> – etwa hier im Kerbgrund – kann die lokale Elementgröße einen erheblichen Einfluss auf die berechneten Spannungen haben. Entscheidend ist dabei nicht der absolute Spannungswert, sondern die Stabilität des Ergebnisses bei zunehmender Netzverfeinerung.  </p>
+<p>Mit steigender Netzfeinheit nimmt die Rechenzeit jedoch deutlich zu (wegen einem größeren zu lösenden Gleichungssystem). Ein gutes Netz zeichnet sich deshalb nicht durch maximale Feinheit, sondern durch einen <strong>Kompromiss zwischen Ergebnisqualität und Rechenzeit</strong> aus.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In der Finite-Elemente-Methode wird das kontinuierliche System durch eine endliche Zahl von Elementen beschrieben.<br />
+Nur wenn das Ergebnis bei weiterer Verfeinerung nahezu unverändert bleibt, gilt es als <strong>netzunabhängig</strong>.<br />
+Ziel ist ein effizientes Netz, das eine hohe Ergebnisqualität bei vertretbarer Rechenzeit liefert.</p>
+</div>
+<hr />
+<h3 id="visuelle-beurteilung-der-netzqualitat">Visuelle Beurteilung der Netzqualität<a class="headerlink" href="#visuelle-beurteilung-der-netzqualitat" title="Permanent link">&para;</a></h3>
+<p>Die erste Einschätzung der Netzqualität erfolgt nach einer groben Berechnung über die reine <strong>visuelle Analyse des Spannungsfeldes</strong>. Dabei wird das Ergebnis im interessierenden Bereich, hier im Kerbgrund, betrachtet und der Verlauf der Vergleichsspannung bewertet.  </p>
+<p>Ein feines Netz zeigt im Idealfall einen <strong>diskreten Spannungsverlauf von Knoten zu Knoten</strong>. Treten innerhalb eines Elements sichtbare Farbverläufe auf, deutet dies auf zu große Spannungsgradienten innerhalb des Elements und damit auf eine zu große Elementgröße hin.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png" title="Beurteilung der Netzqualität durch den Farbverlauf"><img alt="Beurteilung der Netzqualität durch den Farbverlauf" src="../media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png" width="400px" /></a><br />
+<span class="bildquelle">Bildquelle<sup id="fnref:Comsol2025"><a class="footnote-ref" href="#fn:Comsol2025">6</a></sup></span></p>
+<p>Für eine differenzierte Beurteilung kann der Vergleich von <strong>gemittelten</strong> und <strong>ungemittelten Spannungen</strong> herangezogen werden. In der Standarddarstellung werden Spannungen in ANSYS zwischen den Elementen gemittelt, wodurch lokale Maxima geglättet erscheinen. Werden die Spannungen ohne Mittelung dargestellt, ist eine realistischere Einschätzung des tatsächlichen Spannungsverlaufs möglich. Ein deutlicher Unterschied zwischen beiden Darstellungen weist auf eine unzureichende Netzqualität hin.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" title="Ergebnis mit gemittelten Spannungen"><img alt="Ergebnis mit gemittelten Spannungen" src="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" width="300px" /></a>
+<a class="glightbox" href="../media/04_kerbwirkung/12_Kerbwirkung_Ergebnis_Standardnetz_nicht_gemittelt.png" title="Ergebnis mit ungemittelten Spannungen"><img alt="Ergebnis mit ungemittelten Spannungen" src="../media/04_kerbwirkung/12_Kerbwirkung_Ergebnis_Standardnetz_nicht_gemittelt.png" width="300px" /></a></p>
+<p>Numerische Kennwerte der Netzqualität, wie Seitenverhältnis oder Schiefwinkligkeit, werden an dieser Stelle bewusst <strong>nicht</strong> verwendet. Im Fokus steht zunächst die <strong>visuelle Beurteilung anhand des Ergebnisfeldes</strong>, um das physikalische Verständnis für den Einfluss des Netzes zu schulen.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Eine Beurteilung der Netzqualität ist erst nach einer ersten Berechnung sinnvoll.<br />
+Ein optisch gleichmäßiges Spannungsfeld ohne abrupte Farbwechsel weist in der Regel auf eine gute Netzqualität hin.</p>
+</div>
+<p>Das folgende Ergebnis zeigt die Vergleichsspannung im Kerbgrund für das Standardnetz. Das Netz ist in diesem Zustand <strong>noch zu grob</strong>, was sich an den deutlich sichtbaren <strong>zwei großen Spannungsgradienten</strong> innerhalb der Kerbe erkennen lässt. Die Farbverläufe weisen auf eine unzureichende Auflösung des lokalen Spannungsfeldes hin.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" title="Ergebnis mit Standardnetz – deutliche Spannungsgradienten in der Kerbe"><img alt="Ergebnis mit Standardnetz – deutliche Spannungsgradienten in der Kerbe" src="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" width="650px" /></a>  </p>
+<hr />
+<h3 id="globale-netzverfeinerung">Globale Netzverfeinerung<a class="headerlink" href="#globale-netzverfeinerung" title="Permanent link">&para;</a></h3>
+<p>DDie Auswirkung der globalen Elementgröße wird im folgenden schrittweise untersucht. Zu diesem Zweck wird die Elementgröße im gesamten Bauteil zunächst über eine <strong>globale Verfeinerung</strong> reduziert. Dadurch verringert sich die Elementgröße gleichmäßig im gesamten Modell. Diese Verfeinerung wird wie gehabt über die Elementgröße in den <em>Details von "Netz"</em> eingestellt.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/13_Kerbwirkung_GlobalFein_Netz.png" title="Global fein vernetztes Bauteil (Beispielansicht)"><img alt="Global fein vernetztes Bauteil (Beispielansicht)" src="../media/04_kerbwirkung/13_Kerbwirkung_GlobalFein_Netz.png" width="700px" /></a></p>
+<p>Maßgebliche Größen zur Beurteilung sind die maximale Spannung im Kerbgrund, die Anzahl der Knoten und Elemente sowie die Rechenzeit.  </p>
+<!-- markdownlint-disable MD033 -->
 
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [3.7340,4.0096,4.2185,4.4406,4.2213,4.2172],
+           "name": "Max. Spannung (MPa)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["3,7340 MPa","4,0096 MPa","4,2185 MPa","4,4406 MPa","4,2213 MPa","4,2172 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [2519,6671,28370,86607,647596,4984682],
+           "name": "Anzahl Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["2 519","6 671","28 370","86 607","647 596","4 984 682"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [432,1264,6034,19340,152900,1211000],
+           "name": "Anzahl Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["432","1 264","6 034","19 340","152 900","1 211 000"],
+           "hovertemplate": "%{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Netzgröße vs. maximale Spannung, Knoten- und Elementeanzahl",
+         "xaxis": {"title": "Elementgröße"},
+         "yaxis": {"title": "Max. Spannung (MPa)"},
+         "yaxis2": {"title": "Knoten / Elemente", "overlaying": "y", "side": "right"},
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [3.7340,4.0096,4.2185,4.4406,4.2213,4.2172],
+           "name": "Max. Spannung (MPa)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["3,7340 MPa","4,0096 MPa","4,2185 MPa","4,4406 MPa","4,2213 MPa","4,2172 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [18,17,19,24,66,461],
+           "name": "Rechenzeit (s)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["18 s","17 s","19 s","24 s","66 s","461 s"],
+           "hovertemplate": "%{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Netzgröße vs. maximale Spannung und Rechenzeit",
+         "xaxis": {"title": "Elementgröße"},
+         "yaxis": {"title": "Max. Spannung (MPa)"},
+         "yaxis2": {"title": "Rechenzeit (s)", "overlaying": "y", "side": "right"},
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Tabelle der Netzvarianten und Messgrößen</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Elementgröße</th>
+<th style="text-align: right;"><span class="arithmatex">\(\sigma_\text{max}\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\Delta\sigma_\text{max}\)</span> zum vorherigen Netz</th>
+<th style="text-align: right;">Knoten</th>
+<th style="text-align: right;">Elemente</th>
+<th style="text-align: right;">Rechenzeit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Standard</td>
+<td style="text-align: right;">3,7340 MPa</td>
+<td style="text-align: right;">0 %</td>
+<td style="text-align: right;">2.519</td>
+<td style="text-align: right;">432</td>
+<td style="text-align: right;">18 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">5 mm</td>
+<td style="text-align: right;">4,0096 MPa</td>
+<td style="text-align: right;">+7,4 %</td>
+<td style="text-align: right;">6.671</td>
+<td style="text-align: right;">1.264</td>
+<td style="text-align: right;">17 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">3 mm</td>
+<td style="text-align: right;">4,2185 MPa</td>
+<td style="text-align: right;">+5,2 %</td>
+<td style="text-align: right;">28.370</td>
+<td style="text-align: right;">6.034</td>
+<td style="text-align: right;">19 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">2 mm</td>
+<td style="text-align: right;">4,4406 MPa</td>
+<td style="text-align: right;">+5,3 %</td>
+<td style="text-align: right;">86.607</td>
+<td style="text-align: right;">19.340</td>
+<td style="text-align: right;">24 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">1 mm</td>
+<td style="text-align: right;">4,2213 MPa</td>
+<td style="text-align: right;">–4,9 %</td>
+<td style="text-align: right;">647.596</td>
+<td style="text-align: right;">152.900</td>
+<td style="text-align: right;">66 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">0,5 mm</td>
+<td style="text-align: right;">4,2172 MPa</td>
+<td style="text-align: right;">–0,1 %</td>
+<td style="text-align: right;">4.984.682</td>
+<td style="text-align: right;">1.211.000</td>
+<td style="text-align: right;">461 s</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>Mit abnehmender Elementgröße steigt die Rechenzeit deutlich an, während sich das Ergebnis in der Regel einem stabilen Wert annähert. Dieser Verlauf kennzeichnet die typische <strong>Konvergenz des Ergebnisses</strong> mit zunehmender Netzfeinheit.  </p>
+<p>Die absolute Rechenzeit ist dabei stark von der verfügbaren Hardware abhängig. Aussagekräftig ist daher nicht der absolute Zeitwert, sondern der relative Vergleich zwischen den Netzvarianten.</p>
+<p><strong>Beurteilung</strong> der globalen Verfeinerung</p>
+<ul>
+<li>Gleichmäßige Reduktion der Elementgröße im gesamten Modell  </li>
+<li>Deutliche Zunahme der Knoten- und Elementanzahl bei begrenztem Informationsgewinn  </li>
+<li>Signifikante Erhöhung der Rechenzeit, auch in Bereichen mit geringer Spannungsänderung  </li>
+<li>Für lokale Phänomene wie Kerbspannungen nur bedingt effizient  </li>
+<li>Sinnvoll als erster Schritt zur Kalibrierung des Netzeinflusses, jedoch nicht als Dauerstrategie</li>
+</ul>
+<p><strong>Beurteile</strong> den Farbverlaufs im Bereich hoher Gradienten - hier <strong>Elementgröße 3 mm</strong></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/15_Kerbwirkung_Farbverlauf_Kerbe_3mm.png" title="Vergleichsspannung bei Elementgröße 3 mm"><img alt="Vergleichsspannung bei Elementgröße 3 mm" src="../media/04_kerbwirkung/15_Kerbwirkung_Farbverlauf_Kerbe_3mm.png" width="700px" /></a></p>
+<p>hier <strong>Elementgröße 1 mm</strong></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png" title="Vergleichsspannung bei Elementgröße 1 mm"><img alt="Vergleichsspannung bei Elementgröße 1 mm" src="../media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png" width="700px" /></a></p>
+<h3 id="konvergenz-des-ergebnisses">Konvergenz des Ergebnisses<a class="headerlink" href="#konvergenz-des-ergebnisses" title="Permanent link">&para;</a></h3>
+<p>Die in den Plots dargestellten Werte zeigen, dass sich die maximale Vergleichsspannung mit zunehmender Netzverfeinerung um etwa <strong>4,2 MPa</strong> einpendelt. Dies weist auf ein <strong>konvergierendes Verhalten</strong> des Modells hin, da weitere Verfeinerungen keine signifikante Änderung des Ergebnisses mehr bewirken.</p>
+<hr />
+<h3 id="lokale-netzverfeinerung-werkzeug-verfeinerung">Lokale Netzverfeinerung - Werkzeug <em>Verfeinerung</em><a class="headerlink" href="#lokale-netzverfeinerung-werkzeug-verfeinerung" title="Permanent link">&para;</a></h3>
+<p>Das Tool <strong>Verfeinerung</strong> dient zur lokalen Steuerung der Elementgröße. Es legt fest, wie oft das Anfangsnetz in einem bestimmten Bereich verfeinert werden soll. Diese Steuerung kann auf <strong>Flächen</strong>, <strong>Kanten</strong> oder <strong>Punkte</strong> angewendet werden und beeinflusst damit gezielt die Detaillierung des Netzes in relevanten Geometriebereichen.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung.png" title="Verfeinerung in ANSYS Mechanical"><img alt="Verfeinerung in ANSYS Mechanical" src="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung.png" width="700px" /></a></p>
+<p><strong>Aufruf:</strong></p>
+<ul>
+<li>Im Strukturbaum mit der rechten Maustaste auf <em>Netz</em> klicken und <em>Einfügen → Verfeinerung</em> wählen.  </li>
+<li>Alternativ über das Register <em>Netz</em> in der Multifunktionsleiste das Symbol <em>Verfeinerung</em> auswählen.  </li>
+<li>Ebenso kann direkt an einer Fläche, Kante oder einem Punkt per Rechtsklick <em>Einfügen → Verfeinerung</em> ausgewählt werden.</li>
+</ul>
+<p><strong>relevante Einstellungen im Detailfenster:</strong></p>
+<ul>
+<li><em>Zuweisungsmethode:</em> Auswahl der zu verfeinernden Geometrie (Flächen, Kanten oder Punkte) oder einer benannten Auswahl.  </li>
+<li><em>Verfeinerung:</em> Angabe, wie oft das Ausgangsnetz verfeinert werden soll. Der Standardwert ist <strong>1</strong>.  </li>
+</ul>
+<p>Die Verfeinerung teilt vorhandene Elemente hierarchisch in kleinere Unterelemente auf, wobei die ursprüngliche Elementtopologie (z. B. Tetraeder, Hexaeder) erhalten bleibt. Die Verfeinerungsstufe gibt an, wie oft die Elemente unterteilt werden; bei <em>Refinement = 1</em> entstehen beispielsweise acht kleinere Tetraederelemente. Die Methode basiert nicht auf einer absoluten Elementgröße, sondern auf relativen Teilungsverhältnissen, wodurch sich an den Übergängen ein gleichmäßiger Netzübergang ohne abrupte Sprünge ergibt.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.png" title="Verfeinerung des Netzes in ANSYS Mechanical"><img alt="Verfeinerung des Netzes in ANSYS Mechanical" src="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.png" width="700px" /></a></p>
+<hr />
+<h3 id="lokale-netzverfeinerung-werkzeug-elementgroe-groenbestimmung">Lokale Netzverfeinerung - Werkzeug <em>Elementgröße</em> / <em>Größenbestimmung</em><a class="headerlink" href="#lokale-netzverfeinerung-werkzeug-elementgroe-groenbestimmung" title="Permanent link">&para;</a></h3>
+<p>Das Tool <strong>Größenbestimmung</strong> dient zur gezielten Steuerung der <strong>lokalen Elementgröße</strong> in definierten Bereichen. Damit lassen sich kritische Geometriezonen – etwa Kerbradien, Bohrungen oder Übergänge – mit höherer Genauigkeit abbilden, ohne das gesamte Modell zu verfeinern.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/17_Kerbwirkung_Elementgroesse.png" title="Größenbestimmung in ANSYS Mechanical"><img alt="Größenbestimmung in ANSYS Mechanical" src="../media/04_kerbwirkung/17_Kerbwirkung_Elementgroesse.png" width="700px" /></a></p>
+<p><strong>Aufruf:</strong></p>
+<ul>
+<li>Im Strukturbaum mit der rechten Maustaste auf <em>Netz</em> klicken und <em>Einfügen → Größenbestimmung</em> wählen.  </li>
+<li>Alternativ über das Register <em>Netz</em> in der Multifunktionsleiste das Symbol <em>Größenbestimmung</em> auswählen.  </li>
+<li>Ebenso kann direkt an einer Fläche, Kante oder einem Körper per Rechtsklick <em>Einfügen → Größenbestimmung</em> aufgerufen werden.</li>
+</ul>
+<p><strong>relevante Einstellungen im Detailfenster:</strong></p>
+<ul>
+<li><em>Geometrie:</em> Auswahl der zu verfeinernden Geometrie (Körper, Flächen, Kanten, Punkte) oder einer benannten Auswahl.  </li>
+<li><em>Typ - Elementgröße:</em> Definiert die maximale Elementgröße innerhalb des gewählten Bereichs.  </li>
+<li><em>Typ - Einflussbereich:</em> Legt fest, wie weit die lokale Größensteuerung in benachbarte Bereiche übergeht.  </li>
+<li><em>Volumen beeinflussen:</em> Bestimmt, ob die Größensteuerung auch in das Volumen hineinwirkt. Ist diese Option aktiviert, werden angrenzende Volumenelemente in der Tiefe entsprechend der eingestellten Größe angepasst.  </li>
+</ul>
+<p><strong>Funktionsweise:</strong></p>
+<p>Das Tool <em>Größenbestimmung</em> basiert auf einer <strong>absoluten Elementgröße</strong>, im Gegensatz zur relativen Unterteilung bei der <em>Verfeinerung</em>. ANSYS generiert automatisch <strong>Übergangsbereiche</strong> zwischen unterschiedlich feinen Zonen, um ein kompatibles Netz zu gewährleisten.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Die Größenbestimmung ist das wichtigste Werkzeug zur gezielten lokalen Steuerung der Elementgröße.<br />
+Sie ermöglicht eine hohe Genauigkeit im Bereich der Kerbwirkung bei gleichzeitig kontrollierter Rechenzeit.</p>
+</div>
+<h3 id="adaptive-vernetzung">Adaptive Vernetzung<a class="headerlink" href="#adaptive-vernetzung" title="Permanent link">&para;</a></h3>
+<h3 id="adaptive-vernetzung_1">Adaptive Vernetzung<a class="headerlink" href="#adaptive-vernetzung_1" title="Permanent link">&para;</a></h3>
+<p>Die <strong>adaptive Vernetzung</strong> passt die lokale Elementgröße automatisch an das Ergebnisfeld an. Dabei werden Bereiche mit hohen Spannungs- oder Dehnungsgradienten gezielt verfeinert, bis eine definierte Genauigkeit erreicht ist. Ziel ist ein <strong>vom Netz unabhängiges Ergebnis</strong> bei möglichst effizienter Elementverteilung.</p>
+<p><strong>Vorgehensweise:</strong></p>
+<ul>
+<li>Zunächst wird eine Berechnung mit einem Standardnetz durchgeführt, um grob den Spannungsverlauf zu erfassen.  </li>
+<li>Über das Kontextmenü auf einer Lösung (z.B. Vergleichsspannung) im Strukturbaum (Rechtsklick → Konvergenz hinzufügen_) wird die adaptive Vernetzung aktiviert.  </li>
+</ul>
+<p><a class="glightbox" href="../media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png" title="Aktivierung der adaptiven Vernetzung in ANSYS Mechanical"><img alt="Aktivierung der adaptiven Vernetzung in ANSYS Mechanical" src="../media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png" width="700px" /></a>  </p>
+<p>Die Einstellungen der adaptiven Vernetzung legen den <strong>Ergebnistyp</strong> (hier <em>Maximum der Vergleichsspannung</em>) sowie die <strong>zulässige prozentuale Änderung</strong> zwischen zwei Verfeinerungsschritten fest.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/19_Kerbwirkung_Adaptive_Vernetzung_einstellungen.png" title="Einstellungen der adaptiven Vernetzung in ANSYS Mechanical"><img alt="Einstellungen der adaptiven Vernetzung in ANSYS Mechanical" src="../media/04_kerbwirkung/19_Kerbwirkung_Adaptive_Vernetzung_einstellungen.png" width="700px" /></a>  </p>
+<p>In den <strong>Details von "Lösung"</strong>  werden die <strong>maximale Anzahl an Verfeinerungszyklen</strong> und die <strong>Verfeinerungstiefe</strong> definiert.  </p>
+<ul>
+<li>Die <em>maximale Anzahl der Verfeinerungszyklen</em> bestimmt, wie oft ANSYS das Netz automatisch nachverfeinern darf, bevor die Konvergenzprüfung beendet wird.  </li>
+<li>Die <em>Verfeinerungstiefe</em> legt fest, in wie viele Unterelemente ein bestehendes Element während eines Zyklus aufgeteilt wird.  </li>
+<li>Eine größere Tiefe führt zu einer feineren, aber rechenintensiveren Vernetzung.  </li>
+</ul>
+<p><a class="glightbox" href="../media/04_kerbwirkung/20_Kerbwirkung_Adaptive_Vernetzung_L%C3%B6sungseinstell.png" title="Einstellungen der adaptiven Vernetzung in der Lösungsdefinition"><img alt="Einstellungen der adaptiven Vernetzung in der Lösungsdefinition" src="../media/04_kerbwirkung/20_Kerbwirkung_Adaptive_Vernetzung_L%C3%B6sungseinstell.png" width="300px" /></a>  </p>
+<div class="admonition note">
+<p class="admonition-title">Faustformel zur adaptiven Vernetzung</p>
+<p>Eine praxisgerechte Einstellung besteht aus einer <em>maximalen Anzahl der Verfeinerungszyklen</em> von <strong>5</strong> und einer <em>Verfeinerungstiefe</em> von <strong>3</strong>.<br />
+Damit sollte <strong>konvergierende Lösung</strong> erreicht werden.<br />
+Tritt dennoch keine Konvergenz ein, sollte das Ausgangsnetz verfeinert und das Modell auf <strong>Divergenzen oder singuläre Stellen</strong> überprüft werden.</p>
+</div>
+<details class="note">
+<summary>Zusammenhang zum Tool <em>Verfeinerung</em></summary>
+<p>Im Gegensatz zum Tool <em>Verfeinerung</em> (lokale, manuell gesteuerte Unterteilung) erfolgt diese Aufteilung hier <strong>automatisch</strong>, basierend auf dem Ergebnisfeld der jeweiligen Analyse.<br />
+Beide Mechanismen verwenden jedoch denselben hierarchischen Ansatz zur Elementunterteilung – die adaptive Vernetzung steuert diesen Prozess lediglich iterativ und kriteriumsbasiert.  </p>
+</details>
+<p>ANSYS verfeinert anschließend automatisch die Bereiche mit <strong>hoher Abweichung der Ergebnisgrößen</strong>. Dieser Prozess wiederholt sich, bis die Abweichung zwischen zwei Verfeinerungsschritten kleiner als der festgelegte Toleranzwert (<em>zulässige Änderung</em>) ist oder die maximale Anzahl an Schritten erreicht wurde.</p>
+<p>Der Konvergenzverlauf zeigt den Verlauf der maximalen Vergleichsspannung über mehrere Verfeinerungszyklen. Nach anfänglichen Schwankungen nähert sich das Ergebnis einem stabilen Wert an, was auf ein konvergierendes Verhalten hinweist.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/21_Kerbwirkung_Adaptive_Vernetzung_Konvergenzverlauf.png" title="Konvergenzverlauf der adaptiven Vernetzung"><img alt="Konvergenzverlauf der adaptiven Vernetzung" src="../media/04_kerbwirkung/21_Kerbwirkung_Adaptive_Vernetzung_Konvergenzverlauf.png" width="700px" /></a>  </p>
+<p>Das resultierende Netz zeigt eine gezielte lokale Verdichtung im Kerbgrund, während in weniger beanspruchten Bereichen eine grobe Vernetzung erhalten bleibt. Dadurch wird eine hohe Genauigkeit bei gleichzeitig reduzierter Rechenzeit erreicht.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/22_Kerbwirkung_Adaptive_Vernetzung_Netz.png" title="Netz nach adaptiver Verfeinerung"><img alt="Netz nach adaptiver Verfeinerung" src="../media/04_kerbwirkung/22_Kerbwirkung_Adaptive_Vernetzung_Netz.png" width="700px" /></a>  </p>
+<p><strong>Funktionsweise:</strong></p>
+<ul>
+<li>Die adaptive Vernetzung verwendet einen <strong>Fehlerindikator</strong>, der auf der Änderung der Dehnungsenergie oder der Spannungsgradienten basiert. </li>
+<li>Elemente mit überdurchschnittlich hoher Abweichung werden in der nächsten Iteration verfeinert.  </li>
+<li>Bereiche mit stabilen Ergebnissen bleiben unverändert.  </li>
+<li>Damit wird die Netzdichte automatisch dort erhöht, wo sie physikalisch relevant ist.  </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Die adaptive Vernetzung ist besonders effizient bei Modellen mit lokal stark unterschiedlichen Spannungsniveaus, wie z. B. bei Kerben, Bohrungen oder Kontaktstellen.<br />
+Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich und liefert zugleich konvergente Ergebnisse.</p>
+</div>
+<hr />
+<h3 id="zusammenfassung-netzeinflussstudie">Zusammenfassung Netzeinflussstudie<a class="headerlink" href="#zusammenfassung-netzeinflussstudie" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Netzunabhängigkeit als Kriterium für Ergebnisqualität.  </li>
+<li>Beurteilung der Netzqualität:</li>
+<li>Optische Beurteilung (Farbverlauf)</li>
+<li>Vergleich gemittelter / ungemittelter Spannungen</li>
+<li>Konvergenzprüfung  </li>
+<li>Empfehlung für die Praxis:</li>
+<li>Globale Verfeinerung für Grobanalyse  </li>
+<li>Lokale oder adaptive Verfeinerung für Detailanalyse  </li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Ziel ist nicht das feinste Netz, sondern das <strong>effizienteste</strong> Netz, das ein vom Netz unabhängiges Ergebnis liefert.</p>
+</div>
 <h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
-<h3 id="netzeinfluss">Netzeinfluss<a class="headerlink" href="#netzeinfluss" title="Permanent link">&para;</a></h3>
-<!-- 
-hier dann Diskussion Rechenzeit, Darstellung in Tabelle
-Konvergenz
-Reduktion der Rechenzeit
--->
-
 <h3 id="abgleich-mit-analytischer-losung">Abgleich mit analytischer Lösung<a class="headerlink" href="#abgleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
 <!-- 
 vielleicht auch erst nach dem Netzeinfluss
@@ -909,6 +1274,9 @@ vielleicht auch erst nach dem Netzeinfluss
 </li>
 <li id="fn:Altenbach2016">
 <p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Comsol2025">
+<p>Finite element mesh refinement definition and techniques. 23.10.2025. URL: <a href="https://www.comsol.com/multiphysics/mesh-refinement">https://www.comsol.com/multiphysics/mesh-refinement</a> (visited on 23.10.2025).&#160;<a class="footnote-backref" href="#fnref:Comsol2025" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
