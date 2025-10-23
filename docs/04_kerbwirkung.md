@@ -551,7 +551,7 @@ Maßgebliche Größen zur Beurteilung sind die maximale Spannung im Kerbgrund, d
        "layout": {
          "title": "Netzgröße vs. maximale Spannung, Knoten- und Elementeanzahl",
          "xaxis": {"title": "Elementgröße"},
-         "yaxis": {"title": "Max. Spannung (MPa)"},
+         "yaxis": {"title": "Max. Spannung (MPa)", "range": [2, 4.6]},
          "yaxis2": {"title": "Knoten / Elemente", "overlaying": "y", "side": "right"},
          "legend": {"x": 0.01, "y": 0.99},
          "hovermode": "x unified",
@@ -595,7 +595,7 @@ Maßgebliche Größen zur Beurteilung sind die maximale Spannung im Kerbgrund, d
        "layout": {
          "title": "Netzgröße vs. maximale Spannung und Rechenzeit",
          "xaxis": {"title": "Elementgröße"},
-         "yaxis": {"title": "Max. Spannung (MPa)"},
+         "yaxis": {"title": "Max. Spannung (MPa)", "range": [2, 4.6]},
          "yaxis2": {"title": "Rechenzeit (s)", "overlaying": "y", "side": "right"},
          "legend": {"x": 0.01, "y": 0.99},
          "hovermode": "x unified",
@@ -698,8 +698,6 @@ Das Tool _Größenbestimmung_ basiert auf einer **absoluten Elementgröße**, im
 
 ### Adaptive Vernetzung
 
-### Adaptive Vernetzung
-
 Die **adaptive Vernetzung** passt die lokale Elementgröße automatisch an das Ergebnisfeld an. Dabei werden Bereiche mit hohen Spannungs- oder Dehnungsgradienten gezielt verfeinert, bis eine definierte Genauigkeit erreicht ist. Ziel ist ein **vom Netz unabhängiges Ergebnis** bei möglichst effizienter Elementverteilung.
 
 **Vorgehensweise:**
@@ -772,8 +770,3 @@ Das resultierende Netz zeigt eine gezielte lokale Verdichtung im Kerbgrund, wäh
 ## Diskussion der Ergebnisse
 
 ### Abgleich mit analytischer Lösung
-
-<!-- 
-vielleicht auch erst nach dem Netzeinfluss
--->
-
