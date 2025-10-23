@@ -997,7 +997,7 @@ Ein optisch gleichmäßiges Spannungsfeld ohne abrupte Farbwechsel weist in der 
        "layout": {
          "title": "Netzgröße vs. maximale Spannung, Knoten- und Elementeanzahl",
          "xaxis": {"title": "Elementgröße"},
-         "yaxis": {"title": "Max. Spannung (MPa)"},
+         "yaxis": {"title": "Max. Spannung (MPa)", "range": [2, 4.6]},
          "yaxis2": {"title": "Knoten / Elemente", "overlaying": "y", "side": "right"},
          "legend": {"x": 0.01, "y": 0.99},
          "hovermode": "x unified",
@@ -1041,7 +1041,7 @@ Ein optisch gleichmäßiges Spannungsfeld ohne abrupte Farbwechsel weist in der 
        "layout": {
          "title": "Netzgröße vs. maximale Spannung und Rechenzeit",
          "xaxis": {"title": "Elementgröße"},
-         "yaxis": {"title": "Max. Spannung (MPa)"},
+         "yaxis": {"title": "Max. Spannung (MPa)", "range": [2, 4.6]},
          "yaxis2": {"title": "Rechenzeit (s)", "overlaying": "y", "side": "right"},
          "legend": {"x": 0.01, "y": 0.99},
          "hovermode": "x unified",
@@ -1179,7 +1179,6 @@ Ein optisch gleichmäßiges Spannungsfeld ohne abrupte Farbwechsel weist in der 
 Sie ermöglicht eine hohe Genauigkeit im Bereich der Kerbwirkung bei gleichzeitig kontrollierter Rechenzeit.</p>
 </div>
 <h3 id="adaptive-vernetzung">Adaptive Vernetzung<a class="headerlink" href="#adaptive-vernetzung" title="Permanent link">&para;</a></h3>
-<h3 id="adaptive-vernetzung_1">Adaptive Vernetzung<a class="headerlink" href="#adaptive-vernetzung_1" title="Permanent link">&para;</a></h3>
 <p>Die <strong>adaptive Vernetzung</strong> passt die lokale Elementgröße automatisch an das Ergebnisfeld an. Dabei werden Bereiche mit hohen Spannungs- oder Dehnungsgradienten gezielt verfeinert, bis eine definierte Genauigkeit erreicht ist. Ziel ist ein <strong>vom Netz unabhängiges Ergebnis</strong> bei möglichst effizienter Elementverteilung.</p>
 <p><strong>Vorgehensweise:</strong></p>
 <ul>
@@ -1243,10 +1242,6 @@ Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich un
 </div>
 <h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
 <h3 id="abgleich-mit-analytischer-losung">Abgleich mit analytischer Lösung<a class="headerlink" href="#abgleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
-<!-- 
-vielleicht auch erst nach dem Netzeinfluss
--->
-
 <div class="footnote">
 <hr />
 <ol>
