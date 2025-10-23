@@ -1,16 +1,4 @@
-<!-- 
-Inhalt: 
-
-1. Theorie Konvergenz Divergenz  
-2. Theorie Stabmathematik  
-3. Theorie Kerbwirkung  
-4. Aufgabe Kerbwirkung  
-5. Umsetzung ANSYS, Verfeinerung, Konvergenz, lokale Ergebnisse  
--->
-
 # Modul 2 Kerbwirkung
-
-[![Under Construction mit FEM-Bezug](media/under_construction.png){width=700px}](media/under_construction.png "Under Construction"){.glightbox} 
 
 ## Lernziele
 
@@ -754,7 +742,7 @@ Das resultierende Netz zeigt eine gezielte lokale Verdichtung im Kerbgrund, wäh
 
 **Funktionsweise:**
 
-* Die adaptive Vernetzung verwendet einen **Fehlerindikator**, der auf der Änderung der Dehnungsenergie oder der Spannungsgradienten basiert. 
+* Die adaptive Vernetzung verwendet einen **Fehlerindikator**, der auf der Änderung der Dehnungsenergie oder der Spannungsgradienten basiert.  
 * Elemente mit überdurchschnittlich hoher Abweichung werden in der nächsten Iteration verfeinert.  
 * Bereiche mit stabilen Ergebnissen bleiben unverändert.  
 * Damit wird die Netzdichte automatisch dort erhöht, wo sie physikalisch relevant ist.  
@@ -764,6 +752,8 @@ Das resultierende Netz zeigt eine gezielte lokale Verdichtung im Kerbgrund, wäh
     Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich und liefert zugleich konvergente Ergebnisse.
 
 ---
+
+[![Under Construction mit FEM-Bezug](media/under_construction.png){width=700px}](media/under_construction.png "Under Construction"){.glightbox}  
 
 ### Zusammenfassung Netzeinflussstudie
 
