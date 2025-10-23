@@ -343,6 +343,7 @@ Für Bauteile mit Kerben stehen in der Festigkeitsberechnung Kerbformzahlen zur 
 
 * Rechnen Sie mittels FEM die Kerbformzahlen für den unten gegebenen Fall nach, siehe Abbildung.  
 * Gleichen Sie die ermittelten Kerbformzahlen mit der Theorie ab.
+* Der Werkstoff sei _Baustahl_ gemäß ANSYS-Datenbank.  
 * Verwenden Sie Radien für $r/b = 0{,}1 \text{ bis } 0{,}5$ (Geometrie siehe unten).  
 * Achten Sie auf eine konvergierende Lösung.
 
@@ -408,25 +409,78 @@ Die nachfolgenden Diagramme zeigen die Abhängigkeit der Kerbformzahl $\alpha_k$
 
 ### 1. Projektverwaltung und Geometrieimport
 
+Für die Untersuchung der Kerbformzahlen werden fünf Geometrievarianten mit unterschiedlichen Kerbradien ($r/b = 0{,}1$ bis $0{,}5$) benötigt. Jede Variante kann in einem eigenen Projekt oder über ein gemeinsames Projekt mit mehreren Geometrieversionen verwaltet werden.  
+
+[![Projektverwaltung und Geometrieimport in ANSYS Workbench](media/04_kerbwirkung/06_Kerbwirkung_Projekt.png){width=750px}](media/04_kerbwirkung/06_Kerbwirkung_Projekt.png "Projektverwaltung und Geometrieimport in ANSYS Workbench"){.glightbox}  
+
+**Vorgehensweise:**
+
+* Die Geometrien werden im _Projekt Schema_ einzeln importiert oder nacheinander eingelesen. Dabei sollte die gleiche Materialdefinition verwendet werden, um vergleichbare Ergebnisse zu gewährleisten.  
+* Ein gemeinsames Material kann über die _Technische Daten_-Datenbank verknüpft werden. Änderungen im Materialmodell wirken sich dann automatisch auf alle Varianten aus.  
+* Um Redundanz zu vermeiden, kann das Grundmodell einmal vollständig aufgebaut und anschließend dupliziert werden. Danach wird lediglich die Geometrie getauscht (_Geometrie ersetzen_). So bleiben Randbedingungen, Netzdefinitionen und Auswertungen erhalten.  
+* Wichtig ist, die Resultate jeder Variante eindeutig zu kennzeichnen (z. B. „r01“, „r02“ …). So lassen sich die Spannungsverteilungen und Kerbformzahlen später systematisch vergleichen.  
+
+**Hinweis:**  
+Beim Austausch einer Geometrie kann es zu Zuordnungsproblemen kommen, wenn Flächen oder Kanten im neuen Modell nicht exakt mit den ursprünglichen  übereinstimmen. In diesem Fall müssen die entsprechenden Bereiche in ANSYS neu definiert werden.
+
 ### 2. Materialzuweisung
+
+Für diese Aufgabe ist keine manuelle Materialzuweisung erforderlich. ANSYS weist der importierten Geometrie automatisch das Standardmaterial _Baustahl_ zu.  
+
+Es empfiehlt sich dennoch, die Materialeigenschaften in den _Technischen Daten_ zu überprüfen. Dabei sollte insbesondere kontrolliert werden, ob Elastizitätsmodul, Querkontraktionszahl und Streckgrenze mit den Werten der analytischen Berechnung übereinstimmen. Bei Bedarf kann das Materialmodell angepasst oder ein eigenes Material mit definierten Kennwerten angelegt werden.
 
 ### 3. Netzgenerierung
 
+Zu Beginn sollte mit der automatischen _Standardvernetzung_ gearbeitet werden, um zu prüfen, ob die Geometrie überhaupt erfolgreich vernetzt werden kann. Eine erste visuelle Beurteilung des Netzes ist dabei hilfreich.  
+
+Auffällig **große Elemente** oder **stark verzerrte Netzbereiche** deuten häufig auf problematische Geometrieübergänge hin und können zu ungenauen Ergebnissen führen.  
+
+[![Standardvernetzung in ANSYS Mechanical](media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png){width=750px}](media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png "Standardvernetzung in ANSYS Mechanical"){.glightbox}  
+
 ### 4. Randbedingungen
 
-### 5. Auswertung
+Für die Simulation bietet sich eine Randbedingung ohne feste Einspannung an. Statt einer starren Lagerung wird die Kraft direkt auf eine verformbare Fläche aufgebracht. Dadurch kann das System ein realistisches Kräftegleichgewicht ausbilden und das lokale Spannungsfeld im Kerbgrund wird physikalisch korrekt erfasst.  
+
+[![Randbedingungen im Modell zur Bestimmung der Kerbformzahl](media/04_kerbwirkung/08_Kerbwirkung_Randbedingungen.png){width=750px}](media/04_kerbwirkung/08_Kerbwirkung_Randbedingungen.png "Randbedingungen im Modell zur Bestimmung der Kerbformzahl"){.glightbox}  
+
+**Empfohlene Einstellungen in ANSYS Mechanical:**  
+
+* Verwendung einer _Kraft_ an beiden Seite  
+* keine _Einspannung_, um unrealistische Spannungsspitzen zu vermeiden  
+
+!!! question "Frage"
+    Ist hier der Betrag der Kraft relevant?  
+    Die analytische Lösung hilf das zu beantworten.  
+
+??? success "Antwort"
+    Nein. Für die Bestimmung der Kerbformzahl kürzt sich die aufgebrachte Kraft heraus. Entscheidend ist nur das Verhältnis zwischen lokaler Spannung im Kerbgrund und Nennspannung.
 
 ### 5. Analyseeinstellungen
 
-<!-- 
-schwache Federn! 
---> 
+In den _Analyseeinstellungen_ sollten die standardmäßigen Parameter zunächst beibehalten werden. Für lineare statische Analysen ist in der Regel keine zusätzliche Anpassung erforderlich.  
+
+Besonderes Augenmerk gilt jedoch den sogenannten **schwachen Federn**. Diese müssen aktiviert werden, wenn das System keine eindeutige Lagerung besitzt. Sie verhindern numerische Instabilitäten, indem sie eine minimale Federsteifigkeit zu den Freiheitsgraden ohne Zwangsbedingungen hinzufügen.  
+
+[![Analyseeinstellungen in ANSYS Mechanical](media/04_kerbwirkung/09_Kerbwirkung_Analyseeinstellungen.png){width=300px}](media/04_kerbwirkung/09_Kerbwirkung_Analyseeinstellungen.png "Analyseeinstellungen in ANSYS Mechanical"){.glightbox}  
+
+**Hinweise:**  
+
+* Die _schwachen Federn_ beeinflussen das physikalische Ergebnis nicht, solange das Modell korrekt gelagert ist.  
+* Falls die Analyse dennoch instabil läuft oder kritische Fehlermeldungen zu „Starrkörperbewegungen“ erscheinen, sollte die Lagerung überprüft und ggf. minimal ergänzt werden.  
+* Die Meldung, dass schwache Federn eingesetzt wurden, ist nicht als kritisch zu bewerten.  
+
+### 6. Auswertung
+
+Zur ersten Beurteilung werden die _Gesamtverformung_ und die _Vergleichsspannung_ betrachtet.  
 
 ## Diskussion der Ergebnisse
 
 ### Netzeinfluss
 
 <!-- 
+warum erst Netzeinfluss: wir wollen ein vom Netz unabhängiges Ergbnis!
+Beurteilung der Netzqaulität am besten mit einem Ergebins, wo sind hohe Spannungsgradienten sind relevatn. 
+Exkurs mit Bildern und Text aus dem Infoblatt zur Netzqualität. OHNE die eigentlich Netzqualitätsfeatures in ANSYS. Nur visuelle Beurteilung. Knotendiskreter Spannungsverlauf etc. gemittelte Werte gleich nicht gemittelte Werte. 
 hier dann Diskussion Rechenzeit, Darstellung in Tabelle
 Konvergenz
 Reduktion der Rechenzeit

@@ -331,6 +331,7 @@ For components with notches, stress concentration factors are available in stren
 
 * Use the FEM to calculate the stress concentration factors for the case shown below, see figure.  
 * Compare the calculated stress concentration factors with the theoretical values.  
+* The material is _structural steel_ according to the ANSYS material database.  
 * Use radii for $r/b = 0.1$ to $0.5$ (see geometry below).  
 * Ensure that the solution is convergent.
 
@@ -391,7 +392,6 @@ The following diagrams show the dependence of the stress concentration factor $\
 
 [![Stress concentration factors for round bars under torsion](media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png){width=600px}](media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png "Stress concentration factors for round bars under torsion"){.glightbox}
 <span class="bildquelle">Image source[@Wittel2021]</span>
-
 
 ## Implementation in ANSYS
 

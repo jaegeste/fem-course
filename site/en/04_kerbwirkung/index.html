@@ -809,7 +809,54 @@ F_1 = -F
 <span class="bildquelle">Image source based on<sup id="fnref3:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup></span></p>
 <p>Such singular regions cannot be meaningfully evaluated. Instead, the evaluation should focus on physically meaningful areas, or the geometry should be modified with a fillet to restore a realistic stress state.</p>
 <h2 id="task-stress-concentration">Task: Stress Concentration<a class="headerlink" href="#task-stress-concentration" title="Permanent link">&para;</a></h2>
+<p>For components with notches, stress concentration factors are available in strength analysis to determine the maximum stress in the notch root (keyword: stress concentration).  </p>
+<ul>
+<li>Use the FEM to calculate the stress concentration factors for the case shown below, see figure.  </li>
+<li>Compare the calculated stress concentration factors with the theoretical values.  </li>
+<li>Use radii for <span class="arithmatex">\(r/b = 0.1\)</span> to <span class="arithmatex">\(0.5\)</span> (see geometry below).  </li>
+<li>Ensure that the solution is convergent.</li>
+</ul>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg" title="Task: Stress concentration factor"><img alt="Task: Stress concentration factor" src="../../media/04_kerbwirkung/kerbformzahl_aufgabenstellung.svg" width="400" /></a></p>
+<p>The geometry files are:  </p>
+<ul>
+<li><a href="../../media/04_kerbwirkung/kerbformzahl_01.stp">kerbformzahl_01.stp</a></li>
+<li><a href="../../media/04_kerbwirkung/kerbformzahl_02.stp">kerbformzahl_02.stp</a>  </li>
+<li><a href="../../media/04_kerbwirkung/kerbformzahl_03.stp">kerbformzahl_03.stp</a></li>
+<li><a href="../../media/04_kerbwirkung/kerbformzahl_04.stp">kerbformzahl_04.stp</a>  </li>
+<li><a href="../../media/04_kerbwirkung/kerbformzahl_05.stp">kerbformzahl_05.stp</a></li>
+</ul>
 <h2 id="theory-stress-concentration">Theory: Stress Concentration<a class="headerlink" href="#theory-stress-concentration" title="Permanent link">&para;</a></h2>
+<p>Notches occur at cross-section changes, holes, grooves, or other geometric transitions. They cause a local <strong>concentration of the stress flow</strong>, meaning a <strong>concentration of the force flow lines</strong>, which leads to an <strong>increase in local stress</strong>.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/Kerbwirkung.svg" title="Stress flow and stress distribution in a notched and unnotched component"><img alt="Stress flow and stress distribution in a notched and unnotched component" src="../media/04_kerbwirkung/Kerbwirkung.svg" width="400px" /></a>
+<span class="bildquelle">Image source<sup id="fnref:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p>In contrast to unnotched components, where the stress flow is uniform and the nominal stress is approximately constant across the cross-section, the presence of a notch disturbs the force flow. This disturbance causes stress peaks at the notch root, which are described by the <strong>stress concentration factor</strong> <span class="arithmatex">\(\alpha_k\)</span>:<sup id="fnref2:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></p>
+<div class="arithmatex">\[
+\alpha_k = \frac{\sigma_\text{max}}{\sigma_\text{n}}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\alpha_k\)</span> – stress concentration factor (dimensionless measure of stress increase)  </li>
+<li><span class="arithmatex">\(\sigma_k=\sigma_\text{max}\)</span> – maximum stress at the notch root  </li>
+<li><span class="arithmatex">\(\sigma_\text{n}\)</span> – <strong>nominal stress at the notch root</strong>, i.e., the nominal stress in the undisturbed notch cross-section  </li>
+</ul>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg" title="Definitions related to stress concentration"><img alt="Definitions related to stress concentration" src="../../media/04_kerbwirkung/Kerbwirkung_Bezeichnungen.svg" width="200px" /></a>
+<span class="bildquelle">Image adapted from<sup id="fnref:Altenbach2016"><a class="footnote-ref" href="#fn:Altenbach2016">5</a></sup></span></p>
+<p>The stress concentration factor <span class="arithmatex">\(\alpha_k\)</span> is a measure of the strength-reducing effect of the notch. In the elastic range, it depends only on the <strong>notch geometry</strong> and the <strong>type of loading</strong>. As the notch becomes sharper, <span class="arithmatex">\(\alpha_k\)</span> increases, and so does the local stress <span class="arithmatex">\(\sigma_\text{max}\)</span>. Materials with high ductility show less sensitivity to notches, since plastic deformation can partially reduce stress peaks.</p>
+<h3 id="influence-of-the-notch-shape">Influence of the notch shape<a class="headerlink" href="#influence-of-the-notch-shape" title="Permanent link">&para;</a></h3>
+<p>The sharper the notch, the more the stress flow is concentrated at the notch root. This leads to higher stress peaks <span class="arithmatex">\(\sigma_\text{max}\)</span> and greater values of the stress concentration factor <span class="arithmatex">\(\alpha_k\)</span>. A rounded notch, on the other hand, relaxes the force flow and reduces the local stress increase.</p>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg" title="Influence of notch geometry on stress concentration"><img alt="Influence of notch geometry on stress concentration" src="../../media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg" width="600px" /></a>
+<span class="bildquelle">Image source<sup id="fnref3:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<h3 id="charts-for-determining-alpha_k">Charts for determining <span class="arithmatex">\(\alpha_k\)</span><a class="headerlink" href="#charts-for-determining-alpha_k" title="Permanent link">&para;</a></h3>
+<p>The following diagrams show the dependence of the stress concentration factor <span class="arithmatex">\(\alpha_k\)</span> on the ratio of the notch radius <span class="arithmatex">\(r\)</span> to the component dimension (<span class="arithmatex">\(b\)</span>, <span class="arithmatex">\(d\)</span>) for different types of loading. As the ratio <span class="arithmatex">\(r/b\)</span> or <span class="arithmatex">\(r/d\)</span> decreases, <span class="arithmatex">\(\alpha_k\)</span> increases significantly, illustrating the influence of notch sharpness.  </p>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/01_kerbformzahlen_flachstab.png" title="Stress concentration factors for flat bars under tension"><img alt="Stress concentration factors for flat bars under tension" src="../../media/04_kerbwirkung/01_kerbformzahlen_flachstab.png" width="600px" /></a>
+<span class="bildquelle">Image source<sup id="fnref4:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png" title="Stress concentration factors for stepped flat bars"><img alt="Stress concentration factors for stepped flat bars" src="../../media/04_kerbwirkung/02_kerbformzahlen_flachstab_abgesetzt.png" width="600px" /></a>
+<span class="bildquelle">Image source<sup id="fnref5:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png" title="Stress concentration factors for round bars under tension"><img alt="Stress concentration factors for round bars under tension" src="../../media/04_kerbwirkung/03_kerbformzahlen_rundstab_zug.png" width="600px" /></a>
+<span class="bildquelle">Image source<sup id="fnref6:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png" title="Stress concentration factors for round bars under bending"><img alt="Stress concentration factors for round bars under bending" src="../../media/04_kerbwirkung/04_kerbformzahlen_rundstab_biegung.png" width="600px" /></a>
+<span class="bildquelle">Image source<sup id="fnref7:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png" title="Stress concentration factors for round bars under torsion"><img alt="Stress concentration factors for round bars under torsion" src="../../media/04_kerbwirkung/05_kerbformzahlen_rundstab_torsion.png" width="600px" /></a>
+<span class="bildquelle">Image source<sup id="fnref8:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
 <h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
 <h3 id="1-project-management-and-geometry-import">1. Project Management and Geometry Import<a class="headerlink" href="#1-project-management-and-geometry-import" title="Permanent link">&para;</a></h3>
 <h3 id="2-material-assignment">2. Material Assignment<a class="headerlink" href="#2-material-assignment" title="Permanent link">&para;</a></h3>
@@ -838,6 +885,12 @@ convergence, and reduction of computation time.
 </li>
 <li id="fn:Betten2003">
 <p>Josef Betten. <em>Finite Elemente für Ingenieure 1</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2003. ISBN 978-3-642-62443-8. <a href="https://doi.org/10.1007/978-3-642-55536-7">doi:10.1007/978-3-642-55536-7</a>.&#160;<a class="footnote-backref" href="#fnref:Betten2003" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Wittel2021">
+<p>Herbert Wittel, Christian Spura, and Dieter Jannasch. <em>Roloff/Matek Maschinenelemente</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2021. ISBN 978-3-658-34159-6. <a href="https://doi.org/10.1007/978-3-658-34160-2">doi:10.1007/978-3-658-34160-2</a>.&#160;<a class="footnote-backref" href="#fnref:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Altenbach2016">
+<p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 5 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
