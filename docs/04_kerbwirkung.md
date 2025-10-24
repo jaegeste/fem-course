@@ -6,7 +6,6 @@ Nach dem Durcharbeitung dieses Kapitels solltest du in der Lage sein,
 
 * den Begriff **Kerbwirkung** zu erklären und die physikalischen Ursachen lokaler Spannungserhöhungen zu beschreiben,  
 * den Zusammenhang zwischen **Kerbformzahl** und **Spannungsüberhöhung** zu erläutern,  
-* typische **Geometrieformen mit Kerben** zu identifizieren und deren Einfluss auf den Kraftfluss zu interpretieren,  
 * die **Kerbformzahl** mittels Finite-Elemente-Methode (FEM) für verschiedene Kerbradien zu bestimmen,  
 * eine **Netzeinflussstudie** durchzuführen und zu bewerten, wann ein Ergebnis als **netzunabhängig** gilt,  
 * die Berechnungsergebnisse kritisch zu analysieren und mit theoretischen Werten zu vergleichen,  
@@ -422,7 +421,7 @@ Es empfiehlt sich dennoch, die Materialeigenschaften in den _Technischen Daten_ 
 
 Zu Beginn sollte mit der automatischen _Standardvernetzung_ gearbeitet werden, um zu prüfen, ob die Geometrie überhaupt erfolgreich vernetzt werden kann. Eine erste visuelle Beurteilung des Netzes ist dabei hilfreich.  
 
-Auffällig **große Elemente** oder **stark verzerrte Netzbereiche** deuten häufig auf problematische Geometrieübergänge hin und können zu ungenauen Ergebnissen führen.  
+Auffällig **große Elemente** oder **stark verzerrte Netzbereiche** deuten häufig auf problematische Geometrieübergänge hin und können zu ungenauen Ergebnissen führen. Eine Netzstudie ist zwingend erforderlich.  
 
 [![Standardvernetzung in ANSYS Mechanical](media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png){width=750px}](media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png "Standardvernetzung in ANSYS Mechanical"){.glightbox}  
 
@@ -641,6 +640,8 @@ hier **Elementgröße 1 mm**
 
 [![Vergleichsspannung bei Elementgröße 1 mm](media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png){width=700px}](media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png "Vergleichsspannung bei Elementgröße 1 mm"){.glightbox}
 
+---
+
 ### Konvergenz des Ergebnisses
 
 Die in den Plots dargestellten Werte zeigen, dass sich die maximale Vergleichsspannung mit zunehmender Netzverfeinerung um etwa **4,2 MPa** einpendelt. Dies weist auf ein **konvergierendes Verhalten** des Modells hin, da weitere Verfeinerungen keine signifikante Änderung des Ergebnisses mehr bewirken.
@@ -697,6 +698,8 @@ Das Tool _Größenbestimmung_ basiert auf einer **absoluten Elementgröße**, im
     Die Größenbestimmung ist das wichtigste Werkzeug zur gezielten lokalen Steuerung der Elementgröße.  
     Sie ermöglicht eine hohe Genauigkeit im Bereich der Kerbwirkung bei gleichzeitig kontrollierter Rechenzeit.
 
+---
+
 ### Adaptive Vernetzung
 
 Die **adaptive Vernetzung** passt die lokale Elementgröße automatisch an das Ergebnisfeld an. Dabei werden Bereiche mit hohen Spannungs- oder Dehnungsgradienten gezielt verfeinert, bis eine definierte Genauigkeit erreicht ist. Ziel ist ein **vom Netz unabhängiges Ergebnis** bei möglichst effizienter Elementverteilung.
@@ -704,7 +707,7 @@ Die **adaptive Vernetzung** passt die lokale Elementgröße automatisch an das E
 **Vorgehensweise:**
 
 * Zunächst wird eine Berechnung mit einem Standardnetz durchgeführt, um grob den Spannungsverlauf zu erfassen.  
-* Über das Kontextmenü auf einer Lösung (z.B. Vergleichsspannung) im Strukturbaum (Rechtsklick → Konvergenz hinzufügen_) wird die adaptive Vernetzung aktiviert.  
+* Über das Kontextmenü auf einer Lösung (z.B. Vergleichsspannung) im Strukturbaum (Rechtsklick → Konvergenz hinzufügen) wird die adaptive Vernetzung aktiviert.  
 
 [![Aktivierung der adaptiven Vernetzung in ANSYS Mechanical](media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png){width=700px}](media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png "Aktivierung der adaptiven Vernetzung in ANSYS Mechanical"){.glightbox}  
 
@@ -729,7 +732,7 @@ In den **Details von "Lösung"**  werden die **maximale Anzahl an Verfeinerungsz
     Im Gegensatz zum Tool _Verfeinerung_ (lokale, manuell gesteuerte Unterteilung) erfolgt diese Aufteilung hier **automatisch**, basierend auf dem Ergebnisfeld der jeweiligen Analyse.  
     Beide Mechanismen verwenden jedoch denselben hierarchischen Ansatz zur Elementunterteilung – die adaptive Vernetzung steuert diesen Prozess lediglich iterativ und kriteriumsbasiert.  
 
-ANSYS verfeinert anschließend automatisch die Bereiche mit **hoher Abweichung der Ergebnisgrößen**. Dieser Prozess wiederholt sich, bis die Abweichung zwischen zwei Verfeinerungsschritten kleiner als der festgelegte Toleranzwert (_zulässige Änderung_) ist oder die maximale Anzahl an Schritten erreicht wurde.
+ANSYS verfeinert anschließend automatisch die Bereiche mit großen **Ergebnisgradienten**. Dieser Prozess wiederholt sich, bis die Abweichung zwischen zwei Verfeinerungsschritten kleiner als der festgelegte Toleranzwert (_zulässige Änderung_) ist oder die maximale Anzahl an Schritten erreicht wurde.
 
 Der Konvergenzverlauf zeigt den Verlauf der maximalen Vergleichsspannung über mehrere Verfeinerungszyklen. Nach anfänglichen Schwankungen nähert sich das Ergebnis einem stabilen Wert an, was auf ein konvergierendes Verhalten hinweist.
 
@@ -777,7 +780,6 @@ Das Prinzip der **adaptiven Vernetzung eines fokussierten Ergebnisses** ermögli
 Daraus folgt eine automatische **lokale Netzverfeinerung** ausschließlich im interessierenden Bereich, während Bereiche mit **nicht konvergierendem Verhalten** gezielt ausgeblendet werden.
 
 [![Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung](media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png){width=700px}](media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png "Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung"){.glightbox}  
-<span class="bildquelle">Bildquelle[@Wittel2021]</span>
 
 !!! note "Hinweis"
     Fokussierte Ergebnisse werden typischerweise bei **Kerben**, **Kontaktflächen**, **Bohrungen** oder **kritischen Spannungszonen** eingesetzt, um dort eine konvergente Lösung zu erzielen, ohne die Rechenzeit durch globale Verfeinerungen unnötig zu erhöhen.
@@ -787,6 +789,8 @@ Daraus folgt eine automatische **lokale Netzverfeinerung** ausschließlich im in
 * gezielte Verfeinerung nur dort, wo sie physikalisch relevant ist  
 * Vermeidung numerischer Probleme in divergenten Zonen  
 * kürzere Rechenzeiten bei gleichbleibender lokaler Genauigkeit  
+
+---
 
 ## Zusammenfassung der Netzeinflussstudie
 
@@ -810,6 +814,8 @@ Ziel einer Netzeinflussstudie ist es, ein Ergebnis zu erhalten, das _vom Netz un
 * Ein zu grobes Netz verfälscht Spannungen, ein zu feines Netz verlängert die Rechenzeit  
 * Ziel ist der **Kompromiss zwischen Genauigkeit und Aufwand**
 
+---
+
 ## Diskussion der Ergebnisse
 
 ### Ergebnisse der FEM-Berechnung
@@ -830,11 +836,11 @@ Für die Berechnung wurde beispielhaft eine Zugkraft von **1000 N** verwendet. D
 
 | **$r/b$** | **$\sigma_\text{max}$** | **$\sigma_\text{n}$** | **$\alpha_k$** |
 |:----------:|:-----------------------:|:---------------------:|:--------------:|
-| 0,1 | 4,264 N/mm² | 1,25 N/mm² | 3,41 |
-| 0,2 | 3,307 N/mm² | 1,25 N/mm² | 2,65 |
-| 0,3 | 2,858 N/mm² | 1,25 N/mm² | 2,29 |
-| 0,4 | 2,613 N/mm² | 1,25 N/mm² | 2,09 |
-| 0,5 | 2,438 N/mm² | 1,25 N/mm² | 1,95 |
+| 0,1 | 4,264 MPa | 1,25 MPa | 3,41 |
+| 0,2 | 3,307 MPa | 1,25 MPa | 2,65 |
+| 0,3 | 2,858 MPa | 1,25 MPa | 2,29 |
+| 0,4 | 2,613 MPa | 1,25 MPa | 2,09 |
+| 0,5 | 2,438 MPa | 1,25 MPa | 1,95 |
 
 ### Abgleich mit Kurve aus dem Tabellenbuch
 
@@ -878,6 +884,8 @@ Die theoretischen Werte der Kerbformzahl αₖ stammen aus dem Diagramm (siehe o
 
 **Interpretation:**  
 Die FEM-Ergebnisse zeigen denselben Verlauf wie die theoretischen Werte. Mit zunehmendem Kerbradius nimmt die Spannungskonzentration ab, wodurch die Kerbformzahl kleiner wird.  
+
+---
 
 ## Quiz zur Selbstkontrolle  
 
