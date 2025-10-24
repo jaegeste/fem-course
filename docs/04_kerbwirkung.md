@@ -2,14 +2,15 @@
 
 ## Lernziele
 
-??? note "FIXME: Lernziele definieren"
-    Für diesen Abschnitt müssen die **Lernziele** noch formuliert werden.  
-    Vorschlag für den Platzhalter:
+Nach dem Durcharbeitung dieses Kapitels solltest du in der Lage sein,
 
-    * Verständnis der grundlegenden mathematischen Prinzipien der Finite-Elemente-Methode  
-    * Herleitung und Bedeutung der Elementsteifigkeitsmatrix  
-    * Zusammenhang zwischen Kräften, Verschiebungen und Steifigkeiten in Matrixform  
-    * Anwendung einfacher analytischer Beispiele (1- und 2-Element-Systeme)  
+* den Begriff **Kerbwirkung** zu erklären und die physikalischen Ursachen lokaler Spannungserhöhungen zu beschreiben,  
+* den Zusammenhang zwischen **Kerbformzahl** und **Spannungsüberhöhung** zu erläutern,  
+* typische **Geometrieformen mit Kerben** zu identifizieren und deren Einfluss auf den Kraftfluss zu interpretieren,  
+* die **Kerbformzahl** mittels Finite-Elemente-Methode (FEM) für verschiedene Kerbradien zu bestimmen,  
+* eine **Netzeinflussstudie** durchzuführen und zu bewerten, wann ein Ergebnis als **netzunabhängig** gilt,  
+* die Berechnungsergebnisse kritisch zu analysieren und mit theoretischen Werten zu vergleichen,  
+* geeignete **Verfeinerungsstrategien** (lokal, adaptiv) im FEM-Tool anzuwenden, um eine konvergente Lösung bei angemessener Rechenzeit zu erreichen.
 
 ## Mathematische Grundlagen zur FEM
 
@@ -891,7 +892,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Wie lautet die Nennspannung &sigma;<sub>n</sub> im auf Zug belasteten Rechteck-Querschnitt mit Breite <em>b</em> und Dicke <em>t</em>?
+question: Wie lautet die Nennspannung &sigma;<sub>n</sub> im auf Zug belasteten Rechteck-Querschnitt mit Breite b und Dicke t?
 answer: \(\sigma_n = b \cdot t \cdot F\)
 answer-correct: \(\sigma_n = \dfrac{F}{b \cdot t}\)
 answer: \(\sigma_n = \dfrac{b + t}{F}\)
@@ -900,7 +901,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Ein Stabelement mit Federsteifigkeit <em>c</em> ist links eingespannt (\(u_1=0\)) und rechts mit \(F\) belastet. Welche Beziehung gilt?
+question: Ein Stabelement mit Federsteifigkeit c ist links eingespannt (\(u_1=0\)) und rechts mit \(F\) belastet. Welche Beziehung gilt?
 answer: \(u_2 = c \cdot F\)
 answer-correct: \(F = c \cdot u_2\)
 answer: \(F = \dfrac{u_2}{c}\)
@@ -909,16 +910,16 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Wovon hängt die Federsteifigkeit <em>c</em> eines Stabelements ab?
-answer: Nur von der Länge <em>l</em>.
-answer-correct: Vom Elastizitätsmodul <em>E</em>, der Fläche <em>A</em> und der Länge <em>l</em> gemäß \(c=\dfrac{E \cdot A}{l}\).
-answer: Nur von der Querkontraktionszahl <em>&nu;</em>.
+question: Wovon hängt die Federsteifigkeit c eines Stabelements ab?
+answer: Nur von der Länge l.
+answer-correct: Vom Elastizitätsmodul E, der Fläche A und der Länge l gemäß \(c=\dfrac{E \cdot A}{l}\).
+answer: Nur von der Querkontraktionszahl &nu;.
 content:
 <strong>Merke:</strong> Größere Fläche oder höheres <em>E</em> erhöhen <em>c</em>, größere Länge verringert <em>c</em>.
 <?/quiz?>
 
 <?quiz?>
-question: Ist der Betrag der angelegten Kraft <em>F</em> für die Bestimmung von &alpha;<sub>k</sub> relevant?
+question: Ist der Betrag der angelegten Kraft F für die Bestimmung von &alpha;<sub>k</sub> relevant?
 answer: Ja, &alpha;<sub>k</sub> ist proportional zu <em>F</em>.
 answer-correct: Nein, <em>F</em> kürzt sich in \(\alpha_k = \sigma_\text{max}/\sigma_n\) heraus.
 answer: Nur wenn <em>F</em> kleiner als 1 000 N ist.
@@ -927,7 +928,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Wie ändert sich &alpha;<sub>k</sub>, wenn das Verhältnis <em>r/b</em> kleiner wird (schärfere Kerbe)?
+question: Wie ändert sich &alpha;<sub>k</sub>, wenn das Verhältnis r/b kleiner wird (schärfere Kerbe)?
 answer: &alpha;<sub>k</sub> bleibt gleich.
 answer-correct: &alpha;<sub>k</sub> nimmt zu.
 answer: &alpha;<sub>k</sub> fällt gegen null.
@@ -936,7 +937,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Woran wird <strong>Konvergenz</strong> in der Netzeinflussstudie erkannt?
+question: Woran wird Konvergenz in der Netzeinflussstudie erkannt?
 answer: Die Rechenzeit wird konstant.
 answer-correct: Die Zielgröße nähert sich bei weiterer Verfeinerung einem stabilen Grenzwert.
 answer: Die Knotenanzahl bleibt unverändert.
@@ -945,7 +946,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Was kennzeichnet <strong>Divergenz</strong> in diesem Kontext?
+question: Was kennzeichnet Divergenz in diesem Kontext?
 answer: Die Zielgröße bleibt konstant bei Verfeinerung.
 answer-correct: Die Zielgröße steigt ohne Grenzwert an, z. B. bei scharfkantiger Kerbe.
 answer: Die Zielgröße pendelt sich sofort ein.
@@ -954,7 +955,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Warum wird eine <strong>Netzeinflussstudie</strong> durchgeführt?
+question: Warum wird eine Netzeinflussstudie durchgeführt?
 answer: Um das Modell optisch schöner darzustellen.
 answer-correct: Um sicherzustellen, dass das Simulationsergebnis unabhängig von der Elementgröße ist.
 answer: Um die Rechenzeit zu verkürzen.
@@ -963,7 +964,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Was ist das Ziel einer <strong>Netzeinflussstudie</strong>?
+question: Was ist das Ziel einer Netzeinflussstudie?
 answer: Das feinste mögliche Netz zu erzeugen.
 answer-correct: Ein Netz zu finden, das einen Kompromiss zwischen Genauigkeit und Rechenzeit bietet.
 answer: Möglichst viele Elemente im gesamten Modell zu erzeugen.
@@ -972,7 +973,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Welcher visuelle Hinweis deutet auf eine <em>zu grobe</em> Vernetzung im Kerbgrund hin?
+question: Welcher visuelle Hinweis deutet auf eine zu grobe Vernetzung im Kerbgrund hin?
 answer: Homogene Farbfelder ohne Sprung.
 answer-correct: Deutliche Farbverläufe innerhalb einzelner Elemente bei hohen Gradienten.
 answer: Identische Elementgröße überall.
@@ -981,7 +982,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Warum ist eine <strong>globale</strong> Verfeinerung für Kerbspannungen oft ineffizient?
+question: Warum ist eine globale Verfeinerung für Kerbspannungen oft ineffizient?
 answer: Weil ANSYS globale Verfeinerung nicht unterstützt.
 answer-correct: Sie erhöht die Netzdichte auch in unkritischen Bereichen und verlängert die Rechenzeit ohne proportionalen Erkenntnisgewinn.
 answer: Sie verschlechtert die Spannungsauflösung im Kerbgrund.
@@ -990,7 +991,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Wozu dienen <strong>schwache Federn</strong> in linearen statischen Analysen?
+question: Wozu dienen schwache Federn in linearen statischen Analysen?
 answer: Zur Erhöhung des Elastizitätsmoduls <em>E</em>.
 answer-correct: Zur numerischen Stabilisierung bei unzureichender Lagerung, um Starrkörperbewegungen zu verhindern.
 answer: Zur lokalen Netzverfeinerung an Kerben.
@@ -999,7 +1000,7 @@ content:
 <?/quiz?>
 
 <?quiz?>
-question: Was ist ein <strong>fokussiertes Ergebnis</strong> im Sinne der adaptiven Vernetzung?
+question: Was ist ein fokussiertes Ergebnis im Sinne der adaptiven Vernetzung?
 answer: Ein globales Maximum der Gesamtverformung.
 answer-correct: Ein gezielt ausgewähltes Teilergebnis auf Fläche, Linie oder Volumen, das die lokale Netzadaption steuert.
 answer: Eine reine Materialkonstante.
