@@ -3,10 +3,9 @@
     "allowed_elements": ["span"]
   },
   "MD013": {
-    "line_length": 400,
-    "ignore_urls": true,
-    "ignore_code_blocks": true,
-    "ignore_tables": true,
-    "ignore_headings": true
+    "line_length": 550,
+    "code_blocks": false,
+    "tables": false,
+    "headings": false
   }
 }
