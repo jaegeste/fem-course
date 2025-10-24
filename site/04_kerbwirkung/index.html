@@ -612,7 +612,6 @@
 <ul>
 <li>den Begriff <strong>Kerbwirkung</strong> zu erklären und die physikalischen Ursachen lokaler Spannungserhöhungen zu beschreiben,  </li>
 <li>den Zusammenhang zwischen <strong>Kerbformzahl</strong> und <strong>Spannungsüberhöhung</strong> zu erläutern,  </li>
-<li>typische <strong>Geometrieformen mit Kerben</strong> zu identifizieren und deren Einfluss auf den Kraftfluss zu interpretieren,  </li>
 <li>die <strong>Kerbformzahl</strong> mittels Finite-Elemente-Methode (FEM) für verschiedene Kerbradien zu bestimmen,  </li>
 <li>eine <strong>Netzeinflussstudie</strong> durchzuführen und zu bewerten, wann ein Ergebnis als <strong>netzunabhängig</strong> gilt,  </li>
 <li>die Berechnungsergebnisse kritisch zu analysieren und mit theoretischen Werten zu vergleichen,  </li>
@@ -929,7 +928,7 @@ Beim Austausch einer Geometrie kann es zu Zuordnungsproblemen kommen, wenn Fläc
 <p>Es empfiehlt sich dennoch, die Materialeigenschaften in den <em>Technischen Daten</em> zu überprüfen. Dabei sollte insbesondere kontrolliert werden, ob Elastizitätsmodul, Querkontraktionszahl und Streckgrenze mit den Werten der analytischen Berechnung übereinstimmen. Bei Bedarf kann das Materialmodell angepasst oder ein eigenes Material mit definierten Kennwerten angelegt werden.</p>
 <h3 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h3>
 <p>Zu Beginn sollte mit der automatischen <em>Standardvernetzung</em> gearbeitet werden, um zu prüfen, ob die Geometrie überhaupt erfolgreich vernetzt werden kann. Eine erste visuelle Beurteilung des Netzes ist dabei hilfreich.  </p>
-<p>Auffällig <strong>große Elemente</strong> oder <strong>stark verzerrte Netzbereiche</strong> deuten häufig auf problematische Geometrieübergänge hin und können zu ungenauen Ergebnissen führen.  </p>
+<p>Auffällig <strong>große Elemente</strong> oder <strong>stark verzerrte Netzbereiche</strong> deuten häufig auf problematische Geometrieübergänge hin und können zu ungenauen Ergebnissen führen. Eine Netzstudie ist zwingend erforderlich.  </p>
 <p><a class="glightbox" href="../media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png" title="Standardvernetzung in ANSYS Mechanical"><img alt="Standardvernetzung in ANSYS Mechanical" src="../media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png" width="750px" /></a>  </p>
 <h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
 <p>Für die Simulation bietet sich eine Randbedingung ohne feste Einspannung an. Statt einer starren Lagerung wird die Kraft direkt auf eine verformbare Fläche aufgebracht. Dadurch kann das System ein realistisches Kräftegleichgewicht ausbilden und das lokale Spannungsfeld im Kerbgrund wird physikalisch korrekt erfasst.  </p>
@@ -1170,6 +1169,7 @@ Ein optisch gleichmäßiges Spannungsfeld ohne abrupte Farbwechsel weist in der 
 <p><a class="glightbox" href="../media/04_kerbwirkung/15_Kerbwirkung_Farbverlauf_Kerbe_3mm.png" title="Vergleichsspannung bei Elementgröße 3 mm"><img alt="Vergleichsspannung bei Elementgröße 3 mm" src="../media/04_kerbwirkung/15_Kerbwirkung_Farbverlauf_Kerbe_3mm.png" width="700px" /></a></p>
 <p>hier <strong>Elementgröße 1 mm</strong></p>
 <p><a class="glightbox" href="../media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png" title="Vergleichsspannung bei Elementgröße 1 mm"><img alt="Vergleichsspannung bei Elementgröße 1 mm" src="../media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png" width="700px" /></a></p>
+<hr />
 <h3 id="konvergenz-des-ergebnisses">Konvergenz des Ergebnisses<a class="headerlink" href="#konvergenz-des-ergebnisses" title="Permanent link">&para;</a></h3>
 <p>Die in den Plots dargestellten Werte zeigen, dass sich die maximale Vergleichsspannung mit zunehmender Netzverfeinerung um etwa <strong>4,2 MPa</strong> einpendelt. Dies weist auf ein <strong>konvergierendes Verhalten</strong> des Modells hin, da weitere Verfeinerungen keine signifikante Änderung des Ergebnisses mehr bewirken.</p>
 <hr />
@@ -1213,12 +1213,13 @@ Ein optisch gleichmäßiges Spannungsfeld ohne abrupte Farbwechsel weist in der 
 <p>Die Größenbestimmung ist das wichtigste Werkzeug zur gezielten lokalen Steuerung der Elementgröße.<br />
 Sie ermöglicht eine hohe Genauigkeit im Bereich der Kerbwirkung bei gleichzeitig kontrollierter Rechenzeit.</p>
 </div>
+<hr />
 <h3 id="adaptive-vernetzung">Adaptive Vernetzung<a class="headerlink" href="#adaptive-vernetzung" title="Permanent link">&para;</a></h3>
 <p>Die <strong>adaptive Vernetzung</strong> passt die lokale Elementgröße automatisch an das Ergebnisfeld an. Dabei werden Bereiche mit hohen Spannungs- oder Dehnungsgradienten gezielt verfeinert, bis eine definierte Genauigkeit erreicht ist. Ziel ist ein <strong>vom Netz unabhängiges Ergebnis</strong> bei möglichst effizienter Elementverteilung.</p>
 <p><strong>Vorgehensweise:</strong></p>
 <ul>
 <li>Zunächst wird eine Berechnung mit einem Standardnetz durchgeführt, um grob den Spannungsverlauf zu erfassen.  </li>
-<li>Über das Kontextmenü auf einer Lösung (z.B. Vergleichsspannung) im Strukturbaum (Rechtsklick → Konvergenz hinzufügen_) wird die adaptive Vernetzung aktiviert.  </li>
+<li>Über das Kontextmenü auf einer Lösung (z.B. Vergleichsspannung) im Strukturbaum (Rechtsklick → Konvergenz hinzufügen) wird die adaptive Vernetzung aktiviert.  </li>
 </ul>
 <p><a class="glightbox" href="../media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png" title="Aktivierung der adaptiven Vernetzung in ANSYS Mechanical"><img alt="Aktivierung der adaptiven Vernetzung in ANSYS Mechanical" src="../media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png" width="700px" /></a>  </p>
 <p>Die Einstellungen der adaptiven Vernetzung legen den <strong>Ergebnistyp</strong> (hier <em>Maximum der Vergleichsspannung</em>) sowie die <strong>zulässige prozentuale Änderung</strong> zwischen zwei Verfeinerungsschritten fest.</p>
@@ -1241,7 +1242,7 @@ Tritt dennoch keine Konvergenz ein, sollte das Ausgangsnetz verfeinert und das M
 <p>Im Gegensatz zum Tool <em>Verfeinerung</em> (lokale, manuell gesteuerte Unterteilung) erfolgt diese Aufteilung hier <strong>automatisch</strong>, basierend auf dem Ergebnisfeld der jeweiligen Analyse.<br />
 Beide Mechanismen verwenden jedoch denselben hierarchischen Ansatz zur Elementunterteilung – die adaptive Vernetzung steuert diesen Prozess lediglich iterativ und kriteriumsbasiert.  </p>
 </details>
-<p>ANSYS verfeinert anschließend automatisch die Bereiche mit <strong>hoher Abweichung der Ergebnisgrößen</strong>. Dieser Prozess wiederholt sich, bis die Abweichung zwischen zwei Verfeinerungsschritten kleiner als der festgelegte Toleranzwert (<em>zulässige Änderung</em>) ist oder die maximale Anzahl an Schritten erreicht wurde.</p>
+<p>ANSYS verfeinert anschließend automatisch die Bereiche mit großen <strong>Ergebnisgradienten</strong>. Dieser Prozess wiederholt sich, bis die Abweichung zwischen zwei Verfeinerungsschritten kleiner als der festgelegte Toleranzwert (<em>zulässige Änderung</em>) ist oder die maximale Anzahl an Schritten erreicht wurde.</p>
 <p>Der Konvergenzverlauf zeigt den Verlauf der maximalen Vergleichsspannung über mehrere Verfeinerungszyklen. Nach anfänglichen Schwankungen nähert sich das Ergebnis einem stabilen Wert an, was auf ein konvergierendes Verhalten hinweist.</p>
 <p><a class="glightbox" href="../media/04_kerbwirkung/21_Kerbwirkung_Adaptive_Vernetzung_Konvergenzverlauf.png" title="Konvergenzverlauf der adaptiven Vernetzung"><img alt="Konvergenzverlauf der adaptiven Vernetzung" src="../media/04_kerbwirkung/21_Kerbwirkung_Adaptive_Vernetzung_Konvergenzverlauf.png" width="700px" /></a>  </p>
 <p>Das resultierende Netz zeigt eine gezielte lokale Verdichtung im Kerbgrund, während in weniger beanspruchten Bereichen eine grobe Vernetzung erhalten bleibt. Dadurch wird eine hohe Genauigkeit bei gleichzeitig reduzierter Rechenzeit erreicht.</p>
@@ -1277,8 +1278,7 @@ Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich un
 <li>Festlegung der <strong>zulässigen Abweichung</strong> (z. B. Spannungsänderung &lt; 5 % pro Iteration)  </li>
 </ul>
 <p>Daraus folgt eine automatische <strong>lokale Netzverfeinerung</strong> ausschließlich im interessierenden Bereich, während Bereiche mit <strong>nicht konvergierendem Verhalten</strong> gezielt ausgeblendet werden.</p>
-<p><a class="glightbox" href="../media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png" title="Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung"><img alt="Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung" src="../media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png" width="700px" /></a><br />
-<span class="bildquelle">Bildquelle<sup id="fnref9:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png" title="Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung"><img alt="Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung" src="../media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png" width="700px" /></a>  </p>
 <div class="admonition note">
 <p class="admonition-title">Hinweis</p>
 <p>Fokussierte Ergebnisse werden typischerweise bei <strong>Kerben</strong>, <strong>Kontaktflächen</strong>, <strong>Bohrungen</strong> oder <strong>kritischen Spannungszonen</strong> eingesetzt, um dort eine konvergente Lösung zu erzielen, ohne die Rechenzeit durch globale Verfeinerungen unnötig zu erhöhen.</p>
@@ -1289,6 +1289,7 @@ Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich un
 <li>Vermeidung numerischer Probleme in divergenten Zonen  </li>
 <li>kürzere Rechenzeiten bei gleichbleibender lokaler Genauigkeit  </li>
 </ul>
+<hr />
 <h2 id="zusammenfassung-der-netzeinflussstudie">Zusammenfassung der Netzeinflussstudie<a class="headerlink" href="#zusammenfassung-der-netzeinflussstudie" title="Permanent link">&para;</a></h2>
 <p>Ziel einer Netzeinflussstudie ist es, ein Ergebnis zu erhalten, das <em>vom Netz unabhängig</em> ist. Nur dann kann das Modell als numerisch stabil und physikalisch aussagekräftig gelten.</p>
 <p><strong>Wesentliche Erkenntnisse:</strong></p>
@@ -1309,6 +1310,7 @@ Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich un
 <li>Ein zu grobes Netz verfälscht Spannungen, ein zu feines Netz verlängert die Rechenzeit  </li>
 <li>Ziel ist der <strong>Kompromiss zwischen Genauigkeit und Aufwand</strong></li>
 </ul>
+<hr />
 <h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
 <h3 id="ergebnisse-der-fem-berechnung">Ergebnisse der FEM-Berechnung<a class="headerlink" href="#ergebnisse-der-fem-berechnung" title="Permanent link">&para;</a></h3>
 <p>Zur Auswertung wurde für jede Geometrievariante die maximale Vergleichsspannung im Kerbgrund mittels ANSYS bestimmt. Zur Berechnung der Kerbformzahl gilt:</p>
@@ -1332,32 +1334,32 @@ Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich un
 <tbody>
 <tr>
 <td style="text-align: center;">0,1</td>
-<td style="text-align: center;">4,264 N/mm²</td>
-<td style="text-align: center;">1,25 N/mm²</td>
+<td style="text-align: center;">4,264 MPa</td>
+<td style="text-align: center;">1,25 MPa</td>
 <td style="text-align: center;">3,41</td>
 </tr>
 <tr>
 <td style="text-align: center;">0,2</td>
-<td style="text-align: center;">3,307 N/mm²</td>
-<td style="text-align: center;">1,25 N/mm²</td>
+<td style="text-align: center;">3,307 MPa</td>
+<td style="text-align: center;">1,25 MPa</td>
 <td style="text-align: center;">2,65</td>
 </tr>
 <tr>
 <td style="text-align: center;">0,3</td>
-<td style="text-align: center;">2,858 N/mm²</td>
-<td style="text-align: center;">1,25 N/mm²</td>
+<td style="text-align: center;">2,858 MPa</td>
+<td style="text-align: center;">1,25 MPa</td>
 <td style="text-align: center;">2,29</td>
 </tr>
 <tr>
 <td style="text-align: center;">0,4</td>
-<td style="text-align: center;">2,613 N/mm²</td>
-<td style="text-align: center;">1,25 N/mm²</td>
+<td style="text-align: center;">2,613 MPa</td>
+<td style="text-align: center;">1,25 MPa</td>
 <td style="text-align: center;">2,09</td>
 </tr>
 <tr>
 <td style="text-align: center;">0,5</td>
-<td style="text-align: center;">2,438 N/mm²</td>
-<td style="text-align: center;">1,25 N/mm²</td>
+<td style="text-align: center;">2,438 MPa</td>
+<td style="text-align: center;">1,25 MPa</td>
 <td style="text-align: center;">1,95</td>
 </tr>
 </tbody>
@@ -1402,6 +1404,7 @@ Sie reduziert die Rechenzeit gegenüber einer globalen Verfeinerung erheblich un
 
 <p><strong>Interpretation:</strong><br />
 Die FEM-Ergebnisse zeigen denselben Verlauf wie die theoretischen Werte. Mit zunehmendem Kerbradius nimmt die Spannungskonzentration ab, wodurch die Kerbformzahl kleiner wird.  </p>
+<hr />
 <h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
 <div class="quiz"><h3>Was beschreibt die Kerbformzahl &alpha;<sub>k</sub> im elastischen Bereich?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Das Produkt aus maximaler und nomineller Spannung.</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">Das Verhältnis der maximalen Spannung im Kerbgrund zur Nennspannung &sigma;<sub>n</sub>.</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">Die Differenz zwischen lokaler und nomineller Spannung.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Definition: \(\alpha_k = \sigma_\text{max} / \sigma_\text{n}\).</section></div>
@@ -1445,7 +1448,7 @@ Die FEM-Ergebnisse zeigen denselben Verlauf wie die theoretischen Werte. Mit zun
 <p>Josef Betten. <em>Finite Elemente für Ingenieure 1</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2003. ISBN 978-3-642-62443-8. <a href="https://doi.org/10.1007/978-3-642-55536-7">doi:10.1007/978-3-642-55536-7</a>.&#160;<a class="footnote-backref" href="#fnref:Betten2003" title="Jump back to footnote 3 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Wittel2021">
-<p>Herbert Wittel, Christian Spura, and Dieter Jannasch. <em>Roloff/Matek Maschinenelemente</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2021. ISBN 978-3-658-34159-6. <a href="https://doi.org/10.1007/978-3-658-34160-2">doi:10.1007/978-3-658-34160-2</a>.&#160;<a class="footnote-backref" href="#fnref:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref9:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+<p>Herbert Wittel, Christian Spura, and Dieter Jannasch. <em>Roloff/Matek Maschinenelemente</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2021. ISBN 978-3-658-34159-6. <a href="https://doi.org/10.1007/978-3-658-34160-2">doi:10.1007/978-3-658-34160-2</a>.&#160;<a class="footnote-backref" href="#fnref:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref6:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref7:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref8:Wittel2021" title="Jump back to footnote 4 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Altenbach2016">
 <p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 5 in the text">&#8617;</a></p>
