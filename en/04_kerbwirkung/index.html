@@ -431,9 +431,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discussion-of-results" class="md-nav__link">
+  <a href="#mesh-influence" class="md-nav__link">
     <span class="md-ellipsis">
-      Discussion of Results
+      Mesh Influence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-the-mesh-influence-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of the Mesh Influence Study
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-the-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of the Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-for-self-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz for Self-Assessment
     </span>
   </a>
   
@@ -528,9 +555,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discussion-of-results" class="md-nav__link">
+  <a href="#mesh-influence" class="md-nav__link">
     <span class="md-ellipsis">
-      Discussion of Results
+      Mesh Influence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-of-the-mesh-influence-study" class="md-nav__link">
+    <span class="md-ellipsis">
+      Summary of the Mesh Influence Study
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-of-the-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Discussion of the Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-for-self-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz for Self-Assessment
     </span>
   </a>
   
@@ -554,17 +608,15 @@
 
 <h1 id="module-2-stress-concentration">Module 2 Stress Concentration<a class="headerlink" href="#module-2-stress-concentration" title="Permanent link">&para;</a></h1>
 <h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
-<details class="note">
-<summary>FIXME: Define learning objectives</summary>
-<p>The <strong>learning objectives</strong> for this section still need to be formulated.<br />
-Suggested placeholder:</p>
+<p>After completing this chapter, you should be able to</p>
 <ul>
-<li>Understanding of the fundamental mathematical principles of the Finite Element Method  </li>
-<li>Derivation and significance of the element stiffness matrix  </li>
-<li>Relationship between forces, displacements, and stiffnesses in matrix form  </li>
-<li>Application of simple analytical examples (1- and 2-element systems)  </li>
+<li>explain the concept of <strong>notch effect / stress concentration</strong> and describe the physical causes of local stress increases,  </li>
+<li>explain the relationship between <strong>notch shape factor</strong> and <strong>stress concentration</strong>,  </li>
+<li>determine the <strong>notch shape factor</strong> using the Finite Element Method (FEM) for various notch radii,  </li>
+<li>carry out a <strong>mesh influence study</strong> and assess when a result can be considered <strong>mesh-independent</strong>,  </li>
+<li>critically analyze the calculation results and compare them with theoretical values,  </li>
+<li>apply suitable <strong>refinement strategies</strong> (local, adaptive) in the FEM tool to achieve a convergent solution with reasonable computation time.</li>
 </ul>
-</details>
 <h2 id="mathematical-fundamentals-of-fem">Mathematical Fundamentals of FEM<a class="headerlink" href="#mathematical-fundamentals-of-fem" title="Permanent link">&para;</a></h2>
 <p>The FEM is a numerical method for the approximate solution of continuous field problems. This chapter explains the basic mathematical relationships of the method. Considering FEM as a design-supporting tool, detailed knowledge of simulation setup and evaluation plays an important role. Even more crucial, however, is the physical understanding of the underlying problem<sup id="fnref:Gebhardt2018"><a class="footnote-ref" href="#fn:Gebhardt2018">1</a></sup>.</p>
 <p>A complete description of a physical problem includes:</p>
@@ -859,21 +911,541 @@ F_1 = -F
 <span class="bildquelle">Image source<sup id="fnref8:Wittel2021"><a class="footnote-ref" href="#fn:Wittel2021">4</a></sup></span></p>
 <h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
 <h3 id="1-project-management-and-geometry-import">1. Project Management and Geometry Import<a class="headerlink" href="#1-project-management-and-geometry-import" title="Permanent link">&para;</a></h3>
+<p>For the investigation of notch shape factors, five geometry variants with different notch radii (<span class="arithmatex">\(r/b = 0{,}1\)</span> to <span class="arithmatex">\(0{,}5\)</span>) are required. Each variant can be managed in a separate project or within a common project containing multiple geometry versions.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/06_Kerbwirkung_Projekt.png" title="Project management and geometry import in ANSYS Workbench"><img alt="Project management and geometry import in ANSYS Workbench" src="../media/04_kerbwirkung/06_Kerbwirkung_Projekt.png" width="750px" /></a>  </p>
+<p><strong>Procedure:</strong></p>
+<ul>
+<li>The geometries are imported individually or sequentially into the <em>Project Schematic</em>. The same material definition should be used to ensure comparable results.  </li>
+<li>A shared material can be linked via the <em>Engineering Data</em> database. Any change in the material model will then automatically affect all variants.  </li>
+<li>To avoid redundancy, the base model can be created once in full and then duplicated. Afterwards, only the geometry is replaced (<em>Replace Geometry</em>). This ensures that boundary conditions, mesh definitions, and result evaluations are preserved.  </li>
+<li>It is important to label the results of each variant clearly (e.g., “r01”, “r02”, …). This allows the stress distributions and notch shape factors to be systematically compared later on.  </li>
+</ul>
+<p><strong>Note:</strong><br />
+When replacing a geometry, assignment issues may occur if surfaces or edges in the new model do not exactly match the original ones. In such cases, the corresponding regions in ANSYS must be redefined.</p>
 <h3 id="2-material-assignment">2. Material Assignment<a class="headerlink" href="#2-material-assignment" title="Permanent link">&para;</a></h3>
+<p>For this task, no manual material assignment is required. ANSYS automatically assigns the standard material <em>Structural Steel</em> to the imported geometry.  </p>
+<p>It is nevertheless recommended to verify the material properties in the <em>Engineering Data</em> section. In particular, check whether the values for Young’s modulus, Poisson’s ratio, and yield strength correspond to those used in the analytical calculation. If necessary, the material model can be adjusted, or a custom material with defined properties can be created.</p>
 <h3 id="3-mesh-generation">3. Mesh Generation<a class="headerlink" href="#3-mesh-generation" title="Permanent link">&para;</a></h3>
+<p>At the beginning, it is advisable to work with the automatic <em>Default Meshing</em> option to check whether the geometry can be successfully meshed at all. An initial visual inspection of the mesh is helpful for this purpose.  </p>
+<p>Noticeably <strong>large elements</strong> or <strong>strongly distorted mesh regions</strong> often indicate problematic geometric transitions and can lead to inaccurate results.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png" title="Default meshing in ANSYS Mechanical"><img alt="Default meshing in ANSYS Mechanical" src="../media/04_kerbwirkung/07_Kerbwirkung_Standardnetz.png" width="750px" /></a></p>
 <h3 id="4-boundary-conditions">4. Boundary Conditions<a class="headerlink" href="#4-boundary-conditions" title="Permanent link">&para;</a></h3>
-<h3 id="5-evaluation">5. Evaluation<a class="headerlink" href="#5-evaluation" title="Permanent link">&para;</a></h3>
-<h2 id="discussion-of-results">Discussion of Results<a class="headerlink" href="#discussion-of-results" title="Permanent link">&para;</a></h2>
-<h3 id="comparison-with-analytical-solution">Comparison with Analytical Solution<a class="headerlink" href="#comparison-with-analytical-solution" title="Permanent link">&para;</a></h3>
-<!--  
-Possibly to be placed after the mesh refinement section.
--->
+<p>For the simulation, a boundary condition without a fixed constraint is recommended. Instead of a rigid support, the force is applied directly to a deformable surface. This allows the system to develop a realistic equilibrium of forces, and the local stress field in the notch root is captured in a physically accurate manner.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/08_Kerbwirkung_Randbedingungen.png" title="Boundary conditions in the model for determining the notch shape factor"><img alt="Boundary conditions in the model for determining the notch shape factor" src="../media/04_kerbwirkung/08_Kerbwirkung_Randbedingungen.png" width="750px" /></a></p>
+<p><strong>Recommended settings in ANSYS Mechanical:</strong>  </p>
+<ul>
+<li>Apply a <em>Force</em> on both sides  </li>
+<li>No <em>Fixed Support</em> to avoid unrealistic stress peaks  </li>
+</ul>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Is the magnitude of the applied force relevant?<br />
+The analytical solution helps to answer this.  </p>
+</div>
+<details class="success">
+<summary>Answer</summary>
+<p>No. For determining the notch shape factor, the applied force cancels out. Only the ratio between the local stress in the notch root and the nominal stress is decisive.</p>
+</details>
+<h3 id="5-analysis-settings">5. Analysis Settings<a class="headerlink" href="#5-analysis-settings" title="Permanent link">&para;</a></h3>
+<p>In the <em>Analysis Settings</em>, the default parameters should initially be retained. For linear static analyses, no additional adjustments are usually required.  </p>
+<p>Particular attention should be paid to the so-called <strong>weak springs</strong>. These must be activated if the system does not have a defined support. They prevent numerical instabilities by adding a minimal spring stiffness to the degrees of freedom without boundary constraints.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/09_Kerbwirkung_Analyseeinstellungen.png" title="Analysis settings in ANSYS Mechanical"><img alt="Analysis settings in ANSYS Mechanical" src="../media/04_kerbwirkung/09_Kerbwirkung_Analyseeinstellungen.png" width="300px" /></a></p>
+<p><strong>Notes:</strong>  </p>
+<ul>
+<li>The <em>weak springs</em> do not affect the physical result as long as the model is properly constrained.  </li>
+<li>If the analysis still becomes unstable or critical error messages such as “rigid body motion” appear, the supports should be checked and, if necessary, slightly adjusted.  </li>
+<li>The message indicating that weak springs have been used should not be considered critical.  </li>
+</ul>
+<h3 id="6-evaluation">6. Evaluation<a class="headerlink" href="#6-evaluation" title="Permanent link">&para;</a></h3>
+<p>For an initial assessment, the <em>Total Deformation</em> and the <em>Equivalent Stress</em> are examined.  </p>
+<h2 id="mesh-influence">Mesh Influence<a class="headerlink" href="#mesh-influence" title="Permanent link">&para;</a></h2>
+<h3 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h3>
+<p>The result of a simulation depends on the chosen mesh size. The objective of a mesh influence study is to find a result that is <strong>independent of the mesh</strong>.  </p>
+<p>Especially in areas with <strong>high stress gradients</strong> – such as in the notch root – the local element size can have a significant influence on the calculated stresses. What matters is not the absolute stress value, but the stability of the result as the mesh is refined.  </p>
+<p>However, as the mesh becomes finer, the computation time increases considerably (due to the larger system of equations to be solved). A good mesh is therefore characterized not by maximum fineness, but by a <strong>compromise between result quality and computation time</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In the Finite Element Method, the continuous system is represented by a finite number of elements.<br />
+Only when the result remains nearly unchanged with further refinement can it be considered <strong>mesh-independent</strong>.<br />
+The goal is an efficient mesh that provides high result quality within reasonable computation time.</p>
+</div>
+<hr />
+<h3 id="visual-assessment-of-mesh-quality">Visual Assessment of Mesh Quality<a class="headerlink" href="#visual-assessment-of-mesh-quality" title="Permanent link">&para;</a></h3>
+<p>The initial assessment of mesh quality is made after a coarse calculation based on a <strong>visual analysis of the stress field</strong>. The results are examined in the area of interest, here in the notch root, and the distribution of the equivalent stress is evaluated.  </p>
+<p>An ideally fine mesh shows a <strong>discrete stress distribution from node to node</strong>. If visible color gradients occur within an element, this indicates excessive stress gradients inside the element and thus an element size that is too large.  </p>
+<p><a class="glightbox" href="../../media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png" title="Assessment of mesh quality by color distribution"><img alt="Assessment of mesh quality by color distribution" src="../../media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png" width="700px" /></a><br />
+<span class="bildquelle">Image source<sup id="fnref:Comsol2025"><a class="footnote-ref" href="#fn:Comsol2025">6</a></sup></span></p>
+<p>For a more detailed evaluation, a comparison between <strong>averaged</strong> and <strong>unaveraged stresses</strong> can be used. In the standard representation, ANSYS averages stresses between elements, which smooths out local maxima. When stresses are displayed without averaging, a more realistic assessment of the actual stress distribution becomes possible. A pronounced difference between both representations indicates insufficient mesh quality.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" title="Result with averaged stresses"><img alt="Result with averaged stresses" src="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" width="300px" /></a>
+<a class="glightbox" href="../media/04_kerbwirkung/12_Kerbwirkung_Ergebnis_Standardnetz_nicht_gemittelt.png" title="Result with unaveraged stresses"><img alt="Result with unaveraged stresses" src="../media/04_kerbwirkung/12_Kerbwirkung_Ergebnis_Standardnetz_nicht_gemittelt.png" width="300px" /></a></p>
+<p>Numerical indicators of mesh quality, such as aspect ratio or skewness, are intentionally <strong>not</strong> used at this point. The focus is initially on the <strong>visual assessment based on the result field</strong>, in order to develop a physical understanding of the mesh influence.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>An assessment of mesh quality is only meaningful after an initial calculation.<br />
+A visually uniform stress field without abrupt color changes usually indicates good mesh quality.</p>
+</div>
+<p>The following result shows the equivalent stress in the notch root for the standard mesh. In this state, the mesh is <strong>still too coarse</strong>, as can be seen from the clearly visible <strong>two large stress gradients</strong> within the notch. The color transitions indicate insufficient resolution of the local stress field.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" title="Result with standard mesh – distinct stress gradients in the notch"><img alt="Result with standard mesh – distinct stress gradients in the notch" src="../media/04_kerbwirkung/11_Kerbwirkung_Ergebnis_Standardnetz.png" width="650px" /></a></p>
+<hr />
+<h3 id="global-mesh-refinement">Global Mesh Refinement<a class="headerlink" href="#global-mesh-refinement" title="Permanent link">&para;</a></h3>
+<p>The effect of the global element size is examined step by step in the following. For this purpose, the element size throughout the entire component is first reduced by means of <strong>global refinement</strong>. As a result, the element size decreases uniformly across the model. This refinement is set, as usual, via the element size in the <em>Details of "Mesh"</em>.  </p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/13_Kerbwirkung_GlobalFein_Netz.png" title="Globally refined component (example view)"><img alt="Globally refined component (example view)" src="../media/04_kerbwirkung/13_Kerbwirkung_GlobalFein_Netz.png" width="700px" /></a></p>
+<p>Key quantities for evaluation are the maximum stress in the notch root, the number of nodes and elements, and the computation time.  </p>
+<!-- markdownlint-disable MD033 -->
 
-<h3 id="mesh-refinement">Mesh Refinement<a class="headerlink" href="#mesh-refinement" title="Permanent link">&para;</a></h3>
-<!--  
-This section then discusses computation time, tabular representation,  
-convergence, and reduction of computation time.
--->
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [3.7340,4.0096,4.2185,4.4406,4.2213,4.2172],
+           "name": "Max. stress (MPa)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["3.7340 MPa","4.0096 MPa","4.2185 MPa","4.4406 MPa","4.2213 MPa","4.2172 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [2519,6671,28370,86607,647596,4984682],
+           "name": "Number of nodes",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["2 519","6 671","28 370","86 607","647 596","4 984 682"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [432,1264,6034,19340,152900,1211000],
+           "name": "Number of elements",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["432","1 264","6 034","19 340","152 900","1 211 000"],
+           "hovertemplate": "%{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Mesh size vs. maximum stress, node and element count",
+         "xaxis": {"title": "Element size"},
+         "yaxis": {"title": "Max. stress (MPa)", "range": [2, 4.6]},
+         "yaxis2": {"title": "Nodes / Elements", "overlaying": "y", "side": "right"},
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [3.7340,4.0096,4.2185,4.4406,4.2213,4.2172],
+           "name": "Max. stress (MPa)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["3.7340 MPa","4.0096 MPa","4.2185 MPa","4.4406 MPa","4.2213 MPa","4.2172 MPa"],
+           "hovertemplate": "%{text}<extra></extra>"
+         },
+         {
+           "x": ["Standard","5 mm","3 mm","2 mm","1 mm","0,5 mm"],
+           "y": [18,17,19,24,66,461],
+           "name": "Computation time (s)",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["18 s","17 s","19 s","24 s","66 s","461 s"],
+           "hovertemplate": "%{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Mesh size vs. maximum stress and computation time",
+         "xaxis": {"title": "Element size"},
+         "yaxis": {"title": "Max. stress (MPa)", "range": [2, 4.6]},
+         "yaxis2": {"title": "Computation time (s)", "overlaying": "y", "side": "right"},
+         "legend": {"x": 0.01, "y": 0.99},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "rgba(255,255,255,0.95)",
+           "bordercolor": "rgba(0,0,0,0.2)",
+           "font": {"color": "black"}
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Table of mesh variants and parameters</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Element size</th>
+<th style="text-align: right;"><span class="arithmatex">\(\sigma_\text{max}\)</span></th>
+<th style="text-align: right;"><span class="arithmatex">\(\Delta\sigma_\text{max}\)</span> vs. previous mesh</th>
+<th style="text-align: right;">Nodes</th>
+<th style="text-align: right;">Elements</th>
+<th style="text-align: right;">Computation time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Standard</td>
+<td style="text-align: right;">3.7340 MPa</td>
+<td style="text-align: right;">0 %</td>
+<td style="text-align: right;">2 519</td>
+<td style="text-align: right;">432</td>
+<td style="text-align: right;">18 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">5 mm</td>
+<td style="text-align: right;">4.0096 MPa</td>
+<td style="text-align: right;">+7.4 %</td>
+<td style="text-align: right;">6 671</td>
+<td style="text-align: right;">1 264</td>
+<td style="text-align: right;">17 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">3 mm</td>
+<td style="text-align: right;">4.2185 MPa</td>
+<td style="text-align: right;">+5.2 %</td>
+<td style="text-align: right;">28 370</td>
+<td style="text-align: right;">6 034</td>
+<td style="text-align: right;">19 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">2 mm</td>
+<td style="text-align: right;">4.4406 MPa</td>
+<td style="text-align: right;">+5.3 %</td>
+<td style="text-align: right;">86 607</td>
+<td style="text-align: right;">19 340</td>
+<td style="text-align: right;">24 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">1 mm</td>
+<td style="text-align: right;">4.2213 MPa</td>
+<td style="text-align: right;">–4.9 %</td>
+<td style="text-align: right;">647 596</td>
+<td style="text-align: right;">152 900</td>
+<td style="text-align: right;">66 s</td>
+</tr>
+<tr>
+<td style="text-align: right;">0.5 mm</td>
+<td style="text-align: right;">4.2172 MPa</td>
+<td style="text-align: right;">–0.1 %</td>
+<td style="text-align: right;">4 984 682</td>
+<td style="text-align: right;">1 211 000</td>
+<td style="text-align: right;">461 s</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>As the element size decreases, the computation time increases significantly, while the result generally approaches a stable value. This trend characterizes the typical <strong>convergence of the result</strong> with increasing mesh refinement.  </p>
+<p>The absolute computation time strongly depends on the available hardware. Therefore, the relative comparison between mesh variants is more meaningful than the absolute time value.</p>
+<p><strong>Evaluation</strong> of the global refinement</p>
+<ul>
+<li>Uniform reduction of element size across the entire model  </li>
+<li>Significant increase in node and element count with limited information gain  </li>
+<li>Noticeable increase in computation time, even in regions with minor stress changes  </li>
+<li>Only moderately efficient for local phenomena such as notch stresses  </li>
+<li>Useful as a first step for calibrating the mesh influence, but not as a permanent strategy  </li>
+</ul>
+<p><strong>Evaluate</strong> the color gradient in regions with high gradients – here <strong>element size 3 mm</strong></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/15_Kerbwirkung_Farbverlauf_Kerbe_3mm.png" title="Equivalent stress for element size 3 mm"><img alt="Equivalent stress for element size 3 mm" src="../media/04_kerbwirkung/15_Kerbwirkung_Farbverlauf_Kerbe_3mm.png" width="700px" /></a></p>
+<p>Here <strong>element size 1 mm</strong></p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png" title="Equivalent stress for element size 1 mm"><img alt="Equivalent stress for element size 1 mm" src="../media/04_kerbwirkung/14_Kerbwirkung_Farbverlauf_Kerbe_1mm.png" width="700px" /></a></p>
+<hr />
+<h3 id="convergence-of-the-result">Convergence of the Result<a class="headerlink" href="#convergence-of-the-result" title="Permanent link">&para;</a></h3>
+<p>The values shown in the plots indicate that the maximum equivalent stress stabilizes at approximately <strong>4.2 MPa</strong> with increasing mesh refinement. This indicates a <strong>convergent behavior</strong> of the model, as further refinements no longer lead to significant changes in the result.</p>
+<hr />
+<h3 id="local-mesh-refinement-tool-refinement">Local Mesh Refinement – Tool <em>Refinement</em><a class="headerlink" href="#local-mesh-refinement-tool-refinement" title="Permanent link">&para;</a></h3>
+<p>The <strong>Refinement</strong> tool is used to control the element size locally. It defines how many times the initial mesh should be refined in a specific region. This control can be applied to <strong>surfaces</strong>, <strong>edges</strong>, or <strong>points</strong>, allowing for targeted refinement of the mesh in relevant geometric areas.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung.png" title="Refinement in ANSYS Mechanical"><img alt="Refinement in ANSYS Mechanical" src="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung.png" width="700px" /></a></p>
+<p><strong>Access:</strong></p>
+<ul>
+<li>In the tree structure, right-click on <em>Mesh</em> and select <em>Insert → Refinement</em>.  </li>
+<li>Alternatively, in the <em>Mesh</em> tab of the ribbon, select the <em>Refinement</em> icon.  </li>
+<li>Refinement can also be inserted directly by right-clicking on a surface, edge, or point and selecting <em>Insert → Refinement</em>.  </li>
+</ul>
+<p><strong>Relevant settings in the detail window:</strong></p>
+<ul>
+<li><em>Scoping Method:</em> Selection of the geometry to be refined (surfaces, edges, or points) or a named selection.  </li>
+<li><em>Refinement:</em> Specifies how many times the base mesh should be refined. The default value is <strong>1</strong>.  </li>
+</ul>
+<p>The refinement divides existing elements hierarchically into smaller sub-elements, maintaining the original element topology (e.g., tetrahedrons, hexahedrons). The refinement level defines how many times the elements are subdivided; for <em>Refinement = 1</em>, for example, eight smaller tetrahedral elements are created. The method is not based on an absolute element size but on relative subdivision ratios, resulting in a smooth mesh transition without abrupt jumps.</p>
+<p><a class="glightbox" href="media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.en.png" title="Mesh refinement in ANSYS Mechanical"><img alt="Mesh refinement in ANSYS Mechanical" src="media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.en.png" width="700px" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot is missing here.  </p>
+</div>
+<hr />
+<h3 id="local-mesh-refinement-tool-element-size-sizing">Local Mesh Refinement – Tool <em>Element Size</em> / <em>Sizing</em><a class="headerlink" href="#local-mesh-refinement-tool-element-size-sizing" title="Permanent link">&para;</a></h3>
+<p>The <strong>Sizing</strong> tool is used for targeted control of the <strong>local element size</strong> in defined areas. This allows critical geometric zones – such as notch radii, holes, or transitions – to be represented with higher accuracy without refining the entire model.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/17_Kerbwirkung_Elementgroesse.png" title="Sizing in ANSYS Mechanical"><img alt="Sizing in ANSYS Mechanical" src="../media/04_kerbwirkung/17_Kerbwirkung_Elementgroesse.png" width="700px" /></a></p>
+<p><strong>Access:</strong></p>
+<ul>
+<li>In the tree structure, right-click on <em>Mesh</em> and select <em>Insert → Sizing</em>.  </li>
+<li>Alternatively, select the <em>Sizing</em> icon in the <em>Mesh</em> tab of the ribbon.  </li>
+<li>Sizing can also be applied directly by right-clicking on a surface, edge, or body and selecting <em>Insert → Sizing</em>.  </li>
+</ul>
+<p><strong>Relevant settings in the detail window:</strong></p>
+<ul>
+<li><em>Geometry:</em> Selection of the geometry to be refined (bodies, surfaces, edges, points) or a named selection.  </li>
+<li><em>Type – Element Size:</em> Defines the maximum element size within the selected region.  </li>
+<li><em>Type – Sphere of Influence:</em> Specifies how far the local sizing extends into neighboring regions.  </li>
+<li><em>Affect Solid:</em> Determines whether the sizing also affects the volume. If this option is enabled, adjacent volume elements in depth are adjusted according to the defined size.  </li>
+</ul>
+<p><strong>Functionality:</strong></p>
+<p>The <em>Sizing</em> tool is based on an <strong>absolute element size</strong>, in contrast to the relative subdivision used in <em>Refinement</em>. ANSYS automatically generates <strong>transition regions</strong> between areas of different mesh density to ensure a compatible mesh.  </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The sizing tool is the most important method for targeted local control of element size.<br />
+It enables high accuracy in the area of the notch effect while maintaining reasonable computation time.</p>
+<hr />
+</div>
+<h3 id="adaptive-meshing">Adaptive Meshing<a class="headerlink" href="#adaptive-meshing" title="Permanent link">&para;</a></h3>
+<p><strong>Adaptive meshing</strong> automatically adjusts the local element size to the result field. Areas with high stress or strain gradients are selectively refined until a defined accuracy is reached. The goal is a <strong>mesh-independent result</strong> with the most efficient element distribution possible.</p>
+<p><strong>Procedure:</strong></p>
+<ul>
+<li>First, a calculation is performed with a standard mesh to roughly capture the stress distribution.  </li>
+<li>Through the context menu of a result (e.g., equivalent stress) in the tree structure (right-click → Add Convergence), adaptive meshing is activated.  </li>
+</ul>
+<p><a class="glightbox" href="../media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png" title="Activation of adaptive meshing in ANSYS Mechanical"><img alt="Activation of adaptive meshing in ANSYS Mechanical" src="../media/04_kerbwirkung/18_Kerbwirkung_Adaptive_Vernetzung_Aktivierung.png" width="700px" /></a>  </p>
+<p>The settings of the adaptive meshing define the <strong>result type</strong> (here <em>Maximum of Equivalent Stress</em>) as well as the <strong>allowable change</strong> between two refinement steps.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/19_Kerbwirkung_Adaptive_Vernetzung_einstellungen.png" title="Settings of adaptive meshing in ANSYS Mechanical"><img alt="Settings of adaptive meshing in ANSYS Mechanical" src="../media/04_kerbwirkung/19_Kerbwirkung_Adaptive_Vernetzung_einstellungen.png" width="700px" /></a>  </p>
+<p>In the <strong>Details of "Solution"</strong>, the <strong>maximum number of refinement cycles</strong> and the <strong>refinement depth</strong> are defined.  </p>
+<ul>
+<li>The <em>maximum number of refinement cycles</em> specifies how many times ANSYS may automatically refine the mesh before the convergence check is terminated.  </li>
+<li>The <em>refinement depth</em> defines into how many subelements an existing element is divided during one cycle.  </li>
+<li>A larger depth results in a finer but more computationally intensive mesh.  </li>
+</ul>
+<p><a class="glightbox" href="../media/04_kerbwirkung/20_Kerbwirkung_Adaptive_Vernetzung_L%C3%B6sungseinstell.png" title="Settings of adaptive meshing in the solution definition"><img alt="Settings of adaptive meshing in the solution definition" src="../media/04_kerbwirkung/20_Kerbwirkung_Adaptive_Vernetzung_L%C3%B6sungseinstell.png" width="300px" /></a>  </p>
+<div class="admonition note">
+<p class="admonition-title">Rule of thumb for adaptive meshing</p>
+<p>A practical setting consists of a <em>maximum number of refinement cycles</em> of <strong>5</strong> and a <em>refinement depth</em> of <strong>3</strong>.<br />
+This should result in a <strong>convergent solution</strong>.<br />
+If convergence is still not achieved, the initial mesh should be refined and the model checked for <strong>divergences or singularities</strong>.</p>
+</div>
+<details class="note">
+<summary>Relation to the <em>Refinement</em> tool</summary>
+<p>In contrast to the <em>Refinement</em> tool (local, manually controlled subdivision), this subdivision is performed <strong>automatically</strong> based on the result field of the respective analysis.<br />
+Both mechanisms, however, use the same hierarchical approach to element subdivision – adaptive meshing simply controls this process iteratively and criterion-based.  </p>
+</details>
+<p>ANSYS then automatically refines the regions with high <strong>result gradients</strong>. This process repeats until the deviation between two refinement steps is smaller than the specified tolerance (<em>allowable change</em>) or the maximum number of steps is reached.</p>
+<p>The convergence curve shows the development of the maximum equivalent stress over several refinement cycles. After initial fluctuations, the result approaches a stable value, indicating convergent behavior.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/21_Kerbwirkung_Adaptive_Vernetzung_Konvergenzverlauf.png" title="Convergence curve of adaptive meshing"><img alt="Convergence curve of adaptive meshing" src="../media/04_kerbwirkung/21_Kerbwirkung_Adaptive_Vernetzung_Konvergenzverlauf.png" width="700px" /></a>  </p>
+<p>The resulting mesh shows a targeted local concentration in the notch root, while a coarse mesh is retained in less stressed regions. This achieves high accuracy while maintaining reduced computation time.</p>
+<p><a class="glightbox" href="../media/04_kerbwirkung/22_Kerbwirkung_Adaptive_Vernetzung_Netz.png" title="Mesh after adaptive refinement"><img alt="Mesh after adaptive refinement" src="../media/04_kerbwirkung/22_Kerbwirkung_Adaptive_Vernetzung_Netz.png" width="700px" /></a>  </p>
+<p><strong>Functionality:</strong></p>
+<ul>
+<li>Adaptive meshing uses an <strong>error indicator</strong> based on the change in strain energy or stress gradients.  </li>
+<li>Elements with above-average deviation are refined in the next iteration.  </li>
+<li>Areas with stable results remain unchanged.  </li>
+<li>Thus, the mesh density is automatically increased where it is physically relevant.  </li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Adaptive meshing is particularly efficient for models with locally varying stress levels, such as notches, holes, or contact regions.<br />
+It significantly reduces computation time compared to global refinement while providing convergent results.</p>
+</div>
+<hr />
+<h3 id="adaptive-meshing-of-a-focused-result">Adaptive Meshing of a Focused Result<a class="headerlink" href="#adaptive-meshing-of-a-focused-result" title="Permanent link">&para;</a></h3>
+<p>A <strong>focused result</strong> in finite element analysis refers to a <strong>specifically selected partial result</strong> that relates to a particular region or result quantity.  </p>
+<p>Examples include:</p>
+<ul>
+<li>the <em>Equivalent Stress</em> on a specific surface or within a selected solid body  </li>
+<li>the <em>Strain</em> along a defined line  </li>
+<li>the <em>Displacement</em> at a single node or on a contact surface  </li>
+</ul>
+<p>In contrast to global results, adaptive mesh refinement can thus be performed <strong>not across the entire model</strong>, but <strong>only in relevant areas</strong>. The decision regarding which region is examined in a focused manner is typically based on a global analysis.  </p>
+<p>The principle of <strong>adaptive meshing of a focused result</strong> makes it possible to achieve a <strong>convergent solution</strong> in a defined subregion, even if <strong>divergences</strong> occur in other areas (e.g., at fixed supports or point loads).</p>
+<p><a class="glightbox" href="media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png" title="Example of a focused result: Equivalent stress on a defined surface"><img alt="Example of a focused result: Equivalent stress on a defined surface" src="media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png" width="700px" /></a>  </p>
+<div class="admonition warning">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot is missing here.  </p>
+</div>
+<p><strong>Procedure:</strong></p>
+<ul>
+<li>Selection of the <strong>focused result</strong> as the criterion for mesh adaptation (e.g., equivalent stress on a surface instead of the entire body)  </li>
+<li>Insertion of a convergence criterion  </li>
+<li>Definition of the <strong>allowable change</strong> (e.g., stress change &lt; 5 % per iteration)  </li>
+</ul>
+<p>This results in an automatic <strong>local mesh refinement</strong> exclusively in the area of interest, while regions with <strong>non-convergent behavior</strong> are deliberately excluded.</p>
+<p><a class="glightbox" href="media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png" title="Adaptive meshing of a focused result – schematic representation"><img alt="Adaptive meshing of a focused result – schematic representation" src="media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png" width="700px" /></a>  </p>
+<div class="admonition warning">
+<p class="admonition-title">FIXME</p>
+<p>Screenshot is missing here.  </p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Focused results are typically used for <strong>notches</strong>, <strong>contact surfaces</strong>, <strong>holes</strong>, or <strong>critical stress zones</strong> to achieve a convergent solution there without unnecessarily increasing computation time through global refinements.</p>
+</div>
+<p><strong>Advantages:</strong></p>
+<ul>
+<li>targeted refinement only where it is physically relevant  </li>
+<li>avoidance of numerical issues in divergent zones  </li>
+<li>shorter computation times while maintaining local accuracy  </li>
+</ul>
+<hr />
+<h2 id="summary-of-the-mesh-influence-study">Summary of the Mesh Influence Study<a class="headerlink" href="#summary-of-the-mesh-influence-study" title="Permanent link">&para;</a></h2>
+<p>The goal of a mesh influence study is to obtain a result that is <em>independent of the mesh</em>. Only then can the model be considered numerically stable and physically meaningful.</p>
+<p><strong>Key Findings:</strong></p>
+<ul>
+<li>The calculated stresses strongly depend on the element size, particularly in regions with high stress gradients such as the notch root.  </li>
+<li>With increasing mesh refinement, the result approaches a stable value – the model shows <strong>convergence</strong>.  </li>
+<li>If further refinement causes hardly any change in the result, it is considered <strong>mesh-independent</strong>.  </li>
+</ul>
+<p><strong>Evaluation Criteria:</strong></p>
+<ul>
+<li>Relative difference of the target quantity (e.g., <span class="arithmatex">\(\sigma_\text{max}\)</span>) between two meshes less than 2 % to 5 %  </li>
+<li>Uniform stress distribution without abrupt color changes in the area of interest  </li>
+<li>Similar results for averaged and unaveraged stresses  </li>
+</ul>
+<p><strong>Practical Implications:</strong></p>
+<ul>
+<li>The <strong>most efficient mesh</strong>, not the finest one, delivers the best results  </li>
+<li>A mesh that is too coarse distorts stress results, while an overly fine mesh increases computation time  </li>
+<li>The objective is a <strong>compromise between accuracy and computational effort</strong>  </li>
+</ul>
+<hr />
+<h2 id="discussion-of-the-results">Discussion of the Results<a class="headerlink" href="#discussion-of-the-results" title="Permanent link">&para;</a></h2>
+<h3 id="results-of-the-fem-calculation">Results of the FEM Calculation<a class="headerlink" href="#results-of-the-fem-calculation" title="Permanent link">&para;</a></h3>
+<p>For each geometry variant, the maximum equivalent stress in the notch root was determined using ANSYS. The notch shape factor is calculated as follows:</p>
+<div class="arithmatex">\[
+\alpha_k = \frac{\sigma_\text{max}}{\sigma_n}
+\]</div>
+<p>The nominal stress results from the applied tensile force <em>F</em> and the loaded cross-section:</p>
+<div class="arithmatex">\[
+\sigma_n = \frac{F}{b \cdot t}
+\]</div>
+<p>For the calculation, a tensile force of <strong>1000 N</strong> was used as an example. Since the notch shape factor is a <strong>dimensionless ratio</strong> of maximum to nominal stress, the specific value of <em>F</em> is irrelevant. What matters is the ratio between the two stresses.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong><span class="arithmatex">\(r/b\)</span></strong></th>
+<th style="text-align: center;"><strong><span class="arithmatex">\(\sigma_\text{max}\)</span></strong></th>
+<th style="text-align: center;"><strong><span class="arithmatex">\(\sigma_\text{n}\)</span></strong></th>
+<th style="text-align: center;"><strong><span class="arithmatex">\(\alpha_k\)</span></strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0.1</td>
+<td style="text-align: center;">4.264 MPa</td>
+<td style="text-align: center;">1.25 MPa</td>
+<td style="text-align: center;">3.41</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.2</td>
+<td style="text-align: center;">3.307 MPa</td>
+<td style="text-align: center;">1.25 MPa</td>
+<td style="text-align: center;">2.65</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.3</td>
+<td style="text-align: center;">2.858 MPa</td>
+<td style="text-align: center;">1.25 MPa</td>
+<td style="text-align: center;">2.29</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.4</td>
+<td style="text-align: center;">2.613 MPa</td>
+<td style="text-align: center;">1.25 MPa</td>
+<td style="text-align: center;">2.09</td>
+</tr>
+<tr>
+<td style="text-align: center;">0.5</td>
+<td style="text-align: center;">2.438 MPa</td>
+<td style="text-align: center;">1.25 MPa</td>
+<td style="text-align: center;">1.95</td>
+</tr>
+</tbody>
+</table>
+<h3 id="comparison-with-the-curve-from-the-reference-book">Comparison with the Curve from the Reference Book<a class="headerlink" href="#comparison-with-the-curve-from-the-reference-book" title="Permanent link">&para;</a></h3>
+<p>The theoretical values of the notch shape factor αₖ are taken from the diagram (see above). For comparison, the FEM results are shown together with the theoretical curves below.</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.1, 0.2, 0.3, 0.4, 0.5],
+           "y": [3.41, 2.65, 2.29, 2.09, 1.95],
+           "name": "FEM results",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "&alpha;<sub>k</sub> = %{y:.2f}<extra></extra>"
+         },
+         {
+           "x": [0.1, 0.2, 0.3, 0.4, 0.5],
+           "y": [3.5, 2.7, 2.3, 2.1, 1.9],
+           "name": "Theory (from diagram)",
+           "type": "scatter",
+           "mode": "lines",
+           "line": {"dash": "dot"},
+           "hovertemplate": "&alpha;<sub>k</sub> ≈ %{y:.2f}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Comparison of notch shape factor &alpha;<sub>k</sub> from FEM and theory",
+         "xaxis": {"title": "r/b"},
+         "yaxis": {"title": "&alpha;<sub>k</sub>"},
+         "hovermode": "x unified",
+         "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"},
+         "separators": ".,"
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<p><strong>Interpretation:</strong><br />
+The FEM results show the same trend as the theoretical values. With increasing notch radius, the stress concentration decreases, resulting in a smaller notch shape factor.</p>
+<hr />
+<h2 id="quiz-for-self-assessment">Quiz for Self-Assessment<a class="headerlink" href="#quiz-for-self-assessment" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+<div class="quiz"><h3>What does the notch shape factor &alpha;<sub>k</sub> describe in the elastic range?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">The product of maximum and nominal stress.</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">The ratio of the maximum stress in the notch root to the nominal stress &sigma;<sub>n</sub>.</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">The difference between local and nominal stress.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Definition: \(\alpha_k = \sigma_\text{max} / \sigma_\text{n}\).</section></div>
+
+<div class="quiz"><h3>What is the nominal stress &sigma;<sub>n</sub> in a rectangular cross-section under tension with width b and thickness t?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">\(\sigma_n = b \cdot t \cdot F\)</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" correct><label for="quiz-1-1">\(\sigma_n = \dfrac{F}{b \cdot t}\)</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">\(\sigma_n = \dfrac{b + t}{F}\)</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> Force divided by the loaded cross-sectional area.</section></div>
+
+<div class="quiz"><h3>A rod element with stiffness c is fixed on the left (\(u_1=0\)) and loaded with \(F\) on the right. Which relationship applies?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">\(u_2 = c \cdot F\)</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">\(F = c \cdot u_2\)</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" ><label for="quiz-2-2">\(F = \dfrac{u_2}{c}\)</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Remember:</em> Linear spring equation \(F = c \cdot \Delta u\).</section></div>
+
+<div class="quiz"><h3>What does the stiffness c of a rod element depend on?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">Only on the length l.</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" correct><label for="quiz-3-1">On Young’s modulus E, the cross-sectional area A, and the length l according to \(c=\dfrac{E \cdot A}{l}\).</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" ><label for="quiz-3-2">Only on Poisson’s ratio &nu;.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><strong>Remember:</strong> Larger area or higher <em>E</em> increase <em>c</em>, greater length decreases <em>c</em>.</section></div>
+
+<div class="quiz"><h3>Is the magnitude of the applied force F relevant for determining &alpha;<sub>k</sub>?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">Yes, &alpha;<sub>k</sub> is proportional to <em>F</em>.</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" correct><label for="quiz-4-1">No, <em>F</em> cancels out in \(\alpha_k = \sigma_\text{max}/\sigma_n\).</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" ><label for="quiz-4-2">Only if <em>F</em> is smaller than 1,000 N.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Consequence:</em> Any load results in the same &alpha;<sub>k</sub>.</section></div>
+
+<div class="quiz"><h3>How does &alpha;<sub>k</sub> change when the ratio r/b decreases (sharper notch)?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">&alpha;<sub>k</sub> remains constant.</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">&alpha;<sub>k</sub> increases.</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">&alpha;<sub>k</sub> approaches zero.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Physics:</em> Sharper notches lead to stronger stress concentration.</section></div>
+
+<div class="quiz"><h3>How can convergence be recognized in a mesh influence study?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">Computation time becomes constant.</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">The target quantity approaches a stable limit value with further refinement.</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">The number of nodes remains unchanged.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Practice rule:</em> Small percentage change between two meshes.</section></div>
+
+<div class="quiz"><h3>What characterizes divergence in this context?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-7-0" ><label for="quiz-7-0">The target quantity remains constant during refinement.</label></div><div><input type="radio" name="answer" value="1" id="quiz-7-1" correct><label for="quiz-7-1">The target quantity increases without a limit, e.g., in the case of a sharp-edged notch.</label></div><div><input type="radio" name="answer" value="2" id="quiz-7-2" ><label for="quiz-7-2">The target quantity stabilizes immediately.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Example:</em> Theoretical notch radius zero without plasticity.</section></div>
+
+<div class="quiz"><h3>Why is a mesh influence study performed?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-8-0" ><label for="quiz-8-0">To make the model visually more appealing.</label></div><div><input type="radio" name="answer" value="1" id="quiz-8-1" correct><label for="quiz-8-1">To ensure that the simulation result is independent of the element size.</label></div><div><input type="radio" name="answer" value="2" id="quiz-8-2" ><label for="quiz-8-2">To reduce computation time.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Reason:</em> Only a mesh-independent result is considered numerically stable and physically meaningful.</section></div>
+
+<div class="quiz"><h3>What is the goal of a mesh influence study?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-9-0" ><label for="quiz-9-0">To create the finest possible mesh.</label></div><div><input type="radio" name="answer" value="1" id="quiz-9-1" correct><label for="quiz-9-1">To find a mesh that offers a compromise between accuracy and computation time.</label></div><div><input type="radio" name="answer" value="2" id="quiz-9-2" ><label for="quiz-9-2">To create as many elements as possible throughout the model.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> A good mesh provides stable results with minimal effort – not the finest, but the most efficient mesh is optimal.</section></div>
+
+<div class="quiz"><h3>Which visual indicator suggests that the mesh in the notch root is too coarse?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-10-0" ><label for="quiz-10-0">Homogeneous color fields without transition.</label></div><div><input type="radio" name="answer" value="1" id="quiz-10-1" correct><label for="quiz-10-1">Distinct color gradients within individual elements in regions with high gradients.</label></div><div><input type="radio" name="answer" value="2" id="quiz-10-2" ><label for="quiz-10-2">Identical element size everywhere.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Tip:</em> Use unaveraged stresses for assessment.</section></div>
+
+<div class="quiz"><h3>Why is global refinement often inefficient for notch stresses?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-11-0" ><label for="quiz-11-0">Because ANSYS does not support global refinement.</label></div><div><input type="radio" name="answer" value="1" id="quiz-11-1" correct><label for="quiz-11-1">It increases mesh density in uncritical regions and extends computation time without proportional information gain.</label></div><div><input type="radio" name="answer" value="2" id="quiz-11-2" ><label for="quiz-11-2">It worsens stress resolution in the notch root.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Alternative:</em> Local sizing control or adaptive meshing.</section></div>
+
+<div class="quiz"><h3>What is the purpose of weak springs in linear static analyses?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-12-0" ><label for="quiz-12-0">To increase Young’s modulus <em>E</em>.</label></div><div><input type="radio" name="answer" value="1" id="quiz-12-1" correct><label for="quiz-12-1">To provide numerical stabilization when constraints are insufficient, preventing rigid body motion.</label></div><div><input type="radio" name="answer" value="2" id="quiz-12-2" ><label for="quiz-12-2">To locally refine the mesh at notches.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Messages about weak springs are not necessarily critical.</section></div>
+
+<div class="quiz"><h3>What is a focused result in the context of adaptive meshing?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-13-0" ><label for="quiz-13-0">A global maximum of total deformation.</label></div><div><input type="radio" name="answer" value="1" id="quiz-13-1" correct><label for="quiz-13-1">A specifically selected partial result on a surface, line, or volume that controls local mesh adaptation.</label></div><div><input type="radio" name="answer" value="2" id="quiz-13-2" ><label for="quiz-13-2">A pure material constant.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Purpose:</em> Achieving local convergence even when divergent zones exist elsewhere.</section></div>
+<!-- markdownlint-enable MD033 -->
 <div class="footnote">
 <hr />
 <ol>
@@ -891,6 +1463,9 @@ convergence, and reduction of computation time.
 </li>
 <li id="fn:Altenbach2016">
 <p>Holm Altenbach. <em>Holzmann/Meyer/Schumpich Technische Mechanik Festigkeitslehre</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2016. ISBN 978-3-658-14722-8. <a href="https://doi.org/10.1007/978-3-658-14723-5">doi:10.1007/978-3-658-14723-5</a>.&#160;<a class="footnote-backref" href="#fnref:Altenbach2016" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Comsol2025">
+<p>Finite element mesh refinement definition and techniques. 23.10.2025. URL: <a href="https://www.comsol.com/multiphysics/mesh-refinement">https://www.comsol.com/multiphysics/mesh-refinement</a> (visited on 23.10.2025).&#160;<a class="footnote-backref" href="#fnref:Comsol2025" title="Jump back to footnote 6 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
