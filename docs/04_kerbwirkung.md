@@ -347,7 +347,7 @@ Die Geometrie ist
 
 ## Theorie Kerbwirkung
 
-Kerben entstehen an Querschnittsänderungen, Bohrungen, Einstichen oder anderen geometrischen Übergängen. Sie führen zu einer lokalen **Kraftflussverdichtung**, das heißt zu einer **Verdichtung der Kraftflusslinien** und damit zu einer **Erhöhung der lokalen Spannung**. 
+Kerben entstehen an Querschnittsänderungen, Bohrungen, Einstichen oder anderen geometrischen Übergängen. Sie führen zu einer lokalen **Kraftflussverdichtung**, das heißt zu einer **Verdichtung der Kraftflusslinien** und damit zu einer **Erhöhung der lokalen Spannung**.  
 
 [![Kraftfluss und Spannungsverteilung im gekerbten und ungekerbten Bauteil](media/04_kerbwirkung/Kerbwirkung.svg){width=400px}](media/04_kerbwirkung/Kerbwirkung.svg "Kraftfluss und Spannungsverteilung im gekerbten und ungekerbten Bauteil"){.glightbox}
 <span class="bildquelle">Bildquelle[@Wittel2021]</span>
@@ -369,7 +369,7 @@ Die Kerbformzahl $\alpha_k$ ist ein Maß für die festigkeitsmindernde Wirkung d
 
 ### Einfluss der Kerbform
 
-Je spitzer eine Kerbe ausgeführt wird, desto stärker konzentriert sich der Kraftfluss im Kerbgrund. Dadurch entstehen höhere Spannungsspitzen _σₘₐₓ_ und größere Werte der Kerbformzahl $\alpha_k$. Eine Verrundung der Kerbe führt hingegen zu einer Entspannung des Kraftflusses und verringert die lokale Spannungsüberhöhung.
+Je spitzer eine Kerbe ausgeführt wird, desto stärker konzentriert sich der Kraftfluss im Kerbgrund. Dadurch entstehen höhere Spannungsspitzen $\sigma_{max}$ und größere Werte der Kerbformzahl $\alpha_k$. Eine Verrundung der Kerbe führt hingegen zu einer Entspannung des Kraftflusses und verringert die lokale Spannungsüberhöhung.
 
 [![Einfluss der Kerbform auf die Spannungskonzentration](media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg){width=600px}](media/04_kerbwirkung/Kerbwirkung_Einfluss_Kerbform.svg "Einfluss der Kerbform auf die Spannungskonzentration"){.glightbox}
 <span class="bildquelle">Bildquelle[@Wittel2021]</span>
@@ -484,7 +484,7 @@ Die erste Einschätzung der Netzqualität erfolgt nach einer groben Berechnung �
 
 Ein feines Netz zeigt im Idealfall einen **diskreten Spannungsverlauf von Knoten zu Knoten**. Treten innerhalb eines Elements sichtbare Farbverläufe auf, deutet dies auf zu große Spannungsgradienten innerhalb des Elements und damit auf eine zu große Elementgröße hin.  
 
-[![Beurteilung der Netzqualität durch den Farbverlauf](media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png){width=400px}](media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png "Beurteilung der Netzqualität durch den Farbverlauf"){.glightbox}  
+[![Beurteilung der Netzqualität durch den Farbverlauf](media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png){width=700px}](media/04_kerbwirkung/10_Kerbwirkung_Netzqualitaet_Farbverlauf.png "Beurteilung der Netzqualität durch den Farbverlauf"){.glightbox}  
 <span class="bildquelle">Bildquelle[@Comsol2025]</span>
 
 Für eine differenzierte Beurteilung kann der Vergleich von **gemittelten** und **ungemittelten Spannungen** herangezogen werden. In der Standarddarstellung werden Spannungen in ANSYS zwischen den Elementen gemittelt, wodurch lokale Maxima geglättet erscheinen. Werden die Spannungen ohne Mittelung dargestellt, ist eine realistischere Einschätzung des tatsächlichen Spannungsverlaufs möglich. Ein deutlicher Unterschied zwischen beiden Darstellungen weist auf eine unzureichende Netzqualität hin.
@@ -506,7 +506,7 @@ Das folgende Ergebnis zeigt die Vergleichsspannung im Kerbgrund für das Standar
 
 ### Globale Netzverfeinerung
 
-DDie Auswirkung der globalen Elementgröße wird im folgenden schrittweise untersucht. Zu diesem Zweck wird die Elementgröße im gesamten Bauteil zunächst über eine **globale Verfeinerung** reduziert. Dadurch verringert sich die Elementgröße gleichmäßig im gesamten Modell. Diese Verfeinerung wird wie gehabt über die Elementgröße in den _Details von "Netz"_ eingestellt.  
+Die Auswirkung der globalen Elementgröße wird im Folgenden schrittweise untersucht. Zu diesem Zweck wird die Elementgröße im gesamten Bauteil zunächst über eine **globale Verfeinerung** reduziert. Dadurch verringert sich die Elementgröße gleichmäßig im gesamten Modell. Diese Verfeinerung wird wie gehabt über die Elementgröße in den _Details von "Netz"_ eingestellt.  
 
 [![Global fein vernetztes Bauteil (Beispielansicht)](media/04_kerbwirkung/13_Kerbwirkung_GlobalFein_Netz.png){width=700px}](media/04_kerbwirkung/13_Kerbwirkung_GlobalFein_Netz.png "Global fein vernetztes Bauteil (Beispielansicht)"){.glightbox}
 
@@ -751,22 +751,259 @@ Das resultierende Netz zeigt eine gezielte lokale Verdichtung im Kerbgrund, wäh
 
 ---
 
-[![Under Construction mit FEM-Bezug](media/under_construction.png){width=700px}](media/under_construction.png "Under Construction"){.glightbox}  
+### Adaptive Vernetzung eines fokussierten Ergebnisses
 
-### Zusammenfassung Netzeinflussstudie
+Ein **fokussiertes Ergebnis** bezeichnet in der Finite-Elemente-Analyse ein **gezielt ausgewähltes Teilergebnis**, das sich auf einen bestimmten Bereich oder eine bestimmte Ergebnisgröße bezieht.  
 
-* Netzunabhängigkeit als Kriterium für Ergebnisqualität.  
-* Beurteilung der Netzqualität:
-  * Optische Beurteilung (Farbverlauf)
-  * Vergleich gemittelter / ungemittelter Spannungen
-  * Konvergenzprüfung  
-* Empfehlung für die Praxis:
-  * Globale Verfeinerung für Grobanalyse  
-  * Lokale oder adaptive Verfeinerung für Detailanalyse  
+Beispiele sind:
 
-!!! tip
-    Ziel ist nicht das feinste Netz, sondern das **effizienteste** Netz, das ein vom Netz unabhängiges Ergebnis liefert.
+* die _Vergleichsspannung_ auf einer bestimmten Fläche oder in einem ausgewählten Volumenkörper  
+* die _Dehnung_ entlang einer definierten Linie  
+* die _Verschiebung_ in einem einzelnen Knoten oder auf einer Kontaktfläche  
+
+Im Gegensatz zu globalen Ergebnissen kann damit die adaptive Netzverfeinerung **nicht über das gesamte Modell**, sondern **nur in relevanten Bereichen** durchgeführt. Die Entscheidung, welcher Bereich fokussiert betrachtet wird, basiert in der Regel auf einer globalen Analyse.  
+
+Das Prinzip der **adaptiven Vernetzung eines fokussierten Ergebnisses** ermöglicht es, eine **konvergierende Lösung** in einem definierten Teilbereich zu erreichen, selbst wenn in anderen Bereichen **Divergenzen** auftreten (z. B. an Einspannungen oder Punktlasten).
+
+[![Beispiel eines fokussierten Ergebnisses: Vergleichsspannung auf definierter Fläche](media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.png){width=700px}](media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.png "Beispiel eines fokussierten Ergebnisses: Vergleichsspannung auf definierter Fläche"){.glightbox}  
+
+**Vorgehensweise:**
+
+* Auswahl des **fokussierten Ergebnisses** als Kriterium für die Netzadaption  (z.B. Vergleichsspannung auf Fläche statt gesamter Körper)
+* Einfügen eines Konvergenzkriteriums
+* Festlegung der **zulässigen Abweichung** (z. B. Spannungsänderung < 5 % pro Iteration)  
+
+Daraus folgt eine automatische **lokale Netzverfeinerung** ausschließlich im interessierenden Bereich, während Bereiche mit **nicht konvergierendem Verhalten** gezielt ausgeblendet werden.
+
+[![Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung](media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png){width=700px}](media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png "Adaptive Vernetzung eines fokussierten Ergebnisses – Prinzipdarstellung"){.glightbox}  
+<span class="bildquelle">Bildquelle[@Wittel2021]</span>
+
+!!! note "Hinweis"
+    Fokussierte Ergebnisse werden typischerweise bei **Kerben**, **Kontaktflächen**, **Bohrungen** oder **kritischen Spannungszonen** eingesetzt, um dort eine konvergente Lösung zu erzielen, ohne die Rechenzeit durch globale Verfeinerungen unnötig zu erhöhen.
+
+**Vorteile:**
+
+* gezielte Verfeinerung nur dort, wo sie physikalisch relevant ist  
+* Vermeidung numerischer Probleme in divergenten Zonen  
+* kürzere Rechenzeiten bei gleichbleibender lokaler Genauigkeit  
+
+## Zusammenfassung der Netzeinflussstudie
+
+Ziel einer Netzeinflussstudie ist es, ein Ergebnis zu erhalten, das _vom Netz unabhängig_ ist. Nur dann kann das Modell als numerisch stabil und physikalisch aussagekräftig gelten.
+
+**Wesentliche Erkenntnisse:**
+
+* Die berechneten Spannungen hängen stark von der Elementgröße ab, hier besonders bei hohen Spannungsgradienten im Kerbgrund.  
+* Mit zunehmender Netzverfeinerung nähert sich das Ergebnis einem stabilen Wert an – das Modell zeigt **Konvergenz**.  
+* Wird das Ergebnis bei weiterer Verfeinerung kaum noch verändert, gilt es als **netzunabhängig**.  
+
+**Bewertungskriterien:**
+
+* Relativer Unterschied der Zielgröße (z. B. $\sigma_\text{max}$) zwischen zwei Netzen kleiner 2 % bis 5 %  
+* Gleichmäßiger Spannungsverlauf ohne abrupte Farbwechsel im interessierenden Bereich  
+* Ähnliche Ergebnisse bei gemittelten und ungemittelten Spannungen  
+
+**Praktische Konsequenz:**
+
+* Nicht das feinste, sondern das **effizienteste Netz** liefert die besten Resultate  
+* Ein zu grobes Netz verfälscht Spannungen, ein zu feines Netz verlängert die Rechenzeit  
+* Ziel ist der **Kompromiss zwischen Genauigkeit und Aufwand**
 
 ## Diskussion der Ergebnisse
 
-### Abgleich mit analytischer Lösung
+### Ergebnisse der FEM-Berechnung
+
+Zur Auswertung wurde für jede Geometrievariante die maximale Vergleichsspannung im Kerbgrund mittels ANSYS bestimmt. Zur Berechnung der Kerbformzahl gilt:
+
+\[
+\alpha_k = \frac{\sigma_\text{max}}{\sigma_n}
+\]
+
+Die Nennspannung ergibt sich aus der aufgebrachten Zugkraft _F_ und dem belasteten Querschnitt:
+
+\[
+\sigma_n = \frac{F}{b \cdot t}
+\]
+
+Für die Berechnung wurde beispielhaft eine Zugkraft von **1000 N** verwendet. Da die Kerbformzahl ein **dimensionsloses Verhältnis** aus maximaler und Nennspannung ist, spielt der konkrete Wert von _F_ keine Rolle. Entscheidend ist das Verhältnis beider Spannungen.
+
+| **$r/b$** | **$\sigma_\text{max}$** | **$\sigma_\text{n}$** | **$\alpha_k$** |
+|:----------:|:-----------------------:|:---------------------:|:--------------:|
+| 0,1 | 4,264 N/mm² | 1,25 N/mm² | 3,41 |
+| 0,2 | 3,307 N/mm² | 1,25 N/mm² | 2,65 |
+| 0,3 | 2,858 N/mm² | 1,25 N/mm² | 2,29 |
+| 0,4 | 2,613 N/mm² | 1,25 N/mm² | 2,09 |
+| 0,5 | 2,438 N/mm² | 1,25 N/mm² | 1,95 |
+
+### Abgleich mit Kurve aus dem Tabellenbuch
+
+Die theoretischen Werte der Kerbformzahl αₖ stammen aus dem Diagramm (siehe oben). Zum Vergleich sind nachfolgend die FEM-Ergebnisse gemeinsam mit den theoretischen Kurvenverläufen dargestellt.
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.1, 0.2, 0.3, 0.4, 0.5],
+           "y": [3.41, 2.65, 2.29, 2.09, 1.95],
+           "name": "FEM-Ergebnisse",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "&alpha;<sub>k</sub> = %{y:.2f}<extra></extra>"
+         },
+         {
+           "x": [0.1, 0.2, 0.3, 0.4, 0.5],
+           "y": [3.5, 2.7, 2.3, 2.1, 1.9],
+           "name": "Theorie (nach Diagramm)",
+           "type": "scatter",
+           "mode": "lines",
+           "line": {"dash": "dot"},
+           "hovertemplate": "&alpha;<sub>k</sub> ≈ %{y:.2f}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": "Vergleich der Kerbformzahl &alpha;<sub>k</sub> aus FEM und Theorie",
+         "xaxis": {"title": "r/b"},
+         "yaxis": {"title": "&alpha;<sub>k</sub>"},
+         "hovermode": "x unified",
+         "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"},
+         "separators": ".,"
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+**Interpretation:**  
+Die FEM-Ergebnisse zeigen denselben Verlauf wie die theoretischen Werte. Mit zunehmendem Kerbradius nimmt die Spannungskonzentration ab, wodurch die Kerbformzahl kleiner wird.  
+
+## Quiz zur Selbstkontrolle  
+
+<!-- markdownlint-disable MD033 -->
+<?quiz?>
+question: Was beschreibt die Kerbformzahl &alpha;<sub>k</sub> im elastischen Bereich?
+answer: Das Produkt aus maximaler und nomineller Spannung.
+answer-correct: Das Verhältnis der maximalen Spannung im Kerbgrund zur Nennspannung &sigma;<sub>n</sub>.
+answer: Die Differenz zwischen lokaler und nomineller Spannung.
+content:
+<em>Hinweis:</em> Definition: \(\alpha_k = \sigma_\text{max} / \sigma_\text{n}\).
+<?/quiz?>
+
+<?quiz?>
+question: Wie lautet die Nennspannung &sigma;<sub>n</sub> im auf Zug belasteten Rechteck-Querschnitt mit Breite <em>b</em> und Dicke <em>t</em>?
+answer: \(\sigma_n = b \cdot t \cdot F\)
+answer-correct: \(\sigma_n = \dfrac{F}{b \cdot t}\)
+answer: \(\sigma_n = \dfrac{b + t}{F}\)
+content:
+<em>Tipp:</em> Kraft durch belastete Querschnittsfläche.
+<?/quiz?>
+
+<?quiz?>
+question: Ein Stabelement mit Federsteifigkeit <em>c</em> ist links eingespannt (\(u_1=0\)) und rechts mit \(F\) belastet. Welche Beziehung gilt?
+answer: \(u_2 = c \cdot F\)
+answer-correct: \(F = c \cdot u_2\)
+answer: \(F = \dfrac{u_2}{c}\)
+content:
+<em>Merke:</em> Lineare Federgleichung \(F = c \cdot \Delta u\).
+<?/quiz?>
+
+<?quiz?>
+question: Wovon hängt die Federsteifigkeit <em>c</em> eines Stabelements ab?
+answer: Nur von der Länge <em>l</em>.
+answer-correct: Vom Elastizitätsmodul <em>E</em>, der Fläche <em>A</em> und der Länge <em>l</em> gemäß \(c=\dfrac{E \cdot A}{l}\).
+answer: Nur von der Querkontraktionszahl <em>&nu;</em>.
+content:
+<strong>Merke:</strong> Größere Fläche oder höheres <em>E</em> erhöhen <em>c</em>, größere Länge verringert <em>c</em>.
+<?/quiz?>
+
+<?quiz?>
+question: Ist der Betrag der angelegten Kraft <em>F</em> für die Bestimmung von &alpha;<sub>k</sub> relevant?
+answer: Ja, &alpha;<sub>k</sub> ist proportional zu <em>F</em>.
+answer-correct: Nein, <em>F</em> kürzt sich in \(\alpha_k = \sigma_\text{max}/\sigma_n\) heraus.
+answer: Nur wenn <em>F</em> kleiner als 1 000 N ist.
+content:
+<em>Konsequenz:</em> Beliebige Lasten liefern identische &alpha;<sub>k</sub>.
+<?/quiz?>
+
+<?quiz?>
+question: Wie ändert sich &alpha;<sub>k</sub>, wenn das Verhältnis <em>r/b</em> kleiner wird (schärfere Kerbe)?
+answer: &alpha;<sub>k</sub> bleibt gleich.
+answer-correct: &alpha;<sub>k</sub> nimmt zu.
+answer: &alpha;<sub>k</sub> fällt gegen null.
+content:
+<em>Physik:</em> Schärfere Kerben verdichten den Kraftfluss stärker.
+<?/quiz?>
+
+<?quiz?>
+question: Woran wird <strong>Konvergenz</strong> in der Netzeinflussstudie erkannt?
+answer: Die Rechenzeit wird konstant.
+answer-correct: Die Zielgröße nähert sich bei weiterer Verfeinerung einem stabilen Grenzwert.
+answer: Die Knotenanzahl bleibt unverändert.
+content:
+<em>Praxisregel:</em> kleine prozentuale Änderung zwischen zwei Netzen.
+<?/quiz?>
+
+<?quiz?>
+question: Was kennzeichnet <strong>Divergenz</strong> in diesem Kontext?
+answer: Die Zielgröße bleibt konstant bei Verfeinerung.
+answer-correct: Die Zielgröße steigt ohne Grenzwert an, z. B. bei scharfkantiger Kerbe.
+answer: Die Zielgröße pendelt sich sofort ein.
+content:
+<em>Beispiel:</em> Theoretischer Kerbradius null ohne Plastizität.
+<?/quiz?>
+
+<?quiz?>
+question: Warum wird eine <strong>Netzeinflussstudie</strong> durchgeführt?
+answer: Um das Modell optisch schöner darzustellen.
+answer-correct: Um sicherzustellen, dass das Simulationsergebnis unabhängig von der Elementgröße ist.
+answer: Um die Rechenzeit zu verkürzen.
+content:
+<em>Begründung:</em> Nur ein netzunabhängiges Ergebnis gilt als numerisch stabil und physikalisch aussagekräftig.
+<?/quiz?>
+
+<?quiz?>
+question: Was ist das Ziel einer <strong>Netzeinflussstudie</strong>?
+answer: Das feinste mögliche Netz zu erzeugen.
+answer-correct: Ein Netz zu finden, das einen Kompromiss zwischen Genauigkeit und Rechenzeit bietet.
+answer: Möglichst viele Elemente im gesamten Modell zu erzeugen.
+content:
+<em>Hinweis:</em> Ein gutes Netz liefert stabile Ergebnisse bei minimalem Aufwand – nicht das feinste, sondern das effizienteste Netz ist optimal.
+<?/quiz?>
+
+<?quiz?>
+question: Welcher visuelle Hinweis deutet auf eine <em>zu grobe</em> Vernetzung im Kerbgrund hin?
+answer: Homogene Farbfelder ohne Sprung.
+answer-correct: Deutliche Farbverläufe innerhalb einzelner Elemente bei hohen Gradienten.
+answer: Identische Elementgröße überall.
+content:
+<em>Tipp:</em> Ungemittelte Spannungen zur Beurteilung heranziehen.
+<?/quiz?>
+
+<?quiz?>
+question: Warum ist eine <strong>globale</strong> Verfeinerung für Kerbspannungen oft ineffizient?
+answer: Weil ANSYS globale Verfeinerung nicht unterstützt.
+answer-correct: Sie erhöht die Netzdichte auch in unkritischen Bereichen und verlängert die Rechenzeit ohne proportionalen Erkenntnisgewinn.
+answer: Sie verschlechtert die Spannungsauflösung im Kerbgrund.
+content:
+<em>Alternative:</em> Lokale Größensteuerung oder adaptive Vernetzung.
+<?/quiz?>
+
+<?quiz?>
+question: Wozu dienen <strong>schwache Federn</strong> in linearen statischen Analysen?
+answer: Zur Erhöhung des Elastizitätsmoduls <em>E</em>.
+answer-correct: Zur numerischen Stabilisierung bei unzureichender Lagerung, um Starrkörperbewegungen zu verhindern.
+answer: Zur lokalen Netzverfeinerung an Kerben.
+content:
+<em>Hinweis:</em> Meldungen über schwache Federn sind nicht zwangsläufig kritisch.
+<?/quiz?>
+
+<?quiz?>
+question: Was ist ein <strong>fokussiertes Ergebnis</strong> im Sinne der adaptiven Vernetzung?
+answer: Ein globales Maximum der Gesamtverformung.
+answer-correct: Ein gezielt ausgewähltes Teilergebnis auf Fläche, Linie oder Volumen, das die lokale Netzadaption steuert.
+answer: Eine reine Materialkonstante.
+content:
+<em>Nutzen:</em> Lokale Konvergenz trotz divergenter Zonen an anderen Stellen erreichen.
+<?/quiz?>
+<!-- markdownlint-enable MD033 -->
