@@ -66,6 +66,7 @@ plugins:
             - Installation und erste Schritte: 02_installation_erste_schritte.md
             - Modul 1 Kragbalken: 03_kragbalken.md
             - Modul 2 Kerbwirkung: 04_kerbwirkung.md
+            - Modul 3 Elementtypen/Netz: 05_elementtypen_netz.md
         - locale: en
           name: 🇬🇧 English
           build: true
@@ -75,5 +76,6 @@ plugins:
             - Installation and getting started: 02_installation_erste_schritte.en.md
             - Module 1 Cantilever Beam: 03_kragbalken.en.md
             - Module 2 Stress Concentration: 04_kerbwirkung.en.md
+            - Module 3 Element Types & Mesh: 05_elementtypen_netz.en.md
 
           
