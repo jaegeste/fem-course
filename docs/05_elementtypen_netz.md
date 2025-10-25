@@ -6,88 +6,299 @@
 
 Nach Abschluss dieses Moduls können die Studierenden:
 
-* den Unterschied zwischen linearen und quadratischen Ansatzfunktionen erläutern,  
-* den Einfluss der Elementordnung (z. B. SOLID185 vs. SOLID186) auf Genauigkeit und Spannungsverlauf bewerten,  
-* den Netzeinfluss gezielt eliminieren, um den Effekt der Ansatzfunktion isoliert zu betrachten,  
-* eine h-Studie durchführen und Konvergenz beurteilen,  
-* Ergebnisse mit analytischen Lösungen vergleichen und Abweichungen interpretieren,  
-* Kriterien zur Bewertung der Netzqualität anwenden (Aspektverhältnis, Verzerrung, Übergänge),  
-* die Bedeutung der Spannungs­glättung für Vergleichsspannungen erklären.
+* den Einfluss der Ansatzfunktionen und der Elementordnung (linear vs. quadratisch) auf die Genauigkeit eines FEM-Ergebnisses erläutern,  
+* den Zusammenhang zwischen Netzverfeinerung, Elementverzerrung und Ergebnisqualität bewerten,  
+* den Begriff der Konvergenz besser erklären und eine h-Studie (Netzeinflussstudie) durchführen,  
+* Spannungsverteilungen kritisch interpretieren und den Einfluss der Spannungs­glättung einschätzen,  
+* aus FEM-Ergebnissen ableiten, wann weitere Netzverfeinerung oder höhere Ansatzordnung erforderlich ist.
 
-## Theoretischer Hintergrund
+## Vertiefung der theoretischen Grundlagen
+
+Im vorherigen Kapitel wurde die Finite-Elemente-Methode in vereinfachter Form eingeführt. Dabei stand im Vordergrund, wie komplexe Bauteile durch eine diskrete Anzahl von Elementen angenähert und über Knotenpunkte miteinander verbunden werden.  
+
+In diesem Modul wird die theoretische Grundlage vertieft, auf der diese Methode basiert. Im Mittelpunkt stehen die mathematischen Prinzipien der Diskretisierung, die Form der Ansatzfunktionen  sowie der Einfluss der Elementordnung auf die Genauigkeit und Konvergenz des Ergebnisses. Diese Zusammenhänge bilden das Fundament, um die späteren FEM-Ergebnisse physikalisch korrekt zu interpretieren und den Einfluss der Netzqualität systematisch zu bewerten.
+
+## Theoretischer Hintergrund (nach Bielak[@Bielak2024])
+
+Zur Erinnerung: Die Finite-Elemente-Methode (FEM) beruht auf der Idee, ein kontinuierliches physikalisches System – etwa einen belasteten Stab oder eine Temperaturverteilung – in eine endliche Anzahl kleiner, einfach beschreibbarer Teilbereiche zu zerlegen.  
+Diese Teilbereiche werden als **Elemente** bezeichnet. Die Verbindungspunkte zwischen ihnen heißen **Knoten**.  
+
+Innerhalb jedes Elements wird das physikalische Verhalten (z. B. die Verschiebung \(u\)) nicht exakt, sondern durch eine einfache mathematische Funktion beschrieben. Diese Funktion wird als **Ansatzfunktion** bezeichnet.
+
+---
+
+### 1. Diskretisierung und Ansatzfunktion
+
+Statt das gesamte Bauteil kontinuierlich zu beschreiben, wird jedes Element einzeln betrachtet.  
+Für jedes Element gilt: Die Verschiebung zwischen den Knoten wird durch eine Ansatzfunktion angenähert.  
+
+Ein eindimensionaler Stab wird dazu in mehrere **Finite Elemente** zerlegt, deren Grenzen durch **Knotenpunkte** festgelegt sind.  
+Die folgende Abbildung zeigt ein solches Netz aus \(N\) Elementen.  
+Die Knoten sind entlang der Stabachse nummeriert, die Elemente werden mit \(\Omega_1, \Omega_2, \dots, \Omega_N\) bezeichnet.
+
+<br>
+
+[![Diskretisierung eines Stabes in Finite Elemente](media/05_elementtypen_netz/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_netz/01_FE_Discretizatio.png "Diskretisierung eines Stabes in Finite Elemente"){.glightbox} <span class="bildquelle">Bildquelle[@Bielak2024]</span>
+
+!!! note "Erläuterung zur Element- und Knotennummerierung"
+    * Zwischen zwei aufeinanderfolgenden Knoten \(x_i\) und \(x_{i+1}\) liegt jeweils ein Element \(\Omega_i\).
+  
+    * Die Knoten sind entlang der Stabachse fortlaufend nummeriert – von \(x_1\) bis \(x_{N+1}\).
+    * Der Index \(i\) steht stellvertretend für eine beliebige Position im Netz (z. B. \(i = 3\) für das dritte Element).
+    * Insgesamt gilt: Ein Netz mit \(N\) Elementen besitzt \(N + 1\) Knoten.
+
+---
+
+Jeder Knoten erhält eine eigene **Ansatzfunktion** \(\Phi_i(x)\), die im direkten Nachbarbereich ungleich null ist und außerhalb davon verschwindet. Diese Funktionen werden häufig auch als **Hutfunktionen** bezeichnet, da ihr Verlauf an die Form eines Daches erinnert.  
+
+Für die Gesamtlösung \(u(x)\) gilt:
+
+\[
+u(x) = \sum_{i=1}^{n} \Phi_i(x) \, u_i
+\]
+
+Jede Funktion \(\Phi_i(x)\) beschreibt also den Einfluss des Knotens \(i\) auf die Gesamtverschiebung.  
+Am eigenen Knoten gilt \(\Phi_i(x_i) = 1\), an allen anderen Knoten \(\Phi_i(x_j) = 0\).
+
+<br>
+
+[![Ansatzfunktionen für mehrere Knoten eines Stabes](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png){width=600px}](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png "Ansatzfunktionen für mehrere Knoten eines Stabes"){.glightbox}
+<span class="bildquelle">Bildquelle[@Bielak2024]</span>
+
+!!! note "Erläuterungen zu den Ansatzfunktionen"
+    * Jede Ansatzfunktion \(\Phi_i(x)\) besitzt nur eine **lokale Tragweite** – sie ist nur in den direkt angrenzenden Elementen aktiv und außerhalb dieses Bereichs null.  
+      Dadurch beeinflusst jeder Knoten nur seine unmittelbare Umgebung, was zur sparsamen Struktur der globalen Gleichungen führt.  
+
+    * Der Begriff **Hutfunktion** beschreibt ausschließlich die Form der **linearen Ansatzfunktionen**.  
+      Bei quadratischen oder höheren Elementen sind die Funktionen gekrümmt; sie erfüllen dieselben Bedingungen \(\Phi_i(x_i)=1\), \(\Phi_i(x_j)=0\), besitzen aber keine einfache Dachform mehr.
+
+    * Die Überlagerung aller Ansatzfunktionen ergibt die angenäherte Verschiebungsverteilung \(u(x)\) entlang des gesamten Bauteils.  
+      Damit wird das ursprünglich kontinuierliche Problem auf eine endliche Zahl von Freiheitsgraden – die Verschiebungen \(u_i\) an den Knoten – reduziert.
+
+---
+
+<!--
+### 2. Lineare Ansatzfunktionen (1D-Elemente)
+
+Das einfachste 1D-Element besitzt **zwei Knoten** und **lineare Shape Functions**.  
+Die Formfunktionen \(N_1(x)\) und \(N_2(x)\) verlaufen linear über das Element:
+
+\[
+N_1(x) = 1 - \frac{x}{L}, \qquad
+N_2(x) = \frac{x}{L}
+\]
+
+Die Verschiebung innerhalb des Elements ergibt sich damit zu:
+
+\[
+u(x) = N_1(x) \, u_1 + N_2(x) \, u_2
+\]
+
+Die Ableitung (Dehnung) \(\varepsilon = \frac{du}{dx}\) ist konstant, weshalb lineare Elemente **keinen gekrümmten Verlauf** darstellen können.  
+Sie liefern bei steilen Gradienten oder Geometrieübergängen nur grobe Näherungen.
+
+[![Lineare Shape Functions](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png){width=500px}](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png "Lineare Shape Functions"){.glightbox}
+
+<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.2]</span>
+
+---
+
+### 3. Quadratische Ansatzfunktionen
+
+Quadratische Elemente besitzen **drei Knoten** (zwei Rand- und einen Mittenknoten).  
+Die Ansatzfunktionen sind nun quadratisch:
+
+\[
+\begin{aligned}
+N_1(x) &= 1 - 3\xi + 2\xi^2, \\
+N_2(x) &= 4\xi(1 - \xi), \\
+N_3(x) &= 2\xi^2 - \xi,
+\end{aligned}
+\qquad \text{mit } \xi = \frac{x}{L}
+\]
+
+Dadurch können Krümmungen im Verlauf von \(u(x)\) und \(\sigma(x)\) abgebildet werden.  
+Quadratische Elemente liefern bei gleicher Netzgröße deutlich genauere Ergebnisse, sind aber rechenaufwändiger.
+
+[![Quadratische Shape Functions](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png){width=500px}](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png "Quadratische Shape Functions"){.glightbox}
+
+<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.10]</span>
+
+---
+
+### 4. Einfluss der Elementordnung
+
+Vergleicht man lineare und quadratische Elemente am gleichen Bauteil, so zeigt sich:
+
+* Quadratische Elemente approximieren den Spannungs- und Verschiebungsverlauf besser.  
+* Die Konvergenzgeschwindigkeit (Annäherung an die exakte Lösung) steigt mit der Ansatzordnung.  
+* Bei linearen Elementen muss die Netzgröße \(h\) stärker verringert werden, um vergleichbare Genauigkeit zu erreichen.
+
+[![Vergleich linear/quadratisch](media/05_elementtypen_netz/04_Linear_vs_Quadratic.png){width=500px}](media/05_elementtypen_netz/04_Linear_vs_Quadratic.png "Vergleich linear/quadratisch"){.glightbox}
+
+<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.11]</span>
+
+---
+
+### 5. Konvergenzverhalten und Netzqualität
+
+Die Qualität einer FEM-Lösung hängt sowohl von der **Elementgröße \(h\)** als auch von der **Elementordnung \(p\)** ab.  
+Für viele lineare Probleme gilt näherungsweise:
+
+\[
+\| e \| \propto h^p
+\]
+
+Das bedeutet:  
+
+* halbiert man die Elementlänge \(h\), reduziert sich der Fehler bei quadratischen Elementen etwa **viermal**, bei linearen nur **zweimal**.  
+* Eine Konvergenzprüfung (h-Studie) ist daher entscheidend, um Netzunabhängigkeit sicherzustellen.
+
+[![Konvergenzdiagramm h-p](media/05_elementtypen_netz/05_Convergence_hp.png){width=520px}](media/05_elementtypen_netz/05_Convergence_hp.png "Konvergenzdiagramm h-p"){.glightbox}
+
+<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.17]</span>
+
+---
+
+### 6. Ausblick: Elementtypen in ANSYS
+
+Das Prinzip der Ansatzfunktionen überträgt sich auf höhere Dimensionen:
+
+| Dimension | Beispiel-Elemente (ANSYS) | Knotenanzahl | Ansatzordnung |
+| :--------- | :------------------------ | :------------ | :-------------- |
+| **1D** | LINK180 | 2 / 3 | linear / quadratisch |
+| **2D** | PLANE182 / 183 | 4 / 8 | linear / quadratisch |
+| **3D** | SOLID185 / 186 | 8 / 20 | linear / quadratisch |
+
+In allen Fällen bleibt die mathematische Struktur gleich:  
+Shape-Functions interpolieren die Knotenwerte im Element.  
+Quadratische Elemente besitzen Mittenknoten, wodurch gekrümmte Geometrien und Spannungsfelder besser approximiert werden können.
+
+[![Übersicht Elementtypen 1D–3D](media/05_elementtypen_netz/06_Elementtypen_Uebersicht.png){width=600px}](media/05_elementtypen_netz/06_Elementtypen_Uebersicht.png "Übersicht Elementtypen 1D–3D"){.glightbox}
+
+<span class="bildquelle">Eigene Darstellung nach [@Bielak2024]</span>
+
+---
+
+### 7. Kernaussagen
+
+* Die Genauigkeit einer FEM-Analyse hängt wesentlich von **Elementordnung** und **Netzqualität** ab.  
+* Lineare Elemente liefern grobe Näherungen mit konstantem Spannungsverlauf.  
+* Quadratische Elemente erfassen Krümmungen realistischer und konvergieren schneller.  
+* Eine Konvergenzstudie (h-Studie) ist erforderlich, um Netzabhängigkeit zu prüfen.  
+* Gekrümmte Geometrien erfordern meist quadratische oder isoparametrische Elemente.
+
+---
+
+<span class="bildquelle">Quellen: [@Bielak2024]</span>
 
 <!--
 
-## Lernziele
+## 1. Kernkonzepte (Conceptual Overview)
 
-Nach Abschluss dieses Moduls können die Studierenden:
+### 1.1 Diskretisierung und Ansatzfunktion
 
-* den Unterschied zwischen linearen und quadratischen Ansatzfunktionen erläutern,  
-* den Einfluss der Elementordnung (z. B. SOLID185 vs. SOLID186) auf Genauigkeit und Spannungsverlauf bewerten,  
-* den Netzeinfluss gezielt eliminieren, um den Effekt der Ansatzfunktion isoliert zu betrachten,  
-* eine h-Studie durchführen und Konvergenz beurteilen,  
-* Ergebnisse mit analytischen Lösungen vergleichen und Abweichungen interpretieren,  
-* Kriterien zur Bewertung der Netzqualität anwenden (Aspektverhältnis, Verzerrung, Übergänge),  
-* die Bedeutung der Spannungs­glättung für Vergleichsspannungen erklären.
+Die Finite-Elemente-Methode approximiert die kontinuierliche Verschiebungsverteilung \(u(x)\) durch eine Kombination sogenannter *shape functions* \(N_i(x)\):
 
----
+\[
+u(x) \approx \sum_{i=1}^{n} N_i(x) \, u_i
+\]
 
-## Theoretischer Hintergrund
+Die Wahl der Ansatzfunktion bestimmt die **Ordnung des Elements**:
 
-Die Genauigkeit einer FEM-Analyse wird im Wesentlichen durch zwei Aspekte bestimmt:
+* **Linear (first order):** einfache, lineare Formfunktionen → günstiger, aber ungenauer.  
+* **Quadratisch (second order):** Mittenknoten → gekrümmte Geometrien und nichtlineare Spannungsverläufe darstellbar.  
 
-1. **Ansatzfunktion (Elementordnung)**  
-   Die Formfunktionen beschreiben, wie sich Verschiebungen innerhalb eines Elements verteilen.  
-   * Lineare Elemente (z. B. SOLID185) verwenden lineare Formfunktionen zwischen den Knoten.  
-   * Quadratische Elemente (z. B. SOLID186) besitzen zusätzliche Mittenknoten und können gekrümmte Geometrien sowie nichtlineare Spannungsverläufe besser abbilden.  
-   Quadratische Elemente liefern bei gleicher Netzfeinheit in der Regel deutlich genauere Ergebnisse, erfordern jedoch höhere Rechenzeiten und Speicherbedarf.
+Quadratische Elemente benötigen mehr Rechenzeit, liefern aber deutlich stabilere Ergebnisse bei gleichen Netzabständen.
 
-2. **Netzqualität und Konvergenz**  
-   Ein zu grobes oder verzerrtes Netz führt zu unphysikalischen Spannungsverteilungen.  
-   Durch systematische Netzverfeinerung (h-Studie) kann überprüft werden, ob die Lösung gegen einen stabilen Wert konvergiert.  
-   Nur konvergente Ergebnisse sind physikalisch aussagekräftig.  
-   Um den reinen Effekt der Elementordnung zu bewerten, muss der Netzeinfluss zuvor minimiert werden.
-
-**Spannungs­glättung:**  
-Die FEM berechnet Spannungen in den Integrationspunkten (Gauss-Punkten).  
-Zur Darstellung auf Knotenebene können Glättungsverfahren wie *Averaged Nodal Stress* verwendet werden.  
-Diese verbessern die visuelle Homogenität, dürfen aber keine numerischen Unsicherheiten überdecken.
+<span class="bildquelle">nach Bielak (2020), *The Finite Element Method – A Primer*, Kapitel 3</span>
 
 ---
 
-## Aufgabenstellung
+### 1.2 Konvergenz und Fehler
 
-1. Verwenden Sie den Zugstab mit Endplatte (oder ein vergleichbares 3D-Bauteil mit axialer Belastung).  
-2. Erzeugen Sie zunächst ein fein genuges Netz, sodass der Netzeinfluss weitgehend eliminiert ist.  
-3. Führen Sie anschließend Analysen mit **linearer** und **quadratischer Elementordnung** durch (*Element Order = Linear / Quadratic*).  
-4. Vergleichen Sie die Spannungsverteilung und die maximale Vergleichsspannung im Übergangsbereich.  
-5. Führen Sie zusätzlich eine h-Studie durch (Variation der Elementgröße) und dokumentieren Sie die Konvergenz.  
-6. Vergleichen Sie die FEM-Ergebnisse mit der **analytischen Lösung** für den Zugstab (\(\sigma = F/A\)).  
-7. Diskutieren Sie Rechenzeit, Speicherbedarf und Genauigkeit.
+Die FEM liefert eine Näherung \(u_h\), deren Genauigkeit vom **Diskretisierungsfehler** abhängt:
 
----
+\[
+e = u - u_h
+\]
 
-## Umsetzung in ANSYS Mechanical
+Ziel jeder Netz- oder Ordnungsstudie ist es, den Fehler zu minimieren.  
+Zwei Strategien sind möglich:
 
-1. Im Projektbaum _Netz → Details → Elementordnung_  
-   *Programmgesteuert / Linear / Quadratisch* auswählen.  
-2. Nach jeder Änderung **Netz generieren** und Ergebnisse kontrollieren.  
-3. Über _Extras → Protokoll anzeigen_ oder den Eintrag _Elementqualität_ den verwendeten Elementtyp prüfen.  
-4. Für die h-Studie: Elementgröße schrittweise halbieren und \(\sigma_\text{max}\) protokollieren.  
-5. Ergebnisse entlang einer Referenzlinie (z. B. Bauteilachse) auswerten und grafisch darstellen.  
-6. Analytische Vergleichsspannung \(\sigma_\text{ana} = F/A\) eintragen und Abweichung quantifizieren.
+* **h-Verfeinerung:** kleinere Elemente → dichteres Netz.  
+* **p-Verfeinerung:** höhere Ansatzordnung → komplexere Formfunktionen.
+
+Der Fehler nimmt typischerweise mit \(h^p\) ab, wobei \(p\) die Ordnung der Ansatzfunktion ist.  
+In der Praxis wird die Konvergenz überprüft, indem Ergebnisse (z. B. σ<sub>max</sub>) gegen die Elementgröße aufgetragen werden.
 
 ---
 
-## Diskussion der Ergebnisse
+### 1.3 Netzqualität
 
-* Quadratische Elemente bilden den Spannungsverlauf deutlich glatter und realistischer ab, insbesondere in Krafteinleitungsbereichen.  
-* Der Vergleich mit der analytischen Lösung zeigt, dass quadratische Elemente schneller konvergieren und geringere Abweichungen liefern.  
-* Bei linearer Elementordnung treten größere Unterschiede zwischen benachbarten Elementen und eine stärkere Abhängigkeit von der Netzfeinheit auf.  
-* Ein stabiler Vergleich der Elementordnungen ist nur möglich, wenn der Netzeinfluss zuvor durch Verfeinerung minimiert wurde.  
-* Spannungs­glättung verbessert die grafische Darstellung, ersetzt aber keine Konvergenzprüfung.  
-* Die Rechenzeit steigt mit höherer Elementordnung, bleibt jedoch bei moderaten Modellgrößen vertretbar.
+Ein feines Netz garantiert keine Genauigkeit, wenn die Elementform ungünstig ist.  
+Wichtige Qualitätskriterien:
 
+* **Aspektverhältnis:** Verhältnis längster zu kürzester Kante → sollte nahe 1 liegen.  
+* **Verzerrung:** Vermeidung stark verzogener Tetraeder oder schmaler Keile.  
+* **Übergänge:** gleichmäßige Übergänge zwischen feinen und groben Bereichen.
+
+Verzerrte Elemente führen oft zu unphysikalischen Spannungsverteilungen oder instabilen Konvergenzverläufen.
+
+---
+
+### 1.4 Spannungs­glättung und Ergebnisdarstellung
+
+Spannungen werden in der FEM an Integrationspunkten berechnet (Gauss-Punkte).  
+Zur Visualisierung auf Knotenebene werden Mittelwerte gebildet (*averaged nodal stress*).  
+
+Das verbessert die Lesbarkeit der Ergebnisse, ersetzt aber keine numerische Prüfung der Konvergenz.  
+Ein scheinbar „ruhiges“ Spannungsbild kann trügerisch sein, wenn das Netz zu grob oder verzerrt ist.
+
+---
+
+## 2. Guided Example – Influence of Element Type
+
+Ein axially loaded bar with varying cross-section is analysed analytically and with FEM.
+
+1. Define geometry and material:  
+   \(L = 100\,\text{mm}, E = 210\,\text{GPa}, A(x) = 50 - 0.4x\,\text{mm}^2\)
+2. Compute the analytical displacement \(u(x)\) and stress \(\sigma(x)\).
+3. Model the same bar in ANSYS with:
+   * linear elements (SOLID185)  
+   * quadratic elements (SOLID186)
+4. Compare σ<sub>max</sub> and u<sub>max</sub> for different mesh densities.
+
+Optional: perform an h-study to verify convergence.
+
+<span class="bildquelle">based on Bielak (2020) and Madenci & Guven (2015)</span>
+
+---
+
+## 3. Interpretation and Discussion
+
+* Quadratic elements converge faster and better reproduce the analytical stress distribution.  
+* Linear elements require finer meshes to reach similar accuracy.  
+* Mesh refinement should be concentrated in regions with high stress gradients.  
+* Smoothing affects visualization but not numerical accuracy.  
+* The optimal model balances **accuracy vs. computational cost**.
+
+---
+
+## 4. Key Takeaways
+
+* Accuracy depends on both **element order** and **mesh quality**.  
+* Converged results are independent of further mesh refinement.  
+* Quadratic elements often provide a better accuracy–cost ratio.  
+* Always verify convergence before interpreting stress results.
+
+---
+
+## Quellen
+
+* Bielak, J. (2020). *The Finite Element Method – A Primer*. Springer.  
+* Madenci, E., & Guven, I. (2015). *The Finite Element Method and Applications in Engineering Using ANSYS*. Springer.  
+* Gebhardt, C. (2021). *Praxisbuch FEM mit ANSYS Workbench*. Hanser.
 
 ---
 
