@@ -667,9 +667,6 @@ The refinement divides existing elements hierarchically into smaller sub-element
 
 [![Mesh refinement in ANSYS Mechanical](media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.en.png){width=700px}](media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.en.png "Mesh refinement in ANSYS Mechanical"){.glightbox}
 
-!!! warning "FIXME"
-    Screenshot is missing here.  16_Kerbwirkung_Verfeinerung_Netz.en.png
-
 ---
 
 ### Local Mesh Refinement – Tool _Element Size_ / _Sizing_
@@ -772,9 +769,6 @@ The principle of **adaptive meshing of a focused result** makes it possible to a
 
 [![Example of a focused result: Equivalent stress on a defined surface](media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png){width=700px}](media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png "Example of a focused result: Equivalent stress on a defined surface"){.glightbox}  
 
-!!! warning "FIXME"
-    Screenshot is missing here.  23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png
-
 **Procedure:**
 
 * Selection of the **focused result** as the criterion for mesh adaptation (e.g., equivalent stress on a surface instead of the entire body)  
@@ -784,9 +778,6 @@ The principle of **adaptive meshing of a focused result** makes it possible to a
 This results in an automatic **local mesh refinement** exclusively in the area of interest, while regions with **non-convergent behavior** are deliberately excluded.
 
 [![Adaptive meshing of a focused result – schematic representation](media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png){width=700px}](media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png "Adaptive meshing of a focused result – schematic representation"){.glightbox}  
-
-!!! warning "FIXME"
-    Screenshot is missing here.  24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png
 
 !!! note "Note"
     Focused results are typically used for **notches**, **contact surfaces**, **holes**, or **critical stress zones** to achieve a convergent solution there without unnecessarily increasing computation time through global refinements.

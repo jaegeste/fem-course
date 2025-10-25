@@ -2,6 +2,20 @@
 
 [![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
 
+## Lernziele
+
+Nach Abschluss dieses Moduls können die Studierenden:
+
+* den Unterschied zwischen linearen und quadratischen Ansatzfunktionen erläutern,  
+* den Einfluss der Elementordnung (z. B. SOLID185 vs. SOLID186) auf Genauigkeit und Spannungsverlauf bewerten,  
+* den Netzeinfluss gezielt eliminieren, um den Effekt der Ansatzfunktion isoliert zu betrachten,  
+* eine h-Studie durchführen und Konvergenz beurteilen,  
+* Ergebnisse mit analytischen Lösungen vergleichen und Abweichungen interpretieren,  
+* Kriterien zur Bewertung der Netzqualität anwenden (Aspektverhältnis, Verzerrung, Übergänge),  
+* die Bedeutung der Spannungs­glättung für Vergleichsspannungen erklären.
+
+## Theoretischer Hintergrund
+
 <!--
 
 ## Lernziele
@@ -9,8 +23,10 @@
 Nach Abschluss dieses Moduls können die Studierenden:
 
 * den Unterschied zwischen linearen und quadratischen Ansatzfunktionen erläutern,  
-* den Einfluss des Elementtyps (SOLID185 vs. SOLID186) auf Genauigkeit und Spannungsverlauf bewerten,  
+* den Einfluss der Elementordnung (z. B. SOLID185 vs. SOLID186) auf Genauigkeit und Spannungsverlauf bewerten,  
+* den Netzeinfluss gezielt eliminieren, um den Effekt der Ansatzfunktion isoliert zu betrachten,  
 * eine h-Studie durchführen und Konvergenz beurteilen,  
+* Ergebnisse mit analytischen Lösungen vergleichen und Abweichungen interpretieren,  
 * Kriterien zur Bewertung der Netzqualität anwenden (Aspektverhältnis, Verzerrung, Übergänge),  
 * die Bedeutung der Spannungs­glättung für Vergleichsspannungen erklären.
 
@@ -18,52 +34,60 @@ Nach Abschluss dieses Moduls können die Studierenden:
 
 ## Theoretischer Hintergrund
 
-Die Genauigkeit eines FEM-Ergebnisses hängt wesentlich von zwei Faktoren ab:
+Die Genauigkeit einer FEM-Analyse wird im Wesentlichen durch zwei Aspekte bestimmt:
 
 1. **Ansatzfunktion (Elementordnung)**  
-   Lineare Elemente (z. B. SOLID185) verwenden lineare Formfunktionen zwischen den Knoten, quadratische Elemente (z. B. SOLID186) beinhalten Mittenknoten und bilden gekrümmte Geometrien sowie nichtlineare Spannungsverläufe besser ab.  
-   Quadratische Elemente liefern bei gleichem Netz deutlich genauere Ergebnisse, erfordern aber mehr Rechenzeit.
+   Die Formfunktionen beschreiben, wie sich Verschiebungen innerhalb eines Elements verteilen.  
+   * Lineare Elemente (z. B. SOLID185) verwenden lineare Formfunktionen zwischen den Knoten.  
+   * Quadratische Elemente (z. B. SOLID186) besitzen zusätzliche Mittenknoten und können gekrümmte Geometrien sowie nichtlineare Spannungsverläufe besser abbilden.  
+   Quadratische Elemente liefern bei gleicher Netzfeinheit in der Regel deutlich genauere Ergebnisse, erfordern jedoch höhere Rechenzeiten und Speicherbedarf.
 
 2. **Netzqualität und Konvergenz**  
-   Eine zu grobe Diskretisierung oder verzerrte Elemente führen zu unphysikalischen Spannungsverteilungen.  
-   Durch Netzverfeinerung (h-Studie) wird überprüft, ob die Lösung gegen einen stabilen Wert konvergiert.  
-   Nur konvergente Ergebnisse sind physikalisch interpretierbar.
+   Ein zu grobes oder verzerrtes Netz führt zu unphysikalischen Spannungsverteilungen.  
+   Durch systematische Netzverfeinerung (h-Studie) kann überprüft werden, ob die Lösung gegen einen stabilen Wert konvergiert.  
+   Nur konvergente Ergebnisse sind physikalisch aussagekräftig.  
+   Um den reinen Effekt der Elementordnung zu bewerten, muss der Netzeinfluss zuvor minimiert werden.
 
 **Spannungs­glättung:**  
-Die FEM berechnet Spannungen an den Integration- bzw. Gauss-Punkten. Unterschiedliche Glättungsverfahren (z. B. averaged nodal stress) können die Darstellung glätten, dürfen aber keine numerische Unsicherheit verdecken.
+Die FEM berechnet Spannungen in den Integrationspunkten (Gauss-Punkten).  
+Zur Darstellung auf Knotenebene können Glättungsverfahren wie *Averaged Nodal Stress* verwendet werden.  
+Diese verbessern die visuelle Homogenität, dürfen aber keine numerischen Unsicherheiten überdecken.
 
 ---
 
 ## Aufgabenstellung
 
-1. Verwenden Sie den Zugstab mit Endplatte (oder ein ähnliches 3D-Bauteil mit axialer Belastung).  
-2. Erzeugen Sie zunächst ein Netz mit **linearer Elementordnung** (*Element Order = Linear*).  
-3. Führen Sie dieselbe Analyse mit **quadratischer Elementordnung** (*Element Order = Quadratic*) durch.  
+1. Verwenden Sie den Zugstab mit Endplatte (oder ein vergleichbares 3D-Bauteil mit axialer Belastung).  
+2. Erzeugen Sie zunächst ein fein genuges Netz, sodass der Netzeinfluss weitgehend eliminiert ist.  
+3. Führen Sie anschließend Analysen mit **linearer** und **quadratischer Elementordnung** durch (*Element Order = Linear / Quadratic*).  
 4. Vergleichen Sie die Spannungsverteilung und die maximale Vergleichsspannung im Übergangsbereich.  
-5. Variieren Sie zusätzlich die Elementgröße (h-Studie) und dokumentieren Sie die Konvergenz.  
-6. Diskutieren Sie Rechenzeit ↔ Genauigkeit.
+5. Führen Sie zusätzlich eine h-Studie durch (Variation der Elementgröße) und dokumentieren Sie die Konvergenz.  
+6. Vergleichen Sie die FEM-Ergebnisse mit der **analytischen Lösung** für den Zugstab (\(\sigma = F/A\)).  
+7. Diskutieren Sie Rechenzeit, Speicherbedarf und Genauigkeit.
 
 ---
 
 ## Umsetzung in ANSYS Mechanical
 
-1. Im Projektbaum **Netz → Details → Elementordnung:**  
-   *Programmgesteuert / Linear / Quadratisch* wählen.  
-2. Nach jeder Änderung **Netz generieren** und Ergebnis prüfen.  
-3. Zur Kontrolle des verwendeten Elementtyps:  
-   *Extras → Protokoll anzeigen* oder *Elementqualität* einfügen.  
-4. Für die h-Studie Elementgröße sukzessive halbieren und σ<sub>max</sub> protokollieren.  
-5. Spannungen entlang einer Achse oder auf einer Linie auswerten und grafisch darstellen.
+1. Im Projektbaum _Netz → Details → Elementordnung_  
+   *Programmgesteuert / Linear / Quadratisch* auswählen.  
+2. Nach jeder Änderung **Netz generieren** und Ergebnisse kontrollieren.  
+3. Über _Extras → Protokoll anzeigen_ oder den Eintrag _Elementqualität_ den verwendeten Elementtyp prüfen.  
+4. Für die h-Studie: Elementgröße schrittweise halbieren und \(\sigma_\text{max}\) protokollieren.  
+5. Ergebnisse entlang einer Referenzlinie (z. B. Bauteilachse) auswerten und grafisch darstellen.  
+6. Analytische Vergleichsspannung \(\sigma_\text{ana} = F/A\) eintragen und Abweichung quantifizieren.
 
 ---
 
 ## Diskussion der Ergebnisse
 
-* Quadratische Elemente bilden den Spannungsverlauf realistischer ab; der Unterschied zeigt sich deutlich im Krafteinleitungsbereich.  
-* Bei linearer Elementordnung treten größere Abweichungen zwischen benachbarten Elementen auf.  
-* Eine h-Studie zeigt, dass sich σ<sub>max</sub> bei Verfeinerung asymptotisch einem stabilen Wert annähert.  
-* Netzfehler (zu schlanke oder verzerrte Elemente) können Konvergenz verhindern.  
-* Spannungs­glättung kann qualitative Trends verbessern, ersetzt aber keine Konvergenzprüfung.
+* Quadratische Elemente bilden den Spannungsverlauf deutlich glatter und realistischer ab, insbesondere in Krafteinleitungsbereichen.  
+* Der Vergleich mit der analytischen Lösung zeigt, dass quadratische Elemente schneller konvergieren und geringere Abweichungen liefern.  
+* Bei linearer Elementordnung treten größere Unterschiede zwischen benachbarten Elementen und eine stärkere Abhängigkeit von der Netzfeinheit auf.  
+* Ein stabiler Vergleich der Elementordnungen ist nur möglich, wenn der Netzeinfluss zuvor durch Verfeinerung minimiert wurde.  
+* Spannungs­glättung verbessert die grafische Darstellung, ersetzt aber keine Konvergenzprüfung.  
+* Die Rechenzeit steigt mit höherer Elementordnung, bleibt jedoch bei moderaten Modellgrößen vertretbar.
+
 
 ---
 
