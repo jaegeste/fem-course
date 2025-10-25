@@ -14,6 +14,8 @@
         <link rel="prev" href="../03_kragbalken/">
       
       
+        <link rel="next" href="../05_elementtypen_netz/">
+      
       
       <link rel="icon" href="../../media/logo/hfu_logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
@@ -470,6 +472,28 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_elementtypen_netz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 3 Element Types & Mesh
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -1187,11 +1211,7 @@ A visually uniform stress field without abrupt color changes usually indicates g
 <li><em>Refinement:</em> Specifies how many times the base mesh should be refined. The default value is <strong>1</strong>.  </li>
 </ul>
 <p>The refinement divides existing elements hierarchically into smaller sub-elements, maintaining the original element topology (e.g., tetrahedrons, hexahedrons). The refinement level defines how many times the elements are subdivided; for <em>Refinement = 1</em>, for example, eight smaller tetrahedral elements are created. The method is not based on an absolute element size but on relative subdivision ratios, resulting in a smooth mesh transition without abrupt jumps.</p>
-<p><a class="glightbox" href="media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.en.png" title="Mesh refinement in ANSYS Mechanical"><img alt="Mesh refinement in ANSYS Mechanical" src="media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.en.png" width="700px" /></a></p>
-<div class="admonition warning">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot is missing here.  16_Kerbwirkung_Verfeinerung_Netz.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.png" title="Mesh refinement in ANSYS Mechanical"><img alt="Mesh refinement in ANSYS Mechanical" src="../media/04_kerbwirkung/16_Kerbwirkung_Verfeinerung_Netz.png" width="700px" /></a></p>
 <hr />
 <h3 id="local-mesh-refinement-tool-element-size-sizing">Local Mesh Refinement – Tool <em>Element Size</em> / <em>Sizing</em><a class="headerlink" href="#local-mesh-refinement-tool-element-size-sizing" title="Permanent link">&para;</a></h3>
 <p>The <strong>Sizing</strong> tool is used for targeted control of the <strong>local element size</strong> in defined areas. This allows critical geometric zones – such as notch radii, holes, or transitions – to be represented with higher accuracy without refining the entire model.</p>
@@ -1273,11 +1293,7 @@ It significantly reduces computation time compared to global refinement while pr
 </ul>
 <p>In contrast to global results, adaptive mesh refinement can thus be performed <strong>not across the entire model</strong>, but <strong>only in relevant areas</strong>. The decision regarding which region is examined in a focused manner is typically based on a global analysis.  </p>
 <p>The principle of <strong>adaptive meshing of a focused result</strong> makes it possible to achieve a <strong>convergent solution</strong> in a defined subregion, even if <strong>divergences</strong> occur in other areas (e.g., at fixed supports or point loads).</p>
-<p><a class="glightbox" href="media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png" title="Example of a focused result: Equivalent stress on a defined surface"><img alt="Example of a focused result: Equivalent stress on a defined surface" src="media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png" width="700px" /></a>  </p>
-<div class="admonition warning">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot is missing here.  23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.png" title="Example of a focused result: Equivalent stress on a defined surface"><img alt="Example of a focused result: Equivalent stress on a defined surface" src="../media/04_kerbwirkung/23_Kerbwirkung_Adaptive_Vernetzung_Fokusbereich.png" width="700px" /></a>  </p>
 <p><strong>Procedure:</strong></p>
 <ul>
 <li>Selection of the <strong>focused result</strong> as the criterion for mesh adaptation (e.g., equivalent stress on a surface instead of the entire body)  </li>
@@ -1285,11 +1301,7 @@ It significantly reduces computation time compared to global refinement while pr
 <li>Definition of the <strong>allowable change</strong> (e.g., stress change &lt; 5 % per iteration)  </li>
 </ul>
 <p>This results in an automatic <strong>local mesh refinement</strong> exclusively in the area of interest, while regions with <strong>non-convergent behavior</strong> are deliberately excluded.</p>
-<p><a class="glightbox" href="media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png" title="Adaptive meshing of a focused result – schematic representation"><img alt="Adaptive meshing of a focused result – schematic representation" src="media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png" width="700px" /></a>  </p>
-<div class="admonition warning">
-<p class="admonition-title">FIXME</p>
-<p>Screenshot is missing here.  24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.en.png</p>
-</div>
+<p><a class="glightbox" href="../media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png" title="Adaptive meshing of a focused result – schematic representation"><img alt="Adaptive meshing of a focused result – schematic representation" src="../media/04_kerbwirkung/24_Kerbwirkung_Adaptive_Vernetzung_Fokusergebnis.png" width="700px" /></a>  </p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Focused results are typically used for <strong>notches</strong>, <strong>contact surfaces</strong>, <strong>holes</strong>, or <strong>critical stress zones</strong> to achieve a convergent solution there without unnecessarily increasing computation time through global refinements.</p>
