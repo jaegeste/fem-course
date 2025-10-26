@@ -29,20 +29,20 @@ Innerhalb jedes Elements wird das physikalische Verhalten (z. B. die Verschiebun
 
 ### 1. Diskretisierung und Ansatzfunktion
 
-Statt das gesamte Bauteil kontinuierlich zu beschreiben, wird jedes Element einzeln betrachtet.  
-Für jedes Element gilt: Die Verschiebung zwischen den Knoten wird durch eine Ansatzfunktion angenähert.  
+Statt das gesamte Bauteil kontinuierlich zu beschreiben, wird jedes Element einzeln betrachtet. Für jedes Element gilt: Die Verschiebung zwischen den Knoten wird durch eine Ansatzfunktion angenähert.  
 
-Ein eindimensionaler Stab wird dazu in mehrere **Finite Elemente** zerlegt, deren Grenzen durch **Knotenpunkte** festgelegt sind.  
-Die folgende Abbildung zeigt ein solches Netz aus \(N\) Elementen.  
-Die Knoten sind entlang der Stabachse nummeriert, die Elemente werden mit \(\Omega_1, \Omega_2, \dots, \Omega_N\) bezeichnet.
+Ein eindimensionaler Stab wird dazu in mehrere **Finite Elemente** zerlegt, deren Grenzen durch **Knotenpunkte** festgelegt sind. Die folgende Abbildung zeigt ein solches Netz aus \(N\) Elementen. Die Knoten sind entlang der Stabachse nummeriert, die Elemente werden mit \(\Omega_1, \Omega_2, \dots, \Omega_N\) bezeichnet.
 
+<!-- markdownlint-disable MD033 -->
 <br>
+<!-- markdownlint-enable MD033 -->
 
-[![Diskretisierung eines Stabes in Finite Elemente](media/05_elementtypen_netz/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_netz/01_FE_Discretizatio.png "Diskretisierung eines Stabes in Finite Elemente"){.glightbox} <span class="bildquelle">Bildquelle[@Bielak2024]</span>
+[![Diskretisierung eines Stabes in Finite Elemente](media/05_elementtypen_netz/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_netz/01_FE_Discretizatio.png "Diskretisierung eines Stabes in Finite Elemente"){.glightbox}
+<span class="bildquelle">Bildquelle[@Bielak2024]</span>
 
 !!! note "Erläuterung zur Element- und Knotennummerierung"
+
     * Zwischen zwei aufeinanderfolgenden Knoten \(x_i\) und \(x_{i+1}\) liegt jeweils ein Element \(\Omega_i\).
-  
     * Die Knoten sind entlang der Stabachse fortlaufend nummeriert – von \(x_1\) bis \(x_{N+1}\).
     * Der Index \(i\) steht stellvertretend für eine beliebige Position im Netz (z. B. \(i = 3\) für das dritte Element).
     * Insgesamt gilt: Ein Netz mit \(N\) Elementen besitzt \(N + 1\) Knoten.
@@ -57,10 +57,11 @@ Für die Gesamtlösung \(u(x)\) gilt:
 u(x) = \sum_{i=1}^{n} \Phi_i(x) \, u_i
 \]
 
-Jede Funktion \(\Phi_i(x)\) beschreibt also den Einfluss des Knotens \(i\) auf die Gesamtverschiebung.  
-Am eigenen Knoten gilt \(\Phi_i(x_i) = 1\), an allen anderen Knoten \(\Phi_i(x_j) = 0\).
+Jede Funktion \(\Phi_i(x)\) beschreibt also den Einfluss des Knotens \(i\) auf die Gesamtverschiebung. Am eigenen Knoten gilt \(\Phi_i(x_i) = 1\), an allen anderen Knoten \(\Phi_i(x_j) = 0\).
 
+<!-- markdownlint-disable MD033 -->
 <br>
+<!-- markdownlint-enable MD033 -->
 
 [![Ansatzfunktionen für mehrere Knoten eines Stabes](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png){width=600px}](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png "Ansatzfunktionen für mehrere Knoten eines Stabes"){.glightbox}
 <span class="bildquelle">Bildquelle[@Bielak2024]</span>
@@ -77,55 +78,92 @@ Am eigenen Knoten gilt \(\Phi_i(x_i) = 1\), an allen anderen Knoten \(\Phi_i(x_j
 
 ---
 
-<!--
 ### 2. Lineare Ansatzfunktionen (1D-Elemente)
 
-Das einfachste 1D-Element besitzt **zwei Knoten** und **lineare Shape Functions**.  
-Die Formfunktionen \(N_1(x)\) und \(N_2(x)\) verlaufen linear über das Element:
+Die im vorherigen Abschnitt eingeführte allgemeine Näherung  
 
 \[
-N_1(x) = 1 - \frac{x}{L}, \qquad
-N_2(x) = \frac{x}{L}
+u(x) = \sum_{i=1}^{n} \Phi_i(x)\,u_i
 \]
 
-Die Verschiebung innerhalb des Elements ergibt sich damit zu:
+gilt für das gesamte System. Betrachtet man nun **ein einzelnes Element** mit **zwei Knoten** an den Positionen \(x_1 = 0\) und \(x_2 = L\), so reduziert sich der Ausdruck auf zwei lokale Ansatzfunktionen \(N_1(x)\) und \(N_2(x)\):
 
 \[
-u(x) = N_1(x) \, u_1 + N_2(x) \, u_2
+u(x) = N_1(x)\,u_1 + N_2(x)\,u_2
 \]
 
-Die Ableitung (Dehnung) \(\varepsilon = \frac{du}{dx}\) ist konstant, weshalb lineare Elemente **keinen gekrümmten Verlauf** darstellen können.  
-Sie liefern bei steilen Gradienten oder Geometrieübergängen nur grobe Näherungen.
+Die Aufgabe besteht nun darin, diese \(N_i(x)\) so zu bestimmen, dass sie die Interpolationsbedingungen
 
-[![Lineare Shape Functions](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png){width=500px}](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png "Lineare Shape Functions"){.glightbox}
+\[
+N_1(0)=1,\; N_1(L)=0, \qquad N_2(0)=0,\; N_2(L)=1
+\]
 
-<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.2]</span>
+erfüllen. Da die Verschiebung zwischen den Knoten linear verlaufen soll, wird angenommen:
 
----
+\[
+u(x) = a + bx
+\]
 
-### 3. Quadratische Ansatzfunktionen
+Einsetzen der Randbedingungen liefert:
 
-Quadratische Elemente besitzen **drei Knoten** (zwei Rand- und einen Mittenknoten).  
-Die Ansatzfunktionen sind nun quadratisch:
+\[
+u(0)=u_1,\quad u(L)=u_2 \;\Rightarrow\; u(x)=u_1+\frac{u_2-u_1}{L}\,x
+\]
+
+Vergleicht man diesen Ausdruck mit \(u(x)=N_1(x)u_1+N_2(x)u_2\), so ergeben sich die **linearen Ansatzfunktionen**:
+
+\[
+N_1(x)=1-\frac{x}{L}, \qquad N_2(x)=\frac{x}{L}
+\]
+
+Die Ableitung nach der Koordinate \(x\) ergibt die konstante Dehnung \(\varepsilon=\frac{du}{dx}\). Lineare Elemente können daher **nur lineare Verformungsverläufe** abbilden.  
+Bei gekrümmten oder stark veränderlichen Verläufen – etwa in der Nähe von Kerben oder Kontaktzonen – liefern sie nur eine grobe Näherung. Eine höhere Genauigkeit wird dort durch feinere Netze oder höhergradige Ansatzfunktionen erreicht.
+
+### 3. Quadratische Ansatzfunktionen (1D-Elemente)
+
+Quadratische Elemente besitzen **drei Knoten** – zwei Randknoten und einen Mittenknoten.  
+Im Gegensatz zu linearen Elementen verlaufen die Ansatzfunktionen nun **quadratisch** und können dadurch auch **gekrümmte Verformungen** innerhalb des Elements abbilden.
+
+<!-- markdownlint-disable MD033 -->
+<br>
+<!-- markdownlint-enable MD033 -->
+
+[![Quadratische Ansatzfunktionen eines 1D-Elements](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png){width=550px}](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png "Quadratische Ansatzfunktionen eines 1D-Elements"){.glightbox}
+<span class="bildquelle">Bildquelle [@Bielak2024]</span>
+
+In der Abbildung sind die drei **Formfunktionen** \(\Phi_1(\xi)\), \(\Phi_2(\xi)\) und \(\Phi_3(\xi)\) dargestellt.  
+
+* \(\Phi_1(\xi)\) und \(\Phi_3(\xi)\) verlaufen jeweils durch die Randknoten und verschwinden an den anderen Knoten.  
+* \(\Phi_2(\xi)\) besitzt ihr Maximum im Mittenknoten und geht an den Rändern gegen null.  
+
+Zur Beschreibung wird häufig die **normierte Koordinate**
+
+\[
+\xi = \frac{x}{L}
+\]
+
+verwendet, sodass das Element im Intervall \(0 \le \xi \le 1\) liegt.  
+Die drei Ansatzfunktionen lauten:
 
 \[
 \begin{aligned}
-N_1(x) &= 1 - 3\xi + 2\xi^2, \\
-N_2(x) &= 4\xi(1 - \xi), \\
-N_3(x) &= 2\xi^2 - \xi,
+\Phi_1(\xi) &= 1 - 3\xi + 2\xi^2, \\
+\Phi_2(\xi) &= 4\xi(1 - \xi), \\
+\Phi_3(\xi) &= 2\xi^2 - \xi
 \end{aligned}
-\qquad \text{mit } \xi = \frac{x}{L}
 \]
 
-Dadurch können Krümmungen im Verlauf von \(u(x)\) und \(\sigma(x)\) abgebildet werden.  
-Quadratische Elemente liefern bei gleicher Netzgröße deutlich genauere Ergebnisse, sind aber rechenaufwändiger.
+Damit ergibt sich die Verschiebung innerhalb des Elements zu:
 
-[![Quadratische Shape Functions](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png){width=500px}](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png "Quadratische Shape Functions"){.glightbox}
+\[
+u(\xi) = \Phi_1(\xi)\,u_1 + \Phi_2(\xi)\,u_2 + \Phi_3(\xi)\,u_3
+\]
 
-<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.10]</span>
+Quadratische Elemente können sowohl **lineare als auch gekrümmte Verläufe** der Verschiebung \(u(x)\) und der Spannung \(\sigma(x)\) darstellen.  
+Bei gleicher Netzgröße liefern sie deutlich genauere Ergebnisse als lineare Elemente, sind jedoch aufgrund der zusätzlichen Freiheitsgrade pro Element rechenintensiver.
 
----
 
+<!--
 ### 4. Einfluss der Elementordnung
 
 Vergleicht man lineare und quadratische Elemente am gleichen Bauteil, so zeigt sich:
