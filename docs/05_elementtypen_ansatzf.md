@@ -300,8 +300,6 @@ Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart un
     * **SOLID70 / SOLID90:** stationäre / transiente Wärmeleitung  
     * **SURF152:** Wärmeaustausch über Oberflächen  
 
-[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
-
 ## Aufgabenstellung Zugstab mit Querschnittsänderung
 
 Untersucht wird der Einfluss der **Elementordnung** und der **Netzauflösung** auf die Ergebnisqualität einer FEM-Berechnung. Als Beispiel dient der **Zugstab mit kreisförmigem Übergang** (nach Schier[@Schier2023]).  
@@ -411,6 +409,8 @@ Die maximale Spannung im kleinsten Querschnitt mit \( A_\text{min} = 50{,}3\,\te
 
 !!! Note "Kontinuierliche vs. diskrete Beschreibung"
     Die analytische Lösung beschreibt den **kontinuierlichen Verlauf** der Verschiebung entlang der Stablänge. In der Finite-Elemente-Methode wird derselbe Zusammenhang **diskretisiert**, indem der Stab in Teilbereiche zerlegt wird. Innerhalb jedes Elements erfolgt die Approximation des Verschiebungsverlaufs über Ansatzfunktionen, sodass die Integration über das Gebiet schrittweise (lokal) erfolgt. Bei hinreichend feiner Netzauflösung konvergiert das FEM-Ergebnis gegen die analytische Lösung.
+
+[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
 
 <!--
 
