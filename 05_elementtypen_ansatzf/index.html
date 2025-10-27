@@ -1,0 +1,1045 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/05_elementtypen_ansatzf/">
+      
+      
+        <link rel="prev" href="../04_kerbwirkung/">
+      
+      
+      
+      <link rel="icon" href="../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Modul 3 Elementtypen/Ansatzfunktionen - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../overrides/main.css">
+    
+      <link rel="stylesheet" href="../overrides/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modul-3-elementtypen-und-ansatzfunktionen" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modul 3 Elementtypen/Ansatzfunktionen
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/05_elementtypen_ansatzf/" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Startseite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Einführung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation und erste Schritte
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_kragbalken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 1 Kragbalken
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 2 Kerbwirkung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Modul 3 Elementtypen/Ansatzfunktionen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 3 Elementtypen/Ansatzfunktionen
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansatzfunktion-theoretischer-hintergrund-nach-bielak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansatzfunktion (Theoretischer Hintergrund nach Bielak)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konvergenzverhalten-und-netzqualitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konvergenzverhalten und Netzqualität
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementtypen-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elementtypen in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ansatzfunktion-theoretischer-hintergrund-nach-bielak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Ansatzfunktion (Theoretischer Hintergrund nach Bielak)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#konvergenzverhalten-und-netzqualitat" class="md-nav__link">
+    <span class="md-ellipsis">
+      Konvergenzverhalten und Netzqualität
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#elementtypen-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Elementtypen in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="modul-3-elementtypen-und-ansatzfunktionen">Modul 3 Elementtypen und Ansatzfunktionen<a class="headerlink" href="#modul-3-elementtypen-und-ansatzfunktionen" title="Permanent link">&para;</a></h1>
+<h2 id="lernziele">Lernziele<a class="headerlink" href="#lernziele" title="Permanent link">&para;</a></h2>
+<p>Nach Abschluss dieses Moduls können die Studierenden:</p>
+<ul>
+<li>den Einfluss der Ansatzfunktionen und der Elementordnung (linear vs. quadratisch) auf die Genauigkeit eines FEM-Ergebnisses erläutern,  </li>
+<li>den Zusammenhang zwischen Netzverfeinerung, Elementverzerrung und Ergebnisqualität bewerten,  </li>
+<li>den Begriff der Konvergenz besser erklären und eine h-Studie (Netzeinflussstudie) durchführen,  </li>
+<li>aus FEM-Ergebnissen ableiten, wann weitere Netzverfeinerung oder höhere Ansatzordnung erforderlich ist.</li>
+</ul>
+<h2 id="ansatzfunktion-theoretischer-hintergrund-nach-bielak">Ansatzfunktion (Theoretischer Hintergrund nach Bielak<sup id="fnref:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup>)<a class="headerlink" href="#ansatzfunktion-theoretischer-hintergrund-nach-bielak" title="Permanent link">&para;</a></h2>
+<p>Im vorherigen Kapitel wurde die Finite-Elemente-Methode in vereinfachter Form eingeführt. Dabei stand im Vordergrund, wie komplexe Bauteile durch eine diskrete Anzahl von Elementen angenähert und über Knotenpunkte miteinander verbunden werden.  </p>
+<p>In diesem Modul wird die theoretische Grundlage vertieft, auf der diese Methode basiert. Im Mittelpunkt stehen die mathematischen Prinzipien der Diskretisierung, die Form der Ansatzfunktionen  sowie der Einfluss der Elementordnung auf die Genauigkeit und Konvergenz des Ergebnisses. Diese Zusammenhänge bilden das Fundament, um die späteren FEM-Ergebnisse physikalisch korrekt zu interpretieren und den Einfluss der Netzqualität systematisch zu bewerten.</p>
+<p>FEM beruht auf der Idee, ein kontinuierliches physikalisches System in eine endliche Anzahl kleiner, einfach beschreibbarer Teilbereiche zu zerlegen. Diese Teilbereiche werden als <strong>Elemente</strong> bezeichnet. Die Verbindungspunkte zwischen ihnen heißen <strong>Knoten</strong>.  </p>
+<p>Innerhalb jedes Elements wird das physikalische Verhalten (z. B. die Verschiebung <span class="arithmatex">\(u\)</span>) nicht exakt, sondern durch eine einfache mathematische Funktion beschrieben. Diese Funktion wird als <strong>Ansatzfunktion</strong> bezeichnet.</p>
+<hr />
+<h3 id="diskretisierung-und-ansatzfunktion">Diskretisierung und Ansatzfunktion<a class="headerlink" href="#diskretisierung-und-ansatzfunktion" title="Permanent link">&para;</a></h3>
+<p>Statt das gesamte Bauteil kontinuierlich zu beschreiben, wird jedes Element einzeln betrachtet. Für jedes Element gilt: Die Verschiebung zwischen den Knoten wird durch eine Ansatzfunktion angenähert.  </p>
+<p>Ein eindimensionaler Stab wird dazu in mehrere <strong>Finite Elemente</strong> zerlegt, deren Grenzen durch <strong>Knotenpunkte</strong> festgelegt sind. Die folgende Abbildung zeigt ein solches Netz aus <span class="arithmatex">\(N\)</span> Elementen. Die Knoten sind entlang der Stabachse nummeriert, die Elemente werden mit <span class="arithmatex">\(\Omega_1, \Omega_2, \dots, \Omega_N\)</span> bezeichnet.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../media/05_elementtypen_netz/01_FE_Discretizatio.png" title="Diskretisierung eines Stabes in Finite Elemente"><img alt="Diskretisierung eines Stabes in Finite Elemente" src="../media/05_elementtypen_netz/01_FE_Discretizatio.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref2:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<div class="admonition note">
+<p class="admonition-title">Erläuterung zur Element- und Knotennummerierung</p>
+<ul>
+<li>Zwischen zwei aufeinanderfolgenden Knoten <span class="arithmatex">\(x_i\)</span> und <span class="arithmatex">\(x_{i+1}\)</span> liegt jeweils ein Element <span class="arithmatex">\(\Omega_i\)</span>.</li>
+<li>Die Knoten sind entlang der Stabachse fortlaufend nummeriert – von <span class="arithmatex">\(x_1\)</span> bis <span class="arithmatex">\(x_{N+1}\)</span>.</li>
+<li>Der Index <span class="arithmatex">\(i\)</span> steht stellvertretend für eine beliebige Position im Netz (z. B. <span class="arithmatex">\(i = 3\)</span> für das dritte Element).</li>
+<li>Insgesamt gilt: Ein Netz mit <span class="arithmatex">\(N\)</span> Elementen besitzt <span class="arithmatex">\(N + 1\)</span> Knoten.</li>
+</ul>
+</div>
+<hr />
+<p>Jeder Knoten erhält eine eigene <strong>Ansatzfunktion</strong> <span class="arithmatex">\(\Phi_i(x)\)</span>, die im direkten Nachbarbereich ungleich null ist und außerhalb davon verschwindet. Diese Funktionen werden häufig auch als <strong>Hutfunktionen</strong> bezeichnet, da ihr Verlauf an die Form eines Daches erinnert.  </p>
+<p>Für die Gesamtlösung <span class="arithmatex">\(u(x)\)</span> gilt:</p>
+<div class="arithmatex">\[
+u(x) = \sum_{i=1}^{n} \Phi_i(x) \, u_i
+\]</div>
+<p>Jede Funktion <span class="arithmatex">\(\Phi_i(x)\)</span> beschreibt also den Einfluss des Knotens <span class="arithmatex">\(i\)</span> auf die Gesamtverschiebung. Am eigenen Knoten gilt <span class="arithmatex">\(\Phi_i(x_i) = 1\)</span>, an allen anderen Knoten <span class="arithmatex">\(\Phi_i(x_j) = 0\)</span>.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../media/05_elementtypen_netz/02_ShapeFunctions_Linear.png" title="Ansatzfunktionen für mehrere Knoten eines Stabes"><img alt="Ansatzfunktionen für mehrere Knoten eines Stabes" src="../media/05_elementtypen_netz/02_ShapeFunctions_Linear.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref3:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<div class="admonition note">
+<p class="admonition-title">Erläuterungen zu den Ansatzfunktionen</p>
+<ul>
+<li>
+<p>Jede Ansatzfunktion <span class="arithmatex">\(\Phi_i(x)\)</span> besitzt nur eine <strong>lokale Tragweite</strong> – sie ist nur in den direkt angrenzenden Elementen aktiv und außerhalb dieses Bereichs null.<br />
+  Dadurch beeinflusst jeder Knoten nur seine unmittelbare Umgebung, was zur sparsamen Struktur der globalen Gleichungen führt.  </p>
+</li>
+<li>
+<p>Der Begriff <strong>Hutfunktion</strong> beschreibt ausschließlich die Form der <strong>linearen Ansatzfunktionen</strong>.<br />
+  Bei quadratischen oder höheren Elementen sind die Funktionen gekrümmt; sie erfüllen dieselben Bedingungen <span class="arithmatex">\(\Phi_i(x_i)=1\)</span>, <span class="arithmatex">\(\Phi_i(x_j)=0\)</span>, besitzen aber keine einfache Dachform mehr.</p>
+</li>
+<li>
+<p>Die Überlagerung aller Ansatzfunktionen ergibt die angenäherte Verschiebungsverteilung <span class="arithmatex">\(u(x)\)</span> entlang des gesamten Bauteils.<br />
+  Damit wird das ursprünglich kontinuierliche Problem auf eine endliche Zahl von Freiheitsgraden – die Verschiebungen <span class="arithmatex">\(u_i\)</span> an den Knoten – reduziert.</p>
+</li>
+</ul>
+</div>
+<hr />
+<h3 id="lineare-ansatzfunktionen-1d-elemente">Lineare Ansatzfunktionen (1D-Elemente)<a class="headerlink" href="#lineare-ansatzfunktionen-1d-elemente" title="Permanent link">&para;</a></h3>
+<p>Die im vorherigen Abschnitt eingeführte allgemeine Näherung  </p>
+<div class="arithmatex">\[
+u(x) = \sum_{i=1}^{n} \Phi_i(x)\,u_i
+\]</div>
+<p>gilt für das gesamte System. Betrachtet man nun <strong>ein einzelnes Element</strong> mit <strong>zwei Knoten</strong> an den Positionen <span class="arithmatex">\(x_1 = 0\)</span> und <span class="arithmatex">\(x_2 = L\)</span>, so reduziert sich der Ausdruck auf zwei lokale Ansatzfunktionen <span class="arithmatex">\(N_1(x)\)</span> und <span class="arithmatex">\(N_2(x)\)</span>:</p>
+<div class="arithmatex">\[
+u(x) = N_1(x)\,u_1 + N_2(x)\,u_2
+\]</div>
+<p>Die Aufgabe besteht nun darin, diese <span class="arithmatex">\(N_i(x)\)</span> so zu bestimmen, dass sie die Interpolationsbedingungen</p>
+<div class="arithmatex">\[
+N_1(0)=1,\; N_1(L)=0, \qquad N_2(0)=0,\; N_2(L)=1
+\]</div>
+<p>erfüllen. Da die Verschiebung zwischen den Knoten linear verlaufen soll, wird angenommen:</p>
+<div class="arithmatex">\[
+u(x) = a + bx
+\]</div>
+<p>Einsetzen der Randbedingungen liefert:</p>
+<div class="arithmatex">\[
+u(0)=u_1,\quad u(L)=u_2 \;\Rightarrow\; u(x)=u_1+\frac{u_2-u_1}{L}\,x
+\]</div>
+<p>Vergleicht man diesen Ausdruck mit <span class="arithmatex">\(u(x)=N_1(x)u_1+N_2(x)u_2\)</span>, so ergeben sich die <strong>linearen Ansatzfunktionen</strong>:</p>
+<div class="arithmatex">\[
+N_1(x)=1-\frac{x}{L}, \qquad N_2(x)=\frac{x}{L}
+\]</div>
+<p>Die Ableitung nach der Koordinate <span class="arithmatex">\(x\)</span> ergibt die konstante Dehnung <span class="arithmatex">\(\varepsilon=\frac{du}{dx}\)</span>. Lineare Elemente können daher <strong>nur lineare Verformungsverläufe</strong> abbilden.<br />
+Bei gekrümmten oder stark veränderlichen Verläufen – etwa in der Nähe von Kerben oder Kontaktzonen – liefern sie nur eine grobe Näherung. Eine höhere Genauigkeit wird dort durch feinere Netze oder höhergradige Ansatzfunktionen erreicht.</p>
+<h3 id="quadratische-ansatzfunktionen-1d-elemente">Quadratische Ansatzfunktionen (1D-Elemente)<a class="headerlink" href="#quadratische-ansatzfunktionen-1d-elemente" title="Permanent link">&para;</a></h3>
+<p>Quadratische Elemente besitzen <strong>drei Knoten</strong> – zwei Randknoten und einen Mittenknoten.<br />
+Im Gegensatz zu linearen Elementen verlaufen die Ansatzfunktionen nun <strong>quadratisch</strong> und können dadurch auch <strong>gekrümmte Verformungen</strong> innerhalb des Elements abbilden.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png" title="Quadratische Ansatzfunktionen eines 1D-Elements"><img alt="Quadratische Ansatzfunktionen eines 1D-Elements" src="../media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png" width="550px" /></a>
+<span class="bildquelle">Bildquelle <sup id="fnref4:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<p>In der Abbildung sind die drei <strong>Formfunktionen</strong> <span class="arithmatex">\(\Phi_1(\xi)\)</span>, <span class="arithmatex">\(\Phi_2(\xi)\)</span> und <span class="arithmatex">\(\Phi_3(\xi)\)</span> dargestellt.  </p>
+<ul>
+<li><span class="arithmatex">\(\Phi_1(\xi)\)</span> und <span class="arithmatex">\(\Phi_3(\xi)\)</span> verlaufen jeweils durch die Randknoten und verschwinden an den anderen Knoten.  </li>
+<li><span class="arithmatex">\(\Phi_2(\xi)\)</span> besitzt ihr Maximum im Mittenknoten und geht an den Rändern gegen null.  </li>
+</ul>
+<p>Zur Beschreibung wird häufig die <strong>normierte Koordinate</strong></p>
+<div class="arithmatex">\[
+\xi = \frac{x}{L}
+\]</div>
+<p>verwendet, sodass das Element im Intervall <span class="arithmatex">\(0 \le \xi \le 1\)</span> liegt. Die drei Ansatzfunktionen lauten:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\Phi_1(\xi) &amp;= 1 - 3\xi + 2\xi^2, \\
+\Phi_2(\xi) &amp;= 4\xi(1 - \xi), \\
+\Phi_3(\xi) &amp;= 2\xi^2 - \xi
+\end{aligned}
+\]</div>
+<p>Damit ergibt sich die Verschiebung innerhalb des Elements zu:</p>
+<div class="arithmatex">\[
+u(\xi) = \Phi_1(\xi)\,u_1 + \Phi_2(\xi)\,u_2 + \Phi_3(\xi)\,u_3
+\]</div>
+<p>Quadratische Elemente können sowohl <strong>lineare als auch gekrümmte Verläufe</strong> der Verschiebung <span class="arithmatex">\(u(x)\)</span> und der Spannung <span class="arithmatex">\(\sigma(x)\)</span> darstellen. Bei gleicher Netzgröße liefern sie deutlich genauere Ergebnisse als lineare Elemente, sind jedoch aufgrund der zusätzlichen Freiheitsgrade pro Element rechenintensiver.</p>
+<hr />
+<h3 id="einfluss-der-elementordnung">Einfluss der Elementordnung<a class="headerlink" href="#einfluss-der-elementordnung" title="Permanent link">&para;</a></h3>
+<p>Vergleicht man lineare und quadratische Elemente am gleichen Bauteil, so zeigt sich:</p>
+<ul>
+<li>Quadratische Elemente approximieren den Spannungs- und Verschiebungsverlauf besser.  </li>
+<li>Die Konvergenzgeschwindigkeit (Annäherung an die exakte Lösung) steigt mit der Ansatzordnung.  </li>
+<li>Bei linearen Elementen muss die Netzgröße <span class="arithmatex">\(h\)</span> stärker verringert werden, um vergleichbare Genauigkeit zu erreichen.</li>
+</ul>
+<p>Die wichtigsten Unterschiede zwischen linearen und quadratischen Elementen sind in der folgenden Übersicht zusammengefasst:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Kriterium</strong></th>
+<th style="text-align: left;"><strong>Lineare Elemente (p = 1)</strong></th>
+<th style="text-align: left;"><strong>Quadratische Elemente (p = 2)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Ansatzfunktion</strong></td>
+<td style="text-align: left;">geradlinig zwischen den Knoten</td>
+<td style="text-align: left;">gekrümmt, Mittenknoten vorhanden</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Verformungsverlauf</strong></td>
+<td style="text-align: left;">linear, keine Krümmung</td>
+<td style="text-align: left;">gekrümmt, auch nichtlineare Verläufe abbildbar</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Genauigkeit</strong></td>
+<td style="text-align: left;">gering, konvergiert langsam</td>
+<td style="text-align: left;">hoch, schnellere Konvergenz</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Rechenaufwand</strong></td>
+<td style="text-align: left;">gering</td>
+<td style="text-align: left;">höher durch zusätzliche Freiheitsgrade</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Einsatzgebiet</strong></td>
+<td style="text-align: left;">einfache Geometrien, homogene Belastungen</td>
+<td style="text-align: left;">Bereiche mit Krümmung, Spannungsgradienten oder Kontaktzonen</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="konvergenzverhalten-und-netzqualitat">Konvergenzverhalten und Netzqualität<a class="headerlink" href="#konvergenzverhalten-und-netzqualitat" title="Permanent link">&para;</a></h2>
+<p>Die Genauigkeit einer FEM-Lösung hängt von zwei Faktoren ab: der <strong>Elementgröße <span class="arithmatex">\(h\)</span></strong> und der <strong>Ansatzordnung <span class="arithmatex">\(p\)</span></strong>.  </p>
+<ul>
+<li><span class="arithmatex">\(h\)</span> beschreibt die charakteristische Länge eines Elements (also die Netzfeinheit).  </li>
+<li><span class="arithmatex">\(p\)</span> steht für die Polynomordnung der Ansatzfunktion (linear, quadratisch, …).  </li>
+</ul>
+<p>Mit abnehmender Elementgröße und höherer Ansatzordnung nähert sich die numerische Lösung der exakten Lösung an. Der verbleibende Unterschied zwischen der <strong>exakten (wahren)</strong> und der <strong>numerischen (FEM-)Lösung</strong> wird als <strong>Fehler <span class="arithmatex">\(e\)</span></strong> bezeichnet:</p>
+<div class="arithmatex">\[
+e = u_\text{exakt} - u_\text{FEM}
+\]</div>
+<p>Da die exakte Lösung <span class="arithmatex">\(u_\text{exakt}\)</span> meist unbekannt ist, wird der Fehler nicht direkt, sondern <strong>über seine Größenordnung</strong> abgeschätzt. Für viele lineare Probleme lässt sich sein Verlauf mit der Elementgröße durch eine Potenzfunktion beschreiben:</p>
+<div class="arithmatex">\[
+\| e \| \approx C \, h^p
+\]</div>
+<p>Hierbei gilt:  </p>
+<ul>
+<li><span class="arithmatex">\(C\)</span> fasst den <strong>Einfluss von Geometrie, Material und Randbedingungen</strong> zusammen,  </li>
+<li><span class="arithmatex">\(h\)</span> steht für die <strong>charakteristische Elementgröße</strong>,  </li>
+<li><span class="arithmatex">\(p\)</span> beschreibt die <strong>Ansatzordnung</strong>,  </li>
+<li><span class="arithmatex">\(\| e \|\)</span> ist eine Maßzahl für den Fehler, z. B. die <strong>Energie- oder <span class="arithmatex">\(L_2\)</span>-Norm</strong>.</li>
+</ul>
+<p>Je kleiner <span class="arithmatex">\(h\)</span> und je größer <span class="arithmatex">\(p\)</span>, desto kleiner wird der Fehler.  </p>
+<ul>
+<li>Wird die Elementlänge <span class="arithmatex">\(h\)</span> halbiert, reduziert sich der Fehler bei <strong>quadratischen Elementen</strong> etwa <strong>viermal</strong>, bei <strong>linearen</strong> nur <strong>zweimal</strong>.  </li>
+<li>Eine <strong>Konvergenzprüfung (h-Studie)</strong> überprüft, ob das Ergebnis unabhängig vom Netz ist.</li>
+</ul>
+<p>In ANSYS kann eine solche Untersuchung mit verschiedenen Netzgrößen durchgeführt werden. Typischerweise wird dabei die <strong>maximale Spannung oder Verschiebung</strong> gegen die <strong>Elementanzahl</strong> oder die <strong>Elementgröße</strong> aufgetragen. Ein stabiler (konvergenter) Verlauf zeigt, dass das Ergebnis nicht mehr vom Netz abhängt.</p>
+<p>Die folgende Abbildung zeigt beispielhaft den Zusammenhang zwischen Fehlermaß und Netzverfeinerung. In doppeltlogarithmischer Darstellung erscheinen die Kurven linear – ihre Steigung entspricht der jeweiligen <strong>Konvergenzordnung <span class="arithmatex">\(p\)</span></strong>.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_netz/05_Convergence_hp.png" title="Konvergenzdiagramm h-p"><img alt="Konvergenzdiagramm h-p" src="../media/05_elementtypen_netz/05_Convergence_hp.png" width="520px" /></a>
+<span class="bildquelle">Bildquelle <sup id="fnref5:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<hr />
+<h2 id="elementtypen-in-ansys">Elementtypen in ANSYS<a class="headerlink" href="#elementtypen-in-ansys" title="Permanent link">&para;</a></h2>
+<p>Das Prinzip der Ansatzfunktionen überträgt sich direkt auf höhere Dimensionen. Unabhängig davon, ob ein Stab, eine Fläche oder ein Volumenkörper analysiert wird – die Grundidee bleibt dieselbe: <strong>Ansatzfunktionen</strong> beschreiben, wie sich Verschiebungen oder andere physikalische Größen zwischen den Knotenpunkten verhalten.  </p>
+<p>In der Finite-Elemente-Software werden diese mathematischen Funktionen über konkrete <strong>Elementtypen</strong> abgebildet. Je nach Dimension und Ansatzordnung ändert sich dabei die <strong>Anzahl der Knoten</strong> und damit die <strong>Genauigkeit der Approximation</strong>.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">Beispiel-Elemente (ANSYS)</th>
+<th style="text-align: left;">Knotenanzahl</th>
+<th style="text-align: left;">Ansatzordnung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1D</strong></td>
+<td style="text-align: left;">LINK180</td>
+<td style="text-align: left;">2 / 3</td>
+<td style="text-align: left;">linear / quadratisch</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2D</strong></td>
+<td style="text-align: left;">PLANE182 / 183</td>
+<td style="text-align: left;">4 / 8</td>
+<td style="text-align: left;">linear / quadratisch</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3D</strong></td>
+<td style="text-align: left;">SOLID185 / 186</td>
+<td style="text-align: left;">8 / 20</td>
+<td style="text-align: left;">linear / quadratisch</td>
+</tr>
+</tbody>
+</table>
+<p>Die Tabelle zeigt typische <strong>Elementtypen aus ANSYS Mechanical</strong>:  </p>
+<ul>
+<li><strong>LINK180</strong> ist ein linienförmiges 1D-Element, das beispielsweise Stäbe oder Zugglieder beschreibt.  </li>
+<li><strong>PLANE182</strong> und <strong>PLANE183</strong> sind 2D-Flächenelemente, die ebene oder rotationssymmetrische Strukturen abbilden können.  </li>
+<li><strong>SOLID185</strong> (linear) und <strong>SOLID186</strong> (quadratisch) sind 3D-Volumenelemente in <strong>Hexaeder-Form</strong>, die für den allgemeinen Festkörperzustand verwendet werden.  </li>
+</ul>
+<p>1D-Elemente bestehen somit aus <strong>Liniensegmenten</strong>, 2D-Elemente bilden <strong>Flächen</strong> ab, und 3D-Elemente beschreiben <strong>Volumina</strong>. Mit zunehmender Dimension steigt die Zahl der <strong>Knotenpunkte und Freiheitsgrade</strong> – und damit das Potenzial für eine genauere und realistischere Beschreibung des physikalischen Verhaltens.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_netz/06_Elementtypen.png" title="2D- und 3D-Elementtypen"><img alt="2D- und 3D-Elementtypen" src="../media/05_elementtypen_netz/06_Elementtypen.png" width="600px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref:Comsol2025"><a class="footnote-ref" href="#fn:Comsol2025">2</a></sup></span></p>
+<p>Bei jeder Dimension kann zusätzlich die <strong>Ansatzordnung</strong> verändert werden. Linear bedeutet, dass die physikalischen Größen zwischen den Knoten <strong>geradlinig</strong> verlaufen. Quadratische und kubische Elemente besitzen <strong>Mittenknoten</strong>, wodurch sich die Form innerhalb eines Elements <strong>gekrümmt</strong> darstellen lässt – ein entscheidender Vorteil bei runden oder komplexen Geometrien.  </p>
+<p>Die folgende Abbildung zeigt ein <strong>halbkreisförmiges Gebiet</strong>, das mit unterschiedlichen geometrischen Ansatzordnungen diskretisiert wurde. Je höher die Ordnung, desto besser folgt die Netzgeometrie der tatsächlichen Rundung: lineare Elemente bilden den Kreis nur grob ab, während quadratische und kubische Elemente die Kontur deutlich glatter wiedergeben. Die blauen Punkte kennzeichnen die Knotenpositionen.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png" title="Einfluss der Ansatzordnung auf die Geometrie-Approximation"><img alt="Einfluss der Ansatzordnung auf die Geometrie-Approximation" src="../media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png" width="700px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref2:Comsol2025"><a class="footnote-ref" href="#fn:Comsol2025">2</a></sup></span></p>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Zusammenfassung</p>
+<p>Die Kombination aus <strong>Elementtyp (1D–3D)</strong> und <strong>Ansatzordnung (linear–quadratisch)</strong> bestimmt also, <em>wie fein</em> und <em>wie realistisch</em> ein physikalischer Zusammenhang abgebildet werden kann.<br />
+In der Praxis wählt man den Elementtyp so, dass die Geometrie und der Belastungszustand bestmöglich beschrieben werden, mit dem Ziel, eine <strong>präzise, aber numerisch effiziente Simulation</strong> zu erreichen.</p>
+</div>
+<hr />
+<p>Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart und relevanter Physik. Ziel ist stets, mit minimalem Rechenaufwand eine physikalisch konsistente Beschreibung zu erreichen. Zum Beispiel reduzieren <em>Balken</em> und <em>Schalen</em> Dimensionen, <em>Kontakt-</em> und <em>Cohesive-Elemente</em> erweitern den physikalischen Geltungsbereich, <em>thermische</em> und <em>Feder-Elemente</em> koppeln zusätzliche Disziplinen.</p>
+<details class="note">
+<summary>Spezial-Elemente</summary>
+<p>Neben den Standard-Volumen- und Flächenelementen existiert eine Vielzahl spezialisierter Elementtypen, die bestimmte physikalische oder geometrische Besonderheiten effizient abbilden. Die folgenden Beispiele zeigen typische Vertreter in <em>ANSYS Mechanical</em>.</p>
+<hr />
+<p><strong>Schalenelemente</strong><br />
+* <strong>SHELL181 / SHELL281:</strong> dünnwandige 2D-Elemente mit Membran- und Biegeverhalten.<br />
+  Geeignet für Bleche, Gehäuse, Rohre und Schalenstrukturen. </p>
+<p><a class="glightbox" href="../media/05_elementtypen_netz/09_Shell_Elements.png" title="Schalenelemente und Krümmung"><img alt="Schalenelemente und Krümmung" src="../media/05_elementtypen_netz/09_Shell_Elements.png" width="400px" /></a><br />
+<span class="bildquelle">Bildquelle<sup id="fnref:Ansys2025"><a class="footnote-ref" href="#fn:Ansys2025">3</a></sup></span>   </p>
+<hr />
+<p><strong>Kontaktelelemente</strong><br />
+* <strong>CONTA174 / TARGE170:</strong> modellieren Reibung, Haftung, Öffnen / Schließen.<br />
+  Wichtig für Presssitze, Lagerungen und Montagezustände.  </p>
+<p><a class="glightbox" href="../media/05_elementtypen_netz/11_Contact_Elements.svg" title="Kontaktelelemente"><img alt="Kontaktelelemente" src="../media/05_elementtypen_netz/11_Contact_Elements.svg" width="550px" /></a><br />
+<span class="bildquelle">Bildquelle<sup id="fnref2:Ansys2025"><a class="footnote-ref" href="#fn:Ansys2025">3</a></sup></span>  </p>
+<hr />
+<p><strong>Cohesive- und Interface-Elemente</strong><br />
+* <strong>INTER205:</strong> Modellierung von Klebverbindungen, Laminaten, Delamination.<br />
+  Erlaubt schrittweises Versagen durch Schädigungsgesetze.  </p>
+<hr />
+<p><strong>Feder-, Lager- und Zusatz-Elemente</strong><br />
+<a class="glightbox" href="../media/05_elementtypen_netz/13_Spring_Elements.svg" title="Federn und Lager"><img alt="Federn und Lager" src="../media/05_elementtypen_netz/13_Spring_Elements.svg" width="500px" /></a><br />
+<span class="bildquelle">Bildquelle<sup id="fnref3:Ansys2025"><a class="footnote-ref" href="#fn:Ansys2025">3</a></sup></span>  </p>
+<ul>
+<li><strong>COMBIN14:</strong> lineare Feder / Dämpfer zwischen Knoten  </li>
+<li><strong>MPC184:</strong> kinematische Kopplungen  </li>
+<li><strong>MASS21:</strong> konzentrierte Masse  </li>
+</ul>
+<hr />
+<p><strong>Thermische Elemente</strong>  </p>
+<ul>
+<li><strong>SOLID70 / SOLID90:</strong> stationäre / transiente Wärmeleitung  </li>
+<li><strong>SURF152:</strong> Wärmeaustausch über Oberflächen  </li>
+</ul>
+</details>
+<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a></p>
+<!--
+## 2. Guided Example – Influence of Element Type and 
+
+Ein axially loaded bar with varying cross-section is analysed analytically and with FEM.
+
+1. Define geometry and material:  
+   \(L = 100\,\text{mm}, E = 210\,\text{GPa}, A(x) = 50 - 0.4x\,\text{mm}^2\)
+2. Compute the analytical displacement \(u(x)\) and stress \(\sigma(x)\).
+3. Model the same bar in ANSYS with:
+   * linear elements (SOLID185)  
+   * quadratic elements (SOLID186)
+4. Compare σ<sub>max</sub> and u<sub>max</sub> for different mesh densities.
+
+Optional: perform an h-study to verify convergence.
+
+<span class="bildquelle">based on Bielak (2020) and Madenci & Guven (2015)</span>
+
+---
+
+## 3. Interpretation and Discussion
+
+* Quadratic elements converge faster and better reproduce the analytical stress distribution.  
+* Linear elements require finer meshes to reach similar accuracy.  
+* Mesh refinement should be concentrated in regions with high stress gradients.  
+* Smoothing affects visualization but not numerical accuracy.  
+* The optimal model balances **accuracy vs. computational cost**.
+
+---
+
+wie geht's weiter:
+  - Modul 4 Krafteinleitung: 06_krafteinleitung.md
+  - Modul 5 Symmetrie: 07_symmetrie.md
+  - Modul 6 Modalanalyse: 08_modalanalyse.md
+  - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
+  - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
+  - Modul 9 Sensoren II (Druck): 11_sensor_druck.md
+  - Modul 10 Kontakt: 12_kontakt.md
+  - Modul 11 Ausblick: 13_ausblick.md
+
+  | Modul | Titel | Kerninhalt |
+| :----: | :---- | :---------- |
+| **03** | **Elementtypen & Netzqualität** | Vergleich linearer und quadratischer Volumenelemente (SOLID185/186), Einfluss der Ansatzfunktionen auf Genauigkeit und Konvergenz, Netzgüte, Spannungs­glättung, einfache h-Studie. |
+| **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich, Netzqualität und Spannungs­glättung |
+| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt) |
+| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
+| **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
+| **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
+| **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
+| **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
+| **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
+
+-->
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Bielak2024">
+<p>Jacobo Bielak. <em>The Finite Element Method</em>. Springer International Publishing, Cham, 2024. ISBN 978-3-031-56368-3. <a href="https://doi.org/10.1007/978-3-031-56369-0">doi:10.1007/978-3-031-56369-0</a>.&#160;<a class="footnote-backref" href="#fnref:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Comsol2025">
+<p>Finite element mesh refinement definition and techniques. 23.10.2025. URL: <a href="https://www.comsol.com/multiphysics/mesh-refinement">https://www.comsol.com/multiphysics/mesh-refinement</a> (visited on 23.10.2025).&#160;<a class="footnote-backref" href="#fnref:Comsol2025" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Comsol2025" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025">
+<p>Ansys help. 27.10.2025. URL: <a href="https://ansyshelp.ansys.com/">https://ansyshelp.ansys.com/</a> (visited on 27.10.2025).&#160;<a class="footnote-backref" href="#fnref:Ansys2025" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Ansys2025" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
