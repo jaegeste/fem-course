@@ -1,6 +1,4 @@
-# Modul 3 Elementtypen und Netzqualität
-
-[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
+# Modul 3 Elementtypen und Ansatzfunktionen
 
 ## Lernziele
 
@@ -9,25 +7,21 @@ Nach Abschluss dieses Moduls können die Studierenden:
 * den Einfluss der Ansatzfunktionen und der Elementordnung (linear vs. quadratisch) auf die Genauigkeit eines FEM-Ergebnisses erläutern,  
 * den Zusammenhang zwischen Netzverfeinerung, Elementverzerrung und Ergebnisqualität bewerten,  
 * den Begriff der Konvergenz besser erklären und eine h-Studie (Netzeinflussstudie) durchführen,  
-* Spannungsverteilungen kritisch interpretieren und den Einfluss der Spannungs­glättung einschätzen,  
 * aus FEM-Ergebnissen ableiten, wann weitere Netzverfeinerung oder höhere Ansatzordnung erforderlich ist.
 
-## Vertiefung der theoretischen Grundlagen
+## Ansatzfunktion (Theoretischer Hintergrund nach Bielak[@Bielak2024])
 
 Im vorherigen Kapitel wurde die Finite-Elemente-Methode in vereinfachter Form eingeführt. Dabei stand im Vordergrund, wie komplexe Bauteile durch eine diskrete Anzahl von Elementen angenähert und über Knotenpunkte miteinander verbunden werden.  
 
 In diesem Modul wird die theoretische Grundlage vertieft, auf der diese Methode basiert. Im Mittelpunkt stehen die mathematischen Prinzipien der Diskretisierung, die Form der Ansatzfunktionen  sowie der Einfluss der Elementordnung auf die Genauigkeit und Konvergenz des Ergebnisses. Diese Zusammenhänge bilden das Fundament, um die späteren FEM-Ergebnisse physikalisch korrekt zu interpretieren und den Einfluss der Netzqualität systematisch zu bewerten.
 
-## Theoretischer Hintergrund (nach Bielak[@Bielak2024])
-
-Zur Erinnerung: Die Finite-Elemente-Methode (FEM) beruht auf der Idee, ein kontinuierliches physikalisches System – etwa einen belasteten Stab oder eine Temperaturverteilung – in eine endliche Anzahl kleiner, einfach beschreibbarer Teilbereiche zu zerlegen.  
-Diese Teilbereiche werden als **Elemente** bezeichnet. Die Verbindungspunkte zwischen ihnen heißen **Knoten**.  
+FEM beruht auf der Idee, ein kontinuierliches physikalisches System in eine endliche Anzahl kleiner, einfach beschreibbarer Teilbereiche zu zerlegen. Diese Teilbereiche werden als **Elemente** bezeichnet. Die Verbindungspunkte zwischen ihnen heißen **Knoten**.  
 
 Innerhalb jedes Elements wird das physikalische Verhalten (z. B. die Verschiebung \(u\)) nicht exakt, sondern durch eine einfache mathematische Funktion beschrieben. Diese Funktion wird als **Ansatzfunktion** bezeichnet.
 
 ---
 
-### 1. Diskretisierung und Ansatzfunktion
+### Diskretisierung und Ansatzfunktion
 
 Statt das gesamte Bauteil kontinuierlich zu beschreiben, wird jedes Element einzeln betrachtet. Für jedes Element gilt: Die Verschiebung zwischen den Knoten wird durch eine Ansatzfunktion angenähert.  
 
@@ -78,7 +72,7 @@ Jede Funktion \(\Phi_i(x)\) beschreibt also den Einfluss des Knotens \(i\) auf d
 
 ---
 
-### 2. Lineare Ansatzfunktionen (1D-Elemente)
+### Lineare Ansatzfunktionen (1D-Elemente)
 
 Die im vorherigen Abschnitt eingeführte allgemeine Näherung  
 
@@ -119,7 +113,7 @@ N_1(x)=1-\frac{x}{L}, \qquad N_2(x)=\frac{x}{L}
 Die Ableitung nach der Koordinate \(x\) ergibt die konstante Dehnung \(\varepsilon=\frac{du}{dx}\). Lineare Elemente können daher **nur lineare Verformungsverläufe** abbilden.  
 Bei gekrümmten oder stark veränderlichen Verläufen – etwa in der Nähe von Kerben oder Kontaktzonen – liefern sie nur eine grobe Näherung. Eine höhere Genauigkeit wird dort durch feinere Netze oder höhergradige Ansatzfunktionen erreicht.
 
-### 3. Quadratische Ansatzfunktionen (1D-Elemente)
+### Quadratische Ansatzfunktionen (1D-Elemente)
 
 Quadratische Elemente besitzen **drei Knoten** – zwei Randknoten und einen Mittenknoten.  
 Im Gegensatz zu linearen Elementen verlaufen die Ansatzfunktionen nun **quadratisch** und können dadurch auch **gekrümmte Verformungen** innerhalb des Elements abbilden.
@@ -142,8 +136,7 @@ Zur Beschreibung wird häufig die **normierte Koordinate**
 \xi = \frac{x}{L}
 \]
 
-verwendet, sodass das Element im Intervall \(0 \le \xi \le 1\) liegt.  
-Die drei Ansatzfunktionen lauten:
+verwendet, sodass das Element im Intervall \(0 \le \xi \le 1\) liegt. Die drei Ansatzfunktionen lauten:
 
 \[
 \begin{aligned}
@@ -159,12 +152,11 @@ Damit ergibt sich die Verschiebung innerhalb des Elements zu:
 u(\xi) = \Phi_1(\xi)\,u_1 + \Phi_2(\xi)\,u_2 + \Phi_3(\xi)\,u_3
 \]
 
-Quadratische Elemente können sowohl **lineare als auch gekrümmte Verläufe** der Verschiebung \(u(x)\) und der Spannung \(\sigma(x)\) darstellen.  
-Bei gleicher Netzgröße liefern sie deutlich genauere Ergebnisse als lineare Elemente, sind jedoch aufgrund der zusätzlichen Freiheitsgrade pro Element rechenintensiver.
+Quadratische Elemente können sowohl **lineare als auch gekrümmte Verläufe** der Verschiebung \(u(x)\) und der Spannung \(\sigma(x)\) darstellen. Bei gleicher Netzgröße liefern sie deutlich genauere Ergebnisse als lineare Elemente, sind jedoch aufgrund der zusätzlichen Freiheitsgrade pro Element rechenintensiver.
 
+---
 
-<!--
-### 4. Einfluss der Elementordnung
+### Einfluss der Elementordnung
 
 Vergleicht man lineare und quadratische Elemente am gleichen Bauteil, so zeigt sich:
 
@@ -172,35 +164,63 @@ Vergleicht man lineare und quadratische Elemente am gleichen Bauteil, so zeigt s
 * Die Konvergenzgeschwindigkeit (Annäherung an die exakte Lösung) steigt mit der Ansatzordnung.  
 * Bei linearen Elementen muss die Netzgröße \(h\) stärker verringert werden, um vergleichbare Genauigkeit zu erreichen.
 
-[![Vergleich linear/quadratisch](media/05_elementtypen_netz/04_Linear_vs_Quadratic.png){width=500px}](media/05_elementtypen_netz/04_Linear_vs_Quadratic.png "Vergleich linear/quadratisch"){.glightbox}
+Die wichtigsten Unterschiede zwischen linearen und quadratischen Elementen sind in der folgenden Übersicht zusammengefasst:
 
-<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.11]</span>
+| **Kriterium** | **Lineare Elemente (p = 1)** | **Quadratische Elemente (p = 2)** |
+| :------------- | :---------------------------- | :-------------------------------- |
+| **Ansatzfunktion** | geradlinig zwischen den Knoten | gekrümmt, Mittenknoten vorhanden |
+| **Verformungsverlauf** | linear, keine Krümmung | gekrümmt, auch nichtlineare Verläufe abbildbar |
+| **Genauigkeit** | gering, konvergiert langsam | hoch, schnellere Konvergenz |
+| **Rechenaufwand** | gering | höher durch zusätzliche Freiheitsgrade |
+| **Einsatzgebiet** | einfache Geometrien, homogene Belastungen | Bereiche mit Krümmung, Spannungsgradienten oder Kontaktzonen |
 
 ---
 
-### 5. Konvergenzverhalten und Netzqualität
+## Konvergenzverhalten und Netzqualität
 
-Die Qualität einer FEM-Lösung hängt sowohl von der **Elementgröße \(h\)** als auch von der **Elementordnung \(p\)** ab.  
-Für viele lineare Probleme gilt näherungsweise:
+Die Genauigkeit einer FEM-Lösung hängt von zwei Faktoren ab: der **Elementgröße \(h\)** und der **Ansatzordnung \(p\)**.  
+
+* \(h\) beschreibt die charakteristische Länge eines Elements (also die Netzfeinheit).  
+* \(p\) steht für die Polynomordnung der Ansatzfunktion (linear, quadratisch, …).  
+
+Mit abnehmender Elementgröße und höherer Ansatzordnung nähert sich die numerische Lösung der exakten Lösung an. Der verbleibende Unterschied zwischen der **exakten (wahren)** und der **numerischen (FEM-)Lösung** wird als **Fehler \(e\)** bezeichnet:
 
 \[
-\| e \| \propto h^p
+e = u_\text{exakt} - u_\text{FEM}
 \]
 
-Das bedeutet:  
+Da die exakte Lösung \(u_\text{exakt}\) meist unbekannt ist, wird der Fehler nicht direkt, sondern **über seine Größenordnung** abgeschätzt. Für viele lineare Probleme lässt sich sein Verlauf mit der Elementgröße durch eine Potenzfunktion beschreiben:
 
-* halbiert man die Elementlänge \(h\), reduziert sich der Fehler bei quadratischen Elementen etwa **viermal**, bei linearen nur **zweimal**.  
-* Eine Konvergenzprüfung (h-Studie) ist daher entscheidend, um Netzunabhängigkeit sicherzustellen.
+\[
+\| e \| \approx C \, h^p
+\]
+
+Hierbei gilt:  
+
+* \(C\) fasst den **Einfluss von Geometrie, Material und Randbedingungen** zusammen,  
+* \(h\) steht für die **charakteristische Elementgröße**,  
+* \(p\) beschreibt die **Ansatzordnung**,  
+* \(\| e \|\) ist eine Maßzahl für den Fehler, z. B. die **Energie- oder \(L_2\)-Norm**.
+
+Je kleiner \(h\) und je größer \(p\), desto kleiner wird der Fehler.  
+
+* Wird die Elementlänge \(h\) halbiert, reduziert sich der Fehler bei **quadratischen Elementen** etwa **viermal**, bei **linearen** nur **zweimal**.  
+* Eine **Konvergenzprüfung (h-Studie)** überprüft, ob das Ergebnis unabhängig vom Netz ist.
+
+In ANSYS kann eine solche Untersuchung mit verschiedenen Netzgrößen durchgeführt werden. Typischerweise wird dabei die **maximale Spannung oder Verschiebung** gegen die **Elementanzahl** oder die **Elementgröße** aufgetragen. Ein stabiler (konvergenter) Verlauf zeigt, dass das Ergebnis nicht mehr vom Netz abhängt.
+
+Die folgende Abbildung zeigt beispielhaft den Zusammenhang zwischen Fehlermaß und Netzverfeinerung. In doppeltlogarithmischer Darstellung erscheinen die Kurven linear – ihre Steigung entspricht der jeweiligen **Konvergenzordnung \(p\)**.
 
 [![Konvergenzdiagramm h-p](media/05_elementtypen_netz/05_Convergence_hp.png){width=520px}](media/05_elementtypen_netz/05_Convergence_hp.png "Konvergenzdiagramm h-p"){.glightbox}
-
-<span class="bildquelle">Bildquelle [@Bielak2024, Fig. 2.17]</span>
+<span class="bildquelle">Bildquelle [@Bielak2024]</span>
 
 ---
 
-### 6. Ausblick: Elementtypen in ANSYS
+## Elementtypen in ANSYS
 
-Das Prinzip der Ansatzfunktionen überträgt sich auf höhere Dimensionen:
+Das Prinzip der Ansatzfunktionen überträgt sich direkt auf höhere Dimensionen. Unabhängig davon, ob ein Stab, eine Fläche oder ein Volumenkörper analysiert wird – die Grundidee bleibt dieselbe: **Ansatzfunktionen** beschreiben, wie sich Verschiebungen oder andere physikalische Größen zwischen den Knotenpunkten verhalten.  
+
+In der Finite-Elemente-Software werden diese mathematischen Funktionen über konkrete **Elementtypen** abgebildet. Je nach Dimension und Ansatzordnung ändert sich dabei die **Anzahl der Knoten** und damit die **Genauigkeit der Approximation**.
 
 | Dimension | Beispiel-Elemente (ANSYS) | Knotenanzahl | Ansatzordnung |
 | :--------- | :------------------------ | :------------ | :-------------- |
@@ -208,94 +228,82 @@ Das Prinzip der Ansatzfunktionen überträgt sich auf höhere Dimensionen:
 | **2D** | PLANE182 / 183 | 4 / 8 | linear / quadratisch |
 | **3D** | SOLID185 / 186 | 8 / 20 | linear / quadratisch |
 
-In allen Fällen bleibt die mathematische Struktur gleich:  
-Shape-Functions interpolieren die Knotenwerte im Element.  
-Quadratische Elemente besitzen Mittenknoten, wodurch gekrümmte Geometrien und Spannungsfelder besser approximiert werden können.
+Die Tabelle zeigt typische **Elementtypen aus ANSYS Mechanical**:  
 
-[![Übersicht Elementtypen 1D–3D](media/05_elementtypen_netz/06_Elementtypen_Uebersicht.png){width=600px}](media/05_elementtypen_netz/06_Elementtypen_Uebersicht.png "Übersicht Elementtypen 1D–3D"){.glightbox}
+* **LINK180** ist ein linienförmiges 1D-Element, das beispielsweise Stäbe oder Zugglieder beschreibt.  
+* **PLANE182** und **PLANE183** sind 2D-Flächenelemente, die ebene oder rotationssymmetrische Strukturen abbilden können.  
+* **SOLID185** (linear) und **SOLID186** (quadratisch) sind 3D-Volumenelemente in **Hexaeder-Form**, die für den allgemeinen Festkörperzustand verwendet werden.  
 
-<span class="bildquelle">Eigene Darstellung nach [@Bielak2024]</span>
+1D-Elemente bestehen somit aus **Liniensegmenten**, 2D-Elemente bilden **Flächen** ab, und 3D-Elemente beschreiben **Volumina**. Mit zunehmender Dimension steigt die Zahl der **Knotenpunkte und Freiheitsgrade** – und damit das Potenzial für eine genauere und realistischere Beschreibung des physikalischen Verhaltens.
+
+[![2D- und 3D-Elementtypen](media/05_elementtypen_netz/06_Elementtypen.png){width=600px}](media/05_elementtypen_netz/06_Elementtypen.png "2D- und 3D-Elementtypen"){.glightbox}
+<span class="bildquelle">Bildquelle[@Comsol2025]</span>
+
+Bei jeder Dimension kann zusätzlich die **Ansatzordnung** verändert werden. Linear bedeutet, dass die physikalischen Größen zwischen den Knoten **geradlinig** verlaufen. Quadratische und kubische Elemente besitzen **Mittenknoten**, wodurch sich die Form innerhalb eines Elements **gekrümmt** darstellen lässt – ein entscheidender Vorteil bei runden oder komplexen Geometrien.  
+
+Die folgende Abbildung zeigt ein **halbkreisförmiges Gebiet**, das mit unterschiedlichen geometrischen Ansatzordnungen diskretisiert wurde. Je höher die Ordnung, desto besser folgt die Netzgeometrie der tatsächlichen Rundung: lineare Elemente bilden den Kreis nur grob ab, während quadratische und kubische Elemente die Kontur deutlich glatter wiedergeben. Die blauen Punkte kennzeichnen die Knotenpositionen.
+
+[![Einfluss der Ansatzordnung auf die Geometrie-Approximation](media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png){width=700px}](media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png "Einfluss der Ansatzordnung auf die Geometrie-Approximation"){.glightbox}
+<span class="bildquelle">Bildquelle[@Comsol2025]</span>
+
+---
+!!! Note "Zusammenfassung"
+    Die Kombination aus **Elementtyp (1D–3D)** und **Ansatzordnung (linear–quadratisch)** bestimmt also, *wie fein* und *wie realistisch* ein physikalischer Zusammenhang abgebildet werden kann.  
+    In der Praxis wählt man den Elementtyp so, dass die Geometrie und der Belastungszustand bestmöglich beschrieben werden, mit dem Ziel, eine **präzise, aber numerisch effiziente Simulation** zu erreichen.
 
 ---
 
-### 7. Kernaussagen
+Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart und relevanter Physik. Ziel ist stets, mit minimalem Rechenaufwand eine physikalisch konsistente Beschreibung zu erreichen. Zum Beispiel reduzieren *Balken* und *Schalen* Dimensionen, *Kontakt-* und *Cohesive-Elemente* erweitern den physikalischen Geltungsbereich, *thermische* und *Feder-Elemente* koppeln zusätzliche Disziplinen.
 
-* Die Genauigkeit einer FEM-Analyse hängt wesentlich von **Elementordnung** und **Netzqualität** ab.  
-* Lineare Elemente liefern grobe Näherungen mit konstantem Spannungsverlauf.  
-* Quadratische Elemente erfassen Krümmungen realistischer und konvergieren schneller.  
-* Eine Konvergenzstudie (h-Studie) ist erforderlich, um Netzabhängigkeit zu prüfen.  
-* Gekrümmte Geometrien erfordern meist quadratische oder isoparametrische Elemente.
+??? note "Spezial-Elemente"
 
----
+    Neben den Standard-Volumen- und Flächenelementen existiert eine Vielzahl spezialisierter Elementtypen, die bestimmte physikalische oder geometrische Besonderheiten effizient abbilden. Die folgenden Beispiele zeigen typische Vertreter in *ANSYS Mechanical*.
 
-<span class="bildquelle">Quellen: [@Bielak2024]</span>
+    ---
+
+    **Schalenelemente**  
+    * **SHELL181 / SHELL281:** dünnwandige 2D-Elemente mit Membran- und Biegeverhalten.  
+      Geeignet für Bleche, Gehäuse, Rohre und Schalenstrukturen. 
+
+    [![Schalenelemente und Krümmung](media/05_elementtypen_netz/09_Shell_Elements.png){width=400px}](media/05_elementtypen_netz/09_Shell_Elements.png "Schalenelemente und Krümmung"){.glightbox}  
+    <span class="bildquelle">Bildquelle[@Ansys2025]</span>   
+
+    ---
+
+    **Kontaktelelemente**  
+    * **CONTA174 / TARGE170:** modellieren Reibung, Haftung, Öffnen / Schließen.  
+      Wichtig für Presssitze, Lagerungen und Montagezustände.  
+
+    [![Kontaktelelemente](media/05_elementtypen_netz/11_Contact_Elements.svg){width=550px}](media/05_elementtypen_netz/11_Contact_Elements.svg "Kontaktelelemente"){.glightbox}  
+    <span class="bildquelle">Bildquelle[@Ansys2025]</span>  
+
+    ---
+
+    **Cohesive- und Interface-Elemente**  
+    * **INTER205:** Modellierung von Klebverbindungen, Laminaten, Delamination.  
+      Erlaubt schrittweises Versagen durch Schädigungsgesetze.  
+
+    ---
+
+    **Feder-, Lager- und Zusatz-Elemente**  
+    [![Federn und Lager](media/05_elementtypen_netz/13_Spring_Elements.svg){width=500px}](media/05_elementtypen_netz/13_Spring_Elements.svg "Federn und Lager"){.glightbox}  
+    <span class="bildquelle">Bildquelle[@Ansys2025]</span>  
+
+    * **COMBIN14:** lineare Feder / Dämpfer zwischen Knoten  
+    * **MPC184:** kinematische Kopplungen  
+    * **MASS21:** konzentrierte Masse  
+
+    ---
+
+    **Thermische Elemente**  
+
+    * **SOLID70 / SOLID90:** stationäre / transiente Wärmeleitung  
+    * **SURF152:** Wärmeaustausch über Oberflächen  
+
+[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
 
 <!--
-
-## 1. Kernkonzepte (Conceptual Overview)
-
-### 1.1 Diskretisierung und Ansatzfunktion
-
-Die Finite-Elemente-Methode approximiert die kontinuierliche Verschiebungsverteilung \(u(x)\) durch eine Kombination sogenannter *shape functions* \(N_i(x)\):
-
-\[
-u(x) \approx \sum_{i=1}^{n} N_i(x) \, u_i
-\]
-
-Die Wahl der Ansatzfunktion bestimmt die **Ordnung des Elements**:
-
-* **Linear (first order):** einfache, lineare Formfunktionen → günstiger, aber ungenauer.  
-* **Quadratisch (second order):** Mittenknoten → gekrümmte Geometrien und nichtlineare Spannungsverläufe darstellbar.  
-
-Quadratische Elemente benötigen mehr Rechenzeit, liefern aber deutlich stabilere Ergebnisse bei gleichen Netzabständen.
-
-<span class="bildquelle">nach Bielak (2020), *The Finite Element Method – A Primer*, Kapitel 3</span>
-
----
-
-### 1.2 Konvergenz und Fehler
-
-Die FEM liefert eine Näherung \(u_h\), deren Genauigkeit vom **Diskretisierungsfehler** abhängt:
-
-\[
-e = u - u_h
-\]
-
-Ziel jeder Netz- oder Ordnungsstudie ist es, den Fehler zu minimieren.  
-Zwei Strategien sind möglich:
-
-* **h-Verfeinerung:** kleinere Elemente → dichteres Netz.  
-* **p-Verfeinerung:** höhere Ansatzordnung → komplexere Formfunktionen.
-
-Der Fehler nimmt typischerweise mit \(h^p\) ab, wobei \(p\) die Ordnung der Ansatzfunktion ist.  
-In der Praxis wird die Konvergenz überprüft, indem Ergebnisse (z. B. σ<sub>max</sub>) gegen die Elementgröße aufgetragen werden.
-
----
-
-### 1.3 Netzqualität
-
-Ein feines Netz garantiert keine Genauigkeit, wenn die Elementform ungünstig ist.  
-Wichtige Qualitätskriterien:
-
-* **Aspektverhältnis:** Verhältnis längster zu kürzester Kante → sollte nahe 1 liegen.  
-* **Verzerrung:** Vermeidung stark verzogener Tetraeder oder schmaler Keile.  
-* **Übergänge:** gleichmäßige Übergänge zwischen feinen und groben Bereichen.
-
-Verzerrte Elemente führen oft zu unphysikalischen Spannungsverteilungen oder instabilen Konvergenzverläufen.
-
----
-
-### 1.4 Spannungs­glättung und Ergebnisdarstellung
-
-Spannungen werden in der FEM an Integrationspunkten berechnet (Gauss-Punkte).  
-Zur Visualisierung auf Knotenebene werden Mittelwerte gebildet (*averaged nodal stress*).  
-
-Das verbessert die Lesbarkeit der Ergebnisse, ersetzt aber keine numerische Prüfung der Konvergenz.  
-Ein scheinbar „ruhiges“ Spannungsbild kann trügerisch sein, wenn das Netz zu grob oder verzerrt ist.
-
----
-
-## 2. Guided Example – Influence of Element Type
+## 2. Guided Example – Influence of Element Type and 
 
 Ein axially loaded bar with varying cross-section is analysed analytically and with FEM.
 
@@ -323,23 +331,6 @@ Optional: perform an h-study to verify convergence.
 
 ---
 
-## 4. Key Takeaways
-
-* Accuracy depends on both **element order** and **mesh quality**.  
-* Converged results are independent of further mesh refinement.  
-* Quadratic elements often provide a better accuracy–cost ratio.  
-* Always verify convergence before interpreting stress results.
-
----
-
-## Quellen
-
-* Bielak, J. (2020). *The Finite Element Method – A Primer*. Springer.  
-* Madenci, E., & Guven, I. (2015). *The Finite Element Method and Applications in Engineering Using ANSYS*. Springer.  
-* Gebhardt, C. (2021). *Praxisbuch FEM mit ANSYS Workbench*. Hanser.
-
----
-
 wie geht's weiter:
   - Modul 4 Krafteinleitung: 06_krafteinleitung.md
   - Modul 5 Symmetrie: 07_symmetrie.md
@@ -353,8 +344,8 @@ wie geht's weiter:
   | Modul | Titel | Kerninhalt |
 | :----: | :---- | :---------- |
 | **03** | **Elementtypen & Netzqualität** | Vergleich linearer und quadratischer Volumenelemente (SOLID185/186), Einfluss der Ansatzfunktionen auf Genauigkeit und Konvergenz, Netzgüte, Spannungs­glättung, einfache h-Studie. |
-| **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich. |
-| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch. |
+| **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich, Netzqualität und Spannungs­glättung |
+| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt) |
 | **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
 | **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
 | **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
