@@ -31,7 +31,7 @@ Ein eindimensionaler Stab wird dazu in mehrere **Finite Elemente** zerlegt, dere
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Diskretisierung eines Stabes in Finite Elemente](media/05_elementtypen_netz/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_netz/01_FE_Discretizatio.png "Diskretisierung eines Stabes in Finite Elemente"){.glightbox}
+[![Diskretisierung eines Stabes in Finite Elemente](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png "Diskretisierung eines Stabes in Finite Elemente"){.glightbox}
 <span class="bildquelle">Bildquelle[@Bielak2024]</span>
 
 !!! note "Erläuterung zur Element- und Knotennummerierung"
@@ -57,7 +57,7 @@ Jede Funktion \(\Phi_i(x)\) beschreibt also den Einfluss des Knotens \(i\) auf d
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Ansatzfunktionen für mehrere Knoten eines Stabes](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png){width=600px}](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png "Ansatzfunktionen für mehrere Knoten eines Stabes"){.glightbox}
+[![Ansatzfunktionen für mehrere Knoten eines Stabes](media/05_elementtypen_ansatzf/02_ShapeFunctions_Linear.png){width=600px}](media/05_elementtypen_ansatzf/02_ShapeFunctions_Linear.png "Ansatzfunktionen für mehrere Knoten eines Stabes"){.glightbox}
 <span class="bildquelle">Bildquelle[@Bielak2024]</span>
 
 !!! note "Erläuterungen zu den Ansatzfunktionen"
@@ -122,7 +122,7 @@ Im Gegensatz zu linearen Elementen verlaufen die Ansatzfunktionen nun **quadrati
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Quadratische Ansatzfunktionen eines 1D-Elements](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png){width=550px}](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png "Quadratische Ansatzfunktionen eines 1D-Elements"){.glightbox}
+[![Quadratische Ansatzfunktionen eines 1D-Elements](media/05_elementtypen_ansatzf/03_ShapeFunctions_Quadratic.png){width=550px}](media/05_elementtypen_ansatzf/03_ShapeFunctions_Quadratic.png "Quadratische Ansatzfunktionen eines 1D-Elements"){.glightbox}
 <span class="bildquelle">Bildquelle [@Bielak2024]</span>
 
 In der Abbildung sind die drei **Formfunktionen** \(\Phi_1(\xi)\), \(\Phi_2(\xi)\) und \(\Phi_3(\xi)\) dargestellt.  
@@ -180,7 +180,7 @@ Die wichtigsten Unterschiede zwischen linearen und quadratischen Elementen sind 
 
 Die Genauigkeit einer FEM-Lösung hängt von zwei Faktoren ab: der **Elementgröße \(h\)** und der **Ansatzordnung \(p\)**.  
 
-* \(h\) beschreibt die charakteristische Länge eines Elements (also die Netzfeinheit).  
+* \(h\) beschreibt die charakteristische Länge eines Elements (also die Netzauflösung).  
 * \(p\) steht für die Polynomordnung der Ansatzfunktion (linear, quadratisch, …).  
 
 Mit abnehmender Elementgröße und höherer Ansatzordnung nähert sich die numerische Lösung der exakten Lösung an. Der verbleibende Unterschied zwischen der **exakten (wahren)** und der **numerischen (FEM-)Lösung** wird als **Fehler \(e\)** bezeichnet:
@@ -211,7 +211,7 @@ In ANSYS kann eine solche Untersuchung mit verschiedenen Netzgrößen durchgefü
 
 Die folgende Abbildung zeigt beispielhaft den Zusammenhang zwischen Fehlermaß und Netzverfeinerung. In doppeltlogarithmischer Darstellung erscheinen die Kurven linear – ihre Steigung entspricht der jeweiligen **Konvergenzordnung \(p\)**.
 
-[![Konvergenzdiagramm h-p](media/05_elementtypen_netz/05_Convergence_hp.png){width=520px}](media/05_elementtypen_netz/05_Convergence_hp.png "Konvergenzdiagramm h-p"){.glightbox}
+[![Konvergenzdiagramm h-p](media/05_elementtypen_ansatzf/05_Convergence_hp.png){width=520px}](media/05_elementtypen_ansatzf/05_Convergence_hp.png "Konvergenzdiagramm h-p"){.glightbox}
 <span class="bildquelle">Bildquelle [@Bielak2024]</span>
 
 ---
@@ -236,14 +236,14 @@ Die Tabelle zeigt typische **Elementtypen aus ANSYS Mechanical**:
 
 1D-Elemente bestehen somit aus **Liniensegmenten**, 2D-Elemente bilden **Flächen** ab, und 3D-Elemente beschreiben **Volumina**. Mit zunehmender Dimension steigt die Zahl der **Knotenpunkte und Freiheitsgrade** – und damit das Potenzial für eine genauere und realistischere Beschreibung des physikalischen Verhaltens.
 
-[![2D- und 3D-Elementtypen](media/05_elementtypen_netz/06_Elementtypen.png){width=600px}](media/05_elementtypen_netz/06_Elementtypen.png "2D- und 3D-Elementtypen"){.glightbox}
+[![2D- und 3D-Elementtypen](media/05_elementtypen_ansatzf/06_Elementtypen.png){width=600px}](media/05_elementtypen_ansatzf/06_Elementtypen.png "2D- und 3D-Elementtypen"){.glightbox}
 <span class="bildquelle">Bildquelle[@Comsol2025]</span>
 
 Bei jeder Dimension kann zusätzlich die **Ansatzordnung** verändert werden. Linear bedeutet, dass die physikalischen Größen zwischen den Knoten **geradlinig** verlaufen. Quadratische und kubische Elemente besitzen **Mittenknoten**, wodurch sich die Form innerhalb eines Elements **gekrümmt** darstellen lässt – ein entscheidender Vorteil bei runden oder komplexen Geometrien.  
 
 Die folgende Abbildung zeigt ein **halbkreisförmiges Gebiet**, das mit unterschiedlichen geometrischen Ansatzordnungen diskretisiert wurde. Je höher die Ordnung, desto besser folgt die Netzgeometrie der tatsächlichen Rundung: lineare Elemente bilden den Kreis nur grob ab, während quadratische und kubische Elemente die Kontur deutlich glatter wiedergeben. Die blauen Punkte kennzeichnen die Knotenpositionen.
 
-[![Einfluss der Ansatzordnung auf die Geometrie-Approximation](media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png){width=700px}](media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png "Einfluss der Ansatzordnung auf die Geometrie-Approximation"){.glightbox}
+[![Einfluss der Ansatzordnung auf die Geometrie-Approximation](media/05_elementtypen_ansatzf/07_Elementtypen_COMSOL_OrderEffect.png){width=700px}](media/05_elementtypen_ansatzf/07_Elementtypen_COMSOL_OrderEffect.png "Einfluss der Ansatzordnung auf die Geometrie-Approximation"){.glightbox}
 <span class="bildquelle">Bildquelle[@Comsol2025]</span>
 
 ---
@@ -265,7 +265,7 @@ Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart un
     * **SHELL181 / SHELL281:** dünnwandige 2D-Elemente mit Membran- und Biegeverhalten.  
       Geeignet für Bleche, Gehäuse, Rohre und Schalenstrukturen. 
 
-    [![Schalenelemente und Krümmung](media/05_elementtypen_netz/09_Shell_Elements.png){width=400px}](media/05_elementtypen_netz/09_Shell_Elements.png "Schalenelemente und Krümmung"){.glightbox}  
+    [![Schalenelemente und Krümmung](media/05_elementtypen_ansatzf/09_Shell_Elements.png){width=400px}](media/05_elementtypen_ansatzf/09_Shell_Elements.png "Schalenelemente und Krümmung"){.glightbox}  
     <span class="bildquelle">Bildquelle[@Ansys2025]</span>   
 
     ---
@@ -274,7 +274,7 @@ Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart un
     * **CONTA174 / TARGE170:** modellieren Reibung, Haftung, Öffnen / Schließen.  
       Wichtig für Presssitze, Lagerungen und Montagezustände.  
 
-    [![Kontaktelelemente](media/05_elementtypen_netz/11_Contact_Elements.svg){width=550px}](media/05_elementtypen_netz/11_Contact_Elements.svg "Kontaktelelemente"){.glightbox}  
+    [![Kontaktelelemente](media/05_elementtypen_ansatzf/11_Contact_Elements.svg){width=550px}](media/05_elementtypen_ansatzf/11_Contact_Elements.svg "Kontaktelelemente"){.glightbox}  
     <span class="bildquelle">Bildquelle[@Ansys2025]</span>  
 
     ---
@@ -286,7 +286,7 @@ Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart un
     ---
 
     **Feder-, Lager- und Zusatz-Elemente**  
-    [![Federn und Lager](media/05_elementtypen_netz/13_Spring_Elements.svg){width=500px}](media/05_elementtypen_netz/13_Spring_Elements.svg "Federn und Lager"){.glightbox}  
+    [![Federn und Lager](media/05_elementtypen_ansatzf/13_Spring_Elements.svg){width=500px}](media/05_elementtypen_ansatzf/13_Spring_Elements.svg "Federn und Lager"){.glightbox}  
     <span class="bildquelle">Bildquelle[@Ansys2025]</span>  
 
     * **COMBIN14:** lineare Feder / Dämpfer zwischen Knoten  
@@ -302,34 +302,180 @@ Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart un
 
 [![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
 
+## Aufgabenstellung Zugstab mit Querschnittsänderung
+
+Untersucht wird der Einfluss der **Elementordnung** und der **Netzauflösung** auf die Ergebnisqualität einer FEM-Berechnung. Als Beispiel dient der **Zugstab mit kreisförmigem Übergang** (nach Schier[@Schier2023]).  
+
+Geometrie und Randbedingungen:  
+
+* verjüngter Rundstab mit kreisförmigem Übergang  
+* Anfangsdurchmesser \( D = 34{,}8\,\text{mm} \)  
+* Enddurchmesser \( d = 8\,\text{mm} \)  
+* Übergangslänge \( L = 50\,\text{mm} \)  
+* Übergangsradius \( R = 100\,\text{mm} \)  
+* axiale Zugkraft \( F = 10\,\text{kN} \)  
+* Material: *Aluminiumlegierung* (aus ANSYS-Bibliothek)  
+* Geometriedatei: [zugstab.stp](media/03_kragbalken/kragbalken.stp)
+
+[![Zugstab mit kreisförmigem Übergang nach Schier](media/05_elementtypen_ansatzf/zugstab.svg){width=600px}](media/05_elementtypen_ansatzf/zugstab.svg "Zugstab mit kreisförmigem Übergang nach Schier"){.glightbox}
+
+**Bearbeiten Sie folgende Punkte:**
+
+* Erzeugen Sie mehrere Netzvarianten mit unterschiedlicher **Netzauflösung**.  
+* Vergleichen Sie die Ergebnisse für **lineare** (SOLID185) und **quadratische** (SOLID186) Volumenelemente.  
+* Bewerten Sie die **Netzqualität** im Übergangsbereich.  
+* Leiten Sie aus den Ergebnissen das **Konvergenzverhalten** ab und diskutieren Sie den Einfluss der Ansatzfunktionen.  
+* Vergleichen Sie Ihre Ergebnisse mit der **analytischen Lösung** (maximale Spannung und maximale Verschiebung).
+
+Ziel ist der Vergleich von **linearen** und **quadratischen Volumenelementen** bei schrittweiser Verfeinerung der Netzauflösung sowie die Bewertung der **Netzqualität** im Übergangsbereich.  
+Besonderes Augenmerk liegt auf der Wirkung der **Ansatzfunktionen** und dem daraus resultierenden **Konvergenzverhalten**.
+
+## Analytische Lösung
+
+Die analytische Lösung beschreibt den Zusammenhang zwischen **Zugkraft**, **Querschnittsfläche** und **Verschiebung** entlang der Stablänge. Ausgehend von der linearen Elastizität gilt:
+
+\[
+\sigma(x) = \frac{F}{A(x)}, \quad \varepsilon(x) = \frac{\sigma(x)}{E}, \quad \frac{du}{dx} = \varepsilon(x)
+\]
+
+Damit ergibt sich die Verschiebung \(u(x)\) aus der Integration über die Stablänge:
+
+\[
+u(x) = \int_0^x \frac{F}{E \, A(x)} \, dx
+\]
+
+Für den Zugstab mit kreisförmigem Übergang wird die Querschnittsfläche \(A(x)\) näherungsweise beschrieben durch[@Schier2023]
+
+\[
+A(x) = 857 \, e^{-0{,}062x}
+\]
+
+mit \(x\) in mm und \(A(x)\) in mm². Durch Integration ergibt sich die Verschiebungsverteilung:
+
+\[
+u(x) = \frac{F}{857 \, E \, 0{,}062} \left( e^{0{,}062x} - 1 \right)
+\]
+
+und damit die ortsabhängige Spannung:
+
+\[
+\sigma(x) = \frac{F}{A(x)} = \frac{F}{857} \, e^{0{,}062x}
+\]
+
+??? note "Erläuterung zur Näherung – exakte Kreisgleichung und Integrationsaufwand"
+    Für einen kreisförmigen Übergang ergibt sich der Radiusverlauf als Kreisbogen mit
+
+    \[
+    (x - x_c)^2 + \bigl(r(x) - r_c\bigr)^2 = R^2
+    \quad\Rightarrow\quad
+    A(x) = \pi \Bigl[r_c \mp \sqrt{R^2 - (x - x_c)^2}\Bigr]^2 .
+    \]
+
+    Dabei bezeichnet  
+    * \(R\): den **Übergangsradius**, also den Radius des Kreisbogens, der den Querschnittsübergang beschreibt,  
+    * \(x_c\): die **horizontale Lage** des Kreismittelpunkts,  
+    * \(r_c\): die **vertikale Lage** des Kreismittelpunkts (bezieht sich auf den Radius des Stabs).  
+
+    Die Verschiebung ergibt sich zu
+
+    \[
+    u(L)=\int_0^{L}\frac{F}{E\,A(x)}\,dx
+    =\frac{F}{E\pi}\int_0^{L}\frac{dx}{\Bigl[r_c \mp \sqrt{R^2-(x-x_c)^2}\Bigr]^2}\, .
+    \]
+
+    Dieses Integral ist analytisch **nur schwer lösbar**, da trigonometrische Substitutionen und Randwertanpassungen erforderlich sind.  
+    Hier wird deshalb eine **exponentielle Näherung** \(A(x)=857\,e^{-0{,}062x}\) verwendet.  
+    Sie vereinfacht die Integration erheblich, ohne den physikalischen Verlauf wesentlich zu verändern.
+
+**Eingesetzte Werte:**
+
+* Zugkraft \( F = 10\,000\,\text{N} \)  
+* Elastizitätsmodul Aluminium \( E = 70\,000\,\text{MPa} \)  
+* Stablänge \( L = 50\,\text{mm} \)
+
+Damit ergibt sich die maximale Verschiebung am freien Ende:
+
+\[
+u(L) = \frac{10\,000}{857 \cdot 70\,000 \cdot 0{,}062} \left( e^{0{,}062 \cdot 50} - 1 \right)
+\]
+
+\[
+u(L) \approx 0{,}057\,\text{mm}
+\]
+
+Die maximale Spannung im kleinsten Querschnitt mit \( A_\text{min} = 50{,}3\,\text{mm}^2 \) beträgt:
+
+\[
+\sigma_\text{max} = \frac{F}{A_\text{min}} = \frac{10\,000}{50{,}3} \approx 199\,\text{MPa}
+\]
+
+!!! Note "Kontinuierliche vs. diskrete Beschreibung"
+    Die analytische Lösung beschreibt den **kontinuierlichen Verlauf** der Verschiebung entlang der Stablänge. In der Finite-Elemente-Methode wird derselbe Zusammenhang **diskretisiert**, indem der Stab in Teilbereiche zerlegt wird. Innerhalb jedes Elements erfolgt die Approximation des Verschiebungsverlaufs über Ansatzfunktionen, sodass die Integration über das Gebiet schrittweise (lokal) erfolgt. Bei hinreichend feiner Netzauflösung konvergiert das FEM-Ergebnis gegen die analytische Lösung.
+
 <!--
-## 2. Guided Example – Influence of Element Type and 
 
-Ein axially loaded bar with varying cross-section is analysed analytically and with FEM.
+## Umsetzung in ANSYS Workbench
 
-1. Define geometry and material:  
-   \(L = 100\,\text{mm}, E = 210\,\text{GPa}, A(x) = 50 - 0.4x\,\text{mm}^2\)
-2. Compute the analytical displacement \(u(x)\) and stress \(\sigma(x)\).
-3. Model the same bar in ANSYS with:
-   * linear elements (SOLID185)  
-   * quadratic elements (SOLID186)
-4. Compare σ<sub>max</sub> and u<sub>max</sub> for different mesh densities.
+### 1. Projektaufbau
 
-Optional: perform an h-study to verify convergence.
+Kurze Beschreibung der Projektstruktur und beteiligten Systeme (*Engineering Data*, *Geometry*, *Model*, *Setup*, *Solution*).  
+Ziel: ein konsistentes Setup für alle Netz- und Elementvarianten.
 
-<span class="bildquelle">based on Bielak (2020) and Madenci & Guven (2015)</span>
+### 2. Materialauswahl
+
+Hinzufügen und Zuweisen des Materials *Aluminum Alloy* aus der ANSYS-Bibliothek.  
+Keine Vergleichsstudie, nur Workflow-Übung.
+
+### 3. Geometrie
+
+Erstellung des Zugstabs mit sanfter Querschnittsänderung.  
+Angabe der Hauptabmessungen, Übergangsradien und Named Selections.  
+Export- oder Parametereinstellungen falls erforderlich.
+
+### 4. Randbedingungen
+
+Definition von *Fixed Support* und *Force* an den Stirnflächen.  
+Hinweis auf die Wahl der Kraft zur Erzeugung einer sinnvollen Nennspannung.
+
+### 5. Netzaufbau
+
+Erzeugung verschiedener Netzstufen (h-Studie) und Wahl der Elementordnung:  
+
+* lineare Elemente → SOLID185  
+* quadratische Elemente → SOLID186  
+Optional: Variante mit absichtlich schlechter Netzqualität.  
+
+### 6. Lösung und Auswertung
+
+Berechnung der Varianten, Auswertung von  
+
+* Verschiebung \(u_x\)  
+* Normalspannung \(\sigma_{xx}\)  
+* Vergleich der Spannungskonturen linear/quadratisch  
+* ggf. Pfadauswertung und Export der Ergebnisse  
+
+### 7. Ergebnisvergleich
+
+Darstellung der Ergebnisse in Tabellen- oder Plotform:  
+Konvergenzverhalten, Fehler vs. h, Einfluss der Elementordnung.  
+Einbindung interaktiver Plotly-Diagramme.
+
+### 8. Netzqualität (Erweiterung nach Klein)
+
+Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.  
+Abbildung mit Lightbox-Zoom und Quellenangabe.
 
 ---
 
-## 3. Interpretation and Discussion
+## Diskussion der Ergebnisse
 
-* Quadratic elements converge faster and better reproduce the analytical stress distribution.  
-* Linear elements require finer meshes to reach similar accuracy.  
-* Mesh refinement should be concentrated in regions with high stress gradients.  
-* Smoothing affects visualization but not numerical accuracy.  
-* The optimal model balances **accuracy vs. computational cost**.
+Interpretation der Beobachtungen:  
+* Einfluss der Ansatzordnung auf Genauigkeit  
+* Rolle der Netzfeinheit  
+* Bedeutung der Netzqualität  
+* Grenzen der Spannungs­glättung  
 
----
+Bezug zur Theorie (Ansatzfunktionen, Konvergenz).  
 
 wie geht's weiter:
   - Modul 4 Krafteinleitung: 06_krafteinleitung.md
@@ -345,7 +491,7 @@ wie geht's weiter:
 | :----: | :---- | :---------- |
 | **03** | **Elementtypen & Netzqualität** | Vergleich linearer und quadratischer Volumenelemente (SOLID185/186), Einfluss der Ansatzfunktionen auf Genauigkeit und Konvergenz, Netzgüte, Spannungs­glättung, einfache h-Studie. |
 | **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich, Netzqualität und Spannungs­glättung |
-| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt) |
+| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt), |
 | **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
 | **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
 | **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |

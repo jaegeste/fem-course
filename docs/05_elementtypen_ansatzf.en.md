@@ -32,7 +32,7 @@ A one-dimensional bar is therefore divided into several **finite elements**, who
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Discretization of a bar into finite elements](media/05_elementtypen_netz/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_netz/01_FE_Discretizatio.png "Discretization of a bar into finite elements"){.glightbox}
+[![Discretization of a bar into finite elements](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png "Discretization of a bar into finite elements"){.glightbox}
 <span class="bildquelle">Source[@Bielak2024]</span>
 
 !!! note "Explanation of element and node numbering"
@@ -58,7 +58,7 @@ Each function \(\Phi_i(x)\) therefore describes the influence of node \(i\) on t
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Shape functions for several nodes of a bar](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png){width=600px}](media/05_elementtypen_netz/02_ShapeFunctions_Linear.png "Shape functions for several nodes of a bar"){.glightbox}
+[![Shape functions for several nodes of a bar](media/05_elementtypen_ansatzf/02_ShapeFunctions_Linear.png){width=600px}](media/05_elementtypen_ansatzf/02_ShapeFunctions_Linear.png "Shape functions for several nodes of a bar"){.glightbox}
 <span class="bildquelle">Source[@Bielak2024]</span>
 
 !!! note "Remarks on shape functions"
@@ -123,7 +123,7 @@ In contrast to linear elements, the shape functions are now **quadratic**, allow
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Quadratic shape functions of a 1D element](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png){width=550px}](media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png "Quadratic shape functions of a 1D element"){.glightbox}
+[![Quadratic shape functions of a 1D element](media/05_elementtypen_ansatzf/03_ShapeFunctions_Quadratic.png){width=550px}](media/05_elementtypen_ansatzf/03_ShapeFunctions_Quadratic.png "Quadratic shape functions of a 1D element"){.glightbox}
 <span class="bildquelle">Source [@Bielak2024]</span>
 
 The figure shows the three **shape functions** \(\Phi_1(\xi)\), \(\Phi_2(\xi)\), and \(\Phi_3(\xi)\).  
@@ -212,7 +212,7 @@ In ANSYS, such a study can be performed using different mesh densities. Typicall
 
 The following figure illustrates the relationship between error magnitude and mesh refinement. In double-logarithmic representation, the curves appear linear – their slope corresponds to the respective **order of convergence \(p\)**.
 
-[![Convergence diagram h-p](media/05_elementtypen_netz/05_Convergence_hp.png){width=520px}](media/05_elementtypen_netz/05_Convergence_hp.png "Convergence diagram h-p"){.glightbox}
+[![Convergence diagram h-p](media/05_elementtypen_ansatzf/05_Convergence_hp.png){width=520px}](media/05_elementtypen_ansatzf/05_Convergence_hp.png "Convergence diagram h-p"){.glightbox}
 <span class="bildquelle">Source [@Bielak2024]</span>
 
 ---
@@ -237,14 +237,14 @@ The table shows typical **element types in ANSYS Mechanical**:
 
 Thus, 1D elements consist of **line segments**, 2D elements represent **surfaces**, and 3D elements describe **volumes**. As the dimensionality increases, the number of **nodes and degrees of freedom** also increases – enhancing the potential for a more accurate and realistic description of the physical behavior.
 
-[![2D and 3D element types](media/05_elementtypen_netz/06_Elementtypen.png){width=600px}](media/05_elementtypen_netz/06_Elementtypen.png "2D and 3D element types"){.glightbox}
+[![2D and 3D element types](media/05_elementtypen_ansatzf/06_Elementtypen.png){width=600px}](media/05_elementtypen_ansatzf/06_Elementtypen.png "2D and 3D element types"){.glightbox}
 <span class="bildquelle">Source[@Comsol2025]</span>
 
 For each dimension, the **shape function order** can be modified. Linear means that physical quantities vary **linearly** between nodes. Quadratic and cubic elements include **mid-nodes**, allowing the shape within an element to become **curved** – a crucial advantage when modeling rounded or complex geometries.  
 
 The following figure shows a **semicircular domain** discretized with different geometric approximation orders. The higher the order, the better the mesh conforms to the actual curvature: linear elements provide a rough approximation, while quadratic and cubic elements reproduce the contour much more smoothly. The blue points indicate the node positions.
 
-[![Influence of shape function order on geometric approximation](media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png){width=700px}](media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png "Influence of shape function order on geometric approximation"){.glightbox}
+[![Influence of shape function order on geometric approximation](media/05_elementtypen_ansatzf/07_Elementtypen_COMSOL_OrderEffect.png){width=700px}](media/05_elementtypen_ansatzf/07_Elementtypen_COMSOL_OrderEffect.png "Influence of shape function order on geometric approximation"){.glightbox}
 <span class="bildquelle">Source[@Comsol2025]</span>
 
 ---
@@ -267,7 +267,7 @@ The selection of the appropriate element type depends on the geometry, loading m
     * **SHELL181 / SHELL281:** thin-walled 2D elements with membrane and bending behavior.  
       Suitable for sheets, housings, pipes, and shell structures.  
 
-    [![Shell elements and curvature](media/05_elementtypen_netz/09_Shell_Elements.png){width=400px}](media/05_elementtypen_netz/09_Shell_Elements.png "Shell elements and curvature"){.glightbox}  
+    [![Shell elements and curvature](media/05_elementtypen_ansatzf/09_Shell_Elements.png){width=400px}](media/05_elementtypen_ansatzf/09_Shell_Elements.png "Shell elements and curvature"){.glightbox}  
     <span class="bildquelle">Source[@Ansys2025]</span>   
 
     ---
@@ -276,7 +276,7 @@ The selection of the appropriate element type depends on the geometry, loading m
     * **CONTA174 / TARGE170:** model friction, adhesion, and open/close behavior.  
       Important for press fits, bearings, and assembly states.  
 
-    [![Contact elements](media/05_elementtypen_netz/11_Contact_Elements.svg){width=550px}](media/05_elementtypen_netz/11_Contact_Elements.svg "Contact elements"){.glightbox}  
+    [![Contact elements](media/05_elementtypen_ansatzf/11_Contact_Elements.svg){width=550px}](media/05_elementtypen_ansatzf/11_Contact_Elements.svg "Contact elements"){.glightbox}  
     <span class="bildquelle">Source[@Ansys2025]</span>  
 
     ---
@@ -288,7 +288,7 @@ The selection of the appropriate element type depends on the geometry, loading m
     ---
 
     **Spring, Bearing, and Auxiliary Elements**  
-    [![Springs and bearings](media/05_elementtypen_netz/13_Spring_Elements.svg){width=500px}](media/05_elementtypen_netz/13_Spring_Elements.svg "Springs and bearings"){.glightbox}  
+    [![Springs and bearings](media/05_elementtypen_ansatzf/13_Spring_Elements.svg){width=500px}](media/05_elementtypen_ansatzf/13_Spring_Elements.svg "Springs and bearings"){.glightbox}  
     <span class="bildquelle">Source[@Ansys2025]</span>  
 
     * **COMBIN14:** linear spring/damper between nodes  
@@ -301,5 +301,118 @@ The selection of the appropriate element type depends on the geometry, loading m
 
     * **SOLID70 / SOLID90:** steady-state / transient heat conduction  
     * **SURF152:** surface heat transfer  
+
+## Task: Tension Bar with Varying Cross-Section
+
+The objective is to investigate the influence of **element order** and **mesh resolution** on the result quality of an FEM simulation. The example used is a **tension bar with a circular transition** (according to Schier[@Schier2023]).  
+
+Geometry and boundary conditions:  
+
+* tapered round bar with circular transition  
+* initial diameter \( D = 34.8\,\text{mm} \)  
+* final diameter \( d = 8\,\text{mm} \)  
+* transition length \( L = 50\,\text{mm} \)  
+* transition radius \( R = 100\,\text{mm} \)  
+* axial tensile force \( F = 10\,\text{kN} \)  
+* material: *aluminum alloy* (from ANSYS library)  
+* geometry file: [zugstab.stp](media/03_kragbalken/kragbalken.stp)
+
+[![Tension bar with circular transition according to Schier](media/05_elementtypen_ansatzf/zugstab.svg){width=600px}](media/05_elementtypen_ansatzf/zugstab.svg "Tension bar with circular transition according to Schier"){.glightbox}
+
+**Perform the following tasks:**
+
+* Generate several mesh variants with different **mesh resolutions**.  
+* Compare the results for **linear** (SOLID185) and **quadratic** (SOLID186) solid elements.  
+* Evaluate the **mesh quality** in the transition region.  
+* Derive the **convergence behavior** from the results and discuss the influence of the shape functions.  
+* Compare your results with the **analytical solution** (maximum stress and maximum displacement).
+
+The goal is to compare **linear** and **quadratic solid elements** with gradually refined mesh resolutions and to evaluate the **mesh quality** in the transition zone.  
+Special attention is given to the effect of the **shape functions** and the resulting **convergence behavior**.
+
+## Analytical Solution
+
+The analytical solution describes the relationship between **tensile force**, **cross-sectional area**, and **displacement** along the bar length. Based on linear elasticity:
+
+\[
+\sigma(x) = \frac{F}{A(x)}, \quad \varepsilon(x) = \frac{\sigma(x)}{E}, \quad \frac{du}{dx} = \varepsilon(x)
+\]
+
+Thus, the displacement \(u(x)\) results from integration along the bar length:
+
+\[
+u(x) = \int_0^x \frac{F}{E \, A(x)} \, dx
+\]
+
+For the tension bar with a circular transition, the cross-sectional area \(A(x)\) is approximately given by[@Schier2023]
+
+\[
+A(x) = 857 \, e^{-0.062x}
+\]
+
+where \(x\) is in mm and \(A(x)\) in mm². Integrating yields the displacement distribution:
+
+\[
+u(x) = \frac{F}{857 \, E \, 0.062} \left( e^{0.062x} - 1 \right)
+\]
+
+and the corresponding stress distribution:
+
+\[
+\sigma(x) = \frac{F}{A(x)} = \frac{F}{857} \, e^{0.062x}
+\]
+
+??? note "Explanation of the Approximation – Exact Circular Equation and Integration Effort"
+    For a circular transition, the radius progression follows a circular arc defined by
+
+    \[
+    (x - x_c)^2 + \bigl(r(x) - r_c\bigr)^2 = R^2
+    \quad\Rightarrow\quad
+    A(x) = \pi \Bigl[r_c \mp \sqrt{R^2 - (x - x_c)^2}\Bigr]^2 .
+    \]
+
+    Here,  
+    * \(R\): **transition radius**, i.e., the radius of the circular arc describing the cross-section transition,  
+    * \(x_c\): **horizontal position** of the circle center,  
+    * \(r_c\): **vertical position** of the circle center (refers to the bar radius).  
+
+    The displacement can then be expressed as
+
+    \[
+    u(L)=\int_0^{L}\frac{F}{E\,A(x)}\,dx
+    =\frac{F}{E\pi}\int_0^{L}\frac{dx}{\Bigl[r_c \mp \sqrt{R^2-(x-x_c)^2}\Bigr]^2}\, .
+    \]
+
+    This integral is **difficult to solve analytically** because it requires trigonometric substitutions and boundary adjustments.  
+    Therefore, an **exponential approximation** \(A(x)=857\,e^{-0.062x}\) is used here.  
+    This greatly simplifies the integration without significantly altering the physical behavior.
+
+**Input parameters:**
+
+* Tensile force \( F = 10{,}000\,\text{N} \)  
+* Elastic modulus of aluminum \( E = 70{,}000\,\text{MPa} \)  
+* Bar length \( L = 50\,\text{mm} \)
+
+Thus, the maximum displacement at the free end is:
+
+\[
+u(L) = \frac{10{,}000}{857 \cdot 70{,}000 \cdot 0.062} \left( e^{0.062 \cdot 50} - 1 \right)
+\]
+
+\[
+u(L) \approx 0.057\,\text{mm}
+\]
+
+The maximum stress in the smallest cross-section with \( A_\text{min} = 50.3\,\text{mm}^2 \) is:
+
+\[
+\sigma_\text{max} = \frac{F}{A_\text{min}} = \frac{10{,}000}{50.3} \approx 199\,\text{MPa}
+\]
+
+!!! Note "Continuous vs. Discrete Description"
+    The analytical solution describes the **continuous distribution** of displacement along the bar length.  
+    In the finite element method, the same relationship is **discretized** by dividing the bar into subdomains.  
+    Within each element, the displacement field is approximated by shape functions, and the integration is performed locally.  
+    With sufficiently fine mesh resolution, the FEM result converges toward the analytical solution.
 
 [![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}

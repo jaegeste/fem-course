@@ -1,0 +1,994 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/05_elementtypen_ansatzf/">
+      
+      
+        <link rel="prev" href="../04_kerbwirkung/">
+      
+      
+      
+      <link rel="icon" href="../../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Module 3 Element Types/Shape functions - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../overrides/main.css">
+    
+      <link rel="stylesheet" href="../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-3-element-types-and-shape-functions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Module 3 Element Types/Shape functions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../05_elementtypen_ansatzf/" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation and getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_kragbalken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 1 Cantilever Beam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 2 Stress Concentration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Module 3 Element Types/Shape functions
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 3 Element Types/Shape functions
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape-functions-theoretical-background-according-to-bielak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shape Functions (Theoretical Background according to Bielak)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-behavior-and-mesh-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Behavior and Mesh Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-types-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Element Types in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shape-functions-theoretical-background-according-to-bielak" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shape Functions (Theoretical Background according to Bielak)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#convergence-behavior-and-mesh-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Convergence Behavior and Mesh Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#element-types-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Element Types in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-3-element-types-and-shape-functions">Module 3 Element Types and Shape Functions<a class="headerlink" href="#module-3-element-types-and-shape-functions" title="Permanent link">&para;</a></h1>
+<h2 id="learning-objectives">Learning Objectives<a class="headerlink" href="#learning-objectives" title="Permanent link">&para;</a></h2>
+<p>Upon completion of this module, students will be able to:</p>
+<ul>
+<li>explain the influence of shape functions and element order (linear vs. quadratic) on the accuracy of an FEM result,  </li>
+<li>assess the relationship between mesh refinement, element distortion, and result quality,  </li>
+<li>explain the concept of convergence and perform an h-study (mesh refinement study),  </li>
+<li>interpret stress distributions critically and evaluate the effect of stress smoothing,  </li>
+<li>determine from FEM results when further mesh refinement or higher-order elements are required.</li>
+</ul>
+<h2 id="shape-functions-theoretical-background-according-to-bielak">Shape Functions (Theoretical Background according to Bielak<sup id="fnref:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup>)<a class="headerlink" href="#shape-functions-theoretical-background-according-to-bielak" title="Permanent link">&para;</a></h2>
+<p>In the previous chapter, the Finite Element Method was introduced in a simplified form, focusing on how complex structures can be approximated by a discrete number of elements connected through nodes.  </p>
+<p>This module deepens the theoretical foundation on which the method is based. The focus is on the mathematical principles of discretization, the form of the shape functions, and the influence of element order on result accuracy and convergence. These relationships form the basis for correctly interpreting FEM results in physical terms and systematically evaluating the impact of mesh quality.</p>
+<p>The FEM is based on the idea of dividing a continuous physical system into a finite number of small, simply describable subdomains. These subdomains are called <strong>elements</strong>, and the connection points between them are called <strong>nodes</strong>.  </p>
+<p>Within each element, the physical behavior (e.g., displacement <span class="arithmatex">\(u\)</span>) is not represented exactly but approximated by a simple mathematical function. This function is called the <strong>shape function</strong>.</p>
+<hr />
+<h3 id="discretization-and-shape-functions">Discretization and Shape Functions<a class="headerlink" href="#discretization-and-shape-functions" title="Permanent link">&para;</a></h3>
+<p>Instead of describing the entire component as a continuous body, each element is considered separately. For each element, the displacement between the nodes is approximated by a shape function.  </p>
+<p>A one-dimensional bar is therefore divided into several <strong>finite elements</strong>, whose boundaries are defined by <strong>nodes</strong>. The following figure illustrates such a mesh consisting of <span class="arithmatex">\(N\)</span> elements. The nodes are numbered along the bar axis, and the elements are denoted by <span class="arithmatex">\(\Omega_1, \Omega_2, \dots, \Omega_N\)</span>.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/01_FE_Discretizatio.png" title="Discretization of a bar into finite elements"><img alt="Discretization of a bar into finite elements" src="../../media/05_elementtypen_netz/01_FE_Discretizatio.png" width="600px" /></a>
+<span class="bildquelle">Source<sup id="fnref2:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<div class="admonition note">
+<p class="admonition-title">Explanation of element and node numbering</p>
+<ul>
+<li>Between two consecutive nodes <span class="arithmatex">\(x_i\)</span> and <span class="arithmatex">\(x_{i+1}\)</span>, there is one element <span class="arithmatex">\(\Omega_i\)</span>.</li>
+<li>The nodes are numbered sequentially along the bar axis – from <span class="arithmatex">\(x_1\)</span> to <span class="arithmatex">\(x_{N+1}\)</span>.</li>
+<li>The index <span class="arithmatex">\(i\)</span> represents any arbitrary position within the mesh (e.g., <span class="arithmatex">\(i = 3\)</span> for the third element).</li>
+<li>In general: a mesh with <span class="arithmatex">\(N\)</span> elements contains <span class="arithmatex">\(N + 1\)</span> nodes.</li>
+</ul>
+</div>
+<hr />
+<p>Each node is assigned its own <strong>shape function</strong> <span class="arithmatex">\(\Phi_i(x)\)</span>, which is nonzero only in its immediate neighborhood and vanishes elsewhere. These functions are often referred to as <strong>hat functions</strong> because their shape resembles a roof profile.  </p>
+<p>The total displacement <span class="arithmatex">\(u(x)\)</span> is then given by:</p>
+<div class="arithmatex">\[
+u(x) = \sum_{i=1}^{n} \Phi_i(x) \, u_i
+\]</div>
+<p>Each function <span class="arithmatex">\(\Phi_i(x)\)</span> therefore describes the influence of node <span class="arithmatex">\(i\)</span> on the overall displacement. At its own node, <span class="arithmatex">\(\Phi_i(x_i) = 1\)</span>, while at all other nodes, <span class="arithmatex">\(\Phi_i(x_j) = 0\)</span>.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/02_ShapeFunctions_Linear.png" title="Shape functions for several nodes of a bar"><img alt="Shape functions for several nodes of a bar" src="../../media/05_elementtypen_netz/02_ShapeFunctions_Linear.png" width="600px" /></a>
+<span class="bildquelle">Source<sup id="fnref3:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<div class="admonition note">
+<p class="admonition-title">Remarks on shape functions</p>
+<ul>
+<li>
+<p>Each shape function <span class="arithmatex">\(\Phi_i(x)\)</span> has only a <strong>local influence</strong> – it is active only within the directly adjacent elements and zero elsewhere.<br />
+  Thus, each node affects only its immediate surroundings, leading to the sparse structure of the global system of equations.  </p>
+</li>
+<li>
+<p>The term <strong>hat function</strong> refers exclusively to the shape of <strong>linear shape functions</strong>.<br />
+  For quadratic or higher-order elements, the functions are curved; they satisfy the same conditions <span class="arithmatex">\(\Phi_i(x_i)=1\)</span>, <span class="arithmatex">\(\Phi_i(x_j)=0\)</span>, but no longer exhibit a simple roof-like form.</p>
+</li>
+<li>
+<p>The superposition of all shape functions yields the approximated displacement distribution <span class="arithmatex">\(u(x)\)</span> along the entire component.<br />
+  Consequently, the originally continuous problem is reduced to a finite number of degrees of freedom – the nodal displacements <span class="arithmatex">\(u_i\)</span>.</p>
+</li>
+</ul>
+</div>
+<hr />
+<h3 id="linear-shape-functions-1d-elements">Linear Shape Functions (1D Elements)<a class="headerlink" href="#linear-shape-functions-1d-elements" title="Permanent link">&para;</a></h3>
+<p>The general approximation introduced in the previous section  </p>
+<div class="arithmatex">\[
+u(x) = \sum_{i=1}^{n} \Phi_i(x)\,u_i
+\]</div>
+<p>applies to the entire system. Considering now <strong>a single element</strong> with <strong>two nodes</strong> located at <span class="arithmatex">\(x_1 = 0\)</span> and <span class="arithmatex">\(x_2 = L\)</span>, the expression reduces to two local shape functions <span class="arithmatex">\(N_1(x)\)</span> and <span class="arithmatex">\(N_2(x)\)</span>:</p>
+<div class="arithmatex">\[
+u(x) = N_1(x)\,u_1 + N_2(x)\,u_2
+\]</div>
+<p>The task is to determine these functions <span class="arithmatex">\(N_i(x)\)</span> such that they satisfy the interpolation conditions</p>
+<div class="arithmatex">\[
+N_1(0)=1,\; N_1(L)=0, \qquad N_2(0)=0,\; N_2(L)=1
+\]</div>
+<p>Since the displacement between the nodes is assumed to vary linearly, the following linear relationship is assumed:</p>
+<div class="arithmatex">\[
+u(x) = a + bx
+\]</div>
+<p>Applying the boundary conditions yields:</p>
+<div class="arithmatex">\[
+u(0)=u_1,\quad u(L)=u_2 \;\Rightarrow\; u(x)=u_1+\frac{u_2-u_1}{L}\,x
+\]</div>
+<p>Comparing this expression with <span class="arithmatex">\(u(x)=N_1(x)u_1+N_2(x)u_2\)</span> leads to the <strong>linear shape functions</strong>:</p>
+<div class="arithmatex">\[
+N_1(x)=1-\frac{x}{L}, \qquad N_2(x)=\frac{x}{L}
+\]</div>
+<p>Differentiation with respect to the coordinate <span class="arithmatex">\(x\)</span> gives the constant strain <span class="arithmatex">\(\varepsilon=\frac{du}{dx}\)</span>. Linear elements can therefore represent <strong>only linear deformation distributions</strong>.<br />
+In regions with curved or highly varying behavior – for example near notches or contact zones – they provide only a coarse approximation. Higher accuracy in such areas is achieved through finer meshes or higher-order shape functions.</p>
+<h3 id="quadratic-shape-functions-1d-elements">Quadratic Shape Functions (1D Elements)<a class="headerlink" href="#quadratic-shape-functions-1d-elements" title="Permanent link">&para;</a></h3>
+<p>Quadratic elements have <strong>three nodes</strong> – two boundary nodes and one mid-node.<br />
+In contrast to linear elements, the shape functions are now <strong>quadratic</strong>, allowing them to represent <strong>curved deformations</strong> within the element.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png" title="Quadratic shape functions of a 1D element"><img alt="Quadratic shape functions of a 1D element" src="../../media/05_elementtypen_netz/03_ShapeFunctions_Quadratic.png" width="550px" /></a>
+<span class="bildquelle">Source <sup id="fnref4:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<p>The figure shows the three <strong>shape functions</strong> <span class="arithmatex">\(\Phi_1(\xi)\)</span>, <span class="arithmatex">\(\Phi_2(\xi)\)</span>, and <span class="arithmatex">\(\Phi_3(\xi)\)</span>.  </p>
+<ul>
+<li><span class="arithmatex">\(\Phi_1(\xi)\)</span> and <span class="arithmatex">\(\Phi_3(\xi)\)</span> pass through the end nodes and vanish at the other nodes.  </li>
+<li><span class="arithmatex">\(\Phi_2(\xi)\)</span> reaches its maximum at the mid-node and approaches zero at the ends.  </li>
+</ul>
+<p>For convenience, the <strong>normalized coordinate</strong></p>
+<div class="arithmatex">\[
+\xi = \frac{x}{L}
+\]</div>
+<p>is often used so that the element lies within the interval <span class="arithmatex">\(0 \le \xi \le 1\)</span>. The three shape functions are:</p>
+<div class="arithmatex">\[
+\begin{aligned}
+\Phi_1(\xi) &amp;= 1 - 3\xi + 2\xi^2, \\
+\Phi_2(\xi) &amp;= 4\xi(1 - \xi), \\
+\Phi_3(\xi) &amp;= 2\xi^2 - \xi
+\end{aligned}
+\]</div>
+<p>Accordingly, the displacement within the element is given by:</p>
+<div class="arithmatex">\[
+u(\xi) = \Phi_1(\xi)\,u_1 + \Phi_2(\xi)\,u_2 + \Phi_3(\xi)\,u_3
+\]</div>
+<p>Quadratic elements can represent both <strong>linear and curved distributions</strong> of displacement <span class="arithmatex">\(u(x)\)</span> and stress <span class="arithmatex">\(\sigma(x)\)</span>. For the same mesh size, they yield significantly more accurate results than linear elements, but they are computationally more demanding due to the additional degrees of freedom per element.</p>
+<hr />
+<h3 id="influence-of-element-order">Influence of Element Order<a class="headerlink" href="#influence-of-element-order" title="Permanent link">&para;</a></h3>
+<p>When comparing linear and quadratic elements applied to the same component, the following observations can be made:</p>
+<ul>
+<li>Quadratic elements provide a better approximation of the stress and displacement distributions.  </li>
+<li>The convergence rate (approach to the exact solution) increases with the polynomial order of the shape functions.  </li>
+<li>For linear elements, the mesh size <span class="arithmatex">\(h\)</span> must be reduced more significantly to achieve comparable accuracy.</li>
+</ul>
+<p>The key differences between linear and quadratic elements are summarized in the following table:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"><strong>Criterion</strong></th>
+<th style="text-align: left;"><strong>Linear Elements (p = 1)</strong></th>
+<th style="text-align: left;"><strong>Quadratic Elements (p = 2)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Shape function</strong></td>
+<td style="text-align: left;">straight line between nodes</td>
+<td style="text-align: left;">curved, includes mid-node</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Deformation pattern</strong></td>
+<td style="text-align: left;">linear, no curvature</td>
+<td style="text-align: left;">curved, capable of representing nonlinear distributions</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Accuracy</strong></td>
+<td style="text-align: left;">low, slow convergence</td>
+<td style="text-align: left;">high, faster convergence</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Computational effort</strong></td>
+<td style="text-align: left;">low</td>
+<td style="text-align: left;">higher due to additional degrees of freedom</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Typical application</strong></td>
+<td style="text-align: left;">simple geometries, homogeneous loads</td>
+<td style="text-align: left;">regions with curvature, stress gradients, or contact zones</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="convergence-behavior-and-mesh-quality">Convergence Behavior and Mesh Quality<a class="headerlink" href="#convergence-behavior-and-mesh-quality" title="Permanent link">&para;</a></h2>
+<p>The accuracy of an FEM solution depends on two factors: the <strong>element size <span class="arithmatex">\(h\)</span></strong> and the <strong>shape function order <span class="arithmatex">\(p\)</span></strong>.  </p>
+<ul>
+<li><span class="arithmatex">\(h\)</span> describes the characteristic size of an element (that is, the mesh density).  </li>
+<li><span class="arithmatex">\(p\)</span> denotes the polynomial order of the shape function (linear, quadratic, …).  </li>
+</ul>
+<p>As the element size decreases and the polynomial order increases, the numerical solution approaches the exact solution. The remaining difference between the <strong>exact (true)</strong> and the <strong>numerical (FEM)</strong> solution is called the <strong>error <span class="arithmatex">\(e\)</span></strong>:</p>
+<div class="arithmatex">\[
+e = u_\text{exact} - u_\text{FEM}
+\]</div>
+<p>Since the exact solution <span class="arithmatex">\(u_\text{exact}\)</span> is usually unknown, the error is not determined directly but estimated by its <strong>magnitude</strong>. For many linear problems, its dependence on the element size can be described by a power function:</p>
+<div class="arithmatex">\[
+\| e \| \approx C \, h^p
+\]</div>
+<p>Here:  </p>
+<ul>
+<li><span class="arithmatex">\(C\)</span> represents the combined <strong>influence of geometry, material, and boundary conditions</strong>,  </li>
+<li><span class="arithmatex">\(h\)</span> is the <strong>characteristic element size</strong>,  </li>
+<li><span class="arithmatex">\(p\)</span> is the <strong>shape function order</strong>,  </li>
+<li><span class="arithmatex">\(\| e \|\)</span> is a measure of the error, e.g., the <strong>energy norm</strong> or <strong><span class="arithmatex">\(L_2\)</span>-norm</strong>.</li>
+</ul>
+<p>The smaller <span class="arithmatex">\(h\)</span> and the larger <span class="arithmatex">\(p\)</span>, the smaller the error becomes.  </p>
+<ul>
+<li>If the element length <span class="arithmatex">\(h\)</span> is halved, the error decreases by roughly <strong>a factor of four</strong> for <strong>quadratic elements</strong>, but only <strong>by a factor of two</strong> for <strong>linear elements</strong>.  </li>
+<li>A <strong>convergence check (h-study)</strong> verifies whether the result is independent of the mesh.</li>
+</ul>
+<p>In ANSYS, such a study can be performed using different mesh densities. Typically, the <strong>maximum stress or displacement</strong> is plotted against the <strong>number of elements</strong> or the <strong>element size</strong>. A stable (converged) trend indicates that the result no longer depends on the mesh.</p>
+<p>The following figure illustrates the relationship between error magnitude and mesh refinement. In double-logarithmic representation, the curves appear linear – their slope corresponds to the respective <strong>order of convergence <span class="arithmatex">\(p\)</span></strong>.</p>
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/05_Convergence_hp.png" title="Convergence diagram h-p"><img alt="Convergence diagram h-p" src="../../media/05_elementtypen_netz/05_Convergence_hp.png" width="520px" /></a>
+<span class="bildquelle">Source <sup id="fnref5:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
+<hr />
+<h2 id="element-types-in-ansys">Element Types in ANSYS<a class="headerlink" href="#element-types-in-ansys" title="Permanent link">&para;</a></h2>
+<p>The principle of shape functions directly extends to higher dimensions. Regardless of whether a bar, surface, or solid body is analyzed, the basic idea remains the same: <strong>shape functions</strong> describe how displacements or other physical quantities vary between nodes.  </p>
+<p>In finite element software, these mathematical functions are represented by specific <strong>element types</strong>. Depending on the dimension and the polynomial order, the <strong>number of nodes</strong> – and therefore the <strong>accuracy of the approximation</strong> – changes accordingly.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dimension</th>
+<th style="text-align: left;">Example Elements (ANSYS)</th>
+<th style="text-align: left;">Number of Nodes</th>
+<th style="text-align: left;">Shape Function Order</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1D</strong></td>
+<td style="text-align: left;">LINK180</td>
+<td style="text-align: left;">2 / 3</td>
+<td style="text-align: left;">linear / quadratic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2D</strong></td>
+<td style="text-align: left;">PLANE182 / 183</td>
+<td style="text-align: left;">4 / 8</td>
+<td style="text-align: left;">linear / quadratic</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3D</strong></td>
+<td style="text-align: left;">SOLID185 / 186</td>
+<td style="text-align: left;">8 / 20</td>
+<td style="text-align: left;">linear / quadratic</td>
+</tr>
+</tbody>
+</table>
+<p>The table shows typical <strong>element types in ANSYS Mechanical</strong>:  </p>
+<ul>
+<li><strong>LINK180</strong> is a line-shaped 1D element used to model trusses or tension members.  </li>
+<li><strong>PLANE182</strong> and <strong>PLANE183</strong> are 2D surface elements that can represent plane or axisymmetric structures.  </li>
+<li><strong>SOLID185</strong> (linear) and <strong>SOLID186</strong> (quadratic) are 3D solid elements with <strong>hexahedral shape</strong>, commonly used for general solid mechanics applications.  </li>
+</ul>
+<p>Thus, 1D elements consist of <strong>line segments</strong>, 2D elements represent <strong>surfaces</strong>, and 3D elements describe <strong>volumes</strong>. As the dimensionality increases, the number of <strong>nodes and degrees of freedom</strong> also increases – enhancing the potential for a more accurate and realistic description of the physical behavior.</p>
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/06_Elementtypen.png" title="2D and 3D element types"><img alt="2D and 3D element types" src="../../media/05_elementtypen_netz/06_Elementtypen.png" width="600px" /></a>
+<span class="bildquelle">Source<sup id="fnref:Comsol2025"><a class="footnote-ref" href="#fn:Comsol2025">2</a></sup></span></p>
+<p>For each dimension, the <strong>shape function order</strong> can be modified. Linear means that physical quantities vary <strong>linearly</strong> between nodes. Quadratic and cubic elements include <strong>mid-nodes</strong>, allowing the shape within an element to become <strong>curved</strong> – a crucial advantage when modeling rounded or complex geometries.  </p>
+<p>The following figure shows a <strong>semicircular domain</strong> discretized with different geometric approximation orders. The higher the order, the better the mesh conforms to the actual curvature: linear elements provide a rough approximation, while quadratic and cubic elements reproduce the contour much more smoothly. The blue points indicate the node positions.</p>
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png" title="Influence of shape function order on geometric approximation"><img alt="Influence of shape function order on geometric approximation" src="../../media/05_elementtypen_netz/07_Elementtypen_COMSOL_OrderEffect.png" width="700px" /></a>
+<span class="bildquelle">Source<sup id="fnref2:Comsol2025"><a class="footnote-ref" href="#fn:Comsol2025">2</a></sup></span></p>
+<hr />
+<div class="admonition note">
+<p class="admonition-title">Summary</p>
+<p>The combination of <strong>element type (1D–3D)</strong> and <strong>shape function order (linear–quadratic)</strong> determines <em>how finely</em> and <em>how realistically</em> a physical phenomenon can be represented.<br />
+In practice, the element type is selected such that geometry and loading conditions are described as accurately as necessary, aiming for a <strong>precise yet computationally efficient simulation</strong>.</p>
+</div>
+<hr />
+<p>The selection of the appropriate element type depends on the geometry, loading mode, and relevant physics. The goal is always to achieve a physically consistent description with minimal computational effort. For example, <em>beam</em> and <em>shell</em> elements reduce dimensionality, <em>contact</em> and <em>cohesive elements</em> extend the physical scope, and <em>thermal</em> or <em>spring elements</em> couple additional disciplines.</p>
+<details class="note">
+<summary>Special Element Types</summary>
+<p>In addition to standard volume and surface elements, a wide range of specialized element types exists to efficiently capture particular physical or geometric effects. The following examples show typical representatives in <em>ANSYS Mechanical</em>.</p>
+<hr />
+<p><strong>Shell Elements</strong><br />
+* <strong>SHELL181 / SHELL281:</strong> thin-walled 2D elements with membrane and bending behavior.<br />
+  Suitable for sheets, housings, pipes, and shell structures.  </p>
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/09_Shell_Elements.png" title="Shell elements and curvature"><img alt="Shell elements and curvature" src="../../media/05_elementtypen_netz/09_Shell_Elements.png" width="400px" /></a><br />
+<span class="bildquelle">Source<sup id="fnref:Ansys2025"><a class="footnote-ref" href="#fn:Ansys2025">3</a></sup></span>   </p>
+<hr />
+<p><strong>Contact Elements</strong><br />
+* <strong>CONTA174 / TARGE170:</strong> model friction, adhesion, and open/close behavior.<br />
+  Important for press fits, bearings, and assembly states.  </p>
+<p><a class="glightbox" href="../../media/05_elementtypen_netz/11_Contact_Elements.svg" title="Contact elements"><img alt="Contact elements" src="../../media/05_elementtypen_netz/11_Contact_Elements.svg" width="550px" /></a><br />
+<span class="bildquelle">Source<sup id="fnref2:Ansys2025"><a class="footnote-ref" href="#fn:Ansys2025">3</a></sup></span>  </p>
+<hr />
+<p><strong>Cohesive and Interface Elements</strong><br />
+* <strong>INTER205:</strong> modeling of adhesive joints, laminates, and delamination.<br />
+  Allows progressive failure through damage laws.  </p>
+<hr />
+<p><strong>Spring, Bearing, and Auxiliary Elements</strong><br />
+<a class="glightbox" href="../../media/05_elementtypen_netz/13_Spring_Elements.svg" title="Springs and bearings"><img alt="Springs and bearings" src="../../media/05_elementtypen_netz/13_Spring_Elements.svg" width="500px" /></a><br />
+<span class="bildquelle">Source<sup id="fnref3:Ansys2025"><a class="footnote-ref" href="#fn:Ansys2025">3</a></sup></span>  </p>
+<ul>
+<li><strong>COMBIN14:</strong> linear spring/damper between nodes  </li>
+<li><strong>MPC184:</strong> kinematic coupling  </li>
+<li><strong>MASS21:</strong> concentrated mass  </li>
+</ul>
+<hr />
+<p><strong>Thermal Elements</strong>  </p>
+<ul>
+<li><strong>SOLID70 / SOLID90:</strong> steady-state / transient heat conduction  </li>
+<li><strong>SURF152:</strong> surface heat transfer  </li>
+</ul>
+</details>
+<p><a class="glightbox" href="../../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../../media/under_construction.png" width="600px" /></a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Bielak2024">
+<p>Jacobo Bielak. <em>The Finite Element Method</em>. Springer International Publishing, Cham, 2024. ISBN 978-3-031-56368-3. <a href="https://doi.org/10.1007/978-3-031-56369-0">doi:10.1007/978-3-031-56369-0</a>.&#160;<a class="footnote-backref" href="#fnref:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref4:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref5:Bielak2024" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Comsol2025">
+<p>Finite element mesh refinement definition and techniques. 23.10.2025. URL: <a href="https://www.comsol.com/multiphysics/mesh-refinement">https://www.comsol.com/multiphysics/mesh-refinement</a> (visited on 23.10.2025).&#160;<a class="footnote-backref" href="#fnref:Comsol2025" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Comsol2025" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025">
+<p>Ansys help. 27.10.2025. URL: <a href="https://ansyshelp.ansys.com/">https://ansyshelp.ansys.com/</a> (visited on 27.10.2025).&#160;<a class="footnote-backref" href="#fnref:Ansys2025" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025" title="Jump back to footnote 3 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Ansys2025" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
