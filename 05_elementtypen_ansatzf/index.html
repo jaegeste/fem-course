@@ -434,6 +434,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -499,6 +535,42 @@
   <a href="#elementtypen-in-ansys" class="md-nav__link">
     <span class="md-ellipsis">
       Elementtypen in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
     </span>
   </a>
   
@@ -809,33 +881,62 @@ In der Praxis wählt man den Elementtyp so, dass die Geometrie und der Belastung
 </ul>
 </details>
 <p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a></p>
+<h2 id="aufgabenstellung">Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Permanent link">&para;</a></h2>
+<p>Beschreibung des zu untersuchenden Systems und der Zielsetzung der Übung.<br />
+Hinweis auf die Verwendung eines anderen Materials (Aluminum Alloy) aus der ANSYS-Bibliothek.<br />
+Kurzer Verweis auf Bielak (2024) als methodische Grundlage.  </p>
+<hr />
+<h2 id="umsetzung-in-ansys-workbench">Umsetzung in ANSYS Workbench<a class="headerlink" href="#umsetzung-in-ansys-workbench" title="Permanent link">&para;</a></h2>
+<h3 id="1-projektaufbau">1. Projektaufbau<a class="headerlink" href="#1-projektaufbau" title="Permanent link">&para;</a></h3>
+<p>Kurze Beschreibung der Projektstruktur und beteiligten Systeme (<em>Engineering Data</em>, <em>Geometry</em>, <em>Model</em>, <em>Setup</em>, <em>Solution</em>).<br />
+Ziel: ein konsistentes Setup für alle Netz- und Elementvarianten.</p>
+<h3 id="2-materialauswahl">2. Materialauswahl<a class="headerlink" href="#2-materialauswahl" title="Permanent link">&para;</a></h3>
+<p>Hinzufügen und Zuweisen des Materials <em>Aluminum Alloy</em> aus der ANSYS-Bibliothek.<br />
+Keine Vergleichsstudie, nur Workflow-Übung.</p>
+<h3 id="3-geometrie">3. Geometrie<a class="headerlink" href="#3-geometrie" title="Permanent link">&para;</a></h3>
+<p>Erstellung des Zugstabs mit sanfter Querschnittsänderung.<br />
+Angabe der Hauptabmessungen, Übergangsradien und Named Selections.<br />
+Export- oder Parametereinstellungen falls erforderlich.</p>
+<h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
+<p>Definition von <em>Fixed Support</em> und <em>Force</em> an den Stirnflächen.<br />
+Hinweis auf die Wahl der Kraft zur Erzeugung einer sinnvollen Nennspannung.</p>
+<h3 id="5-netzaufbau">5. Netzaufbau<a class="headerlink" href="#5-netzaufbau" title="Permanent link">&para;</a></h3>
+<p>Erzeugung verschiedener Netzstufen (h-Studie) und Wahl der Elementordnung:  </p>
+<ul>
+<li>lineare Elemente → SOLID185  </li>
+<li>quadratische Elemente → SOLID186<br />
+Optional: Variante mit absichtlich schlechter Netzqualität.  </li>
+</ul>
+<h3 id="6-losung-und-auswertung">6. Lösung und Auswertung<a class="headerlink" href="#6-losung-und-auswertung" title="Permanent link">&para;</a></h3>
+<p>Berechnung der Varianten, Auswertung von  </p>
+<ul>
+<li>Verschiebung <span class="arithmatex">\(u_x\)</span>  </li>
+<li>Normalspannung <span class="arithmatex">\(\sigma_{xx}\)</span>  </li>
+<li>Vergleich der Spannungskonturen linear/quadratisch  </li>
+<li>ggf. Pfadauswertung und Export der Ergebnisse  </li>
+</ul>
+<h3 id="7-ergebnisvergleich">7. Ergebnisvergleich<a class="headerlink" href="#7-ergebnisvergleich" title="Permanent link">&para;</a></h3>
+<p>Darstellung der Ergebnisse in Tabellen- oder Plotform:<br />
+Konvergenzverhalten, Fehler vs. h, Einfluss der Elementordnung.<br />
+Einbindung interaktiver Plotly-Diagramme.</p>
+<h3 id="8-netzqualitat-erweiterung-nach-klein">8. Netzqualität (Erweiterung nach Klein)<a class="headerlink" href="#8-netzqualitat-erweiterung-nach-klein" title="Permanent link">&para;</a></h3>
+<p>Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.<br />
+Abbildung mit Lightbox-Zoom und Quellenangabe.</p>
+<hr />
+<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
+<p>Interpretation der Beobachtungen:<br />
+* Einfluss der Ansatzordnung auf Genauigkeit<br />
+* Rolle der Netzfeinheit<br />
+* Bedeutung der Netzqualität<br />
+* Grenzen der Spannungs­glättung  </p>
+<p>Bezug zur Theorie (Ansatzfunktionen, Konvergenz).  </p>
+<hr />
+<h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+<div class="quiz"><h3>...</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" correct><label for="quiz-0-0">...</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">...</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden">...</section></div>
+<!-- markdownlint-enable MD033 -->
+
 <!--
-## 2. Guided Example – Influence of Element Type and 
-
-Ein axially loaded bar with varying cross-section is analysed analytically and with FEM.
-
-1. Define geometry and material:  
-   \(L = 100\,\text{mm}, E = 210\,\text{GPa}, A(x) = 50 - 0.4x\,\text{mm}^2\)
-2. Compute the analytical displacement \(u(x)\) and stress \(\sigma(x)\).
-3. Model the same bar in ANSYS with:
-   * linear elements (SOLID185)  
-   * quadratic elements (SOLID186)
-4. Compare σ<sub>max</sub> and u<sub>max</sub> for different mesh densities.
-
-Optional: perform an h-study to verify convergence.
-
-<span class="bildquelle">based on Bielak (2020) and Madenci & Guven (2015)</span>
-
----
-
-## 3. Interpretation and Discussion
-
-* Quadratic elements converge faster and better reproduce the analytical stress distribution.  
-* Linear elements require finer meshes to reach similar accuracy.  
-* Mesh refinement should be concentrated in regions with high stress gradients.  
-* Smoothing affects visualization but not numerical accuracy.  
-* The optimal model balances **accuracy vs. computational cost**.
-
 ---
 
 wie geht's weiter:
@@ -852,7 +953,7 @@ wie geht's weiter:
 | :----: | :---- | :---------- |
 | **03** | **Elementtypen & Netzqualität** | Vergleich linearer und quadratischer Volumenelemente (SOLID185/186), Einfluss der Ansatzfunktionen auf Genauigkeit und Konvergenz, Netzgüte, Spannungs­glättung, einfache h-Studie. |
 | **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich, Netzqualität und Spannungs­glättung |
-| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt) |
+| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt), |
 | **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
 | **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
 | **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
