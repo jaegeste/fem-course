@@ -31,7 +31,7 @@ Ein eindimensionaler Stab wird dazu in mehrere **Finite Elemente** zerlegt, dere
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Diskretisierung eines Stabes in Finite Elemente](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png "Diskretisierung eines Stabes in Finite Elemente"){.glightbox}
+[![Diskretisierung eines Stabes in Finite Elemente](media/05_elementtypen_ansatzf/01_FE_Discretization.png){width=600px}](media/05_elementtypen_ansatzf/01_FE_Discretization.png "Diskretisierung eines Stabes in Finite Elemente"){.glightbox}
 <span class="bildquelle">Bildquelle[@Bielak2024]</span>
 
 !!! note "Erläuterung zur Element- und Knotennummerierung"
@@ -224,15 +224,17 @@ In der Finite-Elemente-Software werden diese mathematischen Funktionen über kon
 
 | Dimension | Beispiel-Elemente (ANSYS) | Knotenanzahl | Ansatzordnung |
 | :--------- | :------------------------ | :------------ | :-------------- |
-| **1D** | LINK180 | 2 / 3 | linear / quadratisch |
+| **1D** | LINK180 | 2 | linear |
+| **1D**    | BEAM188 / BEAM189         | 2 / 3        | linear / quadratisch |
 | **2D** | PLANE182 / 183 | 4 / 8 | linear / quadratisch |
 | **3D** | SOLID185 / 186 | 8 / 20 | linear / quadratisch |
 
 Die Tabelle zeigt typische **Elementtypen aus ANSYS Mechanical**:  
 
-* **LINK180** ist ein linienförmiges 1D-Element, das beispielsweise Stäbe oder Zugglieder beschreibt.  
+* **LINK180** ist ein linienförmiges 1D-Element für Zug-/Druckstäbe (Zugglieder).  
+* **BEAM188 / BEAM189** bilden Biegung nach Timoshenko ab und stellen den direkten Bezug zu quadratischen 1D-Ansätzen her.  
 * **PLANE182** und **PLANE183** sind 2D-Flächenelemente, die ebene oder rotationssymmetrische Strukturen abbilden können.  
-* **SOLID185** (linear) und **SOLID186** (quadratisch) sind 3D-Volumenelemente in **Hexaeder-Form**, die für den allgemeinen Festkörperzustand verwendet werden.  
+* **SOLID185** (linear) und **SOLID186** (quadratisch) sind 3D-Volumenelemente für den allgemeinen Festkörperzustand und unterstützen mehrere Topologien (z. B. Hexaeder, Tetraeder), abhängig von der Netzstrategie.
 
 1D-Elemente bestehen somit aus **Liniensegmenten**, 2D-Elemente bilden **Flächen** ab, und 3D-Elemente beschreiben **Volumina**. Mit zunehmender Dimension steigt die Zahl der **Knotenpunkte und Freiheitsgrade** – und damit das Potenzial für eine genauere und realistischere Beschreibung des physikalischen Verhaltens.
 
@@ -313,7 +315,7 @@ Geometrie und Randbedingungen:
 * Übergangsradius \( R = 100\,\text{mm} \)  
 * axiale Zugkraft \( F = 10\,\text{kN} \)  
 * Material: *Aluminiumlegierung* (aus ANSYS-Bibliothek)  
-* Geometriedatei: [zugstab.stp](media/03_kragbalken/kragbalken.stp)
+* Geometriedatei: [zugstab.stp](media/05_elementtypen_ansatzf/zugstab.stp)
 
 [![Zugstab mit kreisförmigem Übergang nach Schier](media/05_elementtypen_ansatzf/zugstab.svg){width=600px}](media/05_elementtypen_ansatzf/zugstab.svg "Zugstab mit kreisförmigem Übergang nach Schier"){.glightbox}
 

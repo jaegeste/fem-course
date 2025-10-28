@@ -32,7 +32,7 @@ A one-dimensional bar is therefore divided into several **finite elements**, who
 <br>
 <!-- markdownlint-enable MD033 -->
 
-[![Discretization of a bar into finite elements](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png){width=600px}](media/05_elementtypen_ansatzf/01_FE_Discretizatio.png "Discretization of a bar into finite elements"){.glightbox}
+[![Discretization of a bar into finite elements](media/05_elementtypen_ansatzf/01_FE_Discretization.png){width=600px}](media/05_elementtypen_ansatzf/01_FE_Discretization.png "Discretization of a bar into finite elements"){.glightbox}
 <span class="bildquelle">Source[@Bielak2024]</span>
 
 !!! note "Explanation of element and node numbering"
@@ -224,16 +224,18 @@ The principle of shape functions directly extends to higher dimensions. Regardle
 In finite element software, these mathematical functions are represented by specific **element types**. Depending on the dimension and the polynomial order, the **number of nodes** – and therefore the **accuracy of the approximation** – changes accordingly.
 
 | Dimension | Example Elements (ANSYS) | Number of Nodes | Shape Function Order |
-| :--------- | :----------------------- | :--------------- | :------------------- |
-| **1D** | LINK180 | 2 / 3 | linear / quadratic |
-| **2D** | PLANE182 / 183 | 4 / 8 | linear / quadratic |
-| **3D** | SOLID185 / 186 | 8 / 20 | linear / quadratic |
+| :-------- | :------------------------ | :--------------- | :------------------- |
+| **1D**    | LINK180                   | 2               | linear               |
+| **1D**    | BEAM188 / BEAM189         | 2 / 3           | linear / quadratic   |
+| **2D**    | PLANE182 / 183            | 4 / 8           | linear / quadratic   |
+| **3D**    | SOLID185 / 186            | 8 / 20          | linear / quadratic   |
 
 The table shows typical **element types in ANSYS Mechanical**:  
 
-* **LINK180** is a line-shaped 1D element used to model trusses or tension members.  
-* **PLANE182** and **PLANE183** are 2D surface elements that can represent plane or axisymmetric structures.  
-* **SOLID185** (linear) and **SOLID186** (quadratic) are 3D solid elements with **hexahedral shape**, commonly used for general solid mechanics applications.  
+* **LINK180** is a line 1D element for axial tension/compression members (trusses, ties).  
+* **BEAM188 / BEAM189** implement Timoshenko beam theory (bending); BEAM189 provides the quadratic 1D counterpart introduced in the theory section.  
+* **PLANE182 / PLANE183** are 2D elements that can represent plane stress/strain or axisymmetric structures.  
+* **SOLID185 / SOLID186** are 3D solid elements for general solid mechanics and support multiple topologies (e.g., hexahedra, tetrahedra), depending on the meshing strategy.
 
 Thus, 1D elements consist of **line segments**, 2D elements represent **surfaces**, and 3D elements describe **volumes**. As the dimensionality increases, the number of **nodes and degrees of freedom** also increases – enhancing the potential for a more accurate and realistic description of the physical behavior.
 
@@ -315,7 +317,7 @@ Geometry and boundary conditions:
 * transition radius \( R = 100\,\text{mm} \)  
 * axial tensile force \( F = 10\,\text{kN} \)  
 * material: *aluminum alloy* (from ANSYS library)  
-* geometry file: [zugstab.stp](media/03_kragbalken/kragbalken.stp)
+* geometry file: [zugstab.stp](media/05_elementtypen_ansatzf/zugstab.stp)
 
 [![Tension bar with circular transition according to Schier](media/05_elementtypen_ansatzf/zugstab.svg){width=600px}](media/05_elementtypen_ansatzf/zugstab.svg "Tension bar with circular transition according to Schier"){.glightbox}
 
