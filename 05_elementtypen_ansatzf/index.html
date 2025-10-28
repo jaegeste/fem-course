@@ -578,7 +578,7 @@
 <p><br></p>
 <!-- markdownlint-enable MD033 -->
 
-<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/01_FE_Discretizatio.png" title="Diskretisierung eines Stabes in Finite Elemente"><img alt="Diskretisierung eines Stabes in Finite Elemente" src="../media/05_elementtypen_ansatzf/01_FE_Discretizatio.png" width="600px" /></a>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/01_FE_Discretization.png" title="Diskretisierung eines Stabes in Finite Elemente"><img alt="Diskretisierung eines Stabes in Finite Elemente" src="../media/05_elementtypen_ansatzf/01_FE_Discretization.png" width="600px" /></a>
 <span class="bildquelle">Bildquelle<sup id="fnref2:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
 <div class="admonition note">
 <p class="admonition-title">Erläuterung zur Element- und Knotennummerierung</p>
@@ -771,6 +771,12 @@ e = u_\text{exakt} - u_\text{FEM}
 <tr>
 <td style="text-align: left;"><strong>1D</strong></td>
 <td style="text-align: left;">LINK180</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">linear</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>1D</strong></td>
+<td style="text-align: left;">BEAM188 / BEAM189</td>
 <td style="text-align: left;">2 / 3</td>
 <td style="text-align: left;">linear / quadratisch</td>
 </tr>
@@ -790,9 +796,10 @@ e = u_\text{exakt} - u_\text{FEM}
 </table>
 <p>Die Tabelle zeigt typische <strong>Elementtypen aus ANSYS Mechanical</strong>:  </p>
 <ul>
-<li><strong>LINK180</strong> ist ein linienförmiges 1D-Element, das beispielsweise Stäbe oder Zugglieder beschreibt.  </li>
+<li><strong>LINK180</strong> ist ein linienförmiges 1D-Element für Zug-/Druckstäbe (Zugglieder).  </li>
+<li><strong>BEAM188 / BEAM189</strong> bilden Biegung nach Timoshenko ab und stellen den direkten Bezug zu quadratischen 1D-Ansätzen her.  </li>
 <li><strong>PLANE182</strong> und <strong>PLANE183</strong> sind 2D-Flächenelemente, die ebene oder rotationssymmetrische Strukturen abbilden können.  </li>
-<li><strong>SOLID185</strong> (linear) und <strong>SOLID186</strong> (quadratisch) sind 3D-Volumenelemente in <strong>Hexaeder-Form</strong>, die für den allgemeinen Festkörperzustand verwendet werden.  </li>
+<li><strong>SOLID185</strong> (linear) und <strong>SOLID186</strong> (quadratisch) sind 3D-Volumenelemente für den allgemeinen Festkörperzustand und unterstützen mehrere Topologien (z. B. Hexaeder, Tetraeder), abhängig von der Netzstrategie.</li>
 </ul>
 <p>1D-Elemente bestehen somit aus <strong>Liniensegmenten</strong>, 2D-Elemente bilden <strong>Flächen</strong> ab, und 3D-Elemente beschreiben <strong>Volumina</strong>. Mit zunehmender Dimension steigt die Zahl der <strong>Knotenpunkte und Freiheitsgrade</strong> – und damit das Potenzial für eine genauere und realistischere Beschreibung des physikalischen Verhaltens.</p>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/06_Elementtypen.png" title="2D- und 3D-Elementtypen"><img alt="2D- und 3D-Elementtypen" src="../media/05_elementtypen_ansatzf/06_Elementtypen.png" width="600px" /></a>
@@ -855,7 +862,7 @@ In der Praxis wählt man den Elementtyp so, dass die Geometrie und der Belastung
 <li>Übergangsradius <span class="arithmatex">\( R = 100\,\text{mm} \)</span>  </li>
 <li>axiale Zugkraft <span class="arithmatex">\( F = 10\,\text{kN} \)</span>  </li>
 <li>Material: <em>Aluminiumlegierung</em> (aus ANSYS-Bibliothek)  </li>
-<li>Geometriedatei: <a href="../media/03_kragbalken/kragbalken.stp">zugstab.stp</a></li>
+<li>Geometriedatei: <a href="../media/05_elementtypen_ansatzf/zugstab.stp">zugstab.stp</a></li>
 </ul>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/zugstab.svg" title="Zugstab mit kreisförmigem Übergang nach Schier"><img alt="Zugstab mit kreisförmigem Übergang nach Schier" src="../media/05_elementtypen_ansatzf/zugstab.svg" width="600px" /></a></p>
 <p><strong>Bearbeiten Sie folgende Punkte:</strong></p>
