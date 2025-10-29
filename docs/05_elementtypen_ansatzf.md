@@ -474,11 +474,60 @@ In der Projektübersicht werden unter *Material* alle aktuell im Projekt verfüg
 
 ### Netzgenerierung
 
+Zunächst wird mit dem Standardnetz gearbeitet, um die Ausgangssituation unverändert zu bewerten.  
+Verfeinerungen, Qualitätsmetriken und die h-Studie folgen getrennt im Abschnitt *Element/Ansatz/Netzeinfluss*.
+
+**Kurzprüfung nur visuell**  
+Nach dem Erzeugen des Standardnetzes die Elementverteilung im Modell prüfen:  
+
+* Ist die Elementgröße der Geometrie und Problemstellung angemessen?  
+* Sind Übergangsbereiche ausreichend aufgelöst und ohne sichtbare Verzerrungen dargestellt?  
+* Wichtig ist an dieser Stelle nur eine grobe Plausibilitätskontrolle – keine detaillierte Qualitätsauswertung.
+
+Die detaillierte Qualitätsauswertung sowie Netzverfeinerungen folgen später im Abschnitt [Element/Ansatz/Netzeinfluss](#elementansatznetzeinfluss).
+
+---
+
 ### Randbedingungen
+
+Randbedingungen werden entsprechend der Aufgabenstellung definiert:
+
+* **Linke Stirnfläche:** verformbare *externe Verschiebung* (anstelle einer starren Einspannung)  
+* **Rechte Stirnfläche:** axiale Zugkraft \( F = 10{,}0\,\text{kN} \)
+
+---
 
 ### Analyseeinstellungen
 
+Im ersten Schritt sind keine speziellen Anpassungen erforderlich; die *programmgesteuerten Standardeinstellungen* reichen für eine erste lineare elastische Berechnung aus.
+
+---
+
 ### Auswertung
+
+Folgende Auswertungen bieten sich für eine erste Beurteilung an:  
+
+* *Gesamtverformung*  
+* *Verschiebungskomponente* in x-Richtung \(u_x\)  
+* *Vergleichsspannung* (von Mises)  
+* *Normalspannung \(\sigma_{xx}(x)\)*  
+
+**Hinweis:** Die eingefügten Ergebnisse können auch umbenannt werden.  
+
+<!-- markdownlint-disable MD033 -->
+<br>
+<!-- markdownlint-enable MD033 -->
+
+[![Auswertung der Verschiebung und Spannung](media/05_elementtypen_ansatzf/19_Auswertungen.png){width=300px}](media/05_elementtypen_ansatzf/19_Auswertungen.png "Auswertung der Verschiebung und Spannung"){.glightbox}
+
+**Anlegen eines Auswerte-Pfades**  
+
+* Unter *Pfad → Kante* eine Linie entlang der Stabachse durch den Übergang anlegen  
+* *Pfadergebnis* für \(u_x(x)\) und \(\sigma_{xx}(x)\) erzeugen  
+* Der Pfad dient später zur quantitativen Auswertung und zum Vergleich der Ergebnisse entlang der Bauteillänge.
+* Auch bei einer gekrümmten Außenfläche ist ein Pfad sinnvoll, da er den Spannungsverlauf entlang der kritischen Kontur sichtbar macht.
+
+---
 
 ## Element/Ansatz/Netzeinfluss
 
