@@ -579,7 +579,7 @@
 <p><br></p>
 <!-- markdownlint-enable MD033 -->
 
-<p><a class="glightbox" href="../../media/05_elementtypen_ansatzf/01_FE_Discretizatio.png" title="Discretization of a bar into finite elements"><img alt="Discretization of a bar into finite elements" src="../../media/05_elementtypen_ansatzf/01_FE_Discretizatio.png" width="600px" /></a>
+<p><a class="glightbox" href="../../media/05_elementtypen_ansatzf/01_FE_Discretization.png" title="Discretization of a bar into finite elements"><img alt="Discretization of a bar into finite elements" src="../../media/05_elementtypen_ansatzf/01_FE_Discretization.png" width="600px" /></a>
 <span class="bildquelle">Source<sup id="fnref2:Bielak2024"><a class="footnote-ref" href="#fn:Bielak2024">1</a></sup></span></p>
 <div class="admonition note">
 <p class="admonition-title">Explanation of element and node numbering</p>
@@ -772,6 +772,12 @@ e = u_\text{exact} - u_\text{FEM}
 <tr>
 <td style="text-align: left;"><strong>1D</strong></td>
 <td style="text-align: left;">LINK180</td>
+<td style="text-align: left;">2</td>
+<td style="text-align: left;">linear</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>1D</strong></td>
+<td style="text-align: left;">BEAM188 / BEAM189</td>
 <td style="text-align: left;">2 / 3</td>
 <td style="text-align: left;">linear / quadratic</td>
 </tr>
@@ -791,9 +797,10 @@ e = u_\text{exact} - u_\text{FEM}
 </table>
 <p>The table shows typical <strong>element types in ANSYS Mechanical</strong>:  </p>
 <ul>
-<li><strong>LINK180</strong> is a line-shaped 1D element used to model trusses or tension members.  </li>
-<li><strong>PLANE182</strong> and <strong>PLANE183</strong> are 2D surface elements that can represent plane or axisymmetric structures.  </li>
-<li><strong>SOLID185</strong> (linear) and <strong>SOLID186</strong> (quadratic) are 3D solid elements with <strong>hexahedral shape</strong>, commonly used for general solid mechanics applications.  </li>
+<li><strong>LINK180</strong> is a line 1D element for axial tension/compression members (trusses, ties).  </li>
+<li><strong>BEAM188 / BEAM189</strong> implement Timoshenko beam theory (bending); BEAM189 provides the quadratic 1D counterpart introduced in the theory section.  </li>
+<li><strong>PLANE182 / PLANE183</strong> are 2D elements that can represent plane stress/strain or axisymmetric structures.  </li>
+<li><strong>SOLID185 / SOLID186</strong> are 3D solid elements for general solid mechanics and support multiple topologies (e.g., hexahedra, tetrahedra), depending on the meshing strategy.</li>
 </ul>
 <p>Thus, 1D elements consist of <strong>line segments</strong>, 2D elements represent <strong>surfaces</strong>, and 3D elements describe <strong>volumes</strong>. As the dimensionality increases, the number of <strong>nodes and degrees of freedom</strong> also increases – enhancing the potential for a more accurate and realistic description of the physical behavior.</p>
 <p><a class="glightbox" href="../../media/05_elementtypen_ansatzf/06_Elementtypen.png" title="2D and 3D element types"><img alt="2D and 3D element types" src="../../media/05_elementtypen_ansatzf/06_Elementtypen.png" width="600px" /></a>
@@ -856,7 +863,7 @@ In practice, the element type is selected such that geometry and loading conditi
 <li>transition radius <span class="arithmatex">\( R = 100\,\text{mm} \)</span>  </li>
 <li>axial tensile force <span class="arithmatex">\( F = 10\,\text{kN} \)</span>  </li>
 <li>material: <em>aluminum alloy</em> (from ANSYS library)  </li>
-<li>geometry file: <a href="../../media/03_kragbalken/kragbalken.stp">zugstab.stp</a></li>
+<li>geometry file: <a href="../../media/05_elementtypen_ansatzf/zugstab.stp">zugstab.stp</a></li>
 </ul>
 <p><a class="glightbox" href="../../media/05_elementtypen_ansatzf/zugstab.svg" title="Tension bar with circular transition according to Schier"><img alt="Tension bar with circular transition according to Schier" src="../../media/05_elementtypen_ansatzf/zugstab.svg" width="600px" /></a></p>
 <p><strong>Perform the following tasks:</strong></p>

@@ -412,42 +412,84 @@ Die maximale Spannung im kleinsten Querschnitt mit \( A_\text{min} = 50{,}3\,\te
 !!! Note "Kontinuierliche vs. diskrete Beschreibung"
     Die analytische Lösung beschreibt den **kontinuierlichen Verlauf** der Verschiebung entlang der Stablänge. In der Finite-Elemente-Methode wird derselbe Zusammenhang **diskretisiert**, indem der Stab in Teilbereiche zerlegt wird. Innerhalb jedes Elements erfolgt die Approximation des Verschiebungsverlaufs über Ansatzfunktionen, sodass die Integration über das Gebiet schrittweise (lokal) erfolgt. Bei hinreichend feiner Netzauflösung konvergiert das FEM-Ergebnis gegen die analytische Lösung.
 
-[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
+## Umsetzung in ANSYS
 
-<!--
+### Projektverwaltung und Geometrieimport
 
-## Umsetzung in ANSYS Workbench
+Zunächst in *Workbench* eine neue *statisch strukturelle* (bzw. *statisch mechanische*) Analyse anlegen.  
 
-### 1. Projektaufbau
+In *Geometrie* über *Rechtsklick → Geometrie importieren → Durchsuchen* die Datei [zugstab.stp](media/05_elementtypen_ansatzf/zugstab.stp) importieren.  
 
-Kurze Beschreibung der Projektstruktur und beteiligten Systeme (*Engineering Data*, *Geometry*, *Model*, *Setup*, *Solution*).  
-Ziel: ein konsistentes Setup für alle Netz- und Elementvarianten.
+### Materialzuweisung
 
-### 2. Materialauswahl
+Die Materialverwaltung in *ANSYS Workbench* dient zur Auswahl und Prüfung der Werkstoffeigenschaften, die später in der Analyse verwendet werden. Sie ist über den Projektbaum unter *Technische Daten* (per Doppelklick öffnen) erreichbar und besteht aus mehreren Bereichen mit klarer Struktur:
 
-Hinzufügen und Zuweisen des Materials *Aluminum Alloy* aus der ANSYS-Bibliothek.  
-Keine Vergleichsstudie, nur Workflow-Übung.
+[![Materialauswahl in Technische Daten](media/05_elementtypen_ansatzf/14_technische_daten.png){width=700px}](media/05_elementtypen_ansatzf/14_technische_daten.png "Materialauswahl in Technische Daten"){.glightbox}
 
-### 3. Geometrie
+* **Materialübersicht (Mitte/oben):**  
+  Zeigt die im aktuellen Projekt verfügbaren Materialien an.  
+  Standardmäßig ist nur *Baustahl* enthalten.  
+  Hier könnte ein neues Material angelegt werden.  
 
-Erstellung des Zugstabs mit sanfter Querschnittsänderung.  
-Angabe der Hauptabmessungen, Übergangsradien und Named Selections.  
-Export- oder Parametereinstellungen falls erforderlich.
+* **Toolbox (links):**  
+  Enthält die verfügbaren Materialkategorien, z. B. *Festigkeit*, *Thermisch*, *Viskoelastisch* oder *Lebensdauer*.  
+  Die einzelnen Eigenschaften können per Doppelklick dem aktiven Material hinzugefügt werden.
 
-### 4. Randbedingungen
+* **Eigenschaftenbereich (unten):**  
+  Zeigt die Kennwerte des aktuell ausgewählten Materials.  
+  Jede Zeile enthält eine Bezeichnung, einen Zahlenwert und eine Einheit.  
+  Hier können Dichte, Elastizitätsmodul, Querkontraktionszahl oder Streckgrenzen geprüft und angepasst werden.
+  
+* **Eigenschaftenbereich (links):**  
+  Zeigt die Kennwerte des aktuell ausgewählten Materials in Form von Grafiken.  
 
-Definition von *Fixed Support* und *Force* an den Stirnflächen.  
-Hinweis auf die Wahl der Kraft zur Erzeugung einer sinnvollen Nennspannung.
+Um auf weitere Materialien zuzugreifen, kann über den Reiter *Quellen für Technische Daten* die zentrale Materialdatenbank geöffnet werden.  
 
-### 5. Netzaufbau
+[![Quelle für Technische Daten](media/05_elementtypen_ansatzf/15_Quelle_technische_Daten.png){width=700px}](media/05_elementtypen_ansatzf/15_Quelle_technische_Daten.png "Quelle für Technische Daten"){.glightbox}
+
+* **Bereich oben/mittig:** Auswahl der verfügbaren Datenquellen (z. B. *Standardmaterialien* oder *ANSYS GRANTA*).  
+* **Bereich Mitte/mittig:** Anzeige der Materialien in der gewählten Datenbank.  
+  Über das gelbe *Pluszeichen* lässt sich das gewünschte Material in das aktuelle Projekt übernehmen. Alternativ: per Rechtsklick.  
+* **Bereich unten/mittig:** Darstellung der Materialeigenschaften mit Werten und Einheiten.  
+
+Hier ist unter anderem in den Standardmaterialien eine *Aluminiumlegierung* zu finden, die folgende Daten besitzt.  
+
+| Eigenschaft | Symbol | Wert |
+| :----------- | :------ | :---- |
+| Elastizitätsmodul | \( E \) | 70 000 N/mm² |
+| Querkontraktionszahl | \( \nu \) | 0,33 |
+| Dichte | \( \rho \) | 2,7 kg/dm³ |
+
+[![Auswahl Aluminiumlegierung](media/05_elementtypen_ansatzf/16_Auswahl_Aluminiumlegierung.png){width=700px}](media/05_elementtypen_ansatzf/16_Auswahl_Aluminiumlegierung.png "Auswahl Aluminiumlegierung"){.glightbox}
+
+Nach dem Hinzufügen des gewünschten Materials aus der Datenbank zurück in die *Projektübersicht* wechseln (Reiter *Projekt*). Dort per Doppelklick auf *Modell* wechseln, um das Setup im mechanischen Editor zu öffnen.  
+
+Im Abschnitt *Geometrie* des Strukturbaums lässt sich  prüfen, ob der Körper korrekt erkannt wurde. Dort kann dem Bauteil das zuvor gewählte Material zugewiesen werden. Die Zuweisung erfolgt über das Feld *Material* im *Details*-Fenster.
+
+[![Materialzuweisung im Strukturbaum unter Geometrie](media/05_elementtypen_ansatzf/17_material_zuweisung.png){width=700px}](media/05_elementtypen_ansatzf/17_material_zuweisung.png "Materialzuweisung im Strukturbaum unter Geometrie"){.glightbox}
+
+In der Projektübersicht werden unter *Material* alle aktuell im Projekt verfügbaren Werkstoffe angezeigt, einschließlich der hinzugefügten *Aluminiumlegierung*.
+
+[![Materialien im Projekt unter Material](media/05_elementtypen_ansatzf/18_materialien_im_projekt.png){width=700px}](media/05_elementtypen_ansatzf/18_materialien_im_projekt.png "Materialien im Projekt unter Material"){.glightbox}
+
+### Netzgenerierung
+
+### Randbedingungen
+
+### Analyseeinstellungen
+
+### Auswertung
+
+## Element/Ansatz/Netzeinfluss
 
 Erzeugung verschiedener Netzstufen (h-Studie) und Wahl der Elementordnung:  
 
 * lineare Elemente → SOLID185  
 * quadratische Elemente → SOLID186  
-Optional: Variante mit absichtlich schlechter Netzqualität.  
 
-### 6. Lösung und Auswertung
+Konvergenz wie darstellen? Da braucht es noch einen Vorschlag zum Vorgehen...
+
+## Diskussion der Ergebnisse
 
 Berechnung der Varianten, Auswertung von  
 
@@ -456,49 +498,13 @@ Berechnung der Varianten, Auswertung von
 * Vergleich der Spannungskonturen linear/quadratisch  
 * ggf. Pfadauswertung und Export der Ergebnisse  
 
-### 7. Ergebnisvergleich
-
 Darstellung der Ergebnisse in Tabellen- oder Plotform:  
 Konvergenzverhalten, Fehler vs. h, Einfluss der Elementordnung.  
 Einbindung interaktiver Plotly-Diagramme.
 
-### 8. Netzqualität (Erweiterung nach Klein)
+## (Netzqualität)
 
 Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.  
 Abbildung mit Lightbox-Zoom und Quellenangabe.
 
----
-
-## Diskussion der Ergebnisse
-
-Interpretation der Beobachtungen:  
-* Einfluss der Ansatzordnung auf Genauigkeit  
-* Rolle der Netzfeinheit  
-* Bedeutung der Netzqualität  
-* Grenzen der Spannungs­glättung  
-
-Bezug zur Theorie (Ansatzfunktionen, Konvergenz).  
-
-wie geht's weiter:
-  - Modul 4 Krafteinleitung: 06_krafteinleitung.md
-  - Modul 5 Symmetrie: 07_symmetrie.md
-  - Modul 6 Modalanalyse: 08_modalanalyse.md
-  - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
-  - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
-  - Modul 9 Sensoren II (Druck): 11_sensor_druck.md
-  - Modul 10 Kontakt: 12_kontakt.md
-  - Modul 11 Ausblick: 13_ausblick.md
-
-  | Modul | Titel | Kerninhalt |
-| :----: | :---- | :---------- |
-| **03** | **Elementtypen & Netzqualität** | Vergleich linearer und quadratischer Volumenelemente (SOLID185/186), Einfluss der Ansatzfunktionen auf Genauigkeit und Konvergenz, Netzgüte, Spannungs­glättung, einfache h-Studie. |
-| **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich, Netzqualität und Spannungs­glättung |
-| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt), |
-| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
-| **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
-| **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
-| **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
-| **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
-| **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
-
--->
+[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
