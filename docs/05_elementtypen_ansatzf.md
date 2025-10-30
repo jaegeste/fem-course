@@ -272,11 +272,11 @@ Die Wahl des passenden Elementtyps richtet sich nach Geometrie, Belastungsart un
 
     ---
 
-    **Kontaktelelemente**  
+    **Kontaktelemente**  
     * **CONTA174 / TARGE170:** modellieren Reibung, Haftung, Öffnen / Schließen.  
       Wichtig für Presssitze, Lagerungen und Montagezustände.  
 
-    [![Kontaktelelemente](media/05_elementtypen_ansatzf/11_Contact_Elements.svg){width=550px}](media/05_elementtypen_ansatzf/11_Contact_Elements.svg "Kontaktelelemente"){.glightbox}  
+    [![Kontaktelemente](media/05_elementtypen_ansatzf/11_Contact_Elements.svg){width=550px}](media/05_elementtypen_ansatzf/11_Contact_Elements.svg "Kontaktelemente"){.glightbox}  
     <span class="bildquelle">Bildquelle[@Ansys2025]</span>  
 
     ---
@@ -931,7 +931,6 @@ In ANSYS werden hierfür **SOLID185** als lineare und **SOLID186** als quadratis
 
 <!-- markdownlint-enable MD033 -->
 
-
 | Ansatzfunktion | Max. Verschiebung \(u_{x,\text{max}}\) | Max. Normalspannung \(σ_{xx,\text{max}}\) |
 | :--------- | :-----------------------------------------: | :---------------------------------------------: |
 | linear | 0,062854 mm | 204,95 MPa |
@@ -954,4 +953,3 @@ Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.
 Abbildung mit Lightbox-Zoom und Quellenangabe.
 
 -->
-
