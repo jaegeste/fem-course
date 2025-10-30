@@ -484,7 +484,7 @@ Nach dem Erzeugen des Standardnetzes die Elementverteilung im Modell prüfen:
 * Sind Übergangsbereiche ausreichend aufgelöst und ohne sichtbare Verzerrungen dargestellt?  
 * Wichtig ist an dieser Stelle nur eine grobe Plausibilitätskontrolle – keine detaillierte Qualitätsauswertung.
 
-Die detaillierte Qualitätsauswertung sowie Netzverfeinerungen folgen später im Abschnitt [Einfluss von Elementordnung und Netzauflösung](#einfluss-von-elementordnung-und-netzauflosung).
+Die detaillierte Qualitätsauswertung sowie Netzverfeinerungen folgen später im Abschnitt [Einfluss von Elementordnung und Netzfeinheit](#einfluss-von-elementordnung-und-netzfeinheit).
 
 ---
 
@@ -542,7 +542,7 @@ Dieser Pfad dient später zur quantitativen Auswertung und zum Vergleich der Erg
 
 ---
 
-## Einfluss von Elementordnung und Netzauflösung
+## Einfluss von Elementordnung und Netzfeinheit
 
 ### Motivation der Netzeinflussstudie (h-Studie) und des p-Vergleichs
 
@@ -813,7 +813,6 @@ Zur Beurteilung der Netzunabhängigkeit werden die maximalen Werte der Verschieb
 
 <!-- markdownlint-enable MD033 -->
 
-
 ---
 
 ### Einfluss der Elementordnung (p-Vergleich)
@@ -948,8 +947,7 @@ In ANSYS werden hierfür **SOLID185** als lineare und **SOLID186** als quadratis
 
 ## (Netzqualität)
 
-## Quiz
-
+## Quiz zur Selbstkontrolle  
 
 <!--
 Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.  

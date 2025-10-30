@@ -462,18 +462,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#elementansatznetzeinfluss" class="md-nav__link">
+  <a href="#einfluss-von-elementordnung-und-netzauflosung" class="md-nav__link">
     <span class="md-ellipsis">
-      Element/Ansatz/Netzeinfluss
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diskussion der Ergebnisse
+      Einfluss von Elementordnung und Netzauflösung
     </span>
   </a>
   
@@ -483,6 +474,15 @@
   <a href="#netzqualitat" class="md-nav__link">
     <span class="md-ellipsis">
       (Netzqualität)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz
     </span>
   </a>
   
@@ -586,18 +586,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#elementansatznetzeinfluss" class="md-nav__link">
+  <a href="#einfluss-von-elementordnung-und-netzauflosung" class="md-nav__link">
     <span class="md-ellipsis">
-      Element/Ansatz/Netzeinfluss
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
-    <span class="md-ellipsis">
-      Diskussion der Ergebnisse
+      Einfluss von Elementordnung und Netzauflösung
     </span>
   </a>
   
@@ -607,6 +598,15 @@
   <a href="#netzqualitat" class="md-nav__link">
     <span class="md-ellipsis">
       (Netzqualität)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz
     </span>
   </a>
   
@@ -956,7 +956,7 @@ Besonderes Augenmerk liegt auf der Wirkung der <strong>Ansatzfunktionen</strong>
 <div class="arithmatex">\[
 u(x) = \int_0^x \frac{F}{E \, A(x)} \, dx
 \]</div>
-<p>Für den Zugstab mit kreisförmigem Übergang wird die Querschnittsfläche <span class="arithmatex">\(A(x)\)</span> näherungsweise beschrieben durch<sup id="fnref2:Schier2023"><a class="footnote-ref" href="#fn:Schier2023">4</a></sup></p>
+<p>Für den Zugstab mit kreisförmigem Übergang wird die Querschnittsfläche <span class="arithmatex">\(A(x)\)</span> näherungsweise beschrieben<sup id="fnref2:Schier2023"><a class="footnote-ref" href="#fn:Schier2023">4</a></sup></p>
 <div class="arithmatex">\[
 A(x) = 857 \, e^{-0{,}062x}
 \]</div>
@@ -1082,31 +1082,1126 @@ u(L) \approx 0{,}057\,\text{mm}
 <p>In der Projektübersicht werden unter <em>Material</em> alle aktuell im Projekt verfügbaren Werkstoffe angezeigt, einschließlich der hinzugefügten <em>Aluminiumlegierung</em>.</p>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/18_materialien_im_projekt.png" title="Materialien im Projekt unter Material"><img alt="Materialien im Projekt unter Material" src="../media/05_elementtypen_ansatzf/18_materialien_im_projekt.png" width="700px" /></a></p>
 <h3 id="netzgenerierung">Netzgenerierung<a class="headerlink" href="#netzgenerierung" title="Permanent link">&para;</a></h3>
+<p>Zunächst wird mit dem Standardnetz gearbeitet, um die Ausgangssituation unverändert zu bewerten.<br />
+Verfeinerungen, Qualitätsmetriken und die h-Studie folgen getrennt im Abschnitt <em>Element/Ansatz/Netzeinfluss</em>.</p>
+<p><strong>Kurzprüfung nur visuell</strong><br />
+Nach dem Erzeugen des Standardnetzes die Elementverteilung im Modell prüfen:  </p>
+<ul>
+<li>Ist die Elementgröße der Geometrie und Problemstellung angemessen?  </li>
+<li>Sind Übergangsbereiche ausreichend aufgelöst und ohne sichtbare Verzerrungen dargestellt?  </li>
+<li>Wichtig ist an dieser Stelle nur eine grobe Plausibilitätskontrolle – keine detaillierte Qualitätsauswertung.</li>
+</ul>
+<p>Die detaillierte Qualitätsauswertung sowie Netzverfeinerungen folgen später im Abschnitt <a href="#einfluss-von-elementordnung-und-netzauflosung">Einfluss von Elementordnung und Netzauflösung</a>.</p>
+<hr />
 <h3 id="randbedingungen">Randbedingungen<a class="headerlink" href="#randbedingungen" title="Permanent link">&para;</a></h3>
+<p>Randbedingungen werden entsprechend der Aufgabenstellung definiert:</p>
+<ul>
+<li><strong>Linke Stirnfläche:</strong> verformbare <em>externe Verschiebung</em> (anstelle einer starren Einspannung)  </li>
+<li><strong>Rechte Stirnfläche:</strong> axiale Zugkraft <span class="arithmatex">\( F = 10{,}0\,\text{kN} \)</span></li>
+</ul>
+<hr />
 <h3 id="analyseeinstellungen">Analyseeinstellungen<a class="headerlink" href="#analyseeinstellungen" title="Permanent link">&para;</a></h3>
+<p>Im ersten Schritt sind keine speziellen Anpassungen erforderlich; die <em>programmgesteuerten Standardeinstellungen</em> reichen für eine erste lineare elastische Berechnung aus.</p>
+<hr />
 <h3 id="auswertung">Auswertung<a class="headerlink" href="#auswertung" title="Permanent link">&para;</a></h3>
-<h2 id="elementansatznetzeinfluss">Element/Ansatz/Netzeinfluss<a class="headerlink" href="#elementansatznetzeinfluss" title="Permanent link">&para;</a></h2>
-<p>Erzeugung verschiedener Netzstufen (h-Studie) und Wahl der Elementordnung:  </p>
+<p>Folgende Auswertungen bieten sich für eine erste Beurteilung an:  </p>
 <ul>
-<li>lineare Elemente → SOLID185  </li>
-<li>quadratische Elemente → SOLID186  </li>
+<li><em>Gesamtverformung</em>  </li>
+<li><em>Verschiebungskomponente</em> in x-Richtung <span class="arithmatex">\(u_x\)</span>  </li>
+<li><em>Vergleichsspannung</em> (von Mises)  </li>
+<li><em>Normalspannung <span class="arithmatex">\(\sigma_{xx}(x)\)</span></em>  </li>
 </ul>
-<p>Konvergenz wie darstellen? Da braucht es noch einen Vorschlag zum Vorgehen...</p>
-<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
-<p>Berechnung der Varianten, Auswertung von  </p>
+<p><strong>Hinweis:</strong> Die eingefügten Ergebnisse können auch umbenannt werden.  </p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/19_Auswertungen.png" title="Auswertung der Verschiebung und Spannung"><img alt="Auswertung der Verschiebung und Spannung" src="../media/05_elementtypen_ansatzf/19_Auswertungen.png" width="300px" /></a></p>
+<p><strong>Anlegen eines Auswerte-Pfades</strong>  </p>
+<p><em>Pfadergebnis</em> für <span class="arithmatex">\(u_x(x)\)</span> und <span class="arithmatex">\(\sigma_{xx}(x)\)</span> erzeugen:</p>
 <ul>
-<li>Verschiebung <span class="arithmatex">\(u_x\)</span>  </li>
-<li>Normalspannung <span class="arithmatex">\(\sigma_{xx}\)</span>  </li>
-<li>Vergleich der Spannungskonturen linear/quadratisch  </li>
-<li>ggf. Pfadauswertung und Export der Ergebnisse  </li>
+<li><em>Normalspannung</em> anlegen</li>
+<li>In den Details <em>Geometrie</em> anklicken, Kante auswählen (Auswahlfilter verwenden)  </li>
+<li>Koordinaten-Richtung beachten, hier ist x relevant, <span class="arithmatex">\(\sigma_{xx}(x)\)</span>  </li>
+<li>Ergebnis umbenennen</li>
+<li>gleiches für eine <em>Verschiebungskomponente</em> für <span class="arithmatex">\(u_x(x)\)</span></li>
 </ul>
-<p>Darstellung der Ergebnisse in Tabellen- oder Plotform:<br />
-Konvergenzverhalten, Fehler vs. h, Einfluss der Elementordnung.<br />
-Einbindung interaktiver Plotly-Diagramme.</p>
-<h2 id="netzqualitat">(Netzqualität)<a class="headerlink" href="#netzqualitat" title="Permanent link">&para;</a></h2>
-<p>Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.<br />
-Abbildung mit Lightbox-Zoom und Quellenangabe.</p>
+<p>Dieser Pfad dient später zur quantitativen Auswertung und zum Vergleich der Ergebnisse entlang der Bauteillänge. Auch bei einer gekrümmten Außenfläche ist ein Pfad sinnvoll, da er den Spannungsverlauf entlang der kritischen Kontur sichtbar macht.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/20_Ergebnis_Pfad.png" title="Pfadauswertung im Ergebnisbereich"><img alt="Pfadauswertung im Ergebnisbereich" src="../media/05_elementtypen_ansatzf/20_Ergebnis_Pfad.png" width="700px" /></a></p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/21_Ergebnis_Pfad_Verschiebung.png" title="Pfadauswertung der Verschiebung \(u_x(x)\)"><img alt="Pfadauswertung der Verschiebung \(u_x(x)\)" src="../media/05_elementtypen_ansatzf/21_Ergebnis_Pfad_Verschiebung.png" width="800px" /></a></p>
+<p><strong>Wichtig:</strong> beide Ergebnisse müssen im Anschluss in ein Pfadergebnis umgewandelt werden (<em>rechte Maustaste</em> -&gt; <em>In Pfadergebnis umwandeln</em>). Es entstehen zwei Einträge <em>Konstruktionsgeometrie</em> mit Pfaden. Die Ergebnisse zeigen dann das jeweilige Ergebnis entlang der gewählten Kurve.  </p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/22_Pfad_Konstruktionsgeom.png" title="Pfadverlauf auf der Konstruktionsgeometrie"><img alt="Pfadverlauf auf der Konstruktionsgeometrie" src="../media/05_elementtypen_ansatzf/22_Pfad_Konstruktionsgeom.png" width="300px" /></a></p>
+<hr />
+<h2 id="einfluss-von-elementordnung-und-netzauflosung">Einfluss von Elementordnung und Netzauflösung<a class="headerlink" href="#einfluss-von-elementordnung-und-netzauflosung" title="Permanent link">&para;</a></h2>
+<h3 id="motivation-der-netzeinflussstudie-h-studie-und-des-p-vergleichs">Motivation der Netzeinflussstudie (h-Studie) und des p-Vergleichs<a class="headerlink" href="#motivation-der-netzeinflussstudie-h-studie-und-des-p-vergleichs" title="Permanent link">&para;</a></h3>
+<p>Untersucht wird, wie <strong>Netzgröße <span class="arithmatex">\(h\)</span></strong> und <strong>Ansatzordnung <span class="arithmatex">\(p\)</span></strong> die Genauigkeit der FEM-Ergebnisse beeinflussen. Kleinere Elemente erfassen Geometrie und Spannungsgradienten feiner, höhere Ansatzordnungen bilden gekrümmte Verläufe innerhalb eines Elements besser ab.  </p>
+<p>Beides wirkt direkt auf <strong>Verschiebung am freien Ende</strong> und <strong>Spannungen im Übergangsbereich</strong>. Die Studie soll zeigen, wie sich die Ergebnisse mit zunehmender Verfeinerung und höherer Ordnung der analytischen Lösung annähern.</p>
+<p>Leitfragen:</p>
+<ul>
+<li>Wie ändert sich <span class="arithmatex">\(u(L)\)</span> bei verkleinerter Elementgröße <span class="arithmatex">\(h\)</span>?  </li>
+<li>Wie unterscheiden sich lineare und quadratische Elemente bei gleicher Netzauflösung im Spannungsverlauf entlang des Pfades?  </li>
+<li>Ab welcher Auflösung ist das Ergebnis praktisch netzunabhängig (<span class="arithmatex">\(p=1\)</span> vs. <span class="arithmatex">\(p=2\)</span>)?</li>
+</ul>
+<h3 id="erste-ergebnisse-entlang-des-pfades">Erste Ergebnisse entlang des Pfades<a class="headerlink" href="#erste-ergebnisse-entlang-des-pfades" title="Permanent link">&para;</a></h3>
+<p>Für alle Varianten werden dieselben Ergebnisgrößen entlang des <strong>Pfades</strong> ausgewertet. Das Standardnetz dient dabei als Referenz für die anschließende h-Studie und den p-Vergleich.</p>
+<p>Untersucht werden:</p>
+<ul>
+<li><strong>Verschiebungskomponente <span class="arithmatex">\(u_x(x)\)</span></strong> – zeigt die Dehnung des Bauteils entlang der Stabachse und dient als Vergleichsgröße zur analytischen Lösung.  </li>
+<li><strong>Normalspannung <span class="arithmatex">\(\sigma_{xx}(x)\)</span></strong> – beschreibt den lokalen Spannungsverlauf im Übergangsbereich und reagiert besonders empfindlich auf Netzgröße und Ansatzordnung.</li>
+</ul>
+<p>Die folgenden Abbildungen zeigen die Ergebnisse des Standardnetzes entlang des definierten Pfades.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/23_Auswertung_Pfad_Verschiebung.png" title="Pfadauswertung der Verschiebung \(u_x(x)\)"><img alt="Pfadauswertung der Verschiebung \(u_x(x)\)" src="../media/05_elementtypen_ansatzf/23_Auswertung_Pfad_Verschiebung.png" width="800px" /></a></p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/24_Auswertung_Pfad_Spannung.png" title="Pfadauswertung der Normalspannung \(\sigma_{xx}(x)\)"><img alt="Pfadauswertung der Normalspannung \(\sigma_{xx}(x)\)" src="../media/05_elementtypen_ansatzf/24_Auswertung_Pfad_Spannung.png" width="800px" /></a></p>
+<h3 id="netzverfeinerung-h-studie">Netzverfeinerung (h-Studie)<a class="headerlink" href="#netzverfeinerung-h-studie" title="Permanent link">&para;</a></h3>
+<p>Im nächsten Schritt wird die <strong>Elementgröße systematisch verringert</strong>, um den Einfluss der Netzauflösung auf Verschiebung und Spannung zu untersuchen. Alle übrigen Einstellungen bleiben unverändert.</p>
+<p>Vorgehen:</p>
+<ul>
+<li><strong>Elementgröße <span class="arithmatex">\(h\)</span></strong> global schrittweise reduzieren.  </li>
+<li>Nach jeder Vernetzung die Analyse neu berechnen.  </li>
+<li>Auslesen der Pfadergebnisse für <span class="arithmatex">\(u_x(x)\)</span> und <span class="arithmatex">\(\sigma_{xx}(x)\)</span>.  </li>
+</ul>
+<p>Ziel ist zu erkennen, ab welcher Netzgröße sich die Ergebnisse <strong>nicht mehr wesentlich ändern</strong> – also eine <strong>Netzunabhängigkeit</strong> erreicht ist.</p>
+<p>Folgende Tabelle zeigt exemplarisch Ergebnisse <span class="arithmatex">\(u_x(x)\)</span> für unterschiedliche globale Netzgrößen entlang des Pfades (14 mm, 10 mm, 6 mm und 4 mm). Die Anzahl der Zeilen ergibt sich aus der Anzahl Elemente bzw. Knoten auf dem Pfad.  </p>
+<details class="note">
+<summary>Ergebnisse Pfad Verschiebung</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Netz <strong>14 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Netz <strong>10 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Netz <strong>6 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Netz <strong>4 mm</strong></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Verschiebung / mm</td>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Verschiebung / mm</td>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Verschiebung / mm</td>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Verschiebung / mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0588</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0604</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0604</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0605</td>
+</tr>
+<tr>
+<td style="text-align: center;">6,54</td>
+<td style="text-align: center;">0,0414</td>
+<td style="text-align: center;">4,36</td>
+<td style="text-align: center;">0,0483</td>
+<td style="text-align: center;">2,91</td>
+<td style="text-align: center;">0,0523</td>
+<td style="text-align: center;">1,87</td>
+<td style="text-align: center;">0,0552</td>
+</tr>
+<tr>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">0,0275</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">0,0372</td>
+<td style="text-align: center;">5,82</td>
+<td style="text-align: center;">0,0445</td>
+<td style="text-align: center;">3,74</td>
+<td style="text-align: center;">0,0501</td>
+</tr>
+<tr>
+<td style="text-align: center;">19,63</td>
+<td style="text-align: center;">0,0174</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">0,0278</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">0,0372</td>
+<td style="text-align: center;">5,61</td>
+<td style="text-align: center;">0,0450</td>
+</tr>
+<tr>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0107</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">0,0204</td>
+<td style="text-align: center;">11,64</td>
+<td style="text-align: center;">0,0308</td>
+<td style="text-align: center;">7,48</td>
+<td style="text-align: center;">0,0402</td>
+</tr>
+<tr>
+<td style="text-align: center;">32,72</td>
+<td style="text-align: center;">0,0063</td>
+<td style="text-align: center;">21,82</td>
+<td style="text-align: center;">0,0147</td>
+<td style="text-align: center;">14,54</td>
+<td style="text-align: center;">0,0252</td>
+<td style="text-align: center;">9,35</td>
+<td style="text-align: center;">0,0358</td>
+</tr>
+<tr>
+<td style="text-align: center;">39,26</td>
+<td style="text-align: center;">0,0032</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0105</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">0,0204</td>
+<td style="text-align: center;">11,22</td>
+<td style="text-align: center;">0,0316</td>
+</tr>
+<tr>
+<td style="text-align: center;">45,80</td>
+<td style="text-align: center;">0,0005</td>
+<td style="text-align: center;">30,54</td>
+<td style="text-align: center;">0,0074</td>
+<td style="text-align: center;">20,36</td>
+<td style="text-align: center;">0,0165</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">0,0278</td>
+</tr>
+<tr>
+<td style="text-align: center;">52,35</td>
+<td style="text-align: center;">−0,0021</td>
+<td style="text-align: center;">34,90</td>
+<td style="text-align: center;">0,0051</td>
+<td style="text-align: center;">23,27</td>
+<td style="text-align: center;">0,0132</td>
+<td style="text-align: center;">14,96</td>
+<td style="text-align: center;">0,0244</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">39,27</td>
+<td style="text-align: center;">0,0033</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0105</td>
+<td style="text-align: center;">16,83</td>
+<td style="text-align: center;">0,0214</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">0,0016</td>
+<td style="text-align: center;">29,09</td>
+<td style="text-align: center;">0,0084</td>
+<td style="text-align: center;">18,70</td>
+<td style="text-align: center;">0,0186</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">47,99</td>
+<td style="text-align: center;">−0,0006</td>
+<td style="text-align: center;">31,99</td>
+<td style="text-align: center;">0,0066</td>
+<td style="text-align: center;">20,57</td>
+<td style="text-align: center;">0,0162</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">−0,0035</td>
+<td style="text-align: center;">34,91</td>
+<td style="text-align: center;">0,0051</td>
+<td style="text-align: center;">22,44</td>
+<td style="text-align: center;">0,0141</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,82</td>
+<td style="text-align: center;">0,0038</td>
+<td style="text-align: center;">24,31</td>
+<td style="text-align: center;">0,0122</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">40,72</td>
+<td style="text-align: center;">0,0027</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0105</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">0,0015</td>
+<td style="text-align: center;">28,05</td>
+<td style="text-align: center;">0,0091</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,54</td>
+<td style="text-align: center;">0,0003</td>
+<td style="text-align: center;">29,92</td>
+<td style="text-align: center;">0,0078</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49,45</td>
+<td style="text-align: center;">−0,0014</td>
+<td style="text-align: center;">31,79</td>
+<td style="text-align: center;">0,0067</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">−0,0036</td>
+<td style="text-align: center;">33,66</td>
+<td style="text-align: center;">0,0057</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">35,53</td>
+<td style="text-align: center;">0,0048</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,40</td>
+<td style="text-align: center;">0,0040</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">39,27</td>
+<td style="text-align: center;">0,0032</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">41,14</td>
+<td style="text-align: center;">0,0025</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,01</td>
+<td style="text-align: center;">0,0017</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">44,88</td>
+<td style="text-align: center;">0,0010</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,75</td>
+<td style="text-align: center;">0,0001</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">48,62</td>
+<td style="text-align: center;">−0,0008</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">50,49</td>
+<td style="text-align: center;">−0,0020</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">−0,0034</td>
+</tr>
+</tbody>
+</table>
+</details>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.00,6.54,13.09,19.63,26.18,32.72,39.26,45.80,52.35],
+           "y": [0.0588,0.0414,0.0275,0.0174,0.0107,0.0063,0.0032,0.0005,-0.0021],
+           "name": "Netz 14 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         },
+         {
+           "x": [0.00,4.36,8.73,13.09,17.45,21.82,26.18,30.54,34.90,39.27,43.63,47.99,52.36],
+           "y": [0.0604,0.0483,0.0372,0.0278,0.0204,0.0147,0.0105,0.0074,0.0051,0.0033,0.0016,-0.0006,-0.0035],
+           "name": "Netz 10 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         },
+         {
+           "x": [0.00,2.91,5.82,8.73,11.64,14.54,17.45,20.36,23.27,26.18,29.09,31.99,34.91,37.82,40.72,43.63,46.54,49.45,52.36],
+           "y": [0.0604,0.0523,0.0445,0.0372,0.0308,0.0252,0.0204,0.0165,0.0132,0.0105,0.0084,0.0066,0.0051,0.0038,0.0027,0.0015,0.0003,-0.0014,-0.0036],
+           "name": "Netz 6 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         },
+         {
+           "x": [0.00,1.87,3.74,5.61,7.48,9.35,11.22,13.09,14.96,16.83,18.70,20.57,22.44,24.31,26.18,28.05,29.92,31.79,33.66,35.53,37.40,39.27,41.14,43.01,44.88,46.75,48.62,50.49,52.36],
+           "y": [0.0605,0.0552,0.0501,0.0450,0.0402,0.0358,0.0316,0.0278,0.0244,0.0214,0.0186,0.0162,0.0141,0.0122,0.0105,0.0091,0.0078,0.0067,0.0057,0.0048,0.0040,0.0032,0.0025,0.0017,0.0010,0.0001,-0.0008,-0.0020,-0.0034],
+           "name": "Netz 4 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Verschiebungsverlauf entlang des Pfades"},
+         "xaxis": {"title": "Länge x / mm"},
+         "yaxis": {"title": "Verschiebung uₓ / mm"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Ergebnisse Pfad Spannung</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Netz <strong>14 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Netz <strong>10 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Netz <strong>6 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Netz <strong>4 mm</strong></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Normalspannung / MPa</td>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Normalspannung / MPa</td>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Normalspannung / MPa</td>
+<td style="text-align: center;">Länge / mm</td>
+<td style="text-align: center;">Normalspannung / MPa</td>
+</tr>
+<tr>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">206,03</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">204,80</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">201,70</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">200,08</td>
+</tr>
+<tr>
+<td style="text-align: center;">6,54</td>
+<td style="text-align: center;">163,92</td>
+<td style="text-align: center;">4,36</td>
+<td style="text-align: center;">187,37</td>
+<td style="text-align: center;">2,91</td>
+<td style="text-align: center;">194,67</td>
+<td style="text-align: center;">1,87</td>
+<td style="text-align: center;">197,91</td>
+</tr>
+<tr>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">121,82</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">169,94</td>
+<td style="text-align: center;">5,82</td>
+<td style="text-align: center;">187,64</td>
+<td style="text-align: center;">3,74</td>
+<td style="text-align: center;">195,74</td>
+</tr>
+<tr>
+<td style="text-align: center;">19,63</td>
+<td style="text-align: center;">88,58</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">135,69</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">166,85</td>
+<td style="text-align: center;">5,61</td>
+<td style="text-align: center;">185,97</td>
+</tr>
+<tr>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">55,34</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">101,45</td>
+<td style="text-align: center;">11,64</td>
+<td style="text-align: center;">146,07</td>
+<td style="text-align: center;">7,48</td>
+<td style="text-align: center;">176,20</td>
+</tr>
+<tr>
+<td style="text-align: center;">32,72</td>
+<td style="text-align: center;">41,45</td>
+<td style="text-align: center;">21,82</td>
+<td style="text-align: center;">77,18</td>
+<td style="text-align: center;">14,54</td>
+<td style="text-align: center;">124,11</td>
+<td style="text-align: center;">9,35</td>
+<td style="text-align: center;">162,68</td>
+</tr>
+<tr>
+<td style="text-align: center;">39,26</td>
+<td style="text-align: center;">27,55</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">52,92</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">102,15</td>
+<td style="text-align: center;">11,22</td>
+<td style="text-align: center;">149,16</td>
+</tr>
+<tr>
+<td style="text-align: center;">45,80</td>
+<td style="text-align: center;">18,45</td>
+<td style="text-align: center;">30,54</td>
+<td style="text-align: center;">40,86</td>
+<td style="text-align: center;">20,36</td>
+<td style="text-align: center;">84,69</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">134,84</td>
+</tr>
+<tr>
+<td style="text-align: center;">52,35</td>
+<td style="text-align: center;">9,36</td>
+<td style="text-align: center;">34,90</td>
+<td style="text-align: center;">28,80</td>
+<td style="text-align: center;">23,27</td>
+<td style="text-align: center;">67,22</td>
+<td style="text-align: center;">14,96</td>
+<td style="text-align: center;">120,52</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">39,27</td>
+<td style="text-align: center;">25,70</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">55,27</td>
+<td style="text-align: center;">16,83</td>
+<td style="text-align: center;">107,36</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">22,60</td>
+<td style="text-align: center;">29,09</td>
+<td style="text-align: center;">43,31</td>
+<td style="text-align: center;">18,70</td>
+<td style="text-align: center;">94,21</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">47,99</td>
+<td style="text-align: center;">17,59</td>
+<td style="text-align: center;">31,99</td>
+<td style="text-align: center;">36,33</td>
+<td style="text-align: center;">20,57</td>
+<td style="text-align: center;">83,13</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">12,58</td>
+<td style="text-align: center;">34,91</td>
+<td style="text-align: center;">29,35</td>
+<td style="text-align: center;">22,44</td>
+<td style="text-align: center;">72,06</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,82</td>
+<td style="text-align: center;">26,37</td>
+<td style="text-align: center;">24,31</td>
+<td style="text-align: center;">63,26</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">40,72</td>
+<td style="text-align: center;">23,39</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">54,46</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">22,56</td>
+<td style="text-align: center;">28,05</td>
+<td style="text-align: center;">47,83</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,54</td>
+<td style="text-align: center;">21,72</td>
+<td style="text-align: center;">29,92</td>
+<td style="text-align: center;">41,19</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49,45</td>
+<td style="text-align: center;">17,17</td>
+<td style="text-align: center;">31,79</td>
+<td style="text-align: center;">36,56</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">12,62</td>
+<td style="text-align: center;">33,66</td>
+<td style="text-align: center;">31,93</td>
+</tr>
+</tbody>
+</table>
+</details>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.00,6.54,13.09,19.63,26.18,32.72,39.26,45.80,52.35],
+           "y": [206.03,163.92,121.82,88.58,55.34,41.45,27.55,18.45,9.36],
+           "name": "Netz 14 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["206,03 MPa","163,92 MPa","121,82 MPa","88,58 MPa","55,34 MPa","41,45 MPa","27,55 MPa","18,45 MPa","9,36 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         },
+         {
+           "x": [0.00,4.36,8.73,13.09,17.45,21.82,26.18,30.54,34.90,39.27,43.63,47.99,52.36],
+           "y": [204.80,187.37,169.94,135.69,101.45,77.18,52.92,40.86,28.80,25.70,22.60,17.59,12.58],
+           "name": "Netz 10 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["204,80 MPa","187,37 MPa","169,94 MPa","135,69 MPa","101,45 MPa","77,18 MPa","52,92 MPa","40,86 MPa","28,80 MPa","25,70 MPa","22,60 MPa","17,59 MPa","12,58 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         },
+         {
+           "x": [0.00,2.91,5.82,8.73,11.64,14.54,17.45,20.36,23.27,26.18,29.09,31.99,34.91,37.82,40.72,43.63,46.54,49.45,52.36],
+           "y": [201.70,194.67,187.64,166.85,146.07,124.11,102.15,84.69,67.22,55.27,43.31,36.33,29.35,26.37,23.39,22.56,21.72,17.17,12.62],
+           "name": "Netz 6 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["201,70 MPa","194,67 MPa","187,64 MPa","166,85 MPa","146,07 MPa","124,11 MPa","102,15 MPa","84,69 MPa","67,22 MPa","55,27 MPa","43,31 MPa","36,33 MPa","29,35 MPa","26,37 MPa","23,39 MPa","22,56 MPa","21,72 MPa","17,17 MPa","12,62 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         },
+         {
+           "x": [0.00,1.87,3.74,5.61,7.48,9.35,11.22,13.09,14.96,16.83,18.70,20.57,22.44,24.31,26.18,28.05,29.92,31.79,33.66],
+           "y": [200.08,197.91,195.74,185.97,176.20,162.68,149.16,134.84,120.52,107.36,94.21,83.13,72.06,63.26,54.46,47.83,41.19,36.56,31.93],
+           "name": "Netz 4 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["200,08 MPa","197,91 MPa","195,74 MPa","185,97 MPa","176,20 MPa","162,68 MPa","149,16 MPa","134,84 MPa","120,52 MPa","107,36 MPa","94,21 MPa","83,13 MPa","72,06 MPa","63,26 MPa","54,46 MPa","47,83 MPa","41,19 MPa","36,56 MPa","31,93 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Normalspannung entlang des Pfades"},
+         "xaxis": {"title": "Länge x / mm"},
+         "yaxis": {"title": "Normalspannung σₓₓ / MPa", "rangemode": "tozero"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<p>Zur Beurteilung der Netzunabhängigkeit werden die maximalen Werte der Verschiebung <span class="arithmatex">\(u_x(x)\)</span> und der Normalspannung <span class="arithmatex">\(\sigma_{xx}(x)\)</span> für verschiedene Netzgrößen gegenübergestellt. Die Auswertung zeigt, wie stark sich beide Größen mit zunehmender Netzverfeinerung ändern und ab welcher Elementgröße eine Konvergenz erreicht ist.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Netzgröße</th>
+<th style="text-align: center;">Max. Verschiebung <span class="arithmatex">\(u_{x,\text{max}}\)</span></th>
+<th style="text-align: center;">Max. Normalspannung <span class="arithmatex">\(σ_{xx,\text{max}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">14 mm</td>
+<td style="text-align: center;">0,05884 mm</td>
+<td style="text-align: center;">206,0 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">10 mm</td>
+<td style="text-align: center;">0,060411 mm</td>
+<td style="text-align: center;">204,8 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">6 mm</td>
+<td style="text-align: center;">0,060449 mm</td>
+<td style="text-align: center;">201,7 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">4 mm</td>
+<td style="text-align: center;">0,060459 mm</td>
+<td style="text-align: center;">200,1 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 mm</td>
+<td style="text-align: center;">0,060463 mm</td>
+<td style="text-align: center;">199,12 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">1 mm</td>
+<td style="text-align: center;">0,060464 mm</td>
+<td style="text-align: center;">198,91 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">0,5 mm</td>
+<td style="text-align: center;">0,060466 mm</td>
+<td style="text-align: center;">198,92 MPa</td>
+</tr>
+</tbody>
+</table>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["14 mm","10 mm","6 mm","4 mm","2 mm","1 mm","0,5 mm"],
+           "y": [0.05884,0.060411,0.060449,0.060459,0.060463,0.060464,0.060466],
+           "name": "Max. Verschiebung",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["0,05884 mm","0,060411 mm","0,060449 mm","0,060459 mm","0,060463 mm","0,060464 mm","0,060466 mm"],
+           "hovertemplate": "Netzgröße = %{x}<br>Max. Verschiebung = %{text}<extra></extra>"
+         },
+         {
+           "x": ["14 mm","10 mm","6 mm","4 mm","2 mm","1 mm","0,5 mm"],
+           "y": [206.0,204.8,201.7,200.1,199.12,198.91,198.92],
+           "name": "Max. Normalspannung",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["206,0 MPa","204,8 MPa","201,7 MPa","200,1 MPa","199,12 MPa","198,91 MPa","198,92 MPa"],
+           "hovertemplate": "Netzgröße = %{x}<br>Max. Normalspannung = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Einfluss der Netzgröße auf Verschiebung und Spannung"},
+         "xaxis": {"title": "Netzgröße"},
+         "yaxis": {"title": "Max. Verschiebung (mm)", "side": "left"},
+         "yaxis2": {
+           "title": "Max. Normalspannung (MPa)",
+           "overlaying": "y",
+           "side": "right"
+         },
+         "legend": {"x": 0.95, "y": 0.5, "xanchor": "right", "yanchor": "middle", "bgcolor": "rgba(255,255,255,0.6)"},
+         "hovermode": "x unified",
+         "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<hr />
+<h3 id="einfluss-der-elementordnung-p-vergleich">Einfluss der Elementordnung (p-Vergleich)<a class="headerlink" href="#einfluss-der-elementordnung-p-vergleich" title="Permanent link">&para;</a></h3>
+<p>Die p-Studie untersucht den Einfluss der <strong>Ansatzordnung</strong> bei konstanter Netzgröße <span class="arithmatex">\(h\)</span>. Verglichen werden <strong>lineare</strong> <span class="arithmatex">\((p = 1)\)</span> und <strong>quadratische</strong> <span class="arithmatex">\((p = 2)\)</span> Elemente. Höhere Ordnungen ermöglichen eine genauere Abbildung gekrümmter Verläufe innerhalb eines Elements, führen jedoch zu einem höheren Rechenaufwand. Erwartet wird, dass <strong>Verschiebung <span class="arithmatex">\(u_x(x)\)</span></strong> und <strong>Normalspannung <span class="arithmatex">\(\sigma_{xx}(x)\)</span></strong> bei <span class="arithmatex">\(p = 2\)</span> glatter verlaufen und der Referenzlösung näherkommen, während die Rechenzeit steigt.</p>
+<p>In ANSYS werden hierfür <strong>SOLID185</strong> als lineare und <strong>SOLID186</strong> als quadratische Elemente verwendet.</p>
+<h4 id="einstellung-der-ansatzordnung-in-ansys-start-mit-linear">Einstellung der Ansatzordnung in ANSYS (Start mit <em>Linear</em>)<a class="headerlink" href="#einstellung-der-ansatzordnung-in-ansys-start-mit-linear" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Im Bereich <em>Details von „Netz“</em> den Parameter <em>Elementordnung</em> von <em>Programmgesteuert</em> auf <em>Linear</em> umstellen.  </li>
+<li>Alternativ kann über <em>Einfügen → Methode</em> eine lokale Netzmethode hinzugefügt und dort die <em>Elementordnung</em> gezielt auf <em>Linear</em> gesetzt werden.  </li>
+<li>Das Netz anschließend über <em>Aktualisieren</em> neu erzeugen.  </li>
+</ul>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/25_Elementordnung_linear.png" title="Ansatzordnung in ANSYS: Elementordnung auf Linear stellen"><img alt="Ansatzordnung in ANSYS: Elementordnung auf Linear stellen" src="../media/05_elementtypen_ansatzf/25_Elementordnung_linear.png" width="700px" /></a></p>
+<hr />
+<h4 id="ergebnisse-linear-vs-quadratische-ansatzfunktion-bei-gleicher-elementgroe">Ergebnisse linear vs. quadratische Ansatzfunktion bei gleicher Elementgröße<a class="headerlink" href="#ergebnisse-linear-vs-quadratische-ansatzfunktion-bei-gleicher-elementgroe" title="Permanent link">&para;</a></h4>
+<details class="note">
+<summary>Ergebnisse Pfade lineare/quadratische Ansatzfunktion</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>6 mm linear</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>6 mm quadratisch</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Länge in mm</td>
+<td style="text-align: center;">Verschiebung in mm</td>
+<td style="text-align: center;">Normalspannung in MPa</td>
+<td style="text-align: center;">Länge in mm</td>
+<td style="text-align: center;">Verschiebung in mm</td>
+<td style="text-align: center;">Normalspannung in MPa</td>
+</tr>
+<tr>
+<td style="text-align: center;">0,000</td>
+<td style="text-align: center;">6,29E−02</td>
+<td style="text-align: center;">204,95</td>
+<td style="text-align: center;">0,000</td>
+<td style="text-align: center;">6,04E−02</td>
+<td style="text-align: center;">201,70</td>
+</tr>
+<tr>
+<td style="text-align: center;">5,817</td>
+<td style="text-align: center;">4,61E−02</td>
+<td style="text-align: center;">190,22</td>
+<td style="text-align: center;">2,909</td>
+<td style="text-align: center;">5,23E−02</td>
+<td style="text-align: center;">194,67</td>
+</tr>
+<tr>
+<td style="text-align: center;">11,634</td>
+<td style="text-align: center;">3,17E−02</td>
+<td style="text-align: center;">153,22</td>
+<td style="text-align: center;">5,818</td>
+<td style="text-align: center;">4,45E−02</td>
+<td style="text-align: center;">187,64</td>
+</tr>
+<tr>
+<td style="text-align: center;">17,451</td>
+<td style="text-align: center;">2,09E−02</td>
+<td style="text-align: center;">110,68</td>
+<td style="text-align: center;">8,727</td>
+<td style="text-align: center;">3,72E−02</td>
+<td style="text-align: center;">166,85</td>
+</tr>
+<tr>
+<td style="text-align: center;">23,268</td>
+<td style="text-align: center;">1,34E−02</td>
+<td style="text-align: center;">74,97</td>
+<td style="text-align: center;">11,635</td>
+<td style="text-align: center;">3,08E−02</td>
+<td style="text-align: center;">146,07</td>
+</tr>
+<tr>
+<td style="text-align: center;">29,085</td>
+<td style="text-align: center;">8,42E−03</td>
+<td style="text-align: center;">49,58</td>
+<td style="text-align: center;">14,544</td>
+<td style="text-align: center;">2,52E−02</td>
+<td style="text-align: center;">124,11</td>
+</tr>
+<tr>
+<td style="text-align: center;">34,902</td>
+<td style="text-align: center;">5,07E−03</td>
+<td style="text-align: center;">34,24</td>
+<td style="text-align: center;">17,453</td>
+<td style="text-align: center;">2,04E−02</td>
+<td style="text-align: center;">102,15</td>
+</tr>
+<tr>
+<td style="text-align: center;">40,719</td>
+<td style="text-align: center;">2,59E−03</td>
+<td style="text-align: center;">26,64</td>
+<td style="text-align: center;">20,362</td>
+<td style="text-align: center;">1,65E−02</td>
+<td style="text-align: center;">84,69</td>
+</tr>
+<tr>
+<td style="text-align: center;">46,536</td>
+<td style="text-align: center;">2,07E−04</td>
+<td style="text-align: center;">19,88</td>
+<td style="text-align: center;">23,271</td>
+<td style="text-align: center;">1,32E−02</td>
+<td style="text-align: center;">67,22</td>
+</tr>
+<tr>
+<td style="text-align: center;">52,353</td>
+<td style="text-align: center;">−2,23E−03</td>
+<td style="text-align: center;">15,15</td>
+<td style="text-align: center;">26,179</td>
+<td style="text-align: center;">1,05E−02</td>
+<td style="text-align: center;">55,27</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">29,088</td>
+<td style="text-align: center;">8,36E−03</td>
+<td style="text-align: center;">43,31</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">31,997</td>
+<td style="text-align: center;">6,58E−03</td>
+<td style="text-align: center;">36,33</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">34,906</td>
+<td style="text-align: center;">5,11E−03</td>
+<td style="text-align: center;">29,35</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,815</td>
+<td style="text-align: center;">3,83E−03</td>
+<td style="text-align: center;">26,37</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">40,723</td>
+<td style="text-align: center;">2,66E−03</td>
+<td style="text-align: center;">23,39</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,632</td>
+<td style="text-align: center;">1,50E−03</td>
+<td style="text-align: center;">22,56</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,541</td>
+<td style="text-align: center;">2,88E−04</td>
+<td style="text-align: center;">21,72</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49,450</td>
+<td style="text-align: center;">−1,39E−03</td>
+<td style="text-align: center;">17,17</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,359</td>
+<td style="text-align: center;">−3,56E−03</td>
+<td style="text-align: center;">12,62</td>
+</tr>
+</tbody>
+</table>
+</details>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.000,5.817,11.634,17.451,23.268,29.085,34.902,40.719,46.536,52.353],
+           "y": [0.0629,0.0461,0.0317,0.0209,0.0134,0.00842,0.00507,0.00259,0.000207,-0.00223],
+           "name": "6 mm linear",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y:.5f} mm<extra></extra>"
+         },
+         {
+           "x": [0.000,2.9088,5.8176,8.7265,11.635,14.544,17.453,20.362,23.271,26.179,29.088,31.997,34.906,37.815,40.723,43.632,46.541,49.450,52.359],
+           "y": [0.0604,0.0523,0.0445,0.0372,0.0308,0.0252,0.0204,0.0165,0.0132,0.0105,0.00836,0.00658,0.00511,0.00383,0.00266,0.00150,0.000288,-0.00139,-0.00356],
+           "name": "6 mm quadratisch",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y:.5f} mm<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Verschiebung entlang des Pfades (6 mm Netz)"},
+         "xaxis": {"title": "Länge x / mm"},
+         "yaxis": {"title": "Verschiebung uₓ / mm"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.000,5.817,11.634,17.451,23.268,29.085,34.902,40.719,46.536,52.353],
+           "y": [204.95,190.22,153.22,110.68,74.97,49.58,34.24,26.64,19.88,15.15],
+           "name": "6 mm linear",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{y:.2f} MPa<extra></extra>"
+         },
+         {
+           "x": [0.000,2.9088,5.8176,8.7265,11.635,14.544,17.453,20.362,23.271,26.179,29.088,31.997,34.906,37.815,40.723,43.632,46.541,49.450,52.359],
+           "y": [201.70,194.67,187.64,166.85,146.07,124.11,102.15,84.69,67.22,55.27,43.31,36.33,29.35,26.37,23.39,22.56,21.72,17.17,12.62],
+           "name": "6 mm quadratisch",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{y:.2f} MPa<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Normalspannung entlang des Pfades (6 mm Netz)"},
+         "xaxis": {"title": "Länge x / mm"},
+         "yaxis": {"title": "Normalspannung σₓₓ / MPa"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Ansatzfunktion</th>
+<th style="text-align: center;">Max. Verschiebung <span class="arithmatex">\(u_{x,\text{max}}\)</span></th>
+<th style="text-align: center;">Max. Normalspannung <span class="arithmatex">\(σ_{xx,\text{max}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">linear</td>
+<td style="text-align: center;">0,062854 mm</td>
+<td style="text-align: center;">204,95 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">quadratisch</td>
+<td style="text-align: center;">0,060449 mm</td>
+<td style="text-align: center;">201,7 MPa</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="zusammenfassung-einfluss-studie">Zusammenfassung Einfluss-Studie<a class="headerlink" href="#zusammenfassung-einfluss-studie" title="Permanent link">&para;</a></h3>
 <p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a></p>
+<hr />
+<h2 id="netzqualitat">(Netzqualität)<a class="headerlink" href="#netzqualitat" title="Permanent link">&para;</a></h2>
+<h2 id="quiz">Quiz<a class="headerlink" href="#quiz" title="Permanent link">&para;</a></h2>
+<!--
+Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.  
+Abbildung mit Lightbox-Zoom und Quellenangabe.
+
+-->
+
 <div class="footnote">
 <hr />
 <ol>

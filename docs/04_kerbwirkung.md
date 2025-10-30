@@ -902,16 +902,16 @@ content:
 <?quiz?>
 question: Wie lautet die Nennspannung &sigma;<sub>n</sub> im auf Zug belasteten Rechteck-Querschnitt mit Breite b und Dicke t?
 answer: \(\sigma_n = b \cdot t \cdot F\)
-answer-correct: \(\sigma_n = \dfrac{F}{b \cdot t}\)
 answer: \(\sigma_n = \dfrac{b + t}{F}\)
+answer-correct: \(\sigma_n = \dfrac{F}{b \cdot t}\)
 content:
 <em>Tipp:</em> Kraft durch belastete Querschnittsfläche.
 <?/quiz?>
 
 <?quiz?>
 question: Ein Stabelement mit Federsteifigkeit c ist links eingespannt (\(u_1=0\)) und rechts mit \(F\) belastet. Welche Beziehung gilt?
-answer: \(u_2 = c \cdot F\)
 answer-correct: \(F = c \cdot u_2\)
+answer: \(u_2 = c \cdot F\)
 answer: \(F = \dfrac{u_2}{c}\)
 content:
 <em>Merke:</em> Lineare Federgleichung \(F = c \cdot \Delta u\).
@@ -928,9 +928,9 @@ content:
 
 <?quiz?>
 question: Ist der Betrag der angelegten Kraft F für die Bestimmung von &alpha;<sub>k</sub> relevant?
-answer: Ja, &alpha;<sub>k</sub> ist proportional zu <em>F</em>.
-answer-correct: Nein, <em>F</em> kürzt sich in \(\alpha_k = \sigma_\text{max}/\sigma_n\) heraus.
 answer: Nur wenn <em>F</em> kleiner als 1 000 N ist.
+answer-correct: Nein, <em>F</em> kürzt sich in \(\alpha_k = \sigma_\text{max}/\sigma_n\) heraus.
+answer: Ja, &alpha;<sub>k</sub> ist proportional zu <em>F</em>.
 content:
 <em>Konsequenz:</em> Beliebige Lasten liefern identische &alpha;<sub>k</sub>.
 <?/quiz?>
@@ -938,8 +938,8 @@ content:
 <?quiz?>
 question: Wie ändert sich &alpha;<sub>k</sub>, wenn das Verhältnis r/b kleiner wird (schärfere Kerbe)?
 answer: &alpha;<sub>k</sub> bleibt gleich.
-answer-correct: &alpha;<sub>k</sub> nimmt zu.
 answer: &alpha;<sub>k</sub> fällt gegen null.
+answer-correct: &alpha;<sub>k</sub> nimmt zu.
 content:
 <em>Physik:</em> Schärfere Kerben verdichten den Kraftfluss stärker.
 <?/quiz?>
@@ -955,8 +955,8 @@ content:
 
 <?quiz?>
 question: Was kennzeichnet Divergenz in diesem Kontext?
-answer: Die Zielgröße bleibt konstant bei Verfeinerung.
 answer-correct: Die Zielgröße steigt ohne Grenzwert an, z. B. bei scharfkantiger Kerbe.
+answer: Die Zielgröße bleibt konstant bei Verfeinerung.
 answer: Die Zielgröße pendelt sich sofort ein.
 content:
 <em>Beispiel:</em> Theoretischer Kerbradius null ohne Plastizität.
@@ -973,17 +973,17 @@ content:
 
 <?quiz?>
 question: Was ist das Ziel einer Netzeinflussstudie?
-answer: Das feinste mögliche Netz zu erzeugen.
-answer-correct: Ein Netz zu finden, das einen Kompromiss zwischen Genauigkeit und Rechenzeit bietet.
 answer: Möglichst viele Elemente im gesamten Modell zu erzeugen.
+answer-correct: Ein Netz zu finden, das einen Kompromiss zwischen Genauigkeit und Rechenzeit bietet.
+answer: Das feinste mögliche Netz zu erzeugen.
 content:
 <em>Hinweis:</em> Ein gutes Netz liefert stabile Ergebnisse bei minimalem Aufwand – nicht das feinste, sondern das effizienteste Netz ist optimal.
 <?/quiz?>
 
 <?quiz?>
 question: Welcher visuelle Hinweis deutet auf eine zu grobe Vernetzung im Kerbgrund hin?
-answer: Homogene Farbfelder ohne Sprung.
 answer-correct: Deutliche Farbverläufe innerhalb einzelner Elemente bei hohen Gradienten.
+answer: Homogene Farbfelder ohne Sprung.
 answer: Identische Elementgröße überall.
 content:
 <em>Tipp:</em> Ungemittelte Spannungen zur Beurteilung heranziehen.
@@ -992,27 +992,28 @@ content:
 <?quiz?>
 question: Warum ist eine globale Verfeinerung für Kerbspannungen oft ineffizient?
 answer: Weil ANSYS globale Verfeinerung nicht unterstützt.
-answer-correct: Sie erhöht die Netzdichte auch in unkritischen Bereichen und verlängert die Rechenzeit ohne proportionalen Erkenntnisgewinn.
 answer: Sie verschlechtert die Spannungsauflösung im Kerbgrund.
+answer-correct: Sie erhöht die Netzdichte auch in unkritischen Bereichen und verlängert die Rechenzeit ohne proportionalen Erkenntnisgewinn.
 content:
 <em>Alternative:</em> Lokale Größensteuerung oder adaptive Vernetzung.
 <?/quiz?>
 
 <?quiz?>
 question: Wozu dienen schwache Federn in linearen statischen Analysen?
-answer: Zur Erhöhung des Elastizitätsmoduls <em>E</em>.
-answer-correct: Zur numerischen Stabilisierung bei unzureichender Lagerung, um Starrkörperbewegungen zu verhindern.
 answer: Zur lokalen Netzverfeinerung an Kerben.
+answer-correct: Zur numerischen Stabilisierung bei unzureichender Lagerung, um Starrkörperbewegungen zu verhindern.
+answer: Zur Erhöhung des Elastizitätsmoduls <em>E</em>.
 content:
 <em>Hinweis:</em> Meldungen über schwache Federn sind nicht zwangsläufig kritisch.
 <?/quiz?>
 
 <?quiz?>
 question: Was ist ein fokussiertes Ergebnis im Sinne der adaptiven Vernetzung?
-answer: Ein globales Maximum der Gesamtverformung.
 answer-correct: Ein gezielt ausgewähltes Teilergebnis auf Fläche, Linie oder Volumen, das die lokale Netzadaption steuert.
 answer: Eine reine Materialkonstante.
+answer: Ein globales Maximum der Gesamtverformung.
 content:
 <em>Nutzen:</em> Lokale Konvergenz trotz divergenter Zonen an anderen Stellen erreichen.
 <?/quiz?>
 <!-- markdownlint-enable MD033 -->
+
