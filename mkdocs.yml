@@ -32,6 +32,8 @@ markdown_extensions:
   - pymdownx.extra
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.snippets:
+      check_paths: true
   - pymdownx.arithmatex:
       generic: true
 
