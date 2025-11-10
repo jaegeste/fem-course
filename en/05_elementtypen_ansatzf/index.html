@@ -452,6 +452,42 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influence-of-element-order-and-mesh-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      Influence of Element Order and Mesh Density
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-for-self-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz for Self-Assessment
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -535,6 +571,42 @@
   <a href="#analytical-solution" class="md-nav__link">
     <span class="md-ellipsis">
       Analytical Solution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#influence-of-element-order-and-mesh-density" class="md-nav__link">
+    <span class="md-ellipsis">
+      Influence of Element Order and Mesh Density
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mesh-quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mesh Quality
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-for-self-assessment" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz for Self-Assessment
     </span>
   </a>
   
@@ -942,7 +1014,1237 @@ In the finite element method, the same relationship is <strong>discretized</stro
 Within each element, the displacement field is approximated by shape functions, and the integration is performed locally.<br />
 With sufficiently fine mesh resolution, the FEM result converges toward the analytical solution.</p>
 </div>
-<p><a class="glightbox" href="../../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../../media/under_construction.png" width="600px" /></a></p>
+<h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
+<h3 id="project-management-and-geometry-import">Project Management and Geometry Import<a class="headerlink" href="#project-management-and-geometry-import" title="Permanent link">&para;</a></h3>
+<p>First, create a new <em>Static Structural</em> (or <em>Static Mechanical</em>) analysis in <em>Workbench</em>.  </p>
+<p>In <em>Geometry</em>, right-click and select <em>Import Geometry → Browse</em> to import the file <a href="../../media/05_elementtypen_ansatzf/zugstab.stp">zugstab.stp</a>.  </p>
+<h3 id="material-assignment">Material Assignment<a class="headerlink" href="#material-assignment" title="Permanent link">&para;</a></h3>
+<p>The material management in <em>ANSYS Workbench</em> is used to select and review material properties that will later be applied in the analysis. It can be accessed from the project tree under <em>Engineering Data</em> (open by double-clicking) and is structured into several clearly organized sections:</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/14_technische_daten.png" title="Material selection in Engineering Data"><img alt="Material selection in Engineering Data" src="../media/05_elementtypen_ansatzf/14_technische_daten.png" width="700px" /></a></p>
+<ul>
+<li>
+<p><strong>Material Overview (center/top):</strong><br />
+  Displays the materials currently available in the project.<br />
+  By default, only <em>Structural Steel</em> is included.<br />
+  A new material can be created here if needed.  </p>
+</li>
+<li>
+<p><strong>Toolbox (left):</strong><br />
+  Contains available material categories such as <em>Strength</em>, <em>Thermal</em>, <em>Viscoelastic</em>, or <em>Fatigue</em>.<br />
+  Individual properties can be added to the active material by double-clicking.  </p>
+</li>
+<li>
+<p><strong>Property Area (bottom):</strong><br />
+  Shows the properties of the currently selected material.<br />
+  Each row contains a name, a numeric value, and a unit.<br />
+  Density, elastic modulus, Poisson’s ratio, or yield strength can be reviewed and adjusted here.  </p>
+</li>
+<li>
+<p><strong>Property Area (left):</strong><br />
+  Displays the properties of the selected material in graphical form.  </p>
+</li>
+</ul>
+<p>To access additional materials, open the central material database via the <em>Engineering Data Sources</em> tab.  </p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/15_Quelle_technische_Daten.png" title="Engineering Data Sources"><img alt="Engineering Data Sources" src="../media/05_elementtypen_ansatzf/15_Quelle_technische_Daten.png" width="700px" /></a></p>
+<ul>
+<li><strong>Top/Middle Area:</strong> Selection of available data sources (e.g., <em>General Materials</em> or <em>ANSYS GRANTA</em>).  </li>
+<li><strong>Middle/Middle Area:</strong> Displays the materials in the chosen database.<br />
+  The desired material can be added to the current project using the yellow <em>plus sign</em>, or alternatively via right-click.  </li>
+<li><strong>Bottom/Middle Area:</strong> Displays material properties with corresponding values and units.  </li>
+</ul>
+<p>Among the standard materials, an <em>Aluminum Alloy</em> can be found with the following data:  </p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Elastic Modulus</td>
+<td style="text-align: left;"><span class="arithmatex">\( E \)</span></td>
+<td style="text-align: left;">70 000 N/mm²</td>
+</tr>
+<tr>
+<td style="text-align: left;">Poisson’s Ratio</td>
+<td style="text-align: left;"><span class="arithmatex">\( \nu \)</span></td>
+<td style="text-align: left;">0.33</td>
+</tr>
+<tr>
+<td style="text-align: left;">Density</td>
+<td style="text-align: left;"><span class="arithmatex">\( \rho \)</span></td>
+<td style="text-align: left;">2.7 kg/dm³</td>
+</tr>
+</tbody>
+</table>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/16_Auswahl_Aluminiumlegierung.png" title="Aluminum alloy selection"><img alt="Aluminum alloy selection" src="../media/05_elementtypen_ansatzf/16_Auswahl_Aluminiumlegierung.png" width="700px" /></a></p>
+<p>After adding the desired material from the database, return to the <em>Project Overview</em> (tab <em>Project</em>). Then double-click on <em>Model</em> to open the setup in the mechanical editor.  </p>
+<p>In the <em>Geometry</em> section of the tree, check whether the body has been correctly implemented. The selected material can then be assigned to the part via the <em>Material</em> field in the <em>Details</em> window.  </p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/17_material_zuweisung.png" title="Material assignment in the geometry section of the tree"><img alt="Material assignment in the geometry section of the tree" src="../media/05_elementtypen_ansatzf/17_material_zuweisung.png" width="700px" /></a></p>
+<p>In the project overview, the <em>Material</em> entry lists all materials currently available in the project, including the added <em>Aluminum Alloy</em>.  </p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/18_materialien_im_projekt.png" title="Materials in the project under Material"><img alt="Materials in the project under Material" src="../media/05_elementtypen_ansatzf/18_materialien_im_projekt.png" width="700px" /></a></p>
+<h3 id="mesh-generation">Mesh Generation<a class="headerlink" href="#mesh-generation" title="Permanent link">&para;</a></h3>
+<p>Initially, the standard mesh is used to evaluate the base case without modification.<br />
+Refinements, quality metrics, and the h-study are addressed separately in the section <em>Element/Order/Mesh Influence</em>.</p>
+<p><strong>Quick visual check only</strong><br />
+After generating the standard mesh, inspect the element distribution in the model:  </p>
+<ul>
+<li>Is the element size appropriate for the geometry and problem definition?  </li>
+<li>Are transition zones sufficiently refined and free of visible distortions?  </li>
+<li>At this stage, only a rough plausibility check is required – no detailed quality evaluation.</li>
+</ul>
+<p>The detailed quality assessment and mesh refinements will follow later in the section <a href="#influence-of-element-order-and-mesh-density">Influence of Element Order and Mesh Density</a>.</p>
+<hr />
+<h3 id="boundary-conditions">Boundary Conditions<a class="headerlink" href="#boundary-conditions" title="Permanent link">&para;</a></h3>
+<p>Boundary conditions are defined according to the problem statement:</p>
+<ul>
+<li><strong>Left end face:</strong> deformable <em>remote displacement</em> (instead of a fixed support)  </li>
+<li><strong>Right end face:</strong> axial tensile load <span class="arithmatex">\( F = 10{,}0\,\text{kN} \)</span></li>
+</ul>
+<hr />
+<h3 id="analysis-settings">Analysis Settings<a class="headerlink" href="#analysis-settings" title="Permanent link">&para;</a></h3>
+<p>In the first step, no specific adjustments are required; the <em>program-controlled default settings</em> are sufficient for an initial linear elastic analysis.</p>
+<hr />
+<h3 id="evaluation">Evaluation<a class="headerlink" href="#evaluation" title="Permanent link">&para;</a></h3>
+<p>The following result types are recommended for an initial assessment:  </p>
+<ul>
+<li><em>Total deformation</em>  </li>
+<li><em>Displacement component</em> in the x-direction <span class="arithmatex">\(u_x\)</span>  </li>
+<li><em>Equivalent stress</em> (von Mises)  </li>
+<li><em>Normal stress <span class="arithmatex">\(\sigma_{xx}(x)\)</span></em>  </li>
+</ul>
+<p><strong>Note:</strong> The inserted result items can also be renamed.  </p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/19_Auswertungen.png" title="Evaluation of displacement and stress"><img alt="Evaluation of displacement and stress" src="../media/05_elementtypen_ansatzf/19_Auswertungen.png" width="300px" /></a></p>
+<p><strong>Creating a Path for Evaluation</strong>  </p>
+<p>Create a <em>Path Result</em> for <span class="arithmatex">\(u_x(x)\)</span> and <span class="arithmatex">\(\sigma_{xx}(x)\)</span>:</p>
+<ul>
+<li>Add <em>Normal Stress</em>  </li>
+<li>In the <em>Details</em> section, click <em>Geometry</em> and select the edge (use the selection filter)  </li>
+<li>Pay attention to the coordinate direction — here x is relevant, <span class="arithmatex">\(\sigma_{xx}(x)\)</span>  </li>
+<li>Rename the result  </li>
+<li>Repeat the same for a <em>Displacement Component</em> for <span class="arithmatex">\(u_x(x)\)</span></li>
+</ul>
+<p>This path will later be used for quantitative evaluation and comparison of the results along the component length. Even for a curved outer surface, a path is useful since it visualizes the stress distribution along the critical contour.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/20_Ergebnis_Pfad.png" title="Path evaluation in the results section"><img alt="Path evaluation in the results section" src="../media/05_elementtypen_ansatzf/20_Ergebnis_Pfad.png" width="700px" /></a></p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/21_Ergebnis_Pfad_Verschiebung.png" title="Path evaluation of displacement \(u_x(x)\)"><img alt="Path evaluation of displacement \(u_x(x)\)" src="../media/05_elementtypen_ansatzf/21_Ergebnis_Pfad_Verschiebung.png" width="800px" /></a></p>
+<p><strong>Important:</strong> both results must then be converted into a path result (<em>right-click</em> → <em>Convert to Path Result</em>). Two entries <em>Construction Geometry</em> with paths will be created. The results then show the respective quantity along the selected curve.  </p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/22_Pfad_Konstruktionsgeom.png" title="Path along the construction geometry"><img alt="Path along the construction geometry" src="../media/05_elementtypen_ansatzf/22_Pfad_Konstruktionsgeom.png" width="300px" /></a></p>
+<hr />
+<h2 id="influence-of-element-order-and-mesh-density">Influence of Element Order and Mesh Density<a class="headerlink" href="#influence-of-element-order-and-mesh-density" title="Permanent link">&para;</a></h2>
+<h3 id="motivation-of-the-mesh-influence-study-h-study-and-p-comparison">Motivation of the Mesh Influence Study (h-Study) and p-Comparison<a class="headerlink" href="#motivation-of-the-mesh-influence-study-h-study-and-p-comparison" title="Permanent link">&para;</a></h3>
+<p>The objective is to examine how <strong>mesh size <span class="arithmatex">\(h\)</span></strong> and <strong>element order <span class="arithmatex">\(p\)</span></strong> affect the accuracy of FEM results. Smaller elements capture geometry and stress gradients more precisely, while higher-order elements better represent curved distributions within an element.  </p>
+<p>Both parameters directly influence the <strong>displacement at the free end</strong> and the <strong>stresses in the transition area</strong>. The study aims to show how the results approach the analytical solution with increasing refinement and higher element order.</p>
+<p>Guiding questions:</p>
+<ul>
+<li>How does <span class="arithmatex">\(u(L)\)</span> change when the element size <span class="arithmatex">\(h\)</span> is reduced?  </li>
+<li>How do linear and quadratic elements differ in the stress distribution along the path for the same mesh density?  </li>
+<li>From which resolution onward is the result practically mesh-independent (<span class="arithmatex">\(p=1\)</span> vs. <span class="arithmatex">\(p=2\)</span>)?</li>
+</ul>
+<h3 id="initial-results-along-the-path">Initial Results Along the Path<a class="headerlink" href="#initial-results-along-the-path" title="Permanent link">&para;</a></h3>
+<p>For all variants, the same result quantities are evaluated along the <strong>path</strong>. The standard mesh serves as the reference for the subsequent h-study and p-comparison.</p>
+<p>The following quantities are investigated:</p>
+<ul>
+<li><strong>Displacement component <span class="arithmatex">\(u_x(x)\)</span></strong> – shows the elongation of the part along the bar axis and serves as a comparison to the analytical solution.  </li>
+<li><strong>Normal stress <span class="arithmatex">\(\sigma_{xx}(x)\)</span></strong> – describes the local stress distribution in the transition area and is particularly sensitive to mesh size and element order.</li>
+</ul>
+<p>The figures below show the results of the standard mesh along the defined path.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/23_Auswertung_Pfad_Verschiebung.png" title="Path evaluation of displacement \(u_x(x)\)"><img alt="Path evaluation of displacement \(u_x(x)\)" src="../media/05_elementtypen_ansatzf/23_Auswertung_Pfad_Verschiebung.png" width="800px" /></a></p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/24_Auswertung_Pfad_Spannung.png" title="Path evaluation of normal stress \(\sigma_{xx}(x)\)"><img alt="Path evaluation of normal stress \(\sigma_{xx}(x)\)" src="../media/05_elementtypen_ansatzf/24_Auswertung_Pfad_Spannung.png" width="800px" /></a></p>
+<h3 id="mesh-refinement-h-study">Mesh Refinement (h-Study)<a class="headerlink" href="#mesh-refinement-h-study" title="Permanent link">&para;</a></h3>
+<p>In the next step, the <strong>element size is systematically reduced</strong> to study the influence of mesh resolution on displacement and stress. All other settings remain unchanged.</p>
+<p>Procedure:</p>
+<ul>
+<li>Gradually reduce the global <strong>element size <span class="arithmatex">\(h\)</span></strong>.  </li>
+<li>Recompute the analysis after each meshing step.  </li>
+<li>Read out the path results for <span class="arithmatex">\(u_x(x)\)</span> and <span class="arithmatex">\(\sigma_{xx}(x)\)</span>.  </li>
+</ul>
+<p>The aim is to identify from which mesh size onward the results <strong>no longer change significantly</strong>, so that <strong>mesh independence</strong> is reached.</p>
+<p>The following table shows example results <span class="arithmatex">\(u_x(x)\)</span> for different global mesh sizes along the path (14 mm, 10 mm, 6 mm and 4 mm). The number of rows corresponds to the number of elements or nodes along the path.  </p>
+<details class="note">
+<summary>Path results displacement</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mesh <strong>14 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Mesh <strong>10 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Mesh <strong>6 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Mesh <strong>4 mm</strong></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Displacement / mm</td>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Displacement / mm</td>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Displacement / mm</td>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Displacement / mm</td>
+</tr>
+<tr>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0588</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0604</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0604</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">0,0605</td>
+</tr>
+<tr>
+<td style="text-align: center;">6,54</td>
+<td style="text-align: center;">0,0414</td>
+<td style="text-align: center;">4,36</td>
+<td style="text-align: center;">0,0483</td>
+<td style="text-align: center;">2,91</td>
+<td style="text-align: center;">0,0523</td>
+<td style="text-align: center;">1,87</td>
+<td style="text-align: center;">0,0552</td>
+</tr>
+<tr>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">0,0275</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">0,0372</td>
+<td style="text-align: center;">5,82</td>
+<td style="text-align: center;">0,0445</td>
+<td style="text-align: center;">3,74</td>
+<td style="text-align: center;">0,0501</td>
+</tr>
+<tr>
+<td style="text-align: center;">19,63</td>
+<td style="text-align: center;">0,0174</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">0,0278</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">0,0372</td>
+<td style="text-align: center;">5,61</td>
+<td style="text-align: center;">0,0450</td>
+</tr>
+<tr>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0107</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">0,0204</td>
+<td style="text-align: center;">11,64</td>
+<td style="text-align: center;">0,0308</td>
+<td style="text-align: center;">7,48</td>
+<td style="text-align: center;">0,0402</td>
+</tr>
+<tr>
+<td style="text-align: center;">32,72</td>
+<td style="text-align: center;">0,0063</td>
+<td style="text-align: center;">21,82</td>
+<td style="text-align: center;">0,0147</td>
+<td style="text-align: center;">14,54</td>
+<td style="text-align: center;">0,0252</td>
+<td style="text-align: center;">9,35</td>
+<td style="text-align: center;">0,0358</td>
+</tr>
+<tr>
+<td style="text-align: center;">39,26</td>
+<td style="text-align: center;">0,0032</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0105</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">0,0204</td>
+<td style="text-align: center;">11,22</td>
+<td style="text-align: center;">0,0316</td>
+</tr>
+<tr>
+<td style="text-align: center;">45,80</td>
+<td style="text-align: center;">0,0005</td>
+<td style="text-align: center;">30,54</td>
+<td style="text-align: center;">0,0074</td>
+<td style="text-align: center;">20,36</td>
+<td style="text-align: center;">0,0165</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">0,0278</td>
+</tr>
+<tr>
+<td style="text-align: center;">52,35</td>
+<td style="text-align: center;">−0,0021</td>
+<td style="text-align: center;">34,90</td>
+<td style="text-align: center;">0,0051</td>
+<td style="text-align: center;">23,27</td>
+<td style="text-align: center;">0,0132</td>
+<td style="text-align: center;">14,96</td>
+<td style="text-align: center;">0,0244</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">39,27</td>
+<td style="text-align: center;">0,0033</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0105</td>
+<td style="text-align: center;">16,83</td>
+<td style="text-align: center;">0,0214</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">0,0016</td>
+<td style="text-align: center;">29,09</td>
+<td style="text-align: center;">0,0084</td>
+<td style="text-align: center;">18,70</td>
+<td style="text-align: center;">0,0186</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">47,99</td>
+<td style="text-align: center;">−0,0006</td>
+<td style="text-align: center;">31,99</td>
+<td style="text-align: center;">0,0066</td>
+<td style="text-align: center;">20,57</td>
+<td style="text-align: center;">0,0162</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">−0,0035</td>
+<td style="text-align: center;">34,91</td>
+<td style="text-align: center;">0,0051</td>
+<td style="text-align: center;">22,44</td>
+<td style="text-align: center;">0,0141</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,82</td>
+<td style="text-align: center;">0,0038</td>
+<td style="text-align: center;">24,31</td>
+<td style="text-align: center;">0,0122</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">40,72</td>
+<td style="text-align: center;">0,0027</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">0,0105</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">0,0015</td>
+<td style="text-align: center;">28,05</td>
+<td style="text-align: center;">0,0091</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,54</td>
+<td style="text-align: center;">0,0003</td>
+<td style="text-align: center;">29,92</td>
+<td style="text-align: center;">0,0078</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49,45</td>
+<td style="text-align: center;">−0,0014</td>
+<td style="text-align: center;">31,79</td>
+<td style="text-align: center;">0,0067</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">−0,0036</td>
+<td style="text-align: center;">33,66</td>
+<td style="text-align: center;">0,0057</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">35,53</td>
+<td style="text-align: center;">0,0048</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,40</td>
+<td style="text-align: center;">0,0040</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">39,27</td>
+<td style="text-align: center;">0,0032</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">41,14</td>
+<td style="text-align: center;">0,0025</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,01</td>
+<td style="text-align: center;">0,0017</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">44,88</td>
+<td style="text-align: center;">0,0010</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,75</td>
+<td style="text-align: center;">0,0001</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">48,62</td>
+<td style="text-align: center;">−0,0008</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">50,49</td>
+<td style="text-align: center;">−0,0020</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">−0,0034</td>
+</tr>
+</tbody>
+</table>
+</details>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.00,6.54,13.09,19.63,26.18,32.72,39.26,45.80,52.35],
+           "y": [0.0588,0.0414,0.0275,0.0174,0.0107,0.0063,0.0032,0.0005,-0.0021],
+           "name": "Mesh 14 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         },
+         {
+           "x": [0.00,4.36,8.73,13.09,17.45,21.82,26.18,30.54,34.90,39.27,43.63,47.99,52.36],
+           "y": [0.0604,0.0483,0.0372,0.0278,0.0204,0.0147,0.0105,0.0074,0.0051,0.0033,0.0016,-0.0006,-0.0035],
+           "name": "Mesh 10 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         },
+         {
+           "x": [0.00,2.91,5.82,8.73,11.64,14.54,17.45,20.36,23.27,26.18,29.09,31.99,34.91,37.82,40.72,43.63,46.54,49.45,52.36],
+           "y": [0.0604,0.0523,0.0445,0.0372,0.0308,0.0252,0.0204,0.0165,0.0132,0.0105,0.0084,0.0066,0.0051,0.0038,0.0027,0.0015,0.0003,-0.0014,-0.0036],
+           "name": "Mesh 6 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         },
+         {
+           "x": [0.00,1.87,3.74,5.61,7.48,9.35,11.22,13.09,14.96,16.83,18.70,20.57,22.44,24.31,26.18,28.05,29.92,31.79,33.66,35.53,37.40,39.27,41.14,43.01,44.88,46.75,48.62,50.49,52.36],
+           "y": [0.0605,0.0552,0.0501,0.0450,0.0402,0.0358,0.0316,0.0278,0.0244,0.0214,0.0186,0.0162,0.0141,0.0122,0.0105,0.0091,0.0078,0.0067,0.0057,0.0048,0.0040,0.0032,0.0025,0.0017,0.0010,0.0001,-0.0008,-0.0020,-0.0034],
+           "name": "Mesh 4 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y} mm<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Displacement along the path"},
+         "xaxis": {"title": "Length x / mm"},
+         "yaxis": {"title": "Displacement uₓ / mm"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<details class="note">
+<summary>Path results stress</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mesh <strong>14 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Mesh <strong>10 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Mesh <strong>6 mm</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;">Mesh <strong>4 mm</strong></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Normal stress / MPa</td>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Normal stress / MPa</td>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Normal stress / MPa</td>
+<td style="text-align: center;">Length / mm</td>
+<td style="text-align: center;">Normal stress / MPa</td>
+</tr>
+<tr>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">206,03</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">204,80</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">201,70</td>
+<td style="text-align: center;">0,00</td>
+<td style="text-align: center;">200,08</td>
+</tr>
+<tr>
+<td style="text-align: center;">6,54</td>
+<td style="text-align: center;">163,92</td>
+<td style="text-align: center;">4,36</td>
+<td style="text-align: center;">187,37</td>
+<td style="text-align: center;">2,91</td>
+<td style="text-align: center;">194,67</td>
+<td style="text-align: center;">1,87</td>
+<td style="text-align: center;">197,91</td>
+</tr>
+<tr>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">121,82</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">169,94</td>
+<td style="text-align: center;">5,82</td>
+<td style="text-align: center;">187,64</td>
+<td style="text-align: center;">3,74</td>
+<td style="text-align: center;">195,74</td>
+</tr>
+<tr>
+<td style="text-align: center;">19,63</td>
+<td style="text-align: center;">88,58</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">135,69</td>
+<td style="text-align: center;">8,73</td>
+<td style="text-align: center;">166,85</td>
+<td style="text-align: center;">5,61</td>
+<td style="text-align: center;">185,97</td>
+</tr>
+<tr>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">55,34</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">101,45</td>
+<td style="text-align: center;">11,64</td>
+<td style="text-align: center;">146,07</td>
+<td style="text-align: center;">7,48</td>
+<td style="text-align: center;">176,20</td>
+</tr>
+<tr>
+<td style="text-align: center;">32,72</td>
+<td style="text-align: center;">41,45</td>
+<td style="text-align: center;">21,82</td>
+<td style="text-align: center;">77,18</td>
+<td style="text-align: center;">14,54</td>
+<td style="text-align: center;">124,11</td>
+<td style="text-align: center;">9,35</td>
+<td style="text-align: center;">162,68</td>
+</tr>
+<tr>
+<td style="text-align: center;">39,26</td>
+<td style="text-align: center;">27,55</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">52,92</td>
+<td style="text-align: center;">17,45</td>
+<td style="text-align: center;">102,15</td>
+<td style="text-align: center;">11,22</td>
+<td style="text-align: center;">149,16</td>
+</tr>
+<tr>
+<td style="text-align: center;">45,80</td>
+<td style="text-align: center;">18,45</td>
+<td style="text-align: center;">30,54</td>
+<td style="text-align: center;">40,86</td>
+<td style="text-align: center;">20,36</td>
+<td style="text-align: center;">84,69</td>
+<td style="text-align: center;">13,09</td>
+<td style="text-align: center;">134,84</td>
+</tr>
+<tr>
+<td style="text-align: center;">52,35</td>
+<td style="text-align: center;">9,36</td>
+<td style="text-align: center;">34,90</td>
+<td style="text-align: center;">28,80</td>
+<td style="text-align: center;">23,27</td>
+<td style="text-align: center;">67,22</td>
+<td style="text-align: center;">14,96</td>
+<td style="text-align: center;">120,52</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">39,27</td>
+<td style="text-align: center;">25,70</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">55,27</td>
+<td style="text-align: center;">16,83</td>
+<td style="text-align: center;">107,36</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">22,60</td>
+<td style="text-align: center;">29,09</td>
+<td style="text-align: center;">43,31</td>
+<td style="text-align: center;">18,70</td>
+<td style="text-align: center;">94,21</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">47,99</td>
+<td style="text-align: center;">17,59</td>
+<td style="text-align: center;">31,99</td>
+<td style="text-align: center;">36,33</td>
+<td style="text-align: center;">20,57</td>
+<td style="text-align: center;">83,13</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">12,58</td>
+<td style="text-align: center;">34,91</td>
+<td style="text-align: center;">29,35</td>
+<td style="text-align: center;">22,44</td>
+<td style="text-align: center;">72,06</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,82</td>
+<td style="text-align: center;">26,37</td>
+<td style="text-align: center;">24,31</td>
+<td style="text-align: center;">63,26</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">40,72</td>
+<td style="text-align: center;">23,39</td>
+<td style="text-align: center;">26,18</td>
+<td style="text-align: center;">54,46</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,63</td>
+<td style="text-align: center;">22,56</td>
+<td style="text-align: center;">28,05</td>
+<td style="text-align: center;">47,83</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,54</td>
+<td style="text-align: center;">21,72</td>
+<td style="text-align: center;">29,92</td>
+<td style="text-align: center;">41,19</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49,45</td>
+<td style="text-align: center;">17,17</td>
+<td style="text-align: center;">31,79</td>
+<td style="text-align: center;">36,56</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,36</td>
+<td style="text-align: center;">12,62</td>
+<td style="text-align: center;">33,66</td>
+<td style="text-align: center;">31,93</td>
+</tr>
+</tbody>
+</table>
+</details>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.00,6.54,13.09,19.63,26.18,32.72,39.26,45.80,52.35],
+           "y": [206.03,163.92,121.82,88.58,55.34,41.45,27.55,18.45,9.36],
+           "name": "Mesh 14 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["206,03 MPa","163,92 MPa","121,82 MPa","88,58 MPa","55,34 MPa","41,45 MPa","27,55 MPa","18,45 MPa","9,36 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         },
+         {
+           "x": [0.00,4.36,8.73,13.09,17.45,21.82,26.18,30.54,34.90,39.27,43.63,47.99,52.36],
+           "y": [204.80,187.37,169.94,135.69,101.45,77.18,52.92,40.86,28.80,25.70,22.60,17.59,12.58],
+           "name": "Mesh 10 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["204,80 MPa","187,37 MPa","169,94 MPa","135,69 MPa","101,45 MPa","77,18 MPa","52,92 MPa","40,86 MPa","28,80 MPa","25,70 MPa","22,60 MPa","17,59 MPa","12,58 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         },
+         {
+           "x": [0.00,2.91,5.82,8.73,11.64,14.54,17.45,20.36,23.27,26.18,29.09,31.99,34.91,37.82,40.72,43.63,46.54,49.45,52.36],
+           "y": [201.70,194.67,187.64,166.85,146.07,124.11,102.15,84.69,67.22,55.27,43.31,36.33,29.35,26.37,23.39,22.56,21.72,17.17,12.62],
+           "name": "Mesh 6 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["201,70 MPa","194,67 MPa","187,64 MPa","166,85 MPa","146,07 MPa","124,11 MPa","102,15 MPa","84,69 MPa","67,22 MPa","55,27 MPa","43,31 MPa","36,33 MPa","29,35 MPa","26,37 MPa","23,39 MPa","22,56 MPa","21,72 MPa","17,17 MPa","12,62 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         },
+         {
+           "x": [0.00,1.87,3.74,5.61,7.48,9.35,11.22,13.09,14.96,16.83,18.70,20.57,22.44,24.31,26.18,28.05,29.92,31.79,33.66],
+           "y": [200.08,197.91,195.74,185.97,176.20,162.68,149.16,134.84,120.52,107.36,94.21,83.13,72.06,63.26,54.46,47.83,41.19,36.56,31.93],
+           "name": "Mesh 4 mm",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "text": ["200,08 MPa","197,91 MPa","195,74 MPa","185,97 MPa","176,20 MPa","162,68 MPa","149,16 MPa","134,84 MPa","120,52 MPa","107,36 MPa","94,21 MPa","83,13 MPa","72,06 MPa","63,26 MPa","54,46 MPa","47,83 MPa","41,19 MPa","36,56 MPa","31,93 MPa"],
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Normal stress along the path"},
+         "xaxis": {"title": "Length x / mm"},
+         "yaxis": {"title": "Normal stress σₓₓ / MPa", "rangemode": "tozero"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<p>To assess mesh independence, the maximum values of displacement <span class="arithmatex">\(u_x(x)\)</span> and normal stress <span class="arithmatex">\(\sigma_{xx}(x)\)</span> are compared for different mesh sizes. The evaluation shows how strongly both quantities change with increasing mesh refinement and from which element size convergence is achieved.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mesh size</th>
+<th style="text-align: center;">Max. displacement <span class="arithmatex">\(u_{x,\text{max}}\)</span></th>
+<th style="text-align: center;">Max. normal stress <span class="arithmatex">\(σ_{xx,\text{max}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">14 mm</td>
+<td style="text-align: center;">0,05884 mm</td>
+<td style="text-align: center;">206,0 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">10 mm</td>
+<td style="text-align: center;">0,060411 mm</td>
+<td style="text-align: center;">204,8 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">6 mm</td>
+<td style="text-align: center;">0,060449 mm</td>
+<td style="text-align: center;">201,7 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">4 mm</td>
+<td style="text-align: center;">0,060459 mm</td>
+<td style="text-align: center;">200,1 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">2 mm</td>
+<td style="text-align: center;">0,060463 mm</td>
+<td style="text-align: center;">199,12 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">1 mm</td>
+<td style="text-align: center;">0,060464 mm</td>
+<td style="text-align: center;">198,91 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">0,5 mm</td>
+<td style="text-align: center;">0,060466 mm</td>
+<td style="text-align: center;">198,92 MPa</td>
+</tr>
+</tbody>
+</table>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["14 mm","10 mm","6 mm","4 mm","2 mm","1 mm","0,5 mm"],
+           "y": [0.05884,0.060411,0.060449,0.060459,0.060463,0.060464,0.060466],
+           "name": "Max. displacement",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["0,05884 mm","0,060411 mm","0,060449 mm","0,060459 mm","0,060463 mm","0,060464 mm","0,060466 mm"],
+           "hovertemplate": "Mesh size = %{x}<br>Max. displacement = %{text}<extra></extra>"
+         },
+         {
+           "x": ["14 mm","10 mm","6 mm","4 mm","2 mm","1 mm","0,5 mm"],
+           "y": [206.0,204.8,201.7,200.1,199.12,198.91,198.92],
+           "name": "Max. normal stress",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["206,0 MPa","204,8 MPa","201,7 MPa","200,1 MPa","199,12 MPa","198,91 MPa","198,92 MPa"],
+           "hovertemplate": "Mesh size = %{x}<br>Max. normal stress = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Influence of mesh size on displacement and stress"},
+         "xaxis": {"title": "Mesh size"},
+         "yaxis": {"title": "Max. displacement (mm)", "side": "left"},
+         "yaxis2": {
+           "title": "Max. normal stress (MPa)",
+           "overlaying": "y",
+           "side": "right"
+         },
+         "legend": {"x": 0.95, "y": 0.5, "xanchor": "right", "yanchor": "middle", "bgcolor": "rgba(255,255,255,0.6)"},
+         "hovermode": "x unified",
+         "hoverlabel": {"bgcolor": "white", "font": {"color": "black"}, "bordercolor": "rgba(0,0,0,0)"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<hr />
+<h3 id="influence-of-element-order-p-comparison">Influence of Element Order (p-Comparison)<a class="headerlink" href="#influence-of-element-order-p-comparison" title="Permanent link">&para;</a></h3>
+<p>The p-study investigates the influence of <strong>element order</strong> at constant mesh size <span class="arithmatex">\(h\)</span>. <strong>Linear</strong> <span class="arithmatex">\((p = 1)\)</span> and <strong>quadratic</strong> <span class="arithmatex">\((p = 2)\)</span> elements are compared. Higher orders allow a more accurate representation of curved distributions within an element but increase computational cost. It is expected that <strong>displacement <span class="arithmatex">\(u_x(x)\)</span></strong> and <strong>normal stress <span class="arithmatex">\(\sigma_{xx}(x)\)</span></strong> are smoother and closer to the reference solution for <span class="arithmatex">\(p = 2\)</span>, while computation time increases.</p>
+<p>In ANSYS, <strong>SOLID185</strong> is used as a linear and <strong>SOLID186</strong> as a quadratic element.</p>
+<h4 id="setting-the-element-order-in-ansys-starting-with-linear">Setting the element order in ANSYS (starting with <em>Linear</em>)<a class="headerlink" href="#setting-the-element-order-in-ansys-starting-with-linear" title="Permanent link">&para;</a></h4>
+<ul>
+<li>In the <em>Details of “Mesh”</em> section, change the parameter <em>Element Order</em> from <em>Program Controlled</em> to <em>Linear</em>.  </li>
+<li>Alternatively, insert a local mesh method via <em>Insert → Method</em> and explicitly set <em>Element Order</em> to <em>Linear</em> there.  </li>
+<li>Then regenerate the mesh via <em>Update</em>.  </li>
+</ul>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/25_Elementordnung_linear.png" title="Element order in ANSYS: set element order to Linear"><img alt="Element order in ANSYS: set element order to Linear" src="../media/05_elementtypen_ansatzf/25_Elementordnung_linear.png" width="700px" /></a></p>
+<hr />
+<h4 id="results-linear-vs-quadratic-shape-function-at-identical-element-size">Results linear vs. quadratic shape function at identical element size<a class="headerlink" href="#results-linear-vs-quadratic-shape-function-at-identical-element-size" title="Permanent link">&para;</a></h4>
+<details class="note">
+<summary>Path results linear/quadratic shape function</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>6 mm linear</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>6 mm quadratic</strong></th>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Length in mm</td>
+<td style="text-align: center;">Displacement in mm</td>
+<td style="text-align: center;">Normal stress in MPa</td>
+<td style="text-align: center;">Length in mm</td>
+<td style="text-align: center;">Displacement in mm</td>
+<td style="text-align: center;">Normal stress in MPa</td>
+</tr>
+<tr>
+<td style="text-align: center;">0,000</td>
+<td style="text-align: center;">6,29E−02</td>
+<td style="text-align: center;">204,95</td>
+<td style="text-align: center;">0,000</td>
+<td style="text-align: center;">6,04E−02</td>
+<td style="text-align: center;">201,70</td>
+</tr>
+<tr>
+<td style="text-align: center;">5,817</td>
+<td style="text-align: center;">4,61E−02</td>
+<td style="text-align: center;">190,22</td>
+<td style="text-align: center;">2,909</td>
+<td style="text-align: center;">5,23E−02</td>
+<td style="text-align: center;">194,67</td>
+</tr>
+<tr>
+<td style="text-align: center;">11,634</td>
+<td style="text-align: center;">3,17E−02</td>
+<td style="text-align: center;">153,22</td>
+<td style="text-align: center;">5,818</td>
+<td style="text-align: center;">4,45E−02</td>
+<td style="text-align: center;">187,64</td>
+</tr>
+<tr>
+<td style="text-align: center;">17,451</td>
+<td style="text-align: center;">2,09E−02</td>
+<td style="text-align: center;">110,68</td>
+<td style="text-align: center;">8,727</td>
+<td style="text-align: center;">3,72E−02</td>
+<td style="text-align: center;">166,85</td>
+</tr>
+<tr>
+<td style="text-align: center;">23,268</td>
+<td style="text-align: center;">1,34E−02</td>
+<td style="text-align: center;">74,97</td>
+<td style="text-align: center;">11,635</td>
+<td style="text-align: center;">3,08E−02</td>
+<td style="text-align: center;">146,07</td>
+</tr>
+<tr>
+<td style="text-align: center;">29,085</td>
+<td style="text-align: center;">8,42E−03</td>
+<td style="text-align: center;">49,58</td>
+<td style="text-align: center;">14,544</td>
+<td style="text-align: center;">2,52E−02</td>
+<td style="text-align: center;">124,11</td>
+</tr>
+<tr>
+<td style="text-align: center;">34,902</td>
+<td style="text-align: center;">5,07E−03</td>
+<td style="text-align: center;">34,24</td>
+<td style="text-align: center;">17,453</td>
+<td style="text-align: center;">2,04E−02</td>
+<td style="text-align: center;">102,15</td>
+</tr>
+<tr>
+<td style="text-align: center;">40,719</td>
+<td style="text-align: center;">2,59E−03</td>
+<td style="text-align: center;">26,64</td>
+<td style="text-align: center;">20,362</td>
+<td style="text-align: center;">1,65E−02</td>
+<td style="text-align: center;">84,69</td>
+</tr>
+<tr>
+<td style="text-align: center;">46,536</td>
+<td style="text-align: center;">2,07E−04</td>
+<td style="text-align: center;">19,88</td>
+<td style="text-align: center;">23,271</td>
+<td style="text-align: center;">1,32E−02</td>
+<td style="text-align: center;">67,22</td>
+</tr>
+<tr>
+<td style="text-align: center;">52,353</td>
+<td style="text-align: center;">−2,23E−03</td>
+<td style="text-align: center;">15,15</td>
+<td style="text-align: center;">26,179</td>
+<td style="text-align: center;">1,05E−02</td>
+<td style="text-align: center;">55,27</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">29,088</td>
+<td style="text-align: center;">8,36E−03</td>
+<td style="text-align: center;">43,31</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">31,997</td>
+<td style="text-align: center;">6,58E−03</td>
+<td style="text-align: center;">36,33</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">34,906</td>
+<td style="text-align: center;">5,11E−03</td>
+<td style="text-align: center;">29,35</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">37,815</td>
+<td style="text-align: center;">3,83E−03</td>
+<td style="text-align: center;">26,37</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">40,723</td>
+<td style="text-align: center;">2,66E−03</td>
+<td style="text-align: center;">23,39</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">43,632</td>
+<td style="text-align: center;">1,50E−03</td>
+<td style="text-align: center;">22,56</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">46,541</td>
+<td style="text-align: center;">2,88E−04</td>
+<td style="text-align: center;">21,72</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">49,450</td>
+<td style="text-align: center;">−1,39E−03</td>
+<td style="text-align: center;">17,17</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">52,359</td>
+<td style="text-align: center;">−3,56E−03</td>
+<td style="text-align: center;">12,62</td>
+</tr>
+</tbody>
+</table>
+</details>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.000,5.817,11.634,17.451,23.268,29.085,34.902,40.719,46.536,52.353],
+           "y": [0.0629,0.0461,0.0317,0.0209,0.0134,0.00842,0.00507,0.00259,0.000207,-0.00223],
+           "name": "6 mm linear",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y:.5f} mm<extra></extra>"
+         },
+         {
+           "x": [0.000,2.9088,5.8176,8.7265,11.635,14.544,17.453,20.362,23.271,26.179,29.088,31.997,34.906,37.815,40.723,43.632,46.541,49.450,52.359],
+           "y": [0.0604,0.0523,0.0445,0.0372,0.0308,0.0252,0.0204,0.0165,0.0132,0.0105,0.00836,0.00658,0.00511,0.00383,0.00266,0.00150,0.000288,-0.00139,-0.00356],
+           "name": "6 mm quadratic",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>uₓ = %{y:.5f} mm<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Displacement along the path (6 mm mesh)"},
+         "xaxis": {"title": "Length x / mm"},
+         "yaxis": {"title": "Displacement uₓ / mm"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": [0.000,5.817,11.634,17.451,23.268,29.085,34.902,40.719,46.536,52.353],
+           "y": [204.95,190.22,153.22,110.68,74.97,49.58,34.24,26.64,19.88,15.15],
+           "name": "6 mm linear",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{y:.2f} MPa<extra></extra>"
+         },
+         {
+           "x": [0.000,2.9088,5.8176,8.7265,11.635,14.544,17.453,20.362,23.271,26.179,29.088,31.997,34.906,37.815,40.723,43.632,46.541,49.450,52.359],
+           "y": [201.70,194.67,187.64,166.85,146.07,124.11,102.15,84.69,67.22,55.27,43.31,36.33,29.35,26.37,23.39,22.56,21.72,17.17,12.62],
+           "name": "6 mm quadratic",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "hovertemplate": "x = %{x} mm<br>σₓₓ = %{y:.2f} MPa<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Normal stress along the path (6 mm mesh)"},
+         "xaxis": {"title": "Length x / mm"},
+         "yaxis": {"title": "Normal stress σₓₓ / MPa"},
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+         "legend": {"x": 1, "y": 1, "xanchor": "right", "yanchor": "top"}
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Shape function</th>
+<th style="text-align: center;">Max. displacement <span class="arithmatex">\(u_{x,\text{max}}\)</span></th>
+<th style="text-align: center;">Max. normal stress <span class="arithmatex">\(σ_{xx,\text{max}}\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">linear</td>
+<td style="text-align: center;">0,062854 mm</td>
+<td style="text-align: center;">204,95 MPa</td>
+</tr>
+<tr>
+<td style="text-align: left;">quadratic</td>
+<td style="text-align: center;">0,060449 mm</td>
+<td style="text-align: center;">201,7 MPa</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="summary-of-the-influence-study">Summary of the influence study<a class="headerlink" href="#summary-of-the-influence-study" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Objective: assess the influence of mesh size <span class="arithmatex">\(h\)</span> and element order <span class="arithmatex">\(p\)</span> on <span class="arithmatex">\(u_x(x)\)</span> and <span class="arithmatex">\(\sigma_{xx}(x)\)</span> along a path  </li>
+<li>Result h-study: <span class="arithmatex">\(u_x\)</span> converges quickly, <span class="arithmatex">\(\sigma_{xx}\)</span> responds more strongly to refinement; at fine meshes, changes are small  </li>
+<li>Result p-comparison: quadratic elements provide smoother curves and smaller deviation from the reference solution; linear elements slightly overestimate displacement and stress  </li>
+<li>Practice: for global displacements, a moderately refined linear mesh is sufficient; for local stresses, a finer mesh with quadratic elements is recommended  </li>
+</ul>
+<hr />
+<h2 id="mesh-quality">Mesh Quality<a class="headerlink" href="#mesh-quality" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">FIXME: extend section mesh quality</p>
+<p>Planned additions for future revision:</p>
+<ul>
+<li>Presentation of typical <strong>mesh quality metrics</strong> in ANSYS (<em>Element Quality</em>, <em>Aspect Ratio</em>, <em>Skewness</em>, <em>Jacobian Ratio</em>)  </li>
+<li>Example screenshots from <em>Details of “Mesh” → Quality</em>  </li>
+<li>Notes on interpretation of the colour scale and threshold values  </li>
+<li>Influence of poor quality on stress and displacement distributions  </li>
+<li>Short comparison of automatic versus manually optimised meshing  </li>
+<li>Optionally add a <strong>Plotly representation</strong> to visualise quality metrics along a path or component region  </li>
+<li>Demonstration of distorted elements and their impact on stress distribution.  </li>
+</ul>
+</div>
+<h2 id="quiz-for-self-assessment">Quiz for Self-Assessment<a class="headerlink" href="#quiz-for-self-assessment" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+
+<div class="quiz"><h3>Which parameter in FEM describes the typical length of an element?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" correct><label for="quiz-0-0">Mesh size \(h\)</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Element order \(p\)</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">Element type</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> The mesh size \(h\) defines the characteristic element length and determines the resolution of the mesh.</section></div>
+
+<div class="quiz"><h3>What does the parameter \(p\) stand for in the finite element method?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">Material parameter</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" correct><label for="quiz-1-1">Polynomial order of the shape function</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">Element size</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> \(p\) indicates the order of the shape function (linear, quadratic, cubic …).</section></div>
+
+<div class="quiz"><h3>How do linear and quadratic elements differ in the shape of their functions?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Linear: curved, Quadratic: straight</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" ><label for="quiz-2-1">No difference in shape</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">Linear: straight, Quadratic: curved</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Quadratic elements have mid-nodes and can represent curvature.</section></div>
+
+<div class="quiz"><h3>Which statement correctly describes convergence behaviour?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">The larger \(h\) and the smaller \(p\), the more accurate the result.</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">The result is independent of \(h\) and \(p\).</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" correct><label for="quiz-3-2">With smaller \(h\) and higher \(p\), the FEM solution approaches the exact solution.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Convergence describes the approach of the numerical solution to the exact one with finer meshes or higher order.</section></div>
+
+<div class="quiz"><h3>Which ANSYS element is linear and 3D?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">SOLID186</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" correct><label for="quiz-4-1">SOLID185</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" ><label for="quiz-4-2">BEAM189</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> SOLID185 is a linear 3D solid element; SOLID186 is quadratic.</section></div>
+
+<div class="quiz"><h3>What does the shape function \(\Phi_i(x)\) describe?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">The material properties of the node</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" ><label for="quiz-5-1">The load at node \(i\)</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" correct><label for="quiz-5-2">The influence of node \(i\) on the total displacement</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Shape functions link the nodal displacements to the overall deformation.</section></div>
+
+<div class="quiz"><h3>How many nodes does a quadratic 1D element have?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">2</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" ><label for="quiz-6-1">4</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" correct><label for="quiz-6-2">3</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Quadratic 1D elements have one mid-node in addition to the two end nodes.</section></div>
+
+<div class="quiz"><h3>Why are quadratic elements more accurate?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-7-0" correct><label for="quiz-7-0">They can represent curved deformations within an element.</label></div><div><input type="radio" name="answer" value="1" id="quiz-7-1" ><label for="quiz-7-1">They are smaller.</label></div><div><input type="radio" name="answer" value="2" id="quiz-7-2" ><label for="quiz-7-2">They have fewer degrees of freedom.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Additional nodes and higher polynomial order enable better approximation of stress and displacement distributions.</section></div>
+
+<div class="quiz"><h3>What does “mesh-independent result” mean?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-8-0" ><label for="quiz-8-0">Mesh size has a large influence on the result.</label></div><div><input type="radio" name="answer" value="1" id="quiz-8-1" correct><label for="quiz-8-1">Further mesh refinement changes the result only slightly.</label></div><div><input type="radio" name="answer" value="2" id="quiz-8-2" ><label for="quiz-8-2">Mesh refinement causes divergence.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Mesh independence is achieved when results no longer change significantly with smaller \(h\).</section></div>
+
+<div class="quiz"><h3>What is the advantage of higher element order at constant mesh size?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-9-0" correct><label for="quiz-9-0">More accurate approximation without further mesh refinement</label></div><div><input type="radio" name="answer" value="1" id="quiz-9-1" ><label for="quiz-9-1">Lower computational cost</label></div><div><input type="radio" name="answer" value="2" id="quiz-9-2" ><label for="quiz-9-2">Easier meshing</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Higher polynomial order can capture geometric effects even with a coarser mesh.</section></div>
+
+<div class="quiz"><h3>What is the objective of an h-study?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-10-0" ><label for="quiz-10-0">Determining the elastic modulus</label></div><div><input type="radio" name="answer" value="1" id="quiz-10-1" correct><label for="quiz-10-1">Investigating mesh dependence and identifying convergence</label></div><div><input type="radio" name="answer" value="2" id="quiz-10-2" ><label for="quiz-10-2">Reducing computation time</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> In an h-study, the mesh is gradually refined to assess the stability of the results.</section></div>
+
+<div class="quiz"><h3>When is the use of quadratic elements particularly useful?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-11-0" ><label for="quiz-11-0">For homogeneous stress distributions</label></div><div><input type="radio" name="answer" value="1" id="quiz-11-1" ><label for="quiz-11-1">Only for linear deformations</label></div><div><input type="radio" name="answer" value="2" id="quiz-11-2" correct><label for="quiz-11-2">For curved geometries or high stress gradients</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Note:</em> Quadratic elements are particularly advantageous for local effects or curved geometries.</section></div>
+
+<!-- markdownlint-enable MD033 -->
 <div class="footnote">
 <hr />
 <ol>
