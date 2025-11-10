@@ -464,7 +464,7 @@ Hier ist unter anderem in den Standardmaterialien eine *Aluminiumlegierung* zu f
 
 Nach dem Hinzufügen des gewünschten Materials aus der Datenbank zurück in die *Projektübersicht* wechseln (Reiter *Projekt*). Dort per Doppelklick auf *Modell* wechseln, um das Setup im mechanischen Editor zu öffnen.  
 
-Im Abschnitt *Geometrie* des Strukturbaums lässt sich  prüfen, ob der Körper korrekt erkannt wurde. Dort kann dem Bauteil das zuvor gewählte Material zugewiesen werden. Die Zuweisung erfolgt über das Feld *Material* im *Details*-Fenster.
+Im Abschnitt *Geometrie* des Strukturbaums lässt sich  prüfen, ob der Körper korrekt importiert wurde. Dort kann dem Bauteil das zuvor gewählte Material zugewiesen werden. Die Zuweisung erfolgt über das Feld *Material* im *Details*-Fenster.
 
 [![Materialzuweisung im Strukturbaum unter Geometrie](media/05_elementtypen_ansatzf/17_material_zuweisung.png){width=700px}](media/05_elementtypen_ansatzf/17_material_zuweisung.png "Materialzuweisung im Strukturbaum unter Geometrie"){.glightbox}
 
@@ -940,16 +940,136 @@ In ANSYS werden hierfür **SOLID185** als lineare und **SOLID186** als quadratis
 
 ### Zusammenfassung Einfluss-Studie
 
-[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
+* Ziel: Einfluss von Netzgröße \(h\) und Ansatzordnung \(p\) auf \(u_x(x)\) und \(\sigma_{xx}(x)\) entlang eines Pfades bewerten  
+* Ergebnis h-Studie: \(u_x\) konvergiert schnell, \(\sigma_{xx}\) reagiert stärker auf Verfeinerung, bei feinem Netz nur noch geringe Änderungen  
+* Ergebnis p-Vergleich: quadratische Elemente liefern glattere Verläufe und geringere Abweichung zur Referenzlösung, lineare überschätzen Verschiebung und Spannung leicht  
+* Praxis: für globale Verschiebungen reicht moderat verfeinertes lineares Netz, für lokale Spannungen wird ein feineres Netz mit quadratischer Ansatzfunktion empfohlen
 
 ---
 
-## (Netzqualität)
+## Netzqualität
+
+!!! warning "FIXME: Erweiterung Abschnitt Netzqualität"
+    Geplante Ergänzungen für künftige Überarbeitung:
+
+    * Darstellung typischer **Netzqualitätskennwerte** in ANSYS (*Elementqualität*, *Aspektverhältnis*, *Skewness*, *Jacobian Ratio*)  
+    * Beispielhafte Screenshots aus *Details von „Netz“ → Qualität*  
+    * Hinweise zur Interpretation der Farbskala und Grenzwerte  
+    * Einfluss schlechter Qualität auf Spannungs- und Verschiebungsverlauf  
+    * Kurzer Vergleich zwischen automatischer und manuell optimierter Vernetzung  
+    * ggf. Ergänzung um **Plotly-Darstellung** zur Visualisierung von Qualitätsmetriken entlang eines Pfades oder Bauteilbereichs
+    * Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung. 
 
 ## Quiz zur Selbstkontrolle  
 
-<!--
-Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.  
-Abbildung mit Lightbox-Zoom und Quellenangabe.
+<!-- markdownlint-disable MD033 -->
 
--->
+<?quiz?>
+question: Welche Größe beschreibt in der FEM die typische Länge eines Elements?
+answer-correct: Netzgröße \(h\)
+answer: Ansatzordnung \(p\)
+answer: Elementtyp
+content:
+<em>Hinweis:</em> Die Netzgröße \(h\) kennzeichnet die charakteristische Elementlänge und bestimmt die Auflösung des Netzes.
+<?/quiz?>
+
+<?quiz?>
+question: Wofür steht der Parameter \(p\) in der Finite-Elemente-Methode?
+answer: Materialparameter
+answer-correct: Polynomordnung der Ansatzfunktion
+answer: Elementgröße
+content:
+<em>Hinweis:</em> \(p\) beschreibt, wie hoch die Ordnung der Formfunktion ist (linear, quadratisch, kubisch …).
+<?/quiz?>
+
+<?quiz?>
+question: Wie unterscheiden sich lineare und quadratische Elemente im Verlauf der Ansatzfunktion?
+answer: Linear: gekrümmt, Quadratisch: geradlinig
+answer: Kein Unterschied im Verlauf
+answer-correct: Linear: geradlinig, Quadratisch: gekrümmt
+content:
+<em>Hinweis:</em> Quadratische Elemente besitzen Mittenknoten und können Krümmungen darstellen.
+<?/quiz?>
+
+<?quiz?>
+question: Welche Aussage beschreibt das Konvergenzverhalten korrekt?
+answer: Mit größerem \(h\) und kleinerem \(p\) wird die Lösung exakter.
+answer: Das Ergebnis bleibt unabhängig von \(h\) und \(p\).
+answer-correct: Mit kleinerem \(h\) und höherem \(p\) nähert sich die FEM-Lösung der exakten Lösung an.
+content:
+<em>Hinweis:</em> Konvergenz beschreibt die Annäherung der numerischen Lösung an die exakte Lösung bei feineren Netzen oder höherer Ordnung.
+<?/quiz?>
+
+<?quiz?>
+question: Welches ANSYS-Element ist linear und 3D?
+answer: SOLID186
+answer-correct: SOLID185
+answer: BEAM189
+content:
+<em>Hinweis:</em> SOLID185 ist ein lineares 3D-Volumenelement, SOLID186 ist quadratisch.
+<?/quiz?>
+
+<?quiz?>
+question: Was beschreibt die Ansatzfunktion \(\Phi_i(x)\)?
+answer: Die Materialkennwerte des Knotens
+answer: Die Belastung an Knoten \(i\)
+answer-correct: Den Einfluss des Knotens \(i\) auf die Gesamtverschiebung
+content:
+<em>Hinweis:</em> Ansatzfunktionen verknüpfen die Knotenverschiebungen mit der Gesamtverformung.
+<?/quiz?>
+
+<?quiz?>
+question: Wie viele Knoten besitzt ein quadratisches 1D-Element?
+answer: 2
+answer: 4
+answer-correct: 3
+content:
+<em>Hinweis:</em> Quadratische 1D-Elemente haben einen Mittenknoten zusätzlich zu den beiden Randknoten.
+<?/quiz?>
+
+<?quiz?>
+question: Warum sind quadratische Elemente genauer?
+answer-correct: Sie können gekrümmte Verformungen innerhalb eines Elements darstellen.
+answer: Sie sind kleiner.
+answer: Sie haben weniger Freiheitsgrade.
+content:
+<em>Hinweis:</em> Durch zusätzliche Knoten und höhere Polynomordnung werden Spannungs- und Verschiebungsverläufe besser angenähert.
+<?/quiz?>
+
+<?quiz?>
+question: Was bedeutet „netzunabhängiges Ergebnis“?
+answer: Netzgröße hat großen Einfluss auf das Ergebnis.
+answer-correct: Weitere Verfeinerung des Netzes ändert das Ergebnis kaum.
+answer: Netzverfeinerung führt zu Divergenz.
+content:
+<em>Hinweis:</em> Netzunabhängigkeit ist erreicht, wenn sich Ergebniswerte bei kleinerem \(h\) nicht mehr wesentlich ändern.
+<?/quiz?>
+
+<?quiz?>
+question: Welcher Vorteil entsteht durch höhere Ansatzordnung bei gleichbleibendem Netz?
+answer-correct: Genauere Annäherung ohne weitere Netzverfeinerung
+answer: Geringerer Rechenaufwand
+answer: Vereinfachte Vernetzung
+content:
+<em>Hinweis:</em> Höhere Polynomordnung kann feine Geometrieeffekte auch bei groberem Netz erfassen.
+<?/quiz?>
+
+<?quiz?>
+question: Was ist das Ziel einer h-Studie?
+answer: Berechnung des Elastizitätsmoduls
+answer-correct: Untersuchung der Netzabhängigkeit und Ermittlung der Konvergenz
+answer: Reduktion der Rechenzeit
+content:
+<em>Hinweis:</em> In einer h-Studie wird das Netz schrittweise verfeinert, um die Stabilität der Ergebnisse zu prüfen.
+<?/quiz?>
+
+<?quiz?>
+question: Wann ist der Einsatz quadratischer Elemente besonders sinnvoll?
+answer: Bei homogenen Spannungsverteilungen
+answer: Nur bei linearen Deformationen
+answer-correct: Bei gekrümmten Geometrien oder starken Spannungsgradienten
+content:
+<em>Hinweis:</em> Quadratische Elemente sind besonders bei lokalen Effekten oder Krümmungen vorteilhaft.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
