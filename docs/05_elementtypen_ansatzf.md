@@ -959,6 +959,7 @@ In ANSYS werden hierfür **SOLID185** als lineare und **SOLID186** als quadratis
     * Kurzer Vergleich zwischen automatischer und manuell optimierter Vernetzung  
     * ggf. Ergänzung um **Plotly-Darstellung** zur Visualisierung von Qualitätsmetriken entlang eines Pfades oder Bauteilbereichs
     * Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung. 
+    * ggf. nochmal gemittelt/ungemittelt aufgreifen.
 
 ## Quiz zur Selbstkontrolle  
 

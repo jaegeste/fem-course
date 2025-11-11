@@ -473,7 +473,7 @@
         <li class="md-nav__item">
   <a href="#netzqualitat" class="md-nav__link">
     <span class="md-ellipsis">
-      (Netzqualität)
+      Netzqualität
     </span>
   </a>
   
@@ -597,7 +597,7 @@
         <li class="md-nav__item">
   <a href="#netzqualitat" class="md-nav__link">
     <span class="md-ellipsis">
-      (Netzqualität)
+      Netzqualität
     </span>
   </a>
   
@@ -1077,7 +1077,7 @@ u(L) \approx 0{,}057\,\text{mm}
 </table>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/16_Auswahl_Aluminiumlegierung.png" title="Auswahl Aluminiumlegierung"><img alt="Auswahl Aluminiumlegierung" src="../media/05_elementtypen_ansatzf/16_Auswahl_Aluminiumlegierung.png" width="700px" /></a></p>
 <p>Nach dem Hinzufügen des gewünschten Materials aus der Datenbank zurück in die <em>Projektübersicht</em> wechseln (Reiter <em>Projekt</em>). Dort per Doppelklick auf <em>Modell</em> wechseln, um das Setup im mechanischen Editor zu öffnen.  </p>
-<p>Im Abschnitt <em>Geometrie</em> des Strukturbaums lässt sich  prüfen, ob der Körper korrekt erkannt wurde. Dort kann dem Bauteil das zuvor gewählte Material zugewiesen werden. Die Zuweisung erfolgt über das Feld <em>Material</em> im <em>Details</em>-Fenster.</p>
+<p>Im Abschnitt <em>Geometrie</em> des Strukturbaums lässt sich  prüfen, ob der Körper korrekt importiert wurde. Dort kann dem Bauteil das zuvor gewählte Material zugewiesen werden. Die Zuweisung erfolgt über das Feld <em>Material</em> im <em>Details</em>-Fenster.</p>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/17_material_zuweisung.png" title="Materialzuweisung im Strukturbaum unter Geometrie"><img alt="Materialzuweisung im Strukturbaum unter Geometrie" src="../media/05_elementtypen_ansatzf/17_material_zuweisung.png" width="700px" /></a></p>
 <p>In der Projektübersicht werden unter <em>Material</em> alle aktuell im Projekt verfügbaren Werkstoffe angezeigt, einschließlich der hinzugefügten <em>Aluminiumlegierung</em>.</p>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/18_materialien_im_projekt.png" title="Materialien im Projekt unter Material"><img alt="Materialien im Projekt unter Material" src="../media/05_elementtypen_ansatzf/18_materialien_im_projekt.png" width="700px" /></a></p>
@@ -2192,15 +2192,55 @@ Nach dem Erzeugen des Standardnetzes die Elementverteilung im Modell prüfen:  <
 </table>
 <hr />
 <h3 id="zusammenfassung-einfluss-studie">Zusammenfassung Einfluss-Studie<a class="headerlink" href="#zusammenfassung-einfluss-studie" title="Permanent link">&para;</a></h3>
-<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a></p>
+<ul>
+<li>Ziel: Einfluss von Netzgröße <span class="arithmatex">\(h\)</span> und Ansatzordnung <span class="arithmatex">\(p\)</span> auf <span class="arithmatex">\(u_x(x)\)</span> und <span class="arithmatex">\(\sigma_{xx}(x)\)</span> entlang eines Pfades bewerten  </li>
+<li>Ergebnis h-Studie: <span class="arithmatex">\(u_x\)</span> konvergiert schnell, <span class="arithmatex">\(\sigma_{xx}\)</span> reagiert stärker auf Verfeinerung, bei feinem Netz nur noch geringe Änderungen  </li>
+<li>Ergebnis p-Vergleich: quadratische Elemente liefern glattere Verläufe und geringere Abweichung zur Referenzlösung, lineare überschätzen Verschiebung und Spannung leicht  </li>
+<li>Praxis: für globale Verschiebungen reicht moderat verfeinertes lineares Netz, für lokale Spannungen wird ein feineres Netz mit quadratischer Ansatzfunktion empfohlen</li>
+</ul>
 <hr />
-<h2 id="netzqualitat">(Netzqualität)<a class="headerlink" href="#netzqualitat" title="Permanent link">&para;</a></h2>
+<h2 id="netzqualitat">Netzqualität<a class="headerlink" href="#netzqualitat" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">FIXME: Erweiterung Abschnitt Netzqualität</p>
+<p>Geplante Ergänzungen für künftige Überarbeitung:</p>
+<ul>
+<li>Darstellung typischer <strong>Netzqualitätskennwerte</strong> in ANSYS (<em>Elementqualität</em>, <em>Aspektverhältnis</em>, <em>Skewness</em>, <em>Jacobian Ratio</em>)  </li>
+<li>Beispielhafte Screenshots aus <em>Details von „Netz“ → Qualität</em>  </li>
+<li>Hinweise zur Interpretation der Farbskala und Grenzwerte  </li>
+<li>Einfluss schlechter Qualität auf Spannungs- und Verschiebungsverlauf  </li>
+<li>Kurzer Vergleich zwischen automatischer und manuell optimierter Vernetzung  </li>
+<li>ggf. Ergänzung um <strong>Plotly-Darstellung</strong> zur Visualisierung von Qualitätsmetriken entlang eines Pfades oder Bauteilbereichs</li>
+<li>Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung. </li>
+</ul>
+</div>
 <h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
-<!--
-Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung.  
-Abbildung mit Lightbox-Zoom und Quellenangabe.
+<!-- markdownlint-disable MD033 -->
 
--->
+<div class="quiz"><h3>Welche Größe beschreibt in der FEM die typische Länge eines Elements?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" correct><label for="quiz-0-0">Netzgröße \(h\)</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Ansatzordnung \(p\)</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">Elementtyp</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Die Netzgröße \(h\) kennzeichnet die charakteristische Elementlänge und bestimmt die Auflösung des Netzes.</section></div>
+
+<div class="quiz"><h3>Wofür steht der Parameter \(p\) in der Finite-Elemente-Methode?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">Materialparameter</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" correct><label for="quiz-1-1">Polynomordnung der Ansatzfunktion</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">Elementgröße</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> \(p\) beschreibt, wie hoch die Ordnung der Formfunktion ist (linear, quadratisch, kubisch …).</section></div>
+
+<div class="quiz"><h3>Wie unterscheiden sich lineare und quadratische Elemente im Verlauf der Ansatzfunktion?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Linear: gekrümmt, Quadratisch: geradlinig</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" ><label for="quiz-2-1">Kein Unterschied im Verlauf</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">Linear: geradlinig, Quadratisch: gekrümmt</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Quadratische Elemente besitzen Mittenknoten und können Krümmungen darstellen.</section></div>
+
+<div class="quiz"><h3>Welche Aussage beschreibt das Konvergenzverhalten korrekt?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" ><label for="quiz-3-0">Mit größerem \(h\) und kleinerem \(p\) wird die Lösung exakter.</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">Das Ergebnis bleibt unabhängig von \(h\) und \(p\).</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" correct><label for="quiz-3-2">Mit kleinerem \(h\) und höherem \(p\) nähert sich die FEM-Lösung der exakten Lösung an.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Konvergenz beschreibt die Annäherung der numerischen Lösung an die exakte Lösung bei feineren Netzen oder höherer Ordnung.</section></div>
+
+<div class="quiz"><h3>Welches ANSYS-Element ist linear und 3D?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">SOLID186</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" correct><label for="quiz-4-1">SOLID185</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" ><label for="quiz-4-2">BEAM189</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> SOLID185 ist ein lineares 3D-Volumenelement, SOLID186 ist quadratisch.</section></div>
+
+<div class="quiz"><h3>Was beschreibt die Ansatzfunktion \(\Phi_i(x)\)?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Die Materialkennwerte des Knotens</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" ><label for="quiz-5-1">Die Belastung an Knoten \(i\)</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" correct><label for="quiz-5-2">Den Einfluss des Knotens \(i\) auf die Gesamtverschiebung</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Ansatzfunktionen verknüpfen die Knotenverschiebungen mit der Gesamtverformung.</section></div>
+
+<div class="quiz"><h3>Wie viele Knoten besitzt ein quadratisches 1D-Element?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">2</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" ><label for="quiz-6-1">4</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" correct><label for="quiz-6-2">3</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Quadratische 1D-Elemente haben einen Mittenknoten zusätzlich zu den beiden Randknoten.</section></div>
+
+<div class="quiz"><h3>Warum sind quadratische Elemente genauer?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-7-0" correct><label for="quiz-7-0">Sie können gekrümmte Verformungen innerhalb eines Elements darstellen.</label></div><div><input type="radio" name="answer" value="1" id="quiz-7-1" ><label for="quiz-7-1">Sie sind kleiner.</label></div><div><input type="radio" name="answer" value="2" id="quiz-7-2" ><label for="quiz-7-2">Sie haben weniger Freiheitsgrade.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Durch zusätzliche Knoten und höhere Polynomordnung werden Spannungs- und Verschiebungsverläufe besser angenähert.</section></div>
+
+<div class="quiz"><h3>Was bedeutet „netzunabhängiges Ergebnis“?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-8-0" ><label for="quiz-8-0">Netzgröße hat großen Einfluss auf das Ergebnis.</label></div><div><input type="radio" name="answer" value="1" id="quiz-8-1" correct><label for="quiz-8-1">Weitere Verfeinerung des Netzes ändert das Ergebnis kaum.</label></div><div><input type="radio" name="answer" value="2" id="quiz-8-2" ><label for="quiz-8-2">Netzverfeinerung führt zu Divergenz.</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Netzunabhängigkeit ist erreicht, wenn sich Ergebniswerte bei kleinerem \(h\) nicht mehr wesentlich ändern.</section></div>
+
+<div class="quiz"><h3>Welcher Vorteil entsteht durch höhere Ansatzordnung bei gleichbleibendem Netz?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-9-0" correct><label for="quiz-9-0">Genauere Annäherung ohne weitere Netzverfeinerung</label></div><div><input type="radio" name="answer" value="1" id="quiz-9-1" ><label for="quiz-9-1">Geringerer Rechenaufwand</label></div><div><input type="radio" name="answer" value="2" id="quiz-9-2" ><label for="quiz-9-2">Vereinfachte Vernetzung</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Höhere Polynomordnung kann feine Geometrieeffekte auch bei groberem Netz erfassen.</section></div>
+
+<div class="quiz"><h3>Was ist das Ziel einer h-Studie?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-10-0" ><label for="quiz-10-0">Berechnung des Elastizitätsmoduls</label></div><div><input type="radio" name="answer" value="1" id="quiz-10-1" correct><label for="quiz-10-1">Untersuchung der Netzabhängigkeit und Ermittlung der Konvergenz</label></div><div><input type="radio" name="answer" value="2" id="quiz-10-2" ><label for="quiz-10-2">Reduktion der Rechenzeit</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> In einer h-Studie wird das Netz schrittweise verfeinert, um die Stabilität der Ergebnisse zu prüfen.</section></div>
+
+<div class="quiz"><h3>Wann ist der Einsatz quadratischer Elemente besonders sinnvoll?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-11-0" ><label for="quiz-11-0">Bei homogenen Spannungsverteilungen</label></div><div><input type="radio" name="answer" value="1" id="quiz-11-1" ><label for="quiz-11-1">Nur bei linearen Deformationen</label></div><div><input type="radio" name="answer" value="2" id="quiz-11-2" correct><label for="quiz-11-2">Bei gekrümmten Geometrien oder starken Spannungsgradienten</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Quadratische Elemente sind besonders bei lokalen Effekten oder Krümmungen vorteilhaft.</section></div>
+
+<!-- markdownlint-enable MD033 -->
 <div class="footnote">
 <hr />
 <ol>

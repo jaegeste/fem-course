@@ -69,6 +69,7 @@ plugins:
             - Modul 1 Kragbalken: 03_kragbalken.md
             - Modul 2 Kerbwirkung: 04_kerbwirkung.md
             - Modul 3 Elementtypen/Ansatzfunktionen: 05_elementtypen_ansatzf.md
+            - Modul 4 Krafteinleitung: 06_krafteinleitung.md
         - locale: en
           name: 🇬🇧 English
           build: true
@@ -79,5 +80,5 @@ plugins:
             - Module 1 Cantilever Beam: 03_kragbalken.en.md
             - Module 2 Stress Concentration: 04_kerbwirkung.en.md
             - Module 3 Element Types/Shape functions: 05_elementtypen_ansatzf.en.md
+            - Module 4 Load Application: 06_krafteinleitung.en.md
 
-          
