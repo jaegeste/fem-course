@@ -6,8 +6,8 @@ Nach Abschluss dieses Moduls können die Studierenden:
 
 * typische Ursachen numerischer Spannungsüberhöhungen erkennen,  
 * den Unterschied zwischen physikalisch und numerisch bedingten Spannungsspitzen erklären,  
-* unphysikalische Punkt- oder Linienlasten vermeiden,  
-* geeignete Maßnahmen zur Entschärfung von Spannungssingularitäten anwenden (z. B. Sekantenschnitt, Radius, größere Lastfläche),  
+* nicht-physikalische Punkt- oder Linienlasten vermeiden,  
+* geeignete Maßnahmen zur Entschärfung von Spannungssingularitäten anwenden,
 * die Bedeutung der Krafteinleitung für die Ergebnisgüte einschätzen.
 
 ## Aufgabenstellung Torsionsstab
@@ -20,9 +20,9 @@ Bei der Simulation eines Torsionsstabs mit Hebelarm soll die **Einleitung der ä
 * Länge \( L  = 152{,}4 \, \text{mm} \)  
 * Durchmesser \( d = 38{,}1 \, \text{mm} \)  
 * Hebelarm \( H = 203{,}2 \, \text{mm} \)  
-* Material Baustahl gemäß ANSYS-Datenbank  
+* Material Baustahl gemäß ANSYS-Datenbank mit geändertem **E-Modul** auf 210.000 Mpa.  
 * Kraft \( F = 4{,}45 \, \text{kN} \)  
-* eine Seite vollständig an einer Wand fixiert (feste Einspannung)  
+* eine Seite vollständig an einer Wand fixiert
 
 Untersuchen Sie die folgenden Varianten der Krafteinleitung am Hebelarm:  
 
@@ -30,18 +30,13 @@ Untersuchen Sie die folgenden Varianten der Krafteinleitung am Hebelarm:
 * Geometrie Variante B [Torsionsstab_B.stp](media/06_krafteinleitung/Torsionsstab_B.stp)
 * Geometrie Variante C [Torsionsstab_C.stp](media/06_krafteinleitung/Torsionsstab_C.stp)
 
-<!-- 
-Variante A - ohne Fläche etc. Am Anfang geht da gar nix. 
-Variante B - kleine erhabene Fläche mit Kerbwirkung
-Variante C - Sekantenschnitt, groß ohne Kerbwirkung
--->
-
 Bearbeiten Sie folgende Punkte:
 
 * Ermitteln Sie eine **analytische Lösung** für die maximale Spannung. Wo ist der kritische Querschnitt?
+* Berechnen Sie in ANSYS die maximale Vergleichsspannung.  
 * Achten Sie auf ein von der Vernetzung unabhängiges Ergebnis.  
 * Führen Sie eine konvergierende Lösung herbei.  
-* Diskutieren Sie, wie ein Krafteinleitungsproblem entstehen kann und wie es sich im FEM-Sinne beschreiben lässt. 
+* Diskutieren Sie, wie ein Krafteinleitungsproblem entstehen kann und wie es sich im FEM-Sinne beschreiben lässt.  
 
 ## Theoretischer Hintergrund
 
@@ -54,7 +49,7 @@ Die Kraft \(F\) greift am Hebelarm exzentrisch zur Stabachse an. Dadurch entsteh
 ### Biegung und schiefe Biegung
 
 !!! danger "FIXME"
-    Berechnung klären! 
+    Berechnung klären!  
 
 Wirkt die Kraft nicht nur in einer Hauptebene, entsteht **schiefe Biegung**. Das gesamte Biegemoment setzt sich aus Anteilen um zwei senkrechte Achsen zusammen, etwa
 
@@ -84,36 +79,60 @@ Durch das Torsionsmoment \(M_{\text{T}}\) entstehen Schubspannungen im Querschni
 mit Radius \(r\) und polarem Flächenträgheitsmoment \(J\) des Vollkreises.
 
 !!! danger "FIXME"
-    Abbildung Tabelle hinzu
+    Abbildung Tabelle hinzu  
+    J richtig?
 
 ### Vergleichsspannung bei kombinierter Beanspruchung
 
-Für die Festigkeitsbewertung werden Biegespannung \(\sigma_{\text{B}}\) und Torsionsschubspannung \(\tau_{\text{T}}\) zu einer **Vergleichsspannung** zusammengefasst, zum Beispiel nach von Mises:
+Für die Festigkeitsbewertung werden Biegespannung \(\sigma_{\text{B}}\) und Schubspannung infolge Torsion \(\tau_{\text{T}}\) zu einer **Vergleichsspannung** zusammengefasst, zum Beispiel nach von Mises:
 
 \[
 \sigma_{\text{v}} = \sqrt{\sigma_{\text{B}}^{2} + 3\,\tau_{\text{T}}^{2}}
 \]
 
-Die analytische Berechnung liefert damit einen einfachen Referenzwert für die maximal zu erwartende Vergleichsspannung im Stab.  
-Die FEM berechnet zusätzlich die örtliche Spannungsverteilung, die stark davon abhängt, wie die Kraft \(F\) am Hebelarm in das Modell eingeleitet wird.
+Die analytische Berechnung liefert damit einen einfachen Referenzwert für die maximal zu erwartende Vergleichsspannung im Stab. Die FEM berechnet zusätzlich die örtliche Spannungsverteilung, die stark davon abhängt, wie die Kraft \(F\) am Hebelarm in das Modell eingeleitet wird.
 
 ## Umsetzung in ANSYS
 
-zunächst wenig neues...
+### 1. Projektverwaltung und Geometrieimport
+
+formuliere kurz, Geometrieimport wie gehabt. Ein System für jede Geometrievariante ist sinnvoll, Eine Verknüpfung der technischen Daten ist sinnvoll damit das geänderte Material in alle System übertragen wird. Ggf. auch erst eine Variante fertig rechnen, dann kopieren (über Duplizieren), dann verknüpfen der technischen Daten,  dann austauschen der Geometrie
+
+### 2. Materialzuweisung
+
+Materialzuweisung ist automatisch Baustahl. Änderung des E-Moduls in den Technischen Daten vornehmen, wir bei Neuanlage des System automatisch übernommen, wenn nachträglich geändert, muss das System aktualisiert werden (grüner Pfeil-Kreis in der Projektoberfläche)
+
+### 3. Netzgenerierung
+
+wie immer erstmal Standardnetz. Kann visuell beurteilt werden.  
+
+### 4. Randbedingungen
+
+Feste Einspannung und Kraft gemäß der Abbildung in der Aufgabenstellung oben.  
+
+### 5. Analyseeinstellungen
+
+keine Änderungen hier erforderlich, Standard ist okay
+
+### 6. Auswertung
+
+gemäß Aufgabenstellung wird zunächst nur die Vergleichsspannung ausgewertet.  
 
 ## Diskussion der Ergebnisse
 
 ### Vergleich mit analytischer Lösung
 
-hier die analytische Lösung...
+hier zunächst Resultate aus ANSYS, dann die analytische Lösung. Wir schauen erstmal nur auf die maximale Spannung. Hier fällt auf Variante A lässt keine Implementierung der Kraft im angegebenen Bereich zu.  
 
-### Ergebnisse der Varianten
+### Einfluss der Krafteinleitung
 
 Variante A, B und C
 
+Hinweis formulieren, wo man nachsehen kann ob mit linearen oder quadratischen Elementen gerechnet wurde.  
+
 ## Krafteinleitung über Knoten
 
-Das ist die komplizierte Variante für den Schluss mit Koordinatensystem und knotengenauer Einleitung
+Das ist die komplizierte Variante für den Schluss mit Koordinatensystem und knotengenauer Einleitung bei Variante A. Führt aber zu gleichen Problemen.  
 
 ## Zusammenfassung und weiterführende Hinweise
 
@@ -142,66 +161,4 @@ Physikalisch korrekte Lastübertragung durch:
 
 ## Quiz zur Selbstkontrolle
 
-
-<!-- 
-## Theoretischer Hintergrund
-
-
-
----
-
-## Aufgabenstellung
-
-1. Modellieren Sie einen zylindrischen oder rechteckigen Körper (z. B. Block 100×40×20 mm).  
-2. Variante A: Belastung durch **Punktlast** auf kleiner Fläche (1×1 mm).  
-3. Variante B: Belastung über **Flächenlast** auf 20×20 mm.  
-4. Variante C: Belastung über Flächenlast + Sekantenschnitt oder Radius (r = 5 mm).  
-5. Vergleichen Sie die Spannungsverteilungen und ermitteln Sie, ob eine Konvergenz erreicht wird.  
-6. Diskutieren Sie, welche Variante das physikalisch sinnvollste Ergebnis liefert.
-
----
-
-## Umsetzung in ANSYS Mechanical
-
-* Erstellen Sie drei Geometrievarianten (A – C).  
-* Verwenden Sie identische Randbedingungen und Netzeinstellungen.  
-* Definieren Sie für jede Variante die gleiche Gesamtkraft F (z. B. 10 kN).  
-  → Bei Flächenlast = F / A.  
-* Vergleichen Sie σ<sub>v</sub> im Lastbereich entlang einer Linie oder Fläche.  
-* Optional: Visualisieren Sie die Spannungsverläufe mit Plotly für Berichte.
-
----
-
-## Diskussion der Ergebnisse
-
-* Punkt- und Linienlasten erzeugen unrealistische Spannungsspitzen; die Ergebnisse sind nicht konvergent.  
-* Eine Flächenlast mit Sekantenschnitt oder Radius führt zu stabilen, physikalisch interpretierbaren Spannungen.  
-* Netzverfeinerung darf das Ergebnis nicht beliebig verändern → Konvergenzprüfung.  
-* Lokale Spannungsspitzen dürfen nur bewertet werden, wenn sie geometrisch begründet sind (Kerbe, Kontakt).  
-* Bei echten Punktkontakten: Spannungswert lokal unendlich, aber Energie endlich → Bewertung über Energieansatz oder Mittelspannung.
-
----
-
-wie geht's weiter:
-  - Modul 5 Symmetrie: 07_symmetrie.md
-  - Modul 6 Modalanalyse: 08_modalanalyse.md
-  - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
-  - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
-  - Modul 9 Sensoren II (Druck): 11_sensor_druck.md
-  - Modul 10 Kontakt: 12_kontakt.md
-  - Modul 11 Ausblick: 13_ausblick.md
-
-  | Modul | Titel | Kerninhalt |
-| :----: | :---- | :---------- |
-| **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich |
-| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt), |
-| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
-| **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
-| **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
-| **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
-| **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
-| **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
-
--->
-
-[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
+[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}  
