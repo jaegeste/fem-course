@@ -51,27 +51,50 @@ Das zugrunde liegende Modell folgt der **Euler-Bernoulli-Balkentheorie**. Es wir
 
 ### Biegung und schiefe Biegung
 
-Wirkt die Kraft nicht nur in einer Hauptebene, entsteht **schiefe Biegung**. Für symmetrische Querschnitte (wie hier beim Vollkreis) fallen die Hauptachsen mit den Koordinatenachsen \(y\) und \(z\) zusammen. Es handelt sich somit um den **Sonderfall der schiefen Biegung um Hauptachsen**.  
+Bei Torsionsstäben mit exzentrischer Krafteinleitung kann neben der Torsion auch Biegung auftreten. 
 
-Das gesamte Biegemoment setzt sich aus zwei Anteilen um diese senkrechten Achsen zusammen:
+#### Gerade Biegung
 
-\[
-M_y,\quad M_z
-\]
-
-Die resultierende Biegespannung im Randfaserpunkt ergibt sich aus der Überlagerung:
+Wirkt die Kraft in einer einzigen Ebene, entsteht **gerade Biegung**. Für den Vollkreisquerschnitt gilt:
 
 \[
-\sigma_{\text{B}} = \frac{M_y\,z}{I_y} + \frac{M_z\,y}{I_z}
+\sigma_{\text{B}} = \frac{M}{W_b}
 \]
 
-Die analytische Berechnung beschreibt damit die Normalspannung infolge kombinierter Biegung im Kreisquerschnitt. Im vorliegenden Fall sind \(M_y\) und \(M_z\) durch die Lage und Richtung der Kraft \(F\) bestimmt und bleiben im gesamten Stababschnitt konstant.
+mit dem Biegemoment \(M = F \cdot l\) und dem Widerstandsmoment
 
-**Schiefe Biegung im Hauptachsensystem**  
-Im symmetrischen Querschnitt ergibt sich die schiefe Biegung aus der Überlagerung der geraden Biegungen um *y* und *z*; die resultierende Normalspannung \(\sigma_x(y,z)\) verläuft linear, und die Spannungsnulllinie liegt schräg im Querschnitt, wie in a) und b) zu c) gezeigt.
+\[
+W_b = \frac{\pi d^3}{32}
+\]
 
-[![Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)](media/06_krafteinleitung/02_schiefe_Biegung.png){width=700px}](media/06_krafteinleitung/02_schiefe_Biegung.png "Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)"){.glightbox}
-<span class="bildquelle">Bildquelle[@Spura2019]</span>
+Die Normalspannung verläuft über den Querschnitt linear. Die neutrale Faser bleibt horizontal und verläuft durch die Querschnittsmitte.
+
+---
+
+#### Schiefe Biegung
+
+Für die **vorliegende Aufgabe ist ausschließlich die gerade Biegung relevant**. Schiefe Biegung wird nur ergänzend dargestellt.
+
+??? note "Schiefe Biegung (ergänzende Information)"
+    Wirkt die Kraft nicht nur in einer Hauptebene, entsteht schiefe Biegung. Für symmetrische Querschnitte wie beim Vollkreis fallen die Hauptachsen mit den Koordinatenachsen \(y\) und \(z\) zusammen. Es handelt sich somit um den Sonderfall der schiefen Biegung um Hauptachsen.
+
+    Das gesamte Biegemoment setzt sich aus zwei Anteilen um diese senkrechten Achsen zusammen:
+
+    \[
+    M_y,\quad M_z
+    \]
+
+    Die resultierende Biegespannung im Randfaserpunkt ergibt sich aus der Überlagerung:
+
+    \[
+    \sigma_{\text{B}} = \frac{M_y\,z}{I_y} + \frac{M_z\,y}{I_z}
+    \]
+
+    Die analytische Berechnung beschreibt damit die Normalspannung infolge kombinierter Biegung im Kreisquerschnitt. Für symmetrische Querschnitte ergibt sich die schiefe Biegung aus der Überlagerung der geraden Biegungen um \(y\) und \(z\). Die resultierende Spannungsnulllinie liegt schräg im Querschnitt.
+
+    [![Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)](media/06_krafteinleitung/02_schiefe_Biegung.png){width=700px}](media/06_krafteinleitung/02_schiefe_Biegung.png "Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)"){.glightbox}
+    <span class="bildquelle">Bildquelle[@Spura2019]</span>
+
 
 ### Torsion
 
@@ -246,10 +269,81 @@ Bei dieser Geometrie ist keine Fläche vorhanden, über die die Kraft so eingele
 
 Bei dieser Variante wird die Kraft eine sehr kleine Kontaktfläche eingeleitet, die vom Hebel erhaben angebracht ist. Dadurch entstehen lokal sehr hohe Spannungen und eine ausgeprägte Kerbwirkung. Mit zunehmender Netzverfeinerung steigen die Spannungsmaxima weiter an, der Spannungsverlauf konvergiert nicht. Die Ergebnisse sind daher für eine belastbare Bewertung der Bauteilfestigkeit ungeeignet.
 
-[![Variante B mit nicht konvergierendem Spannungsverlauf](media/06_krafteinleitung/06_Torsionsstab_nicht_konvergierend.png){width=400px}](media/06_krafteinleitung/06_Torsionsstab_nicht_konvergierend.png "Variante B mit nicht konvergierendem Spannungsverlauf"){.glightbox}
+<!-- markdownlint-disable MD033 -->
 
-!!! danger "FIXME"
-    Spannungsüberhöhung bei der Fläche zeigen
+<div class="plotly-chart" style="width:100%;height:520px"
+     data-fig='{
+       "data": [
+         {
+           "x": [1, 2, 3, 4, 5],
+           "y": [264.87, 304.6, 322.27, 468.52, 687.69],
+           "name": "Vergleichsspannung σ<sub>v</sub>",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y1",
+           "hovertemplate": "Lösung %{x}<br>σ<sub>v</sub> = %{y} MPa<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3, 4, 5],
+           "y": [85218, 255408, 663171, 1074384, 1519585],
+           "name": "Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Knoten = %{y}<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3, 4, 5],
+           "y": [48886, 165578, 458381, 756071, 1078741],
+           "name": "Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Elemente = %{y}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Konvergenzverhalten – Variante B"},
+         "xaxis": {"title": "Lösungsnummer", "dtick": 1},
+
+         "yaxis": {
+           "title": "Vergleichsspannung (MPa)",
+           "side": "left"
+         },
+
+         "yaxis2": {
+           "title": "Knoten / Elemente",
+           "overlaying": "y",
+           "side": "right",
+           "showgrid": false
+         },
+
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+
+         "legend": {
+           "x": 0,
+           "y": 1,
+           "xanchor": "left",
+           "yanchor": "top"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+Die hohe Spannungsspitze tritt direkt an der Kontaktstelle der Kraftanbringung auf einer kleinen Fläche auf. Durch diese kleine Fläche entstehen extrem steile Spannungsgradienten, die numerisch nicht sauber aufgelöst werden können. Das Ergebnis divergiert bei Netzverfeinerung.
+
+[![Variante B – nicht konvergierende Vergleichsspannung](media/06_krafteinleitung/06a_Torsionsstab_nicht_konv_Spannung.png){width=750px}](media/06_krafteinleitung/06a_Torsionsstab_nicht_konv_Spannung.png "Variante B – nicht konvergierende Vergleichsspannung"){.glightbox}
+
+Die Detailansicht zeigt die maximale Spannung direkt an der Krafteinleitungsfläche. Hier konzentriert sich die gesamte Last auf einen scharf begrenzten Bereich, was zu einer künstlichen Kerbwirkung und nicht physikalischen Spannungsspitzen führt.
+
+[![Variante B – Detailansicht der Lastfläche](media/06_krafteinleitung/06b_Torsionsstab_nicht_konv_Spannung.png){width=750px}](media/06_krafteinleitung/06b_Torsionsstab_nicht_konv_Spannung.png "Variante B – Detailansicht der Lastfläche"){.glightbox}
 
 #### **Variante C**
 
