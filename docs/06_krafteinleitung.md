@@ -265,6 +265,8 @@ Die Art der Krafteinleitung bestimmt die lokale Beanspruchung und beeinflusst so
 
 Bei dieser Geometrie ist keine Fläche vorhanden, über die die Kraft so eingeleitet werden kann, dass der Hebel wirksam wird. Eine physikalisch sinnvolle Randbedingung lässt sich damit nicht formulieren. Das Problem ist in dieser Form nicht berechenbar und liefert folglich keine verwertbaren FEM Ergebnisse.
 
+---
+
 #### **Variante B**
 
 Bei dieser Variante wird die Kraft eine sehr kleine Kontaktfläche eingeleitet, die vom Hebel erhaben angebracht ist. Dadurch entstehen lokal sehr hohe Spannungen und eine ausgeprägte Kerbwirkung. Mit zunehmender Netzverfeinerung steigen die Spannungsmaxima weiter an, der Spannungsverlauf konvergiert nicht. Die Ergebnisse sind daher für eine belastbare Bewertung der Bauteilfestigkeit ungeeignet.
@@ -345,14 +347,91 @@ Die Detailansicht zeigt die maximale Spannung direkt an der Krafteinleitungsflä
 
 [![Variante B – Detailansicht der Lastfläche](media/06_krafteinleitung/06b_Torsionsstab_nicht_konv_Spannung.png){width=750px}](media/06_krafteinleitung/06b_Torsionsstab_nicht_konv_Spannung.png "Variante B – Detailansicht der Lastfläche"){.glightbox}
 
+---
+
 #### **Variante C**
 
-Bei dieser Variante erfolgt die Krafteinleitung über eine definierte Fläche mittels Sekantenschnitt. Die Last wird dadurch realistisch in den Hebelarm eingeleitet und verteilt sich gleichmäßiger über den Querschnitt. Die resultierenden Spannungsverläufe sind stabil und zeigen ein deutliches Konvergenzverhalten.
+Bei dieser Variante erfolgt die Krafteinleitung über eine definierte Fläche mittels Sekantenschnitt. Die Last wird dadurch ohne zusätzliche Kerbwirkung in den Hebelarm eingeleitet. Die resultierenden Spannungsverläufe sind stabil und zeigen ein deutliches Konvergenzverhalten.
 
-[![Konvergentes Ergebnis bei flächiger Krafteinleitung](media/06_krafteinleitung/07_Torsionsstab_konvergierend.png){width=400px}](media/06_krafteinleitung/07_Torsionsstab_konvergierend.png "Konvergentes Ergebnis bei flächiger Krafteinleitung"){.glightbox}
+<!-- markdownlint-disable MD033 -->
 
-!!! danger "FIXME"
-    Erläuterungen und Ansichten zum Sekantenschnitt
+<div class="plotly-chart" style="width:100%;height:520px"
+     data-fig='{
+       "data": [
+         {
+           "x": [1, 2, 3],
+           "y": [268.83, 300.86, 303.04],
+           "name": "Vergleichsspannung σ<sub>v</sub>",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y1",
+           "hovertemplate": "Lösung %{x}<br>σ<sub>v</sub> = %{y} MPa<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3],
+           "y": [85533, 245546, 434902],
+           "name": "Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Knoten = %{y}<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3],
+           "y": [49154, 158569, 292824],
+           "name": "Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Elemente = %{y}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Konvergenzverhalten – Variante C"},
+         "xaxis": {"title": "Lösungsnummer", "dtick": 1},
+
+         "yaxis": {
+           "title": "Vergleichsspannung (MPa)",
+           "side": "left"
+         },
+
+         "yaxis2": {
+           "title": "Knoten / Elemente",
+           "overlaying": "y",
+           "side": "right",
+           "showgrid": false
+         },
+
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+
+         "legend": {
+           "x": 0,
+           "y": 1,
+           "xanchor": "left",
+           "yanchor": "top"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+Die Fläche zur Krafteinleitung entsteht hier aus einem **Sekantenschnitt** im CAD. Dadurch wird eine **kerbfreie Lastübertragung** ermöglicht.
+
+[![Geometrie – Variante C](media/06_krafteinleitung/07_Torsionsstab_Sekantenschnitt.png){width=750px}](media/06_krafteinleitung/07_Torsionsstab_Sekantenschnitt.png "Geometrie – Variante C"){.glightbox}
+
+Der Halbkreis-Ausschnitt definiert die Form der Lastfläche. Durch die Rotation entsteht eine Geometrie, die keine lokalen Kerben erzeugt.  
+
+[![CAD-Skizze – Sekantenschnitt](media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png){width=450px}](media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png "CAD-Skizze – Sekantenschnitt"){.glightbox}
+
+Im Gegensatz zur Krafteinleitung in Variante B treten **keine Spannungsspitzen** auf, und das Ergebnis **konvergiert** bei Netzverfeinerung im kritischen Querschnitt. 
+
+[![Vergleichsspannung – Variante C](media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png){width=750px}](media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png "Vergleichsspannung – Variante C"){.glightbox}
 
 ## Krafteinleitung über Knoten
 
@@ -394,6 +473,9 @@ Physikalisch korrekte Lastübertragung durch:
 !!! note "Hinweis"
     Ob mit **linearen oder quadratischen Elementen** gerechnet wurde, lässt sich in den *Details* des *Mesh*-Objekts unter *Element Order* prüfen.  
     Für die Spannungsanalyse in glatten Bereichen sind quadratische Elemente empfehlenswert.
+
+!!! note "Hinweis"
+    man hätte auch können die Stelle der Krafteinleitung ausklammern und ein fokussiertes Ergebnis nur an der Einspannung erzeugen können.     
 
 -->
 
