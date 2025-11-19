@@ -477,9 +477,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zusammenfassung-und-weiterfuhrende-hinweise" class="md-nav__link">
+  <a href="#zusammenfassung" class="md-nav__link">
     <span class="md-ellipsis">
-      Zusammenfassung und weiterführende Hinweise
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterfuhrende-hinweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weiterführende Hinweise
     </span>
   </a>
   
@@ -605,9 +614,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#zusammenfassung-und-weiterfuhrende-hinweise" class="md-nav__link">
+  <a href="#zusammenfassung" class="md-nav__link">
     <span class="md-ellipsis">
-      Zusammenfassung und weiterführende Hinweise
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterfuhrende-hinweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weiterführende Hinweise
     </span>
   </a>
   
@@ -659,7 +677,7 @@
 <li>Kerbformzahl <span class="arithmatex">\(\alpha_k = 1,59\)</span> (Übergang zylindrischer Stab und Einspannung)</li>
 <li>Kraft <span class="arithmatex">\( F = 4{,}45 \, \text{kN} \)</span>  </li>
 <li>eine Seite vollständig an einer Wand fixiert</li>
-<li>Material Baustahl gemäß ANSYS-Datenbank mit geändertem <strong>E-Modul</strong> auf 210.000 Mpa.  </li>
+<li>Material Baustahl gemäß ANSYS-Datenbank mit geändertem <strong>E-Modul</strong> auf 210.000 MPa.  </li>
 </ul>
 <p>Untersuchen Sie die folgenden Varianten der Krafteinleitung am Hebelarm:  </p>
 <ul>
@@ -684,7 +702,7 @@
 </ul>
 <p>Das zugrunde liegende Modell folgt der <strong>Euler-Bernoulli-Balkentheorie</strong>. Es wird angenommen, dass der Balken schubstarr ist, der Querschnitt während der Verformung eben bleibt und keine Verwölbung auftritt.</p>
 <h3 id="biegung-und-schiefe-biegung">Biegung und schiefe Biegung<a class="headerlink" href="#biegung-und-schiefe-biegung" title="Permanent link">&para;</a></h3>
-<p>Bei Torsionsstäben mit exzentrischer Krafteinleitung kann neben der Torsion auch Biegung auftreten. </p>
+<p>Bei Torsionsstäben mit exzentrischer Krafteinleitung kann neben der Torsion auch Biegung auftreten.  </p>
 <h4 id="gerade-biegung">Gerade Biegung<a class="headerlink" href="#gerade-biegung" title="Permanent link">&para;</a></h4>
 <p>Wirkt die Kraft in einer einzigen Ebene, entsteht <strong>gerade Biegung</strong>. Für den Vollkreisquerschnitt gilt:</p>
 <div class="arithmatex">\[
@@ -734,7 +752,7 @@ Die FEM ermittelt zusätzlich die örtliche Spannungsverteilung, die stark davon
 <h3 id="1-projektverwaltung-und-geometrieimport">1. Projektverwaltung und Geometrieimport<a class="headerlink" href="#1-projektverwaltung-und-geometrieimport" title="Permanent link">&para;</a></h3>
 <p>Für die Untersuchung der Varianten ist ein separates System pro Geometrie sinnvoll. Die technische Datenquelle kann verknüpft werden, sodass Änderungen (z. B. am E-Modul) automatisch in alle Systeme übernommen werden.<br />
 Zweckmäßig ist es, zunächst <strong>eine Variante vollständig einzurichten und zu berechnen</strong>, anschließend über <em>Duplizieren</em> in der Projektübersicht zu kopieren, die technischen Daten zu verknüpfen und danach die Geometrie auszutauschen. So können viele Einstellungen im Modell übernommen werden und müssen nicht neu erstellt werden. Eine abschließende Überprüfung aller Randbedingungen bleibt jedoch erforderlich.</p>
-<p><a class="glightbox" href="../media/06_krafteinleitung/03_Torsionsstab_Projekt.png" title="Projektaufbau mit drei Varianten in ANSYS Workbench"><img alt="Projektaufbau mit drei Varianten in ANSYS Workbench" src="../media/06_krafteinleitung/03_Torsionsstab_Projekt.png" width="700px" /></a></p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/03_Torsionsstab_Projekt.png" title="Projektaufbau mit drei Varianten in ANSYS Workbench"><img alt="Projektaufbau mit drei Varianten in ANSYS Workbench" src="../media/06_krafteinleitung/03_Torsionsstab_Projekt.png" width="800px" /></a></p>
 <h3 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h3>
 <p>Das Material ist standardmäßig <strong>Baustahl</strong> aus der ANSYS-Materialdatenbank. Die Anpassung des <strong>E-Moduls</strong> erfolgt in den <em>Technischen Daten</em> des Projekts.<br />
 Wird das Material <strong>vor</strong> der Systemerstellung geändert, wird der neue Wert automatisch in jedes System übernommen.  </p>
@@ -762,8 +780,6 @@ Es sind keine Anpassungen erforderlich, solange es sich um eine lineare elastisc
 <p>Gemäß Aufgabenstellung wird zunächst die <strong>Vergleichsspannung nach von Mises</strong> ausgewertet.  </p>
 <h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
 <h3 id="vergleich-mit-analytischer-losung">Vergleich mit analytischer Lösung<a class="headerlink" href="#vergleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
-<p>Die Simulation zeigt eine maximale <strong>Vergleichsspannung</strong> (von Mises) im Bereich der höchsten Beanspruchung des Stabs. Die maximale Spannung beträgt <strong>303,04 MPa</strong> und tritt im Übergang vom Hebelarm zum Stab auf, wo Biegung und Torsion überlagert wirken.</p>
-<p><a class="glightbox" href="../media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png" title="Torsionsstab – maximale Vergleichsspannung"><img alt="Torsionsstab – maximale Vergleichsspannung" src="../media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png" width="600px" /></a></p>
 <p>Die folgende Box enthält die analytische Lösung. Berechnen Sie zunächst die <strong>nominelle</strong> Vergleichsspannung eines glatten Vollstabs. Anschließend wird die in der Aufgabenstellung angegebene <strong>Kerbformzahl <span class="arithmatex">\(\alpha_k = 1{,}59\)</span></strong> verwendet, um die <strong>lokale maximale Vergleichsspannung</strong> im Übergangsbereich abzuschätzen.</p>
 <p><strong>Hinweise:</strong>  </p>
 <ul>
@@ -844,13 +860,16 @@ I_\text{p} = \frac{\pi d^4}{32} = 206{.}871{,}087\,\text{mm}^4
 </tr>
 </tbody>
 </table>
+<p>Die Simulation zeigt eine maximale <strong>Vergleichsspannung</strong> (von Mises) im Bereich der höchsten Beanspruchung des Stabs. Die maximale Spannung beträgt <strong>303,04 MPa</strong> und tritt im Übergang vom Hebelarm zum Stab auf, wo Biegung und Torsion überlagert wirken.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png" title="Torsionsstab – maximale Vergleichsspannung"><img alt="Torsionsstab – maximale Vergleichsspannung" src="../media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png" width="600px" /></a></p>
+<hr />
 <h3 id="einfluss-der-krafteinleitung">Einfluss der Krafteinleitung<a class="headerlink" href="#einfluss-der-krafteinleitung" title="Permanent link">&para;</a></h3>
-<p>Die Art der Krafteinleitung bestimmt die lokale Beanspruchung und beeinflusst somit direkt die Aussagekraft der FEM Simulation. Änderungen in der Lastanbindung führen zu deutlich unterschiedlichen Spannungsverteilungen und Konvergenzverhalten.</p>
+<p>Die Art der Krafteinleitung bestimmt die lokale Beanspruchung und beeinflusst somit direkt die Aussagekraft der FEM-Simulation. Änderungen in der Lastanbindung führen zu deutlich unterschiedlichen Spannungsverteilungen und Konvergenzverhalten.</p>
 <h4 id="variante-a"><strong>Variante A</strong><a class="headerlink" href="#variante-a" title="Permanent link">&para;</a></h4>
 <p>Bei dieser Geometrie ist keine Fläche vorhanden, über die die Kraft so eingeleitet werden kann, dass der Hebel wirksam wird. Eine physikalisch sinnvolle Randbedingung lässt sich damit nicht formulieren. Das Problem ist in dieser Form nicht berechenbar und liefert folglich keine verwertbaren FEM Ergebnisse.</p>
 <hr />
 <h4 id="variante-b"><strong>Variante B</strong><a class="headerlink" href="#variante-b" title="Permanent link">&para;</a></h4>
-<p>Bei dieser Variante wird die Kraft eine sehr kleine Kontaktfläche eingeleitet, die vom Hebel erhaben angebracht ist. Dadurch entstehen lokal sehr hohe Spannungen und eine ausgeprägte Kerbwirkung. Mit zunehmender Netzverfeinerung steigen die Spannungsmaxima weiter an, der Spannungsverlauf konvergiert nicht. Die Ergebnisse sind daher für eine belastbare Bewertung der Bauteilfestigkeit ungeeignet.</p>
+<p>Bei dieser Variante wird die Kraft über eine sehr kleine Kontaktfläche eingeleitet, die vom Hebel erhaben angebracht ist. Dadurch entstehen lokal sehr hohe Spannungen und eine ausgeprägte Kerbwirkung. Mit zunehmender Netzverfeinerung steigen die Spannungsmaxima weiter an, der Spannungsverlauf konvergiert nicht. Die Ergebnisse sind daher für eine belastbare Bewertung der Bauteilfestigkeit ungeeignet.</p>
 <!-- markdownlint-disable MD033 -->
 
 <div class="plotly-chart" style="width:100%;height:520px"
@@ -998,52 +1017,80 @@ I_\text{p} = \frac{\pi d^4}{32} = 206{.}871{,}087\,\text{mm}^4
 <p><a class="glightbox" href="../media/06_krafteinleitung/07_Torsionsstab_Sekantenschnitt.png" title="Geometrie – Variante C"><img alt="Geometrie – Variante C" src="../media/06_krafteinleitung/07_Torsionsstab_Sekantenschnitt.png" width="750px" /></a></p>
 <p>Der Halbkreis-Ausschnitt definiert die Form der Lastfläche. Durch die Rotation entsteht eine Geometrie, die keine lokalen Kerben erzeugt.  </p>
 <p><a class="glightbox" href="../media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png" title="CAD-Skizze – Sekantenschnitt"><img alt="CAD-Skizze – Sekantenschnitt" src="../media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png" width="450px" /></a></p>
-<p>Im Gegensatz zur Krafteinleitung in Variante B treten <strong>keine Spannungsspitzen</strong> auf, und das Ergebnis <strong>konvergiert</strong> bei Netzverfeinerung im kritischen Querschnitt. </p>
+<p>Im Gegensatz zur Krafteinleitung in Variante B treten <strong>keine Spannungsspitzen</strong> auf, und das Ergebnis <strong>konvergiert</strong> bei Netzverfeinerung im kritischen Querschnitt.  </p>
 <p><a class="glightbox" href="../media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png" title="Vergleichsspannung – Variante C"><img alt="Vergleichsspannung – Variante C" src="../media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png" width="750px" /></a></p>
 <h2 id="krafteinleitung-uber-knoten">Krafteinleitung über Knoten<a class="headerlink" href="#krafteinleitung-uber-knoten" title="Permanent link">&para;</a></h2>
-<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a>  </p>
-<!-- 
-Das ist die komplizierte Variante für den Schluss mit Koordinatensystem und knotengenauer Einleitung bei Variante A. Führt aber zu gleichen Problemen.  
--->
-
-<h2 id="zusammenfassung-und-weiterfuhrende-hinweise">Zusammenfassung und weiterführende Hinweise<a class="headerlink" href="#zusammenfassung-und-weiterfuhrende-hinweise" title="Permanent link">&para;</a></h2>
-<!-- 
-Eine der häufigsten Fehlerquellen in der FEM ist die **idealisierte Krafteinleitung**.  
-Lasten, die in der Realität über Flächen verteilt werden, werden im Modell häufig als Punkt- oder Linienlasten angegeben.  
-Dadurch entstehen an Kanten oder Punkten **Singularitäten** – mathematisch divergente Spannungen.
-
-Typische Ursachen:
-
-* Punktlast auf Fläche → σ → ∞  
-* Linienlast oder scharfer Kantenübergang  
-* abrupte Querschnittsänderung ohne Radius  
-* zu kleine Kontaktfläche zwischen Bauteilen  
-
-Die FEM zeigt in solchen Fällen keine Konvergenz:  
-Bei jeder Netzverfeinerung steigt die lokale Spannung weiter an.
-
-Lösung: realistische Krafteinleitung
-
-Physikalisch korrekte Lastübertragung durch:
-
-* **Flächenlast** statt Punktlast,  
-* **Übergangsradien oder Fasen** statt scharfer Kanten,  
-* **Sekantenschnitt** (sanfter Geometrieübergang),  
-* **elastische Zwischenlage oder Endplatte** zur Kraftverteilung.
-
-!!! note "FIXME"
-    Wozu haben wir überhaupt das E-Modul geändert?
-
-!!! note "Hinweis"
-    Ob mit **linearen oder quadratischen Elementen** gerechnet wurde, lässt sich in den *Details* des *Mesh*-Objekts unter *Element Order* prüfen.  
-    Für die Spannungsanalyse in glatten Bereichen sind quadratische Elemente empfehlenswert.
-
-!!! note "Hinweis"
-    man hätte auch können die Stelle der Krafteinleitung ausklammern und ein fokussiertes Ergebnis nur an der Einspannung erzeugen können.     
-
--->
-
+<p>Die Kraft kann alternativ über <strong>einen oder mehrere Knoten</strong> eingeleitet werden. Die Auswahl erfolgt über den <em>Auswahlfilter</em> für <strong>Knoten</strong> in der Symbolleiste, wie in der Abbildung dargestellt.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.png" title="Torsionsstab – Krafteinleitung über Knotenlast"><img alt="Torsionsstab – Krafteinleitung über Knotenlast" src="../media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.png" width="900px" /></a></p>
+<p>Die Krafteinleitung über <strong>einen einzelnen Knoten</strong> ist grundsätzlich möglich, bringt jedoch mehrere Nachteile mit sich:</p>
+<ul>
+<li>Die genaue geometrische Position des Knotens muss über ein <em>Koordinatensystem</em> und die <strong>Komponenten</strong> in der Auswahltabelle bestimmt werden. Dies ist vergleichsweise aufwendig.</li>
+<li>Die Position des ausgewählten Knotens ist <strong>vom Netz abhängig</strong> und ändert sich bei jeder Neuvernetzung.</li>
+<li>Die resultierende Spannungsüberhöhung tritt <strong>sehr lokal</strong> auf (oft nur an einem oder wenigen Knoten).  </li>
+</ul>
+<p><a class="glightbox" href="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.png" title="Torsionsstab – lokale Spannungsüberhöhung durch Knotenkraft"><img alt="Torsionsstab – lokale Spannungsüberhöhung durch Knotenkraft" src="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.png" width="900px" /></a></p>
+<ul>
+<li>Das <strong>Konvergenzkriterium</strong> kann für solche Zuordnungen nicht verwendet werden.<br />
+  ANSYS gibt folgende Meldung aus:</li>
+</ul>
+<p><a class="glightbox" href="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.png" title="Torsionsstab – Meldung zum Konvergenzkriterium"><img alt="Torsionsstab – Meldung zum Konvergenzkriterium" src="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.png" width="500px" /></a></p>
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<p>Eine der häufigsten Fehlerquellen in der FEM ist die <strong>idealisierte Krafteinleitung</strong>. Lasten, die in der Realität über Flächen verteilt werden, werden im Modell häufig als Punkt- oder Linienlasten angegeben. Dadurch entstehen an Kanten oder Punkten <strong>Singularitäten</strong>.</p>
+<p>Typische Ursachen:</p>
+<ul>
+<li>Punktlast auf Fläche → σ → ∞  </li>
+<li>Linienlast oder scharfer Kantenübergang  </li>
+<li>abrupte Querschnittsänderung ohne Radius  </li>
+<li>zu kleine Kontaktfläche zwischen Bauteilen  </li>
+</ul>
+<p>Die FEM zeigt in solchen Fällen keine Konvergenz: Bei jeder Netzverfeinerung steigt die lokale Spannung weiter an.</p>
+<p>Physikalisch korrekte Lastübertragung durch:</p>
+<ul>
+<li><strong>Flächenlast</strong> statt Punktlast,  </li>
+<li><strong>Übergangsradien oder Fasen</strong> statt scharfer Kanten,  </li>
+<li><strong>Sekantenschnitt</strong> (sanfter Geometrieübergang),  </li>
+<li><strong>elastische Zwischenlage oder Endplatte</strong> zur Kraftverteilung.</li>
+</ul>
+<h2 id="weiterfuhrende-hinweise">Weiterführende Hinweise<a class="headerlink" href="#weiterfuhrende-hinweise" title="Permanent link">&para;</a></h2>
+<details class="question">
+<summary>Warum wurde das E-Modul angepasst?</summary>
+<p>Für die Analyse der Spannungen spielt das Elastizitätsmodul keine Rolle.<br />
+In linearen elastischen Modellen beeinflusst das E-Modul ausschließlich die Verformungen, nicht jedoch die entstehenden Vergleichsspannungen.<br />
+Die beobachteten Unterschiede im Spannungsfeld resultieren daher allein aus der Art der Krafteinleitung. Die Änderung des E-Moduls ist hier rein didaktisch begründet.  </p>
+</details>
+<details class="note">
+<summary>Hinweis zur Elementordnung</summary>
+<p>Ob mit <strong>linearen oder quadratischen Elementen</strong> gerechnet wurde, lässt sich an mehreren Stellen in den <em>Lösungsinformationen</em> erkennen. Im gezeigten Beispiel wird der Elementtyp <strong>SOLID187</strong> verwendet, also ein quadratisches 3D-Element.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/12_Torsionsstab_Elementtypen.png" title="Lösungsinformationen – verwendeter Elementtyp SOLID187"><img alt="Lösungsinformationen – verwendeter Elementtyp SOLID187" src="../media/06_krafteinleitung/12_Torsionsstab_Elementtypen.png" width="900px" /></a></p>
+</details>
+<details class="note">
+<summary>Alternative zur Krafteinleitung: kritische Zone ausklammern</summary>
+<p>Statt die Krafteinleitung im detaillierten Modell mit abzubilden, kann die lokale Zone auch ausgeklammert werden. In diesem Fall wird ein verkürztes Modell betrachtet, das ausschließlich die Einspannung enthält.<br />
+Dadurch lässt sich ein fokussiertes und numerisch stabiles Ergebnis an der Einspannung erzielen, ohne die Singularität an der Laststelle mitzuberechnen.</p>
+</details>
 <h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
+
+<div class="quiz"><h3>Welche Aussage beschreibt das Hauptziel dieses Moduls am besten?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Die Berechnung von plastischen Verformungen bei beliebigen Lastfällen</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" ><label for="quiz-0-1">Die Optimierung der Rechenzeit durch grobe Netze</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" correct><label for="quiz-0-2">Das Verständnis, wie die Art der Krafteinleitung zu Spannungsüberhöhungen und Konvergenzproblemen in der FEM führt</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Im Mittelpunkt steht der Zusammenhang zwischen idealisierter Krafteinleitung, numerischen Singularitäten und der Aussagekraft der FEM Ergebnisse.</section></div>
+
+<div class="quiz"><h3>Welche Beanspruchungskombination tritt beim Torsionsstab mit Hebelarm laut Aufgabenstellung auf?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" ><label for="quiz-1-0">Reine Biegung ohne Torsion</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" correct><label for="quiz-1-1">Kombination aus Biegung und Torsion, die gemeinsam zur Vergleichsspannung beitragen</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">Reine Torsion ohne Biegung</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Die Vergleichsspannung entsteht aus der Überlagerung von Biegung und Torsion.</section></div>
+
+<div class="quiz"><h3>Welche Rolle spielt die Kerbformzahl \(\alpha_k = 1{,}59\) in der analytischen Berechnung?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Sie beschreibt die Netzfeinheit im Kerbbereich</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" correct><label for="quiz-2-1">Sie erhöht die nominelle Vergleichsspannung zu einer lokalen maximalen Vergleichsspannung</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" ><label for="quiz-2-2">Sie reduziert die nominelle Vergleichsspannung zur Erhöhung der Sicherheit</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Die Kerbformzahl wird nach der Berechnung der nominellen Spannung angewendet.</section></div>
+
+<div class="quiz"><h3>Warum ist Geometrie-Variante A ungeeignet?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" correct><label for="quiz-3-0">Es existiert keine geeignete Fläche zur Krafteinleitung</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">Die Geometrie besitzt keinen Kreisquerschnitt</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" ><label for="quiz-3-2">Es können nur nichtlineare Elemente verwendet werden</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Ohne Lastfläche lässt sich keine physikalische Randbedingung formulieren.</section></div>
+
+<div class="quiz"><h3>Wie verhalten sich die Spannungen in Geometrie-Variante B bei Netzverfeinerung?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">Die Spannungen bleiben unabhängig vom Netz unverändert</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" correct><label for="quiz-4-1">Die Spannungsmaxima steigen weiter an und konvergieren nicht</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" ><label for="quiz-4-2">Die Spannungen sinken ab und stabilisieren sich</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Die kleine Kontaktfläche verursacht eine numerische Singularität.</section></div>
+
+<div class="quiz"><h3>Wodurch zeichnet sich Geometrie-Variante C aus?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Durch die Vernachlässigung der Biegung im analytischen Vergleich</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">Durch eine flächige, kerbarme Krafteinleitung über einen Sekantenschnitt mit gutem Konvergenzverhalten</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Durch eine punktförmige Kraftanbringung mit kleinen Kontaktflächen</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Die flächige Lastübertragung verhindert künstliche Spannungsspitzen.</section></div>
+
+<div class="quiz"><h3>Welche Aussage zur Krafteinleitung über einen einzelnen Knoten ist korrekt?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" correct><label for="quiz-6-0">Sie erzeugt sehr lokale Spannungsspitzen und verhindert sinnvolle Konvergenzbewertung</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" ><label for="quiz-6-1">Sie bildet die reale Belastung am besten ab</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">Sie erleichtert die automatische Konvergenzprüfung</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Knotenkraft erzeugt numerische Singularitäten.</section></div>
+
+<div class="quiz"><h3>Welche Aussage zum Elastizitätsmodul \(E\) trifft in der linearen elastischen Analyse zu?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-7-0" ><label for="quiz-7-0">Eine Erhöhung von \(E\) reduziert immer die Spannungen</label></div><div><input type="radio" name="answer" value="1" id="quiz-7-1" correct><label for="quiz-7-1">Eine Änderung von \(E\) beeinflusst die Verformungen, nicht jedoch die Vergleichsspannungen</label></div><div><input type="radio" name="answer" value="2" id="quiz-7-2" ><label for="quiz-7-2">Eine Verringerung von \(E\) macht das Modell nicht mehr linear</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Spannungen hängen dort von Last und Geometrie ab, nicht von \(E\).</section></div>
+
+<div class="quiz"><h3>Wie lassen sich numerische Singularitäten bei der Krafteinleitung vermeiden?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-8-0" ><label for="quiz-8-0">Durch Entfernen aller Übergangsradien</label></div><div><input type="radio" name="answer" value="1" id="quiz-8-1" ><label for="quiz-8-1">Durch große Punktlasten an einzelnen Knoten</label></div><div><input type="radio" name="answer" value="2" id="quiz-8-2" correct><label for="quiz-8-2">Durch Flächenlasten und geometrisch sanfte Übergänge zur Lastverteilung</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Realistische Lastverteilung verbessert die physikalische Abbildung und Konvergenz.</section></div>
+
+<!-- markdownlint-enable MD033 -->
+
 <div class="footnote">
 <hr />
 <ol>
