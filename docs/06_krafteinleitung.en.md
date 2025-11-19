@@ -6,13 +6,13 @@ After completing this module, students will be able to:
 
 * identify typical causes of numerical stress concentrations,  
 * explain the difference between physically and numerically induced stress peaks,  
-* avoid non physical point or line loads,  
+* avoid nonphysical point or line loads,  
 * apply suitable measures to mitigate stress singularities,  
 * assess the importance of load application for result quality.
 
 ## Task: Torsion bar
 
-In the simulation of a torsion bar with a lever arm, the **application of the external force** on the lever arm shall be investigated.  
+In the simulation of a torsion bar with a lever arm, the **application of the external force** on the lever arm is analysed.
 
 [![Torsion bar with lever arm](media/06_krafteinleitung/01_Torsionsstab.png){width=500px}](media/06_krafteinleitung/01_Torsionsstab.png "Torsion bar with lever arm"){.glightbox}
 
@@ -352,7 +352,7 @@ The detailed view shows the maximum stress directly at the load application surf
 
 #### **Variant C**
 
-In this variant, the load is applied through a defined surface created by a secant cut. This allows the load to be transferred into the lever arm without additional notch effects. The resulting stress distributions are stable and show clear convergence behaviour.
+In this variant, the load is applied through a defined surface created by a secant cut plane in the CAD model. This allows the load to be transferred into the lever arm without additional notch effects. The resulting stress distributions are stable and show clear convergence behaviour.
 
 <!-- markdownlint-disable MD033 -->
 
@@ -434,5 +434,147 @@ In contrast to load application in Variant B, **no stress peaks** occur, and the
 
 [![Equivalent stress – Variant C](media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.en.png){width=750px}](media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.en.png "Equivalent stress – Variant C"){.glightbox}
 
-## Load application via nodes  
+## Load application via nodes
 
+The external load can alternatively be applied to **one or several nodes**.  
+The selection is made using the *selection filter* for **nodes** in the toolbar, as shown in the figure.
+
+[![Torsion bar – load application via nodal force](media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.en.png){width=900px}](media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.en.png "Torsion bar – load application via nodal force"){.glightbox}
+
+Applying the load to **a single node** is possible in principle, but it comes with several disadvantages:
+
+* The exact geometric position of the node must be specified via a *coordinate system* and the **components** in the selection table. This is comparatively time-consuming.
+* The position of the selected node is **mesh dependent** and changes with every remeshing step.
+* The resulting stress concentration appears **very locally** (often at only one or very few nodes).  
+
+[![Torsion bar – local stress concentration due to nodal force](media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.en.png){width=900px}](media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.en.png "Torsion bar – local stress concentration due to nodal force"){.glightbox}
+
+* The **convergence criterion** cannot be used for such assignments.  
+  ANSYS outputs the following message:
+
+[![Torsion bar – message regarding convergence criterion](media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.en.png){width=500px}](media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.en.png "Torsion bar – message regarding convergence criterion"){.glightbox}
+
+## Summary
+
+One of the most common sources of error in FEM is **idealised load application**. Loads that are distributed across surfaces in reality are often applied as point or line loads in the model. This leads to **singularities** at edges or points.
+
+Typical causes:
+
+* point load on a surface → σ → ∞  
+* line load or sharp edge transition  
+* abrupt cross-section change without a fillet  
+* insufficient contact area between components  
+
+In such cases, the FEM solution does not converge: With every mesh refinement, the local stress continues to increase.
+
+Physically correct load transfer is achieved through:
+
+* **surface loads** instead of point loads,  
+* **fillets or chamfers** instead of sharp edges,  
+* **secant cut** (smooth geometrical transition),  
+* **elastic pads or end plates** to distribute the load.
+
+## Further notes
+
+??? question "Why was the Young’s modulus adjusted?"
+    For stress analysis, the Young’s modulus does not play a role.  
+    In linear elastic models, the Young’s modulus only affects the deformations, not the resulting von Mises stresses.  
+    The observed differences in the stress field therefore result solely from the type of load application. The modification of the Young’s modulus is purely didactic in this context.
+
+??? note "Note on element order"
+    Whether **linear or quadratic elements** were used can be identified in several places in the *solution information*.  
+    In the example shown, the element type **SOLID187** is used, which is a quadratic 3D element.
+
+    [![Solution information – element type SOLID187](media/06_krafteinleitung/12_Torsionsstab_Elementtypen.en.png){width=900px}](media/06_krafteinleitung/12_Torsionsstab_Elementtypen.en.png "Solution information – element type SOLID187"){.glightbox}
+
+??? note "Alternative to load application: exclude the critical zone"
+    Instead of modelling the load application in full detail, the local zone can be excluded.  
+    In this case, a shortened model is analysed that contains only the fixed support.  
+    This allows a focused and numerically stable result at the support without having to include the singularity at the load application point.
+
+## Quiz for Self-Assessment
+
+<!-- markdownlint-disable MD033 -->
+
+<?quiz?>
+question: Which statement best describes the main objective of this module?
+answer: The calculation of plastic deformations under arbitrary load cases
+answer: The optimisation of computation time using coarse meshes
+answer-correct: Understanding how the type of load application leads to stress concentrations and convergence problems in FEM
+content:
+<em>Note:</em> The focus lies on the relationship between idealised load application, numerical singularities, and the significance of FEM results.
+<?/quiz?>
+
+<?quiz?>
+question: Which combination of load types occurs in the torsion bar with lever arm according to the task?
+answer: Pure bending without torsion
+answer-correct: Combination of bending and torsion that jointly contribute to the equivalent stress
+answer: Pure torsion without bending
+content:
+<em>Note:</em> The equivalent stress results from the superposition of bending and torsion.
+<?/quiz?>
+
+<?quiz?>
+question: What is the role of the notch form factor \(\alpha_k = 1.59\) in the analytical calculation?
+answer: It describes the mesh refinement in the notch region
+answer-correct: It increases the nominal equivalent stress to obtain a local maximum equivalent stress
+answer: It reduces the nominal equivalent stress to increase safety
+content:
+<em>Note:</em> The notch form factor is applied after calculating the nominal stress.
+<?/quiz?>
+
+<?quiz?>
+question: Why is geometry variant A unsuitable?
+answer-correct: There is no suitable surface for load application
+answer: The geometry does not have a circular cross section
+answer: Only nonlinear elements can be used
+content:
+<em>Note:</em> Without a load surface, no physical boundary condition can be formulated.
+<?/quiz?>
+
+<?quiz?>
+question: How do the stresses behave in geometry variant B when the mesh is refined?
+answer: The stresses remain unchanged regardless of the mesh
+answer-correct: The stress maxima continue to increase and do not converge
+answer: The stresses decrease and stabilise
+content:
+<em>Note:</em> The small contact area causes a numerical singularity.
+<?/quiz?>
+
+<?quiz?>
+question: What characterises geometry variant C?
+answer: Neglecting bending in the analytical comparison
+answer-correct: A planar, low-notch load application via a secant cut with good convergence behaviour
+answer: A point-like load introduction with small contact areas
+content:
+<em>Note:</em> The planar load transfer prevents artificial stress peaks.
+<?/quiz?>
+
+<?quiz?>
+question: Which statement about load application through a single node is correct?
+answer-correct: It creates highly localised stress peaks and prevents meaningful convergence assessment
+answer: It best represents the real loading
+answer: It facilitates automatic convergence checking
+content:
+<em>Note:</em> Nodal forces create numerical singularities.
+<?/quiz?>
+
+<?quiz?>
+question: Which statement about the Young’s modulus \(E\) is correct in linear elastic analysis?
+answer: Increasing \(E\) always reduces the stresses
+answer-correct: Changing \(E\) affects the deformations but not the equivalent stresses
+answer: Reducing \(E\) makes the model non-linear
+content:
+<em>Note:</em> Stresses depend on load and geometry, not on \(E\).
+<?/quiz?>
+
+<?quiz?>
+question: How can numerical singularities in load application be avoided?
+answer: By removing all fillets
+answer: By applying large point loads to single nodes
+answer-correct: By using surface loads and geometrically smooth transitions for load distribution
+content:
+<em>Note:</em> Realistic load distribution improves physical accuracy and convergence.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
