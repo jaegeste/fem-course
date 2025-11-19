@@ -575,4 +575,3 @@ content:
 <?/quiz?>
 
 <!-- markdownlint-enable MD033 -->
-
