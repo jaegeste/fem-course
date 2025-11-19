@@ -51,7 +51,7 @@ Das zugrunde liegende Modell folgt der **Euler-Bernoulli-Balkentheorie**. Es wir
 
 ### Biegung und schiefe Biegung
 
-Bei Torsionsstäben mit exzentrischer Krafteinleitung kann neben der Torsion auch Biegung auftreten. 
+Bei Torsionsstäben mit exzentrischer Krafteinleitung kann neben der Torsion auch Biegung auftreten.  
 
 #### Gerade Biegung
 
@@ -95,7 +95,6 @@ Für die **vorliegende Aufgabe ist ausschließlich die gerade Biegung relevant**
     [![Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)](media/06_krafteinleitung/02_schiefe_Biegung.png){width=700px}](media/06_krafteinleitung/02_schiefe_Biegung.png "Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)"){.glightbox}
     <span class="bildquelle">Bildquelle[@Spura2019]</span>
 
-
 ### Torsion
 
 Durch das Torsionsmoment \(M_{\text{T}}\) entstehen Schubspannungen im Querschnitt:
@@ -130,7 +129,7 @@ Die FEM ermittelt zusätzlich die örtliche Spannungsverteilung, die stark davon
 Für die Untersuchung der Varianten ist ein separates System pro Geometrie sinnvoll. Die technische Datenquelle kann verknüpft werden, sodass Änderungen (z. B. am E-Modul) automatisch in alle Systeme übernommen werden.  
 Zweckmäßig ist es, zunächst **eine Variante vollständig einzurichten und zu berechnen**, anschließend über *Duplizieren* in der Projektübersicht zu kopieren, die technischen Daten zu verknüpfen und danach die Geometrie auszutauschen. So können viele Einstellungen im Modell übernommen werden und müssen nicht neu erstellt werden. Eine abschließende Überprüfung aller Randbedingungen bleibt jedoch erforderlich.
 
-[![Projektaufbau mit drei Varianten in ANSYS Workbench](media/06_krafteinleitung/03_Torsionsstab_Projekt.png){width=700px}](media/06_krafteinleitung/03_Torsionsstab_Projekt.png "Projektaufbau mit drei Varianten in ANSYS Workbench"){.glightbox}
+[![Projektaufbau mit drei Varianten in ANSYS Workbench](media/06_krafteinleitung/03_Torsionsstab_Projekt.png){width=800px}](media/06_krafteinleitung/03_Torsionsstab_Projekt.png "Projektaufbau mit drei Varianten in ANSYS Workbench"){.glightbox}
 
 ### 2. Materialzuweisung
 
@@ -170,10 +169,6 @@ Gemäß Aufgabenstellung wird zunächst die **Vergleichsspannung nach von Mises*
 ## Diskussion der Ergebnisse
 
 ### Vergleich mit analytischer Lösung
-
-Die Simulation zeigt eine maximale **Vergleichsspannung** (von Mises) im Bereich der höchsten Beanspruchung des Stabs. Die maximale Spannung beträgt **303,04 MPa** und tritt im Übergang vom Hebelarm zum Stab auf, wo Biegung und Torsion überlagert wirken.
-
-[![Torsionsstab – maximale Vergleichsspannung](media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png){width=600px}](media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png "Torsionsstab – maximale Vergleichsspannung"){.glightbox}
 
 Die folgende Box enthält die analytische Lösung. Berechnen Sie zunächst die **nominelle** Vergleichsspannung eines glatten Vollstabs. Anschließend wird die in der Aufgabenstellung angegebene **Kerbformzahl \(\alpha_k = 1{,}59\)** verwendet, um die **lokale maximale Vergleichsspannung** im Übergangsbereich abzuschätzen.
 
@@ -256,6 +251,12 @@ Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie
 | Größe                                      | Analytische Lösung | FEM-Ergebnis | Abweichung |
 |--------------------------------------------|--------------------|--------------|------------|
 | maximale Vergleichsspannung mit Kerbe \(\sigma_\mathrm{v,max}\) | 303,36 MPa        | 303,04 MPa  | −0,11 %    |
+
+Die Simulation zeigt eine maximale **Vergleichsspannung** (von Mises) im Bereich der höchsten Beanspruchung des Stabs. Die maximale Spannung beträgt **303,04 MPa** und tritt im Übergang vom Hebelarm zum Stab auf, wo Biegung und Torsion überlagert wirken.
+
+[![Torsionsstab – maximale Vergleichsspannung](media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png){width=600px}](media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png "Torsionsstab – maximale Vergleichsspannung"){.glightbox}
+
+---
 
 ### Einfluss der Krafteinleitung
 
@@ -429,7 +430,7 @@ Der Halbkreis-Ausschnitt definiert die Form der Lastfläche. Durch die Rotation 
 
 [![CAD-Skizze – Sekantenschnitt](media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png){width=450px}](media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png "CAD-Skizze – Sekantenschnitt"){.glightbox}
 
-Im Gegensatz zur Krafteinleitung in Variante B treten **keine Spannungsspitzen** auf, und das Ergebnis **konvergiert** bei Netzverfeinerung im kritischen Querschnitt. 
+Im Gegensatz zur Krafteinleitung in Variante B treten **keine Spannungsspitzen** auf, und das Ergebnis **konvergiert** bei Netzverfeinerung im kritischen Querschnitt.  
 
 [![Vergleichsspannung – Variante C](media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png){width=750px}](media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png "Vergleichsspannung – Variante C"){.glightbox}
 
@@ -477,6 +478,8 @@ Physikalisch korrekte Lastübertragung durch:
 !!! note "Hinweis"
     man hätte auch können die Stelle der Krafteinleitung ausklammern und ein fokussiertes Ergebnis nur an der Einspannung erzeugen können.     
 
+!!! note "Hinweis"
+    An Einspannungen können ebenfalls Singularitäten auftreten. Die Vorgehensweise erfolgt entsprechend dem Vorgehen bei Singularitäten durch Lasteinleitungen: Wenn man an der jeweiligen Stelle auswerten will, muss man genauer modellieren. Wenn nicht, kann man die Singularität ignorieren.
 -->
 
 ## Quiz zur Selbstkontrolle

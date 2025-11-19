@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://jaegeste.github.io/fem-course/06_krafteinleitung/">
       
       
+        <link rel="prev" href="../05_elementtypen_ansatzf/">
+      
+      
+        <link rel="next" href="../07_symmetrie/">
       
       
       <link rel="icon" href="../media/logo/hfu_logo.svg">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Modul 04 – Krafteinleitung und Spannungsüberhöhungen - FEM Course Prof. Jäger</title>
+        <title>Modul 4 Krafteinleitung - FEM Course Prof. Jäger</title>
       
     
     
@@ -81,7 +85,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#modul-04-krafteinleitung-und-spannungsuberhohungen" class="md-skip">
+        <a href="#modul-04-krafteinleitung-und-spannungsuberhohung" class="md-skip">
           Zum Inhalt
         </a>
       
@@ -116,7 +120,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modul 04 – Krafteinleitung und Spannungsüberhöhungen
+              Modul 4 Krafteinleitung
             
           </span>
         </div>
@@ -362,6 +366,164 @@
   
 
     
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Modul 4 Krafteinleitung
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 4 Krafteinleitung
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-torsionsstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Torsionsstab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-nach-spura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund (nach Spura)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krafteinleitung-uber-knoten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krafteinleitung über Knoten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung-und-weiterfuhrende-hinweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung und weiterführende Hinweise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_symmetrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 5 Modellreduktion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -382,6 +544,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-torsionsstab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Torsionsstab
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund-nach-spura" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund (nach Spura)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#krafteinleitung-uber-knoten" class="md-nav__link">
+    <span class="md-ellipsis">
+      Krafteinleitung über Knoten
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#zusammenfassung-und-weiterfuhrende-hinweise" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung und weiterführende Hinweise
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -396,28 +638,382 @@
 
 
 
-<h1 id="modul-04-krafteinleitung-und-spannungsuberhohungen">Modul 04 – Krafteinleitung und Spannungsüberhöhungen<a class="headerlink" href="#modul-04-krafteinleitung-und-spannungsuberhohungen" title="Permanent link">&para;</a></h1>
+<h1 id="modul-04-krafteinleitung-und-spannungsuberhohung">Modul 04 – Krafteinleitung und Spannungsüberhöhung<a class="headerlink" href="#modul-04-krafteinleitung-und-spannungsuberhohung" title="Permanent link">&para;</a></h1>
+<h2 id="lernziele">Lernziele<a class="headerlink" href="#lernziele" title="Permanent link">&para;</a></h2>
+<p>Nach Abschluss dieses Moduls können die Studierenden:</p>
+<ul>
+<li>typische Ursachen numerischer Spannungsüberhöhungen erkennen,  </li>
+<li>den Unterschied zwischen physikalisch und numerisch bedingten Spannungsspitzen erklären,  </li>
+<li>nicht-physikalische Punkt- oder Linienlasten vermeiden,  </li>
+<li>geeignete Maßnahmen zur Entschärfung von Spannungssingularitäten anwenden,</li>
+<li>die Bedeutung der Krafteinleitung für die Ergebnisgüte einschätzen.</li>
+</ul>
+<h2 id="aufgabenstellung-torsionsstab">Aufgabenstellung Torsionsstab<a class="headerlink" href="#aufgabenstellung-torsionsstab" title="Permanent link">&para;</a></h2>
+<p>Bei der Simulation eines Torsionsstabs mit Hebelarm soll die <strong>Einleitung der äußeren Kraft</strong> am Hebelarm untersucht werden.  </p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/01_Torsionsstab.png" title="Torsionsstab mit Hebelarm"><img alt="Torsionsstab mit Hebelarm" src="../media/06_krafteinleitung/01_Torsionsstab.png" width="500px" /></a></p>
+<ul>
+<li>zylindrischer Torsionsstab mit Hebelarm</li>
+<li>Länge <span class="arithmatex">\( L  = 152{,}4 \, \text{mm} \)</span>  </li>
+<li>Durchmesser <span class="arithmatex">\( d = 38{,}1 \, \text{mm} \)</span>  </li>
+<li>Hebelarm <span class="arithmatex">\( H = 203{,}2 \, \text{mm} \)</span>  </li>
+<li>Kerbformzahl <span class="arithmatex">\(\alpha_k = 1,59\)</span> (Übergang zylindrischer Stab und Einspannung)</li>
+<li>Kraft <span class="arithmatex">\( F = 4{,}45 \, \text{kN} \)</span>  </li>
+<li>eine Seite vollständig an einer Wand fixiert</li>
+<li>Material Baustahl gemäß ANSYS-Datenbank mit geändertem <strong>E-Modul</strong> auf 210.000 Mpa.  </li>
+</ul>
+<p>Untersuchen Sie die folgenden Varianten der Krafteinleitung am Hebelarm:  </p>
+<ul>
+<li>Geometrie Variante A <a href="../media/06_krafteinleitung/Torsionsstab_A.stp">Torsionsstab_A.stp</a></li>
+<li>Geometrie Variante B <a href="../media/06_krafteinleitung/Torsionsstab_B.stp">Torsionsstab_B.stp</a></li>
+<li>Geometrie Variante C <a href="../media/06_krafteinleitung/Torsionsstab_C.stp">Torsionsstab_C.stp</a></li>
+</ul>
+<p>Bearbeiten Sie folgende Punkte:</p>
+<ul>
+<li>Ermitteln Sie eine <strong>analytische Lösung</strong> für die maximale Spannung. Wo ist der kritische Querschnitt?</li>
+<li>Berechnen Sie in ANSYS die maximale Vergleichsspannung.  </li>
+<li>Achten Sie auf ein von der Vernetzung unabhängiges Ergebnis.  </li>
+<li>Führen Sie eine konvergierende Lösung herbei.  </li>
+<li>Diskutieren Sie, wie ein Krafteinleitungsproblem entstehen kann und wie es sich im FEM-Sinne beschreiben lässt.  </li>
+</ul>
+<h2 id="theoretischer-hintergrund-nach-spura">Theoretischer Hintergrund (nach Spura<sup id="fnref:Spura2019"><a class="footnote-ref" href="#fn:Spura2019">1</a></sup>)<a class="headerlink" href="#theoretischer-hintergrund-nach-spura" title="Permanent link">&para;</a></h2>
+<p>Die Kraft <span class="arithmatex">\(F\)</span> greift am Hebelarm exzentrisch zur Stabachse an. Dadurch entstehen gleichzeitig:</p>
+<ul>
+<li>ein Biegemoment <span class="arithmatex">\(M_{\text{B}}\)</span> durch den senkrechten Abstand der Kraft zur Stabachse  </li>
+<li>ein Torsionsmoment <span class="arithmatex">\(M_{\text{T}}\)</span> durch den wirksamen Hebelarm um die Stabachse  </li>
+<li>eine Querkraft <span class="arithmatex">\(F_Q\)</span>, deren Schubspannungsanteil im Vergleich zu Biegung und Torsion klein ist und hier vernachlässigt wird  </li>
+</ul>
+<p>Das zugrunde liegende Modell folgt der <strong>Euler-Bernoulli-Balkentheorie</strong>. Es wird angenommen, dass der Balken schubstarr ist, der Querschnitt während der Verformung eben bleibt und keine Verwölbung auftritt.</p>
+<h3 id="biegung-und-schiefe-biegung">Biegung und schiefe Biegung<a class="headerlink" href="#biegung-und-schiefe-biegung" title="Permanent link">&para;</a></h3>
+<p>Bei Torsionsstäben mit exzentrischer Krafteinleitung kann neben der Torsion auch Biegung auftreten. </p>
+<h4 id="gerade-biegung">Gerade Biegung<a class="headerlink" href="#gerade-biegung" title="Permanent link">&para;</a></h4>
+<p>Wirkt die Kraft in einer einzigen Ebene, entsteht <strong>gerade Biegung</strong>. Für den Vollkreisquerschnitt gilt:</p>
+<div class="arithmatex">\[
+\sigma_{\text{B}} = \frac{M}{W_b}
+\]</div>
+<p>mit dem Biegemoment <span class="arithmatex">\(M = F \cdot l\)</span> und dem Widerstandsmoment</p>
+<div class="arithmatex">\[
+W_b = \frac{\pi d^3}{32}
+\]</div>
+<p>Die Normalspannung verläuft über den Querschnitt linear. Die neutrale Faser bleibt horizontal und verläuft durch die Querschnittsmitte.</p>
+<hr />
+<h4 id="schiefe-biegung">Schiefe Biegung<a class="headerlink" href="#schiefe-biegung" title="Permanent link">&para;</a></h4>
+<p>Für die <strong>vorliegende Aufgabe ist ausschließlich die gerade Biegung relevant</strong>. Schiefe Biegung wird nur ergänzend dargestellt.</p>
+<details class="note">
+<summary>Schiefe Biegung (ergänzende Information)</summary>
+<p>Wirkt die Kraft nicht nur in einer Hauptebene, entsteht schiefe Biegung. Für symmetrische Querschnitte wie beim Vollkreis fallen die Hauptachsen mit den Koordinatenachsen <span class="arithmatex">\(y\)</span> und <span class="arithmatex">\(z\)</span> zusammen. Es handelt sich somit um den Sonderfall der schiefen Biegung um Hauptachsen.</p>
+<p>Das gesamte Biegemoment setzt sich aus zwei Anteilen um diese senkrechten Achsen zusammen:</p>
+<div class="arithmatex">\[
+M_y,\quad M_z
+\]</div>
+<p>Die resultierende Biegespannung im Randfaserpunkt ergibt sich aus der Überlagerung:</p>
+<div class="arithmatex">\[
+\sigma_{\text{B}} = \frac{M_y\,z}{I_y} + \frac{M_z\,y}{I_z}
+\]</div>
+<p>Die analytische Berechnung beschreibt damit die Normalspannung infolge kombinierter Biegung im Kreisquerschnitt. Für symmetrische Querschnitte ergibt sich die schiefe Biegung aus der Überlagerung der geraden Biegungen um <span class="arithmatex">\(y\)</span> und <span class="arithmatex">\(z\)</span>. Die resultierende Spannungsnulllinie liegt schräg im Querschnitt.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/02_schiefe_Biegung.png" title="Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)"><img alt="Schiefe Biegung: Superposition um y und z zu resultierender \(\sigma_x(y,z)\)" src="../media/06_krafteinleitung/02_schiefe_Biegung.png" width="700px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref2:Spura2019"><a class="footnote-ref" href="#fn:Spura2019">1</a></sup></span></p>
+</details>
+<h3 id="torsion">Torsion<a class="headerlink" href="#torsion" title="Permanent link">&para;</a></h3>
+<p>Durch das Torsionsmoment <span class="arithmatex">\(M_{\text{T}}\)</span> entstehen Schubspannungen im Querschnitt:</p>
+<div class="arithmatex">\[
+\tau_{\text{T}} = \frac{M_{\text{T}}\,r}{I_\text{p}}
+\]</div>
+<p>mit Radius <span class="arithmatex">\(r\)</span> und polarem Flächenträgheitsmoment <span class="arithmatex">\(I_\text{p}\)</span> des Vollkreises:</p>
+<div class="arithmatex">\[
+I_\text{p} = \frac{\pi r^4}{2}
+\]</div>
+<h3 id="vergleichsspannung-bei-kombinierter-beanspruchung">Vergleichsspannung bei kombinierter Beanspruchung<a class="headerlink" href="#vergleichsspannung-bei-kombinierter-beanspruchung" title="Permanent link">&para;</a></h3>
+<p>Für die Festigkeitsbewertung werden Biegespannung <span class="arithmatex">\(\sigma_{\text{B}}\)</span> und Schubspannung infolge Torsion <span class="arithmatex">\(\tau_{\text{T}}\)</span> zu einer <strong>Vergleichsspannung</strong> zusammengefasst, zum Beispiel nach von Mises:</p>
+<div class="arithmatex">\[
+\sigma_{\text{v}} = \sqrt{\sigma_{\text{B}}^{2} + 3\,\tau_{\text{T}}^{2}}
+\]</div>
+<p>Die analytische Berechnung liefert damit einen einfachen Referenzwert für die maximal zu erwartende Vergleichsspannung im Stab.<br />
+Die FEM ermittelt zusätzlich die örtliche Spannungsverteilung, die stark davon abhängt, <strong>wie die Kraft <span class="arithmatex">\(F\)</span> am Hebelarm in das Modell eingeleitet wird</strong>.</p>
+<hr />
+<h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
+<h3 id="1-projektverwaltung-und-geometrieimport">1. Projektverwaltung und Geometrieimport<a class="headerlink" href="#1-projektverwaltung-und-geometrieimport" title="Permanent link">&para;</a></h3>
+<p>Für die Untersuchung der Varianten ist ein separates System pro Geometrie sinnvoll. Die technische Datenquelle kann verknüpft werden, sodass Änderungen (z. B. am E-Modul) automatisch in alle Systeme übernommen werden.<br />
+Zweckmäßig ist es, zunächst <strong>eine Variante vollständig einzurichten und zu berechnen</strong>, anschließend über <em>Duplizieren</em> in der Projektübersicht zu kopieren, die technischen Daten zu verknüpfen und danach die Geometrie auszutauschen. So können viele Einstellungen im Modell übernommen werden und müssen nicht neu erstellt werden. Eine abschließende Überprüfung aller Randbedingungen bleibt jedoch erforderlich.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/03_Torsionsstab_Projekt.png" title="Projektaufbau mit drei Varianten in ANSYS Workbench"><img alt="Projektaufbau mit drei Varianten in ANSYS Workbench" src="../media/06_krafteinleitung/03_Torsionsstab_Projekt.png" width="700px" /></a></p>
+<h3 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h3>
+<p>Das Material ist standardmäßig <strong>Baustahl</strong> aus der ANSYS-Materialdatenbank. Die Anpassung des <strong>E-Moduls</strong> erfolgt in den <em>Technischen Daten</em> des Projekts.<br />
+Wird das Material <strong>vor</strong> der Systemerstellung geändert, wird der neue Wert automatisch in jedes System übernommen.  </p>
+<p>Erfolgt die Änderung <strong>nachträglich</strong>, muss das jeweilige System über den <strong>grünen Aktualisierungspfeil</strong> in der Projektoberfläche aktualisiert werden (siehe Abbildung oben).</p>
+<div class="admonition note">
+<p class="admonition-title">Hinweis</p>
+<p>Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt <a href="../05_elementtypen_ansatzf/#materialzuweisung"><strong>Elementtypen und Ansatzfunktionen – Materialzuweisung</strong></a>.</p>
+</div>
+<h3 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h3>
+<p>Zunächst wird ein <strong>Standardnetz</strong> erzeugt. Die Qualität kann visuell beurteilt werden.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/04_Torsionsstab_Standardnetz.png" title="Standardnetz des Torsionsstabs in ANSYS"><img alt="Standardnetz des Torsionsstabs in ANSYS" src="../media/06_krafteinleitung/04_Torsionsstab_Standardnetz.png" width="350px" /></a></p>
+<details class="question">
+<summary>Wie fällt die Beurteilung dieses Netzes aus?</summary>
+<p>Das dargestellte Netz ist deutlich zu grob.<br />
+Die Geometrie ist nur unzureichend aufgelöst, insbesondere an Übergängen und Rundungen sind die Facetten klar sichtbar.<br />
+Für eine belastbare Spannungsanalyse wäre daher eine feinere Vernetzung erforderlich.</p>
+</details>
+<h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
+<p>Die Randbedingungen bestehen aus einer <strong>festen Einspannung</strong> an der Wandfläche und einer <strong>äußeren Kraft</strong> am Ende des Hebelarms, wie in der Aufgabenstellung dargestellt.<br />
+Die Richtung der Kraft bestimmt die Überlagerung von Biegung und Torsion.</p>
+<h3 id="5-analyseeinstellungen">5. Analyseeinstellungen<a class="headerlink" href="#5-analyseeinstellungen" title="Permanent link">&para;</a></h3>
+<p>Die <strong>Standard-Einstellungen</strong> der statischen Analyse sind ausreichend.<br />
+Es sind keine Anpassungen erforderlich, solange es sich um eine lineare elastische Berechnung handelt.</p>
+<h3 id="6-auswertung">6. Auswertung<a class="headerlink" href="#6-auswertung" title="Permanent link">&para;</a></h3>
+<p>Gemäß Aufgabenstellung wird zunächst die <strong>Vergleichsspannung nach von Mises</strong> ausgewertet.  </p>
+<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
+<h3 id="vergleich-mit-analytischer-losung">Vergleich mit analytischer Lösung<a class="headerlink" href="#vergleich-mit-analytischer-losung" title="Permanent link">&para;</a></h3>
+<p>Die Simulation zeigt eine maximale <strong>Vergleichsspannung</strong> (von Mises) im Bereich der höchsten Beanspruchung des Stabs. Die maximale Spannung beträgt <strong>303,04 MPa</strong> und tritt im Übergang vom Hebelarm zum Stab auf, wo Biegung und Torsion überlagert wirken.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png" title="Torsionsstab – maximale Vergleichsspannung"><img alt="Torsionsstab – maximale Vergleichsspannung" src="../media/06_krafteinleitung/05_Torsionsstab_Vergleichsspannung.png" width="600px" /></a></p>
+<p>Die folgende Box enthält die analytische Lösung. Berechnen Sie zunächst die <strong>nominelle</strong> Vergleichsspannung eines glatten Vollstabs. Anschließend wird die in der Aufgabenstellung angegebene <strong>Kerbformzahl <span class="arithmatex">\(\alpha_k = 1{,}59\)</span></strong> verwendet, um die <strong>lokale maximale Vergleichsspannung</strong> im Übergangsbereich abzuschätzen.</p>
+<p><strong>Hinweise:</strong>  </p>
+<ul>
+<li>Der Schubspannungsanteil infolge Querkraft wird hier vernachlässigt.  </li>
+<li>Es liegt <strong>keine schiefe Biegung</strong> im Sinne der Überlagerung zweier orthogonaler Biegungen vor, sondern eine Kombination aus <strong>reiner Biegung</strong> und <strong>reiner Torsion</strong>.  </li>
+<li>Die <strong>Kerbformzahl <span class="arithmatex">\(\alpha_k\)</span></strong> wird nach der Ermittlung der nominellen Vergleichsspannung berücksichtigt.</li>
+</ul>
+<details class="note">
+<summary>Berechnung von <span class="arithmatex">\(\sigma_\text{v,nom}\)</span> und <span class="arithmatex">\(\sigma_\text{v,max}\)</span></summary>
+<p><strong>Gegeben:</strong></p>
+<div class="arithmatex">\[
+F = 4{,}45\,\text{kN}, \quad 
+L = 152{,}4\,\text{mm}, \quad 
+H = 203{,}2\,\text{mm}, \quad 
+d = 38{,}1\,\text{mm}, \quad
+\alpha_k = 1{,}59
+\]</div>
+<p><strong>Momente:</strong></p>
+<div class="arithmatex">\[
+M_\text{B} = F \cdot L = 678{.}180\,\text{Nmm}
+\]</div>
+<div class="arithmatex">\[
+M_\text{T} = F \cdot H = 904{.}240\,\text{Nmm}
+\]</div>
+<p><strong>Querschnittsgrößen (Vollkreis):</strong></p>
+<div class="arithmatex">\[
+r = \frac{d}{2} = 19{,}05\,\text{mm}, \qquad
+W_\text{B} = \frac{\pi d^3}{32} = 5{.}429{,}687\,\text{mm}^3, \qquad
+I_\text{p} = \frac{\pi d^4}{32} = 206{.}871{,}087\,\text{mm}^4
+\]</div>
+<p><strong>Nominelle Spannungen:</strong></p>
+<div class="arithmatex">\[
+\sigma_\text{B} 
+  = \frac{M_\text{B}}{W_\text{B}}
+  = \frac{678{.}180}{5{.}429{,}687}
+  = 124{,}90\,\text{N/mm}^2
+\]</div>
+<div class="arithmatex">\[
+\tau_\text{T} 
+  = \frac{M_\text{T}\,r}{I_\text{p}}
+  = \frac{904{.}240 \cdot 19{,}05}{206{.}871{,}087}
+  = 83{,}27\,\text{N/mm}^2
+\]</div>
+<p><strong>Nominelle Vergleichsspannung:</strong></p>
+<div class="arithmatex">\[
+\sigma_\text{v,nom}
+  = \sqrt{\sigma_\text{B}^2 + 3\,\tau_\text{T}^2}
+  = \sqrt{(124{,}90)^2 + 3 \cdot (83{,}27)^2}
+  = 190{,}79\,\text{N/mm}^2
+\]</div>
+<p><strong>Lokale Vergleichsspannung mit Kerbe:</strong></p>
+<div class="arithmatex">\[
+\sigma_\text{v,max}
+  = \alpha_k \,\sigma_\text{v,nom}
+  = 1{,}59 \cdot 190{,}79
+  = 303{,}36\,\text{N/mm}^2
+\]</div>
+</details>
+<p>Die folgende Tabelle zeigt die analytischen Ergebnisse, die FEM-Ergebnisse sowie die daraus berechnete prozentuale Abweichung:</p>
+<div class="arithmatex">\[
+\text{Abweichung} = \frac{\text{FEM} - \text{Analytisch}}{\text{Analytisch}} \times 100
+\]</div>
+<table>
+<thead>
+<tr>
+<th>Größe</th>
+<th>Analytische Lösung</th>
+<th>FEM-Ergebnis</th>
+<th>Abweichung</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>maximale Vergleichsspannung mit Kerbe <span class="arithmatex">\(\sigma_\mathrm{v,max}\)</span></td>
+<td>303,36 MPa</td>
+<td>303,04 MPa</td>
+<td>−0,11 %</td>
+</tr>
+</tbody>
+</table>
+<h3 id="einfluss-der-krafteinleitung">Einfluss der Krafteinleitung<a class="headerlink" href="#einfluss-der-krafteinleitung" title="Permanent link">&para;</a></h3>
+<p>Die Art der Krafteinleitung bestimmt die lokale Beanspruchung und beeinflusst somit direkt die Aussagekraft der FEM Simulation. Änderungen in der Lastanbindung führen zu deutlich unterschiedlichen Spannungsverteilungen und Konvergenzverhalten.</p>
+<h4 id="variante-a"><strong>Variante A</strong><a class="headerlink" href="#variante-a" title="Permanent link">&para;</a></h4>
+<p>Bei dieser Geometrie ist keine Fläche vorhanden, über die die Kraft so eingeleitet werden kann, dass der Hebel wirksam wird. Eine physikalisch sinnvolle Randbedingung lässt sich damit nicht formulieren. Das Problem ist in dieser Form nicht berechenbar und liefert folglich keine verwertbaren FEM Ergebnisse.</p>
+<hr />
+<h4 id="variante-b"><strong>Variante B</strong><a class="headerlink" href="#variante-b" title="Permanent link">&para;</a></h4>
+<p>Bei dieser Variante wird die Kraft eine sehr kleine Kontaktfläche eingeleitet, die vom Hebel erhaben angebracht ist. Dadurch entstehen lokal sehr hohe Spannungen und eine ausgeprägte Kerbwirkung. Mit zunehmender Netzverfeinerung steigen die Spannungsmaxima weiter an, der Spannungsverlauf konvergiert nicht. Die Ergebnisse sind daher für eine belastbare Bewertung der Bauteilfestigkeit ungeeignet.</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:520px"
+     data-fig='{
+       "data": [
+         {
+           "x": [1, 2, 3, 4, 5],
+           "y": [264.87, 304.6, 322.27, 468.52, 687.69],
+           "name": "Vergleichsspannung σ<sub>v</sub>",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y1",
+           "hovertemplate": "Lösung %{x}<br>σ<sub>v</sub> = %{y} MPa<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3, 4, 5],
+           "y": [85218, 255408, 663171, 1074384, 1519585],
+           "name": "Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Knoten = %{y}<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3, 4, 5],
+           "y": [48886, 165578, 458381, 756071, 1078741],
+           "name": "Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Elemente = %{y}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Konvergenzverhalten – Variante B"},
+         "xaxis": {"title": "Lösungsnummer", "dtick": 1},
+
+         "yaxis": {
+           "title": "Vergleichsspannung (MPa)",
+           "side": "left"
+         },
+
+         "yaxis2": {
+           "title": "Knoten / Elemente",
+           "overlaying": "y",
+           "side": "right",
+           "showgrid": false
+         },
+
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+
+         "legend": {
+           "x": 0,
+           "y": 1,
+           "xanchor": "left",
+           "yanchor": "top"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<p>Die hohe Spannungsspitze tritt direkt an der Kontaktstelle der Kraftanbringung auf einer kleinen Fläche auf. Durch diese kleine Fläche entstehen extrem steile Spannungsgradienten, die numerisch nicht sauber aufgelöst werden können. Das Ergebnis divergiert bei Netzverfeinerung.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/06a_Torsionsstab_nicht_konv_Spannung.png" title="Variante B – nicht konvergierende Vergleichsspannung"><img alt="Variante B – nicht konvergierende Vergleichsspannung" src="../media/06_krafteinleitung/06a_Torsionsstab_nicht_konv_Spannung.png" width="750px" /></a></p>
+<p>Die Detailansicht zeigt die maximale Spannung direkt an der Krafteinleitungsfläche. Hier konzentriert sich die gesamte Last auf einen scharf begrenzten Bereich, was zu einer künstlichen Kerbwirkung und nicht physikalischen Spannungsspitzen führt.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/06b_Torsionsstab_nicht_konv_Spannung.png" title="Variante B – Detailansicht der Lastfläche"><img alt="Variante B – Detailansicht der Lastfläche" src="../media/06_krafteinleitung/06b_Torsionsstab_nicht_konv_Spannung.png" width="750px" /></a></p>
+<hr />
+<h4 id="variante-c"><strong>Variante C</strong><a class="headerlink" href="#variante-c" title="Permanent link">&para;</a></h4>
+<p>Bei dieser Variante erfolgt die Krafteinleitung über eine definierte Fläche mittels Sekantenschnitt. Die Last wird dadurch ohne zusätzliche Kerbwirkung in den Hebelarm eingeleitet. Die resultierenden Spannungsverläufe sind stabil und zeigen ein deutliches Konvergenzverhalten.</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:520px"
+     data-fig='{
+       "data": [
+         {
+           "x": [1, 2, 3],
+           "y": [268.83, 300.86, 303.04],
+           "name": "Vergleichsspannung σ<sub>v</sub>",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y1",
+           "hovertemplate": "Lösung %{x}<br>σ<sub>v</sub> = %{y} MPa<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3],
+           "y": [85533, 245546, 434902],
+           "name": "Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Knoten = %{y}<extra></extra>"
+         },
+         {
+           "x": [1, 2, 3],
+           "y": [49154, 158569, 292824],
+           "name": "Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "hovertemplate": "Lösung %{x}<br>Elemente = %{y}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Konvergenzverhalten – Variante C"},
+         "xaxis": {"title": "Lösungsnummer", "dtick": 1},
+
+         "yaxis": {
+           "title": "Vergleichsspannung (MPa)",
+           "side": "left"
+         },
+
+         "yaxis2": {
+           "title": "Knoten / Elemente",
+           "overlaying": "y",
+           "side": "right",
+           "showgrid": false
+         },
+
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         },
+
+         "legend": {
+           "x": 0,
+           "y": 1,
+           "xanchor": "left",
+           "yanchor": "top"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<p>Die Fläche zur Krafteinleitung entsteht hier aus einem <strong>Sekantenschnitt</strong> im CAD. Dadurch wird eine <strong>kerbfreie Lastübertragung</strong> ermöglicht.</p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/07_Torsionsstab_Sekantenschnitt.png" title="Geometrie – Variante C"><img alt="Geometrie – Variante C" src="../media/06_krafteinleitung/07_Torsionsstab_Sekantenschnitt.png" width="750px" /></a></p>
+<p>Der Halbkreis-Ausschnitt definiert die Form der Lastfläche. Durch die Rotation entsteht eine Geometrie, die keine lokalen Kerben erzeugt.  </p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png" title="CAD-Skizze – Sekantenschnitt"><img alt="CAD-Skizze – Sekantenschnitt" src="../media/06_krafteinleitung/08_Torsionsstab_Sekantenschnitt_CAD.png" width="450px" /></a></p>
+<p>Im Gegensatz zur Krafteinleitung in Variante B treten <strong>keine Spannungsspitzen</strong> auf, und das Ergebnis <strong>konvergiert</strong> bei Netzverfeinerung im kritischen Querschnitt. </p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png" title="Vergleichsspannung – Variante C"><img alt="Vergleichsspannung – Variante C" src="../media/06_krafteinleitung/09_Torsionsstab_Sekantenschnitt_Spannung.png" width="750px" /></a></p>
+<h2 id="krafteinleitung-uber-knoten">Krafteinleitung über Knoten<a class="headerlink" href="#krafteinleitung-uber-knoten" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a>  </p>
 <!-- 
+Das ist die komplizierte Variante für den Schluss mit Koordinatensystem und knotengenauer Einleitung bei Variante A. Führt aber zu gleichen Problemen.  
+-->
 
-## Lernziele
-
-Nach Abschluss dieses Moduls können die Studierenden:
-
-* typische Ursachen numerischer Spannungsüberhöhungen erkennen,  
-* den Unterschied zwischen physikalisch und numerisch bedingten Spannungsspitzen erklären,  
-* unphysikalische Punkt- oder Linienlasten vermeiden,  
-* geeignete Maßnahmen zur Entschärfung von Spannungssingularitäten anwenden (z. B. Sekantenschnitt, Radius, größere Lastfläche),  
-* die Bedeutung der Krafteinleitung für die Ergebnisgüte einschätzen.
-
----
-
-## Theoretischer Hintergrund
-
+<h2 id="zusammenfassung-und-weiterfuhrende-hinweise">Zusammenfassung und weiterführende Hinweise<a class="headerlink" href="#zusammenfassung-und-weiterfuhrende-hinweise" title="Permanent link">&para;</a></h2>
+<!-- 
 Eine der häufigsten Fehlerquellen in der FEM ist die **idealisierte Krafteinleitung**.  
 Lasten, die in der Realität über Flächen verteilt werden, werden im Modell häufig als Punkt- oder Linienlasten angegeben.  
 Dadurch entstehen an Kanten oder Punkten **Singularitäten** – mathematisch divergente Spannungen.
 
-### Typische Ursachen:
+Typische Ursachen:
+
 * Punktlast auf Fläche → σ → ∞  
 * Linienlast oder scharfer Kantenübergang  
 * abrupte Querschnittsänderung ohne Radius  
@@ -426,72 +1022,36 @@ Dadurch entstehen an Kanten oder Punkten **Singularitäten** – mathematisch di
 Die FEM zeigt in solchen Fällen keine Konvergenz:  
 Bei jeder Netzverfeinerung steigt die lokale Spannung weiter an.
 
-### Lösung: realistische Krafteinleitung
+Lösung: realistische Krafteinleitung
+
 Physikalisch korrekte Lastübertragung durch:
+
 * **Flächenlast** statt Punktlast,  
 * **Übergangsradien oder Fasen** statt scharfer Kanten,  
 * **Sekantenschnitt** (sanfter Geometrieübergang),  
 * **elastische Zwischenlage oder Endplatte** zur Kraftverteilung.
 
----
+!!! note "FIXME"
+    Wozu haben wir überhaupt das E-Modul geändert?
 
-## Aufgabenstellung
+!!! note "Hinweis"
+    Ob mit **linearen oder quadratischen Elementen** gerechnet wurde, lässt sich in den *Details* des *Mesh*-Objekts unter *Element Order* prüfen.  
+    Für die Spannungsanalyse in glatten Bereichen sind quadratische Elemente empfehlenswert.
 
-1. Modellieren Sie einen zylindrischen oder rechteckigen Körper (z. B. Block 100×40×20 mm).  
-2. Variante A: Belastung durch **Punktlast** auf kleiner Fläche (1×1 mm).  
-3. Variante B: Belastung über **Flächenlast** auf 20×20 mm.  
-4. Variante C: Belastung über Flächenlast + Sekantenschnitt oder Radius (r = 5 mm).  
-5. Vergleichen Sie die Spannungsverteilungen und ermitteln Sie, ob eine Konvergenz erreicht wird.  
-6. Diskutieren Sie, welche Variante das physikalisch sinnvollste Ergebnis liefert.
-
----
-
-## Umsetzung in ANSYS Mechanical
-
-* Erstellen Sie drei Geometrievarianten (A – C).  
-* Verwenden Sie identische Randbedingungen und Netzeinstellungen.  
-* Definieren Sie für jede Variante die gleiche Gesamtkraft F (z. B. 10 kN).  
-  → Bei Flächenlast = F / A.  
-* Vergleichen Sie σ<sub>v</sub> im Lastbereich entlang einer Linie oder Fläche.  
-* Optional: Visualisieren Sie die Spannungsverläufe mit Plotly für Berichte.
-
----
-
-## Diskussion der Ergebnisse
-
-* Punkt- und Linienlasten erzeugen unrealistische Spannungsspitzen; die Ergebnisse sind nicht konvergent.  
-* Eine Flächenlast mit Sekantenschnitt oder Radius führt zu stabilen, physikalisch interpretierbaren Spannungen.  
-* Netzverfeinerung darf das Ergebnis nicht beliebig verändern → Konvergenzprüfung.  
-* Lokale Spannungsspitzen dürfen nur bewertet werden, wenn sie geometrisch begründet sind (Kerbe, Kontakt).  
-* Bei echten Punktkontakten: Spannungswert lokal unendlich, aber Energie endlich → Bewertung über Energieansatz oder Mittelspannung.
-
----
-
-wie geht's weiter:
-  - Modul 4 Krafteinleitung: 06_krafteinleitung.md
-  - Modul 5 Symmetrie: 07_symmetrie.md
-  - Modul 6 Modalanalyse: 08_modalanalyse.md
-  - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
-  - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
-  - Modul 9 Sensoren II (Druck): 11_sensor_druck.md
-  - Modul 10 Kontakt: 12_kontakt.md
-  - Modul 11 Ausblick: 13_ausblick.md
-
-  | Modul | Titel | Kerninhalt |
-| :----: | :---- | :---------- |
-| **03** | **Elementtypen & Netzqualität** | Vergleich linearer und quadratischer Volumenelemente (SOLID185/186), Einfluss der Ansatzfunktionen auf Genauigkeit und Konvergenz, Netzgüte, Spannungs­glättung, einfache h-Studie. |
-| **04** | **Krafteinleitung & Spannungsüberhöhungen** | Analyse unrealistischer Punkt- und Linienlasten, Divergenzen an Kanten, Einführung realer Flächenlasten, Sekantenschnitt und Übergangsradien zur Entschärfung, Spannungsverteilung im Lastbereich, Netzqualität und Spannungs­glättung |
-| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt), |
-| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
-| **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
-| **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
-| **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
-| **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
-| **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
+!!! note "Hinweis"
+    man hätte auch können die Stelle der Krafteinleitung ausklammern und ein fokussiertes Ergebnis nur an der Einspannung erzeugen können.     
 
 -->
 
-<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a></p><style type="text/css">.quiz {
+<h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:Spura2019">
+<p>Christian Spura. <em>Technische Mechanik 2. Elastostatik</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2019. ISBN 978-3-658-19978-4 978-3-658-19979-1. URL: <a href="http://link.springer.com/10.1007/978-3-658-19979-1">http://link.springer.com/10.1007/978-3-658-19979-1</a> (visited on 2019-05-28), <a href="https://doi.org/10.1007/978-3-658-19979-1">doi:10.1007/978-3-658-19979-1</a>.&#160;<a class="footnote-backref" href="#fnref:Spura2019" title="Jump back to footnote 1 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Spura2019" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;

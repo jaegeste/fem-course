@@ -971,18 +971,18 @@ In ANSYS, **SOLID185** is used as a linear and **SOLID186** as a quadratic eleme
 
 <?quiz?>
 question: Which parameter in FEM describes the typical length of an element?
+answer: Element type
 answer-correct: Mesh size \(h\)
 answer: Element order \(p\)
-answer: Element type
 content:
 <em>Note:</em> The mesh size \(h\) defines the characteristic element length and determines the resolution of the mesh.
 <?/quiz?>
 
 <?quiz?>
 question: What does the parameter \(p\) stand for in the finite element method?
-answer: Material parameter
 answer-correct: Polynomial order of the shape function
 answer: Element size
+answer: Material parameter
 content:
 <em>Note:</em> \(p\) indicates the order of the shape function (linear, quadratic, cubic …).
 <?/quiz?>
@@ -1007,8 +1007,8 @@ content:
 
 <?quiz?>
 question: Which ANSYS element is linear and 3D?
-answer: SOLID186
 answer-correct: SOLID185
+answer: SOLID186
 answer: BEAM189
 content:
 <em>Note:</em> SOLID185 is a linear 3D solid element; SOLID186 is quadratic.
@@ -1016,7 +1016,7 @@ content:
 
 <?quiz?>
 question: What does the shape function \(\Phi_i(x)\) describe?
-answer: The material properties of the node
+answer: The material properties at the node
 answer: The load at node \(i\)
 answer-correct: The influence of node \(i\) on the total displacement
 content:
@@ -1026,17 +1026,17 @@ content:
 <?quiz?>
 question: How many nodes does a quadratic 1D element have?
 answer: 2
-answer: 4
 answer-correct: 3
+answer: 4
 content:
 <em>Note:</em> Quadratic 1D elements have one mid-node in addition to the two end nodes.
 <?/quiz?>
 
 <?quiz?>
 question: Why are quadratic elements more accurate?
-answer-correct: They can represent curved deformations within an element.
 answer: They are smaller.
 answer: They have fewer degrees of freedom.
+answer-correct: They can represent curved deformations within an element.
 content:
 <em>Note:</em> Additional nodes and higher polynomial order enable better approximation of stress and displacement distributions.
 <?/quiz?>
@@ -1044,8 +1044,8 @@ content:
 <?quiz?>
 question: What does “mesh-independent result” mean?
 answer: Mesh size has a large influence on the result.
-answer-correct: Further mesh refinement changes the result only slightly.
 answer: Mesh refinement causes divergence.
+answer-correct: Further mesh refinement changes the result only slightly.
 content:
 <em>Note:</em> Mesh independence is achieved when results no longer change significantly with smaller \(h\).
 <?/quiz?>
@@ -1070,9 +1070,9 @@ content:
 
 <?quiz?>
 question: When is the use of quadratic elements particularly useful?
-answer: For homogeneous stress distributions
-answer: Only for linear deformations
 answer-correct: For curved geometries or high stress gradients
+answer: Only for linear deformations
+answer: For homogeneous stress distributions
 content:
 <em>Note:</em> Quadratic elements are particularly advantageous for local effects or curved geometries.
 <?/quiz?>
