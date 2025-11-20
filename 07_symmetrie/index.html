@@ -402,6 +402,19 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Modul 5 Modellreduktion
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="./" class="md-nav__link md-nav__link--active">
         
   
@@ -413,6 +426,88 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-flansch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Flansch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterfuhrende-aspekte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weiterführende Aspekte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-aufgabenstellung-kuhlkorper-lineare-symmetrie" class="md-nav__link">
+    <span class="md-ellipsis">
+      optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -438,6 +533,77 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung-flansch" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung Flansch
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterfuhrende-aspekte" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weiterführende Aspekte
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-aufgabenstellung-kuhlkorper-lineare-symmetrie" class="md-nav__link">
+    <span class="md-ellipsis">
+      optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -453,9 +619,207 @@
 
 
 <h1 id="modul-05-symmetrie-und-modellreduktion">Modul 05 – Symmetrie und Modellreduktion<a class="headerlink" href="#modul-05-symmetrie-und-modellreduktion" title="Permanent link">&para;</a></h1>
+<h2 id="lernziele">Lernziele<a class="headerlink" href="#lernziele" title="Permanent link">&para;</a></h2>
+<p>Nach Abschluss dieses Moduls können die Studierenden:</p>
+<ul>
+<li>Symmetrieeigenschaften eines Bauteils erkennen und korrekt anwenden  </li>
+<li>Symmetrie in ANSYS definieren und geeignete Randbedingungen formulieren  </li>
+<li>typische Fehler bei falsch orientierten Symmetrierandbedingungen vermeiden  </li>
+<li>Druck vs. Kraft sauber unterscheiden  </li>
+<li>reibungsfreie Lager oder zyklische Symmetrie zur Reduktion der Rechenzeit einsetzen  </li>
+<li>die Rechenzeit signifikant reduzieren, ohne die Aussagekraft der Ergebnisse zu beeinträchtigen  </li>
+</ul>
+<h2 id="aufgabenstellung-flansch">Aufgabenstellung Flansch<a class="headerlink" href="#aufgabenstellung-flansch" title="Permanent link">&para;</a></h2>
+<p>Der in Abbildung dargestellte Flansch soll auf maximale Spannung und maximale Verformung untersucht werden. Die Rechenzeit soll durch geeignete Symmetrieausnutzung minimiert werden. Die Lösung muss netzunabhängig sein und ein sauberes Konvergenzverhalten zeigen.</p>
+<ul>
+<li>Fall A: Innendruck von 200 bar  </li>
+<li>Fall B: Zugkraft von 100 kN (aufgebracht an den Stirnflächen des Flansches)</li>
+</ul>
+<p><a class="glightbox" href="../media/07_symmetrie/flansch.svg" title="Flansch"><img alt="Flansch" src="../media/07_symmetrie/flansch.svg" width="800px" /></a></p>
+<p>Verwendet wird die bereitgestellte Geometrie des Flansches sowie deren reduzierte Varianten (Halbschnitt, Viertelmodell, Achtelmodell).</p>
+<p><strong>Geometrie:</strong></p>
+<ul>
+<li><a href="../media/07_symmetrie/flansch_voll.stp">flansch_voll.stp</a>  </li>
+<li><a href="../media/07_symmetrie/flansch_halb.stp">flansch_halb.stp</a>  </li>
+<li><a href="../media/07_symmetrie/flansch_viertel.stp">flansch_viertel.stp</a>  </li>
+<li><a href="../media/07_symmetrie/flansch_achtel.stp">flansch_achtel.stp</a></li>
+</ul>
+<p><strong>Material (neu anzulegen):</strong> <em>Flanschstahl450</em></p>
+<ul>
+<li>Dichte <span class="arithmatex">\(\rho = 7.850 \,\text{kg/m}^3\)</span></li>
+<li>Elastizitätsmodul <span class="arithmatex">\(E = 215.000 \,\text{MPa}\)</span></li>
+<li>Querkontraktionszahl <span class="arithmatex">\(\nu = 0,30\)</span></li>
+<li>Streckgrenze <span class="arithmatex">\(R_\text{e} = 450 \,\text{MPa}\)</span></li>
+</ul>
+<h2 id="theoretischer-hintergrund">Theoretischer Hintergrund<a class="headerlink" href="#theoretischer-hintergrund" title="Permanent link">&para;</a></h2>
+<p>Die Nutzung von Symmetrie in der numerischen Analyse ermöglicht eine Reduktion des geometrischen Modells, der Freiheitsgrade und damit der Rechenzeit. Die Gültigkeit einer Modellreduktion setzt voraus, dass <strong>Geometrie</strong>, <strong>Belastung</strong>, <strong>Randbedingungen</strong> und <strong>Material</strong> geeignete Symmetrieeigenschaften besitzen. Nur wenn alle Bedingungen gleichzeitig erfüllt sind, ist das reduzierte Modell äquivalent zum Vollmodell.</p>
+<h3 id="symmetriebedingungen">Symmetriebedingungen<a class="headerlink" href="#symmetriebedingungen" title="Permanent link">&para;</a></h3>
+<p>Die Nutzung von Symmetrie gehört zu den wirkungsvollsten Strategien zur Reduktion der Modellgrösse in der FEM. Voraussetzung ist, dass das <strong>physikalische Verhalten des Vollmodells</strong> durch ein <strong>geeignet reduziertes Teilmodell</strong> vollständig beschrieben werden kann.  </p>
+<p>Für die Anwendung von Symmetrie müssen vier Bedingungen gleichzeitig erfüllt sein:</p>
+<ul>
+<li>
+<p><strong>Geometrische Symmetrie</strong><br />
+  Die Bauteilgeometrie muss durch eine oder mehrere Ebenen beziehungsweise Achsen so teilbar sein, dass die verbleibenden Teilbereiche zueinander identisch sind.<br />
+  Typische Beispiele sind Modelle mit Halbierung, Viertelung oder Achtelung sowie axiale oder zyklische Symmetrie.</p>
+</li>
+<li>
+<p><strong>Materialsymmetrie</strong><br />
+  Das Materialverhalten muss in allen symmetrisch abgebildeten Teilbereichen identisch sein.<br />
+  Für isotrope Werkstoffe ist diese Bedingung automatisch erfüllt.</p>
+</li>
+<li>
+<p><strong>Lastsymmetrie</strong><br />
+  Belastungen müssen in allen durch Symmetrie erzeugten Teilbereichen konsistent wirken.<br />
+  Ein flächenbezogener Druck erfüllt dies meist automatisch, eine einzelne Kraft wirkt dagegen nur dann symmetrisch, wenn sie korrekt auf den jeweilig berücksichtigten Modellanteil aufgeteilt wird.</p>
+</li>
+<li>
+<p><strong>Randbedingungssymmetrie</strong><br />
+  Randbedingungen müssen in den durch Symmetrie entsprechenden Bereichen gleichwertig sein.<br />
+  Unterschiedliche Lagerungen in zwei Teilbereichen würden die Symmetrie verletzen.</p>
+</li>
+</ul>
+<p>Sind alle vier Bedingungen erfüllt, kann anstelle des Vollmodells ein geeigneter Ausschnitt des Bauteils berechnet werden. Die zugehörige Symmetrierandbedingung sperrt die Verschiebung normal zur Symmetrieebene und erlaubt Bewegungen in ihren tangentialen Richtungen.</p>
+<p>Dies führt zu einer erheblichen Reduktion der Freiheitsgrade und damit der Rechenzeit, ohne dass die Qualität oder Aussagekraft der Ergebnisse leidet.</p>
+<hr />
+<h3 id="typische-symmetrieebenen">Typische Symmetrieebenen<a class="headerlink" href="#typische-symmetrieebenen" title="Permanent link">&para;</a></h3>
+<p>In der Technik treten je nach Bauteilgeometrie und Belastung unterschiedliche Formen von Symmetrie auf. Die folgenden Symmetriearten zählen zu den häufigsten und ermöglichen jeweils eine deutliche Reduktion des Modells.</p>
+<ul>
+<li>
+<p><strong>Planare Symmetrieebenen (XY, XZ, YZ)</strong><br />
+  Planare Symmetrie tritt auf, wenn ein Bauteil durch eine oder mehrere senkrechte oder waagrechte Ebenen in identische Teilbereiche zerlegt werden kann. Dazu gehören die klassischen Ebenen XY, XZ und YZ. Typische Beispiele sind symmetrische Flansche, Zugstäbe mit mittigem Querschnitt, Platten mit zentralem Loch oder dünne Bauteile, deren Ober- und Unterseite identisch aufgebaut sind.</p>
+</li>
+<li>
+<p><strong>axiale Symmetrie</strong><br />
+  Rotationssymmetrie um eine Achse: Alle Querschnitte besitzen die gleiche Form.<br />
+  Typische Beispiele: Zylinder, Druckbehälter, Dichtflächen, Scheiben und viele Flanschgrundkörper.</p>
+</li>
+<li>
+<p><strong>zyklische Symmetrie</strong><br />
+  Das Bauteil besteht aus wiederholenden Segmenten, die sich periodisch um eine Achse anordnen.<br />
+  Typische Beispiele: Lochkreise in Flanschen, Laufräder, Turbinenscheiben oder Felgen mit identischen Speichen.</p>
+</li>
+</ul>
+<hr />
+<h3 id="druck-und-kraft-bei-teilmodellen">Druck und Kraft bei Teilmodellen<a class="headerlink" href="#druck-und-kraft-bei-teilmodellen" title="Permanent link">&para;</a></h3>
+<h4 id="druck">Druck<a class="headerlink" href="#druck" title="Permanent link">&para;</a></h4>
+<p>Druck <span class="arithmatex">\(p\)</span> wirkt stets <strong>senkrecht zur belasteten Fläche</strong> und orientiert sich entlang der lokalen Flächennormalen. Da <span class="arithmatex">\(p\)</span> eine <strong>flächenbezogene Last</strong> ist, bleibt der Wert auch bei reduzierten Modellen unverändert.<br />
+Die daraus resultierende Kraft <span class="arithmatex">\(F\)</span> ergibt sich erst durch Multiplikation mit der wirksamen Fläche <span class="arithmatex">\(A\)</span>:</p>
+<div class="arithmatex">\[
+F = p \cdot A
+\]</div>
+<h4 id="kraft">Kraft<a class="headerlink" href="#kraft" title="Permanent link">&para;</a></h4>
+<p>Eine Kraft <span class="arithmatex">\(F\)</span> ist eine <strong>integrale Last</strong>, die über eine gesamte Fläche wirkt. Wird nur ein Teil des Bauteils modelliert, reduziert sich die wirksame Fläche.<br />
+Daher muss die Kraft im reduzierten Modell <span class="arithmatex">\(F_r\)</span> entsprechend skaliert werden. Der Skalierungsfaktor <span class="arithmatex">\(\alpha\)</span> beschreibt den Anteil des berechneten Teilmodells am Vollmodell:</p>
+<div class="arithmatex">\[
+F_r = \alpha F, \qquad \alpha = \frac{\text{Teilmodell}}{\text{Gesamtmodell}}
+\]</div>
+<p>Typische Skalierungen:</p>
+<ul>
+<li>Viertelmodell: <span class="arithmatex">\(\alpha = \frac{1}{4}\)</span>  </li>
+<li>Achtelmodell: <span class="arithmatex">\(\alpha = \frac{1}{8}\)</span>  </li>
+<li>Halbmodell: <span class="arithmatex">\(\alpha = \frac{1}{2}\)</span></li>
+</ul>
+<p>Auf diese Weise bleibt die resultierende <strong>Flächenpressung <span class="arithmatex">\( \sigma = F/A \)</span></strong> und damit der physikalische Lastzustand korrekt erhalten.</p>
+<hr />
+<h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
+<h3 id="1-projektverwaltung-und-geometrieimport">1. Projektverwaltung und Geometrieimport<a class="headerlink" href="#1-projektverwaltung-und-geometrieimport" title="Permanent link">&para;</a></h3>
+<!-- 
+Wie Projekt organisieren? für alle Modelle EIN System jeweils für Druck und Kraft?
+-->
+
+<h3 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h3>
+<p>Hier muss ein Material neu angelegt werden. Dies geschieht in der <strong>Materialübersicht (Mitte/oben)</strong> der im aktuellen Projekt verfügbaren technischen Daten.  </p>
+<div class="admonition note">
+<p class="admonition-title">Hinweis</p>
+<p>Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt <a href="../05_elementtypen_ansatzf/#materialzuweisung"><strong>Elementtypen und Ansatzfunktionen – Materialzuweisung</strong></a>.</p>
+</div>
+<p><strong>Materialname:</strong> FEM-Flanschstahl 450</p>
+<ul>
+<li>Dichte <span class="arithmatex">\(\rho = 7 850 \,\text{kg/m}^3\)</span></li>
+<li>Elastizitätsmodul <span class="arithmatex">\(E = 215.000 \,\text{MPa}\)</span></li>
+<li>Querkontraktionszahl <span class="arithmatex">\(\nu = 0.30\)</span></li>
+<li>Streckgrenze <span class="arithmatex">\(R_\text{e} = 450 \,\text{MPa}\)</span></li>
+</ul>
+<h3 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h3>
+<h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
+<!-- 
+Kraft/Druck
+Reibungsfreie Lager
+zyklische Symmetrie
+-->
+
+<h3 id="reibungsfreie-lager">Reibungsfreie Lager<a class="headerlink" href="#reibungsfreie-lager" title="Permanent link">&para;</a></h3>
+<p>Ein reibungsfreies Lager verhindert Verschiebung in Normalrichtung. Die Randbedingung lautet:</p>
+<div class="arithmatex">\[
+u \cdot n = 0
+\]</div>
+<p>mit<br />
+* <span class="arithmatex">\(u\)</span>: Verschiebungsvektor<br />
+* <span class="arithmatex">\(n\)</span>: Einheitsnormalvektor<br />
+* <span class="arithmatex">\(u \cdot n\)</span>: Komponente der Verschiebung senkrecht zur Fläche</p>
+<p>Tangentiale Verschiebungen bleiben zulässig:</p>
+<div class="arithmatex">\[
+u_t \ne 0
+\]</div>
+<p>wobei <span class="arithmatex">\(u_t\)</span> die tangentiale Verschiebungskomponente bezeichnet.</p>
+<p>Ein reibungsfreies Lager erzeugt keine Querkräfte und verhindert Zwängungen durch Reibung. Typische Anwendungen:</p>
+<ul>
+<li>radiale Abstützungen  </li>
+<li>Bauteilführung  </li>
+<li>Ergänzung bei Symmetrie zur Modellreduktion</li>
+</ul>
+<hr />
+<h3 id="zyklische-symmetrie">Zyklische Symmetrie<a class="headerlink" href="#zyklische-symmetrie" title="Permanent link">&para;</a></h3>
+<p>Bei zyklischer Symmetrie wird ein Bauteil in identische Sektoren unterteilt, die sich durch eine Drehung um einen festen Winkel exakt überlagern. Dadurch genügt die Berechnung <strong>eines einzigen Sektors</strong>, wenn die vier allgemeinen Symmetriebedingungen (Geometrie, Material, Lasten, Randbedingungen) erfüllt sind.</p>
+<p>Die zyklische Symmetrie verknüpft die Randflächen dieses Sektors so, dass sich ihre Verschiebungen beim Übergang zum nächsten Sektor <strong>nur um eine definierte Rotation unterscheiden</strong>. Für die praktische Anwendung bedeutet dies:</p>
+<ul>
+<li>Die beiden Begrenzungsflächen des Sektors werden kinematisch miteinander gekoppelt.  </li>
+<li>Die Verschiebung eines Punkts auf der einen Fläche entspricht der Verschiebung des zugehörigen Punkts auf der anderen Fläche, nur um den Sektorwinkel gedreht.  </li>
+<li>Das Modell verhält sich damit so, als wären alle Sektoren vorhanden.</li>
+</ul>
+<p>Typische Vorteile:</p>
+<ul>
+<li>drastisch reduzierte Modellgrösse  </li>
+<li>deutlich geringere Rechenzeit  </li>
+<li>verbesserte numerische Stabilität  </li>
+<li>geeignet für rotierende Maschinen, Scheiben, Zahnräder, Turbinenlaufräder oder Bremsscheiben</li>
+</ul>
+<h3 id="5-analyseeinstellungen">5. Analyseeinstellungen<a class="headerlink" href="#5-analyseeinstellungen" title="Permanent link">&para;</a></h3>
+<h3 id="6-auswertung">6. Auswertung<a class="headerlink" href="#6-auswertung" title="Permanent link">&para;</a></h3>
+<!-- 
+## Umsetzung in ANSYS
+
+* Geometrie importieren (`flansch_voll.stp`, `flansch_viertel.stp`, `flansch_achtel.stp`)  
+* Symmetrieebenen erzeugen → *Connections* → *Symmetry*  
+* lokale Koordinatensysteme prüfen  
+* Belastungsdefinition:  
+    * Druck 200 bar direkt auf Innenfläche  
+    * Zugkraft 100 kN anteilig je nach Modellreduktion  
+* reibungsfreie Lager an geeigneten Flächen zur Stabilisierung  
+* Netz: globale h-Verfeinerung, lokale Verfeinerung am Übergang Rohr–Flansch  
+* Konvergenz: Vergleich Spannung/Verformung über Elementgrösse  
+* Solverwahl: direkt (präzise), iterativ (schnell bei grossen Modellen)  
+-->
+
+<hr />
+<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
+<!--  
+Netzeinflussstudie vorausgesetzt
+Rechenzeit/Anzahl Elemente vs. Schnittmodell
+-->
+
+<h2 id="weiterfuhrende-aspekte">Weiterführende Aspekte<a class="headerlink" href="#weiterfuhrende-aspekte" title="Permanent link">&para;</a></h2>
+<!--
+* Einsatz zyklischer Symmetrie bei rotierenden oder segmentierten Strukturen  
+* häufige Fehler: unvollständige Symmetrie, doppelte Lagerung, asymmetrische Kontakte  
+* Darstellung von Ergebnissen über *Section Plane*  
+* Vergleich Vollmodell vs. Teilmodell hinsichtlich Rechenzeit und Ergebniskonsistenz  
+* Erweiterung auf Modalanalysen und komplexere Baugruppen  
+-->
+
+<h2 id="optional-aufgabenstellung-kuhlkorper-lineare-symmetrie">optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)<a class="headerlink" href="#optional-aufgabenstellung-kuhlkorper-lineare-symmetrie" title="Permanent link">&para;</a></h2>
 <!-- 
 wie geht's weiter:
-  - Modul 5 Symmetrie: 07_symmetrie.md
   - Modul 6 Modalanalyse: 08_modalanalyse.md
   - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
   - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
@@ -465,8 +829,7 @@ wie geht's weiter:
 
   | Modul | Titel | Kerninhalt |
 | :----: | :---- | :---------- |
-| **05** | **Symmetrie & Modellreduktion** | Nutzung von Symmetrieebenen zur Reduktion von Rechenzeit, korrekte Definition der Symmetrierandbedingungen, Fehlerquellen bei falscher Orientierung, Anwendung am Zugstab oder Flansch, kleiner Exkurs zum Solver (direkt/indirekt), |
-| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). |
+| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). Gitarrenseite unter Vorspannung?|
 | **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
 | **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
 | **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
