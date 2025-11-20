@@ -119,9 +119,16 @@ Auf diese Weise bleibt die resultierende **Flächenpressung \( \sigma = F/A \)**
 
 ### 1. Projektverwaltung und Geometrieimport
 
+<!-- 
 Wie Projekt organisieren? für alle Modelle EIN System jeweils für Druck und Kraft?
+-->
 
 ### 2. Materialzuweisung
+
+Hier muss ein Material neu angelegt werden. Dies geschieht in der **Materialübersicht (Mitte/oben)** der im aktuellen Projekt verfügbaren technischen Daten.  
+
+!!! note "Hinweis"
+    Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt [**Elementtypen und Ansatzfunktionen – Materialzuweisung**](../05_elementtypen_ansatzf/#materialzuweisung).
 
 **Materialname:** FEM-Flanschstahl 450
 
@@ -134,59 +141,63 @@ Wie Projekt organisieren? für alle Modelle EIN System jeweils für Druck und Kr
 
 ### 4. Randbedingungen
 
+<!-- 
 Kraft/Druck
 Reibungsfreie Lager
 zyklische Symmetrie
+-->
 
 ### Reibungsfreie Lager
 
-Ein reibungsfreies Lager verhindert Verschiebung in Normalrichtung:
+Ein reibungsfreies Lager verhindert Verschiebung in Normalrichtung. Die Randbedingung lautet:
 
 \[
 u \cdot n = 0
 \]
 
-lässt aber tangentiale Verschiebungen zu:
+mit  
+* \(u\): Verschiebungsvektor  
+* \(n\): Einheitsnormalvektor  
+* \(u \cdot n\): Komponente der Verschiebung senkrecht zur Fläche
+
+Tangentiale Verschiebungen bleiben zulässig:
 
 \[
 u_t \ne 0
 \]
 
-Damit werden Querkräfte vermieden und Zwängungen ausgeschlossen.  
-Typische Anwendungen:
+wobei \(u_t\) die tangentiale Verschiebungskomponente bezeichnet.
+
+Ein reibungsfreies Lager erzeugt keine Querkräfte und verhindert Zwängungen durch Reibung. Typische Anwendungen:
 
 * radiale Abstützungen  
 * Bauteilführung  
-* Ergänzung bei Symmetrie zur Stabilisierung des Modells
+* Ergänzung bei Symmetrie zur Modellreduktion
 
 ---
 
 ### Zyklische Symmetrie
 
-Bei zyklischer Symmetrie besteht ein Körper aus \(N\) identischen Sektoren.  
-Es genügt die Berechnung eines Sektors, wenn gilt:
+Bei zyklischer Symmetrie wird ein Bauteil in identische Sektoren unterteilt, die sich durch eine Drehung um einen festen Winkel exakt überlagern. Dadurch genügt die Berechnung **eines einzigen Sektors**, wenn die vier allgemeinen Symmetriebedingungen (Geometrie, Material, Lasten, Randbedingungen) erfüllt sind.
 
-\[
-u(\theta + \Delta\theta) = R(\Delta\theta)\, u(\theta)
-\]
+Die zyklische Symmetrie verknüpft die Randflächen dieses Sektors so, dass sich ihre Verschiebungen beim Übergang zum nächsten Sektor **nur um eine definierte Rotation unterscheiden**. Für die praktische Anwendung bedeutet dies:
 
-mit dem Rotationsoperator
+* Die beiden Begrenzungsflächen des Sektors werden kinematisch miteinander gekoppelt.  
+* Die Verschiebung eines Punkts auf der einen Fläche entspricht der Verschiebung des zugehörigen Punkts auf der anderen Fläche, nur um den Sektorwinkel gedreht.  
+* Das Modell verhält sich damit so, als wären alle Sektoren vorhanden.
 
-\[
-R(\Delta\theta) =
-\begin{pmatrix}
-\cos\Delta\theta & -\sin\Delta\theta & 0 \\
-\sin\Delta\theta & \cos\Delta\theta & 0 \\
-0 & 0 & 1
-\end{pmatrix}.
-\]
+Typische Vorteile:
 
-Dies reduziert Rechenzeit und Speicherbedarf erheblich und verbessert die Kondition des Gleichungssystems.
+* drastisch reduzierte Modellgrösse  
+* deutlich geringere Rechenzeit  
+* verbesserte numerische Stabilität  
+* geeignet für rotierende Maschinen, Scheiben, Zahnräder, Turbinenlaufräder oder Bremsscheiben
 
 ### 5. Analyseeinstellungen
 
 ### 6. Auswertung
 
+<!-- 
 ## Umsetzung in ANSYS
 
 * Geometrie importieren (`flansch_voll.stp`, `flansch_viertel.stp`, `flansch_achtel.stp`)  
@@ -199,25 +210,28 @@ Dies reduziert Rechenzeit und Speicherbedarf erheblich und verbessert die Kondit
 * Netz: globale h-Verfeinerung, lokale Verfeinerung am Übergang Rohr–Flansch  
 * Konvergenz: Vergleich Spannung/Verformung über Elementgrösse  
 * Solverwahl: direkt (präzise), iterativ (schnell bei grossen Modellen)  
+-->
 
 ---
 
 ## Diskussion der Ergebnisse
 
+<!--  
 Netzeinflussstudie vorausgesetzt
 Rechenzeit/Anzahl Elemente vs. Schnittmodell
+-->
 
 ## Weiterführende Aspekte
 
+<!--
 * Einsatz zyklischer Symmetrie bei rotierenden oder segmentierten Strukturen  
 * häufige Fehler: unvollständige Symmetrie, doppelte Lagerung, asymmetrische Kontakte  
 * Darstellung von Ergebnissen über *Section Plane*  
 * Vergleich Vollmodell vs. Teilmodell hinsichtlich Rechenzeit und Ergebniskonsistenz  
 * Erweiterung auf Modalanalysen und komplexere Baugruppen  
+-->
 
-## Aufgabenstellung Kühlkörper (lineare Symmetrie...)
-
-
+## optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)
 
 <!-- 
 wie geht's weiter:
