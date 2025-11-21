@@ -130,7 +130,7 @@ Hier muss ein Material neu angelegt werden. Dies geschieht in der **Materialübe
 !!! note "Hinweis"
     Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt [**Elementtypen und Ansatzfunktionen – Materialzuweisung**](../05_elementtypen_ansatzf/#materialzuweisung).
 
-**Materialname:** FEM-Flanschstahl 450
+**Materialname:** *Flanschstahl450*
 
 * Dichte \(\rho = 7 850 \,\text{kg/m}^3\)
 * Elastizitätsmodul \(E = 215.000 \,\text{MPa}\)
@@ -156,6 +156,7 @@ u \cdot n = 0
 \]
 
 mit  
+
 * \(u\): Verschiebungsvektor  
 * \(n\): Einheitsnormalvektor  
 * \(u \cdot n\): Komponente der Verschiebung senkrecht zur Fläche
