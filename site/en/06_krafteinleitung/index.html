@@ -1022,19 +1022,19 @@ I_\text{p} = \frac{\pi d^4}{32} = 206,871,087\,\text{mm}^4
 <h2 id="load-application-via-nodes">Load application via nodes<a class="headerlink" href="#load-application-via-nodes" title="Permanent link">&para;</a></h2>
 <p>The external load can alternatively be applied to <strong>one or several nodes</strong>.<br />
 The selection is made using the <em>selection filter</em> for <strong>nodes</strong> in the toolbar, as shown in the figure.</p>
-<p><a class="glightbox" href="media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.en.png" title="Torsion bar – load application via nodal force"><img alt="Torsion bar – load application via nodal force" src="media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.en.png" width="900px" /></a></p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.png" title="Torsion bar – load application via nodal force"><img alt="Torsion bar – load application via nodal force" src="../media/06_krafteinleitung/10_Torsionsstab_Knotenkraft.png" width="900px" /></a></p>
 <p>Applying the load to <strong>a single node</strong> is possible in principle, but it comes with several disadvantages:</p>
 <ul>
 <li>The exact geometric position of the node must be specified via a <em>coordinate system</em> and the <strong>components</strong> in the selection table. This is comparatively time-consuming.</li>
 <li>The position of the selected node is <strong>mesh dependent</strong> and changes with every remeshing step.</li>
 <li>The resulting stress concentration appears <strong>very locally</strong> (often at only one or very few nodes).  </li>
 </ul>
-<p><a class="glightbox" href="media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.en.png" title="Torsion bar – local stress concentration due to nodal force"><img alt="Torsion bar – local stress concentration due to nodal force" src="media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.en.png" width="900px" /></a></p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.png" title="Torsion bar – local stress concentration due to nodal force"><img alt="Torsion bar – local stress concentration due to nodal force" src="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Spannung.png" width="900px" /></a></p>
 <ul>
 <li>The <strong>convergence criterion</strong> cannot be used for such assignments.<br />
   ANSYS outputs the following message:</li>
 </ul>
-<p><a class="glightbox" href="media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.en.png" title="Torsion bar – message regarding convergence criterion"><img alt="Torsion bar – message regarding convergence criterion" src="media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.en.png" width="500px" /></a></p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.png" title="Torsion bar – message regarding convergence criterion"><img alt="Torsion bar – message regarding convergence criterion" src="../media/06_krafteinleitung/11_Torsionsstab_Knotenkraft_Fehler.png" width="500px" /></a></p>
 <h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
 <p>One of the most common sources of error in FEM is <strong>idealised load application</strong>. Loads that are distributed across surfaces in reality are often applied as point or line loads in the model. This leads to <strong>singularities</strong> at edges or points.</p>
 <p>Typical causes:</p>
@@ -1063,7 +1063,7 @@ The observed differences in the stress field therefore result solely from the ty
 <summary>Note on element order</summary>
 <p>Whether <strong>linear or quadratic elements</strong> were used can be identified in several places in the <em>solution information</em>.<br />
 In the example shown, the element type <strong>SOLID187</strong> is used, which is a quadratic 3D element.</p>
-<p><a class="glightbox" href="media/06_krafteinleitung/12_Torsionsstab_Elementtypen.en.png" title="Solution information – element type SOLID187"><img alt="Solution information – element type SOLID187" src="media/06_krafteinleitung/12_Torsionsstab_Elementtypen.en.png" width="900px" /></a></p>
+<p><a class="glightbox" href="../media/06_krafteinleitung/12_Torsionsstab_Elementtypen.png" title="Solution information – element type SOLID187"><img alt="Solution information – element type SOLID187" src="../media/06_krafteinleitung/12_Torsionsstab_Elementtypen.png" width="900px" /></a></p>
 </details>
 <details class="note">
 <summary>Alternative to load application: exclude the critical zone</summary>

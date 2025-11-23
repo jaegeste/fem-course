@@ -156,7 +156,7 @@ Bei fehlender Einspannung sind in den *Analyseeinstellungen* die *schwachen Fede
 ??? note "Hinweis zur Einheit des Drucks"
     **1 bar = 0,1 MPa**
 
-#### Symmetrie mittel reibungsfreier Lager
+#### Symmetrie mittels *reibungsfreier Lager*
 
 Ein reibungsfreies Lager verhindert Verschiebung in Normalrichtung. Die Randbedingung lautet:
 
@@ -184,17 +184,9 @@ Ein reibungsfreies Lager erzeugt keine Querkräfte und verhindert Zwängungen du
 * Bauteilführung  
 * Ergänzung bei Symmetrie zur Modellreduktion
 
-Reibungsfreie Lager bieten sich in dieser Aufgabe besonders an, da sie auf sämtlichen Schnittflächen entsprechend der Abbildung angebracht werden können. Dies kann an einer einzelnen oder an mehreren Schnittflächen erfolgen, ohne die Ergebnisqualität zu beeinflussen.
-
-<!-- markdownlint-disable MD033 -->
-<br>
-<!-- markdownlint-enable MD033 -->
-
-[![Reibungsfreie Lager auf Schnittflächen](media/07_symmetrie/01_schnittflaechen_reibungsfrei.png){width=600px}](media/07_symmetrie/01_schnittflaechen_reibungsfrei.png "Reibungsfreie Lager auf Schnittflächen"){.glightbox}
-
 ---
 
-#### Zyklische Symmetrie
+#### Symmetrie mittels *zyklischer Symmetrie*
 
 Bei zyklischer Symmetrie wird ein Bauteil in identische Sektoren unterteilt, die sich durch eine Drehung um einen festen Winkel exakt überlagern. Dadurch genügt die Berechnung **eines einzigen Sektors**, wenn die vier allgemeinen Symmetriebedingungen (Geometrie, Material, Lasten, Randbedingungen) erfüllt sind.
 
@@ -211,34 +203,26 @@ Typische Vorteile:
 * verbesserte numerische Stabilität  
 * geeignet für rotierende Maschinen, Scheiben, Zahnräder, Turbinenlaufräder oder Bremsscheiben
 
-Für die Umsetzung wird zunächst ein geeignetes Koordinatensystem benötigt. In diesem Beispiel wird ein **Zylinderkoordinatensystem** verwendet, dessen Umfangsrichtung mit der Umfangsrichtung des Flansches übereinstimmt. Das Koordinatensystem wird im Strukturbaum unter *Koordinatensysteme* angelegt.
-
-[![Zylinderkoordinatensystem für zyklische Symmetrie anlegen](media/07_symmetrie/02_zylinderkoordinatensystem.png){width=900px}](media/07_symmetrie/02_zylinderkoordinatensystem.png "Zylinderkoordinatensystem für zyklische Symmetrie anlegen"){.glightbox}
-
-Anschliessend wird im Strukturbaum ein Objekt *Symmetrie* hinzugefügt. Dazu im Strukturbaum das *Modell* markieren und im Menü *Vorbereiten* den Eintrag *Symmetrie* auswählen. Dadurch entsteht im Strukturbaum ein neues Objekt *Symmetrie*.
-
-[![Symmetrieobjekt im Strukturbaum einfügen](media/07_symmetrie/03_symmetrie_strukturbaum.png){width=900px}](media/07_symmetrie/03_symmetrie_strukturbaum.png "Symmetrieobjekt im Strukturbaum einfügen"){.glightbox}
-
-Innerhalb dieses Symmetrieobjekts wird ein *Zyklischer Bereich* eingefügt. Dies erfolgt über das Kontextmenü des Symmetrieobjekts (*Einfügen* → *Zyklischer Bereich*).
-
-[![Zyklischen Bereich unter Symmetrie einfügen](media/07_symmetrie/04_zyklischer_bereich_einfuegen.png){width=900px}](media/07_symmetrie/04_zyklischer_bereich_einfuegen.png "Zyklischen Bereich unter Symmetrie einfügen"){.glightbox}
-
-Im Objekt *Zyklischer Bereich* werden anschliessend die Schnittflächen und das zuvor definierte Zylinderkoordinatensystem zugewiesen. Die beiden Schnittflächen werden als *Untere Grenze* und *Obere Grenze* definiert, als *Koordinatensystem* ist das Zylinderkoordinatensystem auszuwählen.
-
-[![Einstellungen im zyklischen Bereich: Schnittflächen und Koordinatensystem](media/07_symmetrie/05_zyklischer_bereich_details.png){width=900px}](media/07_symmetrie/05_zyklischer_bereich_details.png "Einstellungen im zyklischen Bereich: Schnittflächen und Koordinatensystem"){.glightbox}
-
-Die zyklische Symmetrie kann an einer einzelnen oder an mehreren Schnittflächen implementiert werden. Solange die Geometrie korrekt sektorenweise beschrieben ist und der zyklische Bereich konsistent definiert ist, wirkt sich die konkrete Aufteilung der Schnittflächen im Modell nicht auf das physikalische Ergebnis aus.
-
 ### 5. Analyseeinstellungen
 
-In den Analyseeinstellungen sind die **schwachen Federn** zu aktivieren, damit das Gleichungssystem auch bei fehlender Einspannung eindeutig lösbar bleibt. Weitere Anpassungen der Standardeinstellungen sind nicht erforderlich.
+Schwache Federn!
 
 ### 6. Auswertung
 
-Die Auswertung erfolgt über die **Gesamtverformung** und die **von Mises Spannung**.
+<!-- 
+## Umsetzung in ANSYS
 
-!!! note "Hinweis"
-    Zur Vergleichbarkeit der verschiedenen Modellvarianten ist ein numerisches Konvergenzkriterium hier nicht zielführend, da es den direkten Vergleich erschwert. Dennoch ist unbedingt darauf zu achten, dass ein **netzunabhängiges Ergebnis** erreicht wird. Die kritischen Bereich könnten manuell verfeinert werden, falls erforderlich.  
+* Geometrie importieren (`flansch_voll.stp`, `flansch_viertel.stp`, `flansch_achtel.stp`)  
+* Symmetrieebenen erzeugen → *Connections* → *Symmetry*  
+* lokale Koordinatensysteme prüfen  
+* Belastungsdefinition:  
+    * Druck 200 bar direkt auf Innenfläche  
+    * Zugkraft 100 kN anteilig je nach Modellreduktion  
+* reibungsfreie Lager an geeigneten Flächen zur Stabilisierung  
+* Netz: globale h-Verfeinerung, lokale Verfeinerung am Übergang Rohr–Flansch  
+* Konvergenz: Vergleich Spannung/Verformung über Elementgrösse  
+* Solverwahl: direkt (präzise), iterativ (schnell bei grossen Modellen)  
+-->
 
 ---
 
