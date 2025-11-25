@@ -156,7 +156,7 @@ Bei fehlender Einspannung sind in den *Analyseeinstellungen* die *schwachen Fede
 ??? note "Hinweis zur Einheit des Drucks"
     **1 bar = 0,1 MPa**
 
-#### Symmetrie mittel reibungsfreier Lager
+#### Symmetrie mittels *reibungsfreier Lager*
 
 Ein reibungsfreies Lager verhindert Verschiebung in Normalrichtung. Die Randbedingung lautet:
 
@@ -194,7 +194,7 @@ Reibungsfreie Lager bieten sich in dieser Aufgabe besonders an, da sie auf sämt
 
 ---
 
-#### Zyklische Symmetrie
+#### Symmetrie mittels *zyklischer Symmetrie*
 
 Bei zyklischer Symmetrie wird ein Bauteil in identische Sektoren unterteilt, die sich durch eine Drehung um einen festen Winkel exakt überlagern. Dadurch genügt die Berechnung **eines einzigen Sektors**, wenn die vier allgemeinen Symmetriebedingungen (Geometrie, Material, Lasten, Randbedingungen) erfüllt sind.
 
