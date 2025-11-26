@@ -71,6 +71,8 @@ plugins:
             - Modul 3 Elementtypen/Ansatzfunktionen: 05_elementtypen_ansatzf.md
             - Modul 4 Krafteinleitung: 06_krafteinleitung.md
             - Modul 5 Modellreduktion: 07_symmetrie.md
+            - Modul 6 Modalanalyse: 08_modalanalyse.md
+            - Übungen: uebungen.md
         - locale: en
           name: 🇬🇧 English
           build: true
@@ -83,4 +85,6 @@ plugins:
             - Module 3 Element Types/Shape functions: 05_elementtypen_ansatzf.en.md
             - Module 4 Load Application: 06_krafteinleitung.en.md
             - Module 5 Modell Reduction: 07_symmetrie.en.md
+            - Module 6 Modal Analysis: 08_modalanalyse.en.md
+            - Exercises: uebungen.en.md
 

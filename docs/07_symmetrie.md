@@ -20,7 +20,7 @@ Der in Abbildung dargestellte Flansch soll auf maximale Spannung und maximale Ve
 
 [![Flansch](media/07_symmetrie/flansch.svg){width=800px}](media/07_symmetrie/flansch.svg "Flansch"){.glightbox}
 
-Verwendet wird die bereitgestellte Geometrie des Flansches sowie deren reduzierte Varianten (Halbschnitt, Viertelmodell, Achtelmodell).
+Verwendet wird die bereitgestellte Geometrie des Flansches sowie deren reduzierte Varianten (Halbschnitt, Viertelschnitt, Achtelschnitt).
 
 **Geometrie:**
 
@@ -42,7 +42,7 @@ Die Nutzung von Symmetrie in der numerischen Analyse ermöglicht eine Reduktion 
 
 ### Symmetriebedingungen
 
-Die Nutzung von Symmetrie gehört zu den wirkungsvollsten Strategien zur Reduktion der Modellgrösse in der FEM. Voraussetzung ist, dass das **physikalische Verhalten des Vollmodells** durch ein **geeignet reduziertes Teilmodell** vollständig beschrieben werden kann.  
+Die Nutzung von Symmetrie gehört zu den wirkungsvollsten Strategien zur Reduktion der Modellgröße in der FEM. Voraussetzung ist, dass das **physikalische Verhalten des Vollmodells** durch ein **geeignet reduziertes Teilmodell** vollständig beschrieben werden kann.  
 
 Für die Anwendung von Symmetrie müssen vier Bedingungen gleichzeitig erfüllt sein:
 
@@ -68,7 +68,7 @@ Dies führt zu einer erheblichen Reduktion der Freiheitsgrade und damit der Rech
 
 ---
 
-### Typische Symmetrieebenen
+### Typische Symmetrieeigenschaften
 
 In der Technik treten je nach Bauteilgeometrie und Belastung unterschiedliche Formen von Symmetrie auf. Die folgenden Symmetriearten zählen zu den häufigsten und ermöglichen jeweils eine deutliche Reduktion des Modells.
 
@@ -206,7 +206,7 @@ Die zyklische Symmetrie verknüpft die Randflächen dieses Sektors so, dass sich
 
 Typische Vorteile:
 
-* drastisch reduzierte Modellgrösse  
+* drastisch reduzierte Modellgröße
 * deutlich geringere Rechenzeit  
 * verbesserte numerische Stabilität  
 * geeignet für rotierende Maschinen, Scheiben, Zahnräder, Turbinenlaufräder oder Bremsscheiben
@@ -255,47 +255,239 @@ In den Analyseeinstellungen sind die **schwachen Federn** zu aktivieren, damit d
 Die Auswertung erfolgt über die **Gesamtverformung** und die **von Mises Spannung**.
 
 !!! note "Hinweis"
-    Zur Vergleichbarkeit der verschiedenen Modellvarianten ist ein numerisches Konvergenzkriterium hier nicht zielführend, da es den direkten Vergleich erschwert. Dennoch ist unbedingt darauf zu achten, dass ein **netzunabhängiges Ergebnis** erreicht wird. Die kritischen Bereich könnten manuell verfeinert werden, falls erforderlich.  
+    Zur Vergleichbarkeit der verschiedenen Modellvarianten ist ein numerisches Konvergenzkriterium hier nicht zielführend, da es den direkten Vergleich erschwert. Dennoch ist unbedingt darauf zu achten, dass ein **netzunabhängiges Ergebnis** erreicht wird. Die kritischen Bereiche könnten manuell verfeinert werden, falls erforderlich.  
 
 ---
 
 ## Diskussion der Ergebnisse
 
-<!--  
-Netzeinflussstudie vorausgesetzt
-Rechenzeit/Anzahl Elemente vs. Schnittmodell
--->
+Hier werden exemplarisch für folgende Parameter die Ergebnisse vorgestellt:
+
+* Reibungsfreie Lagerung zur Nutzung der Symmetrie  
+* globale Netzgröße von 2 mm  
+* Druckbelastung gemäß Aufgabenstellung
+
+Bei dieser Netzgröße ist der Einfluss der Vernetzung vernachlässigbar klein, sodass die Unterschiede ausschließlich aus der Modellreduktion entstehen.
+
+| Schnitt        | max. Spannung | max. Verformung  | Anzahl Knoten | Anzahl Elemente | Rechenzeit |
+|----------------|--------------------|---------------------|----------------|------------------|------------|
+| Voll           |      155,82 MPa    |      0,0477 mm      |     374495    |     221036        |     60 s       |
+| Halbschnitt    |      155,81 MPa   |      0,0475 mm       |     186336    |     108995        |     32 s       |
+| Viertelschnitt |      155,96 MPa     |      0,0464 mm     |      94112     |      54956      |      25 s      |
+| Achtelschnitt  |       155,81 MPa   |       0,0460 mm   |      46599       |    26940       |     20 s       |
+
+Die Größe des betrachteten Schnitts zeigt nur einen sehr kleinen Einfluss auf die **Verformung** und die **maximale Spannung**.
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [0.0477,0.0475,0.0464,0.0460],
+           "name": "Max. Verformung",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["0.0477 mm","0.0475 mm","0.0464 mm","0.0460 mm"],
+           "hovertemplate": "Schnitt = %{x}<br>Max. Verformung = %{text}<extra></extra>"
+         },
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [155.82,155.81,155.96,155.81],
+           "name": "Max. Spannung",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["155.82 MPa","155.81 MPa","155.96 MPa","155.81 MPa"],
+           "hovertemplate": "Schnitt = %{x}<br>Max. Spannung = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Einfluss der Modellreduktion auf Spannung und Verformung"},
+         "xaxis": {"title": "Schnitt"},
+         "yaxis": {
+           "title": "Max. Verformung (mm)",
+           "side": "left",
+           "range": [0, 0.05]
+         },
+         "yaxis2": {
+           "title": "Max. Spannung (MPa)",
+           "overlaying": "y",
+           "side": "right",
+           "range": [0, 160]
+         },
+         "legend": {
+           "x": 0.95,
+           "y": 0.5,
+           "xanchor": "right",
+           "yanchor": "middle",
+           "bgcolor": "rgba(255,255,255,0.6)"
+         },
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+Die **Rechenzeit** und die **Modellgröße** gemessen über die Anzahl der Knoten und Elemente nehmen mit zunehmender Reduktion des Modells deutlich ab.
+
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [374495,186336,94112,46599],
+           "name": "Anzahl Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["374.495","186.336","94.112","46.599"],
+           "hovertemplate": "Schnitt = %{x}<br>Knoten = %{text}<extra></extra>"
+         },
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [221036,108995,54956,26940],
+           "name": "Anzahl Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["221.036","108.995","54.956","26.940"],
+           "hovertemplate": "Schnitt = %{x}<br>Elemente = %{text}<extra></extra>"
+         },
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [60,32,25,20],
+           "name": "Rechenzeit",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["60 s","32 s","25 s","20 s"],
+           "hovertemplate": "Schnitt = %{x}<br>Rechenzeit = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Modellreduktion: Knoten, Elemente und Rechenzeit"},
+         "xaxis": {"title": "Schnitt"},
+         "yaxis": {
+           "title": "Knoten / Elemente",
+           "side": "left",
+           "range": [0, 400000]
+         },
+         "yaxis2": {
+           "title": "Rechenzeit (s)",
+           "overlaying": "y",
+           "side": "right",
+           "range": [0, 70]
+         },
+         "legend": {
+           "x": 0.95,
+           "y": 0.5,
+           "xanchor": "right",
+           "yanchor": "middle",
+           "bgcolor": "rgba(255,255,255,0.6)"
+         },
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+## Zusammenfassung
+
+* Symmetrie ermöglicht eine deutliche Reduktion der Modellgröße und Rechenzeit  
+* Voraussetzung sind symmetrische Geometrie, Materialien, Lasten und Randbedingungen  
+* Druck bleibt unverändert, Kräfte müssen im Teilmodell skaliert werden  
+* Reibungsfreie Lager bilden Symmetriebedingungen korrekt ab  
+* Zyklische Symmetrie koppelt Sektorrandflächen über einen Drehwinkel  
+* Netzunabhängigkeit ist zentral für einen validen Vergleich der reduzierten Modelle  
 
 ## Weiterführende Aspekte
 
-<!--
-* Einsatz zyklischer Symmetrie bei rotierenden oder segmentierten Strukturen  
-* häufige Fehler: unvollständige Symmetrie, doppelte Lagerung, asymmetrische Kontakte  
-* Darstellung von Ergebnissen über *Section Plane*  
-* Vergleich Vollmodell vs. Teilmodell hinsichtlich Rechenzeit und Ergebniskonsistenz  
-* Erweiterung auf Modalanalysen und komplexere Baugruppen  
--->
+!!! warning "FIXME: Erweiterung Abschnitt Weiterführende Aspekte"
+    Darstellung von Ergebnissen bei zyklischer Symmetrie  
+    Nutzen der Features **Symmetrie-Bereich** und **Linear Periodisch**
 
-## optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)
+## Quiz zur Selbstkontrolle
 
-<!-- 
-wie geht's weiter:
-  - Modul 6 Modalanalyse: 08_modalanalyse.md
-  - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
-  - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
-  - Modul 9 Sensoren II (Druck): 11_sensor_druck.md
-  - Modul 10 Kontakt: 12_kontakt.md
-  - Modul 11 Ausblick: 13_ausblick.md
+<!-- markdownlint-disable MD033 -->
 
-  | Modul | Titel | Kerninhalt |
-| :----: | :---- | :---------- |
-| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). Gitarrenseite unter Vorspannung?|
-| **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
-| **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
-| **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
-| **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
-| **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
+<?quiz?>
+question: Was ist der Hauptvorteil der Nutzung von Symmetrie in der FEM?
+answer: Es erhöht die Steifigkeit des Modells und reduziert Spannungen
+answer-correct: Es reduziert die Modellgröße und damit die Rechenzeit ohne Verlust an Aussagekraft
+answer: Es macht eine Netzgenerierung überflüssig
+content:
+<em>Hinweis:</em> Symmetrie reduziert die Freiheitsgrade des Modells, wodurch die Analyse effizienter wird.
+<?/quiz?>
 
--->
+<?quiz?>
+question: Welche Symmetrieformen treten bei technischen Bauteilen typischerweise auf?
+answer-correct: Planare, axiale und zyklische Symmetrie
+answer: Nur planare Symmetrie
+answer: Nur axiale und spiegelnde Symmetrie
+content:
+<em>Hinweis:</em> Viele Bauteile weisen Kombinationen aus planaren, axialen oder zyklischen Symmetrien auf.
+<?/quiz?>
 
-[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}  
+<?quiz?>
+question: Welche Kombination von Eigenschaften muss erfüllt sein, damit ein reduziertes Symmetriemodell physikalisch gleichwertig zum Vollmodell ist?
+answer: Geometrie und Belastung
+answer: Material und Randbedingungen
+answer-correct: Geometrie, Material, Lasten und Randbedingungen
+content:
+<em>Hinweis:</em> Nur wenn Geometrie, Material, Lasten und Randbedingungen die gleichen Symmetrieeigenschaften besitzen, darf ein Teilmodell das Vollmodell vollständig ersetzen.
+<?/quiz?>
+
+<?quiz?>
+question: Wie wirkt sich die Modellreduktion auf die Umsetzung von Druck und Kraft im Teilmodell aus?
+answer-correct: Der Druck bleibt unverändert, die Kraft wird mit dem Anteil des Teilmodells am Vollmodell skaliert
+answer: Druck und Kraft bleiben unverändert, da beide flächenbezogene Lasten sind
+answer: Der Druck muss skaliert werden, die Kraft bleibt unverändert
+content:
+<em>Hinweis:</em> Druck ist eine flächenbezogene Last und bleibt bei Teilmodellen gleich, eine resultierende Kraft ist eine integrale Grösse und muss mit dem Flächenanteil skaliert werden.
+<?/quiz?>
+
+<?quiz?>
+question: Welche Aussage beschreibt die Wirkung eines reibungsfreien Lagers auf einer Schnittfläche am treffendsten?
+answer: Es sperrt alle Verschiebungskomponenten und erlaubt nur Drehungen
+answer: Es sperrt nur tangentiale Verschiebungen, die normale Verschiebung bleibt frei
+answer-correct: Es sperrt die Verschiebung normal zur Fläche und lässt tangentiale Verschiebungen zu
+content:
+<em>Hinweis:</em> Mathematisch gilt \(u \cdot n = 0\): Die Komponente der Verschiebung senkrecht zur Fläche wird unterdrückt, die Bewegung in tangentialer Richtung bleibt möglich.
+<?/quiz?>
+
+<?quiz?>
+question: Welcher Vorteil ergibt sich typischerweise aus der Verwendung zyklischer Symmetrie beim Flansch mit Lochkreis?
+answer: Nur die Lasten werden reduziert, die Anzahl der Freiheitsgrade bleibt gleich
+answer-correct: Die Modellgrösse sinkt deutlich, während die Aussagekraft der Ergebnisse erhalten bleibt
+answer: Die Randbedingungen können beliebig gewählt werden, solange die Geometrie zyklisch ist
+content:
+<em>Hinweis:</em> Durch die Berechnung eines einzigen Sektors werden Freiheitsgrade und Rechenzeit stark reduziert, bei korrekt definierter zyklischer Kopplung bleiben die physikalischen Ergebnisse repräsentativ für das Vollmodell.
+<?/quiz?>
+
+<?quiz?>
+question: Weshalb sollen in den Analyseeinstellungen schwache Federn aktiviert werden, wenn keine explizite Einspannung vorhanden ist?
+answer: Um die Eigenfrequenzen des Flansches zu erhöhen
+answer-correct: Um das Gleichungssystem auch ohne Einspannung eindeutig lösbar zu machen
+answer: Um den Einfluss des Materials Flanschstahl450 zu reduzieren
+content:
+<em>Hinweis:</em> Schwache Federn verhindern freie Starrkörperbewegung und stellen sicher, dass das Gleichungssystem eine eindeutige Lösung besitzt, ohne das Verformungsniveau wesentlich zu beeinflussen.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
