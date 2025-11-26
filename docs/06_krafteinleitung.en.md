@@ -139,7 +139,7 @@ If the material is modified **before** creating the systems, the new value is au
 If the modification is made **afterwards**, each system must be updated using the **green refresh arrow** in the project schematic (see figure above).
 
 !!! note "Note"
-    Further information on material definition and data properties can be found in the section [**Element types and shape functions – Material assignment**](../05_elementtypen_ansatzf/#materialzuweisung).
+    Further information on material definition and data properties can be found in the section [**Element types and shape functions – Material assignment**](./05_elementtypen_ansatzf.md/#material-assignment)
 
 ### 3. Mesh generation
 

@@ -213,7 +213,21 @@ Typische Vorteile:
 
 Für die Umsetzung wird zunächst ein geeignetes Koordinatensystem benötigt. In diesem Beispiel wird ein **Zylinderkoordinatensystem** verwendet, dessen Umfangsrichtung mit der Umfangsrichtung des Flansches übereinstimmt. Das Koordinatensystem wird im Strukturbaum unter *Koordinatensysteme* angelegt.
 
+Dabei ist zu beachten:
+
+* Für die Erstellung muss eine **Zylinderfläche** ausgewählt werden.  
+* Neue Koordinatensysteme entstehen immer **im Zentrum der ausgewählten Fläche** in allen Richtungen.  
+* Unter *Typ* muss von **kartesisch** auf **zylindrisch** umgeschaltet werden.  
+* Die Richtung der Zylinderkoordinate muss gegebenenfalls angepasst werden.  
+* Die Einstellungen der Zylinderkoordinate werden in den *Details* des neuen Koordinatensystems vorgenommen.  
+* Eine **eindeutige Benennung** des Koordinatensystems ist sehr hilfreich.
+
 [![Zylinderkoordinatensystem für zyklische Symmetrie anlegen](media/07_symmetrie/02_zylinderkoordinatensystem.png){width=900px}](media/07_symmetrie/02_zylinderkoordinatensystem.png "Zylinderkoordinatensystem für zyklische Symmetrie anlegen"){.glightbox}
+
+[![Zylinderkoordinatensystem für zyklische Symmetrie anlegen, Details](media/07_symmetrie/02_zylinderkoordinatensystem_details.png){width=900px}](media/07_symmetrie/02_zylinderkoordinatensystem_details.png "Zylinderkoordinatensystem für zyklische Symmetrie anlegen, Details"){.glightbox}
+
+!!! note "Hinweis globales Koordinatensystem"
+    Das **globale Koordinatensystem kann nicht verändert** werden, da es im CAD festgelegt ist.
 
 Anschliessend wird im Strukturbaum ein Objekt *Symmetrie* hinzugefügt. Dazu im Strukturbaum das *Modell* markieren und im Menü *Vorbereiten* den Eintrag *Symmetrie* auswählen. Dadurch entsteht im Strukturbaum ein neues Objekt *Symmetrie*.
 
@@ -228,6 +242,9 @@ Im Objekt *Zyklischer Bereich* werden anschliessend die Schnittflächen und das 
 [![Einstellungen im zyklischen Bereich: Schnittflächen und Koordinatensystem](media/07_symmetrie/05_zyklischer_bereich_details.png){width=900px}](media/07_symmetrie/05_zyklischer_bereich_details.png "Einstellungen im zyklischen Bereich: Schnittflächen und Koordinatensystem"){.glightbox}
 
 Die zyklische Symmetrie kann an einer einzelnen oder an mehreren Schnittflächen implementiert werden. Solange die Geometrie korrekt sektorenweise beschrieben ist und der zyklische Bereich konsistent definiert ist, wirkt sich die konkrete Aufteilung der Schnittflächen im Modell nicht auf das physikalische Ergebnis aus.
+
+!!! note "Hinweis Flächenauswahl"
+    Bei einer geteilten Fläche als Sektorgrenze müssen **alle Teilflächen** ausgewählt werden.
 
 ### 5. Analyseeinstellungen
 
