@@ -139,7 +139,7 @@ Wird das Material **vor** der Systemerstellung geändert, wird der neue Wert aut
 Erfolgt die Änderung **nachträglich**, muss das jeweilige System über den **grünen Aktualisierungspfeil** in der Projektoberfläche aktualisiert werden (siehe Abbildung oben).
 
 !!! note "Hinweis"
-    Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt [**Elementtypen und Ansatzfunktionen – Materialzuweisung**](../05_elementtypen_ansatzf/#materialzuweisung).
+    Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt [**Elementtypen und Ansatzfunktionen – Materialzuweisung**](05_elementtypen_ansatzf.md#materialzuweisung).
 
 ### 3. Netzgenerierung
 

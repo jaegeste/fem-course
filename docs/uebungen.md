@@ -16,4 +16,4 @@ Gegeben ist der dargestellte Niederhalter in der Datei [niederhalter.stp](media/
 
 [![Randbedingungen statisch mechanische Analyse des Niederhalters](media/uebungen/niederhalter.png){width=350px}](media/uebungen/niederhalter.png "Randbedingungen statisch mechanische Analyse des Niederhalters"){.glightbox}
 
-Berechnen Sie für den Übergang zwischen dem kleinen und großen Querschnitt die Kerbformzahl. Verwenden Sie hierzu ANSYS und EXCEL. Es gilt \(\sigma_k = \sigma_n \cdot \alpha_k\).
+Berechnen Sie für den Übergang zwischen dem kleinen und großen Querschnitt die Kerbformzahl. Verwenden Sie hierzu ANSYS und Excel. Es gilt \(\sigma_k = \sigma_n \cdot \alpha_k\).

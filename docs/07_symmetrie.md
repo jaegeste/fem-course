@@ -120,14 +120,14 @@ Auf diese Weise bleibt die resultierende **Flächenpressung \( \sigma = F/A \)**
 ### 1. Projektverwaltung und Geometrieimport
 
 !!! note "Hinweis Projektverwaltung"
-    Es gelten die gleichen Hinweise wie hier: [**Modul Krafteinleitung - Projektverwaltung**](../06_krafteinleitung/#1-projektverwaltung-und-geometrieimport)
+    Es gelten die gleichen Hinweise wie hier: [**Modul Krafteinleitung - Projektverwaltung**](06_krafteinleitung.md#1-projektverwaltung-und-geometrieimport)
 
 ### 2. Materialzuweisung
 
 Hier muss ein Material neu angelegt werden. Dies geschieht in der **Materialübersicht (Mitte/oben)** der im aktuellen Projekt verfügbaren technischen Daten.  
 
 !!! note "Hinweis"
-    Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt [**Elementtypen und Ansatzfunktionen – Materialzuweisung**](../05_elementtypen_ansatzf/#materialzuweisung).
+    Weitere Informationen zur Materialdefinition und zu den Dateneigenschaften finden sich im Abschnitt [**Elementtypen und Ansatzfunktionen – Materialzuweisung**](05_elementtypen_ansatzf.md#materialzuweisung).
 
 **Materialname:** *Flanschstahl450*
 

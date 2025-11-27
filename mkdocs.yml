@@ -84,7 +84,7 @@ plugins:
             - Module 2 Stress Concentration: 04_kerbwirkung.en.md
             - Module 3 Element Types/Shape functions: 05_elementtypen_ansatzf.en.md
             - Module 4 Load Application: 06_krafteinleitung.en.md
-            - Module 5 Modell Reduction: 07_symmetrie.en.md
+            - Module 5 Model Reduction: 07_symmetrie.en.md
             - Module 6 Modal Analysis: 08_modalanalyse.en.md
             - Exercises: uebungen.en.md
 

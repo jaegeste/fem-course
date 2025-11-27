@@ -1,6 +1,6 @@
 # Exercises
 
-The following exercises serve to **deepen the knowledge acquired in the modules**. Note that all FE analyses must produce results whose magnitude is as independent as possible from the mesh influence, that every numerical value used in Excel calculations must include its unit, and that all analytical solutions must be prepared in Excel with regard to the exam.
+The following exercises serve to **deepen the knowledge acquired in the modules**. All FE analyses must produce results whose magnitude is as independent as possible from the mesh influence, every numerical value used in Excel calculations must include its unit, and all analytical solutions must be created in Excel with regard to the exam.
 
 ## Steel ruler
 
