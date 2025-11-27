@@ -8,8 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://jaegeste.github.io/fem-course/10_sensor_beschl/">
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/uebungen/">
       
+      
+        <link rel="prev" href="../08_modalanalyse/">
       
       
       
@@ -18,7 +20,7 @@
     
     
       
-        <title>10 sensor beschl - FEM Course Prof. Jäger</title>
+        <title>Übungen - FEM Course Prof. Jäger</title>
       
     
     
@@ -80,6 +82,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#ubungen" class="md-skip">
+          Zum Inhalt
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -111,7 +118,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              10 sensor beschl
+              Übungen
             
           </span>
         </div>
@@ -138,7 +145,7 @@
           </li>
         
           <li class="md-select__item">
-            <a href="../en/10_sensor_beschl/" hreflang="en" class="md-select__link">
+            <a href="../en/uebungen/" hreflang="en" class="md-select__link">
               🇬🇧 English
             </a>
           </li>
@@ -427,10 +434,32 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../uebungen/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Übungen
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -441,6 +470,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stahllineal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stahllineal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niederhalter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Niederhalter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -462,6 +529,34 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#stahllineal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stahllineal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#niederhalter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Niederhalter
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -477,9 +572,16 @@
 
 
 
-  <h1>10 sensor beschl</h1>
-
-<style type="text/css">.quiz {
+<h1 id="ubungen">Übungen<a class="headerlink" href="#ubungen" title="Permanent link">&para;</a></h1>
+<p>Die folgenden Übungen dienen der <strong>Vertiefung der in den Modulen erworbenen Kenntnisse</strong>. Beachten Sie, dass für alle FE-Berechnungen Ergebnisse zu erzeugen sind, deren Betrag möglichst unabhängig vom Einfluss der Vernetzung ist, dass in allen Excel-Berechnungen jede verwendete Zahl mit ihrer jeweiligen Einheit anzugeben ist und dass die analytischen Lösungen mit Hinblick auf die Klausur konsequent in Excel zu erstellen sind.</p>
+<h2 id="stahllineal">Stahllineal<a class="headerlink" href="#stahllineal" title="Permanent link">&para;</a></h2>
+<p>Gegeben ist die Geometrie eines Stahllineals in der Datei <a href="../media/uebungen/lineal.stp">lineal.stp</a>. Es wird durch eine Kraft <span class="arithmatex">\(F\)</span> auf Zug in seiner Längsrichtung belastet, der Werkstoff sei Baustahl laut ANSYS Datenbank, jedoch mit einem <strong>E-Modul von 210.000 N/mm²</strong> und einer <strong>Streckgrenze von 300 MPa</strong>.</p>
+<p>Berechnen Sie in Excel den Betrag der Zugkraft, bei der gerade noch keine plastische Verformung auftritt. Wie groß ist die resultierende Längenänderung bei dieser Kraft? Es gilt das Hooke’sche Gesetz <span class="arithmatex">\(\sigma = \varepsilon \cdot E\)</span>.</p>
+<p>Weisen Sie Ihr Ergebnis für Kraft beziehungsweise Spannung und Verformung mit einer Berechnung in ANSYS nach. Wählen Sie die Randbedingungen so, dass die Querkontraktion des Bauteils an keiner Stelle verhindert wird.</p>
+<h2 id="niederhalter">Niederhalter<a class="headerlink" href="#niederhalter" title="Permanent link">&para;</a></h2>
+<p>Gegeben ist der dargestellte Niederhalter in der Datei <a href="../media/uebungen/niederhalter.stp">niederhalter.stp</a>. Er sei auf Druck belastet und eingespannt gemäß Abbildung.</p>
+<p><a class="glightbox" href="../media/uebungen/niederhalter.png" title="Randbedingungen statisch mechanische Analyse des Niederhalters"><img alt="Randbedingungen statisch mechanische Analyse des Niederhalters" src="../media/uebungen/niederhalter.png" width="350px" /></a></p>
+<p>Berechnen Sie für den Übergang zwischen dem kleinen und großen Querschnitt die Kerbformzahl. Verwenden Sie hierzu ANSYS und Excel. Es gilt <span class="arithmatex">\(\sigma_k = \sigma_n \cdot \alpha_k\)</span>.</p><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
