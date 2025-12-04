@@ -12,7 +12,7 @@ Verify your results for force or stress and deformation with an ANSYS calculatio
 
 ## Hold-down device
 
-The illustrated hold-down device is provided in the file [niederhalter.stp](media/uebungen/niederhalter.stp). It is subjected to compression and fixed according to the figure.
+The illustrated hold-down device is provided in the file [niederhalter.stp](media/uebungen/niederhalter.stp). It is subjected to compression and fixed according to the figure. Its cross-sectional area in the small cross-section is 300 mm².
 
 [![Boundary conditions for the static structural analysis of the hold-down device](media/uebungen/niederhalter.png){width=350px}](media/uebungen/niederhalter.png "Boundary conditions for the static structural analysis of the hold-down device"){.glightbox}
 

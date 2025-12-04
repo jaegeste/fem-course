@@ -14,6 +14,8 @@
         <link rel="prev" href="../06_krafteinleitung/">
       
       
+        <link rel="next" href="../08_modalanalyse/">
+      
       
       <link rel="icon" href="../media/logo/hfu_logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
@@ -488,6 +490,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weiterfuhrende-aspekte" class="md-nav__link">
     <span class="md-ellipsis">
       Weiterführende Aspekte
@@ -497,9 +508,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-aufgabenstellung-kuhlkorper-lineare-symmetrie" class="md-nav__link">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
     <span class="md-ellipsis">
-      optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)
+      Quiz zur Selbstkontrolle
     </span>
   </a>
   
@@ -509,6 +520,50 @@
   
 </nav>
       
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_modalanalyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 6 Modalanalyse
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übungen
+    
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -585,6 +640,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#zusammenfassung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Zusammenfassung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#weiterfuhrende-aspekte" class="md-nav__link">
     <span class="md-ellipsis">
       Weiterführende Aspekte
@@ -594,9 +658,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#optional-aufgabenstellung-kuhlkorper-lineare-symmetrie" class="md-nav__link">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
     <span class="md-ellipsis">
-      optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)
+      Quiz zur Selbstkontrolle
     </span>
   </a>
   
@@ -636,7 +700,7 @@
 <li>Fall B: Zugkraft von 100 kN (aufgebracht an den Stirnflächen des Flansches)</li>
 </ul>
 <p><a class="glightbox" href="../media/07_symmetrie/flansch.svg" title="Flansch"><img alt="Flansch" src="../media/07_symmetrie/flansch.svg" width="800px" /></a></p>
-<p>Verwendet wird die bereitgestellte Geometrie des Flansches sowie deren reduzierte Varianten (Halbschnitt, Viertelmodell, Achtelmodell).</p>
+<p>Verwendet wird die bereitgestellte Geometrie des Flansches sowie deren reduzierte Varianten (Halbschnitt, Viertelschnitt, Achtelschnitt).</p>
 <p><strong>Geometrie:</strong></p>
 <ul>
 <li><a href="../media/07_symmetrie/flansch_voll.stp">flansch_voll.stp</a>  </li>
@@ -654,7 +718,7 @@
 <h2 id="theoretischer-hintergrund">Theoretischer Hintergrund<a class="headerlink" href="#theoretischer-hintergrund" title="Permanent link">&para;</a></h2>
 <p>Die Nutzung von Symmetrie in der numerischen Analyse ermöglicht eine Reduktion des geometrischen Modells, der Freiheitsgrade und damit der Rechenzeit. Die Gültigkeit einer Modellreduktion setzt voraus, dass <strong>Geometrie</strong>, <strong>Belastung</strong>, <strong>Randbedingungen</strong> und <strong>Material</strong> geeignete Symmetrieeigenschaften besitzen. Nur wenn alle Bedingungen gleichzeitig erfüllt sind, ist das reduzierte Modell äquivalent zum Vollmodell.</p>
 <h3 id="symmetriebedingungen">Symmetriebedingungen<a class="headerlink" href="#symmetriebedingungen" title="Permanent link">&para;</a></h3>
-<p>Die Nutzung von Symmetrie gehört zu den wirkungsvollsten Strategien zur Reduktion der Modellgrösse in der FEM. Voraussetzung ist, dass das <strong>physikalische Verhalten des Vollmodells</strong> durch ein <strong>geeignet reduziertes Teilmodell</strong> vollständig beschrieben werden kann.  </p>
+<p>Die Nutzung von Symmetrie gehört zu den wirkungsvollsten Strategien zur Reduktion der Modellgröße in der FEM. Voraussetzung ist, dass das <strong>physikalische Verhalten des Vollmodells</strong> durch ein <strong>geeignet reduziertes Teilmodell</strong> vollständig beschrieben werden kann.  </p>
 <p>Für die Anwendung von Symmetrie müssen vier Bedingungen gleichzeitig erfüllt sein:</p>
 <ul>
 <li>
@@ -681,7 +745,7 @@
 <p>Sind alle vier Bedingungen erfüllt, kann anstelle des Vollmodells ein geeigneter Ausschnitt des Bauteils berechnet werden. Die zugehörige Symmetrierandbedingung sperrt die Verschiebung normal zur Symmetrieebene und erlaubt Bewegungen in ihren tangentialen Richtungen.</p>
 <p>Dies führt zu einer erheblichen Reduktion der Freiheitsgrade und damit der Rechenzeit, ohne dass die Qualität oder Aussagekraft der Ergebnisse leidet.</p>
 <hr />
-<h3 id="typische-symmetrieebenen">Typische Symmetrieebenen<a class="headerlink" href="#typische-symmetrieebenen" title="Permanent link">&para;</a></h3>
+<h3 id="typische-symmetrieeigenschaften">Typische Symmetrieeigenschaften<a class="headerlink" href="#typische-symmetrieeigenschaften" title="Permanent link">&para;</a></h3>
 <p>In der Technik treten je nach Bauteilgeometrie und Belastung unterschiedliche Formen von Symmetrie auf. Die folgenden Symmetriearten zählen zu den häufigsten und ermöglichen jeweils eine deutliche Reduktion des Modells.</p>
 <ul>
 <li>
@@ -723,10 +787,10 @@ F_r = \alpha F, \qquad \alpha = \frac{\text{Teilmodell}}{\text{Gesamtmodell}}
 <hr />
 <h2 id="umsetzung-in-ansys">Umsetzung in ANSYS<a class="headerlink" href="#umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
 <h3 id="1-projektverwaltung-und-geometrieimport">1. Projektverwaltung und Geometrieimport<a class="headerlink" href="#1-projektverwaltung-und-geometrieimport" title="Permanent link">&para;</a></h3>
-<!-- 
-Wie Projekt organisieren? für alle Modelle EIN System jeweils für Druck und Kraft?
--->
-
+<div class="admonition note">
+<p class="admonition-title">Hinweis Projektverwaltung</p>
+<p>Es gelten die gleichen Hinweise wie hier: <a href="../06_krafteinleitung/#1-projektverwaltung-und-geometrieimport"><strong>Modul Krafteinleitung - Projektverwaltung</strong></a></p>
+</div>
 <h3 id="2-materialzuweisung">2. Materialzuweisung<a class="headerlink" href="#2-materialzuweisung" title="Permanent link">&para;</a></h3>
 <p>Hier muss ein Material neu angelegt werden. Dies geschieht in der <strong>Materialübersicht (Mitte/oben)</strong> der im aktuellen Projekt verfügbaren technischen Daten.  </p>
 <div class="admonition note">
@@ -735,20 +799,27 @@ Wie Projekt organisieren? für alle Modelle EIN System jeweils für Druck und Kr
 </div>
 <p><strong>Materialname:</strong> <em>Flanschstahl450</em></p>
 <ul>
-<li>Dichte <span class="arithmatex">\(\rho = 7 850 \,\text{kg/m}^3\)</span></li>
+<li>Dichte <span class="arithmatex">\(\rho = 7.850 \,\text{kg/m}^3\)</span></li>
 <li>Elastizitätsmodul <span class="arithmatex">\(E = 215.000 \,\text{MPa}\)</span></li>
-<li>Querkontraktionszahl <span class="arithmatex">\(\nu = 0.30\)</span></li>
+<li>Querkontraktionszahl <span class="arithmatex">\(\nu = 0,30\)</span></li>
 <li>Streckgrenze <span class="arithmatex">\(R_\text{e} = 450 \,\text{MPa}\)</span></li>
 </ul>
 <h3 id="3-netzgenerierung">3. Netzgenerierung<a class="headerlink" href="#3-netzgenerierung" title="Permanent link">&para;</a></h3>
+<p>Es sind keine zusätzlichen Angaben erforderlich; die Netzgenerierung erfolgt nach dem etablierten Vorgehen.</p>
+<ul>
+<li>Das erzeugte Netz <strong>visuell auf Qualität und Plausibilität prüfen</strong>  </li>
+<li>Eine <strong>Netzeinflussstudie</strong> durchführen, um die Ergebnisstabilität zu verifizieren</li>
+</ul>
+<p>Zur Vergleichbarkeit von Rechenzeit und Ergebnisqualität bietet es sich an, alle Modelle (Vollmodell und Schnittvarianten) mit dem gleichen Netz zu untersuchen. Dieses Netz muss selbstverständlich ein vom Netz unabhängiges Ergebnis liefern.</p>
 <h3 id="4-randbedingungen">4. Randbedingungen<a class="headerlink" href="#4-randbedingungen" title="Permanent link">&para;</a></h3>
-<!-- 
-Kraft/Druck
-Reibungsfreie Lager
-zyklische Symmetrie
--->
-
-<h3 id="reibungsfreie-lager">Reibungsfreie Lager<a class="headerlink" href="#reibungsfreie-lager" title="Permanent link">&para;</a></h3>
+<h4 id="kraft-und-druck">Kraft und Druck<a class="headerlink" href="#kraft-und-druck" title="Permanent link">&para;</a></h4>
+<p>Druck und Kraft sind auf den oben angegebenen Flächen zu implementieren. Zu beachten ist, dass beide Lastarten in dieser Aufgabenstellung nicht gleichzeitig wirken.  </p>
+<p>Bei fehlender Einspannung sind in den <em>Analyseeinstellungen</em> die <em>schwachen Federn</em> zu aktivieren, damit das Gleichungssystem eindeutig lösbar wird.  </p>
+<details class="note">
+<summary>Hinweis zur Einheit des Drucks</summary>
+<p><strong>1 bar = 0,1 MPa</strong></p>
+</details>
+<h4 id="symmetrie-mittels-reibungsfreier-lager">Symmetrie mittels <em>reibungsfreier Lager</em><a class="headerlink" href="#symmetrie-mittels-reibungsfreier-lager" title="Permanent link">&para;</a></h4>
 <p>Ein reibungsfreies Lager verhindert Verschiebung in Normalrichtung. Die Randbedingung lautet:</p>
 <div class="arithmatex">\[
 u \cdot n = 0
@@ -770,8 +841,14 @@ u_t \ne 0
 <li>Bauteilführung  </li>
 <li>Ergänzung bei Symmetrie zur Modellreduktion</li>
 </ul>
+<p>Reibungsfreie Lager bieten sich in dieser Aufgabe besonders an, da sie auf sämtlichen Schnittflächen entsprechend der Abbildung angebracht werden können. Dies kann an einer einzelnen oder an mehreren Schnittflächen erfolgen, ohne die Ergebnisqualität zu beeinflussen.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br></p>
+<!-- markdownlint-enable MD033 -->
+
+<p><a class="glightbox" href="../media/07_symmetrie/01_schnittflaechen_reibungsfrei.png" title="Reibungsfreie Lager auf Schnittflächen"><img alt="Reibungsfreie Lager auf Schnittflächen" src="../media/07_symmetrie/01_schnittflaechen_reibungsfrei.png" width="600px" /></a></p>
 <hr />
-<h3 id="zyklische-symmetrie">Zyklische Symmetrie<a class="headerlink" href="#zyklische-symmetrie" title="Permanent link">&para;</a></h3>
+<h4 id="symmetrie-mittels-zyklischer-symmetrie">Symmetrie mittels <em>zyklischer Symmetrie</em><a class="headerlink" href="#symmetrie-mittels-zyklischer-symmetrie" title="Permanent link">&para;</a></h4>
 <p>Bei zyklischer Symmetrie wird ein Bauteil in identische Sektoren unterteilt, die sich durch eine Drehung um einen festen Winkel exakt überlagern. Dadurch genügt die Berechnung <strong>eines einzigen Sektors</strong>, wenn die vier allgemeinen Symmetriebedingungen (Geometrie, Material, Lasten, Randbedingungen) erfüllt sind.</p>
 <p>Die zyklische Symmetrie verknüpft die Randflächen dieses Sektors so, dass sich ihre Verschiebungen beim Übergang zum nächsten Sektor <strong>nur um eine definierte Rotation unterscheiden</strong>. Für die praktische Anwendung bedeutet dies:</p>
 <ul>
@@ -781,66 +858,264 @@ u_t \ne 0
 </ul>
 <p>Typische Vorteile:</p>
 <ul>
-<li>drastisch reduzierte Modellgrösse  </li>
+<li>drastisch reduzierte Modellgröße</li>
 <li>deutlich geringere Rechenzeit  </li>
 <li>verbesserte numerische Stabilität  </li>
 <li>geeignet für rotierende Maschinen, Scheiben, Zahnräder, Turbinenlaufräder oder Bremsscheiben</li>
 </ul>
+<p>Für die Umsetzung wird zunächst ein geeignetes Koordinatensystem benötigt. In diesem Beispiel wird ein <strong>Zylinderkoordinatensystem</strong> verwendet, dessen Umfangsrichtung mit der Umfangsrichtung des Flansches übereinstimmt. Das Koordinatensystem wird im Strukturbaum unter <em>Koordinatensysteme</em> angelegt.</p>
+<p>Dabei ist zu beachten:</p>
+<ul>
+<li>Für die Erstellung muss eine <strong>Zylinderfläche</strong> ausgewählt werden.  </li>
+<li>Neue Koordinatensysteme entstehen immer <strong>im Zentrum der ausgewählten Fläche</strong> in allen Richtungen.  </li>
+<li>Unter <em>Typ</em> muss von <strong>kartesisch</strong> auf <strong>zylindrisch</strong> umgeschaltet werden.  </li>
+<li>Die Richtung der Zylinderkoordinate muss gegebenenfalls angepasst werden.  </li>
+<li>Die Einstellungen der Zylinderkoordinate werden in den <em>Details</em> des neuen Koordinatensystems vorgenommen.  </li>
+<li>Eine <strong>eindeutige Benennung</strong> des Koordinatensystems ist sehr hilfreich.</li>
+</ul>
+<p><a class="glightbox" href="../media/07_symmetrie/02_zylinderkoordinatensystem.png" title="Zylinderkoordinatensystem für zyklische Symmetrie anlegen"><img alt="Zylinderkoordinatensystem für zyklische Symmetrie anlegen" src="../media/07_symmetrie/02_zylinderkoordinatensystem.png" width="900px" /></a></p>
+<p><a class="glightbox" href="../media/07_symmetrie/02_zylinderkoordinatensystem_details.png" title="Zylinderkoordinatensystem für zyklische Symmetrie anlegen, Details"><img alt="Zylinderkoordinatensystem für zyklische Symmetrie anlegen, Details" src="../media/07_symmetrie/02_zylinderkoordinatensystem_details.png" width="900px" /></a></p>
+<div class="admonition note">
+<p class="admonition-title">Hinweis globales Koordinatensystem</p>
+<p>Das <strong>globale Koordinatensystem kann nicht verändert</strong> werden, da es im CAD festgelegt ist.</p>
+</div>
+<p>Anschliessend wird im Strukturbaum ein Objekt <em>Symmetrie</em> hinzugefügt. Dazu im Strukturbaum das <em>Modell</em> markieren und im Menü <em>Vorbereiten</em> den Eintrag <em>Symmetrie</em> auswählen. Dadurch entsteht im Strukturbaum ein neues Objekt <em>Symmetrie</em>.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/03_symmetrie_strukturbaum.png" title="Symmetrieobjekt im Strukturbaum einfügen"><img alt="Symmetrieobjekt im Strukturbaum einfügen" src="../media/07_symmetrie/03_symmetrie_strukturbaum.png" width="900px" /></a></p>
+<p>Innerhalb dieses Symmetrieobjekts wird ein <em>Zyklischer Bereich</em> eingefügt. Dies erfolgt über das Kontextmenü des Symmetrieobjekts (<em>Einfügen</em> → <em>Zyklischer Bereich</em>).</p>
+<p><a class="glightbox" href="../media/07_symmetrie/04_zyklischer_bereich_einfuegen.png" title="Zyklischen Bereich unter Symmetrie einfügen"><img alt="Zyklischen Bereich unter Symmetrie einfügen" src="../media/07_symmetrie/04_zyklischer_bereich_einfuegen.png" width="900px" /></a></p>
+<p>Im Objekt <em>Zyklischer Bereich</em> werden anschliessend die Schnittflächen und das zuvor definierte Zylinderkoordinatensystem zugewiesen. Die beiden Schnittflächen werden als <em>Untere Grenze</em> und <em>Obere Grenze</em> definiert, als <em>Koordinatensystem</em> ist das Zylinderkoordinatensystem auszuwählen.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/05_zyklischer_bereich_details.png" title="Einstellungen im zyklischen Bereich: Schnittflächen und Koordinatensystem"><img alt="Einstellungen im zyklischen Bereich: Schnittflächen und Koordinatensystem" src="../media/07_symmetrie/05_zyklischer_bereich_details.png" width="900px" /></a></p>
+<p>Die zyklische Symmetrie kann an einer einzelnen oder an mehreren Schnittflächen implementiert werden. Solange die Geometrie korrekt sektorenweise beschrieben ist und der zyklische Bereich konsistent definiert ist, wirkt sich die konkrete Aufteilung der Schnittflächen im Modell nicht auf das physikalische Ergebnis aus.</p>
+<div class="admonition note">
+<p class="admonition-title">Hinweis Flächenauswahl</p>
+<p>Bei einer geteilten Fläche als Sektorgrenze müssen <strong>alle Teilflächen</strong> ausgewählt werden.</p>
+</div>
 <h3 id="5-analyseeinstellungen">5. Analyseeinstellungen<a class="headerlink" href="#5-analyseeinstellungen" title="Permanent link">&para;</a></h3>
+<p>In den Analyseeinstellungen sind die <strong>schwachen Federn</strong> zu aktivieren, damit das Gleichungssystem auch bei fehlender Einspannung eindeutig lösbar bleibt. Weitere Anpassungen der Standardeinstellungen sind nicht erforderlich.</p>
 <h3 id="6-auswertung">6. Auswertung<a class="headerlink" href="#6-auswertung" title="Permanent link">&para;</a></h3>
-<!-- 
-## Umsetzung in ANSYS
-
-* Geometrie importieren (`flansch_voll.stp`, `flansch_viertel.stp`, `flansch_achtel.stp`)  
-* Symmetrieebenen erzeugen → *Connections* → *Symmetry*  
-* lokale Koordinatensysteme prüfen  
-* Belastungsdefinition:  
-    * Druck 200 bar direkt auf Innenfläche  
-    * Zugkraft 100 kN anteilig je nach Modellreduktion  
-* reibungsfreie Lager an geeigneten Flächen zur Stabilisierung  
-* Netz: globale h-Verfeinerung, lokale Verfeinerung am Übergang Rohr–Flansch  
-* Konvergenz: Vergleich Spannung/Verformung über Elementgrösse  
-* Solverwahl: direkt (präzise), iterativ (schnell bei grossen Modellen)  
--->
-
+<p>Die Auswertung erfolgt über die <strong>Gesamtverformung</strong> und die <strong>von Mises Spannung</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Hinweis</p>
+<p>Zur Vergleichbarkeit der verschiedenen Modellvarianten ist ein numerisches Konvergenzkriterium hier nicht zielführend, da es den direkten Vergleich erschwert. Dennoch ist unbedingt darauf zu achten, dass ein <strong>netzunabhängiges Ergebnis</strong> erreicht wird. Die kritischen Bereiche könnten manuell verfeinert werden, falls erforderlich.  </p>
+</div>
 <hr />
 <h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
-<!--  
-Netzeinflussstudie vorausgesetzt
-Rechenzeit/Anzahl Elemente vs. Schnittmodell
--->
+<p>Hier werden exemplarisch für folgende Parameter die Ergebnisse vorgestellt:</p>
+<ul>
+<li>Reibungsfreie Lagerung zur Nutzung der Symmetrie  </li>
+<li>globale Netzgröße von 2 mm  </li>
+<li>Druckbelastung gemäß Aufgabenstellung</li>
+</ul>
+<p>Bei dieser Netzgröße ist der Einfluss der Vernetzung vernachlässigbar klein, sodass die Unterschiede ausschließlich aus der Modellreduktion entstehen.</p>
+<table>
+<thead>
+<tr>
+<th>Schnitt</th>
+<th>max. Spannung</th>
+<th>max. Verformung</th>
+<th>Anzahl Knoten</th>
+<th>Anzahl Elemente</th>
+<th>Rechenzeit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voll</td>
+<td>155,82 MPa</td>
+<td>0,0477 mm</td>
+<td>374495</td>
+<td>221036</td>
+<td>60 s</td>
+</tr>
+<tr>
+<td>Halbschnitt</td>
+<td>155,81 MPa</td>
+<td>0,0475 mm</td>
+<td>186336</td>
+<td>108995</td>
+<td>32 s</td>
+</tr>
+<tr>
+<td>Viertelschnitt</td>
+<td>155,96 MPa</td>
+<td>0,0464 mm</td>
+<td>94112</td>
+<td>54956</td>
+<td>25 s</td>
+</tr>
+<tr>
+<td>Achtelschnitt</td>
+<td>155,81 MPa</td>
+<td>0,0460 mm</td>
+<td>46599</td>
+<td>26940</td>
+<td>20 s</td>
+</tr>
+</tbody>
+</table>
+<p>Die Größe des betrachteten Schnitts zeigt nur einen sehr kleinen Einfluss auf die <strong>Verformung</strong> und die <strong>maximale Spannung</strong>.</p>
+<!-- markdownlint-disable MD033 -->
 
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [0.0477,0.0475,0.0464,0.0460],
+           "name": "Max. Verformung",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["0.0477 mm","0.0475 mm","0.0464 mm","0.0460 mm"],
+           "hovertemplate": "Schnitt = %{x}<br>Max. Verformung = %{text}<extra></extra>"
+         },
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [155.82,155.81,155.96,155.81],
+           "name": "Max. Spannung",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["155.82 MPa","155.81 MPa","155.96 MPa","155.81 MPa"],
+           "hovertemplate": "Schnitt = %{x}<br>Max. Spannung = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Einfluss der Modellreduktion auf Spannung und Verformung"},
+         "xaxis": {"title": "Schnitt"},
+         "yaxis": {
+           "title": "Max. Verformung (mm)",
+           "side": "left",
+           "range": [0, 0.05]
+         },
+         "yaxis2": {
+           "title": "Max. Spannung (MPa)",
+           "overlaying": "y",
+           "side": "right",
+           "range": [0, 160]
+         },
+         "legend": {
+           "x": 0.95,
+           "y": 0.5,
+           "xanchor": "right",
+           "yanchor": "middle",
+           "bgcolor": "rgba(255,255,255,0.6)"
+         },
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<p>Die <strong>Rechenzeit</strong> und die <strong>Modellgröße</strong> gemessen über die Anzahl der Knoten und Elemente nehmen mit zunehmender Reduktion des Modells deutlich ab.</p>
+<!-- markdownlint-disable MD033 -->
+
+<div class="plotly-chart" style="width:100%;height:500px"
+     data-fig='{
+       "data": [
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [374495,186336,94112,46599],
+           "name": "Anzahl Knoten",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["374.495","186.336","94.112","46.599"],
+           "hovertemplate": "Schnitt = %{x}<br>Knoten = %{text}<extra></extra>"
+         },
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [221036,108995,54956,26940],
+           "name": "Anzahl Elemente",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y",
+           "text": ["221.036","108.995","54.956","26.940"],
+           "hovertemplate": "Schnitt = %{x}<br>Elemente = %{text}<extra></extra>"
+         },
+         {
+           "x": ["Voll","Halbschnitt","Viertelschnitt","Achtelschnitt"],
+           "y": [60,32,25,20],
+           "name": "Rechenzeit",
+           "type": "scatter",
+           "mode": "lines+markers",
+           "yaxis": "y2",
+           "text": ["60 s","32 s","25 s","20 s"],
+           "hovertemplate": "Schnitt = %{x}<br>Rechenzeit = %{text}<extra></extra>"
+         }
+       ],
+       "layout": {
+         "title": {"text": "Modellreduktion: Knoten, Elemente und Rechenzeit"},
+         "xaxis": {"title": "Schnitt"},
+         "yaxis": {
+           "title": "Knoten / Elemente",
+           "side": "left",
+           "range": [0, 400000]
+         },
+         "yaxis2": {
+           "title": "Rechenzeit (s)",
+           "overlaying": "y",
+           "side": "right",
+           "range": [0, 70]
+         },
+         "legend": {
+           "x": 0.95,
+           "y": 0.5,
+           "xanchor": "right",
+           "yanchor": "middle",
+           "bgcolor": "rgba(255,255,255,0.6)"
+         },
+         "hovermode": "x unified",
+         "hoverlabel": {
+           "bgcolor": "white",
+           "font": {"color": "black"},
+           "bordercolor": "rgba(0,0,0,0)"
+         }
+       }
+     }'>
+</div>
+
+<!-- markdownlint-enable MD033 -->
+
+<h2 id="zusammenfassung">Zusammenfassung<a class="headerlink" href="#zusammenfassung" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Symmetrie ermöglicht eine deutliche Reduktion der Modellgröße und Rechenzeit  </li>
+<li>Voraussetzung sind symmetrische Geometrie, Materialien, Lasten und Randbedingungen  </li>
+<li>Druck bleibt unverändert, Kräfte müssen im Teilmodell skaliert werden  </li>
+<li>Reibungsfreie Lager bilden Symmetriebedingungen korrekt ab  </li>
+<li>Zyklische Symmetrie koppelt Sektorrandflächen über einen Drehwinkel  </li>
+<li>Netzunabhängigkeit ist zentral für einen validen Vergleich der reduzierten Modelle  </li>
+</ul>
 <h2 id="weiterfuhrende-aspekte">Weiterführende Aspekte<a class="headerlink" href="#weiterfuhrende-aspekte" title="Permanent link">&para;</a></h2>
-<!--
-* Einsatz zyklischer Symmetrie bei rotierenden oder segmentierten Strukturen  
-* häufige Fehler: unvollständige Symmetrie, doppelte Lagerung, asymmetrische Kontakte  
-* Darstellung von Ergebnissen über *Section Plane*  
-* Vergleich Vollmodell vs. Teilmodell hinsichtlich Rechenzeit und Ergebniskonsistenz  
-* Erweiterung auf Modalanalysen und komplexere Baugruppen  
--->
+<div class="admonition warning">
+<p class="admonition-title">FIXME: Erweiterung Abschnitt Weiterführende Aspekte</p>
+<p>Darstellung von Ergebnissen bei zyklischer Symmetrie<br />
+Nutzen der Features <strong>Symmetrie-Bereich</strong> und <strong>Linear Periodisch</strong></p>
+</div>
+<h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
+<!-- markdownlint-disable MD033 -->
 
-<h2 id="optional-aufgabenstellung-kuhlkorper-lineare-symmetrie">optional: Aufgabenstellung Kühlkörper (lineare Symmetrie...)<a class="headerlink" href="#optional-aufgabenstellung-kuhlkorper-lineare-symmetrie" title="Permanent link">&para;</a></h2>
-<!-- 
-wie geht's weiter:
-  - Modul 6 Modalanalyse: 08_modalanalyse.md
-  - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
-  - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
-  - Modul 9 Sensoren II (Druck): 11_sensor_druck.md
-  - Modul 10 Kontakt: 12_kontakt.md
-  - Modul 11 Ausblick: 13_ausblick.md
+<div class="quiz"><h3>Was ist der Hauptvorteil der Nutzung von Symmetrie in der FEM?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-0-0" ><label for="quiz-0-0">Es erhöht die Steifigkeit des Modells und reduziert Spannungen</label></div><div><input type="radio" name="answer" value="1" id="quiz-0-1" correct><label for="quiz-0-1">Es reduziert die Modellgröße und damit die Rechenzeit ohne Verlust an Aussagekraft</label></div><div><input type="radio" name="answer" value="2" id="quiz-0-2" ><label for="quiz-0-2">Es macht eine Netzgenerierung überflüssig</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Symmetrie reduziert die Freiheitsgrade des Modells, wodurch die Analyse effizienter wird.</section></div>
 
-  | Modul | Titel | Kerninhalt |
-| :----: | :---- | :---------- |
-| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). Gitarrenseite unter Vorspannung?|
-| **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
-| **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
-| **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
-| **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
-| **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
+<div class="quiz"><h3>Welche Symmetrieformen treten bei technischen Bauteilen typischerweise auf?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-1-0" correct><label for="quiz-1-0">Planare, axiale und zyklische Symmetrie</label></div><div><input type="radio" name="answer" value="1" id="quiz-1-1" ><label for="quiz-1-1">Nur planare Symmetrie</label></div><div><input type="radio" name="answer" value="2" id="quiz-1-2" ><label for="quiz-1-2">Nur axiale und spiegelnde Symmetrie</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Viele Bauteile weisen Kombinationen aus planaren, axialen oder zyklischen Symmetrien auf.</section></div>
 
--->
+<div class="quiz"><h3>Welche Kombination von Eigenschaften muss erfüllt sein, damit ein reduziertes Symmetriemodell physikalisch gleichwertig zum Vollmodell ist?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-2-0" ><label for="quiz-2-0">Geometrie und Belastung</label></div><div><input type="radio" name="answer" value="1" id="quiz-2-1" ><label for="quiz-2-1">Material und Randbedingungen</label></div><div><input type="radio" name="answer" value="2" id="quiz-2-2" correct><label for="quiz-2-2">Geometrie, Material, Lasten und Randbedingungen</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Nur wenn Geometrie, Material, Lasten und Randbedingungen die gleichen Symmetrieeigenschaften besitzen, darf ein Teilmodell das Vollmodell vollständig ersetzen.</section></div>
 
-<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a>  </p><style type="text/css">.quiz {
+<div class="quiz"><h3>Wie wirkt sich die Modellreduktion auf die Umsetzung von Druck und Kraft im Teilmodell aus?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-3-0" correct><label for="quiz-3-0">Der Druck bleibt unverändert, die Kraft wird mit dem Anteil des Teilmodells am Vollmodell skaliert</label></div><div><input type="radio" name="answer" value="1" id="quiz-3-1" ><label for="quiz-3-1">Druck und Kraft bleiben unverändert, da beide flächenbezogene Lasten sind</label></div><div><input type="radio" name="answer" value="2" id="quiz-3-2" ><label for="quiz-3-2">Der Druck muss skaliert werden, die Kraft bleibt unverändert</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Druck ist eine flächenbezogene Last und bleibt bei Teilmodellen gleich, eine resultierende Kraft ist eine integrale Grösse und muss mit dem Flächenanteil skaliert werden.</section></div>
+
+<div class="quiz"><h3>Welche Aussage beschreibt die Wirkung eines reibungsfreien Lagers auf einer Schnittfläche am treffendsten?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-4-0" ><label for="quiz-4-0">Es sperrt alle Verschiebungskomponenten und erlaubt nur Drehungen</label></div><div><input type="radio" name="answer" value="1" id="quiz-4-1" ><label for="quiz-4-1">Es sperrt nur tangentiale Verschiebungen, die normale Verschiebung bleibt frei</label></div><div><input type="radio" name="answer" value="2" id="quiz-4-2" correct><label for="quiz-4-2">Es sperrt die Verschiebung normal zur Fläche und lässt tangentiale Verschiebungen zu</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Mathematisch gilt \(u \cdot n = 0\): Die Komponente der Verschiebung senkrecht zur Fläche wird unterdrückt, die Bewegung in tangentialer Richtung bleibt möglich.</section></div>
+
+<div class="quiz"><h3>Welcher Vorteil ergibt sich typischerweise aus der Verwendung zyklischer Symmetrie beim Flansch mit Lochkreis?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-5-0" ><label for="quiz-5-0">Nur die Lasten werden reduziert, die Anzahl der Freiheitsgrade bleibt gleich</label></div><div><input type="radio" name="answer" value="1" id="quiz-5-1" correct><label for="quiz-5-1">Die Modellgrösse sinkt deutlich, während die Aussagekraft der Ergebnisse erhalten bleibt</label></div><div><input type="radio" name="answer" value="2" id="quiz-5-2" ><label for="quiz-5-2">Die Randbedingungen können beliebig gewählt werden, solange die Geometrie zyklisch ist</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Durch die Berechnung eines einzigen Sektors werden Freiheitsgrade und Rechenzeit stark reduziert, bei korrekt definierter zyklischer Kopplung bleiben die physikalischen Ergebnisse repräsentativ für das Vollmodell.</section></div>
+
+<div class="quiz"><h3>Weshalb sollen in den Analyseeinstellungen schwache Federn aktiviert werden, wenn keine explizite Einspannung vorhanden ist?</h3><form><fieldset><div><input type="radio" name="answer" value="0" id="quiz-6-0" ><label for="quiz-6-0">Um die Eigenfrequenzen des Flansches zu erhöhen</label></div><div><input type="radio" name="answer" value="1" id="quiz-6-1" correct><label for="quiz-6-1">Um das Gleichungssystem auch ohne Einspannung eindeutig lösbar zu machen</label></div><div><input type="radio" name="answer" value="2" id="quiz-6-2" ><label for="quiz-6-2">Um den Einfluss des Materials Flanschstahl450 zu reduzieren</label></div></fieldset><button type="submit" class="quiz-button">Submit</button></form><section class="content hidden"><em>Hinweis:</em> Schwache Federn verhindern freie Starrkörperbewegung und stellen sicher, dass das Gleichungssystem eine eindeutige Lösung besitzt, ohne das Verformungsniveau wesentlich zu beeinflussen.</section></div>
+
+<!-- markdownlint-enable MD033 --><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
