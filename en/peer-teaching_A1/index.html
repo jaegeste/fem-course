@@ -1,0 +1,1520 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/peer-teaching_A1/">
+      
+      
+        <link rel="prev" href="../uebungen/">
+      
+      
+        <link rel="next" href="../peer-teaching_A2/">
+      
+      
+      <link rel="icon" href="../../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Peer Teaching A1 - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../overrides/main.css">
+    
+      <link rel="stylesheet" href="../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#peer-teaching-a1-symmetry-and-model-reduction" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Peer Teaching A1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../peer-teaching_A1/" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation and getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_kragbalken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 1 Cantilever Beam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 2 Stress Concentration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_elementtypen_ansatzf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 3 Element Types/Shape functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_krafteinleitung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 4 Load Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_symmetrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 5 Model Reduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_modalanalyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 6 Modal Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A1
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A1
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Symmetry?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-for-axisymmetric-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditions for Axisymmetric Modeling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-axisymmetric-model-workflow-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Axisymmetric Model (Workflow Overview)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axisymmetric-2d-to-3d-volume-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axisymmetric 2D-to-3D Volume Relation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-ansys-uses-this-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why ANSYS uses this formula
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-flange-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task — Flange Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-in-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction in ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-model-reduction-is-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Why Model Reduction is Important
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-areas-where-model-reduction-is-used-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Areas Where Model Reduction Is Used in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mathematical-principle-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Mathematical Principle of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-model-reduction-techniques-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Model Reduction Techniques in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-workflow-of-model-reduction-in-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Workflow of Model Reduction in ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-engineering-applications-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Engineering Applications of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-advantages-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Advantages of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-limitations-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Limitations of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-1-force-2000-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 1 (force = 2000 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-2-force-1000-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 2 (force = 1000 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-3-force-500-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 3 (force = 500 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-4-force-250-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 4 (force = 250 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cyclic-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cyclic symmetry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peer-teaching_A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Goal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why Use Symmetry?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-for-axisymmetric-modeling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Conditions for Axisymmetric Modeling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-an-axisymmetric-model-workflow-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creating an Axisymmetric Model (Workflow Overview)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretical Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#axisymmetric-2d-to-3d-volume-relation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Axisymmetric 2D-to-3D Volume Relation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-ansys-uses-this-formula" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why ANSYS uses this formula
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simple Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#task-flange-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Task — Flange Example
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-in-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction in ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-why-model-reduction-is-important" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Why Model Reduction is Important
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-areas-where-model-reduction-is-used-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Areas Where Model Reduction Is Used in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mathematical-principle-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Mathematical Principle of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-model-reduction-techniques-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Model Reduction Techniques in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-workflow-of-model-reduction-in-ansys-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Workflow of Model Reduction in ANSYS Workbench
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-engineering-applications-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. Engineering Applications of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-advantages-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Advantages of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-limitations-of-model-reduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Limitations of Model Reduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-1-force-2000-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 1 (force = 2000 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-2-force-1000-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 2 (force = 1000 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-3-force-500-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 3 (force = 500 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-reduction-4-force-250-n" class="md-nav__link">
+    <span class="md-ellipsis">
+      Model Reduction 4 (force = 250 N)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cyclic-symmetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cyclic symmetry
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="peer-teaching-a1-symmetry-and-model-reduction">Peer Teaching: A1 Symmetry and Model Reduction<a class="headerlink" href="#peer-teaching-a1-symmetry-and-model-reduction" title="Permanent link">&para;</a></h1>
+<h2 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Many engineering models contain repeated or mirrored geometry.</li>
+<li>Using symmetry reduces model size → faster solve times, less memory, but same accuracy.</li>
+<li>ANSYS Workbench supports symmetry in geometry, meshing, loads, and boundary conditions.</li>
+</ul>
+<h2 id="why-use-symmetry">Why Use Symmetry?<a class="headerlink" href="#why-use-symmetry" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Reduces model size by 50–90%.</li>
+<li>Allows finer meshing (higher accuracy) at same computational cost.</li>
+<li>Simplifies model setup when geometry and loading are symmetric.</li>
+<li>Useful for stress analysis, modal analysis, thermal problem</li>
+</ul>
+<h2 id="conditions-for-axisymmetric-modeling">Conditions for Axisymmetric Modeling<a class="headerlink" href="#conditions-for-axisymmetric-modeling" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Geometry revolves around a central axis.</li>
+<li>Load is uniformly distributed along the circumference (e.g., internal pressure).</li>
+<li>Boundary conditions are rotationally uniform.</li>
+<li>Not suitable when:</li>
+<li>Loads vary with angle (e.g., point load).</li>
+<li>Geometry has protrusions or cutouts not repeated around the full 360°</li>
+</ul>
+<h2 id="creating-an-axisymmetric-model-workflow-overview">Creating an Axisymmetric Model (Workflow Overview)<a class="headerlink" href="#creating-an-axisymmetric-model-workflow-overview" title="Permanent link">&para;</a></h2>
+<p>Geometry:</p>
+<ul>
+<li>Create or import a 2D sketch</li>
+<li>Define the axis of symmetry  </li>
+<li>Assign material</li>
+<li>Set body to Axisymmetric</li>
+<li>Apply loads/boundary conditions</li>
+<li>Mesh (2D mesh)</li>
+<li>Solve and interpret results</li>
+</ul>
+<h2 id="theoretical-background">Theoretical Background<a class="headerlink" href="#theoretical-background" title="Permanent link">&para;</a></h2>
+<p>Using symmetry in numerical analysis allows reduction of the geometric model, the degrees of freedom, and thus the computation time. A model reduction is valid only if geometry, loads, boundary conditions, and material properties all exhibit appropriate symmetry. Only then a reduced part model is fully equivalent to the full model.</p>
+<h3 id="symmetry-conditions">Symmetry Conditions<a class="headerlink" href="#symmetry-conditions" title="Permanent link">&para;</a></h3>
+<p>To use symmetry, <strong>four conditions</strong> must be satisfied simultaneously:</p>
+<ol>
+<li><strong>Geometric symmetry</strong> — the part can be divided by one or more planes or axes into identical sub-parts (e.g. half, quarter, eighth, axial or cyclic symmetry).  </li>
+<li><strong>Material symmetry</strong> — material behavior must be identical in all symmetric sub-parts; isotropic materials automatically satisfy this.  </li>
+<li><strong>Load symmetry</strong> — loads must act consistently across all symmetric sub-parts. A surface pressure typically satisfies this automatically; a single force must be correctly partitioned among the sub-parts.  </li>
+<li><strong>Boundary condition symmetry</strong> — boundary conditions must be equivalent on all symmetric sub-parts; asymmetric support or constraints in different sub-parts invalidate symmetry.  </li>
+</ol>
+<p>If all conditions are met, one may compute a suitable sub-part instead of the full model. On the symmetry planes, the displacement normal to the plane is suppressed; tangential motion remains permitted. This yields large reduction in degrees of freedom and computation time, without losing accuracy of results.</p>
+<h3 id="typical-symmetry-types">Typical Symmetry Types<a class="headerlink" href="#typical-symmetry-types" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Planar symmetry</strong> (mirror symmetry about a plane — e.g. XY, XZ, YZ)  </li>
+<li><strong>Axial (rotational) symmetry</strong> — e.g. for cylinders, vessels, discs, flanges  </li>
+<li><strong>Cyclic symmetry</strong> — identical repeating segments around an axis, e.g. flanges with bolt-hole circles, turbine or gear disks  </li>
+</ul>
+<h3 id="pressure-vs-force-in-sub-models">Pressure vs. Force in Sub-Models<a class="headerlink" href="#pressure-vs-force-in-sub-models" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Pressure</strong> (surface load) remains unchanged in sub-models — because pressure is defined per unit area.  </li>
+<li><strong>Force</strong> (integrated load) must be scaled proportional to the fraction of volume / surface being modeled:  </li>
+</ul>
+<div class="arithmatex">\[F_r = \alpha F, \qquad \alpha = \frac{\text{volume (or area) of sub-model}}{\text{volume (or area) of full model}}\]</div>
+<hr />
+<h2 id="axisymmetric-2d-to-3d-volume-relation">Axisymmetric 2D-to-3D Volume Relation<a class="headerlink" href="#axisymmetric-2d-to-3d-volume-relation" title="Permanent link">&para;</a></h2>
+<p>In ANSYS, the 2D cross-section is treated as a 3D body rotated 360°:</p>
+<p>V=A⋅2πr</p>
+<p>This formula is how ANSYS converts the 2D area into a full 3D model.
+This formula converts a 2D area (A) into a 3D volume (V) by rotating it around a central axis at a radius (r).</p>
+<p>V=A×(circumference of the rotation)</p>
+<p>Since the circumference of a full circle is:</p>
+<p>the total volume created by sweeping the 2D area around the axis is:</p>
+<div class="arithmatex">\[
+v =A.2πr
+\]</div>
+<h2 id="why-ansys-uses-this-formula">Why ANSYS uses this formula<a class="headerlink" href="#why-ansys-uses-this-formula" title="Permanent link">&para;</a></h2>
+<ul>
+<li>When you create an axisymmetric model in ANSYS Workbench:</li>
+<li>You only draw a 2D cross-section of the part.</li>
+<li>ANSYS assumes this cross-section is rotated 360° around the symmetry axis.</li>
+<li>To compute real 3D stiffness, loads, and mass, ANSYS needs to know what 3D volume that 2D area represents.</li>
+<li>So ANSYS multiplies the 2D area (A) by the circular path length (2πr) to produce the correct 3D volume.</li>
+</ul>
+<h2 id="simple-example">Simple Example<a class="headerlink" href="#simple-example" title="Permanent link">&para;</a></h2>
+<p>Imagine drawing a small rectangle in 2D representing the wall of a pipe.</p>
+<p>If this rectangle has area  </p>
+<div class="arithmatex">\[
+A = 10 \, \text{mm}^2
+\]</div>
+<p>and it is located at a radius of</p>
+<div class="arithmatex">\[
+r = 50\, \text{mm}
+\]</div>
+<p>then the 3D volume generated by rotating it around the center is:
+$$
+V = 10 \cdot 2\pi(50)
+$$</p>
+<div class="arithmatex">\[
+V = 3141.6 \, \text{mm}^3
+\]</div>
+<p>This is the actual volume of the pipe wall in 3D.</p>
+<hr />
+<h2 id="task-flange-example">Task — Flange Example<a class="headerlink" href="#task-flange-example" title="Permanent link">&para;</a></h2>
+<p>A stepped cylindrical flange is subjected to a uniform pressure applied to the top face of the smaller cylinder. The component is supported at the bottom by a frictionless support. Because the geometry and loading are symmetric about the central axis, exploit axisymmetry to reduce computation time.</p>
+<p><strong>Load cases:</strong>  </p>
+<ul>
+<li>Case A: Internal pressure of 200 bar  </li>
+<li>Case B: Tensile force of 100 kN applied to the flange end faces  </li>
+</ul>
+<p>Use the provided geometry of the flange and its reduced variants (symmetry, Model Reduction 1, Model Reduction 2, Model Reduction 3, Model Reduction 4 ).  </p>
+<p><strong>Geometry variants (files):</strong>  </p>
+<ul>
+<li><code>Model symmetry</code></li>
+<li><code>Model Reduction 1</code>  </li>
+<li><code>Model Reduction 2</code>  </li>
+<li><code>Model Reduction 3</code>  </li>
+<li><code>Model Reduction 4</code>  </li>
+</ul>
+<p><strong>Material:</strong> “FlangeSteel450”  </p>
+<ul>
+<li>Young’s modulus E = 70000 MPa  </li>
+<li>Poisson’s ratio ν = 0.33  </li>
+</ul>
+<hr />
+<h2 id="implementation-in-ansys">Implementation in ANSYS<a class="headerlink" href="#implementation-in-ansys" title="Permanent link">&para;</a></h2>
+<ol>
+<li><strong>Project management &amp; geometry import:</strong> — use provided geometries.<br />
+<a class="glightbox" href="image111-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image111-1.jpeg" /></a></li>
+<li><strong>Material assignment:</strong> — define material “Axisymmetry” with given properties.<br />
+<a class="glightbox" href="image-2-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image-2-1.jpeg" /></a></li>
+<li><strong>Material Properties</strong><br />
+<a class="glightbox" href="image new 5-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image new 5-1.jpeg" /></a></li>
+<li>
+<p><strong>Create Symmetry:</strong><br />
+<a class="glightbox" href="image new 6-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image new 6-1.jpeg" /></a>
+<a class="glightbox" href="image new 2-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image new 2-1.jpeg" /></a></p>
+</li>
+<li>
+<p><strong>Mesh generation:</strong> — perform mesh-independence study; compare full and reduced models with same mesh characteristics.<br />
+<a class="glightbox" href="image_3-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image_3-1.jpeg" /></a></p>
+</li>
+<li><strong>Boundary conditions:</strong><br />
+   For symmetry: apply frictionless supports on symmetry planes.</li>
+<li><strong>Load application:</strong> apply either Pressure and Frictionless Support
+<a class="glightbox" href="image new 3-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image new 3-1.jpeg" /></a>
+<a class="glightbox" href="image new 4-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image new 4-1.jpeg" /></a></li>
+<li><strong>Symmetry angle:</strong> Change the degree of the symmetry to modify the symmetry angle.
+<a class="glightbox" href="image_8-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image_8-1.jpeg" /></a>
+<a class="glightbox" href="image new 8-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image new 8-1.jpeg" /></a></li>
+<li><strong>Solver settings:</strong> use default; ensure comparability between different model variants.<br />
+ Again Change the degree of the symmetry to modify the symmetry angle
+<a class="glightbox" href="image_10-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image_10-1.jpeg" /></a>
+<a class="glightbox" href="image new 1-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image new 1-1.jpeg" /></a></li>
+</ol>
+<h2 id="model-reduction-in-ansys-workbench">Model Reduction in ANSYS Workbench<a class="headerlink" href="#model-reduction-in-ansys-workbench" title="Permanent link">&para;</a></h2>
+<h3 id="1-introduction-to-model-reduction">1. Introduction to Model Reduction<a class="headerlink" href="#1-introduction-to-model-reduction" title="Permanent link">&para;</a></h3>
+<p>Model reduction is a powerful simulation technique used to simplify large and complex finite element models while preserving their essential physical behavior.</p>
+<p>In <strong>:contentReference[oaicite:0]{index=0}</strong>, model reduction is mainly used for:</p>
+<ul>
+<li>Structural dynamics</li>
+<li>Modal analysis</li>
+<li>System-level simulation</li>
+<li>Digital twins and real-time simulation</li>
+</ul>
+<p>The output of model reduction is called a <strong>Reduced Order Model (ROM)</strong>.</p>
+<hr />
+<h2 id="2-why-model-reduction-is-important">2. Why Model Reduction is Important<a class="headerlink" href="#2-why-model-reduction-is-important" title="Permanent link">&para;</a></h2>
+<p>Modern engineering simulations often contain:</p>
+<ul>
+<li>Millions of degrees of freedom (DOF)</li>
+<li>Long computation times</li>
+<li>High memory and hardware demands</li>
+</ul>
+<h3 id="benefits-of-model-reduction">Benefits of model reduction<a class="headerlink" href="#benefits-of-model-reduction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduces simulation time by <strong>90–99%</strong></li>
+<li>Enables <strong>real-time simulation</strong></li>
+<li>Supports <strong>faster design optimization</strong></li>
+<li>Enables simulations for <strong>control systems and digital twins</strong></li>
+</ul>
+<hr />
+<h2 id="3-areas-where-model-reduction-is-used-in-ansys">3. Areas Where Model Reduction Is Used in ANSYS<a class="headerlink" href="#3-areas-where-model-reduction-is-used-in-ansys" title="Permanent link">&para;</a></h2>
+<p>Model reduction is commonly applied in:</p>
+<ul>
+<li>Modal Analysis</li>
+<li>Harmonic Response Analysis</li>
+<li>Transient Structural Analysis</li>
+<li>System Coupling</li>
+<li>Twin Builder</li>
+<li>Design Optimization</li>
+</ul>
+<hr />
+<h2 id="4-mathematical-principle-of-model-reduction">4. Mathematical Principle of Model Reduction<a class="headerlink" href="#4-mathematical-principle-of-model-reduction" title="Permanent link">&para;</a></h2>
+<p>The full structural dynamic equation is:</p>
+<p>$$
+M\ddot{x} + C\dot{x} + Kx = F
+$$
+Where:</p>
+<ul>
+<li><code>M</code> = Mass matrix  </li>
+<li><code>C</code> = Damping matrix  </li>
+<li><code>K</code> = Stiffness matrix  </li>
+<li><code>x</code> = Displacement vector  </li>
+<li><code>F</code> = Applied force vector  </li>
+</ul>
+<p>After reduction, it becomes:  </p>
+<div class="arithmatex">\[Mrq̈ + Crq̇ + Krq = Fr\]</div>
+<p>Where:</p>
+<ul>
+<li><code>q</code> = Reduced system coordinates  </li>
+<li><code>r</code> = Reduced system order  </li>
+</ul>
+<p>This drastically lowers computational cost while maintaining accuracy.</p>
+<hr />
+<h2 id="5-model-reduction-techniques-in-ansys">5. Model Reduction Techniques in ANSYS<a class="headerlink" href="#5-model-reduction-techniques-in-ansys" title="Permanent link">&para;</a></h2>
+<h3 id="51-modal-reduction">5.1 Modal Reduction<a class="headerlink" href="#51-modal-reduction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Uses dominant vibration modes</li>
+<li>Best for structural vibration and fatigue analysis</li>
+<li>Most widely used method</li>
+</ul>
+<h3 id="52-krylov-based-reduction">5.2 Krylov-Based Reduction<a class="headerlink" href="#52-krylov-based-reduction" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Used in dynamic and electronic systems</li>
+<li>Preserves frequency response over a wide range</li>
+</ul>
+<h3 id="53-proper-orthogonal-decomposition-pod">5.3 Proper Orthogonal Decomposition (POD)<a class="headerlink" href="#53-proper-orthogonal-decomposition-pod" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Data-driven method</li>
+<li>Used in thermal and fluid simulations</li>
+<li>Extracts dominant flow or thermal patterns</li>
+</ul>
+<hr />
+<h2 id="6-workflow-of-model-reduction-in-ansys-workbench">6. Workflow of Model Reduction in ANSYS Workbench<a class="headerlink" href="#6-workflow-of-model-reduction-in-ansys-workbench" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Create full geometry</li>
+<li>Generate mesh</li>
+<li>Perform full-order simulation</li>
+<li>Extract dominant modes or system matrices</li>
+<li>Generate reduced order model (ROM)</li>
+<li>Validate ROM accuracy</li>
+<li>Use ROM for fast simulations or optimization</li>
+</ol>
+<hr />
+<h2 id="7-engineering-applications-of-model-reduction">7. Engineering Applications of Model Reduction<a class="headerlink" href="#7-engineering-applications-of-model-reduction" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Automotive:</strong> Engine mounts, suspension systems</li>
+<li><strong>Aerospace:</strong> Wing flutter, vibration response</li>
+<li><strong>Robotics:</strong> Motion control and real-time simulation</li>
+<li><strong>Civil Engineering:</strong> Earthquake response of buildings</li>
+<li><strong>Electronics:</strong> Thermal management of chips</li>
+<li><strong>Digital Twins:</strong> Live health monitoring of machines</li>
+</ul>
+<hr />
+<h2 id="8-advantages-of-model-reduction">8. Advantages of Model Reduction<a class="headerlink" href="#8-advantages-of-model-reduction" title="Permanent link">&para;</a></h2>
+<ul>
+<li>✅ Extremely fast simulation time  </li>
+<li>✅ Reduced hardware requirements  </li>
+<li>✅ Real-time simulation capability  </li>
+<li>✅ Faster design optimization  </li>
+<li>✅ Efficient multi-physics coupling  </li>
+</ul>
+<hr />
+<h2 id="9-limitations-of-model-reduction">9. Limitations of Model Reduction<a class="headerlink" href="#9-limitations-of-model-reduction" title="Permanent link">&para;</a></h2>
+<ul>
+<li>⚠ Accuracy limited to trained conditions  </li>
+<li>⚠ Not ideal for highly nonlinear behavior  </li>
+<li>⚠ Initial full model is required  </li>
+<li>⚠ Re-training needed for new operating conditions  </li>
+</ul>
+<hr />
+<h2 id="model-reduction-1-force-2000-n">Model Reduction 1 (force = 2000 N)<a class="headerlink" href="#model-reduction-1-force-2000-n" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="image..-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image..-1.jpeg" /></a>
+<a class="glightbox" href="new image-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="new image-1.jpeg" /></a>
+<a class="glightbox" href="image full-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image full-1.jpeg" /></a></p>
+<h2 id="model-reduction-2-force-1000-n">Model Reduction 2 (force = 1000 N)<a class="headerlink" href="#model-reduction-2-force-1000-n" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="image half-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image half-1.jpeg" /></a></p>
+<h2 id="model-reduction-3-force-500-n">Model Reduction 3 (force = 500 N)<a class="headerlink" href="#model-reduction-3-force-500-n" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="image quarter-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image quarter-1.jpeg" /></a></p>
+<h2 id="model-reduction-4-force-250-n">Model Reduction 4 (force = 250 N)<a class="headerlink" href="#model-reduction-4-force-250-n" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="image last-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="image last-1.jpeg" /></a></p>
+<h3 id="results-stress-deformation-and-computation-time">Results — Stress, Deformation, and Computation Time<a class="headerlink" href="#results-stress-deformation-and-computation-time" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Model Variant</th>
+<th>Max Stress</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Model Reduction 1</td>
+<td>0.20707</td>
+</tr>
+<tr>
+<td>Model Reduction 2</td>
+<td>0.28189</td>
+</tr>
+<tr>
+<td>Model Reduction 3</td>
+<td>0.29276</td>
+</tr>
+<tr>
+<td>Model Reduction 4</td>
+<td>0.29448</td>
+</tr>
+</tbody>
+</table>
+<p>The reduction has only minimal influence on stress.</p>
+<hr />
+<h2 id="cyclic-symmetry">Cyclic symmetry<a class="headerlink" href="#cyclic-symmetry" title="Permanent link">&para;</a></h2>
+<p><a class="glightbox" href="iimage1-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="iimage1-1.jpeg" /></a>
+<a class="glightbox" href="iimage2-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="iimage2-1.jpeg" /></a>
+<a class="glightbox" href="iimage3-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="iimage3-1.jpeg" /></a>
+<a class="glightbox" href="iimage4-1.jpeg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="iimage4-1.jpeg" /></a></p>
+<hr />
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<p>1) Computational Methods for Fluid Dynamics, J. H. Ferziger and M. Perić, Springer, 3rd Edition — Fundamentals of model reduction and numerical symmetry handling.</p>
+<p>2) Model Reduction and Approximation, P. Benner, A. Cohen, M. Ohlberger, and K. Willcox, Springer, 2017 — Standard reference for Reduced Order Modeling (ROM).</p>
+<p>3) Symmetry Methods for Differential Equations, P. E. Hydon, Cambridge University Press — Foundational theory of symmetry in engineering systems.</p>
+<p>4) Mechanical Systems and Signal Processing — Applications of modal reduction in vibration systems.</p>
+<p>5) International Journal for Numerical Methods in Engineering — Symmetry-based FE model reduction techniques.</p>
+<p>6) Finite Element Model Reduction Techniques, M. Friswell, J. Mottershead — Guyan, Craig-Bampton, and symmetry-based reduction.</p>
+<p>7) SAE International Technical Papers — Symmetry and ROM in automotive vibration models.</p><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
