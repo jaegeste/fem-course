@@ -12,7 +12,7 @@ Weisen Sie Ihr Ergebnis für Kraft beziehungsweise Spannung und Verformung mit e
 
 ## Niederhalter
 
-Gegeben ist der dargestellte Niederhalter in der Datei [niederhalter.stp](media/uebungen/niederhalter.stp). Er sei auf Druck belastet und eingespannt gemäß Abbildung. Seine Querschnittsfläche im kleinen Querschnitt ist 300 mm².
+Gegeben ist der dargestellte Niederhalter in der Datei [niederhalter.stp](media/uebungen/niederhalter.stp). Er sei auf Druck beansprucht und eingespannt gemäß Abbildung. Seine Querschnittsfläche im kleinen Querschnitt ist 300 mm².
 
 [![Randbedingungen statisch mechanische Analyse des Niederhalters](media/uebungen/niederhalter.png){width=350px}](media/uebungen/niederhalter.png "Randbedingungen statisch mechanische Analyse des Niederhalters"){.glightbox}
 
