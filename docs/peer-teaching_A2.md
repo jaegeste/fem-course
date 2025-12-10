@@ -16,7 +16,7 @@ After completing this study, students will be able to:
 
 In this task, the application of a tensile load on a 3D plate with a central hole is analysed.
 
-![alt text](media/peer-teaching/image-15.png)
+![alt text](media/peer-teaching_A2/image-15.png)
 
 ### Given Data
 
@@ -36,7 +36,7 @@ $$F = \sigma_0 \cdot (200\ \text{mm}) \cdot (5\ \text{mm}) = 100{,}000\ \text{N}
 
 ### Geometry
 
-Use this Geometry file for your analysis : [Geometry File (STEP)](media/peer-teaching/plate_with_hole.stp)
+Use this Geometry file for your analysis : [Geometry File (STEP)](media/peer-teaching_A2/plate_with_hole.stp)
 
 ### Description of the Three Models
 
@@ -263,7 +263,7 @@ The 3D geometry of the plate with a central hole is provided via the following l
 
 **Geometry File:**  
 
-Use this Geometry file for both the Model 1 and 2 : [Geometry File (STEP)](media/peer-teaching/plate_with_hole.stp)
+Use this Geometry file for both the Model 1 and 2 : [Geometry File (STEP)](media/peer-teaching_A2/plate_with_hole.stp)
 
 ---
 
@@ -278,8 +278,8 @@ Use this Geometry file for both the Model 1 and 2 : [Geometry File (STEP)](media
 - Turn **Mesh Defeaturing** → *Off*
 - Turn **Capture Proximity** → *Off*
 
-![alt text](media/peer-teaching/image-1.png)
-![alt text](media/peer-teaching/image.png)
+![alt text](media/peer-teaching_A2/image-1.png)
+![alt text](media/peer-teaching_A2/image.png)
 
 ##### 2.2 Evaluate Mesh Quality
 
@@ -319,7 +319,7 @@ Insert:
 
 The results obtained from Model 1 clearly reflect the limitations of the coarse mesh:
 
-![alt text](media/peer-teaching/image-2.png)
+![alt text](media/peer-teaching_A2/image-2.png)
 
 - The **maximum stress near the hole deviates significantly from the analytical solution**, indicating that the coarse mesh is unable to correctly reproduce the expected stress concentration factor.
 - The **stress distribution appears patchy and irregular**, showing that the elements are too large to resolve the steep stress gradient around the hole boundary.
@@ -360,7 +360,7 @@ Only Global Element Size to be changed for global element settings. All other se
 - Number of divisions → **60**
 - Behavior → *Soft*
 
-![alt text](media/peer-teaching/image-4.png)
+![alt text](media/peer-teaching_A2/image-4.png)
 
 ##### **B. Face Sizing (Hole Inner Surface)**
 
@@ -368,21 +368,21 @@ Only Global Element Size to be changed for global element settings. All other se
 - Scope → Cylindrical hole surface
 - Element Size → **4 mm**
 
-![alt text](media/peer-teaching/image-5.png)
+![alt text](media/peer-teaching_A2/image-5.png)
 
 ##### **C. Face Meshing**
 
 1. Right-click *Mesh → Insert → Face Meshing*.  
 2. Scope the **cylindrical surface of the hole**.  
 
-![alt text](media/peer-teaching/image-6.png)
+![alt text](media/peer-teaching_A2/image-6.png)
 
 ##### **D. Inflation**
 
 - Scope → Whole body
 - Boundary → Cylindrical hole face
 
-![alt text](media/peer-teaching/image-7.png)
+![alt text](media/peer-teaching_A2/image-7.png)
 
 Generate the mesh after using all these mesh tools.
 
@@ -397,11 +397,11 @@ Generate the mesh after using all these mesh tools.
   - Aspect Ratio (< 5 target)
   - Element Quality (> 0.7 target)
 
-*![alt text](media/peer-teaching/image-8.png)*
+*![alt text](media/peer-teaching_A2/image-8.png)*
 
 - Mesh metrics can also be viewed using Mesh Quality Worksheet to measure the quality of the mesh and find areas of low mesh quality.
 
-![alt text](media/peer-teaching/image-9.png)
+![alt text](media/peer-teaching_A2/image-9.png)
 
 ---
 
@@ -423,7 +423,7 @@ Insert:
 
 Compared to Model 1, the refined mesh in Model 2 produces significantly improved and more reliable stress results. The enhancements introduced through different mesh tools directly influence the mesh quality in the regions of high stress gradients, leading to a solution that aligns much more closely with theoretical expectations.
 
-![alt text](media/peer-teaching/image-10.png)
+![alt text](media/peer-teaching_A2/image-10.png)
 
 Key observations include:
 
@@ -567,7 +567,7 @@ This ensures fair comparison between cases because the **mesh is fixed** and onl
 
 In this model, the tensile load is applied using a Remote Force, which ensures a uniform pull on the top face.
 
-![alt text](media/peer-teaching/image-11.png)
+![alt text](media/peer-teaching_A2/image-11.png)
 
 1. Insert → Remote Force  
 2. Scope the top face  
@@ -587,7 +587,7 @@ In this model, the tensile load is introduced as a surface pressure, while the b
 2. Insert → Frictionless Support → apply on bottom face  
 3. Solve and evaluate Equivalent Stress  
 
-![alt text](media/peer-teaching/image-12.png)
+![alt text](media/peer-teaching_A2/image-12.png)
 
 > This case isolates vertical loading while minimizing artificial in-plane constraints.
 
@@ -604,7 +604,7 @@ Elastic Support introduces a distributed foundation stiffness, allowing controll
 4. Set stiffness 10000 N/mm^3 
 5. Solve and evaluate Equivalent Stress
 
-![alt text](media/peer-teaching/image-13.png)
+![alt text](media/peer-teaching_A2/image-13.png)
 
 - This case demonstrates how boundary flexibility influences stress distribution
 
@@ -620,7 +620,7 @@ The bottom face is constrained using a Remote Displacement Support that fixes on
 2. Insert → Remote Displacement → apply on bottom face → set UY = 0, keep all other DOFs free  
 3. Solve and evaluate Equivalent Stress
 
-![alt text](media/peer-teaching/image-14.png)
+![alt text](media/peer-teaching_A2/image-14.png)
   
 - Demonstrates how displacement-controlled loading can amplify stresses when constraints allow limited freedom
 

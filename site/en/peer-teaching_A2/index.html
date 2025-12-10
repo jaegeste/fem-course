@@ -1,0 +1,1676 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/peer-teaching_A2/">
+      
+      
+        <link rel="prev" href="../peer-teaching_A1/">
+      
+      
+      
+      <link rel="icon" href="../../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Peer Teaching A2 - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../overrides/main.css">
+    
+      <link rel="stylesheet" href="../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#peer-teaching-a2-mesh-quality-load-application" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Peer Teaching A2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../peer-teaching_A2/" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation and getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_kragbalken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 1 Cantilever Beam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 2 Stress Concentration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_elementtypen_ansatzf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 3 Element Types/Shape functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_krafteinleitung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 4 Load Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_symmetrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 5 Model Reduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_modalanalyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 6 Modal Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peer-teaching_A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-task-3d-plate-with-a-circular-hole-under-uniaxial-tension" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Task: 3D Plate With a Circular Hole Under Uniaxial Tension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-analytical-solution-equivalent-stress-von-mises" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Analytical Solution – Equivalent Stress (von Mises)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mesh-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Mesh Quality Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ansys-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ANSYS Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-boundary-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Boundary Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-purpose-of-load-application-in-model-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Purpose of Load Application in Model 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-step-by-step-implementation-in-ansys-for-model-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Step-by-Step Implementation in ANSYS for Model 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-guidelines-for-selecting-load-types-and-boundary-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Guidelines for Selecting Load Types and Boundary Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-task-3d-plate-with-a-circular-hole-under-uniaxial-tension" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Task: 3D Plate With a Circular Hole Under Uniaxial Tension
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-analytical-solution-equivalent-stress-von-mises" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Analytical Solution – Equivalent Stress (von Mises)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-mesh-quality-metrics" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Mesh Quality Metrics
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-ansys-implementation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ANSYS Implementation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#82-boundary-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.2 Boundary Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#83-purpose-of-load-application-in-model-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.3 Purpose of Load Application in Model 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-step-by-step-implementation-in-ansys-for-model-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Step-by-Step Implementation in ANSYS for Model 3
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-guidelines-for-selecting-load-types-and-boundary-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. Guidelines for Selecting Load Types and Boundary Conditions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. Summary
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="peer-teaching-a2-mesh-quality-load-application">Peer Teaching: A2 Mesh Quality &amp; Load Application<a class="headerlink" href="#peer-teaching-a2-mesh-quality-load-application" title="Permanent link">&para;</a></h1>
+<h2 id="1-learning-objectives">1. Learning Objectives<a class="headerlink" href="#1-learning-objectives" title="Permanent link">&para;</a></h2>
+<p>After completing this study, students will be able to:</p>
+<ul>
+<li>Evaluate and interpret 3D mesh quality metrics such as Jacobian Ratio, Skewness, Orthogonal Quality, and Aspect Ratio.</li>
+<li>Identify how poor mesh quality affects stress accuracy in curved, stress-concentrated regions.</li>
+<li>Apply multiple mesh refinement tools in ANSYS to improve element quality.</li>
+<li>Understand and compare different load application methods in 3D (pressure, remote force/displacement, pressure patches, body forces).</li>
+<li>Interpret how mesh quality and load introduction influence equivalent (von Mises) stress distribution.</li>
+</ul>
+<hr />
+<h2 id="2-task-3d-plate-with-a-circular-hole-under-uniaxial-tension">2. Task: 3D Plate With a Circular Hole Under Uniaxial Tension<a class="headerlink" href="#2-task-3d-plate-with-a-circular-hole-under-uniaxial-tension" title="Permanent link">&para;</a></h2>
+<p>In this task, the application of a tensile load on a 3D plate with a central hole is analysed.</p>
+<p><a class="glightbox" href="../../media/peer-teaching/image-15.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-15.png" /></a></p>
+<h3 id="given-data">Given Data<a class="headerlink" href="#given-data" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Plate width: <strong>200 mm</strong></li>
+<li>Plate height: <strong>200 mm</strong></li>
+<li>Plate thickness: <strong>5 mm</strong></li>
+<li>Hole diameter: <strong>40 mm</strong><br />
+  → radius <strong>r = 20 mm</strong></li>
+<li>Applied far-field tensile stress: <strong>σ₀ = 100 MPa</strong></li>
+<li>Material: <strong>Structural Steel</strong>  </li>
+<li>Young’s Modulus: <strong>E = 200 GPa</strong>  </li>
+<li>Poisson ratio: <strong>ν = 0.30</strong></li>
+</ul>
+<p>Required pulling force:</p>
+<div class="arithmatex">\[F = \sigma_0 \cdot (200\ \text{mm}) \cdot (5\ \text{mm}) = 100{,}000\ \text{N}\]</div>
+<h3 id="geometry">Geometry<a class="headerlink" href="#geometry" title="Permanent link">&para;</a></h3>
+<p>Use this Geometry file for your analysis : <a href="../../media/peer-teaching/plate_with_hole.stp">Geometry File (STEP)</a></p>
+<h3 id="description-of-the-three-models">Description of the Three Models<a class="headerlink" href="#description-of-the-three-models" title="Permanent link">&para;</a></h3>
+<h4 id="model-1-coarse-mesh-baseline-model"><strong>Model 1 — Coarse Mesh (Baseline Model)</strong><a class="headerlink" href="#model-1-coarse-mesh-baseline-model" title="Permanent link">&para;</a></h4>
+<p>A deliberately coarse 3D mesh is created using only a global element size.<br />
+This model reveals:</p>
+<ul>
+<li>distorted elements around the hole,</li>
+<li>inaccurate stress concentration prediction.</li>
+</ul>
+<p>It serves as the baseline for comparison.</p>
+<h4 id="model-2-refined-mesh-targeted-mesh-improvement"><strong>Model 2 — Refined Mesh (Targeted Mesh Improvement)</strong><a class="headerlink" href="#model-2-refined-mesh-targeted-mesh-improvement" title="Permanent link">&para;</a></h4>
+<p>Mesh refinement tools are applied around the hole and surrounding region:</p>
+<ul>
+<li>edge sizing,</li>
+<li>face sizing,</li>
+<li>patch conforming method.</li>
+<li>face meshing</li>
+</ul>
+<p>This model produces:</p>
+<ul>
+<li>high-quality elements near the stress concentration zone,</li>
+<li>improved Jacobian ratio, skewness, and orthogonal quality,</li>
+<li>stress values close to the analytical solution.</li>
+</ul>
+<h4 id="model-3-load-application-study-using-refined-mesh"><strong>Model 3 — Load Application Study (Using Refined Mesh)</strong><a class="headerlink" href="#model-3-load-application-study-using-refined-mesh" title="Permanent link">&para;</a></h4>
+<p>Using the same refined mesh from Model 2, different load application methods are applied:</p>
+<ul>
+<li>full-face pressure,</li>
+<li>remote force,</li>
+<li>localized pressure patch,</li>
+</ul>
+<p>This model illustrates how different load definitions influence the stress field, even when the mesh is good.</p>
+<hr />
+<h2 id="3-analytical-solution-equivalent-stress-von-mises">3. Analytical Solution – Equivalent Stress (von Mises)<a class="headerlink" href="#3-analytical-solution-equivalent-stress-von-mises" title="Permanent link">&para;</a></h2>
+<p>The plate is subjected to a far-field uniaxial tensile <strong>pressure</strong></p>
+<div class="arithmatex">\[
+P = 100\ \text{MPa}
+\]</div>
+<p>Since pressure has units of stress (N/mm²), it already represents the applied far-field tensile stress.<br />
+Thus, for the analytical solution we directly set:</p>
+<div class="arithmatex">\[
+\sigma_0 = P
+\]</div>
+<p>For a plate with a central circular hole, the analytical stress concentration factor for an infinite plate is:</p>
+<div class="arithmatex">\[
+K_t = 3.0
+\]</div>
+<p>The analytical SCF of 3.0 comes from Kirsch’s solution for an infinite plate.<br />
+For a finite-width plate, empirical correction charts (Peterson, Pilkey) provide a reduced SCF based on the width-to-radius ratio.  </p>
+<p>However, our finite plate geometry:</p>
+<ul>
+<li>Width = 200 mm  </li>
+<li>Height = 200 mm  </li>
+<li>Hole radius = 20 mm  </li>
+<li>Ratios: <span class="arithmatex">\( W/r = 10 \)</span>, <span class="arithmatex">\( H/r = 10 \)</span></li>
+</ul>
+<p>leads to a reduced, finite-width corrected SCF:</p>
+<div class="arithmatex">\[
+K_{t,\text{eff}} \approx 2.7\text{–}2.8
+\]</div>
+<p>The maximum tangential stress at the hole boundary is given by:</p>
+<div class="arithmatex">\[
+\sigma_{\theta,\max} = K_{t,\text{eff}} \cdot \sigma_0
+\]</div>
+<p>Using the midpoint value <span class="arithmatex">\( K_{t,\text{eff}} = 2.75 \)</span>:</p>
+<div class="arithmatex">\[
+\sigma_{\theta,\max} \approx 2.75 \cdot 100\ \text{MPa}
+\]</div>
+<p>Thus:</p>
+<div class="arithmatex">\[
+\sigma_{\theta,\max} \approx 275\ \text{MPa}
+\]</div>
+<p>This analytical value is used to validate the FEM results.</p>
+<hr />
+<h2 id="4-mesh-quality-metrics">4. Mesh Quality Metrics<a class="headerlink" href="#4-mesh-quality-metrics" title="Permanent link">&para;</a></h2>
+<p>In finite element analysis, the accuracy of the computed stress field depends not only on element size but also on element shape quality. Poorly shaped elements introduce numerical distortion, reduce stiffness accuracy, and lead to significant errors in regions with high stress gradients—such as the boundary of a circular hole. To avoid these issues, ANSYS provides several mesh quality metrics that quantify how well each element represents the underlying geometry.</p>
+<p>Below, the most relevant metrics for 3D stress analysis are introduced together with recommended ranges and their influence on the final results.</p>
+<hr />
+<h3 id="41-jacobian-ratio-corner-and-gauss-point-checks">4.1 Jacobian Ratio (Corner and Gauss Point Checks)<a class="headerlink" href="#41-jacobian-ratio-corner-and-gauss-point-checks" title="Permanent link">&para;</a></h3>
+<p>The Jacobian ratio measures deformation during the mapping of an ideal element to the actual element. ANSYS reports the minimum ratio across all integration points (Gauss points) or corner nodes.</p>
+<ul>
+<li><strong>Ideal:</strong> 1.0  </li>
+<li><strong>Good:</strong> &gt; 0.8  </li>
+<li><strong>Acceptable:</strong> &gt; 0.6  </li>
+<li><strong>Poor:</strong> &lt; 0.6  </li>
+<li><strong>Critical:</strong> &lt; 0.4  </li>
+</ul>
+<p><strong>Corner-based Jacobian check:</strong> Detects distorted vertices.<br />
+<strong>Gauss-point Jacobian check:</strong> More strict; detects distortion inside the element where stresses are evaluated.</p>
+<p><strong>Influence on stress:</strong><br />
+Jacobian ratio is <strong>the most critical metric</strong> near curved holes. Low values corrupt the stiffness matrix, producing unrealistic stress gradients and nonphysical spikes along the hole boundary.</p>
+<hr />
+<h3 id="42-skewness">4.2 Skewness<a class="headerlink" href="#42-skewness" title="Permanent link">&para;</a></h3>
+<p>Skewness measures how much an element deviates from its ideal shape:</p>
+<ul>
+<li>For tetrahedra → equilateral  </li>
+<li>For hexahedra → orthogonal  </li>
+</ul>
+<p>Values range from <strong>0 (ideal)</strong> to <strong>1 (worst)</strong>.</p>
+<ul>
+<li><strong>Good:</strong> &lt; 0.5  </li>
+<li><strong>Warning:</strong> 0.5 – 0.9  </li>
+<li><strong>Poor:</strong> &gt; 0.9  </li>
+</ul>
+<p><strong>Influence:</strong><br />
+High skewness degrades the interpolation quality of shape functions. In the plate-with-hole example, skewed tetras around the hole produce jagged stress contours and reduce accuracy.</p>
+<hr />
+<h3 id="43-orthogonal-quality">4.3 Orthogonal Quality<a class="headerlink" href="#43-orthogonal-quality" title="Permanent link">&para;</a></h3>
+<p>Evaluates how orthogonally the element’s faces and edges are arranged.</p>
+<ul>
+<li><strong>Ideal:</strong> 1.0  </li>
+<li><strong>Acceptable:</strong> &gt; 0.2  </li>
+<li><strong>Poor:</strong> &lt; 0.15  </li>
+</ul>
+<p><strong>Influence:</strong><br />
+Low orthogonal quality appears when elements are forced into tight curvature or compressed transitions. It produces uneven element stiffness and noisy stresses near the hole boundary.</p>
+<hr />
+<h3 id="44-aspect-ratio">4.4 Aspect Ratio<a class="headerlink" href="#44-aspect-ratio" title="Permanent link">&para;</a></h3>
+<p>Ratio of the longest element edge to its shortest edge.</p>
+<ul>
+<li><strong>Ideal:</strong> ≈ 1  </li>
+<li><strong>Acceptable:</strong> &lt; 5  </li>
+<li><strong>Poor:</strong> &gt; 10  </li>
+</ul>
+<p><strong>Influence:</strong><br />
+Large aspect ratios create elements that are stiff in one direction and flexible in another. This often occurs when transitioning from fine mesh near the hole to coarse mesh away from it. Proper aspect ratio ensures smooth stress flow.</p>
+<hr />
+<h3 id="45-element-quality-composite-metric">4.5 Element Quality (Composite Metric)<a class="headerlink" href="#45-element-quality-composite-metric" title="Permanent link">&para;</a></h3>
+<p>A combined metric calculated by ANSYS that represents overall element shape quality.</p>
+<ul>
+<li><strong>Ideal:</strong> 1  </li>
+<li><strong>Acceptable:</strong> &gt; 0.7  </li>
+<li><strong>Unreliable:</strong> &lt; 0.5  </li>
+</ul>
+<p><strong>Influence:</strong><br />
+Useful as a quick indicator of mesh health, but individual metrics (Jacobian, skewness, orthogonal quality) are more diagnostic for curved geometry refinement.</p>
+<h3 id="46-warping-angle">4.6 Warping Angle<a class="headerlink" href="#46-warping-angle" title="Permanent link">&para;</a></h3>
+<p>Warping angle measures how far quad or hex faces deviate from being planar. In solid tetrahedral meshes it matters less, but for mixed or swept meshes it is important.</p>
+<ul>
+<li><strong>Ideal:</strong> 0°  </li>
+<li><strong>Good:</strong> &lt; 5°  </li>
+<li><strong>Acceptable:</strong> &lt; 10°  </li>
+<li><strong>Poor:</strong> &gt; 15°  </li>
+</ul>
+<p><strong>Influence on stress:</strong><br />
+Warped faces cause inconsistent strain interpolation across the element, leading to variations in reconstructed stresses. Effects are stronger in shells and thin regions but still relevant near curved surfaces.</p>
+<hr />
+<h3 id="summary-of-recommended-quality-thresholds">Summary of Recommended Quality Thresholds<a class="headerlink" href="#summary-of-recommended-quality-thresholds" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Excellent</th>
+<th>Good</th>
+<th>Acceptable</th>
+<th>Poor</th>
+<th>Very Poor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Jacobian Ratio</strong></td>
+<td>&gt; 0.85</td>
+<td>0.75–0.85</td>
+<td>0.6–0.75</td>
+<td>0.4–0.6</td>
+<td>&lt; 0.4</td>
+</tr>
+<tr>
+<td><strong>Skewness</strong></td>
+<td>&lt; 0.25</td>
+<td>0.25–0.40</td>
+<td>0.40–0.70</td>
+<td>0.70–0.90</td>
+<td>&gt; 0.90</td>
+</tr>
+<tr>
+<td><strong>Orthogonal Quality</strong></td>
+<td>&gt; 0.40</td>
+<td>0.25–0.40</td>
+<td>0.15–0.25</td>
+<td>0.10–0.15</td>
+<td>&lt; 0.10</td>
+</tr>
+<tr>
+<td><strong>Aspect Ratio</strong></td>
+<td>1–2</td>
+<td>2–3</td>
+<td>3–5</td>
+<td>5–10</td>
+<td>&gt; 10</td>
+</tr>
+<tr>
+<td><strong>Element Quality (Composite)</strong></td>
+<td>&gt; 0.90</td>
+<td>0.75–0.90</td>
+<td>0.60–0.75</td>
+<td>0.40–0.60</td>
+<td>&lt; 0.40</td>
+</tr>
+<tr>
+<td><strong>Warping Angle</strong></td>
+<td>&lt; 2°</td>
+<td>2–5°</td>
+<td>5–10°</td>
+<td>10–15°</td>
+<td>&gt; 15°</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-ansys-implementation">5. ANSYS Implementation<a class="headerlink" href="#5-ansys-implementation" title="Permanent link">&para;</a></h2>
+<p>This section describes the numerical setup for <strong>Model 1</strong> (coarse mesh) and <strong>Model 2</strong> (refined mesh).<br />
+Both models follow the same workflow structure used in the FEM course.</p>
+<hr />
+<h3 id="model-1-coarse-mesh-baseline"><strong>Model 1 — Coarse Mesh (Baseline)</strong><a class="headerlink" href="#model-1-coarse-mesh-baseline" title="Permanent link">&para;</a></h3>
+<p><em>Model demonstrating intentionally poor mesh quality.</em></p>
+<hr />
+<h4 id="1-geometry">1. Geometry<a class="headerlink" href="#1-geometry" title="Permanent link">&para;</a></h4>
+<p>The 3D geometry of the plate with a central hole is provided via the following link:</p>
+<p><strong>Geometry File:</strong>  </p>
+<p>Use this Geometry file for both the Model 1 and 2 : <a href="../../media/peer-teaching/plate_with_hole.stp">Geometry File (STEP)</a></p>
+<hr />
+<h4 id="2-mesh">2. Mesh<a class="headerlink" href="#2-mesh" title="Permanent link">&para;</a></h4>
+<h5 id="21-global-mesh">2.1 Global Mesh<a class="headerlink" href="#21-global-mesh" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Select <strong>Mesh</strong></li>
+<li>Set a coarse global element size (e.g., <strong>30 mm</strong>)</li>
+<li>Turn <strong>Advanced Size Function</strong> → <em>Off</em></li>
+<li>Turn <strong>Capture Curvature</strong> → <em>Off</em></li>
+<li>Turn <strong>Mesh Defeaturing</strong> → <em>Off</em></li>
+<li>Turn <strong>Capture Proximity</strong> → <em>Off</em></li>
+</ul>
+<p><a class="glightbox" href="../../media/peer-teaching/image-1.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-1.png" /></a>
+<a class="glightbox" href="../../media/peer-teaching/image.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image.png" /></a></p>
+<h5 id="22-evaluate-mesh-quality">2.2 Evaluate Mesh Quality<a class="headerlink" href="#22-evaluate-mesh-quality" title="Permanent link">&para;</a></h5>
+<p>The mesh produced in Model 1 is intentionally coarse.<br />
+A visual inspection reveals several issues:</p>
+<ul>
+<li>The <strong>hole boundary is poorly captured</strong>, with only a few large elements representing the curved surface.  </li>
+<li><strong>Element shapes appear distorted</strong>, especially around the cylindrical wall.  </li>
+<li>The <strong>transition from large elements near the hole to even larger elements away from it is abrupt</strong>, further reducing accuracy.</li>
+</ul>
+<hr />
+<h4 id="3-boundary-conditions">3. Boundary Conditions<a class="headerlink" href="#3-boundary-conditions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Select the <strong>bottom face</strong></li>
+<li>Apply <strong>Fixed Support</strong></li>
+</ul>
+<hr />
+<h4 id="4-loads">4. Loads<a class="headerlink" href="#4-loads" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Select the <strong>top face</strong> (opposite to the face where fixed support is added)</li>
+<li>Apply <strong>Pressure = 100 MPa</strong></li>
+</ul>
+<hr />
+<h4 id="5-solve">5. Solve<a class="headerlink" href="#5-solve" title="Permanent link">&para;</a></h4>
+<p>Insert:</p>
+<ul>
+<li>Equivalent Stress (von Mises)</li>
+<li>Right-click <strong>Solution → Solve</strong></li>
+</ul>
+<hr />
+<h4 id="6-result-discussion">6. Result Discussion<a class="headerlink" href="#6-result-discussion" title="Permanent link">&para;</a></h4>
+<p>The results obtained from Model 1 clearly reflect the limitations of the coarse mesh:</p>
+<p><a class="glightbox" href="../../media/peer-teaching/image-2.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-2.png" /></a></p>
+<ul>
+<li>The <strong>maximum stress near the hole deviates significantly from the analytical solution</strong>, indicating that the coarse mesh is unable to correctly reproduce the expected stress concentration factor.</li>
+<li>The <strong>stress distribution appears patchy and irregular</strong>, showing that the elements are too large to resolve the steep stress gradient around the hole boundary.</li>
+<li>The <strong>stress contours near the hole are not smooth</strong>, exhibiting abrupt color changes instead of the continuous circular pattern predicted by theory.</li>
+<li>The <strong>curvature of the hole is poorly represented</strong>, leading to an inaccurate transfer of load around the hole.</li>
+<li>Overall, the model provides only a rough approximation and cannot be used for reliable evaluation of the stress concentration factor or deformation behavior.</li>
+</ul>
+<p>This coarse-mesh model serves as a baseline to highlight how proper mesh refinement improves accuracy in Model 2.</p>
+<hr />
+<h3 id="model-2-refined-mesh-targeted-mesh-improvement_1"><strong>Model 2 — Refined Mesh (Targeted Mesh Improvement)</strong><a class="headerlink" href="#model-2-refined-mesh-targeted-mesh-improvement_1" title="Permanent link">&para;</a></h3>
+<p><em>Model 2 uses the same geometry as Model 1. Only the mesh is refined, while all other model definitions remain unchanged including the boundary condition and the load.</em></p>
+<hr />
+<h4 id="1-mesh">1. Mesh<a class="headerlink" href="#1-mesh" title="Permanent link">&para;</a></h4>
+<h5 id="11-global-mesh-setup">1.1 Global Mesh Setup<a class="headerlink" href="#11-global-mesh-setup" title="Permanent link">&para;</a></h5>
+<p>Only Global Element Size to be changed for global element settings. All other settings are to be kept the same to best depict the influence of local mesh refinement strategies and various mesh refinement tools.</p>
+<ul>
+<li>Select <strong>Mesh</strong></li>
+<li>Element Size → <strong>10 mm</strong></li>
+<li>Keep all other settings the same</li>
+</ul>
+<p><em>Screenshot placeholder</em></p>
+<hr />
+<h5 id="12-local-refinements">1.2 Local Refinements<a class="headerlink" href="#12-local-refinements" title="Permanent link">&para;</a></h5>
+<h5 id="a-edge-sizing-hole-edge"><strong>A. Edge Sizing (Hole Edge)</strong><a class="headerlink" href="#a-edge-sizing-hole-edge" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Insert → <em>Sizing</em></li>
+<li>Scope → Circular hole edge</li>
+<li>Number of divisions → <strong>60</strong></li>
+<li>Behavior → <em>Soft</em></li>
+</ul>
+<p><a class="glightbox" href="../../media/peer-teaching/image-4.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-4.png" /></a></p>
+<h5 id="b-face-sizing-hole-inner-surface"><strong>B. Face Sizing (Hole Inner Surface)</strong><a class="headerlink" href="#b-face-sizing-hole-inner-surface" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Insert → <em>Sizing</em></li>
+<li>Scope → Cylindrical hole surface</li>
+<li>Element Size → <strong>4 mm</strong></li>
+</ul>
+<p><a class="glightbox" href="../../media/peer-teaching/image-5.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-5.png" /></a></p>
+<h5 id="c-face-meshing"><strong>C. Face Meshing</strong><a class="headerlink" href="#c-face-meshing" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Right-click <em>Mesh → Insert → Face Meshing</em>.  </li>
+<li>Scope the <strong>cylindrical surface of the hole</strong>.  </li>
+</ol>
+<p><a class="glightbox" href="../../media/peer-teaching/image-6.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-6.png" /></a></p>
+<h5 id="d-inflation"><strong>D. Inflation</strong><a class="headerlink" href="#d-inflation" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Scope → Whole body</li>
+<li>Boundary → Cylindrical hole face</li>
+</ul>
+<p><a class="glightbox" href="../../media/peer-teaching/image-7.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-7.png" /></a></p>
+<p>Generate the mesh after using all these mesh tools.</p>
+<hr />
+<h4 id="14-mesh-quality-evaluation">1.4 Mesh Quality Evaluation<a class="headerlink" href="#14-mesh-quality-evaluation" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Mesh → Quality → Mesh Matric  </li>
+<li>Inspect:</li>
+<li>Jacobian Ratio (&gt; 0.6 target)</li>
+<li>Skewness (&lt; 0.5 target)</li>
+<li>Aspect Ratio (&lt; 5 target)</li>
+<li>Element Quality (&gt; 0.7 target)</li>
+</ul>
+<p><em><a class="glightbox" href="../../media/peer-teaching/image-8.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-8.png" /></a></em></p>
+<ul>
+<li>Mesh metrics can also be viewed using Mesh Quality Worksheet to measure the quality of the mesh and find areas of low mesh quality.</li>
+</ul>
+<p><a class="glightbox" href="../../media/peer-teaching/image-9.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-9.png" /></a></p>
+<hr />
+<h3 id="2-solution-items">2. Solution Items<a class="headerlink" href="#2-solution-items" title="Permanent link">&para;</a></h3>
+<p>Insert:</p>
+<ul>
+<li>Equivalent Stress  </li>
+</ul>
+<hr />
+<h3 id="3-solve">3. Solve<a class="headerlink" href="#3-solve" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Right-click <strong>Solution → Solve</strong></li>
+</ul>
+<hr />
+<h3 id="4-results-discussion">4. Results Discussion<a class="headerlink" href="#4-results-discussion" title="Permanent link">&para;</a></h3>
+<p>Compared to Model 1, the refined mesh in Model 2 produces significantly improved and more reliable stress results. The enhancements introduced through different mesh tools directly influence the mesh quality in the regions of high stress gradients, leading to a solution that aligns much more closely with theoretical expectations.</p>
+<p><a class="glightbox" href="../../media/peer-teaching/image-10.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-10.png" /></a></p>
+<p>Key observations include:</p>
+<ul>
+<li><strong>Accurate representation of the circular hole:</strong>  </li>
+<li><strong>Smoother and more continuous stress contours:</strong>  </li>
+<li><strong>Significant reduction in mesh distortion:</strong>  </li>
+<li><strong>Improved proximity to the analytical stress concentration:</strong>  </li>
+<li><strong>Better transition between fine and coarse regions:</strong>  </li>
+</ul>
+<p>Overall, Model 2 clearly shows how mesh refinement tools directly influence the results by improving Jacobian ratio, skewness and other mesh metrics. The refined mesh produces smooth, physically meaningful stress contours and yields a maximum stress value that is close to the analytical prediction. This demonstrates that checking mesh metrics and applying appropriate refinement strategies are essential steps in obtaining good FEM results.</p>
+<hr />
+<h3 id="6-choosing-the-right-mesh-tool-for-your-geometry-general-guidelines">6. Choosing the Right Mesh Tool for Your Geometry (General Guidelines)<a class="headerlink" href="#6-choosing-the-right-mesh-tool-for-your-geometry-general-guidelines" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mesh Tool</th>
+<th>When to Use</th>
+<th>Purpose / Advantage</th>
+<th>Key Mesh Metrics Improved</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Face Sizing</strong></td>
+<td>Curved or critical faces (e.g., hole surface)</td>
+<td>Local refinement on surfaces</td>
+<td>Jacobian Ratio, Skewness</td>
+</tr>
+<tr>
+<td><strong>Edge Sizing</strong></td>
+<td>Circular edges, fillets, notches</td>
+<td>Ensures sufficient node density along edges</td>
+<td>Curvature representation, Aspect Ratio</td>
+</tr>
+<tr>
+<td><strong>Face Meshing</strong></td>
+<td>Need for structured 2D layout on a surface</td>
+<td>Produces regular element pattern</td>
+<td>Orthogonal Quality, Skewness</td>
+</tr>
+<tr>
+<td><strong>Inflation Layers</strong></td>
+<td>High stress gradients normal to surfaces</td>
+<td>Creates boundary-layer elements</td>
+<td>Orthogonal Quality, Warping Angle</td>
+</tr>
+<tr>
+<td><strong>Body of Influence (BOI)</strong></td>
+<td>Local refinement in a 3D region</td>
+<td>Controls element size inside a volume</td>
+<td>Aspect Ratio, Skewness (local)</td>
+</tr>
+<tr>
+<td><strong>Hex Dominant Method</strong></td>
+<td>Simple volumes needing mostly hexahedral elements</td>
+<td>Improves accuracy with fewer elements</td>
+<td>Skewness, Aspect Ratio</td>
+</tr>
+<tr>
+<td><strong>Tetrahedrons (Patch Conforming)</strong></td>
+<td>General automatic meshing</td>
+<td>Captures complex geometry</td>
+<td>Depends on curvature &amp; refinement</td>
+</tr>
+<tr>
+<td><strong>Tetrahedrons (Patch Independent)</strong></td>
+<td>Geometry with many small features</td>
+<td>Mesh ignores small edges to avoid distortion</td>
+<td>Skewness (improved), Jacobian</td>
+</tr>
+<tr>
+<td><strong>Sweep Method</strong></td>
+<td>Extruded or revolved bodies</td>
+<td>Produces high-quality hex elements</td>
+<td>Orthogonal Quality, Element Quality</td>
+</tr>
+<tr>
+<td><strong>Multizone Method</strong></td>
+<td>Semi-structured hexahedral mesh in partitioned geometry</td>
+<td>Gives hex mesh where sweep is not possible</td>
+<td>Aspect Ratio, Jacobian</td>
+</tr>
+<tr>
+<td><strong>Gasket Mesh</strong></td>
+<td>Thin layers or interface regions (e.g., sealing layers)</td>
+<td>Creates extremely fine, controlled thin-layer mesh</td>
+<td>Warping Angle, Orthogonality</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="7-theory-on-load-application-and-boundary-conditions">7. Theory on Load Application and Boundary Conditions<a class="headerlink" href="#7-theory-on-load-application-and-boundary-conditions" title="Permanent link">&para;</a></h3>
+<p>In structural finite element analysis, the way external loads and supports are introduced has a direct influence on the deformation pattern and the resulting stress field. Even with a high-quality mesh, incorrect or overly restrictive boundary conditions can prevent the model from deforming naturally (e.g., suppressing Poisson expansion) and lead to non-physical stresses. Therefore, understanding different types of loads and supports is essential before comparing their effects in Model 3.</p>
+<hr />
+<h3 id="81-load-types-in-structural-mechanics">8.1 Load Types in Structural Mechanics<a class="headerlink" href="#81-load-types-in-structural-mechanics" title="Permanent link">&para;</a></h3>
+<p>External actions can be introduced in ANSYS in several equivalent but conceptually different ways:</p>
+<h4 id="1-surface-loads-tractions-pressure"><strong>1. Surface Loads (Tractions / Pressure)</strong><a class="headerlink" href="#1-surface-loads-tractions-pressure" title="Permanent link">&para;</a></h4>
+<p>Applied over an area.<br />
+Examples: uniform pressure, traction vector.<br />
+Represents a physically distributed loading.</p>
+<h4 id="2-nodal-remote-loads"><strong>2. Nodal / Remote Loads</strong><a class="headerlink" href="#2-nodal-remote-loads" title="Permanent link">&para;</a></h4>
+<p>Forces applied at nodes or transmitted through rigid behavior.<br />
+Examples: remote force, edge force.<br />
+Useful for simulating loads applied through fixtures or connectors.</p>
+<h4 id="3-prescribed-displacements"><strong>3. Prescribed Displacements</strong><a class="headerlink" href="#3-prescribed-displacements" title="Permanent link">&para;</a></h4>
+<p>The boundary is moved by imposing displacement instead of force.<br />
+Common in tensile testing machines (displacement-controlled loading).</p>
+<p>Prescribed displacement produces a reaction force that should match the expected tensile force if BCs are correct.</p>
+<hr />
+<h2 id="82-boundary-conditions">8.2 Boundary Conditions<a class="headerlink" href="#82-boundary-conditions" title="Permanent link">&para;</a></h2>
+<p>Boundary conditions define how the plate is supported and which rigid-body motions are suppressed.</p>
+<h3 id="1-fixed-support"><strong>1. Fixed Support</strong><a class="headerlink" href="#1-fixed-support" title="Permanent link">&para;</a></h3>
+<p>Restrains all translations.<br />
+Simple and stable, but can over-constrain Poisson expansion.</p>
+<h3 id="2-frictionless-support"><strong>2. Frictionless Support</strong><a class="headerlink" href="#2-frictionless-support" title="Permanent link">&para;</a></h3>
+<p>Restrains only the displacement normal to the surface; tangential sliding is allowed.<br />
+Useful when avoiding artificial in-plane constraints.</p>
+<h3 id="3-remote-displacement-remote-force"><strong>3. Remote Displacement / Remote Force</strong><a class="headerlink" href="#3-remote-displacement-remote-force" title="Permanent link">&para;</a></h3>
+<p>Loads are transmitted through a virtual rigid surface.<br />
+Ensures uniform deformation of the loaded edge or face.</p>
+<h3 id="4-elastic-support"><strong>4. Elastic Support</strong><a class="headerlink" href="#4-elastic-support" title="Permanent link">&para;</a></h3>
+<p>Adds spring-like stiffness to a boundary.<br />
+Models flexible mounting conditions.</p>
+<hr />
+<h2 id="83-purpose-of-load-application-in-model-3">8.3 Purpose of Load Application in Model 3<a class="headerlink" href="#83-purpose-of-load-application-in-model-3" title="Permanent link">&para;</a></h2>
+<p>Model 3 investigates how different <strong>valid</strong> load/BC combinations influence the internal stress field of the plate under tension.<br />
+Four representative cases are evaluated:</p>
+<ol>
+<li><strong>Pressure + Fixed Bottom</strong>  </li>
+<li><strong>Remote Force + Fixed Support</strong>  </li>
+<li><strong>Pressure + Frictionless Support</strong>  </li>
+<li><strong>Remote Force + Elastic Support</strong></li>
+<li><strong>Displacement Load + Remote Displacement Support</strong></li>
+</ol>
+<p>This comparison shows how loads enter the structure, how supports affect deformation, and which combinations best replicate uniaxial tensile loading for the plate-with-hole problem.</p>
+<hr />
+<h2 id="9-step-by-step-implementation-in-ansys-for-model-3">9. Step-by-Step Implementation in ANSYS for Model 3<a class="headerlink" href="#9-step-by-step-implementation-in-ansys-for-model-3" title="Permanent link">&para;</a></h2>
+<h3 id="using-separate-static-structural-systems-for-each-load-case">(Using Separate Static Structural Systems for Each Load Case)<a class="headerlink" href="#using-separate-static-structural-systems-for-each-load-case" title="Permanent link">&para;</a></h3>
+<p>Model 3 investigates how different valid load/support combinations influence the stress field of the refined plate model.<br />
+To ensure a clean setup, <strong>each load case is solved in its own Static Structural system</strong>, all using the <strong>same geometry and the same refined mesh</strong> from Model 2.</p>
+<p>Before applying loads, we first prepare the Workbench environment.</p>
+<hr />
+<h3 id="91-preparing-the-load-case-systems-workbench-setup">9.1 Preparing the Load Case Systems (Workbench Setup)<a class="headerlink" href="#91-preparing-the-load-case-systems-workbench-setup" title="Permanent link">&para;</a></h3>
+<ol>
+<li>In Workbench, <strong>right-click the Static Structural system from Model 2</strong> →<br />
+<strong>Duplicate</strong> (Create Copy)<br />
+   This produces a new Static Structural system with:</li>
+<li>the <strong>same geometry</strong>,  </li>
+<li>the <strong>same mesh settings</strong>,  </li>
+<li>
+<p>no loads/supports interfering with other systems.</p>
+</li>
+<li>
+<p>Rename each duplicated system for clarity:</p>
+</li>
+<li><em>Model 3A – Remote Force + Fixed Support</em>  </li>
+<li><em>Model 3B – Pressure + Frictionless Support</em>  </li>
+<li><em>Model 3C – Remote Force + Elastic Support</em></li>
+<li>
+<p><em>Model 3D - Displacement Load + Remote Displacement Support</em></p>
+</li>
+<li>
+<p>For each system:</p>
+</li>
+<li>Open Mechanical  </li>
+<li><strong>Delete any loads or supports</strong> carried over from duplication  </li>
+<li>Reapply only the load/support combination specific to that case  </li>
+<li>Use the <strong>identical mesh</strong> transferred from Model 2  </li>
+</ol>
+<p>This ensures fair comparison between cases because the <strong>mesh is fixed</strong> and only the load application changes.</p>
+<hr />
+<h3 id="92-model-3a-remote-force-fixed-support">9.2 Model 3A — Remote Force + Fixed Support<a class="headerlink" href="#92-model-3a-remote-force-fixed-support" title="Permanent link">&para;</a></h3>
+<p>In this model, the tensile load is applied using a Remote Force, which ensures a uniform pull on the top face.</p>
+<p><a class="glightbox" href="../../media/peer-teaching/image-11.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-11.png" /></a></p>
+<ol>
+<li>Insert → Remote Force  </li>
+<li>Scope the top face  </li>
+<li>Set Components: FX = 0, FY = +100000 N, FZ = 0  </li>
+<li>Apply Fixed Support on bottom face  </li>
+<li>
+<p>Solve and plot Equivalent Stress</p>
+</li>
+<li>
+<p>Result : Smooth, symmetric stress field similar to analytical SCF</p>
+</li>
+</ol>
+<hr />
+<h3 id="93-model-3b-pressure-frictionless-support">9.3 Model 3B — Pressure + Frictionless Support<a class="headerlink" href="#93-model-3b-pressure-frictionless-support" title="Permanent link">&para;</a></h3>
+<p>In this model, the tensile load is introduced as a surface pressure, while the bottom face is constrained using a frictionless support. This allows sliding in the plane but prevents vertical displacement.</p>
+<ol>
+<li>Insert → Pressure → apply on top face → set 100 MPa  </li>
+<li>Insert → Frictionless Support → apply on bottom face  </li>
+<li>Solve and evaluate Equivalent Stress  </li>
+</ol>
+<p><a class="glightbox" href="../../media/peer-teaching/image-12.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-12.png" /></a></p>
+<blockquote>
+<p>This case isolates vertical loading while minimizing artificial in-plane constraints.</p>
+</blockquote>
+<hr />
+<h3 id="94-model-3c-remote-force-elastic-support">9.4 Model 3C — Remote Force + Elastic Support<a class="headerlink" href="#94-model-3c-remote-force-elastic-support" title="Permanent link">&para;</a></h3>
+<p>In this model, the tensile load is applied through a Remote Force, and the bottom face is supported using an Elastic Support.<br />
+Elastic Support introduces a distributed foundation stiffness, allowing controlled vertical movement instead of a fully fixed boundary.</p>
+<ol>
+<li>Insert → Remote Force → scope top face  </li>
+<li>Set Components: FX = 0, FY = +100000 N, FZ = 0  </li>
+<li>Insert → Elastic Support → apply to bottom face  </li>
+<li>Set stiffness 10000 N/mm^3 </li>
+<li>Solve and evaluate Equivalent Stress</li>
+</ol>
+<p><a class="glightbox" href="../../media/peer-teaching/image-13.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-13.png" /></a></p>
+<ul>
+<li>This case demonstrates how boundary flexibility influences stress distribution</li>
+</ul>
+<hr />
+<h3 id="95-model-3d-displacement-load-remote-displacement-support">9.5 Model 3D — Displacement Load + Remote Displacement Support<a class="headerlink" href="#95-model-3d-displacement-load-remote-displacement-support" title="Permanent link">&para;</a></h3>
+<p>In this model, the tensile load is applied by prescribing a vertical displacement on the top face.</p>
+<p>The bottom face is constrained using a Remote Displacement Support that fixes only the vertical DOF (UY = 0) and leaves all other DOFs free. This combination creates a displacement-controlled loading scenario.</p>
+<ol>
+<li>Insert → Displacement → apply on top face → set UY = 0.10 mm  </li>
+<li>Insert → Remote Displacement → apply on bottom face → set UY = 0, keep all other DOFs free  </li>
+<li>Solve and evaluate Equivalent Stress</li>
+</ol>
+<p><a class="glightbox" href="../../media/peer-teaching/image-14.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../../media/peer-teaching/image-14.png" /></a></p>
+<ul>
+<li>Demonstrates how displacement-controlled loading can amplify stresses when constraints allow limited freedom</li>
+</ul>
+<hr />
+<h2 id="10-guidelines-for-selecting-load-types-and-boundary-conditions">10. Guidelines for Selecting Load Types and Boundary Conditions<a class="headerlink" href="#10-guidelines-for-selecting-load-types-and-boundary-conditions" title="Permanent link">&para;</a></h2>
+<p>The choice of load type and boundary condition strongly affects the physical meaning of the simulation.<br />
+The table below summarizes common load types, when they should be used, and the BCs that best match real engineering behavior.</p>
+<table>
+<thead>
+<tr>
+<th>Load Type</th>
+<th>When to Use</th>
+<th>Typical Structure Scenarios</th>
+<th>Best Matching Boundary Conditions</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pressure Load</strong></td>
+<td>Uniform tensile or compressive loading over a surface</td>
+<td>Plates, shells, pressure-loaded components</td>
+<td>Fixed Support, Frictionless Support</td>
+<td>Best for simulating far-field tensile stress. Produces smooth stress distribution.</td>
+</tr>
+<tr>
+<td><strong>Remote Force</strong></td>
+<td>Load applied through a fixture, grip, or connection point; ensures uniform displacement of loaded face</td>
+<td>Tensile tests, gripping faces, machine fixtures</td>
+<td>Fixed Support, Remote Displacement (UY=0)</td>
+<td>Rigid behavior ensures uniform face motion; good replacement for ideal pressure loading.</td>
+</tr>
+<tr>
+<td><strong>Displacement Load</strong></td>
+<td>When total deformation is known but force is unknown; displacement-controlled tests</td>
+<td>Tensile machines (crosshead displacement), thermal growth simulations</td>
+<td>Remote Displacement (UY=0) or Elastic Support</td>
+<td>Generates reaction force → stress depends on structure stiffness.</td>
+</tr>
+<tr>
+<td><strong>Elastic Support (Foundation Stiffness)</strong></td>
+<td>When structure rests on a compliant medium or semi-rigid base</td>
+<td>Machines on rubber pads, soil-structure interaction, flexible supports</td>
+<td>Pressure Load or Remote Force</td>
+<td>Reduces constraints, lowers stress. Good for exploring stiffness effects.</td>
+</tr>
+<tr>
+<td><strong>Frictionless Support</strong></td>
+<td>When only normal reaction should be transmitted; tangential sliding allowed</td>
+<td>Symmetry planes, vertical guide rails</td>
+<td>Pressure or Remote Force</td>
+<td>Avoids artificial shear reaction; useful when only vertical restraint is needed.</td>
+</tr>
+<tr>
+<td><strong>Remote Displacement</strong></td>
+<td>To impose a controlled displacement or rotation on an entire face through a reference point</td>
+<td>Components gripped by rigid clamps, symmetric loading</td>
+<td>Pressure, Displacement</td>
+<td>Allows free rotations/translation except chosen DOF.</td>
+</tr>
+<tr>
+<td><strong>Body Force (Force Density)</strong></td>
+<td>When load acts as distributed mass/volume (gravity, acceleration fields)</td>
+<td>Large bodies, dynamic or static gravitational effects</td>
+<td>Any support type</td>
+<td>Not suitable for generating uniaxial tension; educational only.</td>
+</tr>
+<tr>
+<td><strong>Patch Load (Local Pressure)</strong></td>
+<td>When load is concentrated over a small region of the surface</td>
+<td>Bearing loads, bolt heads, pad supports</td>
+<td>Fixed Support or Frictionless Support</td>
+<td>Creates secondary local stress concentration; requires local refinement.</td>
+</tr>
+<tr>
+<td><strong>Spring Support (Directional Stiffness)</strong></td>
+<td>When the support behaves like a spring, not fully fixed</td>
+<td>Pipelines, flexible mounts, partially restrained plates</td>
+<td>Pressure or Remote Force</td>
+<td>Allows studying stiffness-dependent behavior.</td>
+</tr>
+<tr>
+<td><strong>Compression-Only Support</strong></td>
+<td>When component can bear load only in compression, not tension</td>
+<td>Contact against rigid wall, column bases</td>
+<td>Pressure Load</td>
+<td>Nonlinear; only blocks motion when compressive reaction occurs.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="11-summary">11. Summary<a class="headerlink" href="#11-summary" title="Permanent link">&para;</a></h2>
+<p>This project examined how mesh quality and load–boundary-condition combinations influence the stress response of a 3D plate with a central hole. The study followed a three-model workflow: generating a deliberately coarse mesh in Model 1, refining the mesh using targeted tools in Model 2, and finally applying five different load/support combinations in Model 3.</p>
+<p>The results demonstrate two key findings:</p>
+<ol>
+<li>
+<p><strong>Mesh quality is the dominant factor in obtaining accurate stresses near the hole.</strong><br />
+   In Model 1, coarse and distorted elements produced an incorrect stress gradient and large deviations from the analytical value.<br />
+   After refinement in Model 2—using edge sizing, face meshing and inflation—the mesh metrics improved significantly, and the maximum equivalent stress converged toward the analytical solution.</p>
+</li>
+<li>
+<p><strong>Different load and support combinations alter the stiffness path, affecting stress magnitude.</strong><br />
+   The five tested combinations—<br />
+<strong>Pressure + Fixed Support</strong>,<br />
+<strong>Remote Force + Fixed Support</strong>,<br />
+<strong>Pressure + Frictionless Support</strong>,<br />
+<strong>Remote Force + Elastic Support</strong>, and<br />
+<strong>Displacement Load + Remote Displacement Support</strong>—<br />
+   each produced distinct deformation patterns and stress distributions.<br />
+   Some cases approximated the analytical stress well, while others increased or decreased stresses depending on how the boundary conditions constrained the plate.</p>
+</li>
+</ol>
+<p>Overall, this study highlights that reliable FEA requires:</p>
+<ul>
+<li>Ensuring high mesh quality (Jacobian, Skewness, Orthogonal Quality),</li>
+<li>Selecting load and support types that physically reflect the test scenario,</li>
+<li>And comparing simulation results with analytical expectations to validate accuracy.</li>
+</ul>
+<p>These steps form a consistent workflow that students can apply to more advanced FEM problems throughout the course.</p>
+<hr />
+<h2 id="12-references">12. References<a class="headerlink" href="#12-references" title="Permanent link">&para;</a></h2>
+<p>Peterson, R. E. (1974). <em>Stress Concentration Factors</em>. John Wiley &amp; Sons.</p>
+<p>Pilkey, W. D., &amp; Pilkey, D. F. (2008). <em>Peterson’s Stress Concentration Factors</em> (3rd ed.). John Wiley &amp; Sons.</p>
+<p>ANSYS, Inc. (2024). <em>ANSYS Mechanical User’s Guide</em> – Sections on Mesh Quality Metrics, Element Quality Evaluation, and Load Application Methods.</p>
+<p>Cook, R. D., Malkus, D. S., Plesha, M. E., &amp; Witt, R. J. (2002). <em>Concepts and Applications of Finite Element Analysis</em> (4th ed.). John Wiley &amp; Sons.</p>
+<p>Bathe, K. J. (1996). <em>Finite Element Procedures</em>. Prentice Hall.</p>
+<p>Zienkiewicz, O. C., &amp; Taylor, R. L. (2005). <em>The Finite Element Method</em> (6th ed.). Elsevier.</p>
+<p>Prof. Jaeger. (2025). <em>FEM Course – Finite Element Methods</em>. Retrieved from<br />
+https://jaegeste.github.io/fem-course/</p>
+<hr /><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
