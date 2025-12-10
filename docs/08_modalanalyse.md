@@ -135,7 +135,7 @@ Diese Beobachtungen führen zu grundlegenden Fragestellungen:
 
 Zur systematischen Analyse dieser Fragestellungen wird schrittweise vom einfachen dynamischen Modell zum komplexen technischen Bauteil übergegangen. Der Einstieg erfolgt über den Einmassenschwinger, bevor Balken, Platten, Wellen und Baugruppen untersucht werden.
 
-## Theoretischer Hintergrund nach Eichler[@Eichler2023]
+## Theoretischer Hintergrund
 
 ### Grundbegriffe
 
@@ -249,18 +249,25 @@ T_0 = \frac{1}{f_0} = \frac{2\pi}{\omega_0}
 
 Die Schwingung ist also eine **Systemeigenschaft**, bestimmt ausschließlich durch Masse und Federkonstante. Die Anfangsbedingungen beeinflussen lediglich Amplitude \(\hat{y}\) und Phase \(\varphi_0\).
 
+#### Darstellung der Schwingung im Zeit- und Frequenzbereich
+
+Die Eigenschaften der Lösung des Einmassenschwingers lassen sich anschaulich sowohl im Zeitbereich als auch im Frequenzbereich darstellen. Im Zeitbereich werden Auslenkung \(y(t)\), Amplitude \(\hat{y}\), Periodendauer \(T_0\) und Startphase \(\varphi_0\) sichtbar. Im Frequenzbereich zeigt sich idealisiert nur eine Frequenzkomponente bei der Eigenfrequenz \(f_0\) bzw. \(\omega_0\).  
+
+##### Zeitbereich: Harmonische Schwingung mit markierten Kenngrößen  
+
+##### Frequenzbereich: Darstellung der Eigenfrequenz  
+
 ---
 
 ### Gedämpfte Schwingung
 
-Reale technische Systeme verlieren Schwingungsenergie durch Reibung, Luftwiderstand oder Materialdämpfung.  
-Die Dämpfung wird durch eine Proportionalität zur Geschwindigkeit modelliert:  
+Reale technische Systeme verlieren Schwingungsenergie durch Reibung, Luftwiderstand oder Materialdämpfung. Die Dämpfung wird durch eine Proportionalität zur Geschwindigkeit modelliert:  
 
 \[
 m \ddot{x} + k \dot{x} + D x = 0
 \]
 
-Eichler unterscheidet folgende Fälle (S. 138–140):  
+Es werden folgende Fälle unterschieden:  
 
 * schwach gedämpfte Schwingung (periodisches Verhalten, langsames Abklingen)  
 * kritische Dämpfung (Grenzfall, schnellster Abklingvorgang ohne Schwingung)  
@@ -272,20 +279,12 @@ Die gedämpfte Eigenkreisfrequenz lautet:
 \omega_\mathrm{d} = \sqrt{\omega_0^2 - \left(\frac{k}{2m}\right)^2}
 \]
 
----
-
-### Beispielabbildung: Gedämpfte Schwingung  
-*(Screenshot aus Eichler S. 139)*  
-
-<!-- markdownlint-disable MD033 -->
 [![Gedämpfte Schwingungen – nach Eichler](media/08_modalanalyse/eichler_daempfung.png){width=650px}](media/08_modalanalyse/eichler_daempfung.png "Gedämpfte Schwingungen – nach Eichler"){.glightbox}
-<!-- markdownlint-enable MD033 -->
-
 <span class="bildquelle">Bildquelle nach Eichler (2023), S. 139.</span>  
 
 ---
 
-## Erzwungene Schwingung und Resonanz
+### Erzwungene Schwingung und Resonanz
 
 Wirkt auf das System eine zeitabhängige äußere Kraft  
 
@@ -297,22 +296,14 @@ so stellt sich ein stationärer Schwingungszustand ein. Die Amplitude der Antwor
 
 Dieses Verhalten wird als Resonanz bezeichnet. Eichler veranschaulicht dieses Verhalten in der Resonanzkurve (Abb. 6.7, S. 143).  
 
----
-
-### Beispielabbildung: Resonanzkurve  
-*(Screenshot aus Eichler S. 143)*  
-
-<!-- markdownlint-disable MD033 -->
 [![Resonanzkurve – nach Eichler](media/08_modalanalyse/eichler_resonanz.png){width=650px}](media/08_modalanalyse/eichler_resonanz.png "Resonanzkurve – nach Eichler"){.glightbox}
-<!-- markdownlint-enable MD033 -->
-
 <span class="bildquelle">Bildquelle nach Eichler (2023), S. 143.</span>  
 
 Diese Darstellung knüpft unmittelbar an die zuvor gezeigten Filmsequenzen an (Brückenschwingung, Fräsprozess).  
 
 ---
 
-## Überlagerung und Schwebung
+### Überlagerung und Schwebung
 
 Ein technisches System kann mehrere Schwingungsanteile gleichzeitig enthalten.  
 Die Überlagerung zweier harmonischer Schwingungen mit leicht unterschiedlicher Frequenz führt zur Schwebung, einem alternierenden Verstärken und Abschwächen der Gesamtamplitude.  
@@ -331,20 +322,12 @@ f_\mathrm{s} = \lvert f_1 - f_2 \rvert
 
 Dieses Konzept bildet einen intuitiven Übergang zur Vorstellung einer Vielzahl von Eigenformen in realen Strukturen.  
 
----
-
-### Beispielabbildung: Schwebung  
-*(Screenshot aus Eichler S. 146)*  
-
-<!-- markdownlint-disable MD033 -->
 [![Schwebung – nach Eichler](media/08_modalanalyse/eichler_schwebung.png){width=650px}](media/08_modalanalyse/eichler_schwebung.png "Schwebung – nach Eichler"){.glightbox}
-<!-- markdownlint-enable MD033 -->
-
 <span class="bildquelle">Bildquelle nach Eichler (2023), S. 146.</span>  
 
 ---
 
-## Von der eindimensionalen Schwingung zur Modalanalyse
+### Von der eindimensionalen Schwingung zur Modalanalyse
 
 Eichler zeigt auf S. 156 Beispiele für Eigenschwingungen in Kontinua, etwa Luftsäulen oder Membranen. Diese Beispiele verdeutlichen:  
 
@@ -366,22 +349,13 @@ K \Phi = \omega^2 M \Phi
 
 Aus dessen Lösung folgen Eigenfrequenzen \(\omega\) und zugehörige Eigenformen \(\Phi\) für Balken, Platten, Wellen und Baugruppen.  
 
----
-
-### Beispielabbildung: Eigenschwingungen eines Kontinuums  
-*(Screenshot aus Eichler S. 156)*  
-
-<!-- markdownlint-disable MD033 -->
 [![Eigenschwingungen eines Kontinuums – nach Eichler](media/08_modalanalyse/eichler_kontinuum.png){width=650px}](media/08_modalanalyse/eichler_kontinuum.png "Eigenschwingungen eines Kontinuums – nach Eichler"){.glightbox}
-<!-- markdownlint-enable MD033 -->
-
 <span class="bildquelle">Bildquelle nach Eichler (2023), S. 156.</span>  
-
-
 
 ### Modellstufen
 
 * Von starren Körpern zu kontinulierlichen Strukturen
+* Da nehmen wir Dresig Maschinendynamik als Quelle
 
 ### Analytische Lösungen einfacher Strukturen
 
@@ -461,8 +435,6 @@ Aus dessen Lösung folgen Eigenfrequenzen \(\omega\) und zugehörige Eigenformen
 * Mehrkörpermodell und Kopplung an FE Modelle
 
 ## Quiz zur Selbstkontrolle
-
-(Platzhalter)
 
 <!-- 
 wie geht's weiter:
