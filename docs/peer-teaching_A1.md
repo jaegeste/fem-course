@@ -254,8 +254,8 @@ A stepped cylindrical flange is subjected to a uniform pressure applied to the t
 
 **Load cases:**  
 
-- Case A: Internal pressure of 200 bar  
-- Case B: Tensile force of 100 kN applied to the flange end faces  
+- Force 2000 N   
+- Fixed Support  
 
 Use the provided geometry of the flange and its reduced variants (symmetry, Model Reduction 1, Model Reduction 2, Model Reduction 3, Model Reduction 4 ).  
 
