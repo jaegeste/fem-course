@@ -604,7 +604,7 @@
 <hr />
 <h2 id="2-task-3d-plate-with-a-circular-hole-under-uniaxial-tension">2. Task: 3D Plate With a Circular Hole Under Uniaxial Tension<a class="headerlink" href="#2-task-3d-plate-with-a-circular-hole-under-uniaxial-tension" title="Permanent link">&para;</a></h2>
 <p>In this task, the application of a tensile load on a 3D plate with a central hole is analysed.</p>
-<p><a class="glightbox" href="../media/peer-teaching/image-15.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-15.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-15.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-15.png" /></a></p>
 <h3 id="given-data">Given Data<a class="headerlink" href="#given-data" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Plate width: <strong>200 mm</strong></li>
@@ -620,7 +620,7 @@
 <p>Required pulling force:</p>
 <div class="arithmatex">\[F = \sigma_0 \cdot (200\ \text{mm}) \cdot (5\ \text{mm}) = 100{,}000\ \text{N}\]</div>
 <h3 id="geometry">Geometry<a class="headerlink" href="#geometry" title="Permanent link">&para;</a></h3>
-<p>Use this Geometry file for your analysis : <a href="../media/peer-teaching/plate_with_hole.stp">Geometry File (STEP)</a></p>
+<p>Use this Geometry file for your analysis : <a href="../media/peer-teaching_A2/plate_with_hole.stp">Geometry File (STEP)</a></p>
 <h3 id="description-of-the-three-models">Description of the Three Models<a class="headerlink" href="#description-of-the-three-models" title="Permanent link">&para;</a></h3>
 <h4 id="model-1-coarse-mesh-baseline-model"><strong>Model 1 — Coarse Mesh (Baseline Model)</strong><a class="headerlink" href="#model-1-coarse-mesh-baseline-model" title="Permanent link">&para;</a></h4>
 <p>A deliberately coarse 3D mesh is created using only a global element size.<br />
@@ -841,7 +841,7 @@ Both models follow the same workflow structure used in the FEM course.</p>
 <h4 id="1-geometry">1. Geometry<a class="headerlink" href="#1-geometry" title="Permanent link">&para;</a></h4>
 <p>The 3D geometry of the plate with a central hole is provided via the following link:</p>
 <p><strong>Geometry File:</strong>  </p>
-<p>Use this Geometry file for both the Model 1 and 2 : <a href="../media/peer-teaching/plate_with_hole.stp">Geometry File (STEP)</a></p>
+<p>Use this Geometry file for both the Model 1 and 2 : <a href="../media/peer-teaching_A2/plate_with_hole.stp">Geometry File (STEP)</a></p>
 <hr />
 <h4 id="2-mesh">2. Mesh<a class="headerlink" href="#2-mesh" title="Permanent link">&para;</a></h4>
 <h5 id="21-global-mesh">2.1 Global Mesh<a class="headerlink" href="#21-global-mesh" title="Permanent link">&para;</a></h5>
@@ -853,8 +853,8 @@ Both models follow the same workflow structure used in the FEM course.</p>
 <li>Turn <strong>Mesh Defeaturing</strong> → <em>Off</em></li>
 <li>Turn <strong>Capture Proximity</strong> → <em>Off</em></li>
 </ul>
-<p><a class="glightbox" href="../media/peer-teaching/image-1.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-1.png" /></a>
-<a class="glightbox" href="../media/peer-teaching/image.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-1.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-1.png" /></a>
+<a class="glightbox" href="../media/peer-teaching_A2/image.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image.png" /></a></p>
 <h5 id="22-evaluate-mesh-quality">2.2 Evaluate Mesh Quality<a class="headerlink" href="#22-evaluate-mesh-quality" title="Permanent link">&para;</a></h5>
 <p>The mesh produced in Model 1 is intentionally coarse.<br />
 A visual inspection reveals several issues:</p>
@@ -885,7 +885,7 @@ A visual inspection reveals several issues:</p>
 <hr />
 <h4 id="6-result-discussion">6. Result Discussion<a class="headerlink" href="#6-result-discussion" title="Permanent link">&para;</a></h4>
 <p>The results obtained from Model 1 clearly reflect the limitations of the coarse mesh:</p>
-<p><a class="glightbox" href="../media/peer-teaching/image-2.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-2.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-2.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-2.png" /></a></p>
 <ul>
 <li>The <strong>maximum stress near the hole deviates significantly from the analytical solution</strong>, indicating that the coarse mesh is unable to correctly reproduce the expected stress concentration factor.</li>
 <li>The <strong>stress distribution appears patchy and irregular</strong>, showing that the elements are too large to resolve the steep stress gradient around the hole boundary.</li>
@@ -916,26 +916,26 @@ A visual inspection reveals several issues:</p>
 <li>Number of divisions → <strong>60</strong></li>
 <li>Behavior → <em>Soft</em></li>
 </ul>
-<p><a class="glightbox" href="../media/peer-teaching/image-4.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-4.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-4.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-4.png" /></a></p>
 <h5 id="b-face-sizing-hole-inner-surface"><strong>B. Face Sizing (Hole Inner Surface)</strong><a class="headerlink" href="#b-face-sizing-hole-inner-surface" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Insert → <em>Sizing</em></li>
 <li>Scope → Cylindrical hole surface</li>
 <li>Element Size → <strong>4 mm</strong></li>
 </ul>
-<p><a class="glightbox" href="../media/peer-teaching/image-5.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-5.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-5.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-5.png" /></a></p>
 <h5 id="c-face-meshing"><strong>C. Face Meshing</strong><a class="headerlink" href="#c-face-meshing" title="Permanent link">&para;</a></h5>
 <ol>
 <li>Right-click <em>Mesh → Insert → Face Meshing</em>.  </li>
 <li>Scope the <strong>cylindrical surface of the hole</strong>.  </li>
 </ol>
-<p><a class="glightbox" href="../media/peer-teaching/image-6.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-6.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-6.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-6.png" /></a></p>
 <h5 id="d-inflation"><strong>D. Inflation</strong><a class="headerlink" href="#d-inflation" title="Permanent link">&para;</a></h5>
 <ul>
 <li>Scope → Whole body</li>
 <li>Boundary → Cylindrical hole face</li>
 </ul>
-<p><a class="glightbox" href="../media/peer-teaching/image-7.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-7.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-7.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-7.png" /></a></p>
 <p>Generate the mesh after using all these mesh tools.</p>
 <hr />
 <h4 id="14-mesh-quality-evaluation">1.4 Mesh Quality Evaluation<a class="headerlink" href="#14-mesh-quality-evaluation" title="Permanent link">&para;</a></h4>
@@ -947,11 +947,11 @@ A visual inspection reveals several issues:</p>
 <li>Aspect Ratio (&lt; 5 target)</li>
 <li>Element Quality (&gt; 0.7 target)</li>
 </ul>
-<p><em><a class="glightbox" href="../media/peer-teaching/image-8.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-8.png" /></a></em></p>
+<p><em><a class="glightbox" href="../media/peer-teaching_A2/image-8.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-8.png" /></a></em></p>
 <ul>
 <li>Mesh metrics can also be viewed using Mesh Quality Worksheet to measure the quality of the mesh and find areas of low mesh quality.</li>
 </ul>
-<p><a class="glightbox" href="../media/peer-teaching/image-9.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-9.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-9.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-9.png" /></a></p>
 <hr />
 <h3 id="2-solution-items">2. Solution Items<a class="headerlink" href="#2-solution-items" title="Permanent link">&para;</a></h3>
 <p>Insert:</p>
@@ -966,7 +966,7 @@ A visual inspection reveals several issues:</p>
 <hr />
 <h3 id="4-results-discussion">4. Results Discussion<a class="headerlink" href="#4-results-discussion" title="Permanent link">&para;</a></h3>
 <p>Compared to Model 1, the refined mesh in Model 2 produces significantly improved and more reliable stress results. The enhancements introduced through different mesh tools directly influence the mesh quality in the regions of high stress gradients, leading to a solution that aligns much more closely with theoretical expectations.</p>
-<p><a class="glightbox" href="../media/peer-teaching/image-10.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-10.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-10.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-10.png" /></a></p>
 <p>Key observations include:</p>
 <ul>
 <li><strong>Accurate representation of the circular hole:</strong>  </li>
@@ -1139,7 +1139,7 @@ To ensure a clean setup, <strong>each load case is solved in its own Static Stru
 <hr />
 <h3 id="92-model-3a-remote-force-fixed-support">9.2 Model 3A — Remote Force + Fixed Support<a class="headerlink" href="#92-model-3a-remote-force-fixed-support" title="Permanent link">&para;</a></h3>
 <p>In this model, the tensile load is applied using a Remote Force, which ensures a uniform pull on the top face.</p>
-<p><a class="glightbox" href="../media/peer-teaching/image-11.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-11.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-11.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-11.png" /></a></p>
 <ol>
 <li>Insert → Remote Force  </li>
 <li>Scope the top face  </li>
@@ -1160,7 +1160,7 @@ To ensure a clean setup, <strong>each load case is solved in its own Static Stru
 <li>Insert → Frictionless Support → apply on bottom face  </li>
 <li>Solve and evaluate Equivalent Stress  </li>
 </ol>
-<p><a class="glightbox" href="../media/peer-teaching/image-12.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-12.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-12.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-12.png" /></a></p>
 <blockquote>
 <p>This case isolates vertical loading while minimizing artificial in-plane constraints.</p>
 </blockquote>
@@ -1175,7 +1175,7 @@ Elastic Support introduces a distributed foundation stiffness, allowing controll
 <li>Set stiffness 10000 N/mm^3 </li>
 <li>Solve and evaluate Equivalent Stress</li>
 </ol>
-<p><a class="glightbox" href="../media/peer-teaching/image-13.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-13.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-13.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-13.png" /></a></p>
 <ul>
 <li>This case demonstrates how boundary flexibility influences stress distribution</li>
 </ul>
@@ -1188,7 +1188,7 @@ Elastic Support introduces a distributed foundation stiffness, allowing controll
 <li>Insert → Remote Displacement → apply on bottom face → set UY = 0, keep all other DOFs free  </li>
 <li>Solve and evaluate Equivalent Stress</li>
 </ol>
-<p><a class="glightbox" href="../media/peer-teaching/image-14.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching/image-14.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_A2/image-14.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="alt text" src="../media/peer-teaching_A2/image-14.png" /></a></p>
 <ul>
 <li>Demonstrates how displacement-controlled loading can amplify stresses when constraints allow limited freedom</li>
 </ul>
