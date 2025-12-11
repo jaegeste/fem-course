@@ -139,7 +139,10 @@ Zur systematischen Analyse dieser Fragestellungen wird schrittweise vom einfache
 
 ### Grundbegriffe
 
-Technische Schwingungen lassen sich durch wenige grundlegende Größen beschreiben. Die wichtigsten sind:
+Technische Schwingungen lassen sich durch wenige grundlegende Größen beschreiben.  
+
+[![Feder Masse Animation](media/08_modalanalyse/Animated-mass-spring.gif){width=100px}](media/08_modalanalyse/Animated-mass-spring.gif "Feder Masse Animation"){.glightbox}
+<span class="bildquelle">Bildquelle[@wikipedia2025]</span>
 
 * **Auslenkung**  
   Zeitabhängige Abweichung einer Größe (z. B. Lage) vom Gleichgewichtszustand.  
@@ -162,7 +165,7 @@ Diese Größen bilden die Basis für die Beschreibung mechanischer Schwingungen.
 
 Ein großes Spektrum technischer Schwingungsprobleme lässt sich im Kern auf das lineare Feder–Masse–System zurückführen.
 
-[![Feder Masse System ](media/08_modalanalyse/feder_masse.png){width=350px}](media/08_modalanalyse/feder_masse.png "Feder Masse System"){.glightbox}
+[![Feder Masse System ](media/08_modalanalyse/feder_masse.png){width=300px}](media/08_modalanalyse/feder_masse.png "Feder Masse System"){.glightbox}
 <span class="bildquelle">Bildquelle[@Eichler2023]</span>  
 
 Die Auslenkung aus der Ruhelage wird durch \(y(t)\) beschrieben. Die rücktreibende Kraft ist proportional zur Auslenkung, jedoch entgegengesetzt gerichtet:
@@ -253,9 +256,19 @@ Die Schwingung ist also eine **Systemeigenschaft**, bestimmt ausschließlich dur
 
 Die Eigenschaften der Lösung des Einmassenschwingers lassen sich anschaulich sowohl im Zeitbereich als auch im Frequenzbereich darstellen. Im Zeitbereich werden Auslenkung \(y(t)\), Amplitude \(\hat{y}\), Periodendauer \(T_0\) und Startphase \(\varphi_0\) sichtbar. Im Frequenzbereich zeigt sich idealisiert nur eine Frequenzkomponente bei der Eigenfrequenz \(f_0\) bzw. \(\omega_0\).  
 
-##### Zeitbereich: Harmonische Schwingung mit markierten Kenngrößen  
+**Zeitbereich:** Harmonische Schwingung mit markierten Kenngrößen  
 
-##### Frequenzbereich: Darstellung der Eigenfrequenz  
+[![Harmonische Schwingung (Zeitbereich)](media/08_modalanalyse/harmonische_schwingung_zeitbereich.svg){width=500px}](media/08_modalanalyse/harmonische_schwingung_zeitbereich.svg "Harmonische Schwingung (Zeitbereich)"){.glightbox}
+<span class="bildquelle">Bildquelle[@kitmath2025]</span>
+
+Diese Darstellung zeigt, wie Amplitude, Periodendauer und Startphase die Form der Zeitfunktion bestimmen.
+
+**Frequenzbereich:** Darstellung der Eigenfrequenz
+
+[![Harmonische Schwingung (Frequenzbereich)](media/08_modalanalyse/harmonische_schwingung_frequenzbereich.svg){width=500px}](media/08_modalanalyse/harmonische_schwingung_frequenzbereich.svg "Harmonische Schwingung (Frequenzbereich)"){.glightbox}
+<span class="bildquelle">Bildquelle[@physikbuch2025]</span>
+
+Das zugehörige Spektrum zeigt idealerweise nur eine einzige Frequenzkomponente bei der Eigenfrequenz.
 
 ---
 
@@ -279,8 +292,8 @@ Die gedämpfte Eigenkreisfrequenz lautet:
 \omega_\mathrm{d} = \sqrt{\omega_0^2 - \left(\frac{k}{2m}\right)^2}
 \]
 
-[![Gedämpfte Schwingungen – nach Eichler](media/08_modalanalyse/eichler_daempfung.png){width=650px}](media/08_modalanalyse/eichler_daempfung.png "Gedämpfte Schwingungen – nach Eichler"){.glightbox}
-<span class="bildquelle">Bildquelle nach Eichler (2023), S. 139.</span>  
+[![Gedämpfte Schwingungen](media/08_modalanalyse/gedaempfte_schwingung.png){width=350px}](media/08_modalanalyse/gedaempfte_schwingung.png "Gedämpfte Schwingungen"){.glightbox}
+<span class="bildquelle">Bildquelle[@Eichler2023]</span>  
 
 ---
 
@@ -292,23 +305,23 @@ Wirkt auf das System eine zeitabhängige äußere Kraft
 F(t) = F_0 \sin(\omega t)
 \]
 
-so stellt sich ein stationärer Schwingungszustand ein. Die Amplitude der Antwortschwingung hängt von der Anregungsfrequenz \(\omega\) ab und zeigt ein Maximum, wenn \(\omega\) in der Nähe der Eigenkreisfrequenz \(\omega_0\) liegt.  
+so stellt sich ein stationärer Schwingungszustand ein. Die Amplitude der Antwortschwingung hängt von der Anregungsfrequenz \(\omega\) ab und zeigt ein Maximum, wenn \(\omega\) in der Nähe der Eigenkreisfrequenz \(\omega_0\) liegt. Dieses Verhalten wird als Resonanz bezeichnet.  
 
-Dieses Verhalten wird als Resonanz bezeichnet. Eichler veranschaulicht dieses Verhalten in der Resonanzkurve (Abb. 6.7, S. 143).  
+!!! danger "FIXME"
+    Abbildung Betriebsbereich über-/unterkritisch hinzu
 
-[![Resonanzkurve – nach Eichler](media/08_modalanalyse/eichler_resonanz.png){width=650px}](media/08_modalanalyse/eichler_resonanz.png "Resonanzkurve – nach Eichler"){.glightbox}
-<span class="bildquelle">Bildquelle nach Eichler (2023), S. 143.</span>  
-
-Diese Darstellung knüpft unmittelbar an die zuvor gezeigten Filmsequenzen an (Brückenschwingung, Fräsprozess).  
+<!--
+[![Resonanzkurve](media/08_modalanalyse/resonanz.png){width=650px}](media/08_modalanalyse/resonanz.png "Resonanzkurve"){.glightbox}
+<span class="bildquelle">Bildquelle[]</span>  
+-->
 
 ---
 
 ### Überlagerung und Schwebung
 
-Ein technisches System kann mehrere Schwingungsanteile gleichzeitig enthalten.  
-Die Überlagerung zweier harmonischer Schwingungen mit leicht unterschiedlicher Frequenz führt zur Schwebung, einem alternierenden Verstärken und Abschwächen der Gesamtamplitude.  
+Ein technisches System kann mehrere Schwingungsanteile gleichzeitig enthalten. Sie Überlagerung zweier harmonischer Schwingungen mit leicht unterschiedlicher Frequenz führt zur Schwebung, einem alternierenden Verstärken und Abschwächen der Gesamtamplitude.  
 
-Nach Eichler (S. 145–147) lässt sich die Überlagerung zweier Schwingungen schreiben als:  
+Die Überlagerung zweier Schwingungen schreiben als:  
 
 \[
 x(t) = A_1 \sin(\omega_1 t) + A_2 \sin(\omega_2 t)
@@ -320,82 +333,99 @@ Die Schwebungsfrequenz ergibt sich zu:
 f_\mathrm{s} = \lvert f_1 - f_2 \rvert
 \]
 
-Dieses Konzept bildet einen intuitiven Übergang zur Vorstellung einer Vielzahl von Eigenformen in realen Strukturen.  
+Dieses Konzept bildet somit den Übergang zur Vorstellung einer Vielzahl von Eigenformen in realen Strukturen.  
 
-[![Schwebung – nach Eichler](media/08_modalanalyse/eichler_schwebung.png){width=650px}](media/08_modalanalyse/eichler_schwebung.png "Schwebung – nach Eichler"){.glightbox}
-<span class="bildquelle">Bildquelle nach Eichler (2023), S. 146.</span>  
+[![Überlagerung von Schwingungen](media/08_modalanalyse/ueberlagerung.svg){width=650px}](media/08_modalanalyse/eichler_schwebung.svg "Überlagerung von Schwingungen"){.glightbox}
+<span class="bildquelle">Bildquelle[@physikbuch2025].</span>  
 
 ---
 
 ### Von der eindimensionalen Schwingung zur Modalanalyse
 
-Eichler zeigt auf S. 156 Beispiele für Eigenschwingungen in Kontinua, etwa Luftsäulen oder Membranen. Diese Beispiele verdeutlichen:  
+Eigenschwingungen treten nicht nur in eindimensionalen Systemen auf, sondern überall dort, wo Kontinua wie Luftsäulen, Saiten, Balken, Membranen oder Platten Schwingungen ausbilden. Diese Beispiele machen deutlich:
 
-* reale Strukturen besitzen viele Eigenfrequenzen  
-* jede Eigenfrequenz gehört zu einer charakteristischen Eigenform  
-* nur bestimmte Frequenzen sind mit der Struktur verträglich und führen zu ausgeprägtem Schwingungsverhalten  
+* reale Strukturen besitzen eine Vielzahl von Eigenfrequenzen  
+* zu jeder Eigenfrequenz gehört eine charakteristische Eigenform  
+* nur bestimmte Frequenzen sind mit der Geometrie und den Randbedingungen vereinbar und führen zu ausgeprägtem Schwingungsverhalten  
 
-Diese Prinzipien lassen sich verallgemeinern zur Formulierung des Eigenwertproblems in der Finite Element Methode. Für ein lineares System mit Massenmatrix \(M\) und Steifigkeitsmatrix \(K\) gilt:  
+Diese Grundprinzipien lassen sich systematisch auf technische Strukturen übertragen. Die Finite Element Methode formuliert sie in Form des allgemeinen Eigenwertproblems. Für ein lineares System mit Massenmatrix \(M\) und Steifigkeitsmatrix \(K\) gilt:
 
 \[
 M \ddot{\varphi} + K \varphi = 0
 \]
 
-Mit dem Ansatz \(\varphi(t) = \Phi \,\mathrm{e}^{\mathrm{i} \omega t}\) ergibt sich das Eigenwertproblem  
+Mit dem harmonischen Lösungsansatz \(\varphi(t) = \Phi\,\mathrm{e}^{\mathrm{i}\omega t}\) erhält man das algebraische Eigenwertproblem:
 
 \[
 K \Phi = \omega^2 M \Phi
 \]
 
-Aus dessen Lösung folgen Eigenfrequenzen \(\omega\) und zugehörige Eigenformen \(\Phi\) für Balken, Platten, Wellen und Baugruppen.  
-
-[![Eigenschwingungen eines Kontinuums – nach Eichler](media/08_modalanalyse/eichler_kontinuum.png){width=650px}](media/08_modalanalyse/eichler_kontinuum.png "Eigenschwingungen eines Kontinuums – nach Eichler"){.glightbox}
-<span class="bildquelle">Bildquelle nach Eichler (2023), S. 156.</span>  
+Die Lösung liefert die Eigenfrequenzen \(\omega\) und die zugehörigen Eigenformen \(\Phi\). Sie beschreiben das grundlegende Schwingungsverhalten von Balken, Platten, Wellen sowie komplexen Baugruppen und bilden die Basis der Modalanalyse.
 
 ### Modellstufen
 
-* Von starren Körpern zu kontinulierlichen Strukturen
-* Da nehmen wir Dresig Maschinendynamik als Quelle
+Die Modellierung des Schwingungsverhaltens erfolgt schrittweise von starren Körpern mit wenigen Freiheitsgraden über diskrete Masse-Feder-Systeme hin zu kontinuierlichen Strukturen wie Balken, Platten oder Wellen. Mit jeder Modellstufe steigt die Fähigkeit, reale Schwingungsformen abzubilden – von einfachen Bewegungen einzelner Körper bis zu verteilten Eigenformen technischer Strukturen.
+
+!!! danger "FIXME"
+    passende Abbildungen aus Dresig/Beitelschmidt ergänzen (Modellstufen: starrer Körper → Mehrmassensystem → Balken/Platte),  
+    Abschnitt inhaltlich erweitern: kurze Erläuterung der Rolle von Freiheitsgraden, Übergang vom diskreten zum kontinuierlichen Modell, Bedeutung für spätere FE-Modalanalyse.
 
 ### Analytische Lösungen einfacher Strukturen
 
-* Balken eigenfrequenzen für freie, einseitig feste und beidseitig feste Lagerung
-* Platte mit einfacher Geometrie (optional)
+!!! danger "FIXME"
+    Ergänzen einfacher Berechnung
 
-## Umsetzung in ANSYS
+## Generelles zur Umsetzung in ANSYS
+
+### Projektoberfläche
 
 ### Geometrie und Material
 
+<!--
 * Nutzung der vorhandenen Geometrien:  
   * Balken  
   * Stahlplatte  
   * Welle  
   * Baugruppe Windenergieanlage
+-->
 
 ### Kontakt und Verbindungselemente
 
+<!--
 * Einfluss auf Modenformen
 * Wann kann ein Teil als starr modelliert werden
+-->
 
 ### Randbedingungen
 
+<!--
 * Frei, einseitig fest, beidseitig fest
 * Einfluss auf Resultate
+-->
 
 ### Netz
 
+<!--
 * Bedeutung des Netzes für Modalanalysen
 * Lokale Verfeinerung an kritischen Geometrien
 * Einfluss der Trägheitsverteilung
+-->
 
 ### Lösereinstellungen
 
+<!--
 * Ziel: die ersten n Eigenfrequenzen
 * Auswahl des Frequenzbereichs
 * Skalierung der Modenformen
 * Nutzung der Animation für Filmsequenzen
+-->
 
-## Beispiele (vom einfachen Bauteil zur Baugruppe)
+## Aufgabenstellung
+
+* [biegebalken.stp](media/08_modalanalyse/biegebalken.stp)
+* [stahlplatte.stp](media/08_modalanalyse/stahlplatte.stp)
+* [getriebewelle.stp](media/08_modalanalyse/getriebewelle.stp)
+* [windrad.stp](media/08_modalanalyse/windrad.stp)
 
 ### 1. Balken
 
@@ -429,10 +459,12 @@ Aus dessen Lösung folgen Eigenfrequenzen \(\omega\) und zugehörige Eigenformen
 
 ## Weiterführendes
 
+<!--
 * Einführung in Betriebsschwingungsanalyse
 * Experimentelle Modalanalyse
 * Modellreduktion für große Baugruppen
 * Mehrkörpermodell und Kopplung an FE Modelle
+-->
 
 ## Quiz zur Selbstkontrolle
 
