@@ -71,7 +71,6 @@ plugins:
             - Modul 3 Elementtypen/Ansatzfunktionen: 05_elementtypen_ansatzf.md
             - Modul 4 Krafteinleitung: 06_krafteinleitung.md
             - Modul 5 Modellreduktion: 07_symmetrie.md
-            - Modul 6 Modalanalyse: 08_modalanalyse.md
             - Übungen: uebungen.md
         - locale: en
           name: 🇬🇧 English
@@ -89,4 +88,5 @@ plugins:
             - Exercises: uebungen.en.md
             - Peer Teaching A1: peer-teaching_A1.md
             - Peer Teaching A2: peer-teaching_A2.md
+            - Peer Teaching B2: peer-teaching_B2.md
 
