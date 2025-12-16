@@ -11,10 +11,6 @@
         <link rel="canonical" href="https://jaegeste.github.io/fem-course/08_modalanalyse/">
       
       
-        <link rel="prev" href="../07_symmetrie/">
-      
-      
-        <link rel="next" href="../uebungen/">
       
       
       <link rel="icon" href="../media/logo/hfu_logo.svg">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Modul 6 Modalanalyse - FEM Course Prof. Jäger</title>
+        <title>Modul 06 – Modalanalyse - FEM Course Prof. Jäger</title>
       
     
     
@@ -120,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Modul 6 Modalanalyse
+              Modul 06 – Modalanalyse
             
           </span>
         </div>
@@ -414,38 +410,6 @@
       
   
   
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Modul 6 Modalanalyse
-    
-  </span>
-  
-
-      </a>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
   
   
     <li class="md-nav__item">
@@ -484,6 +448,86 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lernziele" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lernziele
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motivation-und-zentrale-fragestellungen" class="md-nav__link">
+    <span class="md-ellipsis">
+      Motivation und zentrale Fragestellungen
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretischer-hintergrund" class="md-nav__link">
+    <span class="md-ellipsis">
+      Theoretischer Hintergrund
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generelles-zur-umsetzung-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      Generelles zur Umsetzung in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aufgabenstellung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Aufgabenstellung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diskussion-der-ergebnisse" class="md-nav__link">
+    <span class="md-ellipsis">
+      Diskussion der Ergebnisse
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#weiterfuhrendes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Weiterführendes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quiz-zur-selbstkontrolle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Quiz zur Selbstkontrolle
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -499,10 +543,391 @@
 
 
 <h1 id="modul-06-modalanalyse">Modul 06 – Modalanalyse<a class="headerlink" href="#modul-06-modalanalyse" title="Permanent link">&para;</a></h1>
-<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a>  </p>
+<h2 id="lernziele">Lernziele<a class="headerlink" href="#lernziele" title="Permanent link">&para;</a></h2>
+<p>In diesem Modul werden folgende Inhalte und Kompetenzen vermittelt:</p>
+<ul>
+<li>Bedeutung von Eigenfrequenzen und Eigenformen für Bauteile und Baugruppen</li>
+<li>Herleitung grundlegender Zusammenhänge aus einfachen Feder Masse Systemen</li>
+<li>Einfluss der Einspannung und der Massenverteilung auf das Eigenschwingungsverhalten</li>
+<li>Umsetzung einer Modalanalyse in ANSYS Mechanical</li>
+<li>Interpretation und Bewertung von Modenformen</li>
+<li>Vergleich numerischer und analytisch bekannter Lösungen an einfachen Strukturen</li>
+<li>Übertragung auf komplexere Baugruppen mit starren und verformbaren Teilen</li>
+</ul>
+<h2 id="motivation-und-zentrale-fragestellungen">Motivation und zentrale Fragestellungen<a class="headerlink" href="#motivation-und-zentrale-fragestellungen" title="Permanent link">&para;</a></h2>
+<p>Schwingungen treten in technischen Systemen in vielfältiger Form auf. Bereits einfache Beobachtungen zeigen, dass Strukturen nicht beliebig schwingen, sondern charakteristische, systemabhängige Muster ausbilden. Diese Muster entstehen nicht zufällig, sondern entsprechen dem Eigenschwingverhalten des jeweiligen Systems.  </p>
+<p>Die folgenden Filmsequenzen verdeutlichen typische Situationen, in denen sich dieses Eigenverhalten unmittelbar beobachten lässt. Die Beispiele reichen von alltäglichen Objekten bis hin zu technischen Bearbeitungsprozessen und dienen als Ausgangspunkt für die Analyse der zugrunde liegenden Mechanismen.</p>
+<h3 id="schwingung-einer-straenlaterne">Schwingung einer Straßenlaterne<a class="headerlink" href="#schwingung-einer-straenlaterne" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD033 -->
+<video controls width="700">
+  <source src="../media/08_modalanalyse/lampe.mp4" type="video/mp4">
+  Ihr Browser kann dieses Video nicht wiedergeben.
+</video>
+<!-- markdownlint-enable MD033 -->
+
+<details class="question">
+<summary>Was lässt sich in dieser Filmsequenz erkennen?</summary>
+<ul>
+<li>Die Lampe führt eine freie Schwingung aus.  </li>
+<li>Die Bewegung konzentriert sich in einer charakteristischen Form, die einer Eigenform des Systems entspricht.  </li>
+<li>Dass die Laterne in dieser Form schwingt, liegt daran, dass der Wind Anregungsanteile enthält, die die Eigenfrequenz des Systems treffen.</li>
+</ul>
+</details>
+<hr />
+<h3 id="schwingung-einer-tischplatte">Schwingung einer Tischplatte<a class="headerlink" href="#schwingung-einer-tischplatte" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD033 -->
+<video controls width="700">
+  <source src="../media/08_modalanalyse/tisch.mp4" type="video/mp4">
+  Ihr Browser kann dieses Video nicht wiedergeben.
+</video>
+
+<details class="question">
+<summary>Welche Phänomene treten hier auf?</summary>
+<ul>
+<li>Die Tischplatte ist im Gestell offenbar sehr weich gelagert; bereits geringe Kräfte können zu einer Verdrehung des gesamten Aufbaus führen.  </li>
+<li>Nach dem Loslassen führt die Platte eine freie Schwingung aus, was auf eine Kombination aus geringer Steifigkeit des Untergestells und relativ hoher Masse der Platte hinweist.  </li>
+<li>Ein solcher Aufbau ist strukturdynamisch ungünstig: geringe Gestellsteifigkeit in Kombination mit großer Plattenmasse führt zu ausgeprägtem Eigenschwingverhalten.  </li>
+</ul>
+</details>
+<hr />
+<h3 id="resonanz-eines-bruckensystems-tacoma-narrows-bridge">Resonanz eines Brückensystems (Tacoma Narrows Bridge)<a class="headerlink" href="#resonanz-eines-bruckensystems-tacoma-narrows-bridge" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD033 -->
+<iframe  
+    width="700"  
+    height="394"  
+    src="https://www.youtube-nocookie.com/embed/XggxeuFDaDU?cc_load_policy=0&cc_lang_pref=en&hl=en"  
+    title="Tacoma Narrows Bridge Collapse"
+    frameborder="0"  
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  
+    allowfullscreen
+    playsinline>
+</iframe>
+<!-- markdownlint-enable MD033 -->
+
+<details class="question">
+<summary>Welche strukturdynamischen Effekte sind sichtbar?</summary>
+<ul>
+<li>Die Brücke zeigt eine ausgeprägte Torsionsmode mit großer Auslenkung; die Eigenform dominiert das gesamte Systemverhalten deutlich.  </li>
+<li>Die starke Zunahme der Schwingungsamplitude weist auf einen Resonanzzustand hin, der in eine <strong>Resonanzkatastrophe</strong> übergeht.  </li>
+<li>Die aerodynamische Anregung entsteht durch Strömungsabriss und periodische Wirbelablösungen, die Anregungsanteile im Bereich einer Eigenfrequenz der Brücke erzeugen.  </li>
+<li>Die Kopplung zwischen Strömung und Struktur führt zu einer selbsterregten Schwingung, sodass die Bewegung nicht durch äußere periodische Lasten, sondern durch das System selbst aufrechterhalten wird.  </li>
+<li>Moderne Brücken werden aerodynamisch günstiger ausgeführt, um solche Effekte durch optimierte Profile, Versteifungen und geänderte Bauformen zu vermeiden.  </li>
+<li>Weitere Informationen hier: <a href="https://wsdot.wa.gov/TNBhistory/">https://wsdot.wa.gov/TNBhistory/</a></li>
+</ul>
+</details>
+<hr />
+<h3 id="vibrationen-beim-frasen">Vibrationen beim Fräsen<a class="headerlink" href="#vibrationen-beim-frasen" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD033 -->
+<iframe  
+    width="700"  
+    height="394"  
+    src="https://www.youtube-nocookie.com/embed/__yQcF4G7tM?start=37&end=105&cc_load_policy=0&cc_lang_pref=en&hl=en"  
+    title="Machining vibration example"
+    frameborder="0"  
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"  
+    allowfullscreen
+    playsinline>
+</iframe>
+<!-- markdownlint-enable MD033 -->
+
+<details class="question">
+<summary>Welche Hinweise auf Eigenfrequenzen liefert diese Bearbeitung?</summary>
+<ul>
+<li>Das Werkzeug beginnt zu schwingen, sobald die Schnittbedingungen eine dynamisch instabile Konfiguration erzeugen. Diese liegt vor, wenn die Rückkopplung zwischen Werkzeugbewegung und Spanbildungsprozess Schwingungen verstärkt statt dämpft.  </li>
+<li>Die entstehende Rattermarke ist ein direktes Abbild der Werkzeugschwingung und zeigt die dominierende Eigenform des Systems.  </li>
+<li>Das Gesamtsystem Werkzeug–Spindel–Werkstück weist eine oder mehrere charakteristische Eigenfrequenzen auf, in deren Nähe das Schwingungsverhalten besonders ausgeprägt ist.  </li>
+<li>Dynamische Instabilität entsteht, wenn die Prozessanregung Anteile im Bereich einer Eigenfrequenz enthält und die Systemdämpfung nicht ausreicht, um die Schwingung zu reduzieren.  </li>
+<li>In der Filmsequenz ist eine aktive Schwingungsreduzierung sichtbar. Deren Wirkung zeigt sich darin, dass die Schwingungsamplitude zeitweise deutlich reduziert wird, da der Dämpfer dem System aktiv Energie entzieht und somit das Eigenschwingverhalten beeinflusst.  </li>
+</ul>
+</details>
+<hr />
+<h3 id="schwingungen-eines-maschinenunterbaus">Schwingungen eines Maschinenunterbaus<a class="headerlink" href="#schwingungen-eines-maschinenunterbaus" title="Permanent link">&para;</a></h3>
+<!-- markdownlint-disable MD033 -->
+<video controls width="700">
+  <source src="../media/08_modalanalyse/unterbau.mp4" type="video/mp4">
+  Ihr Browser unterstützt das Abspielen von Videos nicht.
+</video>
+<!-- markdownlint-enable MD033 -->
+
+<details class="question">
+<summary>Welche strukturdynamischen Aspekte treten hier hervor?</summary>
+<ul>
+<li>Das Video zeigt eine Zusammenfassung zahlreicher Eigenformen eines Maschinenunterbaus, wie sie in einer FEM-Modalanalyse berechnet werden.  </li>
+<li>Die dargestellten Moden decken einen breiten Frequenzbereich ab und verdeutlichen, dass technische Systeme viele charakteristische Eigenformen besitzen, die sich lokal oder global ausprägen können.  </li>
+<li>Die sichtbaren Schwingungsmuster werden durch die Verteilung von Masse und Steifigkeit bestimmt.</li>
+<li>Niedrigfrequente Eigenformen betreffen oft den gesamten Aufbau, während höherfrequente Moden lokal konzentrierte Verformungen aufweisen.  </li>
+<li>Die Vielzahl möglicher Eigenformen erklärt, warum bereits geringe Anregungen – wie im vorherigen Video des Fräsprozesses – bestimmte Moden aktivieren und damit unerwünschte Schwingungen verursachen können.  </li>
+</ul>
+</details>
+<hr />
+<h3 id="zwischenfazit">Zwischenfazit<a class="headerlink" href="#zwischenfazit" title="Permanent link">&para;</a></h3>
+<p>Die gezeigten Beispiele machen deutlich, dass technische Systeme nicht beliebig schwingen, sondern ausgeprägte Eigenformen besitzen, die in charakteristischen Frequenzbereichen auftreten.  </p>
+<p>Diese Beobachtungen führen zu grundlegenden Fragestellungen:</p>
+<ul>
+<li>Welche Eigenschaften eines Systems bestimmen sein Schwingungsverhalten?  </li>
+<li>Warum treten Schwingungen nur in bestimmten Frequenzbereichen verstärkt auf?  </li>
+<li>Welche physikalischen Parameter steuern Lage und Form der Eigenmoden?  </li>
+<li>Wie prägen Eigenformen das Verhalten komplexer Bauteile und Baugruppen?</li>
+<li>Wie unterscheiden sich Einmassensysteme von kontinuierlichen Strukturen?  </li>
+</ul>
+<p>Zur systematischen Analyse dieser Fragestellungen wird schrittweise vom einfachen dynamischen Modell zum komplexen technischen Bauteil übergegangen. Der Einstieg erfolgt über den Einmassenschwinger, bevor Balken, Platten, Wellen und Baugruppen untersucht werden.</p>
+<h2 id="theoretischer-hintergrund">Theoretischer Hintergrund<a class="headerlink" href="#theoretischer-hintergrund" title="Permanent link">&para;</a></h2>
+<h3 id="grundbegriffe">Grundbegriffe<a class="headerlink" href="#grundbegriffe" title="Permanent link">&para;</a></h3>
+<p>Technische Schwingungen lassen sich durch wenige grundlegende Größen beschreiben.  </p>
+<p><a class="glightbox" href="../media/08_modalanalyse/Animated-mass-spring.gif" title="Feder Masse Animation"><img alt="Feder Masse Animation" src="../media/08_modalanalyse/Animated-mass-spring.gif" width="100px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref:wikipedia2025"><a class="footnote-ref" href="#fn:wikipedia2025">1</a></sup></span></p>
+<ul>
+<li>
+<p><strong>Auslenkung</strong><br />
+  Zeitabhängige Abweichung einer Größe (z. B. Lage) vom Gleichgewichtszustand.  </p>
+</li>
+<li>
+<p><strong>Periode</strong> <span class="arithmatex">\(T\)</span><br />
+  Zeitspanne, nach der sich ein periodischer Vorgang wiederholt.  </p>
+</li>
+<li>
+<p><strong>Frequenz</strong> <span class="arithmatex">\(f\)</span> und <strong>Kreisfrequenz</strong> <span class="arithmatex">\(\omega\)</span><br />
+<span class="arithmatex">\(f = \frac{1}{T}\)</span><br />
+<span class="arithmatex">\(\omega = 2 \pi f\)</span>  </p>
+</li>
+<li>
+<p><strong>Amplitude</strong> <span class="arithmatex">\(A\)</span><br />
+  Maximale Auslenkung aus dem Gleichgewicht.  </p>
+</li>
+</ul>
+<p>Diese Größen bilden die Basis für die Beschreibung mechanischer Schwingungen.  </p>
+<hr />
+<h3 id="ungedampfte-schwingung-eines-einmassenschwingers">Ungedämpfte Schwingung eines Einmassenschwingers<a class="headerlink" href="#ungedampfte-schwingung-eines-einmassenschwingers" title="Permanent link">&para;</a></h3>
+<p>Ein großes Spektrum technischer Schwingungsprobleme lässt sich im Kern auf das lineare Feder–Masse–System zurückführen.</p>
+<p><a class="glightbox" href="../media/08_modalanalyse/feder_masse.png" title="Feder Masse System"><img alt="Feder Masse System " src="../media/08_modalanalyse/feder_masse.png" width="300px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref:Eichler2023"><a class="footnote-ref" href="#fn:Eichler2023">2</a></sup></span>  </p>
+<p>Die Auslenkung aus der Ruhelage wird durch <span class="arithmatex">\(y(t)\)</span> beschrieben. Die rücktreibende Kraft ist proportional zur Auslenkung, jedoch entgegengesetzt gerichtet:</p>
+<div class="arithmatex">\[
+F = -\,c\,y(t)
+\]</div>
+<p>Die Größe <span class="arithmatex">\(c\)</span> ist die Federkonstante (Einheit: N/m bzw. N/mm).</p>
+<h4 id="krafteansatz-und-bewegungsgleichung">Kräfteansatz und Bewegungsgleichung<a class="headerlink" href="#krafteansatz-und-bewegungsgleichung" title="Permanent link">&para;</a></h4>
+<p>Nach dem zweiten Newtonschen Gesetz führt die resultierende Kraft zu einer Beschleunigung:</p>
+<div class="arithmatex">\[
+F = m\,\ddot{y}(t)
+\]</div>
+<p>Gleichsetzen beider Ausdrücke ergibt:</p>
+<div class="arithmatex">\[
+m\,\ddot{y}(t) = -\,c\,y(t)
+\]</div>
+<p>oder in Standardform:</p>
+<div class="arithmatex">\[
+\ddot{y}(t) + \frac{c}{m}\,y(t) = 0
+\]</div>
+<p>Hierbei handelt es sich um <strong>lineare, homogene Differentialgleichung zweiter Ordnung</strong> mit konstanten Koeffizienten.</p>
+<hr />
+<h4 id="harmonischer-losungsansatz">Harmonischer Lösungsansatz<a class="headerlink" href="#harmonischer-losungsansatz" title="Permanent link">&para;</a></h4>
+<p>Eine Lösung der Form</p>
+<div class="arithmatex">\[
+y(t) = \hat{y}\,\cos(\omega_0 t + \varphi_0)
+\]</div>
+<p>wird eingesetzt. Die Ableitungen lauten:</p>
+<div class="arithmatex">\[
+\dot{y}(t) = -\,\hat{y}\,\omega_0 \sin(\omega_0 t + \varphi_0)
+\]</div>
+<div class="arithmatex">\[
+\ddot{y}(t) = -\,\hat{y}\,\omega_0^{2} \cos(\omega_0 t + \varphi_0)
+\]</div>
+<p>Einsetzen in die Bewegungsgleichung führt auf:</p>
+<div class="arithmatex">\[
+-\,\hat{y}\,\omega_0^{2} \cos(\omega_0 t + \varphi_0) + \frac{c}{m}\,\hat{y}\,\cos(\omega_0 t + \varphi_0) = 0
+\]</div>
+<p>Daraus folgt die charakteristische Beziehung:</p>
+<div class="arithmatex">\[
+\omega_0^{2} = \frac{c}{m}
+\qquad\Longrightarrow\qquad
+\omega_0 = \sqrt{\frac{c}{m}}
+\]</div>
+<p>Dies ist die <strong>Eigenkreisfrequenz</strong> des Systems.</p>
+<hr />
+<h4 id="eigenfrequenz-und-schwingungsdauer">Eigenfrequenz und Schwingungsdauer<a class="headerlink" href="#eigenfrequenz-und-schwingungsdauer" title="Permanent link">&para;</a></h4>
+<p>Aus der Kreisfrequenz ergibt sich die Eigenfrequenz:</p>
+<div class="arithmatex">\[
+f_0 = \frac{\omega_0}{2\pi}
+\]</div>
+<p>Die dazugehörige Periodendauer lautet:</p>
+<div class="arithmatex">\[
+T_0 = \frac{1}{f_0} = \frac{2\pi}{\omega_0}
+\]</div>
+<p>Die Schwingung ist also eine <strong>Systemeigenschaft</strong>, bestimmt ausschließlich durch Masse und Federkonstante. Die Anfangsbedingungen beeinflussen lediglich Amplitude <span class="arithmatex">\(\hat{y}\)</span> und Phase <span class="arithmatex">\(\varphi_0\)</span>.</p>
+<h4 id="darstellung-der-schwingung-im-zeit-und-frequenzbereich">Darstellung der Schwingung im Zeit- und Frequenzbereich<a class="headerlink" href="#darstellung-der-schwingung-im-zeit-und-frequenzbereich" title="Permanent link">&para;</a></h4>
+<p>Die Eigenschaften der Lösung des Einmassenschwingers lassen sich anschaulich sowohl im Zeitbereich als auch im Frequenzbereich darstellen. Im Zeitbereich werden Auslenkung <span class="arithmatex">\(y(t)\)</span>, Amplitude <span class="arithmatex">\(\hat{y}\)</span>, Periodendauer <span class="arithmatex">\(T_0\)</span> und Startphase <span class="arithmatex">\(\varphi_0\)</span> sichtbar. Im Frequenzbereich zeigt sich idealisiert nur eine Frequenzkomponente bei der Eigenfrequenz <span class="arithmatex">\(f_0\)</span> bzw. <span class="arithmatex">\(\omega_0\)</span>.  </p>
+<p><strong>Zeitbereich:</strong> Harmonische Schwingung mit markierten Kenngrößen  </p>
+<p><a class="glightbox" href="../media/08_modalanalyse/harmonische_schwingung_zeitbereich.svg" title="Harmonische Schwingung (Zeitbereich)"><img alt="Harmonische Schwingung (Zeitbereich)" src="../media/08_modalanalyse/harmonische_schwingung_zeitbereich.svg" width="500px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref:kitmath2025"><a class="footnote-ref" href="#fn:kitmath2025">3</a></sup></span></p>
+<p>Diese Darstellung zeigt, wie Amplitude, Periodendauer und Startphase die Form der Zeitfunktion bestimmen.</p>
+<p><strong>Frequenzbereich:</strong> Darstellung der Eigenfrequenz</p>
+<p><a class="glightbox" href="../media/08_modalanalyse/harmonische_schwingung_frequenzbereich.svg" title="Harmonische Schwingung (Frequenzbereich)"><img alt="Harmonische Schwingung (Frequenzbereich)" src="../media/08_modalanalyse/harmonische_schwingung_frequenzbereich.svg" width="500px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref:physikbuch2025"><a class="footnote-ref" href="#fn:physikbuch2025">4</a></sup></span></p>
+<p>Das zugehörige Spektrum zeigt idealerweise nur eine einzige Frequenzkomponente bei der Eigenfrequenz.</p>
+<hr />
+<h3 id="gedampfte-schwingung">Gedämpfte Schwingung<a class="headerlink" href="#gedampfte-schwingung" title="Permanent link">&para;</a></h3>
+<p>Reale technische Systeme verlieren Schwingungsenergie durch Reibung, Luftwiderstand oder Materialdämpfung. Die Dämpfung wird durch eine Proportionalität zur Geschwindigkeit modelliert:  </p>
+<div class="arithmatex">\[
+m \ddot{x} + k \dot{x} + D x = 0
+\]</div>
+<p>Es werden folgende Fälle unterschieden:  </p>
+<ul>
+<li>schwach gedämpfte Schwingung (periodisches Verhalten, langsames Abklingen)  </li>
+<li>kritische Dämpfung (Grenzfall, schnellster Abklingvorgang ohne Schwingung)  </li>
+<li>starke Dämpfung (keine periodische Bewegung)  </li>
+</ul>
+<p>Die gedämpfte Eigenkreisfrequenz lautet:  </p>
+<div class="arithmatex">\[
+\omega_\mathrm{d} = \sqrt{\omega_0^2 - \left(\frac{k}{2m}\right)^2}
+\]</div>
+<p><a class="glightbox" href="../media/08_modalanalyse/gedaempfte_schwingung.png" title="Gedämpfte Schwingungen"><img alt="Gedämpfte Schwingungen" src="../media/08_modalanalyse/gedaempfte_schwingung.png" width="350px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref2:Eichler2023"><a class="footnote-ref" href="#fn:Eichler2023">2</a></sup></span>  </p>
+<hr />
+<h3 id="erzwungene-schwingung-und-resonanz">Erzwungene Schwingung und Resonanz<a class="headerlink" href="#erzwungene-schwingung-und-resonanz" title="Permanent link">&para;</a></h3>
+<p>Wirkt auf das System eine zeitabhängige äußere Kraft  </p>
+<div class="arithmatex">\[
+F(t) = F_0 \sin(\omega t)
+\]</div>
+<p>so stellt sich ein stationärer Schwingungszustand ein. Die Amplitude der Antwortschwingung hängt von der Anregungsfrequenz <span class="arithmatex">\(\omega\)</span> ab und zeigt ein Maximum, wenn <span class="arithmatex">\(\omega\)</span> in der Nähe der Eigenkreisfrequenz <span class="arithmatex">\(\omega_0\)</span> liegt. Dieses Verhalten wird als Resonanz bezeichnet.  </p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Abbildung Betriebsbereich über-/unterkritisch hinzu</p>
+</div>
+<!--
+[![Resonanzkurve](media/08_modalanalyse/resonanz.png){width=650px}](media/08_modalanalyse/resonanz.png "Resonanzkurve"){.glightbox}
+<span class="bildquelle">Bildquelle[]</span>  
+-->
+
+<hr />
+<h3 id="uberlagerung-und-schwebung">Überlagerung und Schwebung<a class="headerlink" href="#uberlagerung-und-schwebung" title="Permanent link">&para;</a></h3>
+<p>Ein technisches System kann mehrere Schwingungsanteile gleichzeitig enthalten. Sie Überlagerung zweier harmonischer Schwingungen mit leicht unterschiedlicher Frequenz führt zur Schwebung, einem alternierenden Verstärken und Abschwächen der Gesamtamplitude.  </p>
+<p>Die Überlagerung zweier Schwingungen schreiben als:  </p>
+<div class="arithmatex">\[
+x(t) = A_1 \sin(\omega_1 t) + A_2 \sin(\omega_2 t)
+\]</div>
+<p>Die Schwebungsfrequenz ergibt sich zu:  </p>
+<div class="arithmatex">\[
+f_\mathrm{s} = \lvert f_1 - f_2 \rvert
+\]</div>
+<p>Dieses Konzept bildet somit den Übergang zur Vorstellung einer Vielzahl von Eigenformen in realen Strukturen.  </p>
+<p><a class="glightbox" href="media/08_modalanalyse/eichler_schwebung.svg" title="Überlagerung von Schwingungen"><img alt="Überlagerung von Schwingungen" src="../media/08_modalanalyse/ueberlagerung.svg" width="650px" /></a>
+<span class="bildquelle">Bildquelle<sup id="fnref2:physikbuch2025"><a class="footnote-ref" href="#fn:physikbuch2025">4</a></sup>.</span>  </p>
+<hr />
+<h3 id="von-der-eindimensionalen-schwingung-zur-modalanalyse">Von der eindimensionalen Schwingung zur Modalanalyse<a class="headerlink" href="#von-der-eindimensionalen-schwingung-zur-modalanalyse" title="Permanent link">&para;</a></h3>
+<p>Eigenschwingungen treten nicht nur in eindimensionalen Systemen auf, sondern überall dort, wo Kontinua wie Luftsäulen, Saiten, Balken, Membranen oder Platten Schwingungen ausbilden. Diese Beispiele machen deutlich:</p>
+<ul>
+<li>reale Strukturen besitzen eine Vielzahl von Eigenfrequenzen  </li>
+<li>zu jeder Eigenfrequenz gehört eine charakteristische Eigenform  </li>
+<li>nur bestimmte Frequenzen sind mit der Geometrie und den Randbedingungen vereinbar und führen zu ausgeprägtem Schwingungsverhalten  </li>
+</ul>
+<p>Diese Grundprinzipien lassen sich systematisch auf technische Strukturen übertragen. Die Finite Element Methode formuliert sie in Form des allgemeinen Eigenwertproblems. Für ein lineares System mit Massenmatrix <span class="arithmatex">\(M\)</span> und Steifigkeitsmatrix <span class="arithmatex">\(K\)</span> gilt:</p>
+<div class="arithmatex">\[
+M \ddot{\varphi} + K \varphi = 0
+\]</div>
+<p>Mit dem harmonischen Lösungsansatz <span class="arithmatex">\(\varphi(t) = \Phi\,\mathrm{e}^{\mathrm{i}\omega t}\)</span> erhält man das algebraische Eigenwertproblem:</p>
+<div class="arithmatex">\[
+K \Phi = \omega^2 M \Phi
+\]</div>
+<p>Die Lösung liefert die Eigenfrequenzen <span class="arithmatex">\(\omega\)</span> und die zugehörigen Eigenformen <span class="arithmatex">\(\Phi\)</span>. Sie beschreiben das grundlegende Schwingungsverhalten von Balken, Platten, Wellen sowie komplexen Baugruppen und bilden die Basis der Modalanalyse.</p>
+<h3 id="modellstufen">Modellstufen<a class="headerlink" href="#modellstufen" title="Permanent link">&para;</a></h3>
+<p>Die Modellierung des Schwingungsverhaltens erfolgt schrittweise von starren Körpern mit wenigen Freiheitsgraden über diskrete Masse-Feder-Systeme hin zu kontinuierlichen Strukturen wie Balken, Platten oder Wellen. Mit jeder Modellstufe steigt die Fähigkeit, reale Schwingungsformen abzubilden – von einfachen Bewegungen einzelner Körper bis zu verteilten Eigenformen technischer Strukturen.</p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>passende Abbildungen aus Dresig/Beitelschmidt ergänzen (Modellstufen: starrer Körper → Mehrmassensystem → Balken/Platte),<br />
+Abschnitt inhaltlich erweitern: kurze Erläuterung der Rolle von Freiheitsgraden, Übergang vom diskreten zum kontinuierlichen Modell, Bedeutung für spätere FE-Modalanalyse.</p>
+</div>
+<h3 id="analytische-losungen-einfacher-strukturen">Analytische Lösungen einfacher Strukturen<a class="headerlink" href="#analytische-losungen-einfacher-strukturen" title="Permanent link">&para;</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Ergänzen einfacher Berechnung</p>
+</div>
+<h2 id="generelles-zur-umsetzung-in-ansys">Generelles zur Umsetzung in ANSYS<a class="headerlink" href="#generelles-zur-umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
+<h3 id="projektoberflache">Projektoberfläche<a class="headerlink" href="#projektoberflache" title="Permanent link">&para;</a></h3>
+<h3 id="geometrie-und-material">Geometrie und Material<a class="headerlink" href="#geometrie-und-material" title="Permanent link">&para;</a></h3>
+<!--
+* Nutzung der vorhandenen Geometrien:  
+  * Balken  
+  * Stahlplatte  
+  * Welle  
+  * Baugruppe Windenergieanlage
+-->
+
+<h3 id="kontakt-und-verbindungselemente">Kontakt und Verbindungselemente<a class="headerlink" href="#kontakt-und-verbindungselemente" title="Permanent link">&para;</a></h3>
+<!--
+* Einfluss auf Modenformen
+* Wann kann ein Teil als starr modelliert werden
+-->
+
+<h3 id="randbedingungen">Randbedingungen<a class="headerlink" href="#randbedingungen" title="Permanent link">&para;</a></h3>
+<!--
+* Frei, einseitig fest, beidseitig fest
+* Einfluss auf Resultate
+-->
+
+<h3 id="netz">Netz<a class="headerlink" href="#netz" title="Permanent link">&para;</a></h3>
+<!--
+* Bedeutung des Netzes für Modalanalysen
+* Lokale Verfeinerung an kritischen Geometrien
+* Einfluss der Trägheitsverteilung
+-->
+
+<h3 id="losereinstellungen">Lösereinstellungen<a class="headerlink" href="#losereinstellungen" title="Permanent link">&para;</a></h3>
+<!--
+* Ziel: die ersten n Eigenfrequenzen
+* Auswahl des Frequenzbereichs
+* Skalierung der Modenformen
+* Nutzung der Animation für Filmsequenzen
+-->
+
+<h2 id="aufgabenstellung">Aufgabenstellung<a class="headerlink" href="#aufgabenstellung" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../media/08_modalanalyse/biegebalken.stp">biegebalken.stp</a></li>
+<li><a href="../media/08_modalanalyse/stahlplatte.stp">stahlplatte.stp</a></li>
+<li><a href="../media/08_modalanalyse/getriebewelle.stp">getriebewelle.stp</a></li>
+<li><a href="../media/08_modalanalyse/windrad.stp">windrad.stp</a></li>
+</ul>
+<h3 id="1-balken">1. Balken<a class="headerlink" href="#1-balken" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Erste zehn Eigenformen vergleichen</li>
+<li>Einfluss der Einspannung</li>
+<li>Einfluss des Materials</li>
+</ul>
+<h3 id="2-stahlplatte">2. Stahlplatte<a class="headerlink" href="#2-stahlplatte" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Erste fünf Moden</li>
+<li>Interpretation typischer Plattenmoden</li>
+<li>Vergleich der Moden bei freien und fixierten Kanten</li>
+</ul>
+<h3 id="3-getriebewelle">3. Getriebewelle<a class="headerlink" href="#3-getriebewelle" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Einfluss von Punktmassen</li>
+<li>Identifikation relevanter Moden für den Betrieb einer Maschine</li>
+</ul>
+<h3 id="4-windenergieanlage">4. Windenergieanlage<a class="headerlink" href="#4-windenergieanlage" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Reduktion komplexer Baugruppen</li>
+<li>Einfluss der Materialwahl</li>
+<li>Strukturkritische Moden</li>
+</ul>
+<h2 id="diskussion-der-ergebnisse">Diskussion der Ergebnisse<a class="headerlink" href="#diskussion-der-ergebnisse" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Veränderungen der Moden durch Masseverteilung, Steifigkeit, Randbedingungen</li>
+<li>Interpretation typischer Modenformen</li>
+<li>Bedeutung für Betriebsdrehzahlen und Sicherheit</li>
+<li>Grenzen der Modalanalyse</li>
+</ul>
+<h2 id="weiterfuhrendes">Weiterführendes<a class="headerlink" href="#weiterfuhrendes" title="Permanent link">&para;</a></h2>
+<!--
+* Einführung in Betriebsschwingungsanalyse
+* Experimentelle Modalanalyse
+* Modellreduktion für große Baugruppen
+* Mehrkörpermodell und Kopplung an FE Modelle
+-->
+
+<h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
 <!-- 
 wie geht's weiter:
-  - Modul 6 Modalanalyse: 08_modalanalyse.md
   - Modul 7 Thermo-Mechanik: 09_thermomechanik.md
   - Modul 8 Sensoren I (Beschl.): 10_sensor_beschl.md
   - Modul 9 Sensoren II (Druck): 11_sensor_druck.md
@@ -511,13 +936,31 @@ wie geht's weiter:
 
   | Modul | Titel | Kerninhalt |
 | :----: | :---- | :---------- |
-| **06** | **Modalanalyse – vom Balken zur Baugruppe** | Einführung in die Eigenfrequenzanalyse: theoretischer Hintergrund, Eigenformen und -frequenzen, Einfluss von Lagerung, Material und Geometrie; Beispiel: Balken und einfache Baugruppe (z. B. Welle). Gitarrenseite unter Vorspannung?|
 | **07** | **Thermo-mechanische Kopplung** | Temperaturfeld → thermische Dehnung → mechanische Spannung, Vergleich isotherm vs. thermisch belastet, Einfluss von Materialparametern (α, E), Beispiel: Platte mit Temperaturgradient. Alternativ Wärme aus Reibung (Bremse) |
 | **8** | **Sensoren I – Beschleunigungssensor** | Simulation eines Masse-Feder-Systems, statisches Äquivalent einer Beschleunigung, Bestimmung der Durchbiegung und Eigenfrequenz, Funktionsnachweis als FEM-basiertes Messprinzip. |
 | **9** | **Sensoren II – Drucksensor / Membran** | Modellierung einer dünnen Platte unter Flächenlast, Berechnung der Durchbiegung und Vergleichsspannung, Herleitung einer Sensorkennlinie (Druck → Verformung), Einfluss der Membrandicke. |
 | **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
 | **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
---><style type="text/css">.quiz {
+-->
+
+<p><a class="glightbox" href="../media/under_construction.png" title="Under Construction"><img alt="Under Construction" src="../media/under_construction.png" width="600px" /></a></p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:wikipedia2025">
+<p>Simple harmonic motion. 2025. URL: <a href="https://en.wikipedia.org/w/index.php?title=Simple_harmonic_motion&amp;oldid=1326663175">https://en.wikipedia.org/w/index.php?title=Simple_harmonic_motion&amp;oldid=1326663175</a> (visited on 11.12.2025).&#160;<a class="footnote-backref" href="#fnref:wikipedia2025" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Eichler2023">
+<p>Jürgen Eichler and Andreas Modler. <em>Physik für das Ingenieurstudium</em>. Springer Fachmedien Wiesbaden, Wiesbaden, 2023. ISBN 978-3-658-38833-1. <a href="https://doi.org/10.1007/978-3-658-38834-8">doi:10.1007/978-3-658-38834-8</a>.&#160;<a class="footnote-backref" href="#fnref:Eichler2023" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Eichler2023" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:kitmath2025">
+<p>Kit - fakultät für mathematik - der modellansatz: modell239 - oszillationen. 11.12.2025. URL: <a href="https://wwwalt.math.kit.edu/ianm4/seite/ma-oszillationen/de">https://wwwalt.math.kit.edu/ianm4/seite/ma-oszillationen/de</a> (visited on 11.12.2025).&#160;<a class="footnote-backref" href="#fnref:kitmath2025" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:physikbuch2025">
+<p>8.7 mehrfache überlagerung von schwingungen | physik libre. 06.07.2025. URL: <a href="https://physikbuch.schule/complex-superposition.html">https://physikbuch.schule/complex-superposition.html</a> (visited on 11.12.2025).&#160;<a class="footnote-backref" href="#fnref:physikbuch2025" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:physikbuch2025" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;

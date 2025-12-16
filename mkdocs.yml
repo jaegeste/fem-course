@@ -88,5 +88,6 @@ plugins:
             - Exercises: uebungen.en.md
             - Peer Teaching A1: peer-teaching_A1.md
             - Peer Teaching A2: peer-teaching_A2.md
+            - Peer Teaching B1: peer-teaching_B1.md
             - Peer Teaching B2: peer-teaching_B2.md
 
