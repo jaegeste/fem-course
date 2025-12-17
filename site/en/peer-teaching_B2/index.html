@@ -629,54 +629,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#76-role-of-damping" class="md-nav__link">
+  <a href="#76-derivation-and-understanding-of-analytical-solution" class="md-nav__link">
     <span class="md-ellipsis">
-      7.6 Role of Damping
+      7.6 Derivation and Understanding of Analytical Solution
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#77-differences-between-modal-and-harmonic-analysis" class="md-nav__link">
+  <a href="#77-role-of-damping" class="md-nav__link">
     <span class="md-ellipsis">
-      7.7 Differences between modal and harmonic analysis
+      7.7 Role of Damping
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#78-engineering-significance" class="md-nav__link">
+  <a href="#78-differences-between-modal-and-harmonic-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      7.8 Engineering significance
+      7.8 Differences between modal and harmonic analysis
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#79-implementation-in-ansys-with-an-example" class="md-nav__link">
+  <a href="#79-engineering-significance" class="md-nav__link">
     <span class="md-ellipsis">
-      7.9 Implementation in Ansys with an example
+      7.9 Engineering significance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#710-important-result-discussions-and-conclusions" class="md-nav__link">
+  <a href="#710-implementation-in-ansys-with-an-example" class="md-nav__link">
     <span class="md-ellipsis">
-      7.10 Important result discussions and conclusions
+      7.10 Implementation in Ansys with an example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#711-self-assessment-quiz" class="md-nav__link">
+  <a href="#711-important-result-discussions-and-conclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      7.11 Self assessment quiz
+      7.11 Important result discussions and conclusions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#712-self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.12 Self assessment quiz
     </span>
   </a>
   
@@ -771,54 +780,63 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#76-role-of-damping" class="md-nav__link">
+  <a href="#76-derivation-and-understanding-of-analytical-solution" class="md-nav__link">
     <span class="md-ellipsis">
-      7.6 Role of Damping
+      7.6 Derivation and Understanding of Analytical Solution
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#77-differences-between-modal-and-harmonic-analysis" class="md-nav__link">
+  <a href="#77-role-of-damping" class="md-nav__link">
     <span class="md-ellipsis">
-      7.7 Differences between modal and harmonic analysis
+      7.7 Role of Damping
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#78-engineering-significance" class="md-nav__link">
+  <a href="#78-differences-between-modal-and-harmonic-analysis" class="md-nav__link">
     <span class="md-ellipsis">
-      7.8 Engineering significance
+      7.8 Differences between modal and harmonic analysis
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#79-implementation-in-ansys-with-an-example" class="md-nav__link">
+  <a href="#79-engineering-significance" class="md-nav__link">
     <span class="md-ellipsis">
-      7.9 Implementation in Ansys with an example
+      7.9 Engineering significance
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#710-important-result-discussions-and-conclusions" class="md-nav__link">
+  <a href="#710-implementation-in-ansys-with-an-example" class="md-nav__link">
     <span class="md-ellipsis">
-      7.10 Important result discussions and conclusions
+      7.10 Implementation in Ansys with an example
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#711-self-assessment-quiz" class="md-nav__link">
+  <a href="#711-important-result-discussions-and-conclusions" class="md-nav__link">
     <span class="md-ellipsis">
-      7.11 Self assessment quiz
+      7.11 Important result discussions and conclusions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#712-self-assessment-quiz" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.12 Self assessment quiz
     </span>
   </a>
   
@@ -842,6 +860,10 @@
 
 <h1 id="peer-teaching-b2-frequency-response-analysis">Peer Teaching: B2 Frequency Response Analysis<a class="headerlink" href="#peer-teaching-b2-frequency-response-analysis" title="Permanent link">&para;</a></h1>
 <h2 id="70-specific-learning-objectives-harmonic-frequency-response-analysis">7.0 Specific Learning Objectives – Harmonic (Frequency Response) Analysis<a class="headerlink" href="#70-specific-learning-objectives-harmonic-frequency-response-analysis" title="Permanent link">&para;</a></h2>
+<div class="arithmatex">\[
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\pd}{\partial}
+\]</div>
 <p>After completing harmonic analysis, the student will be able to:</p>
 <ul>
 <li>Predict the steady-state response of a structure subjected to sinusoidal loading.</li>
@@ -860,58 +882,253 @@
 <li>Frequency content is known</li>
 </ul>
 <h2 id="72-governing-equation-of-motion">7.2 Governing Equation of Motion<a class="headerlink" href="#72-governing-equation-of-motion" title="Permanent link">&para;</a></h2>
-<p>[M]{x¨} + [C]{x˙} + [K]{x} = {F₀} sin(ωt)</p>
-<p>Where:</p>
-<p>[M] — Mass Matrix</p>
-<p>The mass matrix represents how the mass of the structure is distributed over its degrees of freedom (DOFs).</p>
-<p>It quantifies inertia — how resistant the structure is to acceleration.</p>
-<p>Contributes to dynamic effects.</p>
-<p>Larger mass → lower natural frequencie.</p>
-<p>[C] — Damping Matrix
-Represents energy dissipation mechanisms (e.g., material damping, joints, friction).</p>
-<p>Relates velocity to resistive force.</p>
-<p>If damping is ignored, the system becomes undamped.</p>
-<p>Different models exist: structural damping, Rayleigh damping, modal damping.</p>
-<p>[K] — Stiffness Matrix
-Represents elastic resistance of the structure.</p>
-<p>Relates displacements to restoring forces.</p>
-<p>Larger stiffness → higher natural frequencies.</p>
-<p>{F₀} - Forcing Vector</p>
-<p>Amplitude vector of applied sinusoidal loads.</p>
-<p>The excitation applied to the system.</p>
-<p>ω — Forcing Angular Frequency (rad/s)</p>
-<p>Angular frequency at which the load oscillates.</p>
-<p>Linked to ordinary frequency via:</p>
-<p>ω = 2πf</p>
-<p>Defines the frequency domain over which response is evaluated.</p>
+<p>The general equation of motion for a linear dynamic system is:</p>
+<div class="arithmatex">\[
+[\mathbf{M}]\{\ddot{\mathbf{x}}\}
++
+[\mathbf{C}]\{\dot{\mathbf{x}}\}
++
+[\mathbf{K}]\{\mathbf{x}\}
+=
+\{\mathbf{F}_0\}\sin(\omega t)
+\]</div>
+<p>where:</p>
+<h3 id="m-mass-matrix">[M] — Mass Matrix<a class="headerlink" href="#m-mass-matrix" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Represents how the mass of the structure is distributed over its degrees of freedom (DOFs)  </li>
+<li>Quantifies inertia, i.e., resistance to acceleration  </li>
+<li>Contributes to dynamic effects  </li>
+<li>Larger mass leads to lower natural frequencies  </li>
+</ul>
+<hr />
+<h3 id="c-damping-matrix">[C] — Damping Matrix<a class="headerlink" href="#c-damping-matrix" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Represents energy dissipation mechanisms such as:</li>
+<li>Material damping</li>
+<li>Joint damping</li>
+<li>Friction  </li>
+<li>Relates velocity to resistive force  </li>
+<li>If damping is neglected, the system becomes undamped  </li>
+<li>Common damping models include:</li>
+<li>Structural damping</li>
+<li>Rayleigh damping</li>
+<li>Modal damping  </li>
+</ul>
+<hr />
+<h3 id="k-stiffness-matrix">[K] — Stiffness Matrix<a class="headerlink" href="#k-stiffness-matrix" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Represents elastic resistance of the structure  </li>
+<li>Relates displacements to restoring forces  </li>
+<li>Larger stiffness leads to higher natural frequencies  </li>
+</ul>
+<hr />
+<h3 id="f_0-forcing-vector">{F_0} — Forcing Vector<a class="headerlink" href="#f_0-forcing-vector" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Amplitude vector of applied sinusoidal loads  </li>
+<li>Represents the external excitation applied to the system  </li>
+</ul>
+<hr />
+<h3 id="w-forcing-angular-frequency-rads">w — Forcing Angular Frequency (rad/s)<a class="headerlink" href="#w-forcing-angular-frequency-rads" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Angular frequency at which the load oscillates  </li>
+<li>Related to the ordinary frequency <span class="arithmatex">\(f\)</span> by:</li>
+</ul>
+<div class="arithmatex">\[
+\omega = 2\pi f
+\]</div>
+<ul>
+<li>Defines the frequency range over which the response is evaluated  </li>
+</ul>
+<hr />
 <h2 id="73-steady-state-solution">7.3 Steady-State Solution<a class="headerlink" href="#73-steady-state-solution" title="Permanent link">&para;</a></h2>
-<p>Assuming harmonic response:</p>
-<p>{x} = {X}e^{iωt}</p>
-<p>Substituting yields:</p>
-<p>(-ω²[M] + iω[C] + [K]){X} = {F₀}</p>
-<p>ANSYS solves this equation for each frequency step.</p>
+<p>For harmonic excitation, a steady-state harmonic response is assumed:</p>
+<div class="arithmatex">\[
+\{\mathbf{x}\} = \{\mathbf{X}\} e^{i\omega t}
+\]</div>
+<p>Substituting this expression into the governing equation yields the frequency-domain equation:</p>
+<div class="arithmatex">\[
+\left(
+-\omega^2[\mathbf{M}]
++ i\omega[\mathbf{C}]
++ [\mathbf{K}]
+\right)
+\{\mathbf{X}\}
+=
+\{\mathbf{F}_0\}
+\]</div>
+<p>ANSYS solves this equation numerically for each frequency step in the specified range.</p>
+<hr />
 <h2 id="74-modal-superposition-method-used-in-ansys">7.4 Modal Superposition Method (Used in ANSYS)<a class="headerlink" href="#74-modal-superposition-method-used-in-ansys" title="Permanent link">&para;</a></h2>
-<p>To reduce computation, ANSYS uses modal superposition:</p>
-<p>{x} = [Φ]{q}</p>
-<p>Where:</p>
-<p>Φ= mode shapes from modal analysis</p>
-<p>q = modal coordinates</p>
-<p>Advantages:</p>
+<p>To reduce computational effort, ANSYS commonly uses the modal superposition method:</p>
+<div class="arithmatex">\[
+\{\mathbf{x}\} = [\boldsymbol{\Phi}]\{\mathbf{q}\}
+\]</div>
+<p>where:</p>
 <ul>
-<li>Faster solution</li>
-<li>High accuracy near resonances</li>
-<li>Ideal for linear systems</li>
+<li>phi — matrix of mode shapes obtained from modal analysis  </li>
+<li>{q} — modal coordinates  </li>
 </ul>
+<h3 id="advantages-of-modal-superposition">Advantages of Modal Superposition<a class="headerlink" href="#advantages-of-modal-superposition" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Faster solution compared to full direct methods  </li>
+<li>High accuracy near resonance frequencies  </li>
+<li>Particularly suitable for linear systems  </li>
+</ul>
+<hr />
 <h2 id="75-frequency-response-function-frf">7.5 Frequency Response Function (FRF)<a class="headerlink" href="#75-frequency-response-function-frf" title="Permanent link">&para;</a></h2>
-<p>The Frequency Response Function describes system response as a function of frequency:</p>
-<p>H(ω) = X(ω) / F(ω)</p>
-<p>Key observations:</p>
+<p>The Frequency Response Function (FRF) describes the relationship between the system response and the applied excitation in the frequency domain:</p>
+<div class="arithmatex">\[
+H(\omega) = \frac{X(\omega)}{F(\omega)}
+\]</div>
+<h3 id="key-observations">Key Observations<a class="headerlink" href="#key-observations" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Peak at resonance</li>
-<li>Phase shift near resonance</li>
-<li>Damping controls peak amplitude</li>
+<li>Peaks occur at resonance frequencies  </li>
+<li>A phase shift is observed near resonance  </li>
+<li>Damping controls the amplitude and sharpness of resonance peaks  </li>
 </ul>
-<h2 id="76-role-of-damping">7.6 Role of Damping<a class="headerlink" href="#76-role-of-damping" title="Permanent link">&para;</a></h2>
+<h2 id="76-derivation-and-understanding-of-analytical-solution">7.6 Derivation and Understanding of Analytical Solution<a class="headerlink" href="#76-derivation-and-understanding-of-analytical-solution" title="Permanent link">&para;</a></h2>
+<h3 id="assumptions">Assumptions<a class="headerlink" href="#assumptions" title="Permanent link">&para;</a></h3>
+<p>For harmonic analysis of an H-beam, the following standard assumptions are made:</p>
+<ul>
+<li>Linear elastic material behavior  </li>
+<li>Small deformations  </li>
+<li>Euler–Bernoulli beam theory (shear deformation neglected)  </li>
+<li>Uniform cross-section along the beam length  </li>
+<li>Sinusoidal excitation force  </li>
+</ul>
+<p>These assumptions are consistent with ANSYS beam elements.</p>
+<hr />
+<h3 id="step-1-geometry-and-material-of-the-h-beam">Step 1: Geometry and Material of the H-Beam<a class="headerlink" href="#step-1-geometry-and-material-of-the-h-beam" title="Permanent link">&para;</a></h3>
+<p>Consider an H-beam with:</p>
+<ul>
+<li>Length: <span class="arithmatex">\(L\)</span>  </li>
+<li>Young’s modulus: <span class="arithmatex">\(E\)</span>  </li>
+<li>Second moment of area about the bending axis: <span class="arithmatex">\(I\)</span>  </li>
+</ul>
+<p>For an H-beam cross-section:</p>
+<div class="arithmatex">\[
+I = I_{\text{flanges}} + I_{\text{web}}
+\]</div>
+<p>This value is computed once from geometry and directly governs the bending stiffness of the beam.</p>
+<hr />
+<h3 id="step-2-governing-differential-equation-bending">Step 2: Governing Differential Equation (Bending)<a class="headerlink" href="#step-2-governing-differential-equation-bending" title="Permanent link">&para;</a></h3>
+<p>For transverse vibration of a beam, the governing equation is:</p>
+<div class="arithmatex">\[
+EI \frac{d^4 w(x,t)}{dx^4}
++ \rho A \frac{\partial^2 w(x,t)}{\partial t^2}
+= f(x,t)
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\(w(x,t)\)</span> — transverse displacement  </li>
+<li><span class="arithmatex">\(\rho A\)</span> — mass per unit length  </li>
+<li><span class="arithmatex">\(f(x,t)\)</span> — external force per unit length  </li>
+</ul>
+<p>This equation shows that the bending stiffness <span class="arithmatex">\(EI\)</span> directly resists deformation.</p>
+<hr />
+<h3 id="step-3-harmonic-excitation">Step 3: Harmonic Excitation<a class="headerlink" href="#step-3-harmonic-excitation" title="Permanent link">&para;</a></h3>
+<p>Assume a harmonic force applied along the beam:</p>
+<div class="arithmatex">\[
+f(x,t) = f_0(x)\sin(\omega t)
+\]</div>
+<p>Because the excitation is sinusoidal, the steady-state response is also harmonic:</p>
+<div class="arithmatex">\[
+w(x,t) = W(x)\sin(\omega t)
+\]</div>
+<p>Substituting these expressions into the governing equation removes explicit time dependence.</p>
+<hr />
+<h3 id="step-4-frequency-domain-equation">Step 4: Frequency-Domain Equation<a class="headerlink" href="#step-4-frequency-domain-equation" title="Permanent link">&para;</a></h3>
+<p>After substitution, the governing equation becomes:</p>
+<div class="arithmatex">\[
+EI \frac{d^4 W(x)}{dx^4}
+- \omega^2 \rho A W(x)
+= f_0(x)
+\]</div>
+<p>This is the frequency-domain form, where stiffness and inertia appear explicitly.</p>
+<hr />
+<h3 id="step-5-finite-element-approximation-key-step">Step 5: Finite Element Approximation (Key Step)<a class="headerlink" href="#step-5-finite-element-approximation-key-step" title="Permanent link">&para;</a></h3>
+<p>The displacement field is approximated using beam shape functions:</p>
+<div class="arithmatex">\[
+W(x) = \mathbf{N}(x)\mathbf{q}
+\]</div>
+<p>where <span class="arithmatex">\(\mathbf{q}\)</span> contains nodal displacements and rotations.</p>
+<p>Using the principle of virtual work, the element stiffness matrix is obtained as:</p>
+<div class="arithmatex">\[
+\mathbf{k}_e =
+\int_0^L
+EI
+\left(
+\frac{d^2 \mathbf{N}}{dx^2}
+\right)^T
+\left(
+\frac{d^2 \mathbf{N}}{dx^2}
+\right)
+dx
+\]</div>
+<p>This integral explicitly shows:</p>
+<ul>
+<li>Dependence on <span class="arithmatex">\(E\)</span> (material property)  </li>
+<li>Dependence on <span class="arithmatex">\(I\)</span> (H-beam geometry)  </li>
+</ul>
+<hr />
+<h3 id="step-6-resulting-element-stiffness-matrix-bending">Step 6: Resulting Element Stiffness Matrix (Bending)<a class="headerlink" href="#step-6-resulting-element-stiffness-matrix-bending" title="Permanent link">&para;</a></h3>
+<p>Evaluating the integral yields the standard Euler–Bernoulli beam element stiffness matrix:</p>
+<div class="arithmatex">\[
+\mathbf{k}_e =
+\frac{EI}{L^3}
+\begin{bmatrix}
+12 &amp; 6L &amp; -12 &amp; 6L \\
+6L &amp; 4L^2 &amp; -6L &amp; 2L^2 \\
+-12 &amp; -6L &amp; 12 &amp; -6L \\
+6L &amp; 2L^2 &amp; -6L &amp; 4L^2
+\end{bmatrix}
+\]</div>
+<p>This stiffness matrix is directly used by ANSYS for modeling H-beam structures.</p>
+<hr />
+<h3 id="step-7-dynamic-stiffness-for-harmonic-analysis">Step 7: Dynamic Stiffness for Harmonic Analysis<a class="headerlink" href="#step-7-dynamic-stiffness-for-harmonic-analysis" title="Permanent link">&para;</a></h3>
+<p>In harmonic analysis, stiffness combines with inertia and damping to form the dynamic stiffness matrix:</p>
+<div class="arithmatex">\[
+\mathbf{K}_{\text{dyn}}(\omega)
+=
+\mathbf{K}
+- \omega^2 \mathbf{M}
++ i\omega \mathbf{C}
+\]</div>
+<p>This expression explains:</p>
+<ul>
+<li>Why the response depends on excitation frequency  </li>
+<li>Why resonance occurs near natural frequencies  </li>
+<li>Why modal analysis precedes harmonic analysis  </li>
+</ul>
+<hr />
+<h3 id="step-8-modal-superposition-connection">Step 8: Modal Superposition Connection<a class="headerlink" href="#step-8-modal-superposition-connection" title="Permanent link">&para;</a></h3>
+<p>Using modal decomposition, the total displacement is expressed as:</p>
+<div class="arithmatex">\[
+\mathbf{u}(t)
+=
+\sum_{r=1}^{N}
+\boldsymbol{\phi}_r q_r(t)
+\]</div>
+<p>Each mode behaves as an equivalent single-degree-of-freedom (SDOF) system:</p>
+<div class="arithmatex">\[
+\left(
+k_r
+- \omega^2 m_r
++ i\omega c_r
+\right)
+Q_r(\omega)
+=
+F_r(\omega)
+\]</div>
+<p>where <span class="arithmatex">\(k_r\)</span> originates from the stiffness matrix derived above.</p>
+<hr />
+<h3 id="interpretation-for-the-h-beam">Interpretation for the H-Beam<a class="headerlink" href="#interpretation-for-the-h-beam" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Larger <span class="arithmatex">\(I\)</span> leads to higher stiffness and higher natural frequencies  </li>
+<li>Peaks in the harmonic response occur when the excitation frequency is close to modal frequencies  </li>
+<li>ANSYS computes these responses numerically, while the theory explains the underlying physical behavior  </li>
+</ul>
+<h2 id="77-role-of-damping">7.7 Role of Damping<a class="headerlink" href="#77-role-of-damping" title="Permanent link">&para;</a></h2>
 <p>Types of damping in ANSYS:</p>
 <ul>
 <li>Structural damping</li>
@@ -924,7 +1141,7 @@ Represents elastic resistance of the structure.</p>
 <li>Broadens resonance curve</li>
 <li>Improves numerical stability</li>
 </ul>
-<h2 id="77-differences-between-modal-and-harmonic-analysis">7.7 Differences between modal and harmonic analysis<a class="headerlink" href="#77-differences-between-modal-and-harmonic-analysis" title="Permanent link">&para;</a></h2>
+<h2 id="78-differences-between-modal-and-harmonic-analysis">7.8 Differences between modal and harmonic analysis<a class="headerlink" href="#78-differences-between-modal-and-harmonic-analysis" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -951,7 +1168,7 @@ Represents elastic resistance of the structure.</p>
 </tr>
 </tbody>
 </table>
-<h2 id="78-engineering-significance">7.8 Engineering significance<a class="headerlink" href="#78-engineering-significance" title="Permanent link">&para;</a></h2>
+<h2 id="79-engineering-significance">7.9 Engineering significance<a class="headerlink" href="#79-engineering-significance" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Avoid resonance in design</li>
 <li>Predict fatigue due to vibration</li>
@@ -965,7 +1182,7 @@ Represents elastic resistance of the structure.</p>
 <li>Mechanical frames</li>
 <li>Civil structures</li>
 </ul>
-<h2 id="79-implementation-in-ansys-with-an-example">7.9 Implementation in Ansys with an example<a class="headerlink" href="#79-implementation-in-ansys-with-an-example" title="Permanent link">&para;</a></h2>
+<h2 id="710-implementation-in-ansys-with-an-example">7.10 Implementation in Ansys with an example<a class="headerlink" href="#710-implementation-in-ansys-with-an-example" title="Permanent link">&para;</a></h2>
 <h3 id="phase-1-workbench-setup">Phase 1: Workbench Setup<a class="headerlink" href="#phase-1-workbench-setup" title="Permanent link">&para;</a></h3>
 <ol>
 <li>
@@ -1068,7 +1285,7 @@ Represents elastic resistance of the structure.</p>
 <p><a class="glightbox" href="../../media/peer-teaching_B2/9.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Alt Text" src="../../media/peer-teaching_B2/9.png" /></a></p>
 <p>Now provide some damping by providing a damping ratio of 0.02 under damping controls in analysis settings which is by default equal to 0. This means the vibration will damp and eventually come to rest. And solve again and analyse.</p>
 <p><a class="glightbox" href="../../media/peer-teaching_B2/10.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Alt Text" src="../../media/peer-teaching_B2/10.png" /></a></p>
-<h2 id="710-important-result-discussions-and-conclusions">7.10 Important result discussions and conclusions<a class="headerlink" href="#710-important-result-discussions-and-conclusions" title="Permanent link">&para;</a></h2>
+<h2 id="711-important-result-discussions-and-conclusions">7.11 Important result discussions and conclusions<a class="headerlink" href="#711-important-result-discussions-and-conclusions" title="Permanent link">&para;</a></h2>
 <p>Discussions</p>
 <ul>
 <li>Comparison Between Damped and Undamped Systems</li>
@@ -1086,7 +1303,7 @@ Represents elastic resistance of the structure.</p>
 <li>Modal superposition and harmonic analysis together provide accurate prediction of frequency-dependent behavior with reduced computational effort.</li>
 <li>Proper selection of damping and material stiffness is critical to ensure structural reliability and avoid resonance-induced failures</li>
 </ul>
-<h2 id="711-self-assessment-quiz">7.11 Self assessment quiz<a class="headerlink" href="#711-self-assessment-quiz" title="Permanent link">&para;</a></h2>
+<h2 id="712-self-assessment-quiz">7.12 Self assessment quiz<a class="headerlink" href="#712-self-assessment-quiz" title="Permanent link">&para;</a></h2>
 <p>Q1. What is the primary objective of harmonic analysis?</p>
 <p>A. To determine transient shock response</p>
 <p>B. To predict steady-state response under sinusoidal loading</p>

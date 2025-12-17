@@ -335,7 +335,7 @@ f_\mathrm{s} = \lvert f_1 - f_2 \rvert
 
 Dieses Konzept bildet somit den Übergang zur Vorstellung einer Vielzahl von Eigenformen in realen Strukturen.  
 
-[![Überlagerung von Schwingungen](media/08_modalanalyse/ueberlagerung.svg){width=650px}](media/08_modalanalyse/eichler_schwebung.svg "Überlagerung von Schwingungen"){.glightbox}
+[![Überlagerung von Schwingungen](media/08_modalanalyse/ueberlagerung.svg){width=650px}](media/08_modalanalyse/ueberlagerung.svg "Überlagerung von Schwingungen"){.glightbox}
 <span class="bildquelle">Bildquelle[@physikbuch2025].</span>  
 
 ---
@@ -379,29 +379,50 @@ Die Modellierung des Schwingungsverhaltens erfolgt schrittweise von starren Kör
 
 ### Projektoberfläche
 
+In der Projektoberfläche ist die Analyseart *Modal* zu wählen. Für viele Aufgaben kann das System als Standalone-Modalanalyse verwendet werden. Für weiterführende Fragestellungen ist eine Kopplung mit einer *statisch-mechanischen Analyse* oder einer *harmonischen Analyse* sinnvoll, etwa zur Untersuchung von Lastfällen oder zur Frequenzantwortanalyse.  
+
+[![Projektoberfläche, Modalanalyse](media/08_modalanalyse/modal_projektoberflaeche.png){width=650px}](media/08_modalanalyse/modal_projektoberflaeche.png "Projektoberfläche Modalanalyse"){.glightbox}
+
 ### Geometrie und Material
 
-<!--
-* Nutzung der vorhandenen Geometrien:  
-  * Balken  
-  * Stahlplatte  
-  * Welle  
-  * Baugruppe Windenergieanlage
--->
+Die Geometrie wird wie gewohnt in das Projekt eingebunden.  
+
+Auch bei der Modalanalyse ist die Wahl und korrekte Zuweisung der Materialien von zentraler Bedeutung, da die Eigenfrequenzen und Eigenformen direkt von der Massenverteilung abhängen (vgl. theoretische Herleitung). Bei Baugruppen müssen häufig mehrere Materialien berücksichtigt und den jeweiligen Komponenten korrekt zugewiesen werden. Die benötigten Materialkennwerte werden über die technischen Daten in das Projekt eingebunden.  
+
+[![Materialauswahl in der Modalanalyse](media/08_modalanalyse/modal_materialauswahl.png){width=650px}](media/08_modalanalyse/modal_materialauswahl.png "Materialauswahl in der Modalanalyse"){.glightbox}
 
 ### Kontakt und Verbindungselemente
 
-<!--
-* Einfluss auf Modenformen
-* Wann kann ein Teil als starr modelliert werden
--->
+Bei Baugruppen spielen Kontakte und Verbindungselemente eine zentrale Rolle für das Schwingungsverhalten. Sie beeinflussen sowohl die effektive Steifigkeit als auch die Massenkopplung zwischen den einzelnen Komponenten und wirken sich damit direkt auf die berechneten Eigenfrequenzen und Eigenformen aus.
+
+In der Modalanalyse werden Kontakte in der Regel **linearisiert**. Nichtlineare Effekte wie Reibung, Öffnen oder Gleiten werden dabei nicht berücksichtigt. Stattdessen beschreibt der Kontakt eine lineare Kopplung der beteiligten Bauteile, beispielsweise als *bonded*, *no separation* oder idealisierte Lagerung.
+
+Für viele Fragestellungen ist diese Vereinfachung ausreichend, insbesondere wenn:
+
+* kleine Schwingungsamplituden betrachtet werden,  
+* sich der Kontakt im Betrieb nicht wesentlich ändert,  
+* das Ziel in der Bestimmung globaler Eigenfrequenzen und Eigenformen liegt.  
+
+Verbindungselemente wie Schrauben, Federn oder Lager können alternativ explizit modelliert oder durch idealisierte Elemente ersetzt werden. Die Wahl der Kontakt- und Verbindungstypen stellt dabei einen wichtigen Modellierungsentscheid dar und sollte stets im Kontext der realen Struktur und der Zielsetzung der Analyse erfolgen.
+
+!!! warning "Automatische Kontakterkennung"
+    ANSYS erkennt Kontakte in Baugruppen **automatisch**. Diese automatisch erzeugten Kontakte sollten jedoch **immer überprüft, angepasst und bei Bedarf gezielt überarbeitet** werden, da sie einen wesentlichen Einfluss auf die berechneten Eigenfrequenzen und Eigenformen haben.
 
 ### Randbedingungen
 
-<!--
-* Frei, einseitig fest, beidseitig fest
-* Einfluss auf Resultate
--->
+Randbedingungen haben einen wesentlichen Einfluss auf Eigenfrequenzen und Eigenformen.
+
+* typische Lagerungsfälle: frei, einseitig fest, beidseitig fest, allseitig fest...
+* zusätzliche Einspannungen erhöhen die effektive Steifigkeit und verschieben Eigenfrequenzen  
+* Randbedingungen definieren in der Modalanalyse direkt das dynamische System  
+* Änderungen der Randbedingungen führen daher zu deutlich veränderten Modenformen  
+
+Bei Baugruppen werden Randbedingungen häufig über Kontakte, Lagerungen oder idealisierte Fixierungen abgebildet.
+
+* auch hier erfolgt die Betrachtung linearisiert  
+* es werden kleine Schwingungen um einen Referenzzustand betrachtet  
+
+Die Wahl der Randbedingungen ist ein zentraler Modellierungsentscheid und sollte stets an die reale Einbausituation angepasst werden.
 
 ### Netz
 

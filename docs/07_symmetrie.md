@@ -422,6 +422,7 @@ Die **Rechenzeit** und die **Modellgröße** gemessen über die Anzahl der Knote
 !!! warning "FIXME: Erweiterung Abschnitt Weiterführende Aspekte"
     Darstellung von Ergebnissen bei zyklischer Symmetrie  
     Nutzen der Features **Symmetrie-Bereich** und **Linear Periodisch**
+    Übung zu 2D implementieren, CAD Daten liegen vor und siehe peer-teaching, Übungen/Symmetrie_2D
 
 ## Quiz zur Selbstkontrolle
 
