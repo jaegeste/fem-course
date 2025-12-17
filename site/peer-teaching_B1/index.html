@@ -1,0 +1,987 @@
+
+<!doctype html>
+<html lang="de" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/peer-teaching_B1/">
+      
+      
+      
+      
+      <link rel="icon" href="../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Peer Teaching: B1 Modal Analysis - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../overrides/main.css">
+    
+      <link rel="stylesheet" href="../overrides/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#peer-teaching-b1-modal-analysis" class="md-skip">
+          Zum Inhalt
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Kopfzeile">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Peer Teaching: B1 Modal Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sprache wechseln">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="../en/peer-teaching_B1/" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Suche" placeholder="Suche" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Suche">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Zurücksetzen" aria-label="Zurücksetzen" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Suche wird initialisiert
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Startseite
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Einführung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation und erste Schritte
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_kragbalken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 1 Kragbalken
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 2 Kerbwirkung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_elementtypen_ansatzf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 3 Elementtypen/Ansatzfunktionen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_krafteinleitung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 4 Krafteinleitung
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_symmetrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Modul 5 Modellreduktion
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Übungen
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhaltsverzeichnis">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhaltsverzeichnis
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#10-learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.0 Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#20-foundational-concepts-the-language-of-modal-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.0 Foundational Concepts: The Language of Modal Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#30-the-mathematical-framework-of-vibration" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.0 The Mathematical Framework of Vibration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#40-methodologies-for-modal-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      4.0 Methodologies for Modal Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#50-implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.0 Implementation in ANSYS
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#60-the-strategic-influence-and-applications-of-modal-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      6.0 The Strategic Influence and Applications of Modal Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#70-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.0 Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#80-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      8.0 References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="peer-teaching-b1-modal-analysis">Peer Teaching: B1 Modal Analysis<a class="headerlink" href="#peer-teaching-b1-modal-analysis" title="Permanent link">&para;</a></h1>
+<p>Modal analysis is a basic part of structural engineering that gives you the tools you need to understand, predict, and control how structures vibrate. Modal analysis is important for making safe, reliable, and efficient designs, from making sure that a bridge can handle traffic loads to improving the performance of an aerospace part. This report is a complete introduction for professionals who want to learn the basics and how to use this powerful engineering technique in real life. The following goals will help you learn the most important things and give you a clear path to understanding how structural vibration works in the real world.</p>
+<hr />
+<h2 id="10-learning-objectives">1.0 Learning Objectives<a class="headerlink" href="#10-learning-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Define modal analysis and its core components: natural frequency, mode shape, and damping.</p>
+</li>
+<li>
+<p>Understand the fundamental mathematical principles governing structural vibration.</p>
+</li>
+<li>
+<p>Differentiate between computational and experimental modal analysis methodologies.</p>
+</li>
+<li>
+<p>Implementation of computational analysis of Windmill Blade using ANSYS to determine its natural frequencies.</p>
+</li>
+<li>
+<p>Interpret real-world applications and case studies where modal analysis is applied.</p>
+</li>
+</ul>
+<hr />
+<h2 id="20-foundational-concepts-the-language-of-modal-analysis">2.0 Foundational Concepts: The Language of Modal Analysis<a class="headerlink" href="#20-foundational-concepts-the-language-of-modal-analysis" title="Permanent link">&para;</a></h2>
+<p>To understand modal analysis, you need to know the basic key points that go with it. Every structure has dynamic properties that determine how it will react to forces, no matter how big or complex it is. This part explains these main ideas using simple examples and clear definitions. This sets the stage for the more technical talks that will come later.</p>
+<h3 id="21-what-is-modal-analysis">2.1 What is Modal Analysis?<a class="headerlink" href="#21-what-is-modal-analysis" title="Permanent link">&para;</a></h3>
+<p>Modal analysis is the study of a structure's natural dynamic properties. The structure's mass and stiffness distribution determine these properties, which include its natural frequencies, mode shapes, and damping. These are important because they are inherent traits that are not affected by outside forces or loads acting on the structure. Modal analysis shows how a structure naturally wants to move.</p>
+<h3 id="22-natural-frequencies-and-resonance">2.2 Natural Frequencies and Resonance<a class="headerlink" href="#22-natural-frequencies-and-resonance" title="Permanent link">&para;</a></h3>
+<p>If a structure is disturbed and then allowed to vibrate freely, it will naturally oscillate at its natural frequency. Think about a simple plate. If you push on it with a force that changes, the plate will respond in different ways. Resonance happens when the frequency of an outside force matches one of the plate's natural frequencies. When resonance happens, the vibration's amplitude goes up a lot, even though the force that caused it stays the same. This phenomenon can lead to excessive movement, noise, and, in severe cases, fatigue and structural failure. A classic example is the Tacoma Narrows Bridge (1940), where resonance caused catastrophic failure.</p>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Tacoma_Narrows_Bridge_1940.jpg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Tacoma Narrows Bridge, 1940" src="../media/peer-teaching_B1/Tacoma_Narrows_Bridge_1940.jpg" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Tacoma_Narrows_Bridge_collapse.jpg" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Tacoma Narrows Bridge Collapse" src="../media/peer-teaching_B1/Tacoma_Narrows_Bridge_collapse.jpg" /></a></p>
+<h3 id="23-mode-shapes-the-patterns-of-vibration">2.3 Mode Shapes: The Patterns of Vibration<a class="headerlink" href="#23-mode-shapes-the-patterns-of-vibration" title="Permanent link">&para;</a></h3>
+<p>A mode shape is the specific deformation pattern that a structure exhibits when it vibrates at one of its natural frequencies. Think of it as a guitar string. When plucked, it can vibrate in a simple arc (its first mode), in an 'S' shape with a stationary point in the middle (its second mode), and so on. Each of these patterns is a unique mode shape that corresponds to a specific natural frequency. Each natural frequency has a corresponding mode shape. For example, the first natural frequency of a simple beam or plate often corresponds to a "first bending" mode, where the structure flexes in a simple curve. Higher frequencies will correspond to more complex patterns, such as a "first twisting" mode or "second bending" mode, where the structure deforms with multiple curves. These patterns are fundamental to understanding how different parts of a structure move relative to each other during vibration.</p>
+<h3 id="24-damping-the-energy-dissipation-factor">2.4 Damping: The Energy Dissipation Factor<a class="headerlink" href="#24-damping-the-energy-dissipation-factor" title="Permanent link">&para;</a></h3>
+<p>Damping is what makes vibrations get weaker over time in a system. It does this by letting energy go, usually as heat. Damping can be a natural property of a material (like internal friction) or it can be caused by things outside of the material, like air resistance or friction at joints. Damping is what limits the amplitude of vibration at resonance and makes free vibrations stop after a while. It is usually a small factor.</p>
+<h3 id="25-key-measurement-the-frequency-response-function-frf">2.5 Key Measurement: The Frequency Response Function (FRF)<a class="headerlink" href="#25-key-measurement-the-frequency-response-function-frf" title="Permanent link">&para;</a></h3>
+<p>The Frequency Response Function (FRF) is an important part of experimental modal analysis. It is the ratio of the output response of a structure (like acceleration) to the input force applied to it, measured over a range of frequencies. An FRF makes it easy to see the structure's natural (resonant) frequencies because it has clear peaks at each one. This plot is a strong and direct way to find out what the most important dynamic properties of a physical structure are.</p>
+<hr />
+<h2 id="30-the-mathematical-framework-of-vibration">3.0 The Mathematical Framework of Vibration<a class="headerlink" href="#30-the-mathematical-framework-of-vibration" title="Permanent link">&para;</a></h2>
+<p>It's important to understand the math behind modal analysis because it turns abstract ideas like mass and stiffness into a way to make predictions. Engineers use the equations in this section to model, simulate, and analyse how a structure moves over time. These equations are the basis for modern computer programs.</p>
+<h3 id="31-the-general-equation-of-motion">3.1 The General Equation of Motion<a class="headerlink" href="#31-the-general-equation-of-motion" title="Permanent link">&para;</a></h3>
+<p>A basic second-order differential equation can describe how any structural system with more than one degree of freedom moves. This equation of motion looks like this in matrix form:</p>
+<div class="highlight"><pre><span></span><code>[M]{ü(t)} + [C]{u̇(t)} + [K]{u(t)} = {p(t)}
+</code></pre></div>
+<p>Each term in this equation represents a fundamental physical property of the system:</p>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[M]</td>
+<td>Mass Matrix (Represents the structure's inertial properties)</td>
+</tr>
+<tr>
+<td>[C]</td>
+<td>Damping Matrix (Represents energy dissipation)</td>
+</tr>
+<tr>
+<td>[K]</td>
+<td>Stiffness Matrix (Represents the structure's resistance to deformation)</td>
+</tr>
+<tr>
+<td>{u(t)}</td>
+<td>Vector of nodal displacements as a function of time</td>
+</tr>
+<tr>
+<td>{p(t)}</td>
+<td>Vector of external forces applied to the structure</td>
+</tr>
+</tbody>
+</table>
+<p>This equation is a mathematical expression of Newton's Second Law applied to a structure: it states that the external forces ({p(t)}) are balanced by the sum of the structure's inertial forces (mass times acceleration, [M]{ü(t)}), damping forces (proportional to velocity, [C]{u̇(t)}), and elastic restoring forces (proportional to displacement, [K]{u(t)}).</p>
+<h3 id="32-the-eigenvalue-problem-finding-modes-and-frequencies">3.2 The Eigenvalue Problem: Finding Modes and Frequencies<a class="headerlink" href="#32-the-eigenvalue-problem-finding-modes-and-frequencies" title="Permanent link">&para;</a></h3>
+<p>We look at how the structure behaves during free, undamped vibrations to find its natural frequencies and mode shapes. In this case, there are no outside forces acting on the system ({p(t)} = {0}) and damping is thought to be very small ([C] = {0}). This simplification helps us separate the structure's intrinsic properties—how it wants to vibrate—from the effects of outside forces and energy loss.</p>
+<p>This simplification changes the general equation of motion into a basic eigenvalue problem, which can be written as:</p>
+<div class="highlight"><pre><span></span><code>([K] - λ[M]) {φ} = {0}
+</code></pre></div>
+<p>or, more commonly:</p>
+<div class="highlight"><pre><span></span><code>[K]{φ} = λ[M]{φ}
+</code></pre></div>
+<p>Solving this equation yields the structure's inherent modal properties:</p>
+<ul>
+<li>
+<p>Eigenvalues (λ): The solutions for λ are directly related to the squared natural frequencies of the system (λj = ωj²). Each eigenvalue represents a frequency at which the structure naturally vibrates.</p>
+</li>
+<li>
+<p>Eigenvectors ({φ}): For each eigenvalue, there is a corresponding eigenvector {φ}, which is the mode shape. It describes the pattern of deformation the structure undergoes when vibrating at that specific natural frequency.</p>
+</li>
+</ul>
+<hr />
+<h2 id="40-methodologies-for-modal-analysis">4.0 Methodologies for Modal Analysis<a class="headerlink" href="#40-methodologies-for-modal-analysis" title="Permanent link">&para;</a></h2>
+<p>There are two main ways that engineers do modal analysis. The first is computational, which means using software to guess how a structure will vibrate before it is built. The second is experimental, and it uses physical tests to see how a real-world object acts. The two methods work very well together. Experimental data is often used to check and improve computational models. This part will focus on the computational method, and then there will be a short summary of the experimental method.</p>
+<h3 id="41-computational-modal-analysis-cma-via-the-finite-element-method-fem">4.1 Computational Modal Analysis (CMA) via the Finite Element Method (FEM)<a class="headerlink" href="#41-computational-modal-analysis-cma-via-the-finite-element-method-fem" title="Permanent link">&para;</a></h3>
+<p>Computational Modal Analysis (CMA) using FEM engineers often use Computational Modal Analysis (CMA) to forecast virtual model temporal behaviour. Most use the Finite Element Method (FEM). It simplifies complex structures into little elements. FEA for modal analysis follows these steps:</p>
+<ol>
+<li>
+<p><strong>Pre-Processor:</strong> At this step, the physical structure is mathematically modelled. Create a "mesh" of connected finite elements to depict the shape. Engineers establish material parameters like Young's Modulus and density and boundary conditions like fixed supports to sustain or limit the construction.</p>
+</li>
+<li>
+<p><strong>Solution:</strong> FEA software solves the meshed model using basic equations of motion. After building the mass [M] and stiffness [K] matrices using geometry and material data, it solves the eigenvalue problem to obtain the system's natural frequencies and eigenvectors.</p>
+</li>
+<li>
+<p><strong>Post-Processor:</strong> Analyse and review data. Reviewing the solution results lets engineers explore tables of computed natural frequencies and animate mode shapes to show how the structure deforms at each frequency.</p>
+</li>
+</ol>
+<p>Limitations of Computational Modal Analysis (CMA) depends on idealised assumptions that are not often true in real life, like perfect material homogeneity, isotropic properties, and rigid boundary conditions.</p>
+<p>Main Causes of Uncertainty:</p>
+<p>Boundary Conditions: In tests in the real world, "fixed" or "pinned" supports often show unexpected flexibility.</p>
+<p>Material Variability: The properties of the material, such as Elastic Modulus, may not be the same across the whole structure.</p>
+<p>Joint Stiffness: It's hard to perfectly model how stiff connections are.</p>
+<h3 id="42-experimental-modal-analysis-ema-a-generic-summary">4.2 Experimental Modal Analysis (EMA): A Generic Summary<a class="headerlink" href="#42-experimental-modal-analysis-ema-a-generic-summary" title="Permanent link">&para;</a></h3>
+<p>Experimental Modal Analysis (EMA) finds a structure's physical modal parameters, like its natural frequencies, damping, and mode shapes, by using test data to check computer models.</p>
+<p>Key Process Steps:</p>
+<p><strong>Instrumentation:</strong> Sensors (usually accelerometers) are attached to the structure to pick up vibrations.</p>
+<p><strong>Excitation:</strong> An impact hammer or shaker is used to make something vibrate by applying a known force.</p>
+<p><strong>Data Acquisition:</strong> We use FFT analysis to get the input force and output reaction, which lets us find the Frequency Reaction Functions (FRFs).</p>
+<p><strong>Parameter Extraction:</strong> The software looks at the peaks in the FRF to find the exact frequencies and mode shapes.</p>
+<hr />
+<h2 id="50-implementation-in-ansys">5.0 Implementation in ANSYS<a class="headerlink" href="#50-implementation-in-ansys" title="Permanent link">&para;</a></h2>
+<p><strong>Step 1: Workbench Setup</strong></p>
+<p><strong>Choose System:</strong></p>
+<ul>
+<li>From the Toolbox, drag <strong>Modal</strong> into the Project Schematic.</li>
+</ul>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Add_Modal_into_project.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Add Modal into project" src="../media/peer-teaching_B1/Add_Modal_into_project.png" /></a></p>
+<p><strong>Geometry:</strong></p>
+<ul>
+<li>
+<p>Right-click Geometry cell --&gt; Import Geometry</p>
+</li>
+<li>
+<p>Geometry - <a href="../media/peer-teaching_B1/windmill_blade.stp">windmill_blade.stp</a></p>
+</li>
+</ul>
+<p><strong>Engineering Data:</strong></p>
+<ul>
+<li>
+<p>Add material --&gt; <strong>Composite, Epoxy/glass Fiber, woven prepreg, biax</strong>.</p>
+</li>
+<li>
+<p>Set Young's Modulus (Stiffness) and Density (Mass).</p>
+</li>
+</ul>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Add_new_Material.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Add new Material" src="../media/peer-teaching_B1/Add_new_Material.png" /></a></p>
+<p><strong>Step 2: Mechanical Setup</strong></p>
+<ol>
+<li>
+<p><strong>Meshing</strong></p>
+</li>
+<li>
+<p>Add sizing controls to the trailing edge and tips to make the mesh more precise. Click on Mesh and then click on Generate Mesh.</p>
+</li>
+</ol>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Meshing.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Meshing" src="../media/peer-teaching_B1/Meshing.png" /></a></p>
+<ol>
+<li>
+<p><strong>Boundary Conditions (Setup)</strong></p>
+</li>
+<li>
+<p>Context: A windmill blade is a cantilever beam (fixed at one end, free at the other).</p>
+</li>
+<li>
+<p>Right-click Modal (A5) --&gt; Insert --&gt; Fixed Support.</p>
+</li>
+</ol>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Apply_Boundary_Conditions.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Apply Boundary Conditions" src="../media/peer-teaching_B1/Apply_Boundary_Conditions.png" /></a></p>
+<ol>
+<li>
+<p><strong>Analysis Settings</strong></p>
+</li>
+<li>
+<p>Click <strong>Analysis Settings</strong> in the tree.</p>
+</li>
+</ol>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Analysis_Settings.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Analysis Settings" src="../media/peer-teaching_B1/Analysis_Settings.png" /></a></p>
+<p><strong>Max Modes to Find:</strong> The default is usually 6. For a blade, you typically want to see at least the first 6 to 10 modes.</p>
+<p><strong>Step 3: Solution &amp; post-processing</strong></p>
+<ol>
+<li>
+<p><strong>Solve</strong></p>
+</li>
+<li>
+<p>Right-click Solution (A6) --&gt; Solve.</p>
+</li>
+<li>
+<p>Look at the Tabular Data table to see the natural frequencies (Hz) for Review Frequencies.</p>
+</li>
+<li>
+<p><strong>Visualizing Mode Shapes</strong></p>
+</li>
+<li>
+<p>To see how the blade moves at these <strong>Frequencies(Hz)</strong>:</p>
+</li>
+</ol>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Natural_Frequencies.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Natural Frequencies" src="../media/peer-teaching_B1/Natural_Frequencies.png" /></a></p>
+<ul>
+<li>Select all the rows in the Tabular Data window.</li>
+</ul>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Create_Mode_Shapes_Result.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Create Mode Shapes Result" src="../media/peer-teaching_B1/Create_Mode_Shapes_Result.png" /></a></p>
+<ul>
+<li>Right-click --&gt; <strong>Create Mode Shape Results</strong>.</li>
+</ul>
+<p>This adds <strong>"Total Deformation"</strong> items to your Solution tree.</p>
+<ul>
+<li>Right-click Solution --&gt; Evaluate All Results.</li>
+</ul>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Total_Deformation_1.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Total Deformation_1" src="../media/peer-teaching_B1/Total_Deformation_1.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Total_Deformation_2.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Total Deformation_2" src="../media/peer-teaching_B1/Total_Deformation_2.png" /></a></p>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Total_Deformation_3.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Total Deformation_3" src="../media/peer-teaching_B1/Total_Deformation_3.png" /></a></p>
+<ul>
+<li>From Solution Information change solution output to <strong>Participation Factor Summary</strong>.</li>
+</ul>
+<p><a class="glightbox" href="../media/peer-teaching_B1/Participation_Factor_Summary.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Participation Factor Summary" src="../media/peer-teaching_B1/Participation_Factor_Summary.png" /></a></p>
+<ul>
+<li>Click on each Total Deformation to see the different modes such as Flap-wise (bending flat), Edgewise (bending along the edge), or Torsional (twisting) modes.</li>
+</ul>
+<p><strong>Participation Factor:</strong> Mode participation and effective mass measure Each mode measures the mass movement in each direction. A high value indicates that excitations in that direction will effectively stimulate the mode.</p>
+<p><strong>Ratio of Effective Mass to Total Mass:</strong> If the ratio of effective mass to total mass is close to or equal to 1, all modes have been extracted. A 1.0 ratio is unnecessary, while ratio greater than 0.9 are usual.</p>
+<hr />
+<h2 id="60-the-strategic-influence-and-applications-of-modal-analysis">6.0 The Strategic Influence and Applications of Modal Analysis<a class="headerlink" href="#60-the-strategic-influence-and-applications-of-modal-analysis" title="Permanent link">&para;</a></h2>
+<h3 id="61-the-strategic-value-of-modal-analysis">6.1 The Strategic Value of Modal Analysis<a class="headerlink" href="#61-the-strategic-value-of-modal-analysis" title="Permanent link">&para;</a></h3>
+<p>Core Objective: Avoiding Resonance, the fundamental purpose of modal analysis is to find a structure's natural frequencies to prevent Resonance.</p>
+<p>Definition: Resonance occurs when an external operating frequency (e.g., wind gusts, engine rotation) meets the structure's natural frequency.</p>
+<p>Consequence: This results in magnified vibrations that cause noise, fatigue damage, or catastrophic failure.</p>
+<p>Solution: By identifying these frequencies early, engineers can change stiffness or mass to shift the natural frequencies away from operational ranges.</p>
+<h3 id="62-applications-across-industries">6.2 Applications Across Industries<a class="headerlink" href="#62-applications-across-industries" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th><strong>Industry</strong></th>
+<th><strong>Key Applications &amp; Use Cases</strong></th>
+<th><strong>Primary Benefit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Civil Engineering</td>
+<td>Structural Health Monitoring (SHM) of bridges &amp; buildings. Real-time monitoring of snow loads on industrial roofs.</td>
+<td>Assess structural integrity, detect damage, and prevent collapse.</td>
+</tr>
+<tr>
+<td>Aerospace &amp; Automotive</td>
+<td>Validating drone frames. Analysing brake discs (thermal/vibrational) &amp; tire dynamics. Testing rocket engines for extreme forces.</td>
+<td>Ensure components can withstand operational forces and optimize dynamic behaviour.</td>
+</tr>
+<tr>
+<td>Industrial Machinery</td>
+<td>Diagnosing ground vibrations (e.g., in foundries). Condition monitoring of gearboxes and cutting machines.</td>
+<td>Protect nearby communities from disturbance and enable predictive maintenance.</td>
+</tr>
+<tr>
+<td>Energy &amp; Renewables</td>
+<td>Monitoring wind turbine blades and towers. Developing Borehole Thermal Energy Storage (BTES).</td>
+<td>Manage complex loads on structures and optimize efficiency in energy systems.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="70-conclusion">7.0 Conclusion<a class="headerlink" href="#70-conclusion" title="Permanent link">&para;</a></h2>
+<p>Modal analysis is an important and useful tool for engineers today. Systematically describes the natural frequencies and mode shapes of any structure. Engineers can better predict and find dynamic problems by simplifying physical behaviours into modal parameters.</p>
+<p>In the study, computational analysis employs Finite Element Analysis (FEA) for virtual predictions and design optimisation, whereas experimental analysis validates and assesses physical constructions. Improve the structural dynamics of problem-solving.</p>
+<p>Engineers can use modal analysis to guess, measure, and control vibration. It makes goods and services safer, more dependable, and more effective. It gives ideas for future parts for aeroplanes, green energy systems, and famous buildings and bridges.</p>
+<hr />
+<h2 id="80-references">8.0 References<a class="headerlink" href="#80-references" title="Permanent link">&para;</a></h2>
+<p>Farrar. C. R., and K. Worden, “An introduction to structural health monitoring” Philosophical Transactions of the Royal Society A, pp 303-315, 2007.</p>
+<p>Sreenivas Alampalli and E. Mohammed, “Structural health monitoring as a bridge management too”, Structures Congress, American Society of Civil Engineers, 3 pages, 2006.</p>
+<p>Chaphalkar. S. P et al, “Modal analysis of cantilever beam structure using finite element analysis and experimental analysis”, American Journal of Engineering Research, vol. 4, pp 178-185, 2015.</p>
+<p>Jayanthan M, Srinivas V, “Structural damage identification based on finite element model updating”, Journal of Mechanical Engineering and Automation, vol. 5, pp 59-63, 2015.</p>
+<p>Avitabile, P., (2000), Modal Space: Back to Basics, Experimental Techniques, 24, No.5, pp. 15-16.</p>
+<p>David V. Hutton, “Fundamentals of Finite Element Analysis”, Mc Graw Hills, Chapter 10, Dynamic Motion of Structures, pp. 392-396.</p>
+<p>Clarence W. De Silva, (2004), book on “Vibration Fundamentals and Practice” Chapter 7, damping, pp. 349-398, ISBN 0-8493–1808-4.</p>
+<p>Vibration Research. (2025, June 10). Experimental Modal testing in ObserVIEW - Recording and Analysis - Vibration research. <a href="https://vibrationresearch.com/blog/experimental-modal-testing-obserview/">https://vibrationresearch.com/blog/experimental-modal-testing-obserview/</a></p><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Zurück zum Seitenanfang
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "In Zwischenablage kopiert", "clipboard.copy": "In Zwischenablage kopieren", "search.result.more.one": "1 weiteres Suchergebnis auf dieser Seite", "search.result.more.other": "# weitere Suchergebnisse auf dieser Seite", "search.result.none": "Keine Suchergebnisse", "search.result.one": "1 Suchergebnis", "search.result.other": "# Suchergebnisse", "search.result.placeholder": "Suchbegriff eingeben", "search.result.term.missing": "Es fehlt", "select.version": "Version ausw\u00e4hlen"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

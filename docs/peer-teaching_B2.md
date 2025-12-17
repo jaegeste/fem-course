@@ -2,6 +2,11 @@
 
 ## 7.0 Specific Learning Objectives – Harmonic (Frequency Response) Analysis
 
+$$
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\pd}{\partial}
+$$
+
 After completing harmonic analysis, the student will be able to:
 
 - Predict the steady-state response of a structure subjected to sinusoidal loading.
@@ -23,95 +28,324 @@ Used when:
 
 ## 7.2 Governing Equation of Motion
 
-[M]{x¨} + [C]{x˙} + [K]{x} = {F₀} sin(ωt)
+The general equation of motion for a linear dynamic system is:
 
-Where:
+$$
+[\mathbf{M}]\{\ddot{\mathbf{x}}\}
++
+[\mathbf{C}]\{\dot{\mathbf{x}}\}
++
+[\mathbf{K}]\{\mathbf{x}\}
+=
+\{\mathbf{F}_0\}\sin(\omega t)
+$$
 
-[M] — Mass Matrix
+where:
 
-The mass matrix represents how the mass of the structure is distributed over its degrees of freedom (DOFs).
+### [M] — Mass Matrix
 
-It quantifies inertia — how resistant the structure is to acceleration.
+- Represents how the mass of the structure is distributed over its degrees of freedom (DOFs)  
+- Quantifies inertia, i.e., resistance to acceleration  
+- Contributes to dynamic effects  
+- Larger mass leads to lower natural frequencies  
 
-Contributes to dynamic effects.
+---
 
-Larger mass → lower natural frequencie.
+### [C] — Damping Matrix
 
-[C] — Damping Matrix
-Represents energy dissipation mechanisms (e.g., material damping, joints, friction).
+- Represents energy dissipation mechanisms such as:
+  - Material damping
+  - Joint damping
+  - Friction  
+- Relates velocity to resistive force  
+- If damping is neglected, the system becomes undamped  
+- Common damping models include:
+  - Structural damping
+  - Rayleigh damping
+  - Modal damping  
 
-Relates velocity to resistive force.
+---
 
-If damping is ignored, the system becomes undamped.
+### [K] — Stiffness Matrix
 
-Different models exist: structural damping, Rayleigh damping, modal damping.
+- Represents elastic resistance of the structure  
+- Relates displacements to restoring forces  
+- Larger stiffness leads to higher natural frequencies  
 
-[K] — Stiffness Matrix
-Represents elastic resistance of the structure.
+---
 
-Relates displacements to restoring forces.
+### {F_0} — Forcing Vector
 
-Larger stiffness → higher natural frequencies.
+- Amplitude vector of applied sinusoidal loads  
+- Represents the external excitation applied to the system  
 
-{F₀} - Forcing Vector
+---
 
-Amplitude vector of applied sinusoidal loads.
+### w — Forcing Angular Frequency (rad/s)
 
-The excitation applied to the system.
+- Angular frequency at which the load oscillates  
+- Related to the ordinary frequency \(f\) by:
 
-ω — Forcing Angular Frequency (rad/s)
+$$
+\omega = 2\pi f
+$$
 
-Angular frequency at which the load oscillates.
+- Defines the frequency range over which the response is evaluated  
 
-Linked to ordinary frequency via:
-
-ω = 2πf
-
-Defines the frequency domain over which response is evaluated.
+---
 
 ## 7.3 Steady-State Solution
 
-Assuming harmonic response:
+For harmonic excitation, a steady-state harmonic response is assumed:
 
-{x} = {X}e^{iωt}
+$$
+\{\mathbf{x}\} = \{\mathbf{X}\} e^{i\omega t}
+$$
 
-Substituting yields:
+Substituting this expression into the governing equation yields the frequency-domain equation:
 
-(-ω²[M] + iω[C] + [K]){X} = {F₀}
+$$
+\left(
+-\omega^2[\mathbf{M}]
++ i\omega[\mathbf{C}]
++ [\mathbf{K}]
+\right)
+\{\mathbf{X}\}
+=
+\{\mathbf{F}_0\}
+$$
 
-ANSYS solves this equation for each frequency step.
+ANSYS solves this equation numerically for each frequency step in the specified range.
+
+---
 
 ## 7.4 Modal Superposition Method (Used in ANSYS)
 
-To reduce computation, ANSYS uses modal superposition:
+To reduce computational effort, ANSYS commonly uses the modal superposition method:
 
-{x} = [Φ]{q}
+$$
+\{\mathbf{x}\} = [\boldsymbol{\Phi}]\{\mathbf{q}\}
+$$
 
-Where:
+where:
 
-Φ= mode shapes from modal analysis
+- phi — matrix of mode shapes obtained from modal analysis  
+- {q} — modal coordinates  
 
-q = modal coordinates
+### Advantages of Modal Superposition
 
-Advantages:
+- Faster solution compared to full direct methods  
+- High accuracy near resonance frequencies  
+- Particularly suitable for linear systems  
 
-- Faster solution
-- High accuracy near resonances
-- Ideal for linear systems
+---
 
 ## 7.5 Frequency Response Function (FRF)
 
-The Frequency Response Function describes system response as a function of frequency:
+The Frequency Response Function (FRF) describes the relationship between the system response and the applied excitation in the frequency domain:
 
-H(ω) = X(ω) / F(ω)
+$$
+H(\omega) = \frac{X(\omega)}{F(\omega)}
+$$
 
-Key observations:
+### Key Observations
 
-- Peak at resonance
-- Phase shift near resonance
-- Damping controls peak amplitude
+- Peaks occur at resonance frequencies  
+- A phase shift is observed near resonance  
+- Damping controls the amplitude and sharpness of resonance peaks  
 
-## 7.6 Role of Damping
+## 7.6 Derivation and Understanding of Analytical Solution
+
+### Assumptions
+
+For harmonic analysis of an H-beam, the following standard assumptions are made:
+
+- Linear elastic material behavior  
+- Small deformations  
+- Euler–Bernoulli beam theory (shear deformation neglected)  
+- Uniform cross-section along the beam length  
+- Sinusoidal excitation force  
+
+These assumptions are consistent with ANSYS beam elements.
+
+---
+
+### Step 1: Geometry and Material of the H-Beam
+
+Consider an H-beam with:
+
+- Length: \(L\)  
+- Young’s modulus: \(E\)  
+- Second moment of area about the bending axis: \(I\)  
+
+For an H-beam cross-section:
+
+$$
+I = I_{\text{flanges}} + I_{\text{web}}
+$$
+
+This value is computed once from geometry and directly governs the bending stiffness of the beam.
+
+---
+
+### Step 2: Governing Differential Equation (Bending)
+
+For transverse vibration of a beam, the governing equation is:
+
+$$
+EI \frac{d^4 w(x,t)}{dx^4}
++ \rho A \frac{\partial^2 w(x,t)}{\partial t^2}
+= f(x,t)
+$$
+
+where:
+
+- \(w(x,t)\) — transverse displacement  
+- \(\rho A\) — mass per unit length  
+- \(f(x,t)\) — external force per unit length  
+
+This equation shows that the bending stiffness \(EI\) directly resists deformation.
+
+---
+
+### Step 3: Harmonic Excitation
+
+Assume a harmonic force applied along the beam:
+
+$$
+f(x,t) = f_0(x)\sin(\omega t)
+$$
+
+Because the excitation is sinusoidal, the steady-state response is also harmonic:
+
+$$
+w(x,t) = W(x)\sin(\omega t)
+$$
+
+Substituting these expressions into the governing equation removes explicit time dependence.
+
+---
+
+### Step 4: Frequency-Domain Equation
+
+After substitution, the governing equation becomes:
+
+$$
+EI \frac{d^4 W(x)}{dx^4}
+- \omega^2 \rho A W(x)
+= f_0(x)
+$$
+
+This is the frequency-domain form, where stiffness and inertia appear explicitly.
+
+---
+
+### Step 5: Finite Element Approximation (Key Step)
+
+The displacement field is approximated using beam shape functions:
+
+$$
+W(x) = \mathbf{N}(x)\mathbf{q}
+$$
+
+where \(\mathbf{q}\) contains nodal displacements and rotations.
+
+Using the principle of virtual work, the element stiffness matrix is obtained as:
+
+$$
+\mathbf{k}_e =
+\int_0^L
+EI
+\left(
+\frac{d^2 \mathbf{N}}{dx^2}
+\right)^T
+\left(
+\frac{d^2 \mathbf{N}}{dx^2}
+\right)
+dx
+$$
+
+This integral explicitly shows:
+
+- Dependence on \(E\) (material property)  
+- Dependence on \(I\) (H-beam geometry)  
+
+---
+
+### Step 6: Resulting Element Stiffness Matrix (Bending)
+
+Evaluating the integral yields the standard Euler–Bernoulli beam element stiffness matrix:
+
+$$
+\mathbf{k}_e =
+\frac{EI}{L^3}
+\begin{bmatrix}
+12 & 6L & -12 & 6L \\
+6L & 4L^2 & -6L & 2L^2 \\
+-12 & -6L & 12 & -6L \\
+6L & 2L^2 & -6L & 4L^2
+\end{bmatrix}
+$$
+
+This stiffness matrix is directly used by ANSYS for modeling H-beam structures.
+
+---
+
+### Step 7: Dynamic Stiffness for Harmonic Analysis
+
+In harmonic analysis, stiffness combines with inertia and damping to form the dynamic stiffness matrix:
+
+$$
+\mathbf{K}_{\text{dyn}}(\omega)
+=
+\mathbf{K}
+- \omega^2 \mathbf{M}
++ i\omega \mathbf{C}
+$$
+
+This expression explains:
+
+- Why the response depends on excitation frequency  
+- Why resonance occurs near natural frequencies  
+- Why modal analysis precedes harmonic analysis  
+
+---
+
+### Step 8: Modal Superposition Connection
+
+Using modal decomposition, the total displacement is expressed as:
+
+$$
+\mathbf{u}(t)
+=
+\sum_{r=1}^{N}
+\boldsymbol{\phi}_r q_r(t)
+$$
+
+Each mode behaves as an equivalent single-degree-of-freedom (SDOF) system:
+
+$$
+\left(
+k_r
+- \omega^2 m_r
++ i\omega c_r
+\right)
+Q_r(\omega)
+=
+F_r(\omega)
+$$
+
+where \(k_r\) originates from the stiffness matrix derived above.
+
+---
+
+### Interpretation for the H-Beam
+
+- Larger \(I\) leads to higher stiffness and higher natural frequencies  
+- Peaks in the harmonic response occur when the excitation frequency is close to modal frequencies  
+- ANSYS computes these responses numerically, while the theory explains the underlying physical behavior  
+
+## 7.7 Role of Damping
 
 Types of damping in ANSYS:
 
@@ -125,7 +359,7 @@ Effects:
 - Broadens resonance curve
 - Improves numerical stability
 
-## 7.7 Differences between modal and harmonic analysis
+## 7.8 Differences between modal and harmonic analysis
 
 | Modal Analysis | Harmonic Analysis |
 |---------------|------------------|
@@ -134,7 +368,7 @@ Effects:
 | No damping | Damping included |
 | Free vibration | Forced vibration |
 
-## 7.8 Engineering significance
+## 7.9 Engineering significance
 
 - Avoid resonance in design
 - Predict fatigue due to vibration
@@ -148,7 +382,7 @@ Used in:
 - Mechanical frames
 - Civil structures
 
-## 7.9 Implementation in Ansys with an example
+## 7.10 Implementation in Ansys with an example
 
 ### Phase 1: Workbench Setup
 
@@ -248,7 +482,7 @@ Now provide some damping by providing a damping ratio of 0.02 under damping cont
 
 ![Alt Text](media/peer-teaching_B2/10.png)
 
-## 7.10 Important result discussions and conclusions
+## 7.11 Important result discussions and conclusions
 
 Discussions
 
@@ -267,7 +501,7 @@ Conclusions
 - Modal superposition and harmonic analysis together provide accurate prediction of frequency-dependent behavior with reduced computational effort.
 - Proper selection of damping and material stiffness is critical to ensure structural reliability and avoid resonance-induced failures
 
-## 7.11 Self assessment quiz
+## 7.12 Self assessment quiz
 
 Q1. What is the primary objective of harmonic analysis?
 
