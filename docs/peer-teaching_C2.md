@@ -104,7 +104,7 @@ thin, clamped plate undergoing bending due to applied pressure.
 
 The bending stiffness (flexural rigidity) of the diaphragm is given by:
 
-D = (E · t³) / [12(1 − ν²)]
+**D = (E · t³) / [12(1 − ν²)]**
 
 where E is Young’s modulus of the diaphragm material,
 t is the diaphragm thickness,
@@ -113,7 +113,7 @@ and ν is Poisson’s ratio.
 For a clamped square diaphragm of side length a, subjected to a uniform pressure p, the
 maximum deflection occurs at the center of the diaphragm and can be approximated by:
 
-w_max = α · (p · a⁴) / D
+**w_max = α · (p · a⁴) / D**
 
 where α is  a  dimensionless  coefficient  that  depends  on  the  diaphragm  geometry  and
 boundary conditions. For a clamped square plate, α≈0.0138.
@@ -121,7 +121,7 @@ boundary conditions. For a clamped square plate, α≈0.0138.
 The pressure-induced bending also generates stresses within the diaphragm. The maximum
 bending stress occurs near the clamped edges and can be estimated using:
 
-σ_max = β · (p · a²) / t²
+**σ_max = β · (p · a²) / t²**
 
 where β is  a  geometry-dependent  coefficient,  typically β≈0.308 for  a  clamped  square
 diaphragm.
@@ -196,9 +196,9 @@ Step 2: Material Assignment
 
 Step 3: Geometry Import
 
-![Geometry](media/peer-teaching_C2/8.png)
+Geometry: [Pressure Sensor(.stp)](media/peer-teaching_C2/Pressure_sensor.stp)
 
-Geometry
+![Geometry](media/peer-teaching_C2/8.png)
 
 Step 4: Meshing
 
