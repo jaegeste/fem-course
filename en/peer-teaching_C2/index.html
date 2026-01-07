@@ -1,0 +1,1409 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/peer-teaching_C2/">
+      
+      
+        <link rel="prev" href="../peer-teaching_C1/">
+      
+      
+      
+      <link rel="icon" href="../../media/logo/hfu_logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Peer Teaching C2 - FEM Course Prof. Jäger</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.342714a4.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,700,700i%7CSource+Code+Pro:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Source Sans Pro";--md-code-font:"Source Code Pro"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../overrides/main.css">
+    
+      <link rel="stylesheet" href="../../overrides/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="green" data-md-color-accent="light-green">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#peer-teaching-c2-pressure-sensor-membrane-deformation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-header__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FEM Course Prof. Jäger
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Peer Teaching C2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m12.87 15.07-2.54-2.51.03-.03A17.5 17.5 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2zm-2.62 7 1.62-4.33L19.12 17z"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="../../peer-teaching_C2/" hreflang="de" class="md-select__link">
+              🇩🇪 Deutsch
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="./" hreflang="en" class="md-select__link">
+              🇬🇧 English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../" title="FEM Course Prof. Jäger" class="md-nav__button md-logo" aria-label="FEM Course Prof. Jäger" data-md-component="logo">
+      
+  <img src="../../media/logo/hfu_logo.svg" alt="logo">
+
+    </a>
+    FEM Course Prof. Jäger
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_einfuehrung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Introduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_installation_erste_schritte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Installation and getting started
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_kragbalken/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 1 Cantilever Beam
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_kerbwirkung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 2 Stress Concentration
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_elementtypen_ansatzf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 3 Element Types/Shape functions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_krafteinleitung/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 4 Load Application
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_symmetrie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 5 Model Reduction
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_modalanalyse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Module 6 Modal Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uebungen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Exercises
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peer-teaching_A1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peer-teaching_A2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching A2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peer-teaching_B1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching B1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peer-teaching_B2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching B2
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../peer-teaching_C1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching C1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching C2
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Peer Teaching C2
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-theoretical-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Theoretical Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-pressure-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Pressure Sensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-working-principle-of-a-pressure-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Working Principle of a Pressure Sensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-thin-plate-theory-and-mechanical-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Thin Plate Theory and Mechanical Assumptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-mathematical-formulation-for-diaphragm-deflection-and-stress" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Mathematical Formulation for Diaphragm Deflection and Stress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pressure-sensor-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pressure Sensor Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-description-of-the-pressure-sensor-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Description of the Pressure Sensor Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-geometry-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Geometry and Dimensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-mechanical-properties-of-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Mechanical Properties of Silicon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Implementation in Ansys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-results-and-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Results and Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-total-deformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Total Deformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-equivalent-stress-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Equivalent Stress Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-comparison-between-fem-and-analytical-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3. Comparison Between FEM and Analytical Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-learning-objectives" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Learning Objectives
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-theoretical-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Theoretical Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#21-pressure-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.1. Pressure Sensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-working-principle-of-a-pressure-sensor" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.2. Working Principle of a Pressure Sensor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-thin-plate-theory-and-mechanical-assumptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.3. Thin Plate Theory and Mechanical Assumptions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-mathematical-formulation-for-diaphragm-deflection-and-stress" class="md-nav__link">
+    <span class="md-ellipsis">
+      2.4. Mathematical Formulation for Diaphragm Deflection and Stress
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pressure-sensor-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Pressure Sensor Analysis
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#31-description-of-the-pressure-sensor-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1. Description of the Pressure Sensor Model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32-geometry-and-dimensions" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2. Geometry and Dimensions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33-mechanical-properties-of-silicon" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3. Mechanical Properties of Silicon
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-implementation-in-ansys" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Implementation in Ansys
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-results-and-discussion" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Results and Discussion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#51-total-deformation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.1. Total Deformation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#52-equivalent-stress-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.2. Equivalent Stress Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#53-comparison-between-fem-and-analytical-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      5.3. Comparison Between FEM and Analytical Results
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. References
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="peer-teaching-c2-pressure-sensor-membrane-deformation">Peer Teaching: C2 Pressure Sensor (Membrane Deformation)<a class="headerlink" href="#peer-teaching-c2-pressure-sensor-membrane-deformation" title="Permanent link">&para;</a></h1>
+<h2 id="1-learning-objectives">1. Learning Objectives<a class="headerlink" href="#1-learning-objectives" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Define the working principle of diaphragm-based pressure sensors, including how
+applied  pressure  results  in  mechanical  deformation  and  stress  within  the  sensing
+element.</li>
+<li>Understand the fundamental mechanical principles governing diaphragm behaviour,
+such as bending, stress–strain relationships, and the assumptions of thin plate theory.</li>
+<li>Differentiate between analytical and numerical (finite element) approaches used to
+analyze pressure sensor diaphragms</li>
+<li>Implement computational analysis of a pressure sensor diaphragm using ANSYS to
+determine deformation and stress distribution under uniform pressure loading.</li>
+</ul>
+<h2 id="2-theoretical-background">2. Theoretical Background<a class="headerlink" href="#2-theoretical-background" title="Permanent link">&para;</a></h2>
+<h2 id="21-pressure-sensor">2.1. Pressure Sensor<a class="headerlink" href="#21-pressure-sensor" title="Permanent link">&para;</a></h2>
+<p>A pressure sensor is a device used to measure, detect, and monitor the pressure applied
+to it, transforming mechanical pressure into an electrical signal. It usually includes a
+pressure-sensitive  element  along  with  components  that  increase  its  strength  and
+flexibility.</p>
+<p>Types of Pressure Sensors:</p>
+<p>• Differential Pressure Sensor:
+A differential pressure sensor measures the difference between two pressure
+values applied to two separate input ports. The sensing diaphragm responds to
+the pressure difference rather than the absolute pressure, making this type
+suitable  for  applications such  as  flow  measurement,  filter  condition
+monitoring, and level sensing.</p>
+<p>• Gauge Pressure Sensor:
+A  gauge  pressure  sensor  measures  pressure  relative  to  the  surrounding
+atmospheric pressure. The sensor output is zero when the measured pressure
+equals  ambient  pressure,  and  it  is  commonly  used  in  applications  where
+pressure above or below atmospheric conditions needs to be monitored.</p>
+<p>• Sealed Pressure Sensor:
+A sealed gauge pressure sensor measures pressure relative to a sealed reference
+pressure,  typically  atmospheric  pressure  at  the  time  of sealing.  Since  the
+reference pressure is fixed, the sensor output remains independent of variations
+in current atmospheric pressure, making it suitable for aerospace and high-
+altitude applications.</p>
+<p>• Absolute Pressure Sensor:
+An absolute pressure sensor measures pressure relative to a perfect vacuum
+sealed inside the sensor. The output represents the true absolute pressure of the
+system and is unaffected by atmospheric pressure changes, making it useful in
+vacuum systems, altitude measurement, and weather monitoring.</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/1.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Types of sensors" src="../../media/peer-teaching_C2/1.png" /></a></p>
+<h2 id="22-working-principle-of-a-pressure-sensor">2.2. Working Principle of a Pressure Sensor<a class="headerlink" href="#22-working-principle-of-a-pressure-sensor" title="Permanent link">&para;</a></h2>
+<p>A  pressure  sensor  operates  by  converting  an  applied  pressure  into  a  measurable
+physical  response.  In  diaphragm-based  pressure  sensors,  this  response  is  the
+mechanical deformation of a thin diaphragm when pressure is applied to its surface.</p>
+<p>When pressure acts on the diaphragm, it causes the diaphragm to bend. The edges of
+the diaphragm are typically clamped, which restricts motion and results in maximum
+deflection at the centre  and higher stress near the boundaries. The magnitude of
+deformation depends on the applied pressure as well as the diaphragm’s geometry and
+material properties.</p>
+<p>In real-world applications, this mechanical deformation is converted into an electrical
+signal  using  transduction  mechanisms  such  as  piezoresistive,  capacitive,  or
+piezoelectric  methods.  The  electrical  output  is  then  correlated  with  the  applied
+pressure, enabling pressure measurement.</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/2.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Working principle of a pressure sensor" src="../../media/peer-teaching_C2/2.png" /></a></p>
+<h2 id="23-thin-plate-theory-and-mechanical-assumptions">2.3. Thin Plate Theory and Mechanical Assumptions<a class="headerlink" href="#23-thin-plate-theory-and-mechanical-assumptions" title="Permanent link">&para;</a></h2>
+<p>Thin plate theory is commonly used to describe the mechanical behaviour of pressure
+sensor diaphragms when the diaphragm thickness is much smaller than its lateral
+dimensions.  Under  uniform  pressure  loading,  the  diaphragm  primarily  undergoes
+bending deformation, which can be analyzed using classical plate theory.</p>
+<p>The theory provides analytical insight into the relationship between applied pressure,
+diaphragm geometry, and resulting deformation and stress. It serves as a simplified yet
+effective framework for predicting diaphragm behaviour and for validating numerical
+results obtained from finite element analysis.</p>
+<p>Mechanical Assumptions:</p>
+<p>The following assumptions are made in the application of thin plate theory:</p>
+<ul>
+<li>The diaphragm thickness is small compared to its lateral dimensions.</li>
+<li>The material is homogeneous, isotropic, and linearly elastic.</li>
+<li>The diaphragm has a uniform thickness throughout.</li>
+<li>Deflections are small to moderate compared to the diaphragm thickness.</li>
+<li>The diaphragm edges are perfectly clamped.</li>
+<li>Shear deformation and rotary inertia effects are neglected.
+Under these assumptions, thin plate theory provides reasonably accurate estimates of
+diaphragm  deflection  and  stress  distribution  for  diaphragm-based  pressure  sensor
+applications.</li>
+</ul>
+<h2 id="24-mathematical-formulation-for-diaphragm-deflection-and-stress">2.4. Mathematical Formulation for Diaphragm Deflection and Stress<a class="headerlink" href="#24-mathematical-formulation-for-diaphragm-deflection-and-stress" title="Permanent link">&para;</a></h2>
+<p>The  mechanical  response  of  a  diaphragm-based  pressure  sensor  subjected  to  uniform
+pressure can be described using classical thin plate theory. The diaphragm is modelled as a
+thin, clamped plate undergoing bending due to applied pressure.</p>
+<p>The bending stiffness (flexural rigidity) of the diaphragm is given by:</p>
+<p>D = (E · t³) / [12(1 − ν²)]</p>
+<p>where E is Young’s modulus of the diaphragm material,
+t is the diaphragm thickness,
+and ν is Poisson’s ratio.</p>
+<p>For a clamped square diaphragm of side length a, subjected to a uniform pressure p, the
+maximum deflection occurs at the center of the diaphragm and can be approximated by:</p>
+<p>w_max = α · (p · a⁴) / D</p>
+<p>where α is  a  dimensionless  coefficient  that  depends  on  the  diaphragm  geometry  and
+boundary conditions. For a clamped square plate, α≈0.0138.</p>
+<p>The pressure-induced bending also generates stresses within the diaphragm. The maximum
+bending stress occurs near the clamped edges and can be estimated using:</p>
+<p>σ_max = β · (p · a²) / t²</p>
+<p>where β is  a  geometry-dependent  coefficient,  typically β≈0.308 for  a  clamped  square
+diaphragm.</p>
+<h2 id="3-pressure-sensor-analysis">3. Pressure Sensor Analysis<a class="headerlink" href="#3-pressure-sensor-analysis" title="Permanent link">&para;</a></h2>
+<h2 id="31-description-of-the-pressure-sensor-model">3.1. Description of the Pressure Sensor Model<a class="headerlink" href="#31-description-of-the-pressure-sensor-model" title="Permanent link">&para;</a></h2>
+<p>The pressure sensor analyzed in this study is based on a diaphragm-type mechanical
+structure that deforms when subjected to external pressure. The diaphragm acts as the
+primary sensing element, while a surrounding base structure provides mechanical
+support and edge clamping.</p>
+<p>Model Description and Assumptions</p>
+<ul>
+<li>The sensing element is a thin, square diaphragm.</li>
+<li>The  diaphragm  is  rigidly  supported  along  its  edges,  representing  a  clamped
+boundary condition.</li>
+<li>A surrounding base structure provides mechanical support and is assumed to be
+significantly stiffer than the diaphragm.</li>
+<li>Pressure is applied uniformly on the top surface of the diaphragm.</li>
+<li>Only  the  mechanical  behaviour  of  the  diaphragm  is  considered;  electrical
+transduction effects are not included.</li>
+</ul>
+<h2 id="32-geometry-and-dimensions">3.2. Geometry and Dimensions<a class="headerlink" href="#32-geometry-and-dimensions" title="Permanent link">&para;</a></h2>
+<p>The pressure sensor model consists of a square diaphragm integrated into a supporting
+base structure. The diaphragm acts as the sensing element, while the surrounding
+support provides mechanical stiffness and clamped boundary conditions.</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/3.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Pressure sensor" src="../../media/peer-teaching_C2/3.png" /></a></p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/4.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Side view" src="../../media/peer-teaching_C2/4.png" /></a></p>
+<p>Geometrical Specifications:</p>
+<p>The key dimensions of the model are as follows:</p>
+<ul>
+<li>Diaphragm shape: Square</li>
+<li>Diaphragm dimensions: 10 mm × 10 mm</li>
+<li>Diaphragm thickness: 0.1 mm</li>
+<li>Support structure dimensions: 14 mm × 14 mm × 1 mm</li>
+</ul>
+<h2 id="33-mechanical-properties-of-silicon">3.3. Mechanical Properties of Silicon<a class="headerlink" href="#33-mechanical-properties-of-silicon" title="Permanent link">&para;</a></h2>
+<p>Silicon is commonly used as the diaphragm material in pressure sensors due to its high
+stiffness, good elastic behaviour, and mechanical stability. In this analysis, silicon is
+assumed to behave as a linear elastic and isotropic material, which is a reasonable
+approximation for small to moderate deformations.</p>
+<p>Material Properties:</p>
+<ul>
+<li>Young’s modulus, E: 163 GPa</li>
+<li>Poisson’s ratio, ν: 0.27</li>
+</ul>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/5.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Properties of Silicon" src="../../media/peer-teaching_C2/5.png" /></a></p>
+<p>These properties determine the stiffness of the diaphragm and directly influence its
+deformation and stress response under applied pressure. Since the stresses obtained in
+this study remain well below the elastic limit of silicon, plastic deformation and
+material nonlinearity are neglected.</p>
+<h2 id="4-implementation-in-ansys">4. Implementation in Ansys<a class="headerlink" href="#4-implementation-in-ansys" title="Permanent link">&para;</a></h2>
+<p>Step 1: Workbench Setup</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/6.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Workbench Setup" src="../../media/peer-teaching_C2/6.png" /></a></p>
+<p>Step 2: Material Assignment</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/7.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Material Assignment" src="../../media/peer-teaching_C2/7.png" /></a></p>
+<p>Step 3: Geometry Import</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/8.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Geometry" src="../../media/peer-teaching_C2/8.png" /></a></p>
+<p>Geometry</p>
+<p>Step 4: Meshing</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/9.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Meshing" src="../../media/peer-teaching_C2/9.png" /></a></p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/10.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Sizing" src="../../media/peer-teaching_C2/10.png" /></a></p>
+<p>Step 5: Boundary Conditions</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/11.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Boundary conditions" src="../../media/peer-teaching_C2/11.png" /></a></p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/12.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Fixed support" src="../../media/peer-teaching_C2/12.png" /></a></p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/13.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Pressure" src="../../media/peer-teaching_C2/13.png" /></a></p>
+<p>Step 6: Solution Setup and Solving</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/14.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Solutions" src="../../media/peer-teaching_C2/14.png" /></a></p>
+<h2 id="5-results-and-discussion">5. Results and Discussion<a class="headerlink" href="#5-results-and-discussion" title="Permanent link">&para;</a></h2>
+<h2 id="51-total-deformation">5.1. Total Deformation<a class="headerlink" href="#51-total-deformation" title="Permanent link">&para;</a></h2>
+<p>The finite element results show that the diaphragm undergoes bending deformation
+when subjected to uniform pressure. The deformation pattern is symmetric, with the
+maximum deflection occurring at the centre of the diaphragm and zero deformation at
+the clamped edges. This behaviour is characteristic of a clamped square diaphragm.</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/15.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Deformation" src="../../media/peer-teaching_C2/15.png" /></a></p>
+<p>FEM Results:</p>
+<ul>
+<li>Applied pressure: 1 kPa</li>
+<li>Maximum centre deflection (FEM): ≈ 1.49 μm</li>
+<li>Deformation shape: Smooth, bowl-shaped profile</li>
+<li>Maximum deformation located at the diaphragm centre</li>
+</ul>
+<h2 id="52-equivalent-stress-distribution">5.2. Equivalent Stress Distribution<a class="headerlink" href="#52-equivalent-stress-distribution" title="Permanent link">&para;</a></h2>
+<p>The stress distribution obtained from the finite element analysis shows higher stress
+concentrations near the clamped edges of the diaphragm, while lower stress levels are
+observed  at  the  centre.  This  distribution  is  consistent  with  bending-dominated
+behaviour.</p>
+<p><a class="glightbox" href="../../media/peer-teaching_C2/16.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Stress" src="../../media/peer-teaching_C2/16.png" /></a></p>
+<p>FEM Results:</p>
+<ul>
+<li>Maximum equivalent (von Mises) stress: ≈ 2.18 MPa</li>
+<li>Stress concentration near diaphragm edges</li>
+<li>Stress well within elastic limit of silicon</li>
+</ul>
+<h2 id="53-comparison-between-fem-and-analytical-results">5.3. Comparison Between FEM and Analytical Results<a class="headerlink" href="#53-comparison-between-fem-and-analytical-results" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Quantity</strong></th>
+<th style="text-align: left;"><strong>Analytical Model</strong></th>
+<th style="text-align: center;"><strong>FEM Model</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Modelling approach</td>
+<td style="text-align: left;">Classical thin plate theory</td>
+<td style="text-align: center;">3D finite element analysis</td>
+</tr>
+<tr>
+<td style="text-align: center;">Geometry</td>
+<td style="text-align: left;">Idealized clamped square diaphragm</td>
+<td style="text-align: center;">Realistic 3D diaphragm and support</td>
+</tr>
+<tr>
+<td style="text-align: center;">Material behaviour</td>
+<td style="text-align: left;">Linear elastic, isotropic</td>
+<td style="text-align: center;">Linear elastic, isotropic</td>
+</tr>
+<tr>
+<td style="text-align: center;">Deflection assumption</td>
+<td style="text-align: left;">Small to moderate deflection</td>
+<td style="text-align: center;">Large deflection included</td>
+</tr>
+<tr>
+<td style="text-align: center;">Stress state</td>
+<td style="text-align: left;">Bending stress (theoretical)</td>
+<td style="text-align: center;">Von Mises equivalent stress</td>
+</tr>
+<tr>
+<td style="text-align: center;">Maximum deflection</td>
+<td style="text-align: left;">≈ 1.15 µm</td>
+<td style="text-align: center;">≈ 1.49 µm</td>
+</tr>
+<tr>
+<td style="text-align: center;">Location of max deflection</td>
+<td style="text-align: left;">Centre of the diaphragm</td>
+<td style="text-align: center;">Centre of the diaphragm</td>
+</tr>
+<tr>
+<td style="text-align: center;">Maximum stress</td>
+<td style="text-align: left;">≈ 3.1 MPa</td>
+<td style="text-align: center;">≈ 2.18 MPa</td>
+</tr>
+<tr>
+<td style="text-align: center;">Location of max stress</td>
+<td style="text-align: left;">Near clamped edges</td>
+<td style="text-align: center;">Near clamped edges</td>
+</tr>
+</tbody>
+</table>
+<h2 id="6-conclusion">6. Conclusion<a class="headerlink" href="#6-conclusion" title="Permanent link">&para;</a></h2>
+<p>The mechanical behaviour of a diaphragm-based pressure sensor was analyzed using both
+analytical methods and finite element analysis (FEA). The analytical approach, based on
+thin plate theory, was used to estimate the diaphragm deflection and stress under uniform
+pressure loading. The finite element model developed in ANSYS successfully analyzed the
+deformation pattern and stress distribution of the diaphragm, showing maximum deflection
+at the centre and higher stress near the clamped edges, which is consistent with theoretical
+expectations.</p>
+<p>A comparison between analytical and FEM results showed good agreement in terms of
+deformation shape, stress location, and order of magnitude. The observed differences in
+numerical values are attributed to the simplified assumptions of the analytical model and
+the more detailed three-dimensional representation used in the FEM analysis.</p>
+<h2 id="7-references">7. References<a class="headerlink" href="#7-references" title="Permanent link">&para;</a></h2>
+<p>[1] Pressure  sensor – an  overview. ScienceDirect  Topics.  Elsevier.  Retrieved  from
+https://www.sciencedirect.com/topics/earth-and-planetary-sciences/pressure-sensor
+[2] S. P. Timoshenko and S. Woinowsky-Krieger, Theory of Plates and Shells. New York,
+NY, USA: McGraw-Hill, 1959.
+[3] S. Beeby, G. Ensell, M. Kraft, and N. White, MEMS Mechanical Sensors. Norwood,
+MA, USA: Artech House, 2004.
+[4] K. E. Petersen, “Silicon as a mechanical material,” Proceedings of the IEEE, vol. 70,
+no. 5, pp. 420–457, May 1982.</p><style type="text/css">.quiz {
+  border: 1px solid black;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+/* Set margin-top of first quiz child */
+.quiz > *:first-child {
+  margin-top: 0;
+}
+.hidden {
+  display: none;
+}
+
+form button {
+  background-color: var(--md-primary-fg-color);
+  border: none;
+  color: var(--md-primary-bg-color);
+  padding: 0.5rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.8rem;
+}
+
+.wrong label {
+  color: red;
+}
+.correct label {
+  color: green;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+fieldset input {
+  margin: 0 10px;
+}
+fieldset label {
+  margin: 0 10px;
+}
+
+label.correct {
+  color: green;
+}
+label.wrong {
+  color: red;
+}
+input[type='radio'].correct {
+  accent-color: green;
+}
+input[type='radio'].wrong {
+  accent-color: red;
+}
+.content {
+  margin: 10px;
+}
+</style><script type="text/javascript" defer>document.querySelectorAll('.quiz').forEach((quiz) => {
+  let form = quiz.querySelector('form');
+  let fieldset = form.querySelector('fieldset');
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    let selectedAnswers = form.querySelectorAll('input[name="answer"]:checked');
+    let correctAnswers = fieldset.querySelectorAll(
+      'input[name="answer"][correct]'
+    );
+    // Check if all correct answers are selected
+    let is_correct = selectedAnswers.length === correctAnswers.length;
+    for (let i = 0; i < selectedAnswers.length; i++) {
+      if (!selectedAnswers[i].hasAttribute('correct')) {
+        is_correct = false;
+        break;
+      }
+    }
+    let section = quiz.querySelector('section');
+    if (is_correct) {
+      section.classList.remove('hidden');
+      resetFieldset(fieldset);
+      // Mark all fields with colors
+      const allAnswers = fieldset.querySelectorAll('input[name="answer"]');
+      for (let i = 0; i < allAnswers.length; i++) {
+        if (allAnswers[i].hasAttribute('correct')) {
+          allAnswers[i].parentElement.classList.add('correct');
+        } else {
+          allAnswers[i].parentElement.classList.add('wrong');
+        }
+      }
+    } else {
+      section.classList.add('hidden');
+      resetFieldset(fieldset);
+      // Mark wrong fields with colors
+      for (let i = 0; i < selectedAnswers.length; i++) {
+        if (!selectedAnswers[i].hasAttribute('correct')) {
+          selectedAnswers[i].parentElement.classList.add('wrong');
+        } else {
+          selectedAnswers[i].parentElement.classList.add('correct');
+        }
+      }
+    }
+  });
+});
+
+function resetFieldset(fieldset) {
+  const fieldsetChildren = fieldset.children;
+  for (let i = 0; i < fieldsetChildren.length; i++) {
+    fieldsetChildren[i].classList.remove('wrong');
+    fieldsetChildren[i].classList.remove('correct');
+  }
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <p style="text-align: center; font-size: 0.8em;">
+  © 2025 Prof. Dr.-Ing. Steffen Jäger – All rights reserved.
+</p>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.top", "content.code.copy", "content.tabs.link"], "search": "../../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+      
+        <script src="../../js/plotly-init.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "fade"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

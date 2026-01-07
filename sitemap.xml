@@ -134,6 +134,13 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/peer-teaching_C1/"/>
     </url>
     <url>
+        <loc>https://jaegeste.github.io/fem-course/peer-teaching_C2/</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/peer-teaching_C2/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/peer-teaching_C2/"/>
+    </url>
+    <url>
         <loc>https://jaegeste.github.io/fem-course/uebungen/</loc>
         <lastmod>2026-01-07</lastmod>
         <changefreq>daily</changefreq>
@@ -272,6 +279,13 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/peer-teaching_C1/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/peer-teaching_C1/"/>
+    </url>
+    <url>
+        <loc>https://jaegeste.github.io/fem-course/en/peer-teaching_C2/</loc>
+        <lastmod>2026-01-07</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/peer-teaching_C2/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/peer-teaching_C2/"/>
     </url>
     <url>
         <loc>https://jaegeste.github.io/fem-course/en/uebungen/</loc>
