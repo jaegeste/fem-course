@@ -422,7 +422,7 @@ Bei Baugruppen werden Randbedingungen häufig über Kontakte, Lagerungen oder id
 * auch hier erfolgt die Betrachtung linearisiert  
 * es werden kleine Schwingungen um einen Referenzzustand betrachtet  
 
-Die Wahl der Randbedingungen ist ein zentraler Modellierungsentscheid und sollte stets an die reale Einbausituation angepasst werden.
+Die Wahl der Randbedingungen ist eine zentraler Modellierungsentscheidung und sollte möglichst an die reale Einbausituation angepasst werden.
 
 ### Netz
 
