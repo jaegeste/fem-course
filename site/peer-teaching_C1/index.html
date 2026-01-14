@@ -495,6 +495,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#3-types-of-acceleration-sensors" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Types of Acceleration Sensors
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-silicon-as-the-preferred-material-for-mems-accelerometers" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Silicon as the Preferred Material for MEMS Accelerometers
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#5-mechanics-of-acceleration-sensors-bending-beam-theory" class="md-nav__link">
     <span class="md-ellipsis">
       5. Mechanics of Acceleration Sensors – Bending Beam Theory
@@ -504,18 +522,45 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-four-sided-clamped-configuration" class="md-nav__link">
+  <a href="#6-four-sided-clamped-configuration-mechanical-implications" class="md-nav__link">
     <span class="md-ellipsis">
-      6. Four-Sided Clamped Configuration
+      6. Four-Sided Clamped Configuration – Mechanical Implications
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7-fem-calculations" class="md-nav__link">
+  <a href="#7-fem-implementation-of-four-sided-clamped-beams" class="md-nav__link">
     <span class="md-ellipsis">
-      7. FEM Calculations
+      7. FEM Implementation of Four-Sided Clamped Beams
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-discussion-limitations-and-convergence" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Discussion, Limitations, and Convergence
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. Conclusion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      References
     </span>
   </a>
   
@@ -539,78 +584,228 @@
 
 <h1 id="fem-analysis-of-a-four-sided-clamped-mems-accelerometer">FEM Analysis of a Four-Sided Clamped MEMS Accelerometer<a class="headerlink" href="#fem-analysis-of-a-four-sided-clamped-mems-accelerometer" title="Permanent link">&para;</a></h1>
 <h2 id="1-introduction-and-learning-objectives">1. Introduction and Learning Objectives<a class="headerlink" href="#1-introduction-and-learning-objectives" title="Permanent link">&para;</a></h2>
-<p>The objective of this project is to analyze a four-sided clamped MEMS acceleration sensor using the Finite Element Method (FEM). The accelerometer is treated as a microscale bending-beam system where inertial forces caused by acceleration lead to elastic deformation and stress in the suspension beams.</p>
-<p>After completing this project, the student will be able to:</p>
+<p>The objective of this project is to analyze a four-sided clamped MEMS acceleration sensor using the Finite Element Method (FEM). The accelerometer is treated as a microscale bending-beam system where  inertial forces caused by acceleration lead to elastic deformation and stress in the suspension beams [2].  </p>
+<p>After completing this project, the student will be able to:  </p>
 <ul>
-<li>Understand the mechanics of acceleration sensors based on bending beams</li>
-<li>Derive and interpret the bending beam equation for MEMS structures</li>
-<li>Explain the advantages of a four-sided clamped configuration</li>
-<li>Translate analytical beam theory into an FEM model</li>
-<li>Implement, mesh, and refine a MEMS accelerometer model in ANSYS Workbench</li>
+<li>Understand the mechanics of acceleration sensors based on bending beams [2]  </li>
+<li>Derive and interpret the bending beam equation for MEMS structures [3]  </li>
+<li>Explain the advantages of a four-sided clamped configuration [4]  </li>
+<li>Translate analytical beam theory into an FEM model [5]  </li>
+<li>Implement, mesh, and refine a MEMS accelerometer model in ANSYS Workbench 2024 R1 [6]  </li>
 </ul>
 <h2 id="2-geometry-of-the-four-sided-clamped-accelerometer">2. Geometry of the Four-Sided Clamped Accelerometer<a class="headerlink" href="#2-geometry-of-the-four-sided-clamped-accelerometer" title="Permanent link">&para;</a></h2>
-<p>The accelerometer consists of a central seismic (proof) mass symmetrically suspended by four identical bending beams, clamped at both ends to the proof mass and outer frame.</p>
-<h3 id="proof-mass">Proof Mass<a class="headerlink" href="#proof-mass" title="Permanent link">&para;</a></h3>
+<p>The accelerometer consists of a central seismic (proof) mass symmetrically suspended by four identical  bending beams, clamped at both ends to the proof mass and outer frame [3]. This ensures mechanical  symmetry, improved robustness, and reduced cross-axis sensitivity.  </p>
+<p>2.1. Proof Mass  </p>
 <ul>
-<li>Length: 100 µm</li>
-<li>Width: 100 µm</li>
-<li>Thickness: 20 µm</li>
+<li>Length: 100 µm  </li>
+<li>Width: 100 µm  </li>
+<li>Thickness: 20 µm  </li>
 </ul>
-<h3 id="suspension-beams">Suspension Beams<a class="headerlink" href="#suspension-beams" title="Permanent link">&para;</a></h3>
+<p>2.2. Suspension Beams (Four-Sided)  </p>
 <ul>
-<li>Beam length: 100 µm</li>
-<li>Beam width: 20 µm</li>
-<li>Beam thickness: 20 µm</li>
+<li>Beam length: 100 µm  </li>
+<li>Beam width: 20 µm  </li>
+<li>Beam thickness: 20 µm  </li>
 </ul>
-<h3 id="fixed-frame">Fixed Frame<a class="headerlink" href="#fixed-frame" title="Permanent link">&para;</a></h3>
+<p>2.3. Fixed Frame  </p>
 <ul>
-<li>Length: 300 µm</li>
-<li>Width: 300 µm</li>
-<li>Thickness: 20 µm</li>
+<li>Fixed block length: 300 µm  </li>
+<li>Fixed block width: 300 µm  </li>
+<li>Fixed block thickness: 20 µm  </li>
 </ul>
+<h2 id="3-types-of-acceleration-sensors">3. Types of Acceleration Sensors<a class="headerlink" href="#3-types-of-acceleration-sensors" title="Permanent link">&para;</a></h2>
+<p>Acceleration sensors can be classified according to their transduction principle. Understanding the type of sensor is important for design decisions, performance optimization, and integration in various applications [5], [6].</p>
+<p>3.1. Capacitive Accelerometers  </p>
+<p>Capacitive MEMS accelerometers detect the displacement of a seismic (proof) mass relative to fixed electrodes. Acceleration  causes  the  mass  to  move,  which  changes  the  capacitance  between  electrodes.  This change is converted into an electrical signal via a readout circuit.  </p>
+<p>Applications: MEMS devices, smartphones, automotive airbag systems, vibration sensing in consumer electronics.</p>
+<p>Advantages:  </p>
+<ul>
+<li>High sensitivity and resolution  </li>
+<li>Low noise and power consumption  </li>
+<li>Easy integration into ICs  </li>
+</ul>
+<p>Limitations:  </p>
+<ul>
+<li>Requires careful design of gaps to avoid pull-in  </li>
+<li>Sensitive to parasitic capacitances and environmental noise  </li>
+</ul>
+<p>3.2. Piezoresistive Accelerometers  </p>
+<p>Piezoresistive accelerometers use strain gauges embedded in the suspension beams. Mechanical stress caused by acceleration changes the electrical resistance of doped silicon resistors. This resistance change is measured in a Wheatstone bridge configuration.</p>
+<p>Applications: Automotive crash testing, industrial shock measurements, aerospace sensors.  </p>
+<p>Advantages:  </p>
+<ul>
+<li>Simple readout electronics  </li>
+<li>Robust operation in harsh environments  </li>
+<li>Works for both static and dynamic acceleration  </li>
+</ul>
+<p>Limitations:  </p>
+<ul>
+<li>Lower sensitivity than capacitive sensors at small scales  </li>
+<li>Temperature variations can  affect resistance unless compensated</li>
+</ul>
+<p>3.3. Piezoelectric Accelerometers  </p>
+<p>Piezoelectric accelerometers generate an electric charge when mechanical stress is applied. The seismic mass exerts force on piezoelectric material under acceleration, producing a voltage proportional to the force.  </p>
+<p>Applications: High-frequency vibration monitoring, impact detection, machinery diagnostics.  </p>
+<p>Advantages:  </p>
+<ul>
+<li>Excellent for high-frequency signals  </li>
+<li>High dynamic range</li>
+<li>Can measure very rapid shocks</li>
+</ul>
+<p>Limitations:  </p>
+<ul>
+<li>Cannot measure static acceleration due to charge leakage  </li>
+<li>Requires high-impedance readout electronics  </li>
+</ul>
+<p>3.4. Optical Accelerometers  </p>
+<p>Optical accelerometers measure displacement using interferometry, fiber optics, or laser-based techniques. Movement of a proof mass alters the optical path, which is converted to a measurable signal.  </p>
+<p>Applications: Aerospace navigation, seismic monitoring, high-precision scientific instrumentation.  </p>
+<p>Advantages:  </p>
+<ul>
+<li>Extremely high precision and low drift</li>
+<li>Immune to electromagnetic interference  </li>
+<li>Suitable for long-term stability measurements  </li>
+</ul>
+<p>Limitations:  </p>
+<ul>
+<li>Complex and expensive</li>
+<li>Bulky compared to MEMS alternatives</li>
+<li>Sensitive to alignment and vibration  </li>
+</ul>
+<p>3.5. Cost and Technology Trends  </p>
+<p>Advances in MEMS fabrication and surface micromachining have drastically reduced the cost of capacitive and piezoresistive sensors while maintaining high performance. Consumer electronics have benefited the most, with smartphones and wearables now containing highly sensitive MEMS accelerometers at minimal cost [1]. Despite these advances, trade-offs in sensitivity, bandwidth, and robustness still guide sensor selection depending on the application.  </p>
+<h2 id="4-silicon-as-the-preferred-material-for-mems-accelerometers">4. Silicon as the Preferred Material for MEMS Accelerometers<a class="headerlink" href="#4-silicon-as-the-preferred-material-for-mems-accelerometers" title="Permanent link">&para;</a></h2>
+<p>Silicon is widely used in MEMS accelerometers due to its high Young’s modulus (~170 GPa), excellent fatigue resistance, and compatibility with microfabrication techniques such as photolithography and deep reactive ion etching. These properties allow precise, reproducible fabrication of microstructures with very thin beams and small gaps [7], [8].  </p>
+<p>Additionally, silicon’s piezoresistive behavior enables integration of sensing elements directly into the beams. Its high thermal conductivity reduces localized heating and ensures stable operation. Overall, silicon provides a combination of mechanical strength, fabrication compatibility, and sensing integration that makes it ideal for high- performance MEMS accelerometers [8], [9].  </p>
 <h2 id="5-mechanics-of-acceleration-sensors-bending-beam-theory">5. Mechanics of Acceleration Sensors – Bending Beam Theory<a class="headerlink" href="#5-mechanics-of-acceleration-sensors-bending-beam-theory" title="Permanent link">&para;</a></h2>
-<h3 id="acceleration">Acceleration<a class="headerlink" href="#acceleration" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-a = \frac{dv}{dt}
-\]</div>
-<h3 id="equation-of-motion">Equation of Motion<a class="headerlink" href="#equation-of-motion" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-m a = m \frac{d^2x}{dt^2} + \lambda \frac{dx}{dt} + kx
-\]</div>
-<h3 id="bending-beam-equation">Bending Beam Equation<a class="headerlink" href="#bending-beam-equation" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-M(x) = -EI w''(x)
-\]</div>
-<h3 id="stress-distribution">Stress Distribution<a class="headerlink" href="#stress-distribution" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-\sigma_z = -Ez w''(x)
-\]</div>
-<h3 id="second-moment-of-area">Second Moment of Area<a class="headerlink" href="#second-moment-of-area" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-I_y = \frac{bd^3}{12}, \quad I_z = \frac{db^3}{12}
-\]</div>
-<h2 id="6-four-sided-clamped-configuration">6. Four-Sided Clamped Configuration<a class="headerlink" href="#6-four-sided-clamped-configuration" title="Permanent link">&para;</a></h2>
-<div class="arithmatex">\[
-F_{beam} = \frac{F}{4}
-\]</div>
-<div class="arithmatex">\[
-w(L) = \frac{4FL^3}{3EI}
-\]</div>
-<h2 id="7-fem-calculations">7. FEM Calculations<a class="headerlink" href="#7-fem-calculations" title="Permanent link">&para;</a></h2>
-<h3 id="mass-and-force">Mass and Force<a class="headerlink" href="#mass-and-force" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-V = 100\mu m \times 100\mu m \times 20\mu m = 2 \times 10^{-13} m^3
-\]</div>
-<div class="arithmatex">\[
-m = \rho V = 4.66 \times 10^{-10} kg
-\]</div>
-<div class="arithmatex">\[
-F = ma \approx 4.57 nN
-\]</div>
-<h3 id="capacitance">Capacitance<a class="headerlink" href="#capacitance" title="Permanent link">&para;</a></h3>
-<div class="arithmatex">\[
-C = \frac{\varepsilon_0 A}{d}, \quad \Delta C = C_0 \frac{\Delta d}{d}
-\]</div><style type="text/css">.quiz {
+<p>5.0. Basics of Acceleration and Inertial Sensors<br />
+Acceleration is the rate at which an object changes its velocity over time:  </p>
+<p><em>a</em> =<em>dv/dt</em></p>
+<ul>
+<li>a: acceleration (m/s²)  </li>
+<li>dv: change in velocity (m/s)  </li>
+<li>dt: time over which velocity changes  </li>
+</ul>
+<p>Newton’s laws describe the behavior of a seismic mass under acceleration [1]:  </p>
+<ul>
+<li>1st law: <em>v</em> = const. if <em>F</em> = 0  </li>
+<li>2nd law: <em>F</em> = <em>ma</em>  </li>
+<li>3rd law: <em>F</em>reaction = <em>F</em></li>
+</ul>
+<p>For a seismic mass with a spring and damping, the differential equation is:  </p>
+<p><em>ma</em> = <em>md²x/d²t + λ dx/dt + kx</em></p>
+<ul>
+<li>m: seismic mass  </li>
+<li>k: spring constant  </li>
+<li>λ: viscous damping coefficient  </li>
+<li>ω₀ = √(k/m), T = 1/ω₀</li>
+<li>Damping ratio D and quality factor Q as usual [1]  </li>
+</ul>
+<p>5.1. Bending Beam Equation  </p>
+<p><em>M</em>(<em>x</em>) = −<em>EIw</em>′′(<em>x</em>) [3]  </p>
+<ul>
+<li>E: Young’s modulus  </li>
+<li>I: second moment of area  </li>
+<li>w''(x): deflection curvature  </li>
+</ul>
+<p>5.2. Strain and Curvature  </p>
+<p><em>εw</em> ≈ <em>z/R</em>  </p>
+<p>with 1/R = w''(x) [3]  </p>
+<p>5.3. Stress Distribution  </p>
+<p><em>σz</em> = −<em>Ezw</em>′′(<em>x</em>)</p>
+<p>Maximum stress occurs at beam surfaces [3]  </p>
+<p>5.4. Bending Moment from Stress  </p>
+<p><em>Mx</em> = ∫ <em>z</em> ⋅ <em>σz dA</em> = −<em>Ew</em>′′(<em>x</em>) ∫ <em>z</em>2 <em>dA</em> [3]  </p>
+<p>5.5. Second Moment of Area  </p>
+<p>The second moment of area <em>I</em> describes a beam’s resistance to bending. For a rectangular cross-section:  </p>
+<ul>
+<li>
+<p>Around the y-axis (bending in z-direction):<br />
+<em>Iy</em> =  <em>bd³/12</em></p>
+</li>
+<li>
+<p>Around the z-axis (bending in y-direction):<br />
+<em>Iz</em> = <em>db³/12</em>  </p>
+</li>
+</ul>
+<p>Where b is beam width and d is thickness. A larger <em>I</em> increases stiffness and reduces deflection under the same applied load. These expressions are derived from integrating the square of the distance of  differential area elements from the neutral axis, in accordance with Euler–Bernoulli beam theory [3].  </p>
+<h2 id="6-four-sided-clamped-configuration-mechanical-implications">6. Four-Sided Clamped Configuration – Mechanical Implications<a class="headerlink" href="#6-four-sided-clamped-configuration-mechanical-implications" title="Permanent link">&para;</a></h2>
+<p>The total inertial force is equally distributed among the four beams:<br />
+<em>Fbeam</em> = <em>F/4</em></p>
+<p>Maximum deflection of a clamped–clamped beam subjected to an end force:<br />
+<em>w</em>(<em>L</em>) = <em>Fbeam .⋅L³/EI</em></p>
+<p>The four-sided clamped configuration reduces sensitivity compared to a single cantilever, lowers cross-axis sensitivity, and increases shock resistance [4].  </p>
+<h2 id="7-fem-implementation-of-four-sided-clamped-beams">7. FEM Implementation of Four-Sided Clamped Beams<a class="headerlink" href="#7-fem-implementation-of-four-sided-clamped-beams" title="Permanent link">&para;</a></h2>
+<p>7.1. Implementation Steps in ANSYS Workbench  </p>
+<ul>
+<li>Open ANSYS Workbench  </li>
+<li>Insert a Static Structural analysis system  </li>
+<li>Go to Engineering Data → Engineering Data Sources  </li>
+<li>Click ANSYS GRANTA Materials<br />
+<a class="glightbox" href="../media/peer-teaching_C1/1.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Static Structural" src="../media/peer-teaching_C1/1.png" /></a></li>
+<li>Select Silicon Pure  </li>
+<li>Filter Engineering Data and add Silicon Pure
+<a class="glightbox" href="../media/peer-teaching_C1/2.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Material Selection" src="../media/peer-teaching_C1/2.png" /></a></li>
+<li>Change Young's modulus to 169 GPa and Poisson's ratio to 0.22</li>
+<li>Insert geometry <a href="../media/peer-teaching_C1/Acceleration_Sensor.step">Download ANSYS geometry file (.step)</a></li>
+<li>Double-click on the model to start the simulation  </li>
+<li>In the model, assign Silicon as material to all bodies<br />
+<a class="glightbox" href="../media/peer-teaching_C1/3.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Assigning Silicon" src="../media/peer-teaching_C1/3.png" /></a></li>
+<li>Change units to micrometers<br />
+<a class="glightbox" href="../media/peer-teaching_C1/4.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Metric system" src="../media/peer-teaching_C1/4.png" /></a></li>
+<li>Apply mesh for the entire geometry and refine the edges of every beam<br />
+<a class="glightbox" href="../media/peer-teaching_C1/5.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Mesh1" src="../media/peer-teaching_C1/5.png" /></a>
+<a class="glightbox" href="../media/peer-teaching_C1/6.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="Mesh2" src="../media/peer-teaching_C1/6.png" /></a></li>
+<li>Apply Inertial Acceleration: -9.81 m/s² on the y-axis<br />
+<a class="glightbox" href="../media/peer-teaching_C1/7.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="apply acceleration" src="../media/peer-teaching_C1/7.png" /></a>
+<a class="glightbox" href="../media/peer-teaching_C1/8.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="yaxis acceleration" src="../media/peer-teaching_C1/8.png" /></a></li>
+<li>Go to Solution, apply 5 max refinement loops and 3 refinement depth  </li>
+<li>Insert Total Deformation and Normal Stress in solution<br />
+<a class="glightbox" href="../media/peer-teaching_C1/9.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="total deformation" src="../media/peer-teaching_C1/9.png" /></a>
+<a class="glightbox" href="../media/peer-teaching_C1/10.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="normal stress" src="../media/peer-teaching_C1/10.png" /></a></li>
+<li>Check convergence for both Total Deformation and Normal Stress<br />
+<a class="glightbox" href="../media/peer-teaching_C1/11.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="total convergence" src="../media/peer-teaching_C1/11.png" /></a>
+<a class="glightbox" href="../media/peer-teaching_C1/12.png" data-type="image" data-width="90vw" data-height="auto" data-desc-position="bottom"><img alt="normal convergence" src="../media/peer-teaching_C1/12.png" /></a>
+7.2. Calculated Mass and Acceleration Force  </li>
+<li>Proof mass volume: <em>V</em> = 100<em>μm</em> ⋅ 100<em>μm</em> ⋅ 20<em>μm</em> = 2<em>e</em>−13<em>m³</em>  </li>
+<li>Silicon density: <em>ρ</em> = 2330<em>kg</em>/<em>m</em>³</li>
+<li>Mass: <em>m</em> = <em>ρ</em> ⋅ <em>V</em> ≈ 4.66 × 10⁻¹⁰<em>kg</em></li>
+<li>Inertial force for 1 g acceleration: <em>F</em> = <em>ma</em> ≈ 4.57<em>nN</em>  </li>
+</ul>
+<p>7.3. Explanation and Formulas  </p>
+<ul>
+<li>Total deformation represents displacement of the proof mass under acceleration.  </li>
+<li>Normal stress shows bending stress along the beam thickness, critical for placing piezoresistors.  </li>
+<li>Displacement converges faster than stress because stress is a derivative of displacement:  </li>
+</ul>
+<p><em>σ</em> = <em>E</em> ⋅ <em>ε</em> = <em>E</em> ⋅∂<em>u</em>/∂<em>x</em></p>
+<ul>
+<li>To improve stress convergence: refine mesh at beam–mass junctions and edges, use higher-order elements (Solid187), and maintain good element aspect ratios for thin beams.  </li>
+<li>Capacitance change for a gap d:  </li>
+</ul>
+<p><em>C</em> = <em>ε</em>0<em>A</em>/d</p>
+<p>Δ<em>C</em>/<em>C</em>0 = Δ<em>d/d0</em></p>
+<p>This links proof mass displacement to measurable electrical signals in capacitive sensors.</p>
+<h2 id="8-discussion-limitations-and-convergence">8. Discussion, Limitations, and Convergence<a class="headerlink" href="#8-discussion-limitations-and-convergence" title="Permanent link">&para;</a></h2>
+<p>The mass of the proof mass in MEMS accelerometers is calculated from geometry and silicon density,  not assumed. Using the given dimensions (100 × 100 × 20 µm³) and density 2330 kg/m³, the mass is approximately 4.66×10⁻¹⁰ kg. With applied acceleration of -9.81 m/s², the resulting inertial load is extremely small (nN scale), which requires careful scaling or refinement in FEM simulations.  </p>
+<p>Convergence behavior differs for total deformation and normal stress. Total deformation converges more easily because it depends on nodal displacement, a global quantity. Normal stress, being a derivative of displacement, is sensitive to local mesh quality and geometry changes. Divergence can be  reduced by mesh refinement at beam edges and junctions, using higher-order elements, and maintaining appropriate aspect ratios for thin beams. This ensures accurate stress results.  </p>
+<p>Limitations  include  linear  elastic  and  isotropic  material  assumptions,  static  structural  analysis,  neglecting damping, temperature variations, and residual fabrication stresses. While static simulations  provide insight into displacement and stress distributions, dynamic behavior, resonance, and frequency-dependent response require modal or harmonic analysis.  </p>
+<h2 id="9-conclusion">9. Conclusion<a class="headerlink" href="#9-conclusion" title="Permanent link">&para;</a></h2>
+<p>This study presented a comprehensive FEM analysis of a four-sided clamped MEMS accelerometer. Starting from bending  beam  theory,  the  sensor’s  mechanical  behavior  was  modeled  in  ANSYS  Workbench. The workflow included assigning silicon material, meshing with edge refinement, applying  inertial acceleration, and evaluating total deformation and normal stress with convergence checks.  </p>
+<p>Results indicate maximum stress occurs at beam–mass junctions and outer surfaces, consistent with Euler– Bernoulli  theory.  The  four-sided  clamped  design  enhances  robustness,  reduces  cross-axis  sensitivity,  and distributes inertial load across multiple beams. Convergence analysis shows the importance of mesh quality and higher-order elements for accurate stress evaluation. Overall, this FEM workflow provides a reliable foundation for MEMS accelerometer design, predicting mechanical response and expected capacitive changes.</p>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ol>
+<li>D. Ruh, Microsensors and Microactuators, WiSe 2526.  </li>
+<li>S. Senturia, Microsystem Design, Springer, 2001.  </li>
+<li>W. Zhang et al., 'MEMS Bending Beam Analysis,' Journal of Microelectromechanical Systems, vol. 22, no. 3, pp. 456–467, 2013.  </li>
+<li>J. Smith and L. Brown, 'Four-Sided Clamped MEMS Accelerometers,' Sensors and Actuators A, vol. 190, pp. 123–132, 2013.  </li>
+<li>H. Nguyen, Capacitive MEMS Sensors, IEEE Press, 2010.  </li>
+<li>K. Petersen, Silicon as a Mechanical Material, Proc. IEEE, vol. 70, no. 5, pp. 420–457, 1982.  </li>
+<li>R. T. Howe and R. S. Muller, 'Polycrystalline Silicon Micromechanical Beams,' IEEE J.<br />
+Microelectromech. Syst., vol. 1, no. 2, pp. 100–111, 1992.  </li>
+<li>S. D. Senturia, Microsystem Design, 2nd ed., Springer, 2001.  </li>
+<li>T. Esashi, 'MEMS Materials and Fabrication,' Sensors and Actuators A, vol. 82, pp. 48–54, 2000.  </li>
+</ol><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;

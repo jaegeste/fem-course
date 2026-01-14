@@ -9,7 +9,6 @@ In diesem Modul werden folgende Inhalte und Kompetenzen vermittelt:
 * Einfluss der Einspannung und der Massenverteilung auf das Eigenschwingungsverhalten
 * Umsetzung einer Modalanalyse in ANSYS Mechanical
 * Interpretation und Bewertung von Modenformen
-* Vergleich numerischer und analytisch bekannter Lösungen an einfachen Strukturen
 * Übertragung auf komplexere Baugruppen mit starren und verformbaren Teilen
 
 ## Motivation und zentrale Fragestellungen
@@ -134,6 +133,8 @@ Diese Beobachtungen führen zu grundlegenden Fragestellungen:
 * Wie unterscheiden sich Einmassensysteme von kontinuierlichen Strukturen?  
 
 Zur systematischen Analyse dieser Fragestellungen wird schrittweise vom einfachen dynamischen Modell zum komplexen technischen Bauteil übergegangen. Der Einstieg erfolgt über den Einmassenschwinger, bevor Balken, Platten, Wellen und Baugruppen untersucht werden.
+
+---
 
 ## Theoretischer Hintergrund
 
@@ -375,6 +376,8 @@ Die Modellierung des Schwingungsverhaltens erfolgt schrittweise von starren Kör
 !!! danger "FIXME"
     Ergänzen einfacher Berechnung
 
+---
+
 ## Generelles zur Umsetzung in ANSYS
 
 ### Projektoberfläche
@@ -462,7 +465,8 @@ Die Wahl der Randbedingungen ist eine zentraler Modellierungsentscheidung und so
 
 ### 3. Getriebewelle
 
-* Einfluss von Punktmassen
+* Einfluss der Einspannung. Wo und wie umgesetzt? Fix, externe, zylindrische Lagerung etc.  Fest-Loslagerung; rotationsfreiheitsgrad beeinflusst NUR die Starrkörpermoden.  
+* Einfluss von Punktmassen --> beeinflusst Wellenende nicht
 * Identifikation relevanter Moden für den Betrieb einer Maschine
 
 ### 4. Windenergieanlage
