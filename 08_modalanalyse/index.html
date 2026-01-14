@@ -691,7 +691,6 @@
 <li>Einfluss der Einspannung und der Massenverteilung auf das Eigenschwingungsverhalten</li>
 <li>Umsetzung einer Modalanalyse in ANSYS Mechanical</li>
 <li>Interpretation und Bewertung von Modenformen</li>
-<li>Vergleich numerischer und analytisch bekannter Lösungen an einfachen Strukturen</li>
 <li>Übertragung auf komplexere Baugruppen mit starren und verformbaren Teilen</li>
 </ul>
 <h2 id="motivation-und-zentrale-fragestellungen">Motivation und zentrale Fragestellungen<a class="headerlink" href="#motivation-und-zentrale-fragestellungen" title="Permanent link">&para;</a></h2>
@@ -811,6 +810,7 @@
 <li>Wie unterscheiden sich Einmassensysteme von kontinuierlichen Strukturen?  </li>
 </ul>
 <p>Zur systematischen Analyse dieser Fragestellungen wird schrittweise vom einfachen dynamischen Modell zum komplexen technischen Bauteil übergegangen. Der Einstieg erfolgt über den Einmassenschwinger, bevor Balken, Platten, Wellen und Baugruppen untersucht werden.</p>
+<hr />
 <h2 id="theoretischer-hintergrund">Theoretischer Hintergrund<a class="headerlink" href="#theoretischer-hintergrund" title="Permanent link">&para;</a></h2>
 <h3 id="grundbegriffe">Grundbegriffe<a class="headerlink" href="#grundbegriffe" title="Permanent link">&para;</a></h3>
 <p>Technische Schwingungen lassen sich durch wenige grundlegende Größen beschreiben.  </p>
@@ -982,6 +982,7 @@ Abschnitt inhaltlich erweitern: kurze Erläuterung der Rolle von Freiheitsgraden
 <p class="admonition-title">FIXME</p>
 <p>Ergänzen einfacher Berechnung</p>
 </div>
+<hr />
 <h2 id="generelles-zur-umsetzung-in-ansys">Generelles zur Umsetzung in ANSYS<a class="headerlink" href="#generelles-zur-umsetzung-in-ansys" title="Permanent link">&para;</a></h2>
 <h3 id="projektoberflache">Projektoberfläche<a class="headerlink" href="#projektoberflache" title="Permanent link">&para;</a></h3>
 <p>In der Projektoberfläche ist die Analyseart <em>Modal</em> zu wählen. Für viele Aufgaben kann das System als Standalone-Modalanalyse verwendet werden. Für weiterführende Fragestellungen ist eine Kopplung mit einer <em>statisch-mechanischen Analyse</em> oder einer <em>harmonischen Analyse</em> sinnvoll, etwa zur Untersuchung von Lastfällen oder zur Frequenzantwortanalyse.  </p>
@@ -1054,7 +1055,8 @@ Abschnitt inhaltlich erweitern: kurze Erläuterung der Rolle von Freiheitsgraden
 </ul>
 <h3 id="3-getriebewelle">3. Getriebewelle<a class="headerlink" href="#3-getriebewelle" title="Permanent link">&para;</a></h3>
 <ul>
-<li>Einfluss von Punktmassen</li>
+<li>Einfluss der Einspannung. Wo und wie umgesetzt? Fix, externe, zylindrische Lagerung etc.  Fest-Loslagerung; rotationsfreiheitsgrad beeinflusst NUR die Starrkörpermoden.  </li>
+<li>Einfluss von Punktmassen --&gt; beeinflusst Wellenende nicht</li>
 <li>Identifikation relevanter Moden für den Betrieb einer Maschine</li>
 </ul>
 <h3 id="4-windenergieanlage">4. Windenergieanlage<a class="headerlink" href="#4-windenergieanlage" title="Permanent link">&para;</a></h3>
