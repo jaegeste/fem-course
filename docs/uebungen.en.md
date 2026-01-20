@@ -87,4 +87,3 @@ Using the geometry [lampe.stp](media/uebungen/lampe.stp), create an analysis in 
 ### Street lamp task c)
 
 Which of the eigenfrequencies you calculated can be observed in the video? State the mode in Excel.  
-

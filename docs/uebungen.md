@@ -8,11 +8,11 @@ Die folgenden Übungen dienen der **Vertiefung der in den Modulen erworbenen Ken
 
 Gegeben ist die Geometrie eines Stahllineals in der Datei [lineal.stp](media/uebungen/lineal.stp). Es wird durch eine Kraft \(F\) auf Zug in seiner Längsrichtung belastet, der Werkstoff sei Baustahl laut ANSYS Datenbank, jedoch mit einem **E-Modul von 210.000 N/mm²** und einer **Streckgrenze von 300 MPa**.
 
-## Stahllineal Aufgabenteil a)
+### Stahllineal Aufgabenteil a)
 
 Berechnen Sie in Excel den Betrag der Zugkraft, bei der gerade noch keine plastische Verformung auftritt. Wie groß ist die resultierende Längenänderung bei dieser Kraft? Es gilt das Hooke’sche Gesetz \(\sigma = \varepsilon \cdot E\).
 
-## Stahllineal Aufgabenteil b)
+### Stahllineal Aufgabenteil b)
 
 Weisen Sie Ihr Ergebnis für Kraft beziehungsweise Spannung und Verformung mit einer Berechnung in ANSYS nach. Wählen Sie die Randbedingungen so, dass die Querkontraktion des Bauteils an keiner Stelle verhindert wird.
 

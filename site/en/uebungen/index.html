@@ -498,9 +498,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#steel-ruler-task-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steel ruler task a)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steel-ruler-task-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steel ruler task b)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hold-down-device" class="md-nav__link">
     <span class="md-ellipsis">
       Hold-down device
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#street-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Street lamp
     </span>
   </a>
   
@@ -682,9 +718,45 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#steel-ruler-task-a" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steel ruler task a)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#steel-ruler-task-b" class="md-nav__link">
+    <span class="md-ellipsis">
+      Steel ruler task b)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hold-down-device" class="md-nav__link">
     <span class="md-ellipsis">
       Hold-down device
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#table" class="md-nav__link">
+    <span class="md-ellipsis">
+      Table
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#street-lamp" class="md-nav__link">
+    <span class="md-ellipsis">
+      Street lamp
     </span>
   </a>
   
@@ -710,12 +782,61 @@
 <p>The following exercises serve to <strong>deepen the knowledge acquired in the modules</strong>. All FE analyses must produce results whose magnitude is as independent as possible from the mesh influence, every numerical value used in Excel calculations must include its unit, and all analytical solutions must be created in Excel with regard to the exam.</p>
 <h2 id="steel-ruler">Steel ruler<a class="headerlink" href="#steel-ruler" title="Permanent link">&para;</a></h2>
 <p>The geometry of a steel ruler is provided in the file <a href="../../media/uebungen/lineal.stp">lineal.stp</a>. It is subjected to a tensile force <span class="arithmatex">\(F\)</span> acting along its longitudinal direction. The material is structural steel according to the ANSYS database, but with a <strong>Young’s modulus of 210,000 N/mm²</strong> and a <strong>yield strength of 300 MPa</strong>.</p>
+<h2 id="steel-ruler-task-a">Steel ruler task a)<a class="headerlink" href="#steel-ruler-task-a" title="Permanent link">&para;</a></h2>
 <p>Use Excel to calculate the tensile force at which no plastic deformation occurs yet. What is the resulting change in length at this force? Hooke’s law <span class="arithmatex">\(\sigma = \varepsilon \cdot E\)</span> applies.</p>
+<h2 id="steel-ruler-task-b">Steel ruler task b)<a class="headerlink" href="#steel-ruler-task-b" title="Permanent link">&para;</a></h2>
 <p>Verify your results for force or stress and deformation with an ANSYS calculation. Choose boundary conditions such that lateral contraction of the component is not constrained at any location.</p>
+<hr />
 <h2 id="hold-down-device">Hold-down device<a class="headerlink" href="#hold-down-device" title="Permanent link">&para;</a></h2>
 <p>The illustrated hold-down device is provided in the file <a href="../../media/uebungen/niederhalter.stp">niederhalter.stp</a>. It is subjected to compression and fixed according to the figure. Its cross-sectional area in the small cross-section is 300 mm².</p>
 <p><a class="glightbox" href="../../media/uebungen/niederhalter.png" title="Boundary conditions for the static structural analysis of the hold-down device"><img alt="Boundary conditions for the static structural analysis of the hold-down device" src="../../media/uebungen/niederhalter.png" width="350px" /></a></p>
-<p>Determine the notch stress factor for the transition between the small and large cross-section. Use ANSYS and Excel for this purpose. The relation <span class="arithmatex">\(\sigma_k = \sigma_n \cdot \alpha_k\)</span> applies.</p><style type="text/css">.quiz {
+<p>Determine the notch stress factor for the transition between the small and large cross-section. Use ANSYS and Excel for this purpose. The relation <span class="arithmatex">\(\sigma_k = \sigma_n \cdot \alpha_k\)</span> applies.</p>
+<hr />
+<h2 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h2>
+<p>Given is the video of a table shown below as well as the associated geometry <a href="../../media/uebungen/tisch.stp">tisch.stp</a>. The video shows a table that, after a short excitation, oscillates with large amplitude and over a long duration. Such behaviour is undesirable for use in a dining room.</p>
+<!-- markdownlint-disable MD033 -->
+<video controls width="700">
+  <source src="/fem-course/media/08_modalanalyse/tisch.mp4" type="video/mp4">
+  Your browser does not support this video.
+</video>
+<!-- markdownlint-enable MD033 -->
+
+<h3 id="table-task-a">Table task a)<a class="headerlink" href="#table-task-a" title="Permanent link">&para;</a></h3>
+<p>Which two parameters could be modified to mitigate this problem? The question is to be answered from a machine dynamics perspective. The two options are to be stated in Excel.</p>
+<p><strong>Note:</strong> No calculations are required.  </p>
+<h3 id="table-task-b">Table task b)<a class="headerlink" href="#table-task-b" title="Permanent link">&para;</a></h3>
+<p>Perform a modal analysis of the table in ANSYS that allows the phenomenon shown in the video to be captured numerically. Choose the boundary conditions (e.g. constraints, contacts) appropriately and calculate the first <strong>eight</strong> eigenmodes. For the entire assembly, initially use the material <em>Structural Steel</em> from the ANSYS material database.</p>
+<h3 id="table-task-c">Table task c)<a class="headerlink" href="#table-task-c" title="Permanent link">&para;</a></h3>
+<p>Subsequently extend the implemented model by applying differentiated material assignments. The materials are to be defined as follows:</p>
+<ul>
+<li>
+<p>Frame: Aluminium<br />
+  Density 2.7 kg/dm³, Young’s modulus 70 GPa, Poisson’s ratio ν = 0.35</p>
+</li>
+<li>
+<p>Table top: Oak<br />
+  Density 0.94 kg/dm³, Young’s modulus 23 GPa, Poisson’s ratio ν = 0.4</p>
+</li>
+</ul>
+<p>What influence does the choice of material have on the eigenfrequencies? Document the results in Excel.</p>
+<h3 id="table-task-d">Table task d)<a class="headerlink" href="#table-task-d" title="Permanent link">&para;</a></h3>
+<p>Under real operating conditions, the table is not always empty. Therefore, extend the model by an additional mass that loads the table through an extensive selection of food and drinks. The type of implementation and the chosen parameters are to be selected appropriately.</p>
+<hr />
+<h2 id="street-lamp">Street lamp<a class="headerlink" href="#street-lamp" title="Permanent link">&para;</a></h2>
+<p>Given is the video of a street lamp.</p>
+<!-- markdownlint-disable MD033 -->
+<video controls width="700">
+  <source src="/fem-course/media/08_modalanalyse/lampe.mp4" type="video/mp4">
+  Your browser does not support this video.
+</video>
+<!-- markdownlint-enable MD033 -->
+
+<h3 id="street-lamp-task-a">Street lamp task a)<a class="headerlink" href="#street-lamp-task-a" title="Permanent link">&para;</a></h3>
+<p>Briefly describe, in bullet points, which phenomenon can be observed. Use Excel for this.  </p>
+<h3 id="street-lamp-task-b">Street lamp task b)<a class="headerlink" href="#street-lamp-task-b" title="Permanent link">&para;</a></h3>
+<p>Using the geometry <a href="../../media/uebungen/lampe.stp">lampe.stp</a>, create an analysis in ANSYS that at least reproduces the phenomenon in a basic manner. Material: <em>Structural Steel</em> (from the ANSYS database).  </p>
+<h3 id="street-lamp-task-c">Street lamp task c)<a class="headerlink" href="#street-lamp-task-c" title="Permanent link">&para;</a></h3>
+<p>Which of the eigenfrequencies you calculated can be observed in the video? State the mode in Excel.  </p><style type="text/css">.quiz {
   border: 1px solid black;
   padding: 1rem;
   margin: 1rem 0;
