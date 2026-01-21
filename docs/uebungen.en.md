@@ -70,6 +70,30 @@ Between the deformation obtained in subtask a) and that obtained in subtask b), 
 
 ---
 
+## Rectangular Flange
+
+The rectangular flange shown in the figure is given in the file [rechteckflansch.prt](media/uebungen/rechteckflansch_schnitt.stp). Its material is structural steel (according to the ANSYS material database).
+
+[![Rectangular flange](media/uebungen/rechteckflansch.png){width=400px}](media/uebungen/rechteckflansch.png "Rectangular flange"){.glightbox}
+
+### Rectangular Flange Task Part a)
+
+Use the symmetry of the rectangular flange by means of a *cyclic region*. Calculate the maximum equivalent stress and the maximum deformation in ANSYS.
+
+* The rectangular flange is fully fixed at the outer bores (marked in blue in the figure).  
+* A pressure **P = 200 bar** acts on the inner bore.
+* Manually refine the mesh at the locations of highest equivalent stress.
+
+### Rectangular Flange Task Part b)
+
+**In addition** to the pressure implemented in a), a tensile force **F = 25 kN** acts on the end face of the rectangular flange, as shown in the figure:
+
+[![Rectangular flange, surface for tensile force application](media/uebungen/rechteckflansch_2.png){width=400px}](media/uebungen/rechteckflansch_2.png " Surface for tensile force application"){.glightbox}
+
+Extend the model by adding the force and use ANSYS to calculate the maximum equivalent stress and the maximum deformation.
+
+---
+
 ## Table
 
 Given is the video of a table shown below as well as the associated geometry [tisch.stp](media/uebungen/tisch.stp). The video shows a table that, after a short excitation, oscillates with large amplitude and over a long duration. Such behaviour is undesirable for use in a dining room.

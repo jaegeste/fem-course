@@ -72,6 +72,30 @@ Zwischen der Verformung aus Aufgabenteil a) und der aus Aufgabenteil b) ist ein 
 
 ---
 
+## Rechteckflansch
+
+Gegeben ist der in der Abbildung dargestellte Rechteckflansch in der Datei [rechteckflansch.prt](media/uebungen/rechteckflansch_schnitt.stp), sein Werkstoff sei Baustahl (ltd. ANSYS-Datenbank).
+
+[![Rechteckflansch](media/uebungen/rechteckflansch.png){width=400px}](media/uebungen/rechteckflansch.png "Rechteckflansch"){.glightbox}
+
+### Rechteckflansch Aufgabenteil a)
+
+Nutzen Sie mittels *Zyklischer Bereich* die Symmetrie des Rechteckflanschs aus. Berechnen Sie in ANSYS die maximale Vergleichsspannung und die maximale Verformung.
+
+* Fest eingespannt sei der Rechteckflansch an den äußeren Bohrungen (in der Abbildung blau gekennzeichnet).  
+* An der inneren Bohrung wirke ein Druck **P = 200 bar**.
+* Verfeinern Sie das Netz an den Stellen höchster Vergleichsspannung händisch.
+
+### Rechteckflansch Aufgabenteil b)
+
+**Zusätzlich** zum in a) implementierten Druck wirke eine Zugkraft **F = 25 kN** auf die Stirnfläche des Rechteckflanschs, siehe Abbildung:
+
+[![Rechteckflansch, Fläche für Zugkrafteinleitung](media/uebungen/rechteckflansch_2.png){width=400px}](media/uebungen/rechteckflansch_2.png " Fläche für Zugkrafteinleitung"){.glightbox}
+
+Erweitern Sie ihr Modell um die Kraft und berechnen Sie mittels ANSYS die maximale Vergleichsspannung und die maximale Verformung.
+
+---
+
 ## Tisch
 
 Gegeben ist das unten gezeigt Video eines Tischs sowie die zugehörige Geometrie [tisch.stp](media/uebungen/tisch.stp). Zu sehen ist ein Tisch, der nach einer kurzen Auslenkung mit großer Amplitude und über eine lange Dauer schwingt. Ein solches Verhalten ist für den Einsatz im Esszimmer unerwünscht.
