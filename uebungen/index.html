@@ -505,6 +505,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#grundplatte-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundplatte, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grundplatte-zug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundplatte, Zug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tisch" class="md-nav__link">
     <span class="md-ellipsis">
       Tisch
@@ -575,6 +593,24 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#grundplatte-biegung" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundplatte, Biegung
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#grundplatte-zug" class="md-nav__link">
+    <span class="md-ellipsis">
+      Grundplatte, Zug
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#tisch" class="md-nav__link">
     <span class="md-ellipsis">
       Tisch
@@ -622,6 +658,29 @@
 <p>Gegeben ist der dargestellte Niederhalter in der Datei <a href="../media/uebungen/niederhalter.stp">niederhalter.stp</a>. Er sei auf Druck beansprucht und eingespannt gemäß Abbildung. Seine Querschnittsfläche im kleinen Querschnitt ist 300 mm².</p>
 <p><a class="glightbox" href="../media/uebungen/niederhalter.png" title="Randbedingungen statisch mechanische Analyse des Niederhalters"><img alt="Randbedingungen statisch mechanische Analyse des Niederhalters" src="../media/uebungen/niederhalter.png" width="350px" /></a></p>
 <p>Berechnen Sie für den Übergang zwischen dem kleinen und großen Querschnitt die Kerbformzahl. Verwenden Sie hierzu ANSYS und Excel. Es gilt <span class="arithmatex">\(\sigma_k = \sigma_n \cdot \alpha_k\)</span>.</p>
+<hr />
+<h2 id="grundplatte-biegung">Grundplatte, Biegung<a class="headerlink" href="#grundplatte-biegung" title="Permanent link">&para;</a></h2>
+<p>Gegeben ist die in der Abbildung dargestellte Grundplatte in der Datei <a href="../media/uebungen/grundplatte.stp">grundplatte.stp</a>, ihr Werkstoff sei Baustahl laut ANSYS-Datenbank.</p>
+<p><a class="glightbox" href="../media/uebungen/grundplatte.png" title="Bauteil Grundplatte, Biegung."><img alt="Bauteil Grundplatte, Biegung." src="../media/uebungen/grundplatte.png" width="450px" /></a></p>
+<h3 id="grundplatte-biegung-teilaufgabe-a">Grundplatte, Biegung Teilaufgabe a)<a class="headerlink" href="#grundplatte-biegung-teilaufgabe-a" title="Permanent link">&para;</a></h3>
+<p>Die Grundplatte sei an der Unterseite (in der Abbildung ist das die nicht sichtbare Fläche unten) vollflächig fest eingespannt. Zudem wirkt an der in der Abbildung rot gekennzeichneten Fläche die Kraft <strong>F = 100 kN</strong>.</p>
+<p>Wo ist die höchstbeanspruchte Stelle am Bauteil? Implementieren Sie hierzu ein Modell in ANSYS, das rein dem Zweck dient, in einer globalen Analyse den kritischen Querschnitt zu bestimmen. Dokumentieren Sie ihr Ergebnis in EXCEL (z.B. durch einen Screenshot).</p>
+<h3 id="grundplatte-biegung-teilaufgabe-b">Grundplatte, Biegung Teilaufgabe b)<a class="headerlink" href="#grundplatte-biegung-teilaufgabe-b" title="Permanent link">&para;</a></h3>
+<p>Erstellen Sie für den unter a) identifizierten Bereich des Bauteils ein fokussiertes Ergebnis für die Vergleichsspannung und ermitteln Sie mittels adaptiver Vernetzung eine möglichst gut angenäherte Lösung (Änderung &lt; 10 %).</p>
+<hr />
+<h2 id="grundplatte-zug">Grundplatte, Zug<a class="headerlink" href="#grundplatte-zug" title="Permanent link">&para;</a></h2>
+<p>Gegeben ist die in der Abbildung dargestellte Grundplatte in der Datei <a href="../media/uebungen/grundplatte.stp">grundplatte.stp</a>, ihr Werkstoff sei Baustahl laut ANSYS-Datenbank. Die Grundplatte sei hier durch die Kraft <strong>F = 750 kN</strong> auf Zug beansprucht, siehe Abbildung links. Die Grundplatte sei an der Unterseite (in der Abbildung ist das die nicht sichtbare Fläche unten) vollflächig fest eingespannt.</p>
+<p><a class="glightbox" href="../media/uebungen/grundplatte_2_3.png" title="Bauteil Grundplatte, Biegung."><img alt="Bauteil Grundplatte, Zug." src="../media/uebungen/grundplatte_2_3.png" width="700px" /></a></p>
+<h3 id="grundplatte-zug-teilaufgabe-a">Grundplatte, Zug Teilaufgabe a)<a class="headerlink" href="#grundplatte-zug-teilaufgabe-a" title="Permanent link">&para;</a></h3>
+<p>Schätzen Sie in Excel die Längenänderung des zylindrischen Querschnitts (gekennzeichnet in Abbildung 2 rechts) ab. Es gilt das Hooke’sche Gesetz  </p>
+<div class="arithmatex">\[
+\sigma = \varepsilon \cdot E
+\]</div>
+<h3 id="grundplatte-zug-teilaufgabe-b">Grundplatte, Zug Teilaufgabe b)<a class="headerlink" href="#grundplatte-zug-teilaufgabe-b" title="Permanent link">&para;</a></h3>
+<p>Implementieren Sie die Grundplatte unter Zugbelastung in ANSYS. Die Kraft wirke wie in der Abbildung dargestellt auf die rot gekennzeichneten Flächen.  </p>
+<p>Erstellen Sie ein Ergebnis, das die Verformung der grün gekennzeichneten Fläche darstellt, siehe Abbildung rechts.  </p>
+<h3 id="grundplatte-zug-teilaufgabe-c">Grundplatte, Zug Teilaufgabe c)<a class="headerlink" href="#grundplatte-zug-teilaufgabe-c" title="Permanent link">&para;</a></h3>
+<p>Zwischen der Verformung aus Aufgabenteil a) und der aus Aufgabenteil b) ist ein Unterschied von einigen 1/1000 mm feststellbar. Erläutern Sie in Excel die Gründe für diese Abweichung.</p>
 <hr />
 <h2 id="tisch">Tisch<a class="headerlink" href="#tisch" title="Permanent link">&para;</a></h2>
 <p>Gegeben ist das unten gezeigt Video eines Tischs sowie die zugehörige Geometrie <a href="../media/uebungen/tisch.stp">tisch.stp</a>. Zu sehen ist ein Tisch, der nach einer kurzen Auslenkung mit großer Amplitude und über eine lange Dauer schwingt. Ein solches Verhalten ist für den Einsatz im Esszimmer unerwünscht.</p>
