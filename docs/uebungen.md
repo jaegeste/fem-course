@@ -28,6 +28,50 @@ Berechnen Sie für den Übergang zwischen dem kleinen und großen Querschnitt di
 
 ---
 
+## Grundplatte, Biegung
+
+Gegeben ist die in der Abbildung dargestellte Grundplatte in der Datei [grundplatte.stp](media/uebungen/grundplatte.stp), ihr Werkstoff sei Baustahl laut ANSYS-Datenbank.
+
+[![Bauteil Grundplatte, Biegung.](media/uebungen/grundplatte.png){width=450px}](media/uebungen/grundplatte.png "Bauteil Grundplatte, Biegung."){.glightbox}
+
+### Grundplatte, Biegung Teilaufgabe a)
+
+Die Grundplatte sei an der Unterseite (in der Abbildung ist das die nicht sichtbare Fläche unten) vollflächig fest eingespannt. Zudem wirkt an der in der Abbildung rot gekennzeichneten Fläche die Kraft **F = 100 kN**.
+
+Wo ist die höchstbeanspruchte Stelle am Bauteil? Implementieren Sie hierzu ein Modell in ANSYS, das rein dem Zweck dient, in einer globalen Analyse den kritischen Querschnitt zu bestimmen. Dokumentieren Sie ihr Ergebnis in EXCEL (z.B. durch einen Screenshot).
+
+### Grundplatte, Biegung Teilaufgabe b)
+
+Erstellen Sie für den unter a) identifizierten Bereich des Bauteils ein fokussiertes Ergebnis für die Vergleichsspannung und ermitteln Sie mittels adaptiver Vernetzung eine möglichst gut angenäherte Lösung (Änderung < 10 %).
+
+---
+
+## Grundplatte, Zug
+
+Gegeben ist die in der Abbildung dargestellte Grundplatte in der Datei [grundplatte.stp](media/uebungen/grundplatte.stp), ihr Werkstoff sei Baustahl laut ANSYS-Datenbank. Die Grundplatte sei hier durch die Kraft **F = 750 kN** auf Zug beansprucht, siehe Abbildung links. Die Grundplatte sei an der Unterseite (in der Abbildung ist das die nicht sichtbare Fläche unten) vollflächig fest eingespannt.
+
+[![Bauteil Grundplatte, Zug.](media/uebungen/grundplatte_2_3.png){width=700px}](media/uebungen/grundplatte_2_3.png "Bauteil Grundplatte, Biegung."){.glightbox}
+
+### Grundplatte, Zug Teilaufgabe a)
+
+Schätzen Sie in Excel die Längenänderung des zylindrischen Querschnitts (gekennzeichnet in Abbildung 2 rechts) ab. Es gilt das Hooke’sche Gesetz  
+
+\[
+\sigma = \varepsilon \cdot E
+\]
+
+### Grundplatte, Zug Teilaufgabe b)
+
+Implementieren Sie die Grundplatte unter Zugbelastung in ANSYS. Die Kraft wirke wie in der Abbildung dargestellt auf die rot gekennzeichneten Flächen.  
+
+Erstellen Sie ein Ergebnis, das die Verformung der grün gekennzeichneten Fläche darstellt, siehe Abbildung rechts.  
+
+### Grundplatte, Zug Teilaufgabe c)
+
+Zwischen der Verformung aus Aufgabenteil a) und der aus Aufgabenteil b) ist ein Unterschied von einigen 1/1000 mm feststellbar. Erläutern Sie in Excel die Gründe für diese Abweichung.
+
+---
+
 ## Tisch
 
 Gegeben ist das unten gezeigt Video eines Tischs sowie die zugehörige Geometrie [tisch.stp](media/uebungen/tisch.stp). Zu sehen ist ein Tisch, der nach einer kurzen Auslenkung mit großer Amplitude und über eine lange Dauer schwingt. Ein solches Verhalten ist für den Einsatz im Esszimmer unerwünscht.
