@@ -52,11 +52,17 @@ The base plate shown in the figure is given in the file [grundplatte.stp](media/
 
 ### Base Plate, Tension Subtask a)
 
-Estimate in Excel the change in length of the cylindrical cross section (marked in Figure 2 on the right). Hooke’s law applies
+Estimate in Excel the change in length of the cylindrical cross section (marked in the Figure on the right). Hooke’s law applies:
 
 \[
 \sigma = \varepsilon \cdot E
 \]
+
+The data of the cylindrical cross section are:
+
+* Length: 30 mm  
+* Diameter: 100 mm
+* Bore diameter: 20 mm
 
 ### Base Plate, Tension Subtask b)
 

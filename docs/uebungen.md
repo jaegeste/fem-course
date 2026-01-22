@@ -54,11 +54,17 @@ Gegeben ist die in der Abbildung dargestellte Grundplatte in der Datei [grundpla
 
 ### Grundplatte, Zug Teilaufgabe a)
 
-Schätzen Sie in Excel die Längenänderung des zylindrischen Querschnitts (gekennzeichnet in Abbildung 2 rechts) ab. Es gilt das Hooke’sche Gesetz  
+Schätzen Sie in Excel die Längenänderung des zylindrischen Querschnitts (gekennzeichnet in der Abbildung rechts) ab. Es gilt das Hooke’sche Gesetz:  
 
 \[
 \sigma = \varepsilon \cdot E
 \]
+
+Die Daten des zylindrischen Querschnitts sind:  
+
+* Länge: 30 mm
+* Außendurchmesser: 100 mm
+* Bohrungsdurchmesser: 20 mm
 
 ### Grundplatte, Zug Teilaufgabe b)
 
