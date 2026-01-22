@@ -505,6 +505,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gekerbte-welle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gekerbte Welle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#grundplatte-biegung" class="md-nav__link">
     <span class="md-ellipsis">
       Grundplatte, Biegung
@@ -602,6 +611,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#gekerbte-welle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gekerbte Welle
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#grundplatte-biegung" class="md-nav__link">
     <span class="md-ellipsis">
       Grundplatte, Biegung
@@ -677,8 +695,23 @@
 <p><a class="glightbox" href="../media/uebungen/niederhalter.png" title="Randbedingungen statisch mechanische Analyse des Niederhalters"><img alt="Randbedingungen statisch mechanische Analyse des Niederhalters" src="../media/uebungen/niederhalter.png" width="350px" /></a></p>
 <p>Berechnen Sie für den Übergang zwischen dem kleinen und großen Querschnitt die Kerbformzahl. Verwenden Sie hierzu ANSYS und Excel. Es gilt <span class="arithmatex">\(\sigma_k = \sigma_n \cdot \alpha_k\)</span>.</p>
 <hr />
+<h2 id="gekerbte-welle">Gekerbte Welle<a class="headerlink" href="#gekerbte-welle" title="Permanent link">&para;</a></h2>
+<p>Gegeben ist die in der Abbildung dargestellte Welle in der Datei <a href="../media/uebungen/gekerbte_welle.stp">gekerbte_welle.stp</a>. Sie wird an ihrem rechten Ende (Stelle B) fest eingespannt, am linken Ende (Stelle A) mit einem Biegemoment <strong>M = 250 Nm</strong> belastet, vgl. Abbildung.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br> </p>
+<p><a class="glightbox" href="../media/uebungen/gekerbte_welle.png" title="Welle mit kritischem Querschnitt"><img alt="Welle mit kritischem Querschnitt" src="../media/uebungen/gekerbte_welle.png" width="500px" /></a></p>
+<h3 id="gekerbte-welle-teilaufgabe-a">Gekerbte Welle Teilaufgabe a)<a class="headerlink" href="#gekerbte-welle-teilaufgabe-a" title="Permanent link">&para;</a></h3>
+<p>Identifizieren Sie in ANSYS den kritischen Querschnitt und werten Sie dort die Vergleichsspannung möglichst genau aus. Verwenden Sie ein Konvergenzkriterium. Etwaige Stellen mit divergierenden Ergebnissen sind aus der Ergebnisbetrachtung auszuschließen.</p>
+<h3 id="gekerbte-welle-teilaufgabe-b">Gekerbte Welle Teilaufgabe b)<a class="headerlink" href="#gekerbte-welle-teilaufgabe-b" title="Permanent link">&para;</a></h3>
+<p>Die nominelle Spannung im Kerbgrund der mittigen Kerbe sei <strong>14.50 MPa</strong>. Wie groß ist die Kerbformzahl? Dokumentieren Sie Ihre Vorgehensweise in Excel. Es gilt:</p>
+<div class="arithmatex">\[
+\sigma_{\text{max}} = \sigma_N \cdot \alpha_k
+\]</div>
+<hr />
 <h2 id="grundplatte-biegung">Grundplatte, Biegung<a class="headerlink" href="#grundplatte-biegung" title="Permanent link">&para;</a></h2>
 <p>Gegeben ist die in der Abbildung dargestellte Grundplatte in der Datei <a href="../media/uebungen/grundplatte.stp">grundplatte.stp</a>, ihr Werkstoff sei Baustahl laut ANSYS-Datenbank.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br> </p>
 <p><a class="glightbox" href="../media/uebungen/grundplatte.png" title="Bauteil Grundplatte, Biegung."><img alt="Bauteil Grundplatte, Biegung." src="../media/uebungen/grundplatte.png" width="450px" /></a></p>
 <h3 id="grundplatte-biegung-teilaufgabe-a">Grundplatte, Biegung Teilaufgabe a)<a class="headerlink" href="#grundplatte-biegung-teilaufgabe-a" title="Permanent link">&para;</a></h3>
 <p>Die Grundplatte sei an der Unterseite (in der Abbildung ist das die nicht sichtbare Fläche unten) vollflächig fest eingespannt. Zudem wirkt an der in der Abbildung rot gekennzeichneten Fläche die Kraft <strong>F = 100 kN</strong>.</p>
@@ -724,7 +757,7 @@
 <h2 id="tisch">Tisch<a class="headerlink" href="#tisch" title="Permanent link">&para;</a></h2>
 <p>Gegeben ist das unten gezeigt Video eines Tischs sowie die zugehörige Geometrie <a href="../media/uebungen/tisch.stp">tisch.stp</a>. Zu sehen ist ein Tisch, der nach einer kurzen Auslenkung mit großer Amplitude und über eine lange Dauer schwingt. Ein solches Verhalten ist für den Einsatz im Esszimmer unerwünscht.</p>
 <!-- markdownlint-disable MD033 -->
-<video controls width="700">
+<!-- markdownlint-enable MD033 --><!-- markdownlint-enable MD033 --><video controls width="700">
   <source src="../media/08_modalanalyse/tisch.mp4" type="video/mp4">
   Ihr Browser kann dieses Video nicht wiedergeben.
 </video>
