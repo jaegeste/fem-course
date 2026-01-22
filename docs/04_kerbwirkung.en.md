@@ -834,12 +834,11 @@ For the calculation, a tensile force of **1000 N** was used as an example. Since
 
 | **$r/b$** | **$\sigma_\text{max}$** | **$\sigma_\text{n}$** | **$\alpha_k$** |
 |:----------:|:-----------------------:|:---------------------:|:--------------:|
-| 0.1 | 4.264 MPa | 1.25 MPa | 3.41 |
-| 0.2 | 3.307 MPa | 1.25 MPa | 2.65 |
-| 0.3 | 2.858 MPa | 1.25 MPa | 2.29 |
-| 0.4 | 2.613 MPa | 1.25 MPa | 2.09 |
-| 0.5 | 2.438 MPa | 1.25 MPa | 1.95 |
-
+| 0.1 | 4.264 MPa | 1.50 MPa | 2.843 |
+| 0.2 | 3.307 MPa | 1.50 MPa | 2.205 |
+| 0.3 | 2.858 MPa | 1.50 MPa | 1.905 |
+| 0.4 | 2.613 MPa | 1.50 MPa | 1.742 |
+| 0.5 | 2.438 MPa | 1.50 MPa | 1.625 |
 
 ### Comparison with the Curve from the Reference Book
 
@@ -852,7 +851,7 @@ The theoretical values of the notch shape factor αₖ are taken from the diagra
        "data": [
          {
            "x": [0.1, 0.2, 0.3, 0.4, 0.5],
-           "y": [3.41, 2.65, 2.29, 2.09, 1.95],
+           "y": [2.843, 2.205, 1.905, 1.742, 1.625],
            "name": "FEM results",
            "type": "scatter",
            "mode": "lines+markers",
@@ -860,7 +859,7 @@ The theoretical values of the notch shape factor αₖ are taken from the diagra
          },
          {
            "x": [0.1, 0.2, 0.3, 0.4, 0.5],
-           "y": [3.5, 2.7, 2.3, 2.1, 1.9],
+           "y": [2.7, 2.05, 1.8, 1.6, 1.5],
            "name": "Theory (from diagram)",
            "type": "scatter",
            "mode": "lines",

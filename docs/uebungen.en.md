@@ -26,9 +26,33 @@ Determine the notch stress factor for the transition between the small and large
 
 ---
 
+## Notched Shaft
+
+The shaft shown in the figure is given in the file [gekerbte_welle.stp](media/uebungen/gekerbte_welle.stp). It is fully fixed at its right end (location B) and loaded by a bending moment **M = 250 Nm** at the left end (location A), see figure.
+
+<!-- markdownlint-disable MD033 --> <br> <!-- markdownlint-enable MD033 -->
+
+[![Shaft with critical cross section](media/uebungen/gekerbte_welle.png){width=500px}](media/uebungen/gekerbte_welle.png "Shaft with critical cross section"){.glightbox}
+
+### Notched Shaft Task a)
+
+Identify the critical cross section in ANSYS and evaluate the equivalent stress at this location as accurately as possible. Use a convergence criterion. Any locations with diverging results are to be excluded from the result evaluation.
+
+### Notched Shaft Task b)
+
+The nominal stress at the notch root of the central notch is **14.50 MPa**. What is the notch factor? Document your procedure in Excel. The following relation applies:
+
+\[
+\sigma_{\text{max}} = \sigma_N \cdot \alpha_k
+\]
+
+---
+
 ## Base Plate, Bending
 
 The base plate shown in the figure is given in the file [grundplatte.stp](media/uebungen/grundplatte.stp). The material is structural steel according to the ANSYS material database.
+
+<!-- markdownlint-disable MD033 --> <br> <!-- markdownlint-enable MD033 -->
 
 [![Base plate component, bending.](media/uebungen/grundplatte.png){width=450px}](media/uebungen/grundplatte.png "Base plate component, bending."){.glightbox}
 

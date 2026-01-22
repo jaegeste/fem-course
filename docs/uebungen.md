@@ -28,9 +28,33 @@ Berechnen Sie für den Übergang zwischen dem kleinen und großen Querschnitt di
 
 ---
 
+## Gekerbte Welle
+
+Gegeben ist die in der Abbildung dargestellte Welle in der Datei [gekerbte_welle.stp](media/uebungen/gekerbte_welle.stp). Sie wird an ihrem rechten Ende (Stelle B) fest eingespannt, am linken Ende (Stelle A) mit einem Biegemoment **M = 250 Nm** belastet, vgl. Abbildung.
+
+<!-- markdownlint-disable MD033 --> <br> <!-- markdownlint-enable MD033 -->
+
+[![Welle mit kritischem Querschnitt](media/uebungen/gekerbte_welle.png){width=500px}](media/uebungen/gekerbte_welle.png "Welle mit kritischem Querschnitt"){.glightbox}
+
+### Gekerbte Welle Teilaufgabe a)
+
+Identifizieren Sie in ANSYS den kritischen Querschnitt und werten Sie dort die Vergleichsspannung möglichst genau aus. Verwenden Sie ein Konvergenzkriterium. Etwaige Stellen mit divergierenden Ergebnissen sind aus der Ergebnisbetrachtung auszuschließen.
+
+### Gekerbte Welle Teilaufgabe b)
+
+Die nominelle Spannung im Kerbgrund der mittigen Kerbe sei **14.50 MPa**. Wie groß ist die Kerbformzahl? Dokumentieren Sie Ihre Vorgehensweise in Excel. Es gilt:
+
+\[
+\sigma_{\text{max}} = \sigma_N \cdot \alpha_k
+\]
+
+---
+
 ## Grundplatte, Biegung
 
 Gegeben ist die in der Abbildung dargestellte Grundplatte in der Datei [grundplatte.stp](media/uebungen/grundplatte.stp), ihr Werkstoff sei Baustahl laut ANSYS-Datenbank.
+
+<!-- markdownlint-disable MD033 --> <br> <!-- markdownlint-enable MD033 -->
 
 [![Bauteil Grundplatte, Biegung.](media/uebungen/grundplatte.png){width=450px}](media/uebungen/grundplatte.png "Bauteil Grundplatte, Biegung."){.glightbox}
 
