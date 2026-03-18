@@ -58,7 +58,7 @@ _6._  Accept settings, do not change file paths:
 
 [![Path settings](media/02_Installation_erste_Schritte/02_03.en.png){width=600px}](media/02_Installation_erste_Schritte/02_03.en.png "Path settings"){.glightbox}  
 
-_7._  Enter license server: `10.10.13.101`, VPN connection required:
+_7._  Enter license server: `10.11.15.12`, VPN connection required:
 
 [![License server](media/02_Installation_erste_Schritte/02_04.en.png){width=600px}](media/02_Installation_erste_Schritte/02_04.en.png "License server"){.glightbox}  
 

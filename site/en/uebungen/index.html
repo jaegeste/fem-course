@@ -507,6 +507,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#notched-shaft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notched Shaft
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#base-plate-bending" class="md-nav__link">
     <span class="md-ellipsis">
       Base Plate, Bending
@@ -736,6 +745,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#notched-shaft" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notched Shaft
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#base-plate-bending" class="md-nav__link">
     <span class="md-ellipsis">
       Base Plate, Bending
@@ -810,8 +828,23 @@
 <p><a class="glightbox" href="../../media/uebungen/niederhalter.png" title="Boundary conditions for the static structural analysis of the hold-down device"><img alt="Boundary conditions for the static structural analysis of the hold-down device" src="../../media/uebungen/niederhalter.png" width="350px" /></a></p>
 <p>Determine the notch stress factor for the transition between the small and large cross-section. Use ANSYS and Excel for this purpose. The relation <span class="arithmatex">\(\sigma_k = \sigma_n \cdot \alpha_k\)</span> applies.</p>
 <hr />
+<h2 id="notched-shaft">Notched Shaft<a class="headerlink" href="#notched-shaft" title="Permanent link">&para;</a></h2>
+<p>The shaft shown in the figure is given in the file <a href="../../media/uebungen/gekerbte_welle.stp">gekerbte_welle.stp</a>. It is fully fixed at its right end (location B) and loaded by a bending moment <strong>M = 250 Nm</strong> at the left end (location A), see figure.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br> </p>
+<p><a class="glightbox" href="../../media/uebungen/gekerbte_welle.png" title="Shaft with critical cross section"><img alt="Shaft with critical cross section" src="../../media/uebungen/gekerbte_welle.png" width="500px" /></a></p>
+<h3 id="notched-shaft-task-a">Notched Shaft Task a)<a class="headerlink" href="#notched-shaft-task-a" title="Permanent link">&para;</a></h3>
+<p>Identify the critical cross section in ANSYS and evaluate the equivalent stress at this location as accurately as possible. Use a convergence criterion. Any locations with diverging results are to be excluded from the result evaluation.</p>
+<h3 id="notched-shaft-task-b">Notched Shaft Task b)<a class="headerlink" href="#notched-shaft-task-b" title="Permanent link">&para;</a></h3>
+<p>The nominal stress at the notch root of the central notch is <strong>14.50 MPa</strong>. What is the notch factor? Document your procedure in Excel. The following relation applies:</p>
+<div class="arithmatex">\[
+\sigma_{\text{max}} = \sigma_N \cdot \alpha_k
+\]</div>
+<hr />
 <h2 id="base-plate-bending">Base Plate, Bending<a class="headerlink" href="#base-plate-bending" title="Permanent link">&para;</a></h2>
 <p>The base plate shown in the figure is given in the file <a href="../../media/uebungen/grundplatte.stp">grundplatte.stp</a>. The material is structural steel according to the ANSYS material database.</p>
+<!-- markdownlint-disable MD033 -->
+<p><br> </p>
 <p><a class="glightbox" href="../../media/uebungen/grundplatte.png" title="Base plate component, bending."><img alt="Base plate component, bending." src="../../media/uebungen/grundplatte.png" width="450px" /></a></p>
 <h3 id="base-plate-bending-subtask-a">Base Plate, Bending Subtask a)<a class="headerlink" href="#base-plate-bending-subtask-a" title="Permanent link">&para;</a></h3>
 <p>The base plate is fully fixed on its underside (in the figure, this is the non visible surface at the bottom). In addition, a force <strong>F = 100 kN</strong> acts on the surface marked in red in the figure.</p>
@@ -857,7 +890,7 @@
 <h2 id="table">Table<a class="headerlink" href="#table" title="Permanent link">&para;</a></h2>
 <p>Given is the video of a table shown below as well as the associated geometry <a href="../../media/uebungen/tisch.stp">tisch.stp</a>. The video shows a table that, after a short excitation, oscillates with large amplitude and over a long duration. Such behaviour is undesirable for use in a dining room.</p>
 <!-- markdownlint-disable MD033 -->
-<video controls width="700">
+<!-- markdownlint-enable MD033 --><!-- markdownlint-enable MD033 --><video controls width="700">
   <source src="/fem-course/media/08_modalanalyse/tisch.mp4" type="video/mp4">
   Your browser does not support this video.
 </video>

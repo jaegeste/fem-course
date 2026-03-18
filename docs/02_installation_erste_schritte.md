@@ -58,7 +58,7 @@ _6._ Einstellungen übernehmen, keine Dateipfade ändern:
 
 [![Einstellungen Pfade](media/02_Installation_erste_Schritte/02_03.png){width=600px}](media/02_Installation_erste_Schritte/02_03.png "Einstellungen Pfade"){.glightbox}  
 
-_7._ Lizenzserver eintragen: `10.10.13.101`, VPN-Verbindung erforderlich.  
+_7._ Lizenzserver eintragen: `10.11.15.12`, VPN-Verbindung erforderlich.  
 
 [![Lizenzserver](media/02_Installation_erste_Schritte/02_04.png){width=600px}](media/02_Installation_erste_Schritte/02_04.png "Lizenzserver"){.glightbox}  
 
