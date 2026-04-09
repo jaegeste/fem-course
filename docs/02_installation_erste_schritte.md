@@ -138,7 +138,7 @@ _10._ ZIP-Datei und entpackte Daten können gelöscht werden.
     Kann ANSYS trotz richtiger Installation und VPN-Verbindung keine Lizenz ziehen (Fehlermeldung beim Start), gehen Sie wie folgt vor:
 
     - Navigieren Sie zu `C:\Windows\System32\drivers\etc`  
-    - Ergänzen Sie in der Datei `hosts` ganz am Ende die Zeile: `10.10.13.101 Flex`  
+    - Ergänzen Sie in der Datei `hosts` ganz am Ende die Zeile: `10.11.15.12 Flex`  
     - Speichern und fertig. Falls das Speichern Probleme macht, müssen Sie die Datei evtl. erst auf den Desktop o. ä. kopieren. Und beachten Sie, dass der Dateityp sich nicht ändert.
 
 ---

@@ -138,7 +138,7 @@ _10._  The ZIP file and extracted data can now be deleted.
     If ANSYS cannot acquire a license at startup despite a correct installation and VPN connection (error message appears), proceed as follows:
 
     - Navigate to `C:\Windows\System32\drivers\etc`  
-    - At the very end of the `hosts` file, add the line: `10.10.13.101 Flex`  
+    - At the very end of the `hosts` file, add the line: `10.11.15.12 Flex`  
     - Save and you're done. If saving causes issues, you may need to copy the file to the desktop first. Make sure the file type does not change when saving.
 
 ---
