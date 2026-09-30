@@ -11,10 +11,6 @@
         <link rel="canonical" href="https://jaegeste.github.io/fem-course/en/peer-teaching_C1/">
       
       
-        <link rel="prev" href="../peer-teaching_B2/">
-      
-      
-        <link rel="next" href="../peer-teaching_C2/">
       
       
       <link rel="icon" href="../../media/logo/hfu_logo.svg">
@@ -22,7 +18,7 @@
     
     
       
-        <title>Peer Teaching C1 - FEM Course Prof. Jäger</title>
+        <title>FEM Analysis of a Four-Sided Clamped MEMS Accelerometer - FEM Course Prof. Jäger</title>
       
     
     
@@ -120,7 +116,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Peer Teaching C1
+              FEM Analysis of a Four-Sided Clamped MEMS Accelerometer
             
           </span>
         </div>
@@ -445,270 +441,6 @@
   
   <span class="md-ellipsis">
     Exercises
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../peer-teaching_A1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Peer Teaching A1
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../peer-teaching_A2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Peer Teaching A2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../peer-teaching_B1/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Peer Teaching B1
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../peer-teaching_B2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Peer Teaching B2
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-    
-  
-  
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Peer Teaching C1
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
-  
-  
-  <span class="md-ellipsis">
-    Peer Teaching C1
-    
-  </span>
-  
-
-      </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#1-introduction-and-learning-objectives" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. Introduction and Learning Objectives
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-geometry-of-the-four-sided-clamped-accelerometer" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Geometry of the Four-Sided Clamped Accelerometer
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-types-of-acceleration-sensors" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. Types of Acceleration Sensors
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-silicon-as-the-preferred-material-for-mems-accelerometers" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. Silicon as the Preferred Material for MEMS Accelerometers
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-mechanics-of-acceleration-sensors-bending-beam-theory" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. Mechanics of Acceleration Sensors – Bending Beam Theory
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6-four-sided-clamped-configuration-mechanical-implications" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. Four-Sided Clamped Configuration – Mechanical Implications
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7-fem-implementation-of-four-sided-clamped-beams" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. FEM Implementation of Four-Sided Clamped Beams
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-discussion-limitations-and-convergence" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Discussion, Limitations, and Convergence
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9-conclusion" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. Conclusion
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    <span class="md-ellipsis">
-      References
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../peer-teaching_C2/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Peer Teaching C2
     
   </span>
   
