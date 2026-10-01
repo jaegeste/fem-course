@@ -23,7 +23,6 @@
 - Lecture with exercises  
 - Computer-based exercises using **ANSYS**[^1]  
 - Additional homework assignments
-- Peer-teaching Sessions  
 - FELIX for communication only
 
 [^1]: We use the latest available versions of the software. See [Installing ANSYS](02_installation_erste_schritte.en.md)

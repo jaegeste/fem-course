@@ -13,7 +13,7 @@
 
 Diese Anleitung gilt für folgende Voraussetzungen:
 
-* ANSYS 2024R1  
+* ANSYS 2026R1  
 * Windows 11 (andere Systeme nicht getestet)  
 * Aktive HFU-VPN-Verbindung (nur außerhalb des Campus erforderlich)
 
@@ -36,15 +36,18 @@ Die Installationsdaten finden sich unter:
 
 Folgende Dateien müssen heruntergeladen werden (VPN nicht erforderlich):
 
-* `STRUCTURES_2024R1_WINX64.zip` (Hauptprogramm)
-* `ANSYS_2024R1.04_WINX64.zip` (aktuelles Service-Update)
+* `STRUCTURES_2026R1_WINX64.zip` (Hauptprogramm)
+* `ANSYS_2026R1.03_WINX64.zip` (aktuelles Service-Update)
 
 ---
+
+!!! danger "Hinweis"
+    Die Screenshots stammen aus einer älteren Version und können daher leicht von der aktuellen Darstellung abweichen. Der prinzipielle Ablauf ist jedoch identisch.
 
 ### Schritt 2: Entpacken und Installation von ANSYS
 
 _1._ **VPN-Verbindung aktivieren.**  
-_2._ `STRUCTURES_2024R1_WINX64.zip` entpacken. `setup.exe` **als Administrator** ausführen (Rechtsklick → Als Administrator ausführen).  
+_2._ `STRUCTURES_2026R1_WINX64.zip` entpacken. `setup.exe` **als Administrator** ausführen (Rechtsklick → Als Administrator ausführen).  
 _3._ Folgen Sie dem Installationsprozess wie in den folgenden Abbildungen angegeben. Die Einstellungen müssen z.T. angepasst werden, ändern Sie bitte keine Dateipfade  
 _4._ „Installation ANSYS Produkte“ auswählen:  
 
@@ -93,7 +96,7 @@ _15._ Weiter mit dem Service-Update.
 
 ### Schritt 3: Installation des Service-Updates
 
-_1._ `ANSYS_2024R1.04_WINX64.zip` entpacken.  
+_1._ `ANSYS_2026R1.03_WINX64.zip` entpacken.  
 _2._ `setup.exe` **als Administrator** starten.  
 _3._ „Installation ANSYS Produkte“ wählen:  
 
