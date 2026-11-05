@@ -891,16 +891,16 @@ The FEM results show the same trend as the theoretical values. With increasing n
 <?quiz?>
 question: What does the notch shape factor &alpha;<sub>k</sub> describe in the elastic range?
 answer: The product of maximum and nominal stress.
-answer-correct: The ratio of the maximum stress in the notch root to the nominal stress &sigma;<sub>n</sub>.
 answer: The difference between local and nominal stress.
+answer-correct: The ratio of the maximum stress in the notch root to the nominal stress &sigma;<sub>n</sub>.
 content:
 <em>Note:</em> Definition: \(\alpha_k = \sigma_\text{max} / \sigma_\text{n}\).
 <?/quiz?>
 
 <?quiz?>
 question: What is the nominal stress &sigma;<sub>n</sub> in a rectangular cross-section under tension with width b and thickness t?
-answer: \(\sigma_n = b \cdot t \cdot F\)
 answer-correct: \(\sigma_n = \dfrac{F}{b \cdot t}\)
+answer: \(\sigma_n = b \cdot t \cdot F\)
 answer: \(\sigma_n = \dfrac{b + t}{F}\)
 content:
 <em>Tip:</em> Force divided by the loaded cross-sectional area.
@@ -918,16 +918,16 @@ content:
 <?quiz?>
 question: What does the stiffness c of a rod element depend on?
 answer: Only on the length l.
-answer-correct: On Young’s modulus E, the cross-sectional area A, and the length l according to \(c=\dfrac{E \cdot A}{l}\).
 answer: Only on Poisson’s ratio &nu;.
+answer-correct: On Young’s modulus E, the cross-sectional area A, and the length l according to \(c=\dfrac{E \cdot A}{l}\).
 content:
 <strong>Remember:</strong> Larger area or higher <em>E</em> increase <em>c</em>, greater length decreases <em>c</em>.
 <?/quiz?>
 
 <?quiz?>
 question: Is the magnitude of the applied force F relevant for determining &alpha;<sub>k</sub>?
-answer: Yes, &alpha;<sub>k</sub> is proportional to <em>F</em>.
 answer-correct: No, <em>F</em> cancels out in \(\alpha_k = \sigma_\text{max}/\sigma_n\).
+answer: Yes, &alpha;<sub>k</sub> is proportional to <em>F</em>.
 answer: Only if <em>F</em> is smaller than 1,000 N.
 content:
 <em>Consequence:</em> Any load results in the same &alpha;<sub>k</sub>.
@@ -936,8 +936,8 @@ content:
 <?quiz?>
 question: How does &alpha;<sub>k</sub> change when the ratio r/b decreases (sharper notch)?
 answer: &alpha;<sub>k</sub> remains constant.
-answer-correct: &alpha;<sub>k</sub> increases.
 answer: &alpha;<sub>k</sub> approaches zero.
+answer-correct: &alpha;<sub>k</sub> increases.
 content:
 <em>Physics:</em> Sharper notches lead to stronger stress concentration.
 <?/quiz?>
@@ -953,8 +953,8 @@ content:
 
 <?quiz?>
 question: What characterizes divergence in this context?
-answer: The target quantity remains constant during refinement.
 answer-correct: The target quantity increases without a limit, e.g., in the case of a sharp-edged notch.
+answer: The target quantity remains constant during refinement.
 answer: The target quantity stabilizes immediately.
 content:
 <em>Example:</em> Theoretical notch radius zero without plasticity.
@@ -963,8 +963,8 @@ content:
 <?quiz?>
 question: Why is a mesh influence study performed?
 answer: To make the model visually more appealing.
-answer-correct: To ensure that the simulation result is independent of the element size.
 answer: To reduce computation time.
+answer-correct: To ensure that the simulation result is independent of the element size.
 content:
 <em>Reason:</em> Only a mesh-independent result is considered numerically stable and physically meaningful.
 <?/quiz?>
@@ -980,8 +980,8 @@ content:
 
 <?quiz?>
 question: Which visual indicator suggests that the mesh in the notch root is too coarse?
-answer: Homogeneous color fields without transition.
 answer-correct: Distinct color gradients within individual elements in regions with high gradients.
+answer: Homogeneous color fields without transition.
 answer: Identical element size everywhere.
 content:
 <em>Tip:</em> Use unaveraged stresses for assessment.
@@ -990,8 +990,8 @@ content:
 <?quiz?>
 question: Why is global refinement often inefficient for notch stresses?
 answer: Because ANSYS does not support global refinement.
-answer-correct: It increases mesh density in uncritical regions and extends computation time without proportional information gain.
 answer: It worsens stress resolution in the notch root.
+answer-correct: It increases mesh density in uncritical regions and extends computation time without proportional information gain.
 content:
 <em>Alternative:</em> Local sizing control or adaptive meshing.
 <?/quiz?>
@@ -1007,8 +1007,8 @@ content:
 
 <?quiz?>
 question: What is a focused result in the context of adaptive meshing?
-answer: A global maximum of total deformation.
 answer-correct: A specifically selected partial result on a surface, line, or volume that controls local mesh adaptation.
+answer: A global maximum of total deformation.
 answer: A pure material constant.
 content:
 <em>Purpose:</em> Achieving local convergence even when divergent zones exist elsewhere.

@@ -799,7 +799,7 @@ content:
 <?quiz?>
 question: What can be set instead if Poisson’s effect should be allowed?
 answer: Nothing, it always remains fixed.
-answer-correct: The lateral displacement degree of freedom can be released (external displacement).
+answer-correct: The lateral displacement degree of freedom can be released (remote displacement).
 answer: The material can be changed to viscous.
 content:
 <em>Tip:</em> If Poisson’s effect is desired, the lateral displacement at the constraint must not be fixed.

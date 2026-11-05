@@ -8,7 +8,6 @@
 - Technisches Zeichnen  
 - Technische Mechanik  
 - Werkstoff- und Fertigungstechnik  
-- CAD in Creo  
 - Maschinenelemente 1  
 
 ### Inhalte
