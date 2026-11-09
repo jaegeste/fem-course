@@ -3,10 +3,11 @@
   "configurations": [
     {
       "name": "MkDocs: Serve",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
-      "program": "mkdocs",
+      "module": "mkdocs",
       "args": ["serve"],
+      "cwd": "${workspaceFolder}",
       "console": "integratedTerminal"
     }
   ]
