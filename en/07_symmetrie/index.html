@@ -830,12 +830,7 @@ u \cdot n = 0
 <li><span class="arithmatex">\(n\)</span>: unit normal vector  </li>
 <li><span class="arithmatex">\(u \cdot n\)</span>: displacement component normal to the surface</li>
 </ul>
-<p>Tangential displacements remain permitted:</p>
-<div class="arithmatex">\[
-u_t \ne 0
-\]</div>
-<p>where <span class="arithmatex">\(u_t\)</span> denotes the tangential displacement component.</p>
-<p>A frictionless support generates no shear forces and prevents constraint effects due to friction. Typical applications include:</p>
+<p>The tangential displacement components remain free. Depending on the load case, they may also be zero. The support transmits reaction forces only in the normal direction. Typical applications include:</p>
 <ul>
 <li>radial supports  </li>
 <li>component guidance  </li>
@@ -1093,11 +1088,44 @@ u_t \ne 0
 <li>Mesh independence is essential for a valid comparison of reduced models  </li>
 </ul>
 <h2 id="further-aspects">Further Aspects<a class="headerlink" href="#further-aspects" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">FIXME: Extension of further aspects section</p>
-<p>Presentation of results for cyclic symmetry<br />
-Use of the features <strong>Symmetry Region</strong> and <strong>Linear Periodic</strong><br />
-Exercise to implement 2D, CAD data available and see peer teaching, exercises/Symmetry_2D</p>
+<h3 id="2d-axisymmetry">2D Axisymmetry<a class="headerlink" href="#2d-axisymmetry" title="Permanent link">&para;</a></h3>
+<p>A stepped cylindrical body is subjected to an axial compressive force on its upper end face. The lower end face is fixed. Since the geometry, material, load, and support are rotationally symmetric, a <strong>2D meridional section</strong> suffices to analyze the full 360° body.</p>
+<p><strong>Geometry:</strong> <a href="../../media/07_symmetrie/rundkoerper_2d.stp">rundkoerper_2d.stp</a></p>
+<h4 id="1-project-management-and-geometry-import_1">1. Project Management and Geometry Import<a class="headerlink" href="#1-project-management-and-geometry-import_1" title="Permanent link">&para;</a></h4>
+<p>Add a <em>Static Structural</em> analysis in Workbench and import the supplied section. In the properties of the Geometry cell, set <em>Analysis Type</em> to <strong>2D</strong>. The section lies in the XY plane at <span class="arithmatex">\(x \ge 0\)</span>. The global Y-axis is the axis of rotation.</p>
+<p>In Mechanical, set <em>2D Behavior</em> to <strong>Axisymmetric</strong> before meshing. The 2D mesh then represents the entire body of revolution. Assign a linear elastic material and mesh the surface.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/06_2d_axialsymmetrie.jpeg" title="Axisymmetric 2D behavior of the meridional section"><img alt="Axisymmetric 2D behavior of the meridional section" src="../media/07_symmetrie/06_2d_axialsymmetrie.jpeg" width="900px" /></a></p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Replace image</p>
+</div>
+<h4 id="2-boundary-conditions">2. Boundary Conditions<a class="headerlink" href="#2-boundary-conditions" title="Permanent link">&para;</a></h4>
+<p>Apply an example <em>Force</em> to the upper edge. Define it by components in the global coordinate system and apply it in the negative Y direction. This edge represents the upper end face of the body of revolution. Enter the <strong>total force for the full 360°</strong>.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/07_2d_axialkraft.jpeg" title="Axial compressive force on the upper edge"><img alt="Axial compressive force on the upper edge" src="../media/07_symmetrie/07_2d_axialkraft.jpeg" width="900px" /></a></p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Replace image</p>
+</div>
+<p>Apply a <em>Fixed Support</em> to the lower edge.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/08_2d_fixierte_lagerung.jpeg" title="Fixed support on the lower edge"><img alt="Fixed support on the lower edge" src="../media/07_symmetrie/08_2d_fixierte_lagerung.jpeg" width="900px" /></a></p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Replace image</p>
+</div>
+<h4 id="3-postprocessing">3. Postprocessing<a class="headerlink" href="#3-postprocessing" title="Permanent link">&para;</a></h4>
+<p>Plot the <strong>von Mises stress</strong> in the meridional section.</p>
+<h4 id="4-display-on-the-body-of-revolution">4. Display on the Body of Revolution<a class="headerlink" href="#4-display-on-the-body-of-revolution" title="Permanent link">&para;</a></h4>
+<p>On the Workbench project page, open <em>Tools</em> → <em>Options</em> → <em>Appearance</em>. Scroll down, enable <em>Beta Options</em> and confirm with <em>OK</em>. Then open the model in Mechanical.</p>
+<p>Insert the <em>Symmetry</em> object under <em>Model</em> and select the object itself. In its details, set the <em>Graphical Expansion</em> type to <em>2D Axisymmetric</em> and use the global coordinate system. The number of repeats and the angle determine the portion shown. This setting affects the display only.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/09_2d_symmetrieobjekt.jpeg" title="Graphical Expansion settings in the Symmetry object"><img alt="Graphical Expansion settings in the Symmetry object" src="../media/07_symmetrie/09_2d_symmetrieobjekt.jpeg" width="900px" /></a></p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Replace image</p>
+</div>
+<p><a class="glightbox" href="../media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg" title="View of the von Mises stress on the body of revolution"><img alt="View of the von Mises stress on the body of revolution" src="../media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg" width="900px" /></a></p>
+<div class="admonition danger">
+<p class="admonition-title">FIXME</p>
+<p>Replace image</p>
 </div>
 <h2 id="self-check-quiz">Self Check Quiz<a class="headerlink" href="#self-check-quiz" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
