@@ -170,15 +170,7 @@ with
 * \(n\): unit normal vector  
 * \(u \cdot n\): displacement component normal to the surface
 
-Tangential displacements remain permitted:
-
-\[
-u_t \ne 0
-\]
-
-where \(u_t\) denotes the tangential displacement component.
-
-A frictionless support generates no shear forces and prevents constraint effects due to friction. Typical applications include:
+The tangential displacement components remain free. Depending on the load case, they may also be zero. The support transmits reaction forces only in the normal direction. Typical applications include:
 
 * radial supports  
 * component guidance  
@@ -419,10 +411,58 @@ The size of the considered cut shows only a very small influence on **deformatio
 
 ## Further Aspects
 
-!!! warning "FIXME: Extension of further aspects section"
-    Presentation of results for cyclic symmetry  
-    Use of the features **Symmetry Region** and **Linear Periodic**  
-    Exercise to implement 2D, CAD data available and see peer teaching, exercises/Symmetry_2D
+### 2D Axisymmetry
+
+A stepped cylindrical body is subjected to an axial compressive force on its upper end face. The lower end face is fixed. Since the geometry, material, load, and support are rotationally symmetric, a **2D meridional section** suffices to analyze the full 360° body.
+
+**Geometry:** [rundkoerper\_2d.stp](media/07_symmetrie/rundkoerper_2d.stp)
+
+#### 1. Project Management and Geometry Import
+
+Add a *Static Structural* analysis in Workbench and import the supplied section. In the properties of the Geometry cell, set *Analysis Type* to **2D**. The section lies in the XY plane at \(x \ge 0\). The global Y-axis is the axis of rotation.
+
+In Mechanical, set *2D Behavior* to **Axisymmetric** before meshing. The 2D mesh then represents the entire body of revolution. Assign a linear elastic material and mesh the surface.
+
+[![Axisymmetric 2D behavior of the meridional section](media/07_symmetrie/06_2d_axialsymmetrie.en.jpeg){width=900px}](media/07_symmetrie/06_2d_axialsymmetrie.en.jpeg "Axisymmetric 2D behavior of the meridional section"){.glightbox}
+
+!!! danger "FIXME"
+    Replace image
+
+#### 2. Boundary Conditions
+
+Apply an example *Force* to the upper edge. Define it by components in the global coordinate system and apply it in the negative Y direction. This edge represents the upper end face of the body of revolution. Enter the **total force for the full 360°**.
+
+[![Axial compressive force on the upper edge](media/07_symmetrie/07_2d_axialkraft.en.jpeg){width=900px}](media/07_symmetrie/07_2d_axialkraft.en.jpeg "Axial compressive force on the upper edge"){.glightbox}
+
+!!! danger "FIXME"
+    Replace image
+
+Apply a *Fixed Support* to the lower edge.
+
+[![Fixed support on the lower edge](media/07_symmetrie/08_2d_fixierte_lagerung.en.jpeg){width=900px}](media/07_symmetrie/08_2d_fixierte_lagerung.en.jpeg "Fixed support on the lower edge"){.glightbox}
+
+!!! danger "FIXME"
+    Replace image
+
+#### 3. Postprocessing
+
+Plot the **von Mises stress** in the meridional section.
+
+#### 4. Display on the Body of Revolution
+
+On the Workbench project page, open *Tools* → *Options* → *Appearance*. Scroll down, enable *Beta Options* and confirm with *OK*. Then open the model in Mechanical.
+
+Insert the *Symmetry* object under *Model* and select the object itself. In its details, set the *Graphical Expansion* type to *2D Axisymmetric* and use the global coordinate system. The number of repeats and the angle determine the portion shown. This setting affects the display only.
+
+[![Graphical Expansion settings in the Symmetry object](media/07_symmetrie/09_2d_symmetrieobjekt.en.jpeg){width=900px}](media/07_symmetrie/09_2d_symmetrieobjekt.en.jpeg "Graphical Expansion settings in the Symmetry object"){.glightbox}
+
+!!! danger "FIXME"
+    Replace image
+
+[![View of the von Mises stress on the body of revolution](media/07_symmetrie/10_2d_ergebnisdarstellung.en.jpeg){width=900px}](media/07_symmetrie/10_2d_ergebnisdarstellung.en.jpeg "View of the von Mises stress on the body of revolution"){.glightbox}
+
+!!! danger "FIXME"
+    Replace image
 
 ## Self Check Quiz
 

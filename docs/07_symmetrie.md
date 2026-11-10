@@ -170,15 +170,7 @@ mit
 * \(n\): Einheitsnormalvektor  
 * \(u \cdot n\): Komponente der Verschiebung senkrecht zur Fläche
 
-Tangentiale Verschiebungen bleiben zulässig:
-
-\[
-u_t \ne 0
-\]
-
-wobei \(u_t\) die tangentiale Verschiebungskomponente bezeichnet.
-
-Ein reibungsfreies Lager erzeugt keine Querkräfte und verhindert Zwängungen durch Reibung. Typische Anwendungen:
+Die tangentialen Verschiebungskomponenten bleiben frei. Je nach Lastfall können sie auch null sein. Das Lager überträgt Reaktionskräfte nur in Normalrichtung. Typische Anwendungen:
 
 * radiale Abstützungen  
 * Bauteilführung  
@@ -419,10 +411,58 @@ Die **Rechenzeit** und die **Modellgröße** gemessen über die Anzahl der Knote
 
 ## Weiterführende Aspekte
 
-!!! warning "FIXME: Erweiterung Abschnitt Weiterführende Aspekte"
-    Darstellung von Ergebnissen bei zyklischer Symmetrie  
-    Nutzen der Features **Symmetrie-Bereich** und **Linear Periodisch**
-    Übung zu 2D implementieren, CAD Daten liegen vor und siehe peer-teaching, Übungen/Symmetrie_2D
+### 2D-Axialsymmetrie
+
+Ein gestufter Rundkörper wird an seiner oberen Stirnfläche mit einer axialen Druckkraft belastet. Die untere Stirnfläche ist fest eingespannt. Da Geometrie, Material, Last und Lagerung rotationssymmetrisch sind, genügt ein **2D-Meridianschnitt** zur Berechnung des Körpers über volle 360°.
+
+**Geometrie:** [rundkoerper\_2d.stp](media/07_symmetrie/rundkoerper_2d.stp)
+
+#### 1. Projektverwaltung und Geometrieimport
+
+In Workbench wird ein Analysesystem *Statisch strukturell* angelegt und der bereitgestellte Schnitt importiert. In den Eigenschaften der Geometriezelle wird der *Analysetyp* auf **2D** gesetzt. Der Schnitt liegt in der XY-Ebene bei \(x \ge 0\). Die globale Y-Achse ist die Rotationsachse.
+
+In Mechanical wird für den Schnitt vor der Vernetzung das *2D-Verhalten* **Axialsymmetrisch** gewählt. Damit repräsentiert das 2D-Netz den gesamten Rotationskörper. Der Fläche wird ein linear-elastisches Material zugewiesen. Anschließend wird die Fläche vernetzt.
+
+[![Axialsymmetrisches 2D-Verhalten des Meridianschnitts](media/07_symmetrie/06_2d_axialsymmetrie.jpeg){width=900px}](media/07_symmetrie/06_2d_axialsymmetrie.jpeg "Axialsymmetrisches 2D-Verhalten des Meridianschnitts"){.glightbox}
+
+!!! danger "FIXME"
+    Bild ersetzen
+
+#### 2. Randbedingungen
+
+Auf der oberen Kante wird eine exemplarische *Kraft* aufgebracht. Im globalen Koordinatensystem wird sie über die Komponenten definiert und in negativer Y-Richtung angesetzt. Die Kante entspricht der oberen Stirnfläche des Rotationskörpers. Einzugeben ist die **Gesamtkraft für volle 360°**.
+
+[![Axiale Druckkraft auf der oberen Kante](media/07_symmetrie/07_2d_axialkraft.jpeg){width=900px}](media/07_symmetrie/07_2d_axialkraft.jpeg "Axiale Druckkraft auf der oberen Kante"){.glightbox}
+
+!!! danger "FIXME"
+    Bild ersetzen
+
+An der unteren Kante wird eine *Fixierte Lagerung* angesetzt.
+
+[![Fixierte Lagerung an der unteren Kante](media/07_symmetrie/08_2d_fixierte_lagerung.jpeg){width=900px}](media/07_symmetrie/08_2d_fixierte_lagerung.jpeg "Fixierte Lagerung an der unteren Kante"){.glightbox}
+
+!!! danger "FIXME"
+    Bild ersetzen
+
+#### 3. Auswertung
+
+Die Auswertung erfolgt über die **von Mises Spannung** im Meridianschnitt.
+
+#### 4. Darstellung am Rotationskörper
+
+Auf der Projektseite von Workbench die Optionen öffnen. In der Kategorie für das Erscheinungsbild nach unten scrollen, die *Beta-Optionen* aktivieren und mit *OK* bestätigen. Anschließend das Modell in Mechanical öffnen.
+
+Unter *Modell* das Objekt *Symmetrie* einfügen und direkt auswählen. In seinen Details wird der Typ für die grafische Erweiterung auf *2D-Axialsymmetrie* gestellt und das globale Koordinatensystem verwendet. Wiederholungszahl und Winkel bestimmen den dargestellten Ausschnitt. Die Einstellung betrifft nur die Darstellung.
+
+[![Einstellungen für die grafische Erweiterung im Symmetrieobjekt](media/07_symmetrie/09_2d_symmetrieobjekt.jpeg){width=900px}](media/07_symmetrie/09_2d_symmetrieobjekt.jpeg "Einstellungen für die grafische Erweiterung im Symmetrieobjekt"){.glightbox}
+
+!!! danger "FIXME"
+    Bild ersetzen
+
+[![Darstellung der von Mises Spannung am Rotationskörper](media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg){width=900px}](media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg "Darstellung der von Mises Spannung am Rotationskörper"){.glightbox}
+
+!!! danger "FIXME"
+    Bild ersetzen
 
 ## Quiz zur Selbstkontrolle
 
