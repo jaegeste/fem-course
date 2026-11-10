@@ -99,13 +99,6 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/13_ausblick/"/>
     </url>
     <url>
-        <loc>https://jaegeste.github.io/fem-course/peer-teaching_A1/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/peer-teaching_A1/"/>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/peer-teaching_A1/"/>
-    </url>
-    <url>
         <loc>https://jaegeste.github.io/fem-course/peer-teaching_A2/</loc>
         <lastmod>2026-10-01</lastmod>
         <changefreq>daily</changefreq>
@@ -244,13 +237,6 @@
         <changefreq>daily</changefreq>
         <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/13_ausblick/"/>
         <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/13_ausblick/"/>
-    </url>
-    <url>
-        <loc>https://jaegeste.github.io/fem-course/en/peer-teaching_A1/</loc>
-        <lastmod>2026-10-01</lastmod>
-        <changefreq>daily</changefreq>
-        <xhtml:link rel="alternate" hreflang="en" href="https://jaegeste.github.io/fem-course/en/peer-teaching_A1/"/>
-        <xhtml:link rel="alternate" hreflang="de" href="https://jaegeste.github.io/fem-course/peer-teaching_A1/"/>
     </url>
     <url>
         <loc>https://jaegeste.github.io/fem-course/en/peer-teaching_A2/</loc>
