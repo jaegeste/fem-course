@@ -521,7 +521,7 @@ Aufgrund der Erfahrungen von oben sind hier Randbedingungen naheliegend:
 
 Richtung der Kraft senkrecht zur Balkenachse, Betrag \(F_B\) gemäß Aufgabenstellung. Die Richtung kann entweder über **Definieren durch Vektor** eingestellt werden, indem eine geeignete Kante zur Richtungsangabe ausgewählt wird (Pfeile beachten), oder über **Definieren durch Komponenten**, wobei die Beträge direkt in den globalen Koordinaten eingetragen werden.  
 
-[![Kragbalken Biegung – Kraft](media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png){width=800px}](media/03_kragbalken/22_kragbalken_biegung_randbedingungen.png "Kragbalken Biegung – Kraft"){.glightbox}  
+[![Kragbalken Biegung – Kraft](media/03_kragbalken/22_Kragbalken_Biegung_Randbedingungen.png){width=800px}](media/03_kragbalken/22_Kragbalken_Biegung_Randbedingungen.png "Kragbalken Biegung – Kraft"){.glightbox}
 
 Die Randbedingungen sind somit wie folgt:  
 
