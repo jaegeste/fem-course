@@ -1094,39 +1094,17 @@ u \cdot n = 0
 <h4 id="1-projektverwaltung-und-geometrieimport_1">1. Projektverwaltung und Geometrieimport<a class="headerlink" href="#1-projektverwaltung-und-geometrieimport_1" title="Permanent link">&para;</a></h4>
 <p>In Workbench wird ein Analysesystem <em>Statisch strukturell</em> angelegt und der bereitgestellte Schnitt importiert. In den Eigenschaften der Geometriezelle wird der <em>Analysetyp</em> auf <strong>2D</strong> gesetzt. Der Schnitt liegt in der XY-Ebene bei <span class="arithmatex">\(x \ge 0\)</span>. Die globale Y-Achse ist die Rotationsachse.</p>
 <p>In Mechanical wird für den Schnitt vor der Vernetzung das <em>2D-Verhalten</em> <strong>Axialsymmetrisch</strong> gewählt. Damit repräsentiert das 2D-Netz den gesamten Rotationskörper. Der Fläche wird ein linear-elastisches Material zugewiesen. Anschließend wird die Fläche vernetzt.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/06_2d_axialsymmetrie.jpeg" title="Axialsymmetrisches 2D-Verhalten des Meridianschnitts"><img alt="Axialsymmetrisches 2D-Verhalten des Meridianschnitts" src="../media/07_symmetrie/06_2d_axialsymmetrie.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Bild ersetzen</p>
-</div>
+<p><a class="glightbox" href="../media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.png" title="Axialsymmetrisches 2D-Verhalten des Meridianschnitts"><img alt="Axialsymmetrisches 2D-Verhalten des Meridianschnitts" src="../media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.png" width="900px" /></a></p>
 <h4 id="2-randbedingungen">2. Randbedingungen<a class="headerlink" href="#2-randbedingungen" title="Permanent link">&para;</a></h4>
-<p>Auf der oberen Kante wird eine exemplarische <em>Kraft</em> aufgebracht. Im globalen Koordinatensystem wird sie über die Komponenten definiert und in negativer Y-Richtung angesetzt. Die Kante entspricht der oberen Stirnfläche des Rotationskörpers. Einzugeben ist die <strong>Gesamtkraft für volle 360°</strong>.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/07_2d_axialkraft.jpeg" title="Axiale Druckkraft auf der oberen Kante"><img alt="Axiale Druckkraft auf der oberen Kante" src="../media/07_symmetrie/07_2d_axialkraft.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Bild ersetzen</p>
-</div>
-<p>An der unteren Kante wird eine <em>Fixierte Lagerung</em> angesetzt.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/08_2d_fixierte_lagerung.jpeg" title="Fixierte Lagerung an der unteren Kante"><img alt="Fixierte Lagerung an der unteren Kante" src="../media/07_symmetrie/08_2d_fixierte_lagerung.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Bild ersetzen</p>
-</div>
+<p>An der oberen Kante wird eine axiale Kraft in negativer Y-Richtung angesetzt, an der unteren Kante eine fixierte Lagerung. Einzugeben ist die <strong>Gesamtkraft für volle 360°</strong>.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/07_2d_axialsymmetrie_kraft_und_fixierte_lagerung.png" title="Axialkraft und fixierte Lagerung"><img alt="Axialkraft und fixierte Lagerung" src="../media/07_symmetrie/07_2d_axialsymmetrie_kraft_und_fixierte_lagerung.png" width="900px" /></a></p>
 <h4 id="3-auswertung">3. Auswertung<a class="headerlink" href="#3-auswertung" title="Permanent link">&para;</a></h4>
 <p>Die Auswertung erfolgt über die <strong>von Mises Spannung</strong> im Meridianschnitt.</p>
 <h4 id="4-darstellung-am-rotationskorper">4. Darstellung am Rotationskörper<a class="headerlink" href="#4-darstellung-am-rotationskorper" title="Permanent link">&para;</a></h4>
 <p>Auf der Projektseite von Workbench die Optionen öffnen. In der Kategorie für das Erscheinungsbild nach unten scrollen, die <em>Beta-Optionen</em> aktivieren und mit <em>OK</em> bestätigen. Anschließend das Modell in Mechanical öffnen.</p>
-<p>Unter <em>Modell</em> das Objekt <em>Symmetrie</em> einfügen und direkt auswählen. In seinen Details wird der Typ für die grafische Erweiterung auf <em>2D-Axialsymmetrie</em> gestellt und das globale Koordinatensystem verwendet. Wiederholungszahl und Winkel bestimmen den dargestellten Ausschnitt. Die Einstellung betrifft nur die Darstellung.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/09_2d_symmetrieobjekt.jpeg" title="Einstellungen für die grafische Erweiterung im Symmetrieobjekt"><img alt="Einstellungen für die grafische Erweiterung im Symmetrieobjekt" src="../media/07_symmetrie/09_2d_symmetrieobjekt.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Bild ersetzen</p>
-</div>
-<p><a class="glightbox" href="../media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg" title="Darstellung der von Mises Spannung am Rotationskörper"><img alt="Darstellung der von Mises Spannung am Rotationskörper" src="../media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Bild ersetzen</p>
-</div>
+<p>Unter <em>Modell</em> das Objekt <em>Symmetrie</em> einfügen und direkt auswählen. In seinen Details unter <em>Grafische Erweiterung 1 (Beta)</em> den <em>Typ</em> auf <strong>2D axialsymmetrisch</strong> stellen und das globale Koordinatensystem verwenden. Wiederholungszahl und Winkel bestimmen den dargestellten Ausschnitt. Die Einstellung betrifft nur die Darstellung.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.png" title="Einstellungen für die grafische Erweiterung im Symmetrieobjekt"><img alt="Einstellungen für die grafische Erweiterung im Symmetrieobjekt" src="../media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.png" width="900px" /></a></p>
+<p><a class="glightbox" href="../media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.png" title="Darstellung der von Mises Spannung am Rotationskörper"><img alt="Darstellung der von Mises Spannung am Rotationskörper" src="../media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.png" width="900px" /></a></p>
 <h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
 

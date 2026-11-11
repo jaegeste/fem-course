@@ -1094,39 +1094,17 @@ u \cdot n = 0
 <h4 id="1-project-management-and-geometry-import_1">1. Project Management and Geometry Import<a class="headerlink" href="#1-project-management-and-geometry-import_1" title="Permanent link">&para;</a></h4>
 <p>Add a <em>Static Structural</em> analysis in Workbench and import the supplied section. In the properties of the Geometry cell, set <em>Analysis Type</em> to <strong>2D</strong>. The section lies in the XY plane at <span class="arithmatex">\(x \ge 0\)</span>. The global Y-axis is the axis of rotation.</p>
 <p>In Mechanical, set <em>2D Behavior</em> to <strong>Axisymmetric</strong> before meshing. The 2D mesh then represents the entire body of revolution. Assign a linear elastic material and mesh the surface.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/06_2d_axialsymmetrie.jpeg" title="Axisymmetric 2D behavior of the meridional section"><img alt="Axisymmetric 2D behavior of the meridional section" src="../media/07_symmetrie/06_2d_axialsymmetrie.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Replace image</p>
-</div>
+<p><a class="glightbox" href="../media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.png" title="Axisymmetric 2D behavior of the meridional section"><img alt="Axisymmetric 2D behavior of the meridional section" src="../media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.png" width="900px" /></a></p>
 <h4 id="2-boundary-conditions">2. Boundary Conditions<a class="headerlink" href="#2-boundary-conditions" title="Permanent link">&para;</a></h4>
-<p>Apply an example <em>Force</em> to the upper edge. Define it by components in the global coordinate system and apply it in the negative Y direction. This edge represents the upper end face of the body of revolution. Enter the <strong>total force for the full 360°</strong>.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/07_2d_axialkraft.jpeg" title="Axial compressive force on the upper edge"><img alt="Axial compressive force on the upper edge" src="../media/07_symmetrie/07_2d_axialkraft.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Replace image</p>
-</div>
-<p>Apply a <em>Fixed Support</em> to the lower edge.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/08_2d_fixierte_lagerung.jpeg" title="Fixed support on the lower edge"><img alt="Fixed support on the lower edge" src="../media/07_symmetrie/08_2d_fixierte_lagerung.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Replace image</p>
-</div>
+<p>Apply an axial force in the negative Y direction to the upper edge and a fixed support to the lower edge. Enter the <strong>total force for the full 360°</strong>.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/07_2d_axialsymmetrie_kraft_und_fixierte_lagerung.png" title="Axial force and fixed support"><img alt="Axial force and fixed support" src="../media/07_symmetrie/07_2d_axialsymmetrie_kraft_und_fixierte_lagerung.png" width="900px" /></a></p>
 <h4 id="3-postprocessing">3. Postprocessing<a class="headerlink" href="#3-postprocessing" title="Permanent link">&para;</a></h4>
 <p>Plot the <strong>von Mises stress</strong> in the meridional section.</p>
 <h4 id="4-display-on-the-body-of-revolution">4. Display on the Body of Revolution<a class="headerlink" href="#4-display-on-the-body-of-revolution" title="Permanent link">&para;</a></h4>
 <p>On the Workbench project page, open <em>Tools</em> → <em>Options</em> → <em>Appearance</em>. Scroll down, enable <em>Beta Options</em> and confirm with <em>OK</em>. Then open the model in Mechanical.</p>
-<p>Insert the <em>Symmetry</em> object under <em>Model</em> and select the object itself. In its details, set the <em>Graphical Expansion</em> type to <em>2D Axisymmetric</em> and use the global coordinate system. The number of repeats and the angle determine the portion shown. This setting affects the display only.</p>
-<p><a class="glightbox" href="../media/07_symmetrie/09_2d_symmetrieobjekt.jpeg" title="Graphical Expansion settings in the Symmetry object"><img alt="Graphical Expansion settings in the Symmetry object" src="../media/07_symmetrie/09_2d_symmetrieobjekt.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Replace image</p>
-</div>
-<p><a class="glightbox" href="../media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg" title="View of the von Mises stress on the body of revolution"><img alt="View of the von Mises stress on the body of revolution" src="../media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg" width="900px" /></a></p>
-<div class="admonition danger">
-<p class="admonition-title">FIXME</p>
-<p>Replace image</p>
-</div>
+<p>Insert the <em>Symmetry</em> object under <em>Model</em> and select the object itself. In its details, under <em>Graphical Expansion 1 (Beta)</em>, set <em>Type</em> to <strong>2D AxiSymmetric</strong> and use the global coordinate system. The number of repeats and the angle determine the portion shown. This setting affects the display only.</p>
+<p><a class="glightbox" href="../media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.png" title="Graphical Expansion settings in the Symmetry object"><img alt="Graphical Expansion settings in the Symmetry object" src="../media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.png" width="900px" /></a></p>
+<p><a class="glightbox" href="../media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.png" title="View of the von Mises stress on the body of revolution"><img alt="View of the von Mises stress on the body of revolution" src="../media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.png" width="900px" /></a></p>
 <h2 id="self-check-quiz">Self Check Quiz<a class="headerlink" href="#self-check-quiz" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
 
