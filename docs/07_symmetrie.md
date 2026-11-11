@@ -423,26 +423,13 @@ In Workbench wird ein Analysesystem *Statisch strukturell* angelegt und der bere
 
 In Mechanical wird für den Schnitt vor der Vernetzung das *2D-Verhalten* **Axialsymmetrisch** gewählt. Damit repräsentiert das 2D-Netz den gesamten Rotationskörper. Der Fläche wird ein linear-elastisches Material zugewiesen. Anschließend wird die Fläche vernetzt.
 
-[![Axialsymmetrisches 2D-Verhalten des Meridianschnitts](media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.jpeg){width=900px}](media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.jpeg "Axialsymmetrisches 2D-Verhalten des Meridianschnitts"){.glightbox}
-
-!!! danger "FIXME"
-    Bild ersetzen
+[![Axialsymmetrisches 2D-Verhalten des Meridianschnitts](media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.png){width=900px}](media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.png "Axialsymmetrisches 2D-Verhalten des Meridianschnitts"){.glightbox}
 
 #### 2. Randbedingungen
 
-Auf der oberen Kante wird eine exemplarische *Kraft* aufgebracht. Im globalen Koordinatensystem wird sie über die Komponenten definiert und in negativer Y-Richtung angesetzt. Die Kante entspricht der oberen Stirnfläche des Rotationskörpers. Einzugeben ist die **Gesamtkraft für volle 360°**.
+An der oberen Kante wird eine axiale Kraft in negativer Y-Richtung angesetzt, an der unteren Kante eine fixierte Lagerung. Einzugeben ist die **Gesamtkraft für volle 360°**.
 
-[![Axiale Druckkraft auf der oberen Kante](media/07_symmetrie/07_2d_axialsymmetrie_druckkraft_obere_kante.jpeg){width=900px}](media/07_symmetrie/07_2d_axialsymmetrie_druckkraft_obere_kante.jpeg "Axiale Druckkraft auf der oberen Kante"){.glightbox}
-
-!!! danger "FIXME"
-    Bild ersetzen
-
-An der unteren Kante wird eine *Fixierte Lagerung* angesetzt.
-
-[![Fixierte Lagerung an der unteren Kante](media/07_symmetrie/08_2d_axialsymmetrie_fixierte_lagerung_untere_kante.jpeg){width=900px}](media/07_symmetrie/08_2d_axialsymmetrie_fixierte_lagerung_untere_kante.jpeg "Fixierte Lagerung an der unteren Kante"){.glightbox}
-
-!!! danger "FIXME"
-    Bild ersetzen
+[![Axialkraft und fixierte Lagerung](media/07_symmetrie/07_2d_axialsymmetrie_kraft_und_fixierte_lagerung.png){width=900px}](media/07_symmetrie/07_2d_axialsymmetrie_kraft_und_fixierte_lagerung.png "Axialkraft und fixierte Lagerung"){.glightbox}
 
 #### 3. Auswertung
 
@@ -452,17 +439,11 @@ Die Auswertung erfolgt über die **von Mises Spannung** im Meridianschnitt.
 
 Auf der Projektseite von Workbench die Optionen öffnen. In der Kategorie für das Erscheinungsbild nach unten scrollen, die *Beta-Optionen* aktivieren und mit *OK* bestätigen. Anschließend das Modell in Mechanical öffnen.
 
-Unter *Modell* das Objekt *Symmetrie* einfügen und direkt auswählen. In seinen Details wird der Typ für die grafische Erweiterung auf *2D-Axialsymmetrie* gestellt und das globale Koordinatensystem verwendet. Wiederholungszahl und Winkel bestimmen den dargestellten Ausschnitt. Die Einstellung betrifft nur die Darstellung.
+Unter *Modell* das Objekt *Symmetrie* einfügen und direkt auswählen. In seinen Details unter *Grafische Erweiterung 1 (Beta)* den *Typ* auf **2D axialsymmetrisch** stellen und das globale Koordinatensystem verwenden. Wiederholungszahl und Winkel bestimmen den dargestellten Ausschnitt. Die Einstellung betrifft nur die Darstellung.
 
-[![Einstellungen für die grafische Erweiterung im Symmetrieobjekt](media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.jpeg){width=900px}](media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.jpeg "Einstellungen für die grafische Erweiterung im Symmetrieobjekt"){.glightbox}
+[![Einstellungen für die grafische Erweiterung im Symmetrieobjekt](media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.png){width=900px}](media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.png "Einstellungen für die grafische Erweiterung im Symmetrieobjekt"){.glightbox}
 
-!!! danger "FIXME"
-    Bild ersetzen
-
-[![Darstellung der von Mises Spannung am Rotationskörper](media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.jpeg){width=900px}](media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.jpeg "Darstellung der von Mises Spannung am Rotationskörper"){.glightbox}
-
-!!! danger "FIXME"
-    Bild ersetzen
+[![Darstellung der von Mises Spannung am Rotationskörper](media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.png){width=900px}](media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.png "Darstellung der von Mises Spannung am Rotationskörper"){.glightbox}
 
 ## Quiz zur Selbstkontrolle
 
