@@ -423,7 +423,7 @@ In Workbench wird ein Analysesystem *Statisch strukturell* angelegt und der bere
 
 In Mechanical wird für den Schnitt vor der Vernetzung das *2D-Verhalten* **Axialsymmetrisch** gewählt. Damit repräsentiert das 2D-Netz den gesamten Rotationskörper. Der Fläche wird ein linear-elastisches Material zugewiesen. Anschließend wird die Fläche vernetzt.
 
-[![Axialsymmetrisches 2D-Verhalten des Meridianschnitts](media/07_symmetrie/06_2d_axialsymmetrie.jpeg){width=900px}](media/07_symmetrie/06_2d_axialsymmetrie.jpeg "Axialsymmetrisches 2D-Verhalten des Meridianschnitts"){.glightbox}
+[![Axialsymmetrisches 2D-Verhalten des Meridianschnitts](media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.jpeg){width=900px}](media/07_symmetrie/06_2d_axialsymmetrie_geometrie_2d_verhalten.jpeg "Axialsymmetrisches 2D-Verhalten des Meridianschnitts"){.glightbox}
 
 !!! danger "FIXME"
     Bild ersetzen
@@ -432,14 +432,14 @@ In Mechanical wird für den Schnitt vor der Vernetzung das *2D-Verhalten* **Axia
 
 Auf der oberen Kante wird eine exemplarische *Kraft* aufgebracht. Im globalen Koordinatensystem wird sie über die Komponenten definiert und in negativer Y-Richtung angesetzt. Die Kante entspricht der oberen Stirnfläche des Rotationskörpers. Einzugeben ist die **Gesamtkraft für volle 360°**.
 
-[![Axiale Druckkraft auf der oberen Kante](media/07_symmetrie/07_2d_axialkraft.jpeg){width=900px}](media/07_symmetrie/07_2d_axialkraft.jpeg "Axiale Druckkraft auf der oberen Kante"){.glightbox}
+[![Axiale Druckkraft auf der oberen Kante](media/07_symmetrie/07_2d_axialsymmetrie_druckkraft_obere_kante.jpeg){width=900px}](media/07_symmetrie/07_2d_axialsymmetrie_druckkraft_obere_kante.jpeg "Axiale Druckkraft auf der oberen Kante"){.glightbox}
 
 !!! danger "FIXME"
     Bild ersetzen
 
 An der unteren Kante wird eine *Fixierte Lagerung* angesetzt.
 
-[![Fixierte Lagerung an der unteren Kante](media/07_symmetrie/08_2d_fixierte_lagerung.jpeg){width=900px}](media/07_symmetrie/08_2d_fixierte_lagerung.jpeg "Fixierte Lagerung an der unteren Kante"){.glightbox}
+[![Fixierte Lagerung an der unteren Kante](media/07_symmetrie/08_2d_axialsymmetrie_fixierte_lagerung_untere_kante.jpeg){width=900px}](media/07_symmetrie/08_2d_axialsymmetrie_fixierte_lagerung_untere_kante.jpeg "Fixierte Lagerung an der unteren Kante"){.glightbox}
 
 !!! danger "FIXME"
     Bild ersetzen
@@ -454,12 +454,12 @@ Auf der Projektseite von Workbench die Optionen öffnen. In der Kategorie für d
 
 Unter *Modell* das Objekt *Symmetrie* einfügen und direkt auswählen. In seinen Details wird der Typ für die grafische Erweiterung auf *2D-Axialsymmetrie* gestellt und das globale Koordinatensystem verwendet. Wiederholungszahl und Winkel bestimmen den dargestellten Ausschnitt. Die Einstellung betrifft nur die Darstellung.
 
-[![Einstellungen für die grafische Erweiterung im Symmetrieobjekt](media/07_symmetrie/09_2d_symmetrieobjekt.jpeg){width=900px}](media/07_symmetrie/09_2d_symmetrieobjekt.jpeg "Einstellungen für die grafische Erweiterung im Symmetrieobjekt"){.glightbox}
+[![Einstellungen für die grafische Erweiterung im Symmetrieobjekt](media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.jpeg){width=900px}](media/07_symmetrie/09_2d_axialsymmetrie_grafische_erweiterung_einstellungen.jpeg "Einstellungen für die grafische Erweiterung im Symmetrieobjekt"){.glightbox}
 
 !!! danger "FIXME"
     Bild ersetzen
 
-[![Darstellung der von Mises Spannung am Rotationskörper](media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg){width=900px}](media/07_symmetrie/10_2d_ergebnisdarstellung.jpeg "Darstellung der von Mises Spannung am Rotationskörper"){.glightbox}
+[![Darstellung der von Mises Spannung am Rotationskörper](media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.jpeg){width=900px}](media/07_symmetrie/10_2d_axialsymmetrie_von_mises_spannung_rotationskoerper.jpeg "Darstellung der von Mises Spannung am Rotationskörper"){.glightbox}
 
 !!! danger "FIXME"
     Bild ersetzen

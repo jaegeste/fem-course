@@ -28,4 +28,4 @@
 - Für Kursaufgaben im aktiven Checkout bleiben. Andere Checkouts oder Verzeichnisse nur bei ausdrücklichem Auftrag prüfen.
 - MkDocs mit der lokalen `.venv` prüfen. Bei einem Build einen separaten Ausgabeordner verwenden, da `site/` versionierte Dateien enthält.
 - Änderungen und Prüfergebnisse für den Review bereitstellen. Branchwechsel, Commits und Deployment führt der Nutzer derzeit in VS Code aus.
-- Bei einem Vorschlag für die Commit-Nachricht die gesamte vereinbarte Bearbeitungsrunde berücksichtigen.
+- Commit-Nachrichten auf Englisch formulieren und die gesamte vereinbarte Bearbeitungsrunde berücksichtigen.
