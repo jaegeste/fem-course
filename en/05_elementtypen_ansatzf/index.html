@@ -2332,18 +2332,22 @@ After generating the standard mesh, inspect the element distribution in the mode
 <h3 id="assessing-mesh-quality-on-the-tension-bar">Assessing mesh quality on the tension bar<a class="headerlink" href="#assessing-mesh-quality-on-the-tension-bar" title="Permanent link">&para;</a></h3>
 <p>In the mesh details under <em>Quality</em>, select a mesh metric. The summary statistics include its minimum and maximum values. The histogram shows how the elements are distributed across value ranges <sup id="fnref3:Ansys2025MeshMetric"><a class="footnote-ref" href="#fn:Ansys2025MeshMetric">5</a></sup>.</p>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png" title="Selecting mesh metrics in Ansys Mechanical"><img alt="Selecting mesh metrics in Ansys Mechanical" src="../media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png" width="650px" /></a></p>
-<div class="admonition warning">
-<p class="admonition-title">FIXME – replace the mesh details screenshot</p>
-<p>Open the quadratic solid mesh from the tension bar study in the English interface. In the mesh details under Quality, open the list of mesh metrics. Where possible, show Element Quality, Aspect Ratio, Skewness and both Jacobian Ratio variants together. Match the mesh variant and capture area in the German screenshot.</p>
-</div>
 <p>In the <strong>Mesh Quality Worksheet</strong>, select the <strong>Solid</strong> tab because the tension bar is meshed as a solid model. The worksheet shows the average and worst values together with the configured warning and error limits. The contour display locates elements classified as warnings or failures for the selected criterion. The limits apply to the settings of the particular mesh check <sup id="fnref:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
 <p><a class="glightbox" href="../media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png" title="Mesh Quality Worksheet in Ansys Mechanical"><img alt="Mesh Quality Worksheet in Ansys Mechanical" src="../media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png" width="900px" /></a></p>
 <div class="admonition warning">
 <p class="admonition-title">FIXME – replace the worksheet screenshot</p>
 <p>Use the same quadratic solid mesh. In the worksheet, select the <em>Solid</em> tab and enable <em>Advanced View</em>. Show the warning and error limits, average and worst values using the existing model settings. Match the view and capture area in the German screenshot.</p>
 </div>
+<p>The background colour in the <strong>Worst</strong> column compares the worst value of each metric with the configured limits:</p>
+<ul>
+<li><strong>Green:</strong> All elements satisfy the warning limit.</li>
+<li><strong>Yellow:</strong> At least one element violates the warning limit; the error limit is satisfied.</li>
+<li><strong>Red:</strong> At least one element violates the error limit.</li>
+</ul>
+<p>Depending on the metric, excessively high or low values are unfavourable. The colours refer to the warning and error limits displayed in the worksheet. This also allows screenshots with different settings to be interpreted. Green confirms compliance with the configured check limits. The h-study is used to assess the mesh independence of the evaluated stress and displacement <sup id="fnref2:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
+<p>The Ansys help provides an overview of warning and error limits for the different physics preferences and checks. The setting used for the model determines which limits apply <sup id="fnref:Ansys2025ErrorWarningLimits"><a class="footnote-ref" href="#fn:Ansys2025ErrorWarningLimits">11</a></sup>.</p>
 <h4 id="when-is-this-check-useful-on-the-tension-bar">When is this check useful on the tension bar?<a class="headerlink" href="#when-is-this-check-useful-on-the-tension-bar" title="Permanent link">&para;</a></h4>
-<p>Inspect the mesh after generation if you intend to evaluate local stresses at the cross-section transition. The statistics give an overview of element shapes. The location of flagged elements matters when deciding whether to change the mesh locally. If these elements lie in the cross-section transition, inspect the mesh there in more detail <sup id="fnref2:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
+<p>Inspect the mesh after generation if you intend to evaluate local stresses at the cross-section transition. The statistics give an overview of element shapes. The location of flagged elements matters when deciding whether to change the mesh locally. If these elements lie in the cross-section transition, inspect the mesh there in more detail <sup id="fnref3:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
 <p>To assess the effect of a mesh change, compare <strong>normal stress and axial displacement along the same path</strong>, using the same loads, supports and element order. The <a href="#mesh-refinement-h-study">h-study</a> shows this procedure for the tension bar. If the stress still changes appreciably with further refinement, it remains mesh-dependent in that region. Assess the change in stress and displacement separately.</p>
 <h2 id="quiz-for-self-assessment">Quiz for Self-Assessment<a class="headerlink" href="#quiz-for-self-assessment" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
@@ -2404,7 +2408,10 @@ After generating the standard mesh, inspect the element distribution in the mode
 <p>Ansys, Inc. Ansys Meshing User's Guide 2024 R2: skewness. 2024. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2024Skewness" title="Jump back to footnote 9 in the text">&#8617;</a></p>
 </li>
 <li id="fn:Ansys2025CheckMeshQuality">
-<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R2: check mesh quality. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R2: check mesh quality. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025ErrorWarningLimits">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R1: error and warning limits. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/ds_Shape_Checking.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/ds_Shape_Checking.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025ErrorWarningLimits" title="Jump back to footnote 11 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
