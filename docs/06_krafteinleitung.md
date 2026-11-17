@@ -475,13 +475,6 @@ Physikalisch korrekte Lastübertragung durch:
 
 ## Weiterführende Hinweise
 
-??? note "Verteilte Zuglast und externe Kraft"
-    Eine gleichmäßig verteilte Zuglast wirkt als vorgegebene Zugspannung auf der Stirnfläche. Bei einer normal zur Fläche definierten Drucklast muss der Druckwert für Zug negativ sein, damit die Last nach außen wirkt.
-
-    Eine externe Kraft (*Remote Force*) wird an einem Bezugspunkt definiert und über die Kopplung auf die Stirnfläche übertragen. Mit verformbarer Kopplung kann sich die Fläche verformen. Liegt der Bezugspunkt seitlich außerhalb der Wirkungslinie einer zentrischen Zuglast, entsteht zusätzlich ein Moment.
-
-    Bei gleicher resultierender Zugkraft und gleichem resultierendem Moment können sich die Spannungen in der Nähe der Krafteinleitung durch die unterschiedliche Lastverteilung unterscheiden.
-
 ??? question "Warum wurde das E-Modul angepasst?"
     Für die Analyse der Spannungen spielt das Elastizitätsmodul keine Rolle.  
     In linearen elastischen Modellen beeinflusst das E-Modul ausschließlich die Verformungen, nicht jedoch die entstehenden Vergleichsspannungen.  
