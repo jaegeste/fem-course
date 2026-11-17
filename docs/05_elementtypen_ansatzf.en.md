@@ -952,18 +952,48 @@ In ANSYS, **SOLID185** is used as a linear and **SOLID186** as a quadratic eleme
 
 ---
 
-## Mesh Quality
+## Mesh Quality and Mesh Metrics
 
-!!! warning "FIXME: extend section mesh quality"
-    Planned additions for future revision:
+Mesh metrics help identify poorly shaped elements as soon as the mesh has been generated. The mesh display shows **where** these elements are and whether they lie in a region where stresses or displacements will be evaluated. This helps identify where the mesh warrants closer inspection. Whether the chosen mesh resolution is sufficient for a particular result quantity is assessed by comparing several meshes in the h-study.[^mesh-metrics]
 
-    * Presentation of typical **mesh quality metrics** in ANSYS (*Element Quality*, *Aspect Ratio*, *Skewness*, *Jacobian Ratio*)  
-    * Example screenshots from *Details of “Mesh” → Quality*  
-    * Notes on interpretation of the colour scale and threshold values  
-    * Influence of poor quality on stress and displacement distributions  
-    * Short comparison of automatic versus manually optimised meshing  
-    * Optionally add a **Plotly representation** to visualise quality metrics along a path or component region  
-    * Demonstration of distorted elements and their impact on stress distribution.  
+### What the metrics measure
+
+The metrics describe different features of element shape. Element Quality combines geometric features in a single value. Aspect Ratio and Skewness describe particular departures from an ideal shape. Jacobian Ratio assesses the mapping from the reference element to the actual element.[^mesh-metrics], [^mesh-jacobian]
+
+| Metric | What does it assess? | How is the value interpreted? |
+|---|---|---|
+| **Element Quality** | Ratio of area or volume to a reference quantity derived from the edge lengths. | The scale runs from 0 to 1. Values close to 1 indicate a favourable element shape. |
+| **Aspect Ratio** | How elongated an element is. The calculation depends on the element shape and the selected variant of the metric. | Values close to 1 indicate compact shapes for the aspect ratios discussed here. |
+| **Skewness** | Departure from an ideal element shape. The calculation method depends on the element shape. | Values close to 0 indicate a favourable element shape. |
+| **Jacobian Ratio** | Ratio of Jacobian determinants evaluated at different locations. | For the Corner Nodes and Gauss Points variants, values close to 1 are preferable. |
+
+The two variants evaluate the Jacobian determinants at the **corner nodes** or the **Gauss points** (integration points), respectively. Ansys describes the corner-node check as more restrictive. An element can pass the Gauss-point check and be flagged by the corner-node check.[^mesh-jacobian]
+
+### Assessing mesh quality on the tension bar
+
+In the mesh details under *Quality*, select a mesh metric. The summary statistics include its minimum and maximum values. The histogram shows how the elements are distributed across value ranges.[^mesh-metrics]
+
+[![Selecting mesh metrics in Ansys Mechanical](media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.en.png){width=650px}](media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.en.png "Selecting mesh metrics in Ansys Mechanical"){.glightbox}
+
+!!! warning "FIXME – replace the mesh details screenshot"
+    Open the quadratic solid mesh from the tension bar study in the English interface. In the mesh details under Quality, open the list of mesh metrics. Where possible, show Element Quality, Aspect Ratio, Skewness and both Jacobian Ratio variants together. Match the mesh variant and capture area in the German screenshot.
+
+In the **Mesh Quality Worksheet**, select the **Solid** tab because the tension bar is meshed as a solid model. The worksheet shows the average and worst values together with the configured warning and error limits. The contour display locates elements classified as warnings or failures for the selected criterion. The limits apply to the settings of the particular mesh check.[^mesh-worksheet]
+
+[![Mesh Quality Worksheet in Ansys Mechanical](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.en.png){width=900px}](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.en.png "Mesh Quality Worksheet in Ansys Mechanical"){.glightbox}
+
+!!! warning "FIXME – replace the worksheet screenshot"
+    Use the same quadratic solid mesh. In the worksheet, select the *Solid* tab and enable *Advanced View*. Show the warning and error limits, average and worst values using the existing model settings. Match the view and capture area in the German screenshot.
+
+#### When is this check useful on the tension bar?
+
+Inspect the mesh after generation if you intend to evaluate local stresses at the cross-section transition. The statistics give an overview of element shapes. The location of flagged elements matters when deciding whether to change the mesh locally. If these elements lie in the cross-section transition, inspect the mesh there in more detail.[^mesh-worksheet]
+
+To assess the effect of a mesh change, compare **normal stress and axial displacement along the same path**, using the same loads, supports and element order. The [h-study](#mesh-refinement-h-study) shows this procedure for the tension bar. If the stress still changes appreciably with further refinement, it remains mesh-dependent in that region. Assess the change in stress and displacement separately.
+
+[^mesh-metrics]: Ansys Meshing User’s Guide, [Mesh Metric](https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_metrics.html), [Element Quality](https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/msh_Element_Quality_Metric.html), [Aspect Ratio Calculation for Triangles](https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/wb_msh/msh_aspect_triangle.html), [Skewness](https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html).
+[^mesh-jacobian]: Ansys Meshing User’s Guide, [Jacobian Ratio](https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_jacobian_ratio.html).
+[^mesh-worksheet]: Ansys Meshing User’s Guide, [Check Mesh Quality](https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html).
 
 ## Quiz for Self-Assessment  
 

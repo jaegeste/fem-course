@@ -476,6 +476,13 @@ Physically correct load transfer is achieved through:
 
 ## Further notes
 
+??? note "Distributed tensile load and remote force"
+    A uniformly distributed tensile load applies a prescribed tensile traction to the end face. When pressure is defined normal to the face, a negative value is needed for tension so that the load acts outwards.
+
+    A *Remote Force* is defined at a reference point and transferred to the end face through the coupling. With deformable coupling, the face can deform. If the reference point is offset from the line of action of a centred tensile load, an additional moment is introduced.
+
+    For the same resultant tensile force and moment, the stresses near the loaded face can differ because the load is distributed differently.
+
 ??? question "Why was the Young’s modulus adjusted?"
     For stress analysis, the Young’s modulus does not play a role.  
     In linear elastic models, the Young’s modulus only affects the deformations, not the resulting von Mises stresses.  

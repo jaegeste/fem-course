@@ -24,7 +24,7 @@
 
 ## Arbeitsablauf
 
-- Der aktive Checkout liegt unter `D:\ChatGPT-Workspace\fem-course`. Die lokale `.venv` und die VS-Code-Konfiguration verwenden projektbezogene Pfade. Der alte Checkout unter `D:\dev\fem-course` dient als Reserve.
+- Der aktive Checkout liegt unter `D:\Workspace\fem-course`. Die lokale `.venv` und die VS-Code-Konfiguration verwenden projektbezogene Pfade. Der alte Checkout unter `D:\dev\fem-course` dient als Reserve.
 - Für Kursaufgaben im aktiven Checkout bleiben. Andere Checkouts oder Verzeichnisse nur bei ausdrücklichem Auftrag prüfen.
 - MkDocs mit der lokalen `.venv` prüfen. Bei einem Build einen separaten Ausgabeordner verwenden, da `site/` versionierte Dateien enthält.
 - Änderungen und Prüfergebnisse für den Review bereitstellen. Branchwechsel, Commits und Deployment führt der Nutzer derzeit in VS Code aus.

@@ -947,19 +947,42 @@ In ANSYS werden hierfür **SOLID185** als lineare und **SOLID186** als quadratis
 
 ---
 
-## Netzqualität
+## Netzqualität und Netzkennwerte
 
-!!! warning "FIXME: Erweiterung Abschnitt Netzqualität"
-    Geplante Ergänzungen für künftige Überarbeitung:
+Netzkennwerte helfen, schon nach dem Vernetzen ungünstig geformte Elemente zu finden. Die Anzeige im Netz zeigt, **wo** sie liegen und ob sie einen Bereich betreffen, in dem Spannungen oder Verschiebungen ausgewertet werden sollen. So lässt sich gezielt entscheiden, wo das Netz genauer geprüft werden sollte. Ob die gewählte Netzauflösung für eine bestimmte Ergebnisgröße ausreicht, wird durch den Vergleich mehrerer Netze in der h-Studie beurteilt.[^mesh-metrics]
 
-    * Darstellung typischer **Netzqualitätskennwerte** in ANSYS (*Elementqualität*, *Aspektverhältnis*, *Skewness*, *Jacobian Ratio*)  
-    * Beispielhafte Screenshots aus *Details von „Netz“ → Qualität*  
-    * Hinweise zur Interpretation der Farbskala und Grenzwerte  
-    * Einfluss schlechter Qualität auf Spannungs- und Verschiebungsverlauf  
-    * Kurzer Vergleich zwischen automatischer und manuell optimierter Vernetzung  
-    * ggf. Ergänzung um **Plotly-Darstellung** zur Visualisierung von Qualitätsmetriken entlang eines Pfades oder Bauteilbereichs
-    * Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung. 
-    * ggf. nochmal gemittelt/ungemittelt aufgreifen.
+### Was die Kennwerte erfassen
+
+Die Kennwerte beschreiben verschiedene Merkmale der Elementform. Elementqualität fasst geometrische Merkmale in einem Wert zusammen. Aspektverhältnis und Schiefwinkligkeit beschreiben bestimmte Abweichungen von der idealen Form. Das Jacobi-Verhältnis beurteilt die Abbildung vom Referenzelement auf das reale Element.[^mesh-metrics], [^mesh-jacobian]
+
+| Kennwert | Was wird bewertet? | Wie ist der Wert zu lesen? |
+|---|---|---|
+| **Elementqualität** | Verhältnis von Fläche oder Volumen zu einer aus den Kantenlängen gebildeten Bezugsgröße. | Die Skala reicht von 0 bis 1. Werte nahe 1 stehen für eine günstige Elementform. |
+| **Aspektverhältnis** | Ausprägung einer gestreckten Elementform. Die Berechnung hängt von der Elementform und der gewählten Variante des Kennwerts ab. | Werte nahe 1 stehen bei den hier gemeinten Aspektverhältnissen für eine kompakte Form. |
+| **Schiefwinkligkeit** | Abweichung von einer idealen Elementform. Das jeweilige Berechnungsverfahren hängt von der Elementform ab. | Werte nahe 0 stehen für eine günstige Elementform. |
+| **Jacobi-Verhältnis** | Verhältnis von an verschiedenen Stellen ausgewerteten Jacobi-Determinanten. | Bei den Varianten für Eckknoten und Gauss-Punkte sind Werte nahe 1 günstig. |
+
+Bei den beiden Varianten werden die Jacobi-Determinanten an den **Eckknoten** beziehungsweise an den **Gauss-Punkten** (Integrationspunkten) ausgewertet. ANSYS beschreibt die Eckknotenprüfung als restriktiver. Ein Element kann die Prüfung an den Gauss-Punkten bestehen und an den Eckknoten auffällig sein.[^mesh-jacobian]
+
+### Netzqualität am Zugstab beurteilen
+
+In den Netzdetails lässt sich unter *Qualität* ein Kennwert auswählen. Die zugehörige Statistik zeigt unter anderem den kleinsten und größten Wert. Das Histogramm zeigt, wie sich die Elemente auf die Wertebereiche verteilen.[^mesh-metrics]
+
+[![Auswahl der Netzkennwerte in ANSYS Mechanical](media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png){width=650px}](media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png "Auswahl der Netzkennwerte in ANSYS Mechanical"){.glightbox}
+
+Wählen Sie im **Arbeitsblatt Netzqualität** den Reiter **Durchgehend**, da der Zugstab als Volumenmodell vernetzt ist. Das Arbeitsblatt zeigt den Mittelwert und den ungünstigsten Wert sowie die eingestellten Warn- und Fehlergrenzen. In der Konturanzeige lassen sich die Elemente lokalisieren, die nach dem gewählten Kriterium als Warn- oder Fehlerfälle eingestuft werden. Die Grenzen beziehen sich auf die Einstellungen der jeweiligen Netzprüfung.[^mesh-worksheet]
+
+[![Arbeitsblatt zur Netzqualität in ANSYS Mechanical](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png){width=900px}](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png "Arbeitsblatt zur Netzqualität in ANSYS Mechanical"){.glightbox}
+
+#### Wann hilft die Prüfung am Zugstab?
+
+Prüfen Sie das Netz nach der Erzeugung, wenn Sie lokale Spannungen am Querschnittsübergang auswerten wollen. Die Statistik gibt einen Überblick über die Elementformen. Die Lage auffälliger Elemente ist für die Entscheidung über eine lokale Netzänderung entscheidend. Liegen solche Elemente im Querschnittsübergang, lässt sich dort gezielt die Vernetzung überprüfen.[^mesh-worksheet]
+
+Um den Einfluss einer Netzänderung zu beurteilen, vergleichen Sie die **Normalspannung und die axiale Verschiebung am selben Pfad** bei unveränderten Lasten, Lagerungen und gleicher Elementordnung. Die [h-Studie](#netzverfeinerung-h-studie) zeigt dieses Vorgehen am Zugstab. Wenn sich die Spannung bei weiterer Verfeinerung noch merklich ändert, ist sie in diesem Bereich weiterhin netzabhängig. Bewerten Sie die Änderung für Spannung und Verschiebung jeweils getrennt.
+
+[^mesh-metrics]: Ansys Meshing User’s Guide, [Mesh Metric](https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_metrics.html), [Element Quality](https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/msh_Element_Quality_Metric.html), [Aspect Ratio Calculation for Triangles](https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/wb_msh/msh_aspect_triangle.html), [Skewness](https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html).
+[^mesh-jacobian]: Ansys Meshing User’s Guide, [Jacobian Ratio](https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_jacobian_ratio.html).
+[^mesh-worksheet]: Ansys Meshing User’s Guide, [Check Mesh Quality](https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html).
 
 ## Quiz zur Selbstkontrolle  
 
