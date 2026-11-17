@@ -985,6 +985,16 @@ In the **Mesh Quality Worksheet**, select the **Solid** tab because the tension 
 !!! warning "FIXME – replace the worksheet screenshot"
     Use the same quadratic solid mesh. In the worksheet, select the *Solid* tab and enable *Advanced View*. Show the warning and error limits, average and worst values using the existing model settings. Match the view and capture area in the German screenshot.
 
+The background colour in the **Worst** column compares the worst value of each metric with the configured limits:
+
+* **Green:** All elements satisfy the warning limit.
+* **Yellow:** At least one element violates the warning limit; the error limit is satisfied.
+* **Red:** At least one element violates the error limit.
+
+Depending on the metric, excessively high or low values are unfavourable. The colours refer to the warning and error limits displayed in the worksheet. This also allows screenshots with different settings to be interpreted. Green confirms compliance with the configured check limits. The h-study is used to assess the mesh independence of the evaluated stress and displacement [@Ansys2025CheckMeshQuality].
+
+The Ansys help provides an overview of warning and error limits for the different physics preferences and checks. The setting used for the model determines which limits apply [@Ansys2025ErrorWarningLimits].
+
 #### When is this check useful on the tension bar?
 
 Inspect the mesh after generation if you intend to evaluate local stresses at the cross-section transition. The statistics give an overview of element shapes. The location of flagged elements matters when deciding whether to change the mesh locally. If these elements lie in the cross-section transition, inspect the mesh there in more detail [@Ansys2025CheckMeshQuality].

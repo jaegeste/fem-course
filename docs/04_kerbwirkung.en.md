@@ -688,9 +688,17 @@ The **Sizing** tool is used for targeted control of the **local element size** i
 * _Type – Sphere of Influence:_ Specifies how far the local sizing extends into neighboring regions.  
 * _Affect Solid:_ Determines whether the sizing also affects the volume. If this option is enabled, adjacent volume elements in depth are adjusted according to the defined size.  
 
+#### Number of divisions on an edge
+
+For a selected edge, the Sizing control allows you to specify the **Number of Divisions**. This can be used, for example, to resolve a curved edge at the notch radius more finely. With uniform spacing, the sections along the edge have equal lengths. A biased distribution allows the sections to become smaller towards one end of the edge. This adapts the mesh density along the edge to the region of interest [@Ansys2025LocalSizingOptions].
+
+The **Behavior** setting controls how strictly the specification is enforced. With *Hard* behavior, the mesher cannot change the number of divisions or the bias. With *Soft* behavior, it may adjust the edge divisions [@Ansys2025LocalSizingOptions].
+
+Inspect the generated mesh to check whether the intended divisions and distribution along the edge have been obtained. Then use further mesh refinement to assess whether the resolution is sufficient for the stress at the notch root.
+
 **Functionality:**
 
-The _Sizing_ tool is based on an **absolute element size**, in contrast to the relative subdivision used in _Refinement_. ANSYS automatically generates **transition regions** between areas of different mesh density to ensure a compatible mesh.  
+With _Element Size_, the _Sizing_ tool uses an **absolute element size**. For edges, _Number of Divisions_ provides another option. _Refinement_ specifies a relative subdivision of the existing mesh. ANSYS automatically generates **transition regions** between areas of different mesh density to ensure a compatible mesh.
 
 !!! note
     The sizing tool is the most important method for targeted local control of element size.  

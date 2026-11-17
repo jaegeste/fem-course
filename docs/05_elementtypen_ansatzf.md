@@ -974,6 +974,16 @@ Wählen Sie im **Arbeitsblatt Netzqualität** den Reiter **Durchgehend**, da der
 
 [![Arbeitsblatt zur Netzqualität in ANSYS Mechanical](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png){width=900px}](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png "Arbeitsblatt zur Netzqualität in ANSYS Mechanical"){.glightbox}
 
+Die Farbhinterlegung in der Spalte **Am schlechtesten** ordnet den ungünstigsten Wert jedes Kennwerts den eingestellten Grenzen zu:
+
+* **Grün:** Alle Elemente halten die Warngrenze ein.
+* **Gelb:** Mindestens ein Element verletzt die Warngrenze; die Fehlergrenze wird eingehalten.
+* **Rot:** Mindestens ein Element verletzt die Fehlergrenze.
+
+Je nach Kennwert sind zu große oder zu kleine Werte ungünstig. Die Farben beziehen sich auf die jeweils angezeigten Warn- und Fehlergrenzen. Damit lassen sich auch Aufnahmen mit unterschiedlichen Einstellungen lesen. Grün bestätigt die Einhaltung der eingestellten Prüfgrenzen. Die Netzunabhängigkeit der ausgewerteten Spannung und Verschiebung wird mit der h-Studie beurteilt [@Ansys2025CheckMeshQuality].
+
+Eine Übersicht der Warn- und Fehlergrenzen für die verschiedenen Physikeinstellungen und Prüfverfahren enthält die ANSYS-Hilfe. Für die Bewertung ist die zum Modell gehörende Einstellung maßgeblich [@Ansys2025ErrorWarningLimits].
+
 #### Wann hilft die Prüfung am Zugstab?
 
 Prüfen Sie das Netz nach der Erzeugung, wenn Sie lokale Spannungen am Querschnittsübergang auswerten wollen. Die Statistik gibt einen Überblick über die Elementformen. Die Lage auffälliger Elemente ist für die Entscheidung über eine lokale Netzänderung entscheidend. Liegen solche Elemente im Querschnittsübergang, lässt sich dort gezielt die Vernetzung überprüfen [@Ansys2025CheckMeshQuality].

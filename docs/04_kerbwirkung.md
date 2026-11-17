@@ -690,9 +690,17 @@ Das Tool **Größenbestimmung** dient zur gezielten Steuerung der **lokalen Elem
 * _Typ - Einflussbereich:_ Legt fest, wie weit die lokale Größensteuerung in benachbarte Bereiche übergeht.  
 * _Volumen beeinflussen:_ Bestimmt, ob die Größensteuerung auch in das Volumen hineinwirkt. Ist diese Option aktiviert, werden angrenzende Volumenelemente in der Tiefe entsprechend der eingestellten Größe angepasst.  
 
+#### Anzahl der Unterteilungen auf einer Kante
+
+Für eine ausgewählte Kante lässt sich mit der Größenbestimmung die **Anzahl ihrer Unterteilungen** vorgeben. So kann beispielsweise eine gekrümmte Kante am Kerbradius gezielt feiner aufgelöst werden. Bei gleichmäßiger Teilung entstehen gleich lange Abschnitte entlang der Kante. Mit einer abgestuften Teilung lassen sich die Abschnitte zu einem Kantenende hin verkleinern. Dadurch kann die Netzdichte entlang der Kante an den interessierenden Bereich angepasst werden [@Ansys2025LocalSizingOptions].
+
+Die Verbindlichkeit der Vorgabe wird über das Verhalten der Größenbestimmung eingestellt. Bei einer harten Vorgabe darf der Vernetzer die Unterteilungszahl und die Abstufung nicht ändern. Bei einer weichen Vorgabe darf er die Unterteilung anpassen [@Ansys2025LocalSizingOptions].
+
+Prüfen Sie am erzeugten Netz, ob die gewünschte Unterteilung und Verteilung entlang der Kante entstanden ist. Ob die Auflösung für die Spannung im Kerbgrund ausreicht, beurteilen Sie anschließend durch weitere Netzverfeinerung.
+
 **Funktionsweise:**
 
-Das Tool _Größenbestimmung_ basiert auf einer **absoluten Elementgröße**, im Gegensatz zur relativen Unterteilung bei der _Verfeinerung_. ANSYS generiert automatisch **Übergangsbereiche** zwischen unterschiedlich feinen Zonen, um ein kompatibles Netz zu gewährleisten.  
+Mit der Einstellung _Elementgröße_ verwendet die _Größenbestimmung_ eine **absolute Elementgröße**. An Kanten steht zusätzlich die Anzahl der Unterteilungen zur Verfügung. Die _Verfeinerung_ gibt eine relative Unterteilung des vorhandenen Netzes vor. ANSYS generiert automatisch **Übergangsbereiche** zwischen unterschiedlich feinen Zonen, um ein kompatibles Netz zu gewährleisten.
 
 !!! note
     Die Größenbestimmung ist das wichtigste Werkzeug zur gezielten lokalen Steuerung der Elementgröße.  
