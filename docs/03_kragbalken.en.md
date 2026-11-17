@@ -733,11 +733,6 @@ In ANSYS Mechanical, various options are available for applying loads. The choic
 
 These options illustrate that the “same” load can yield very different results depending on how it is applied. Choosing the correct method is a key part of FEM modeling.
 
-### Videos
-
-???+ danger "FIXME"
-    Add video?
-
 ## Self-assessment quiz
 
 <!-- markdownlint-disable MD033 -->

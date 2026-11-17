@@ -16,8 +16,10 @@
     "https://json.schemastore.org/github-workflow.json": "/*.github/workflows/*.yml"
   },
   "terminal.integrated.defaultProfile.windows": "Command Prompt",
-  "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
   "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python-envs.terminal.autoActivationType": "command",
 
   // Rechtschreibprüfung
   "cSpell.language": "en,de,de-DE",

@@ -975,9 +975,6 @@ In the mesh details under *Quality*, select a mesh metric. The summary statistic
 
 [![Selecting mesh metrics in Ansys Mechanical](media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.en.png){width=650px}](media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.en.png "Selecting mesh metrics in Ansys Mechanical"){.glightbox}
 
-!!! warning "FIXME – replace the mesh details screenshot"
-    Open the quadratic solid mesh from the tension bar study in the English interface. In the mesh details under Quality, open the list of mesh metrics. Where possible, show Element Quality, Aspect Ratio, Skewness and both Jacobian Ratio variants together. Match the mesh variant and capture area in the German screenshot.
-
 In the **Mesh Quality Worksheet**, select the **Solid** tab because the tension bar is meshed as a solid model. The worksheet shows the average and worst values together with the configured warning and error limits. The contour display locates elements classified as warnings or failures for the selected criterion. The limits apply to the settings of the particular mesh check [@Ansys2025CheckMeshQuality].
 
 [![Mesh Quality Worksheet in Ansys Mechanical](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.en.png){width=900px}](media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.en.png "Mesh Quality Worksheet in Ansys Mechanical"){.glightbox}

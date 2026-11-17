@@ -732,11 +732,6 @@ In ANSYS Mechanical stehen verschiedene Möglichkeiten zur Verfügung, eine äu�
 
 Diese Auswahl verdeutlicht, dass die „gleiche“ Belastung je nach Ansetzpunkt und Typ sehr unterschiedliche Ergebnisse liefern kann. Die Entscheidung, wie eine Last angesetzt wird, gehört deshalb zu den wesentlichen Modellierungsaufgaben im FEM.
 
-### Videos
-
-!!! danger "FIXME"
-    Video hinzu
-
 ## Quiz zur Selbstkontrolle
 
 <!-- markdownlint-disable MD033 -->
