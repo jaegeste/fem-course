@@ -473,9 +473,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh-quality" class="md-nav__link">
+  <a href="#mesh-quality-and-mesh-metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      Mesh Quality
+      Mesh Quality and Mesh Metrics
     </span>
   </a>
   
@@ -685,9 +685,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#mesh-quality" class="md-nav__link">
+  <a href="#mesh-quality-and-mesh-metrics" class="md-nav__link">
     <span class="md-ellipsis">
-      Mesh Quality
+      Mesh Quality and Mesh Metrics
     </span>
   </a>
   
@@ -2293,20 +2293,58 @@ After generating the standard mesh, inspect the element distribution in the mode
 <li>Practice: for global displacements, a moderately refined linear mesh is sufficient; for local stresses, a finer mesh with quadratic elements is recommended  </li>
 </ul>
 <hr />
-<h2 id="mesh-quality">Mesh Quality<a class="headerlink" href="#mesh-quality" title="Permanent link">&para;</a></h2>
+<h2 id="mesh-quality-and-mesh-metrics">Mesh Quality and Mesh Metrics<a class="headerlink" href="#mesh-quality-and-mesh-metrics" title="Permanent link">&para;</a></h2>
+<p>Mesh metrics help identify poorly shaped elements as soon as the mesh has been generated. The mesh display shows <strong>where</strong> these elements are and whether they lie in a region where stresses or displacements will be evaluated. This helps identify where the mesh warrants closer inspection. Whether the chosen mesh resolution is sufficient for a particular result quantity is assessed by comparing several meshes in the h-study <sup id="fnref:Ansys2025MeshMetric"><a class="footnote-ref" href="#fn:Ansys2025MeshMetric">5</a></sup>.</p>
+<h3 id="what-the-metrics-measure">What the metrics measure<a class="headerlink" href="#what-the-metrics-measure" title="Permanent link">&para;</a></h3>
+<p>The metrics describe different features of element shape. Element Quality combines geometric features in a single value. Aspect Ratio and Skewness describe particular departures from an ideal shape. Jacobian Ratio assesses the mapping from the reference element to the actual element <sup id="fnref2:Ansys2025MeshMetric"><a class="footnote-ref" href="#fn:Ansys2025MeshMetric">5</a></sup><sup id="fnref:Ansys2024JacobianRatio"><a class="footnote-ref" href="#fn:Ansys2024JacobianRatio">6</a></sup>.</p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>What does it assess?</th>
+<th>How is the value interpreted?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Element Quality</strong></td>
+<td>Ratio of area or volume to a reference quantity derived from the edge lengths.</td>
+<td>The scale runs from 0 to 1. Values close to 1 indicate a favourable element shape. <sup id="fnref:Ansys2025ElementQuality"><a class="footnote-ref" href="#fn:Ansys2025ElementQuality">7</a></sup></td>
+</tr>
+<tr>
+<td><strong>Aspect Ratio</strong></td>
+<td>How elongated an element is. The calculation depends on the element shape and the selected variant of the metric.</td>
+<td>Values close to 1 indicate compact shapes for the aspect ratios discussed here. <sup id="fnref:Ansys2025AspectRatioTriangles"><a class="footnote-ref" href="#fn:Ansys2025AspectRatioTriangles">8</a></sup></td>
+</tr>
+<tr>
+<td><strong>Skewness</strong></td>
+<td>Departure from an ideal element shape. The calculation method depends on the element shape.</td>
+<td>Values close to 0 indicate a favourable element shape. <sup id="fnref:Ansys2024Skewness"><a class="footnote-ref" href="#fn:Ansys2024Skewness">9</a></sup></td>
+</tr>
+<tr>
+<td><strong>Jacobian Ratio</strong></td>
+<td>Ratio of Jacobian determinants evaluated at different locations.</td>
+<td>For the Corner Nodes and Gauss Points variants, values close to 1 are preferable. <sup id="fnref3:Ansys2024JacobianRatio"><a class="footnote-ref" href="#fn:Ansys2024JacobianRatio">6</a></sup></td>
+</tr>
+</tbody>
+</table>
+<p>The two variants evaluate the Jacobian determinants at the <strong>corner nodes</strong> or the <strong>Gauss points</strong> (integration points), respectively. Ansys describes the corner-node check as more restrictive. An element can pass the Gauss-point check and be flagged by the corner-node check <sup id="fnref2:Ansys2024JacobianRatio"><a class="footnote-ref" href="#fn:Ansys2024JacobianRatio">6</a></sup>.</p>
+<h3 id="assessing-mesh-quality-on-the-tension-bar">Assessing mesh quality on the tension bar<a class="headerlink" href="#assessing-mesh-quality-on-the-tension-bar" title="Permanent link">&para;</a></h3>
+<p>In the mesh details under <em>Quality</em>, select a mesh metric. The summary statistics include its minimum and maximum values. The histogram shows how the elements are distributed across value ranges <sup id="fnref3:Ansys2025MeshMetric"><a class="footnote-ref" href="#fn:Ansys2025MeshMetric">5</a></sup>.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png" title="Selecting mesh metrics in Ansys Mechanical"><img alt="Selecting mesh metrics in Ansys Mechanical" src="../media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png" width="650px" /></a></p>
 <div class="admonition warning">
-<p class="admonition-title">FIXME: extend section mesh quality</p>
-<p>Planned additions for future revision:</p>
-<ul>
-<li>Presentation of typical <strong>mesh quality metrics</strong> in ANSYS (<em>Element Quality</em>, <em>Aspect Ratio</em>, <em>Skewness</em>, <em>Jacobian Ratio</em>)  </li>
-<li>Example screenshots from <em>Details of “Mesh” → Quality</em>  </li>
-<li>Notes on interpretation of the colour scale and threshold values  </li>
-<li>Influence of poor quality on stress and displacement distributions  </li>
-<li>Short comparison of automatic versus manually optimised meshing  </li>
-<li>Optionally add a <strong>Plotly representation</strong> to visualise quality metrics along a path or component region  </li>
-<li>Demonstration of distorted elements and their impact on stress distribution.  </li>
-</ul>
+<p class="admonition-title">FIXME – replace the mesh details screenshot</p>
+<p>Open the quadratic solid mesh from the tension bar study in the English interface. In the mesh details under Quality, open the list of mesh metrics. Where possible, show Element Quality, Aspect Ratio, Skewness and both Jacobian Ratio variants together. Match the mesh variant and capture area in the German screenshot.</p>
 </div>
+<p>In the <strong>Mesh Quality Worksheet</strong>, select the <strong>Solid</strong> tab because the tension bar is meshed as a solid model. The worksheet shows the average and worst values together with the configured warning and error limits. The contour display locates elements classified as warnings or failures for the selected criterion. The limits apply to the settings of the particular mesh check <sup id="fnref:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png" title="Mesh Quality Worksheet in Ansys Mechanical"><img alt="Mesh Quality Worksheet in Ansys Mechanical" src="../media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png" width="900px" /></a></p>
+<div class="admonition warning">
+<p class="admonition-title">FIXME – replace the worksheet screenshot</p>
+<p>Use the same quadratic solid mesh. In the worksheet, select the <em>Solid</em> tab and enable <em>Advanced View</em>. Show the warning and error limits, average and worst values using the existing model settings. Match the view and capture area in the German screenshot.</p>
+</div>
+<h4 id="when-is-this-check-useful-on-the-tension-bar">When is this check useful on the tension bar?<a class="headerlink" href="#when-is-this-check-useful-on-the-tension-bar" title="Permanent link">&para;</a></h4>
+<p>Inspect the mesh after generation if you intend to evaluate local stresses at the cross-section transition. The statistics give an overview of element shapes. The location of flagged elements matters when deciding whether to change the mesh locally. If these elements lie in the cross-section transition, inspect the mesh there in more detail <sup id="fnref2:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
+<p>To assess the effect of a mesh change, compare <strong>normal stress and axial displacement along the same path</strong>, using the same loads, supports and element order. The <a href="#mesh-refinement-h-study">h-study</a> shows this procedure for the tension bar. If the stress still changes appreciably with further refinement, it remains mesh-dependent in that region. Assess the change in stress and displacement separately.</p>
 <h2 id="quiz-for-self-assessment">Quiz for Self-Assessment<a class="headerlink" href="#quiz-for-self-assessment" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
 
@@ -2349,6 +2387,24 @@ After generating the standard mesh, inspect the element distribution in the mode
 </li>
 <li id="fn:Schier2023">
 <p>Klaus Schier. <em>Finite Elemente Modelle der Maschinenelemente</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2023. ISBN 978-3-662-67079-8. <a href="https://doi.org/10.1007/978-3-662-67080-4">doi:10.1007/978-3-662-67080-4</a>.&#160;<a class="footnote-backref" href="#fnref:Schier2023" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Schier2023" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025MeshMetric">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R2: mesh metric. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_metrics.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_metrics.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025MeshMetric" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025MeshMetric" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Ansys2025MeshMetric" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2024JacobianRatio">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2024 R2: jacobian ratio. 2024. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_jacobian_ratio.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_jacobian_ratio.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2024JacobianRatio" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2024JacobianRatio" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Ansys2024JacobianRatio" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025ElementQuality">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R1: element quality. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/msh_Element_Quality_Metric.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/msh_Element_Quality_Metric.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025ElementQuality" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025AspectRatioTriangles">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R1: aspect ratio calculation for triangles. 2025. URL: <a href="https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/wb_msh/msh_aspect_triangle.html">https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/wb_msh/msh_aspect_triangle.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025AspectRatioTriangles" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2024Skewness">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2024 R2: skewness. 2024. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2024Skewness" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025CheckMeshQuality">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R2: check mesh quality. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {

@@ -473,9 +473,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#netzqualitat" class="md-nav__link">
+  <a href="#netzqualitat-und-netzkennwerte" class="md-nav__link">
     <span class="md-ellipsis">
-      Netzqualität
+      Netzqualität und Netzkennwerte
     </span>
   </a>
   
@@ -685,9 +685,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#netzqualitat" class="md-nav__link">
+  <a href="#netzqualitat-und-netzkennwerte" class="md-nav__link">
     <span class="md-ellipsis">
-      Netzqualität
+      Netzqualität und Netzkennwerte
     </span>
   </a>
   
@@ -2289,21 +2289,50 @@ Nach dem Erzeugen des Standardnetzes die Elementverteilung im Modell prüfen:  <
 <li>Praxis: für globale Verschiebungen reicht moderat verfeinertes lineares Netz, für lokale Spannungen wird ein feineres Netz mit quadratischer Ansatzfunktion empfohlen</li>
 </ul>
 <hr />
-<h2 id="netzqualitat">Netzqualität<a class="headerlink" href="#netzqualitat" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">FIXME: Erweiterung Abschnitt Netzqualität</p>
-<p>Geplante Ergänzungen für künftige Überarbeitung:</p>
-<ul>
-<li>Darstellung typischer <strong>Netzqualitätskennwerte</strong> in ANSYS (<em>Elementqualität</em>, <em>Aspektverhältnis</em>, <em>Skewness</em>, <em>Jacobian Ratio</em>)  </li>
-<li>Beispielhafte Screenshots aus <em>Details von „Netz“ → Qualität</em>  </li>
-<li>Hinweise zur Interpretation der Farbskala und Grenzwerte  </li>
-<li>Einfluss schlechter Qualität auf Spannungs- und Verschiebungsverlauf  </li>
-<li>Kurzer Vergleich zwischen automatischer und manuell optimierter Vernetzung  </li>
-<li>ggf. Ergänzung um <strong>Plotly-Darstellung</strong> zur Visualisierung von Qualitätsmetriken entlang eines Pfades oder Bauteilbereichs</li>
-<li>Demonstration verzerrter Elemente und ihrer Auswirkung auf Spannungsverteilung. </li>
-<li>ggf. nochmal gemittelt/ungemittelt aufgreifen.</li>
-</ul>
-</div>
+<h2 id="netzqualitat-und-netzkennwerte">Netzqualität und Netzkennwerte<a class="headerlink" href="#netzqualitat-und-netzkennwerte" title="Permanent link">&para;</a></h2>
+<p>Netzkennwerte helfen, schon nach dem Vernetzen ungünstig geformte Elemente zu finden. Die Anzeige im Netz zeigt, <strong>wo</strong> sie liegen und ob sie einen Bereich betreffen, in dem Spannungen oder Verschiebungen ausgewertet werden sollen. So lässt sich gezielt entscheiden, wo das Netz genauer geprüft werden sollte. Ob die gewählte Netzauflösung für eine bestimmte Ergebnisgröße ausreicht, wird durch den Vergleich mehrerer Netze in der h-Studie beurteilt <sup id="fnref:Ansys2025MeshMetric"><a class="footnote-ref" href="#fn:Ansys2025MeshMetric">5</a></sup>.</p>
+<h3 id="was-die-kennwerte-erfassen">Was die Kennwerte erfassen<a class="headerlink" href="#was-die-kennwerte-erfassen" title="Permanent link">&para;</a></h3>
+<p>Die Kennwerte beschreiben verschiedene Merkmale der Elementform. Elementqualität fasst geometrische Merkmale in einem Wert zusammen. Aspektverhältnis und Schiefwinkligkeit beschreiben bestimmte Abweichungen von der idealen Form. Das Jacobi-Verhältnis beurteilt die Abbildung vom Referenzelement auf das reale Element <sup id="fnref2:Ansys2025MeshMetric"><a class="footnote-ref" href="#fn:Ansys2025MeshMetric">5</a></sup><sup id="fnref:Ansys2024JacobianRatio"><a class="footnote-ref" href="#fn:Ansys2024JacobianRatio">6</a></sup>.</p>
+<table>
+<thead>
+<tr>
+<th>Kennwert</th>
+<th>Was wird bewertet?</th>
+<th>Wie ist der Wert zu lesen?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Elementqualität</strong></td>
+<td>Verhältnis von Fläche oder Volumen zu einer aus den Kantenlängen gebildeten Bezugsgröße.</td>
+<td>Die Skala reicht von 0 bis 1. Werte nahe 1 stehen für eine günstige Elementform. <sup id="fnref:Ansys2025ElementQuality"><a class="footnote-ref" href="#fn:Ansys2025ElementQuality">7</a></sup></td>
+</tr>
+<tr>
+<td><strong>Aspektverhältnis</strong></td>
+<td>Ausprägung einer gestreckten Elementform. Die Berechnung hängt von der Elementform und der gewählten Variante des Kennwerts ab.</td>
+<td>Werte nahe 1 stehen bei den hier gemeinten Aspektverhältnissen für eine kompakte Form. <sup id="fnref:Ansys2025AspectRatioTriangles"><a class="footnote-ref" href="#fn:Ansys2025AspectRatioTriangles">8</a></sup></td>
+</tr>
+<tr>
+<td><strong>Schiefwinkligkeit</strong></td>
+<td>Abweichung von einer idealen Elementform. Das jeweilige Berechnungsverfahren hängt von der Elementform ab.</td>
+<td>Werte nahe 0 stehen für eine günstige Elementform. <sup id="fnref:Ansys2024Skewness"><a class="footnote-ref" href="#fn:Ansys2024Skewness">9</a></sup></td>
+</tr>
+<tr>
+<td><strong>Jacobi-Verhältnis</strong></td>
+<td>Verhältnis von an verschiedenen Stellen ausgewerteten Jacobi-Determinanten.</td>
+<td>Bei den Varianten für Eckknoten und Gauss-Punkte sind Werte nahe 1 günstig. <sup id="fnref3:Ansys2024JacobianRatio"><a class="footnote-ref" href="#fn:Ansys2024JacobianRatio">6</a></sup></td>
+</tr>
+</tbody>
+</table>
+<p>Bei den beiden Varianten werden die Jacobi-Determinanten an den <strong>Eckknoten</strong> beziehungsweise an den <strong>Gauss-Punkten</strong> (Integrationspunkten) ausgewertet. ANSYS beschreibt die Eckknotenprüfung als restriktiver. Ein Element kann die Prüfung an den Gauss-Punkten bestehen und an den Eckknoten auffällig sein <sup id="fnref2:Ansys2024JacobianRatio"><a class="footnote-ref" href="#fn:Ansys2024JacobianRatio">6</a></sup>.</p>
+<h3 id="netzqualitat-am-zugstab-beurteilen">Netzqualität am Zugstab beurteilen<a class="headerlink" href="#netzqualitat-am-zugstab-beurteilen" title="Permanent link">&para;</a></h3>
+<p>In den Netzdetails lässt sich unter <em>Qualität</em> ein Kennwert auswählen. Die zugehörige Statistik zeigt unter anderem den kleinsten und größten Wert. Das Histogramm zeigt, wie sich die Elemente auf die Wertebereiche verteilen <sup id="fnref3:Ansys2025MeshMetric"><a class="footnote-ref" href="#fn:Ansys2025MeshMetric">5</a></sup>.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png" title="Auswahl der Netzkennwerte in ANSYS Mechanical"><img alt="Auswahl der Netzkennwerte in ANSYS Mechanical" src="../media/05_elementtypen_ansatzf/26_Netzqualitaet_Kennwerte.png" width="650px" /></a></p>
+<p>Wählen Sie im <strong>Arbeitsblatt Netzqualität</strong> den Reiter <strong>Durchgehend</strong>, da der Zugstab als Volumenmodell vernetzt ist. Das Arbeitsblatt zeigt den Mittelwert und den ungünstigsten Wert sowie die eingestellten Warn- und Fehlergrenzen. In der Konturanzeige lassen sich die Elemente lokalisieren, die nach dem gewählten Kriterium als Warn- oder Fehlerfälle eingestuft werden. Die Grenzen beziehen sich auf die Einstellungen der jeweiligen Netzprüfung <sup id="fnref:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
+<p><a class="glightbox" href="../media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png" title="Arbeitsblatt zur Netzqualität in ANSYS Mechanical"><img alt="Arbeitsblatt zur Netzqualität in ANSYS Mechanical" src="../media/05_elementtypen_ansatzf/27_Netzqualitaet_Arbeitsblatt.png" width="900px" /></a></p>
+<h4 id="wann-hilft-die-prufung-am-zugstab">Wann hilft die Prüfung am Zugstab?<a class="headerlink" href="#wann-hilft-die-prufung-am-zugstab" title="Permanent link">&para;</a></h4>
+<p>Prüfen Sie das Netz nach der Erzeugung, wenn Sie lokale Spannungen am Querschnittsübergang auswerten wollen. Die Statistik gibt einen Überblick über die Elementformen. Die Lage auffälliger Elemente ist für die Entscheidung über eine lokale Netzänderung entscheidend. Liegen solche Elemente im Querschnittsübergang, lässt sich dort gezielt die Vernetzung überprüfen <sup id="fnref2:Ansys2025CheckMeshQuality"><a class="footnote-ref" href="#fn:Ansys2025CheckMeshQuality">10</a></sup>.</p>
+<p>Um den Einfluss einer Netzänderung zu beurteilen, vergleichen Sie die <strong>Normalspannung und die axiale Verschiebung am selben Pfad</strong> bei unveränderten Lasten, Lagerungen und gleicher Elementordnung. Die <a href="#netzverfeinerung-h-studie">h-Studie</a> zeigt dieses Vorgehen am Zugstab. Wenn sich die Spannung bei weiterer Verfeinerung noch merklich ändert, ist sie in diesem Bereich weiterhin netzabhängig. Bewerten Sie die Änderung für Spannung und Verschiebung jeweils getrennt.</p>
 <h2 id="quiz-zur-selbstkontrolle">Quiz zur Selbstkontrolle<a class="headerlink" href="#quiz-zur-selbstkontrolle" title="Permanent link">&para;</a></h2>
 <!-- markdownlint-disable MD033 -->
 
@@ -2346,6 +2375,24 @@ Nach dem Erzeugen des Standardnetzes die Elementverteilung im Modell prüfen:  <
 </li>
 <li id="fn:Schier2023">
 <p>Klaus Schier. <em>Finite Elemente Modelle der Maschinenelemente</em>. Springer Berlin Heidelberg, Berlin, Heidelberg, 2023. ISBN 978-3-662-67079-8. <a href="https://doi.org/10.1007/978-3-662-67080-4">doi:10.1007/978-3-662-67080-4</a>.&#160;<a class="footnote-backref" href="#fnref:Schier2023" title="Jump back to footnote 4 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Schier2023" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025MeshMetric">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R2: mesh metric. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_metrics.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_metrics.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025MeshMetric" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025MeshMetric" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Ansys2025MeshMetric" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2024JacobianRatio">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2024 R2: jacobian ratio. 2024. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_jacobian_ratio.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_jacobian_ratio.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2024JacobianRatio" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2024JacobianRatio" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref3:Ansys2024JacobianRatio" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025ElementQuality">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R1: element quality. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/msh_Element_Quality_Metric.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v251/en/wb_msh/msh_Element_Quality_Metric.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025ElementQuality" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025AspectRatioTriangles">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R1: aspect ratio calculation for triangles. 2025. URL: <a href="https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/wb_msh/msh_aspect_triangle.html">https://ansyshelp.ansys.com/public/views/secured/corp/v251/en/wb_msh/msh_aspect_triangle.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025AspectRatioTriangles" title="Jump back to footnote 8 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2024Skewness">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2024 R2: skewness. 2024. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v242/en/wb_msh/msh_skewness.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2024Skewness" title="Jump back to footnote 9 in the text">&#8617;</a></p>
+</li>
+<li id="fn:Ansys2025CheckMeshQuality">
+<p>Ansys, Inc. Ansys Meshing User's Guide 2025 R2: check mesh quality. 2025. URL: <a href="https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html">https://ansyshelp.ansys.com/public/Views/Secured/corp/v252/en/wb_msh/msh_check_mesh_quality.html</a>.&#160;<a class="footnote-backref" href="#fnref:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:Ansys2025CheckMeshQuality" title="Jump back to footnote 10 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div><style type="text/css">.quiz {
