@@ -409,8 +409,7 @@ Select the *Modal* analysis system in Workbench and import the beam geometry. A 
 
 <!-- SCREENSHOT: 01_modal_projektoberflaeche.en.png
 Show Workbench with a standalone Modal system and its project cells in English.
-The existing English capture from Peer Teaching B1 / Add_Modal_into_project.png is suitable
-for this model-neutral view. Keep the filename when updating the capture.
+Keep the filename when updating the capture.
 -->
 
 [![Project schematic, modal analysis](media/08_modalanalyse/01_modal_projektoberflaeche.en.png){width=650px}](media/08_modalanalyse/01_modal_projektoberflaeche.en.png "Project schematic modal analysis"){.glightbox}
