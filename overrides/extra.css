@@ -54,6 +54,11 @@
   text-decoration: none;
 }
 
+/* Separate consecutive footnote references at the same location. */
+.md-typeset sup:has(> .footnote-ref) + sup > .footnote-ref::before {
+  content: ", ";
+}
+
 /* Optional: Stil für Fußnotentext selbst */
 .md-typeset .footnote {
   font-size: 0.9em;
