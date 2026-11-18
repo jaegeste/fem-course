@@ -15,11 +15,24 @@
   "yaml.schemas": {
     "https://json.schemastore.org/github-workflow.json": "/*.github/workflows/*.yml"
   },
-  "terminal.integrated.defaultProfile.windows": "Command Prompt",
+  "terminal.integrated.profiles.windows": {
+    "FEM PowerShell (.venv)": {
+      "source": "PowerShell",
+      "args": [
+        "-NoExit",
+        "-Command",
+        "& '${workspaceFolder}/.venv/Scripts/Activate.ps1'"
+      ],
+      "icon": "terminal-powershell",
+      "overrideName": true
+    }
+  },
+  "terminal.integrated.defaultProfile.windows": "FEM PowerShell (.venv)",
   "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
-  "python.terminal.activateEnvironment": true,
-  "python.terminal.activateEnvInCurrentTerminal": true,
-  "python-envs.terminal.autoActivationType": "command",
+  // Das Terminalprofil aktiviert die Projektumgebung direkt beim Start.
+  "python.terminal.activateEnvironment": false,
+  "python.terminal.activateEnvInCurrentTerminal": false,
+  "python-envs.terminal.autoActivationType": "off",
 
   // Rechtschreibprüfung
   "cSpell.language": "en,de,de-DE",

@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 290" role="img" aria-labelledby="title">
+  <title id="title">Model levels</title>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <path d="M0 0 L8 4 L0 8Z" fill="#34495e" />
+    </marker>
+  </defs>
+  <style>text{font-family:Arial,sans-serif;font-size:19px;fill:#243746}.small{font-size:16px}.box{fill:#eef5f1;stroke:#317451;stroke-width:2}.line{fill:none;stroke:#34495e;stroke-width:2.5;marker-end:url(#arrow)}</style>
+  <rect width="1000" height="290" fill="white" />
+  <rect class="box" x="20" y="30" width="210" height="190" rx="9" />
+  <text x="125" y="65" text-anchor="middle">Rigid body</text>
+  <text x="125" y="200" text-anchor="middle" class="small">Global motion</text>
+  <path class="line" d="M234 125 H264" />
+  <rect class="box" x="270" y="30" width="210" height="190" rx="9" />
+  <text x="375" y="65" text-anchor="middle">Discrete masses</text>
+  <text x="375" y="200" text-anchor="middle" class="small">Relative motion</text>
+  <path class="line" d="M484 125 H514" />
+  <rect class="box" x="520" y="30" width="210" height="190" rx="9" />
+  <text x="625" y="65" text-anchor="middle">Continuum</text>
+  <text x="625" y="200" text-anchor="middle" class="small">Deformation field</text>
+  <path class="line" d="M734 125 H764" />
+  <rect class="box" x="770" y="30" width="210" height="190" rx="9" />
+  <text x="875" y="65" text-anchor="middle">FE model</text>
+  <text x="875" y="189" text-anchor="middle" class="small">Nodal degrees</text>
+  <text x="875" y="211" text-anchor="middle" class="small">of freedom</text>
+  <rect x="75" y="100" width="95" height="45" fill="#8db6a0" stroke="#317451" />
+  <path class="line" d="M110 155 H155" />
+  <rect x="290" y="103" width="35" height="45" fill="#8db6a0" />
+  <path d="M325 125 h8 l5 -12 10 24 10 -24 10 24 5 -12 h8" fill="none" stroke="#34495e" stroke-width="2" />
+  <rect x="381" y="103" width="55" height="45" fill="#8db6a0" />
+  <path d="M555 110 Q610 80 685 135 L685 157 Q610 102 555 132Z" fill="#8db6a0" stroke="#317451" stroke-width="2" />
+  <path d="M800 100 v60" stroke="#317451" />
+  <path d="M830 100 v60" stroke="#317451" />
+  <path d="M860 100 v60" stroke="#317451" />
+  <path d="M890 100 v60" stroke="#317451" />
+  <path d="M920 100 v60" stroke="#317451" />
+  <path d="M800 100 h120" stroke="#317451" />
+  <path d="M800 130 h120" stroke="#317451" />
+  <path d="M800 160 h120" stroke="#317451" />
+  <circle cx="800" cy="100" r="3.5" fill="#317451" />
+  <circle cx="800" cy="130" r="3.5" fill="#317451" />
+  <circle cx="800" cy="160" r="3.5" fill="#317451" />
+  <circle cx="830" cy="100" r="3.5" fill="#317451" />
+  <circle cx="830" cy="130" r="3.5" fill="#317451" />
+  <circle cx="830" cy="160" r="3.5" fill="#317451" />
+  <circle cx="860" cy="100" r="3.5" fill="#317451" />
+  <circle cx="860" cy="130" r="3.5" fill="#317451" />
+  <circle cx="860" cy="160" r="3.5" fill="#317451" />
+  <circle cx="890" cy="100" r="3.5" fill="#317451" />
+  <circle cx="890" cy="130" r="3.5" fill="#317451" />
+  <circle cx="890" cy="160" r="3.5" fill="#317451" />
+  <circle cx="920" cy="100" r="3.5" fill="#317451" />
+  <circle cx="920" cy="130" r="3.5" fill="#317451" />
+  <circle cx="920" cy="160" r="3.5" fill="#317451" />
+  <text x="500" y="260" text-anchor="middle" class="small">Schematic model selection – not a results plot</text>
+</svg>

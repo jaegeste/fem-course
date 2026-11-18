@@ -50,7 +50,7 @@ The following video sequences illustrate typical situations in which this natura
 
 ---
 
-### Resonance of a Bridge System (Tacoma Narrows Bridge)
+### Aeroelastic Instability of the Tacoma Narrows Bridge
 
 <!-- markdownlint-disable MD033 -->
 <iframe  
@@ -67,12 +67,11 @@ The following video sequences illustrate typical situations in which this natura
 
 ??? question "Which structural dynamic effects are visible?"
 
-    * The bridge exhibits a pronounced torsional mode with large amplitudes; the mode shape clearly dominates the overall system behaviour.  
-    * The strong increase in vibration amplitude indicates a resonance condition that develops into a **resonance catastrophe**.  
-    * The aerodynamic excitation is caused by flow separation and periodic vortex shedding, which generate excitation components in the range of a natural frequency of the bridge.  
-    * The coupling between flow and structure leads to a self excited vibration, meaning that the motion is not maintained by external periodic loads but by the system itself.  
-    * Modern bridges are designed with more favourable aerodynamic properties in order to avoid such effects through optimised profiles, additional stiffening, and modified structural concepts.  
-    * Further information is available here: [https://wsdot.wa.gov/TNBhistory/](https://wsdot.wa.gov/TNBhistory/)
+    * The bridge exhibits pronounced torsional oscillations with rapidly increasing amplitude.
+    * Natural frequencies and mode shapes characterise the vibrating structure and provide a basis for its aeroelastic assessment.
+    * During aeroelastic flutter, the motion of the bridge deck changes the aerodynamic forces. These act back on the motion and can supply more energy than is dissipated by damping.
+    * This self-excitation differs from forced resonance caused by a prescribed periodic external force. Such a forcing frequency need not coincide with a natural frequency here.
+    * A purely structural modal analysis describes mode shapes and natural frequencies but is insufficient to assess aeroelastic stability [@WSDOTTacomaFailure].
 
 ---
 
@@ -177,7 +176,7 @@ F = -\,c\,y(t)
 
 The quantity \(c\) is the spring constant (unit: N/m or N/mm).
 
-### Force Balance and Equation of Motion
+#### Force Balance and Equation of Motion
 
 According to Newton’s second law, the resultant force leads to an acceleration:
 
@@ -275,25 +274,30 @@ The corresponding spectrum ideally shows only a single frequency component at th
 
 ### Damped Oscillation
 
-Real technical systems lose vibrational energy due to friction, air resistance, or material damping. Damping is modelled by a proportionality to the velocity:  
+Real technical systems lose vibrational energy due to friction, air resistance, or material damping. With viscous damping, the damping force is proportional to the velocity:
 
 \[
-m \ddot{x} + k \dot{x} + D x = 0
+m \ddot{x} + d \dot{x} + c x = 0
 \]
+
+Here, \(m\) is the mass in \(\mathrm{kg}\), \(d\) the damping coefficient in \(\mathrm{N\,s/m}\) and \(c\) the spring stiffness in \(\mathrm{N/m}\). As before, \(\omega_0=\sqrt{c/m}\).
 
 The following cases are distinguished:  
 
-* lightly damped oscillation (periodic behaviour, slow decay)  
+* underdamping (decaying oscillation)
 * critical damping (limiting case, fastest decay without oscillation)  
-* heavy damping (no periodic motion)  
+* overdamping (no periodic motion)
 
-The damped natural angular frequency is given by:  
+For the underdamped case \(0<d<2\sqrt{mc}\), the damped natural angular frequency is given by:
 
 \[
-\omega_\mathrm{d} = \sqrt{\omega_0^2 - \left(\frac{k}{2m}\right)^2}
+\omega_\mathrm{d} = \sqrt{\omega_0^2 - \left(\frac{d}{2m}\right)^2}
 \]
 
 [![Damped oscillations](media/08_modalanalyse/gedaempfte_schwingung.png){width=350px}](media/08_modalanalyse/gedaempfte_schwingung.png "Damped oscillations"){.glightbox}
+
+The axes show displacement \(y\) (German: “Auslenkung”) against time \(t\) (“Zeit”).
+
 <span class="bildquelle">Image source[@Eichler2023]</span>  
 
 ---
@@ -306,15 +310,11 @@ If a time dependent external force acts on the system
 F(t) = F_0 \sin(\omega t)
 \]
 
-a stationary oscillation state is established. The amplitude of the response oscillation depends on the excitation frequency \(\omega\) and exhibits a maximum when \(\omega\) is close to the natural angular frequency \(\omega_0\). This behaviour is referred to as resonance.  
+the free vibration component decays in the presence of viscous damping. After the transient response has decayed, a steady-state oscillation remains at the excitation frequency \(\omega\). For a constant force amplitude \(F_0\), its amplitude depends on the excitation frequency and damping. With weak damping, the amplitude maximum lies close to the undamped natural angular frequency \(\omega_0\). This amplitude amplification is referred to as resonance. Without damping, the amplitude grows without bound at \(\omega=\omega_0\) in the idealised model; no finite steady state is established [@XueDampedDriven].
 
-!!! danger "FIXME"
-    Add figure showing operating range subcritical/supercritical
+The graph illustrates the **unbalance response of an idealised rotor**. Here, \(n\) is the rotational speed, \(n_\mathrm{k}\) the critical speed, \(X\) the displacement amplitude and \(e\) the mass eccentricity. The curve applies to an undamped single-mass model: no finite steady-state amplitude exists at \(n=n_\mathrm{k}\). The hatched region is schematic and does not define general speed limits [@NPTELUnbalance].
 
-<!--
-[![Resonance curve](media/08_modalanalyse/resonanz.png){width=650px}](media/08_modalanalyse/resonanz.png "Resonance curve"){.glightbox}
-<span class="bildquelle">Image source[]</span>  
--->
+[![Unbalance response with subcritical and supercritical regions](media/08_modalanalyse/resonanz_unwucht.en.png){width=900px}](media/08_modalanalyse/resonanz_unwucht.en.png "Unbalance response with subcritical and supercritical regions"){.glightbox}
 
 ---
 
@@ -349,146 +349,340 @@ Natural vibrations do not occur only in one dimensional systems, but wherever co
 * each natural frequency is associated with a characteristic mode shape  
 * only certain frequencies are compatible with the geometry and boundary conditions and lead to pronounced vibration behaviour  
 
-These fundamental principles can be systematically transferred to technical structures. The finite element method formulates them in terms of the general eigenvalue problem. For a linear system with mass matrix \(M\) and stiffness matrix \(K\), the following applies:
+These principles can be transferred to discretised engineering structures. For a linear system with constant mass, damping and stiffness matrices:
 
 \[
-M \ddot{\varphi} + K \varphi = 0
+M\ddot{u}(t)+C\dot{u}(t)+Ku(t)=p(t)
 \]
 
-Using the harmonic solution ansatz \(\varphi(t) = \Phi\,\mathrm{e}^{\mathrm{i}\omega t}\), the algebraic eigenvalue problem is obtained:
+Here, \(u(t)\) is the displacement vector, \(p(t)\) the external load vector, and \(M\), \(C\) and \(K\) are the mass, damping and stiffness matrices. For free, undamped vibrations, \(p(t)=0\) and \(C=0\). Substitution of \(u(t)=\Phi\,\mathrm{e}^{\mathrm{i}\omega t}\) gives:
 
 \[
-K \Phi = \omega^2 M \Phi
+K\Phi=\omega^2 M\Phi
 \]
 
-The solution yields the natural frequencies \(\omega\) and the associated mode shapes \(\Phi\). They describe the fundamental vibration behaviour of beams, plates, shafts, as well as complex assemblies, and form the basis of modal analysis.
+The eigenvalues \(\omega_i^2\) yield the natural angular frequencies; \(f_i=\omega_i/(2\pi)\) are the natural frequencies in Hz. The eigenvectors \(\Phi_i\) describe the mode shapes. This undamped modal analysis does not determine damping ratios [@AnsysModalTheory].
 
 ### Model Levels
 
-The modelling of vibration behaviour proceeds step by step, from rigid bodies with only a few degrees of freedom, through discrete mass spring systems, to continuous structures such as beams, plates, or shafts. With each model level, the capability to represent real vibration shapes increases, ranging from simple motions of individual bodies to distributed mode shapes of technical structures.
+The model depends on the motion of interest: a rigid body represents global motion, while a system of discrete masses represents relative motions between those masses. Continuous beams or plates have spatially distributed deformations. An FE model approximates these using a finite number of nodal degrees of freedom. More degrees of freedom alone do not guarantee a better model; materials, supports and connections must suit the question being investigated.
 
-!!! danger "FIXME"
-    Add suitable figures from Dresig/Beitelschmidt (model levels: rigid body → multi mass system → beam/plate),  
-    Expand this section in terms of content: brief explanation of the role of degrees of freedom, transition from discrete to continuous models, relevance for subsequent FE modal analysis.
+[![Model levels and FE discretisation](media/08_modalanalyse/modellstufen.en.svg){width=900px}](media/08_modalanalyse/modellstufen.en.svg "Model levels and FE discretisation"){.glightbox}
+
+!!! info "Further Reading"
+    Beitelschmidt/Dresig, *Maschinendynamik*, chapters “Modellbildung und Kennwertermittlung” and “Lineare Systeme mit mehreren Freiheitsgraden: Modellbildung und freie Schwingungen” [@Beitelschmidt2024].
+
+## Task Definition: Beam
+
+Use [biegebalken.stp](media/08_modalanalyse/biegebalken.stp). The beam has a rectangular cross-section with \(b=8\,\mathrm{mm}\), \(h=12\,\mathrm{mm}\) and a length of \(L=100\,\mathrm{mm}\). Check the imported dimensions.
+
+Create a **new material** named *Aluminium_Modal*. Use \(\rho=2.7\,\mathrm{kg/dm^3}\), \(E=70\,\mathrm{GPa}\) and \(\nu=0.35\). Defining the material properties yourself is part of this task.
+
+1. Calculate the first **ten mode shapes** for each case: free at both ends, fixed at one end and fixed at both ends.
+2. Identify rigid body and elastic modes. Compare corresponding mode shapes and discuss the influence of the constraints.
+3. Change the material of the beam fixed at both ends to *Structural Steel* and compare the results.
 
 ### Analytical Solutions of Simple Structures
 
-!!! danger "FIXME"
-    Add simple calculations
+For a simple beam, bending natural frequencies can also be estimated without an FE model. The beam is treated as slender and uniform: it bends, while additional deformation due to shear is neglected. This simplified model is called an Euler–Bernoulli beam. The following formula applies to a cantilever beam with small deformations; rotary inertia is also neglected [@TUGrazCantilever].
 
----
+\[
+f_n=\frac{\beta_n^2}{2\pi L^2}\sqrt{\frac{EI}{\rho A}},
+\qquad \beta_1\approx1.875,\quad\beta_2\approx4.694
+\]
 
-## General Aspects of Implementation in ANSYS
+Here, \(L\) is the free length, \(E\) Young’s modulus, \(I\) the second moment of area for the bending direction considered, \(\rho\) the density and \(A\) the cross-sectional area. Using \(E\) in Pa, \(I\) in m⁴, \(\rho\) in kg/m³, \(A\) in m² and \(L\) in m gives \(f_n\) in Hz.
 
-### Project Schematic
+For a rectangular cross-section, use the appropriate second moment of area for each bending direction. Compare corresponding **bending modes**, rather than simply the first and second rows of the FE results list. Torsional and longitudinal modes are not covered by this formula. For short beams and higher modes, the beam assumptions can differ appreciably from a 3D model.
 
-In the project schematic, the analysis type *Modal* must be selected. For many tasks, the system can be used as a standalone modal analysis. For more advanced investigations, coupling with a *static structural analysis* or a *harmonic analysis* is useful, for example to investigate load cases or to perform a frequency response analysis.  
+??? note "Which numerical values apply?"
 
-[![Project schematic, modal analysis](media/08_modalanalyse/modal_projektoberflaeche.png){width=650px}](media/08_modalanalyse/modal_projektoberflaeche.png "Project schematic modal analysis"){.glightbox}
+    The values 1.875 and 4.694 belong to the first and second bending modes of a uniform cantilever beam in this model. They are not restricted to one beam length or one rectangular cross-section: length, cross-section and material are accounted for separately in the formula. Other support conditions require different values [@TUGrazCantilever].
 
-### Geometry and Material
+## Implementation in ANSYS – Beam
 
-The geometry is integrated into the project as usual.  
+The guide explains modelling and evaluation using the beam. Investigate the support and material variants according to the task definition.
 
-Even in modal analysis, the selection and correct assignment of materials is of central importance, since the natural frequencies and mode shapes depend directly on the mass distribution (see theoretical derivation). For assemblies, multiple materials often have to be considered and correctly assigned to the respective components. The required material properties are integrated into the project via the engineering data.  
+### 1. Project Management and Geometry Import
 
-[![Material selection in modal analysis](media/08_modalanalyse/modal_materialauswahl.png){width=650px}](media/08_modalanalyse/modal_materialauswahl.png "Material selection in modal analysis"){.glightbox}
+Select the *Modal* analysis system in Workbench and import the beam geometry. A standalone modal analysis is sufficient for this introduction. Linking to *Static Structural* can be used subsequently to account for a pre-stressed state.
 
-### Contacts and Connection Elements
+<!-- SCREENSHOT: 01_modal_projektoberflaeche.en.png
+Show Workbench with a standalone Modal system and its project cells in English.
+The existing English capture from Peer Teaching B1 / Add_Modal_into_project.png is suitable
+for this model-neutral view. Keep the filename when updating the capture.
+-->
 
-In assemblies, contacts and connection elements play a key role in vibration behaviour. They influence both the effective stiffness and the mass coupling between the individual components and therefore have a direct effect on the calculated natural frequencies and mode shapes.
+[![Project schematic, modal analysis](media/08_modalanalyse/01_modal_projektoberflaeche.en.png){width=650px}](media/08_modalanalyse/01_modal_projektoberflaeche.en.png "Project schematic modal analysis"){.glightbox}
 
-In modal analysis, contacts are generally **linearised**. Nonlinear effects such as friction, opening, or sliding are not taken into account. Instead, the contact represents a linear coupling of the involved components, for example as *bonded*, *no separation*, or an idealised support condition.
+### 2. Material and Mesh
 
-For many applications, this simplification is sufficient, especially if:
+1. Open *Engineering Data* in Workbench. At the bottom of the material overview, click the row *Click here to add a new material*. Enter the name *Aluminium_Modal* there to create the new material.
 
-* small vibration amplitudes are considered,  
-* the contact does not change significantly during operation,  
-* the objective is the determination of global natural frequencies and mode shapes.  
+    <!-- SCREENSHOT: 02a_material_hier_klicken.en.png
+    In Engineering Data, show the row for adding a new material.
+    Mark "Click here to add a new material" with an arrow.
+    Capture a readable material overview and row, preferably before entering the material name.
+    Replace this PNG directly; keep the filename and image link.
+    -->
 
-Connection elements such as bolts, springs, or bearings can alternatively be modelled explicitly or replaced by idealised elements. The choice of contact and connection types represents an important modelling decision and should always be made in the context of the real structure and the objective of the analysis.
+    [![Click here to create a new material](media/08_modalanalyse/02a_material_hier_klicken.en.png){width=900px}](media/08_modalanalyse/02a_material_hier_klicken.en.png "Click here to create a new material"){.glightbox}
+
+2. Add **Density** and **Isotropic Elasticity** from the toolbox. Enter the following values and check the units:
+
+    | Property | Value |
+    | :---- | :---- |
+    | Density | \(2.7\,\mathrm{kg/dm^3}=2,700\,\mathrm{kg/m^3}\) |
+    | Young’s modulus | \(70\,\mathrm{GPa}=70,000\,\mathrm{MPa}\) |
+    | Poisson’s ratio | \(0.35\) |
+
+3. Return to the model in Mechanical and assign *Aluminium_Modal* to the beam.
+
+The database alloy shown under [Material Assignment](05_elementtypen_ansatzf.en.md#material-assignment) has \(\nu=0.33\). For this task, use the properties specified here for the material you created yourself.
+
+<!-- SCREENSHOT: 02_aluminium_neu_anlegen.en.png
+In Engineering Data, select the newly created Aluminium_Modal material.
+Capture the material overview, toolbox and properties together, with readable units.
+Show Density = 2.7 kg/dm³ or 2,700 kg/m³ and Isotropic Elasticity with Young's Modulus = 70 GPa
+or 70,000 MPa and Poisson's Ratio = 0.35.
+If needed, add a separate capture showing entry of the new material name.
+Replace this PNG directly; keep the filename and image link.
+-->
+
+[![Creating the new Aluminium_Modal material](media/08_modalanalyse/02_aluminium_neu_anlegen.en.png){width=900px}](media/08_modalanalyse/02_aluminium_neu_anlegen.en.png "Creating the new Aluminium_Modal material"){.glightbox}
+
+Use the established meshing procedure.
+
+### 3. Boundary Conditions
+
+Start with the **free analysis without supports**. For the cantilever variant, subsequently fix one end face and leave the other free. For the fixed-at-both-ends case, change the supports according to the task definition.
+
+### 4. Analysis Settings
+
+Request the first **ten modes**. Do not restrict the search range for this introduction. The standard analysis is **undamped**; it does not determine damping ratios. The required number of modes must be chosen separately for other questions.
+
+<!-- SCREENSHOT: 03_modalanalyse_einstellungen.en.png
+Cantilever aluminium beam; ten modes, no restriction of the search range, undamped solution. Capture the tree
+and settings together in the English interface.
+Replace this PNG directly; keep the filename and image link.
+-->
+
+[![Beam analysis settings](media/08_modalanalyse/03_modalanalyse_einstellungen.en.png){width=900px}](media/08_modalanalyse/03_modalanalyse_einstellungen.en.png "Beam analysis settings"){.glightbox}
+
+!!! note "Free models and rigid body modes"
+    A free, connected 3D body has three translational and three rotational rigid body modes. Their natural frequencies are theoretically zero; small numerical deviations may occur. These modes belong to the free model. Adding supports would change the question being investigated [@AnsysFreeModal].
+
+### 5. Evaluating Mode Shapes
+
+After solving, inspect the natural frequencies in the results table. Select the required entries and use *Create Mode Shape Results* in the context menu to generate the corresponding results. Inspect the shapes individually and using the animation.
+
+<!-- SCREENSHOT: 04_eigenfrequenzen_eigenformen_erzeugen.en.png
+After solving, show the ten frequencies of the cantilever course beam. Select the required table rows and open
+the context menu for Create Mode Shape Results. Capture readable frequencies and menu entries.
+Replace this PNG directly; keep the filename and image link.
+-->
+
+[![Natural frequencies and mode shape results](media/08_modalanalyse/04_eigenfrequenzen_eigenformen_erzeugen.en.png){width=900px}](media/08_modalanalyse/04_eigenfrequenzen_eigenformen_erzeugen.en.png "Natural frequencies and mode shape results"){.glightbox}
+
+* **Natural frequency:** At which frequency can this free natural vibration occur?
+* **Mode shape:** How do the regions move relative to each other? Is the motion, for example, bending, torsion or rigid body motion?
+* **Scaling:** The displayed shape is normalised and scaled for visualisation. The absolute value in a deformation legend is not an operating displacement. The relative spatial distribution is meaningful.
+
+!!! warning "No operating displacement from modal analysis"
+    A displayed deformation in mm or m must not be interpreted as a real vibration amplitude. This also applies to strains and stresses derived from a mode shape: their relative distribution is meaningful, rather than their absolute level. The animation illustrates the mode shape; it is not a calculated operating time history.
+
+<!-- SCREENSHOT: 05_eigenform_skalierung_animation.en.png
+Select a bending mode from the same beam solution. Show the complete beam, clamp, mode number, frequency,
+deformation legend, and scaling and animation controls. Do not present the scaled values as operating
+displacements.
+Replace this PNG directly; keep the filename and image link.
+-->
+
+[![Mode shape, scaling and animation](media/08_modalanalyse/05_eigenform_skalierung_animation.en.png){width=900px}](media/08_modalanalyse/05_eigenform_skalierung_animation.en.png "Mode shape, scaling and animation"){.glightbox}
+
+The amplitude under a specific harmonic load is a separate frequency response question. It also requires the load distribution, excitation frequency and damping.
+
+### 6. Participation Summary
+
+Under *Solution Information*, select *Solution Output → Participation Factor Summary*. This provides participation factors, effective masses and mass ratios, among other quantities.
+
+<!-- SCREENSHOT: 06_beteiligungsfaktoren.en.png
+For the same beam, select Participation Factor Summary under Solution Information / Solution Output. Show the
+selection and tables for participation factor, effective mass and ratios to total mass. Make two transverse
+directions and units readable; add a second capture if needed.
+Replace this PNG directly; keep the filename and image link.
+-->
+
+[![Opening and reading the participation summary](media/08_modalanalyse/06_beteiligungsfaktoren.en.png){width=900px}](media/08_modalanalyse/06_beteiligungsfaktoren.en.png "Opening and reading the participation summary"){.glightbox}
+
+??? note "Participation Factor and Effective Modal Mass"
+
+    These quantities help assess modes for a **defined excitation direction**. For a common directional motion of the supports, for example, they indicate which modes are important for the resulting inertial excitation.
+
+    | Quantity | Practical interpretation |
+    | :---- | :---- |
+    | Participation factor | Coupling of a mode to the translational or rotational direction considered |
+    | Effective modal mass | Directional weighting of this participation; not a spatially separate component mass |
+    | Sum of effective mass ratios relative to total mass | Indication of how much of this directional participation is represented by the included modes |
+
+    **Directional comparison:** Compare two excitation directions and relate notable values to the mode shapes.
+
+    A local force has its own spatial load distribution. Its modal excitation follows from projection onto the mode shape, \(Q_i=\Phi_i^T p\). A mode with a small effective mass can therefore still be relevant for an appropriately applied local force.
+
+    ANSYS distinguishes *Cumulative Effective Mass Fraction*, referenced to the calculated modes, from *Ratio of Effective Mass to Total Mass*. The former reaches 1 at the end of the included mode list; this does not imply complete coverage of the total mass. A blanket “90% reached, therefore sufficient” replaces neither checking the excitation and frequency range nor establishing convergence of the response quantity of interest [@AnsysModalParticipation; @AnsysMassTheory].
+
+### Further Variants
+
+Investigate the remaining support and material variants in the task definition. Compare corresponding mode shapes; the mode number alone is insufficient to match them.
+
+## Task Definition: Steel Plate
+
+Use [stahlplatte.stp](media/08_modalanalyse/stahlplatte.stp). Check the dimensions: length **680 mm**, width **100 mm**, thickness **3 mm**. Use *Structural Steel*.
+
+1. Investigate the plate without constraints and identify the rigid body modes.
+2. Fix the left end face and determine the first **five natural frequencies and mode shapes**.
+3. Fix both end faces and again determine the first **five natural frequencies and mode shapes**. Compare the shapes with the cantilever case.
+
+## Task Definition: Gear Shaft
+
+Use [getriebewelle.stp](media/08_modalanalyse/getriebewelle.stp) and the material *Aluminium_Modal* you defined yourself, with \(\rho=2.7\,\mathrm{kg/dm^3}\), \(E=70\,\mathrm{GPa}\) and \(\nu=0.35\).
+
+1. Calculate the first **ten natural frequencies**. Apply *Fixed Support* at both ends.
+2. Discuss which mode shapes and natural frequencies could be relevant to machine operation. Which excitation information is missing for a conclusive assessment?
+3. Add a point mass of **10 kg** at the centre of the shaft section with the largest diameter. How do the natural frequencies and mode shapes change?
+
+### Adding the Point Mass
+
+In Mechanical, select **Geometry** in the model tree. On the **Geometry** tab, choose **Point** in the **Mass** group to insert a **Point Mass**. Position it at the centre of the shaft section with the largest diameter, select the attachment region and enter **10 kg** under **Mass**.
+
+The **Behavior** setting determines how the mass is coupled to the selected geometry. The options **Rigid** and **Deformable** have the following meanings:
+
+* **Rigid:** The attached geometry regions move together as a rigid body. Their relative deformation is suppressed. The coupling can therefore additionally stiffen the shaft in the attachment region.
+* **Deformable:** The attached geometry remains free to deform. The mass is coupled without making the selected region rigid.
+
+In practice, a point mass often replaces a component whose geometry is not to be modelled in full. If that component is much stiffer than the shaft and connects its attachment region approximately rigidly, **rigid coupling** is a suitable simplification. If the main intention is to represent an additional mass without the corresponding stiffening, **deformable coupling** is suitable [@AnsysRemotePointBehaviour].
+
+<!-- SCREENSHOT: 07_welle_punktmasse.en.png
+English capture available: Geometry tab, Point in the Mass group, Point Mass under Geometry,
+Mass = 10 kg and Behavior = Rigid are visible. Keep the filename and image link when updating the capture.
+-->
+
+[![10 kg point mass on the gear shaft](media/08_modalanalyse/07_welle_punktmasse.en.png){width=900px}](media/08_modalanalyse/07_welle_punktmasse.en.png "10 kg point mass on the gear shaft"){.glightbox}
+
+## Task Definition: Wind Turbine
+
+Import [windrad.stp](media/08_modalanalyse/windrad.stp). The assembly comprises the components *Rotoreinheit*, *Gondel*, *Turm* and *Bodenplatte*. The focus is on the **natural frequencies of the component Turm**. For simplification, *Gondel* and *Rotoreinheit* are treated as rigid bodies in both variants.
+
+1. Assign *Structural Steel* to all components and calculate the first **six natural frequencies**. Identify the mode shapes.
+2. Change the material of *Turm* to aluminium and the material of *Rotoreinheit* to a polymer. How does the material selection affect the natural frequencies of *Turm*?
+
+The ground support conditions and polymer definition are deliberately left for you to choose and justify. Document the material properties, contacts and couplings used. Rigid bodies also require the appropriate mass and mass moments of inertia; changing their material can therefore affect the natural frequencies of *Turm*.
+
+### Rigid Bodies and Connections
+
+The components *Gondel* and *Rotoreinheit* are modelled as rigid bodies. They can move and rotate, but do not deform. Their mass and mass moments of inertia are still included in the calculation.
+
+<!-- SCREENSHOT: 08_windenergie_starrkoerper_kopplung.en.png
+Show Gondel and Rotoreinheit as rigid bodies. Capture the tree, body selection, rigid-body definition and
+connection to the deformable Turm; add a second detail capture if needed. Preserve the open choice of ground
+supports and polymer. Do not imply that one variant is the only correct solution.
+Replace this PNG directly; keep the filename and image link.
+-->
+
+[![Wind turbine rigid bodies and couplings](media/08_modalanalyse/08_windenergie_starrkoerper_kopplung.en.png){width=900px}](media/08_modalanalyse/08_windenergie_starrkoerper_kopplung.en.png "Wind turbine rigid bodies and couplings"){.glightbox}
+
+Components that are firmly connected can be modelled using *Bonded* contact. An overview of contact types is provided in the [Contacts](02_installation_erste_schritte.en.md#contacts) section.
+
+Contacts are listed in the model tree under **Connections → Contacts**. Select a contact region to display the associated faces and settings, as illustrated below.
+
+<!-- SCREENSHOT: 09_windenergie_kontakte.en.png
+Capture the English interface with Connections and Contacts expanded in the model tree.
+Select a contact region and show the associated faces and settings, matching the German view.
+The image is for interface orientation and does not prescribe a contact configuration.
+Replace this PNG directly; keep the filename and image link.
+-->
+
+[![Contacts under Connections in the model tree](media/08_modalanalyse/09_windenergie_kontakte.en.png){width=900px}](media/08_modalanalyse/09_windenergie_kontakte.en.png "Contacts under Connections in the model tree"){.glightbox}
 
 !!! warning "Automatic contact detection"
-    ANSYS detects contacts in assemblies **automatically**. However, these automatically generated contacts should **always be checked, adjusted, and, if necessary, revised deliberately**, as they have a significant influence on the calculated natural frequencies and mode shapes.
-
-### Boundary Conditions
-
-Boundary conditions have a significant influence on natural frequencies and mode shapes.
-
-* typical support cases: free, fixed at one end, fixed at both ends, fixed on all sides  
-* additional constraints increase the effective stiffness and shift natural frequencies  
-* in modal analysis, boundary conditions directly define the dynamic system  
-* changes in boundary conditions therefore lead to markedly different mode shapes  
-
-In assemblies, boundary conditions are often represented via contacts, supports, or idealised fixations.
-
-* here, the analysis is also linearised  
-* small vibrations about a reference state are considered  
-
-The choice of boundary conditions is a key modelling decision and should be adapted as closely as possible to the real installation situation.
-
-### Mesh
-
-<!--
-* Importance of the mesh for modal analyses
-* Local refinement at critical geometries
-* Influence of inertia distribution
--->
-
-### Solver Settings
-
-<!--
-* Objective: first n natural frequencies
-* Selection of the frequency range
-* Scaling of mode shapes
-* Use of animation for video sequences
--->
-
-## Task Description
-
-* [biegebalken.stp](media/08_modalanalyse/biegebalken.stp)
-* [stahlplatte.stp](media/08_modalanalyse/stahlplatte.stp)
-* [getriebewelle.stp](media/08_modalanalyse/getriebewelle.stp)
-* [windrad.stp](media/08_modalanalyse/windrad.stp)
-
-### 1. Beam
-
-* Compare the first ten mode shapes
-* Influence of boundary conditions
-* Influence of material
-
-### 2. Steel Plate
-
-* First five modes
-* Interpretation of typical plate modes
-* Comparison of modes for free and fixed edges
-
-### 3. Gear Shaft
-
-* Influence of boundary conditions. Where and how implemented? Fixed, external, cylindrical bearing etc. Fixed floating bearing arrangement; rotational degrees of freedom affect ONLY the rigid body modes.  
-* Influence of point masses → does not affect the shaft end
-* Identification of relevant modes for machine operation
-
-### 4. Wind Turbine
-
-* Reduction of complex assemblies
-* Influence of material selection
-* Structurally critical modes
+    Check automatically generated contacts and the connection of the rigid bodies to *Turm*. Do not accept detected connections without checking them.
 
 ## Discussion of Results
 
-* Changes in mode shapes due to mass distribution, stiffness, and boundary conditions
-* Interpretation of typical mode shapes
-* Relevance for operating speeds and safety
-* Limitations of modal analysis
+* How do mass distribution, stiffness and boundary conditions change the corresponding natural frequencies and mode shapes?
+* Have rigid body modes, local modes and global bending or torsional modes been identified correctly?
+* How sensitive are the results to idealised supports, material properties and connection stiffnesses?
+* Which excitation frequencies and load distributions would need to be known to assess operational relevance?
+* What can modal analysis establish, and which conclusions require a load response or comparison with measurements?
 
 ## Further Reading
 
-<!--
-* Introduction to operational vibration analysis
-* Experimental modal analysis
-* Model reduction for large assemblies
-* Multibody models and coupling to FE models
--->
+### Experimental Modal Analysis
+
+Experimental modal analysis determines natural frequencies, modal damping ratios and mode shapes from measured input and output signals. An instrumented impact hammer or shaker excites the structure. The force is measured, and the response is recorded, for example, using accelerometers at defined positions and in defined directions [@BKModalParameters].
+
+[![Experimental modal analysis measurement setup](media/08_modalanalyse/ema_messaufbau.en.svg){width=900px}](media/08_modalanalyse/ema_messaufbau.en.svg "Experimental modal analysis measurement setup"){.glightbox}
+
+Complex frequency response functions (FRFs) are estimated from the measured signals. When acceleration is related to the applied force, the FRF has units of \((\mathrm{m/s^2})/\mathrm{N}\). An FRF contains magnitude and phase; appropriate spectral estimators are used for noisy measurements, rather than simply dividing time histories [@BKModalParameters; @ARTeMISModal].
+
+There are two simple measurement arrangements for spatial identification: with a **roving hammer**, the sensor stays at a reference point while different points are excited. With a **roving sensor**, the excitation point stays fixed while the sensor is moved. The position and direction of each measurement are recorded; the mode shape is identified from the associated FRFs [@VRModalTesting].
+
+[![Experimental modal analysis processing](media/08_modalanalyse/ema_auswertung.en.svg){width=900px}](media/08_modalanalyse/ema_auswertung.en.svg "Experimental modal analysis processing"){.glightbox}
+
+Resonance peaks provide initial indications of modes. A single peak does not provide a complete mode shape: spatially distributed measurements are required. A mode may be barely visible if the excitation or measurement point lies on a vibration node. Damping and neighbouring modes require appropriate parameter identification; modern methods fit a modal model to the FRFs [@BKModalParameters; @ARTeMISModal].
+
+Measurement quality should be checked for frequency resolution, excitation bandwidth, double hits, windowing and coherence, among other factors. High coherence alone is not a complete demonstration of quality [@VRModalTesting].
+
+When comparing with an FE model, the measurement and model boundary conditions must be matched. Differences can arise from supports, connections, material properties and added sensor masses. Such a comparison checks the model; without measurement data, there is no experimental validation. Undamped FE modal analysis also provides no measured damping ratios.
+
+### Transition to Frequency Response
+
+Modal analysis answers: **Which mode shapes and natural frequencies does the structure possess?** Harmonic analysis adds: **What are the amplitude and phase under a prescribed harmonic load?** For a complex load amplitude \(\hat p\):
+
+\[
+\left(K-\omega^2M+\mathrm{i}\omega C\right)\hat u=\hat p
+\]
+
+This follows by substituting \(u(t)=\operatorname{Re}(\hat u\,\mathrm{e}^{\mathrm{i}\omega t})\) into the general equation of motion. Mode superposition uses the previously calculated mode shapes as a reduced basis; the included modes must suit the load, frequency range and response quantity [@AnsysHarmonicTheory].
 
 ## Quiz for Self Assessment
+
+<!-- markdownlint-disable MD033 -->
+
+<?quiz?>
+question: What does the maximum value of a scaled mode shape tell us?
+answer: It gives the real operating displacement.
+answer-correct: It belongs to the normalisation; the relative deformation distribution is meaningful.
+answer: It determines damping.
+content:
+The mode shape is scaled. An operating displacement requires a load response with a specified excitation and damping.
+<?/quiz?>
+
+<?quiz?>
+question: How many rigid body modes does a free, connected 3D body have?
+answer-correct: Six
+answer: One
+answer: Ten
+content:
+Three translations and three rotations give six rigid body modes. Their frequencies are theoretically zero.
+<?/quiz?>
+
+<?quiz?>
+question: What follows from a large effective mass ratio in one direction?
+answer: The real amplitude is large.
+answer: Every local force strongly excites this mode.
+answer-correct: The mode is important for the corresponding directional inertial excitation.
+content:
+Effective modal mass refers to an excitation direction. For a local force, its spatial distribution must also be considered.
+<?/quiz?>
+
+<?quiz?>
+question: Which additional information is needed for a harmonic load response?
+answer: Only the colour of the mode shape
+answer-correct: The load definition and damping, together with the frequency range considered
+answer: Only the mode number
+content:
+Natural frequencies and mode shapes alone do not determine the amplitude under an external force.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->

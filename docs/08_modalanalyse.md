@@ -50,7 +50,7 @@ Die folgenden Filmsequenzen verdeutlichen typische Situationen, in denen sich di
 
 ---
 
-### Resonanz eines Brückensystems (Tacoma Narrows Bridge)
+### Aeroelastische Instabilität der Tacoma-Narrows-Brücke
 
 <!-- markdownlint-disable MD033 -->
 <iframe  
@@ -67,12 +67,11 @@ Die folgenden Filmsequenzen verdeutlichen typische Situationen, in denen sich di
 
 ??? question "Welche strukturdynamischen Effekte sind sichtbar?"
 
-    * Die Brücke zeigt eine ausgeprägte Torsionsmode mit großer Auslenkung; die Eigenform dominiert das gesamte Systemverhalten deutlich.  
-    * Die starke Zunahme der Schwingungsamplitude weist auf einen Resonanzzustand hin, der in eine **Resonanzkatastrophe** übergeht.  
-    * Die aerodynamische Anregung entsteht durch Strömungsabriss und periodische Wirbelablösungen, die Anregungsanteile im Bereich einer Eigenfrequenz der Brücke erzeugen.  
-    * Die Kopplung zwischen Strömung und Struktur führt zu einer selbsterregten Schwingung, sodass die Bewegung nicht durch äußere periodische Lasten, sondern durch das System selbst aufrechterhalten wird.  
-    * Moderne Brücken werden aerodynamisch günstiger ausgeführt, um solche Effekte durch optimierte Profile, Versteifungen und geänderte Bauformen zu vermeiden.  
-    * Weitere Informationen hier: [https://wsdot.wa.gov/TNBhistory/](https://wsdot.wa.gov/TNBhistory/)
+    * Die Brücke zeigt ausgeprägte Torsionsschwingungen mit stark zunehmender Amplitude.
+    * Eigenfrequenzen und Eigenformen charakterisieren das schwingungsfähige Tragwerk und sind Grundlage seiner aeroelastischen Betrachtung.
+    * Beim aeroelastischen Flattern verändert die Bewegung des Brückendecks die Luftkräfte. Diese wirken auf die Bewegung zurück und können ihr mehr Energie zuführen, als durch Dämpfung verloren geht.
+    * Diese Selbsterregung ist von erzwungener Resonanz durch eine vorgegebene periodische äußere Kraft zu unterscheiden. Eine solche Erregerfrequenz muss hier nicht mit einer Eigenfrequenz übereinstimmen.
+    * Eine reine strukturelle Modalanalyse beschreibt Eigenformen und Eigenfrequenzen, genügt aber nicht zur Beurteilung der aeroelastischen Stabilität [@WSDOTTacomaFailure].
 
 ---
 
@@ -275,25 +274,30 @@ Das zugehörige Spektrum zeigt idealerweise nur eine einzige Frequenzkomponente 
 
 ### Gedämpfte Schwingung
 
-Reale technische Systeme verlieren Schwingungsenergie durch Reibung, Luftwiderstand oder Materialdämpfung. Die Dämpfung wird durch eine Proportionalität zur Geschwindigkeit modelliert:  
+Reale technische Systeme verlieren Schwingungsenergie durch Reibung, Luftwiderstand oder Materialdämpfung. Bei viskoser Dämpfung ist die Dämpfungskraft proportional zur Geschwindigkeit:
 
 \[
-m \ddot{x} + k \dot{x} + D x = 0
+m \ddot{x} + d \dot{x} + c x = 0
 \]
+
+Dabei sind \(m\) die Masse in \(\mathrm{kg}\), \(d\) die Dämpfungskonstante in \(\mathrm{N\,s/m}\) und \(c\) die Federsteifigkeit in \(\mathrm{N/m}\). Wie zuvor gilt \(\omega_0=\sqrt{c/m}\).
 
 Es werden folgende Fälle unterschieden:  
 
-* schwach gedämpfte Schwingung (periodisches Verhalten, langsames Abklingen)  
+* unterkritische Dämpfung (abklingende Schwingung)
 * kritische Dämpfung (Grenzfall, schnellster Abklingvorgang ohne Schwingung)  
-* starke Dämpfung (keine periodische Bewegung)  
+* überkritische Dämpfung (keine periodische Bewegung)
 
-Die gedämpfte Eigenkreisfrequenz lautet:  
+Für den unterkritisch gedämpften Fall \(0<d<2\sqrt{mc}\) lautet die gedämpfte Eigenkreisfrequenz:
 
 \[
-\omega_\mathrm{d} = \sqrt{\omega_0^2 - \left(\frac{k}{2m}\right)^2}
+\omega_\mathrm{d} = \sqrt{\omega_0^2 - \left(\frac{d}{2m}\right)^2}
 \]
 
 [![Gedämpfte Schwingungen](media/08_modalanalyse/gedaempfte_schwingung.png){width=350px}](media/08_modalanalyse/gedaempfte_schwingung.png "Gedämpfte Schwingungen"){.glightbox}
+
+Die Achsen zeigen die Auslenkung \(y\) über der Zeit \(t\).
+
 <span class="bildquelle">Bildquelle[@Eichler2023]</span>  
 
 ---
@@ -306,23 +310,19 @@ Wirkt auf das System eine zeitabhängige äußere Kraft
 F(t) = F_0 \sin(\omega t)
 \]
 
-so stellt sich ein stationärer Schwingungszustand ein. Die Amplitude der Antwortschwingung hängt von der Anregungsfrequenz \(\omega\) ab und zeigt ein Maximum, wenn \(\omega\) in der Nähe der Eigenkreisfrequenz \(\omega_0\) liegt. Dieses Verhalten wird als Resonanz bezeichnet.  
+so klingt bei vorhandener viskoser Dämpfung der freie Schwingungsanteil ab. Nach dem Einschwingvorgang bleibt eine stationäre Schwingung mit der Anregungsfrequenz \(\omega\). Bei konstanter Kraftamplitude \(F_0\) hängt ihre Amplitude von der Anregungsfrequenz und der Dämpfung ab. Bei schwacher Dämpfung liegt das Amplitudenmaximum nahe der ungedämpften Eigenkreisfrequenz \(\omega_0\). Diese Amplitudenüberhöhung wird als Resonanz bezeichnet. Ohne Dämpfung wächst die Amplitude bei \(\omega=\omega_0\) im idealisierten Modell unbegrenzt; ein endlicher stationärer Zustand stellt sich dann nicht ein [@XueDampedDriven].
 
-!!! danger "FIXME"
-    Abbildung Betriebsbereich über-/unterkritisch hinzu
+Die Grafik zeigt als Beispiel die **Unwuchtantwort eines idealisierten Rotors**. Dabei sind \(n\) die Drehzahl, \(n_\mathrm{k}\) die kritische Drehzahl, \(X\) die Auslenkungsamplitude und \(e\) die Massenexzentrizität. Die Kurve gilt für ein ungedämpftes Einmassenmodell: Bei \(n=n_\mathrm{k}\) existiert keine endliche stationäre Amplitude. Der schraffierte Bereich ist schematisch gewählt und legt keine allgemeinen Grenzdrehzahlen fest [@NPTELUnbalance].
 
-<!--
-[![Resonanzkurve](media/08_modalanalyse/resonanz.png){width=650px}](media/08_modalanalyse/resonanz.png "Resonanzkurve"){.glightbox}
-<span class="bildquelle">Bildquelle[]</span>  
--->
+[![Unwuchtantwort mit unterkritischem und überkritischem Bereich](media/08_modalanalyse/resonanz_unwucht.png){width=900px}](media/08_modalanalyse/resonanz_unwucht.png "Unwuchtantwort mit unterkritischem und überkritischem Bereich"){.glightbox}
 
 ---
 
 ### Überlagerung und Schwebung
 
-Ein technisches System kann mehrere Schwingungsanteile gleichzeitig enthalten. Sie Überlagerung zweier harmonischer Schwingungen mit leicht unterschiedlicher Frequenz führt zur Schwebung, einem alternierenden Verstärken und Abschwächen der Gesamtamplitude.  
+Ein technisches System kann mehrere Schwingungsanteile gleichzeitig enthalten. Die Überlagerung zweier harmonischer Schwingungen mit leicht unterschiedlicher Frequenz führt zur Schwebung, einem alternierenden Verstärken und Abschwächen der Gesamtamplitude.
 
-Die Überlagerung zweier Schwingungen schreiben als:  
+Die Überlagerung zweier Schwingungen lässt sich schreiben als:
 
 \[
 x(t) = A_1 \sin(\omega_1 t) + A_2 \sin(\omega_2 t)
@@ -349,149 +349,345 @@ Eigenschwingungen treten nicht nur in eindimensionalen Systemen auf, sondern üb
 * zu jeder Eigenfrequenz gehört eine charakteristische Eigenform  
 * nur bestimmte Frequenzen sind mit der Geometrie und den Randbedingungen vereinbar und führen zu ausgeprägtem Schwingungsverhalten  
 
-Diese Grundprinzipien lassen sich systematisch auf technische Strukturen übertragen. Die Finite Element Methode formuliert sie in Form des allgemeinen Eigenwertproblems. Für ein lineares System mit Massenmatrix \(M\) und Steifigkeitsmatrix \(K\) gilt:
+Diese Grundprinzipien lassen sich auf diskretisierte technische Strukturen übertragen. Für ein lineares System mit konstanten Massen-, Dämpfungs- und Steifigkeitsmatrizen gilt:
 
 \[
-M \ddot{\varphi} + K \varphi = 0
+M\ddot{u}(t)+C\dot{u}(t)+Ku(t)=p(t)
 \]
 
-Mit dem harmonischen Lösungsansatz \(\varphi(t) = \Phi\,\mathrm{e}^{\mathrm{i}\omega t}\) erhält man das algebraische Eigenwertproblem:
+Dabei sind \(u(t)\) der Verschiebungsvektor, \(p(t)\) der äußere Lastvektor sowie \(M\), \(C\) und \(K\) die Massen-, Dämpfungs- und Steifigkeitsmatrix. Für freie, ungedämpfte Schwingungen werden \(p(t)=0\) und \(C=0\) gesetzt. Mit \(u(t)=\Phi\,\mathrm{e}^{\mathrm{i}\omega t}\) folgt:
 
 \[
-K \Phi = \omega^2 M \Phi
+K\Phi=\omega^2 M\Phi
 \]
 
-Die Lösung liefert die Eigenfrequenzen \(\omega\) und die zugehörigen Eigenformen \(\Phi\). Sie beschreiben das grundlegende Schwingungsverhalten von Balken, Platten, Wellen sowie komplexen Baugruppen und bilden die Basis der Modalanalyse.
+Die Eigenwerte \(\omega_i^2\) liefern die Eigenkreisfrequenzen; \(f_i=\omega_i/(2\pi)\) sind die Eigenfrequenzen in Hz. Die Eigenvektoren \(\Phi_i\) beschreiben die Eigenformen. Diese ungedämpfte Modalanalyse bestimmt keine Dämpfungsgrade [@AnsysModalTheory].
 
 ### Modellstufen
 
-Die Modellierung des Schwingungsverhaltens erfolgt schrittweise von starren Körpern mit wenigen Freiheitsgraden über diskrete Masse-Feder-Systeme hin zu kontinuierlichen Strukturen wie Balken, Platten oder Wellen. Mit jeder Modellstufe steigt die Fähigkeit, reale Schwingungsformen abzubilden – von einfachen Bewegungen einzelner Körper bis zu verteilten Eigenformen technischer Strukturen.
+Die Modellwahl richtet sich nach der gesuchten Bewegung: Ein starrer Körper bildet globale Bewegungen ab, ein Mehrmassensystem relative Bewegungen diskreter Massen. Kontinuierliche Balken oder Platten besitzen räumlich verteilte Verformungen. Das FE-Modell nähert diese durch endlich viele Knotenfreiheitsgrade an. Mehr Freiheitsgrade allein garantieren dabei kein besseres Modell; Material, Lagerung und Verbindungen müssen zur Fragestellung passen.
 
-!!! danger "FIXME"
-    passende Abbildungen aus Dresig/Beitelschmidt ergänzen (Modellstufen: starrer Körper → Mehrmassensystem → Balken/Platte),  
-    Abschnitt inhaltlich erweitern: kurze Erläuterung der Rolle von Freiheitsgraden, Übergang vom diskreten zum kontinuierlichen Modell, Bedeutung für spätere FE-Modalanalyse.
+[![Modellstufen und FE-Diskretisierung](media/08_modalanalyse/modellstufen.svg){width=900px}](media/08_modalanalyse/modellstufen.svg "Modellstufen und FE-Diskretisierung"){.glightbox}
+
+!!! info "Zur Vertiefung"
+    Beitelschmidt/Dresig, *Maschinendynamik*, Kapitel „Modellbildung und Kennwertermittlung“ sowie „Lineare Systeme mit mehreren Freiheitsgraden: Modellbildung und freie Schwingungen“ [@Beitelschmidt2024].
+
+## Aufgabenstellung Balken
+
+Verwenden Sie [biegebalken.stp](media/08_modalanalyse/biegebalken.stp). Der Balken besitzt einen rechteckigen Querschnitt mit \(b=8\,\mathrm{mm}\), \(h=12\,\mathrm{mm}\) und eine Länge von \(L=100\,\mathrm{mm}\). Prüfen Sie die importierten Abmessungen.
+
+Legen Sie ein **neues Material** mit dem Namen *Aluminium_Modal* an. Verwenden Sie \(\rho=2{,}7\,\mathrm{kg/dm^3}\), \(E=70\,\mathrm{GPa}\) und \(\nu=0{,}35\). Das eigenständige Definieren der Materialkennwerte ist Teil dieser Aufgabe.
+
+1. Berechnen Sie jeweils die ersten **zehn Eigenformen** für den beidseitig freien, den einseitig fest eingespannten und den beidseitig fest eingespannten Balken.
+2. Ordnen Sie Starrkörper- und elastische Moden zu. Vergleichen Sie entsprechende Eigenformen und diskutieren Sie den Einfluss der Einspannung.
+3. Ändern Sie beim beidseitig eingespannten Balken das Material in *Baustahl* und vergleichen Sie die Ergebnisse.
 
 ### Analytische Lösungen einfacher Strukturen
 
-!!! danger "FIXME"
-    Ergänzen einfacher Berechnung
+Für einen einfachen Balken lassen sich Biegeeigenfrequenzen auch ohne FE-Modell abschätzen. Dazu wird der Balken als schlank und gleichförmig betrachtet: Er biegt sich, zusätzliche Verformungen durch Schub werden vernachlässigt. Dieses vereinfachte Modell heißt Euler-Bernoulli-Balken. Die folgende Formel gilt für einen einseitig fest eingespannten Balken mit kleinen Verformungen; auch die Rotationsträgheit wird vernachlässigt [@TUGrazCantilever].
 
----
+\[
+f_n=\frac{\beta_n^2}{2\pi L^2}\sqrt{\frac{EI}{\rho A}},
+\qquad \beta_1\approx1{,}875,\quad\beta_2\approx4{,}694
+\]
 
-## Generelles zur Umsetzung in ANSYS
+Hierbei sind \(L\) die freie Länge, \(E\) der Elastizitätsmodul, \(I\) das Flächenträgheitsmoment für die betrachtete Biegerichtung, \(\rho\) die Dichte und \(A\) die Querschnittsfläche. Mit \(E\) in Pa, \(I\) in m⁴, \(\rho\) in kg/m³, \(A\) in m² und \(L\) in m ergibt sich \(f_n\) in Hz.
 
-### Projektoberfläche
+Beim Rechteckquerschnitt wird für die beiden Biegerichtungen jeweils das passende Flächenträgheitsmoment eingesetzt. Verglichen werden entsprechende **Biegemoden**, nicht ungeprüft die erste und zweite Zeile der FE-Ergebnisliste. Torsions- und Längsmoden sind in dieser Formel nicht enthalten. Bei kurzen Balken und höheren Moden können die Balkenannahmen merklich von einem 3D-Modell abweichen.
 
-In der Projektoberfläche ist die Analyseart *Modal* zu wählen. Für viele Aufgaben kann das System als Standalone-Modalanalyse verwendet werden. Für weiterführende Fragestellungen ist eine Kopplung mit einer *statisch-mechanischen Analyse* oder einer *harmonischen Analyse* sinnvoll, etwa zur Untersuchung von Lastfällen oder zur Frequenzantwortanalyse.  
+??? note "Welche Zahlenwerte gelten?"
 
-[![Projektoberfläche, Modalanalyse](media/08_modalanalyse/modal_projektoberflaeche.png){width=650px}](media/08_modalanalyse/modal_projektoberflaeche.png "Projektoberfläche Modalanalyse"){.glightbox}
+    Die Werte 1,875 und 4,694 gehören zur ersten und zweiten Biegemode des einseitig eingespannten, gleichförmigen Balkens in diesem Modell. Sie gelten nicht nur für eine bestimmte Balkenlänge oder einen bestimmten Rechteckquerschnitt: Länge, Querschnitt und Material werden separat in der Formel berücksichtigt. Für andere Lagerungen gelten andere Zahlenwerte [@TUGrazCantilever].
 
-### Geometrie und Material
+## Umsetzung in ANSYS – Balken
 
-Die Geometrie wird wie gewohnt in das Projekt eingebunden.  
+Die Anleitung erläutert die Modellierung und Auswertung am Balken. Die Lagerungs- und Materialvarianten untersuchen Sie gemäß Aufgabenstellung.
 
-Auch bei der Modalanalyse ist die Wahl und korrekte Zuweisung der Materialien von zentraler Bedeutung, da die Eigenfrequenzen und Eigenformen direkt von der Massenverteilung abhängen (vgl. theoretische Herleitung). Bei Baugruppen müssen häufig mehrere Materialien berücksichtigt und den jeweiligen Komponenten korrekt zugewiesen werden. Die benötigten Materialkennwerte werden über die technischen Daten in das Projekt eingebunden.  
+### 1. Projektverwaltung und Geometrieimport
 
-[![Materialauswahl in der Modalanalyse](media/08_modalanalyse/modal_materialauswahl.png){width=650px}](media/08_modalanalyse/modal_materialauswahl.png "Materialauswahl in der Modalanalyse"){.glightbox}
+Wählen Sie in Workbench das Analysesystem *Modal* und importieren Sie die Balkengeometrie. Für diesen Einstieg genügt eine eigenständige Modalanalyse. Eine Kopplung mit *Statisch strukturell* dient weiterführend dazu, einen vorgespannten Zustand zu berücksichtigen.
 
-### Kontakt und Verbindungselemente
+<!-- SCREENSHOT: 01_modal_projektoberflaeche.png
+Workbench mit eigenständigem Modal-System und den zugehörigen Projektzellen zeigen.
+Vorhandene DE-Aufnahme ist eingebunden. Bei einer Neuaufnahme Toolbox und Projektschema
+lesbar zeigen; Dateiname beibehalten und EN-Pendant ebenfalls aktualisieren.
+-->
 
-Bei Baugruppen spielen Kontakte und Verbindungselemente eine zentrale Rolle für das Schwingungsverhalten. Sie beeinflussen sowohl die effektive Steifigkeit als auch die Massenkopplung zwischen den einzelnen Komponenten und wirken sich damit direkt auf die berechneten Eigenfrequenzen und Eigenformen aus.
+[![Projektoberfläche, Modalanalyse](media/08_modalanalyse/01_modal_projektoberflaeche.png){width=650px}](media/08_modalanalyse/01_modal_projektoberflaeche.png "Projektoberfläche Modalanalyse"){.glightbox}
 
-In der Modalanalyse werden Kontakte in der Regel **linearisiert**. Nichtlineare Effekte wie Reibung, Öffnen oder Gleiten werden dabei nicht berücksichtigt. Stattdessen beschreibt der Kontakt eine lineare Kopplung der beteiligten Bauteile, beispielsweise als *bonded*, *no separation* oder idealisierte Lagerung.
+### 2. Material und Netz
 
-Für viele Fragestellungen ist diese Vereinfachung ausreichend, insbesondere wenn:
+1. Öffnen Sie in Workbench die *Technischen Daten*. Klicken Sie unten in der Materialübersicht auf die Zeile *Hier klicken, um ein neues Material hinzuzufügen*. Geben Sie dort den Namen *Aluminium_Modal* ein, um das neue Material anzulegen.
 
-* kleine Schwingungsamplituden betrachtet werden,  
-* sich der Kontakt im Betrieb nicht wesentlich ändert,  
-* das Ziel in der Bestimmung globaler Eigenfrequenzen und Eigenformen liegt.  
+    <!-- SCREENSHOT: 02a_material_hier_klicken.png
+    In den Technischen Daten die Zeile zum Hinzufügen eines neuen Materials zeigen.
+    Die Zeile "Hier klicken, um ein neues Material hinzuzufügen" mit einem Pfeil markieren.
+    Materialübersicht und Zeile vollständig lesbar aufnehmen, möglichst vor der Namenseingabe.
+    Diese PNG-Datei direkt ersetzen; Dateiname und Einbindung beibehalten.
+    -->
 
-Verbindungselemente wie Schrauben, Federn oder Lager können alternativ explizit modelliert oder durch idealisierte Elemente ersetzt werden. Die Wahl der Kontakt- und Verbindungstypen stellt dabei einen wichtigen Modellierungsentscheid dar und sollte stets im Kontext der realen Struktur und der Zielsetzung der Analyse erfolgen.
+    [![Hier klicken, um ein neues Material anzulegen](media/08_modalanalyse/02a_material_hier_klicken.png){width=900px}](media/08_modalanalyse/02a_material_hier_klicken.png "Hier klicken, um ein neues Material anzulegen"){.glightbox}
+
+2. Ergänzen Sie aus der Toolbox die Eigenschaften **Dichte** und **Isotrope Elastizität**. Tragen Sie die folgenden Werte ein und prüfen Sie die Einheiten:
+
+    | Eigenschaft | Wert |
+    | :---- | :---- |
+    | Dichte | \(2{,}7\,\mathrm{kg/dm^3}=2.700\,\mathrm{kg/m^3}\) |
+    | Elastizitätsmodul | \(70\,\mathrm{GPa}=70.000\,\mathrm{MPa}\) |
+    | Querkontraktionszahl | \(0{,}35\) |
+
+3. Wechseln Sie zurück zum Modell in Mechanical und weisen Sie dem Balken *Aluminium_Modal* zu.
+
+Die in [Materialzuweisung](05_elementtypen_ansatzf.md#materialzuweisung) gezeigte Datenbanklegierung besitzt \(\nu=0{,}33\). Für diese Aufgabe gelten die hier vorgegebenen Werte des selbst angelegten Materials.
+
+<!-- SCREENSHOT: 02_aluminium_neu_anlegen.png
+In den Technischen Daten das selbst angelegte Material Aluminium_Modal auswählen.
+Materialübersicht, Toolbox und Eigenschaftenbereich gemeinsam lesbar aufnehmen.
+Dichte 2,7 kg/dm³ beziehungsweise 2.700 kg/m³, Isotrope Elastizität mit E = 70 GPa
+beziehungsweise 70.000 MPa und Querkontraktionszahl 0,35 zeigen; Einheiten sichtbar lassen.
+Die Eingabe des neuen Materialnamens bei Bedarf in einer ergänzenden Aufnahme zeigen.
+Diese PNG-Datei direkt ersetzen; Dateiname und Einbindung beibehalten.
+-->
+
+[![Neues Material Aluminium_Modal anlegen](media/08_modalanalyse/02_aluminium_neu_anlegen.png){width=900px}](media/08_modalanalyse/02_aluminium_neu_anlegen.png "Neues Material Aluminium_Modal anlegen"){.glightbox}
+
+Die Vernetzung erfolgt nach dem bekannten Vorgehen.
+
+### 3. Randbedingungen
+
+Beginnen Sie mit der **freien Analyse ohne Lagerungen**. Für die einseitig eingespannte Variante fixieren Sie anschließend eine Stirnfläche; die andere bleibt frei. Im beidseitig eingespannten Fall ändern Sie die Lagerung entsprechend der Aufgabenstellung.
+
+### 4. Analyseeinstellungen
+
+Stellen Sie die Berechnung der ersten **zehn Moden** ein. Der Suchbereich wird für diesen Einstieg nicht eingeschränkt. Die Standardanalyse ist **ungedämpft**; sie bestimmt keine Dämpfungsgrade. Die benötigte Modenanzahl ist bei anderen Fragestellungen gesondert festzulegen.
+
+<!-- SCREENSHOT: 03_modalanalyse_einstellungen.png
+Einseitig eingespannter Aluminiumbalken; zehn Moden, keine Einschränkung des Suchbereichs, ungedämpfte Lösung.
+Strukturbaum und Detailfenster gemeinsam aufnehmen. Tatsächliche deutsche Menütexte zeigen.
+Diese PNG-Datei direkt ersetzen; Dateiname und Einbindung beibehalten.
+-->
+
+[![Analyseeinstellungen am Balken](media/08_modalanalyse/03_modalanalyse_einstellungen.png){width=900px}](media/08_modalanalyse/03_modalanalyse_einstellungen.png "Analyseeinstellungen am Balken"){.glightbox}
+
+!!! note "Freie Modelle und Starrkörpermoden"
+    Ein freier, zusammenhängender 3D-Körper besitzt drei translatorische und drei rotatorische Starrkörpermoden. Ihre Eigenfrequenzen liegen theoretisch bei null; numerisch können kleine Abweichungen auftreten. Sie gehören zum freien Modell. Zusätzliche Lagerungen würden die untersuchte Fragestellung ändern [@AnsysFreeModal].
+
+### 5. Eigenformen auswerten
+
+Nach der Lösung werden die Eigenfrequenzen in der Ergebnistabelle betrachtet. Markieren Sie die gewünschten Einträge und erzeugen Sie die zugehörigen Eigenformergebnisse über das Kontextmenü. Prüfen Sie die Formen einzeln und mit der Animation.
+
+<!-- SCREENSHOT: 04_eigenfrequenzen_eigenformen_erzeugen.png
+Nach dem Lösen die zehn Frequenzen des einseitig eingespannten Kursbalkens anzeigen. Gewünschte Tabellenzeilen
+markieren und das Kontextmenü zum Erzeugen der Eigenformergebnisse öffnen. Frequenzen und Menü lesbar
+aufnehmen.
+Diese PNG-Datei direkt ersetzen; Dateiname und Einbindung beibehalten.
+-->
+
+[![Eigenfrequenzen und Eigenformergebnisse](media/08_modalanalyse/04_eigenfrequenzen_eigenformen_erzeugen.png){width=900px}](media/08_modalanalyse/04_eigenfrequenzen_eigenformen_erzeugen.png "Eigenfrequenzen und Eigenformergebnisse"){.glightbox}
+
+* **Eigenfrequenz:** Bei welcher Frequenz kann diese freie Eigenschwingung auftreten?
+* **Eigenform:** Wie bewegen sich die Bereiche relativ zueinander? Liegt beispielsweise eine Biege-, Torsions- oder Starrkörperbewegung vor?
+* **Skalierung:** Die dargestellte Form ist normiert und zur Visualisierung skaliert. Der absolute Zahlenwert einer Verformungslegende ist keine Betriebsauslenkung. Die relative räumliche Verteilung ist dagegen aussagekräftig.
+
+!!! warning "Keine Betriebsauslenkung aus der Modalanalyse"
+    Eine angezeigte Verformung in mm oder m darf nicht als reale Schwingungsamplitude interpretiert werden. Das gilt auch für aus der Eigenform abgeleitete Dehnungs- und Spannungswerte: Aussagekräftig ist ihre relative Verteilung, nicht ihr absolutes Niveau. Die Animation veranschaulicht die Eigenform und stellt keinen berechneten Betriebszeitverlauf dar.
+
+<!-- SCREENSHOT: 05_eigenform_skalierung_animation.png
+Eine Biegemode desselben Balken-Rechenstands wählen. Gesamten Balken, Einspannung, Modennummer, Frequenz,
+Verformungslegende sowie Einstellungen für Skalierung und Animation lesbar zeigen. Keine Betriebsauslenkung
+behaupten.
+Diese PNG-Datei direkt ersetzen; Dateiname und Einbindung beibehalten.
+-->
+
+[![Eigenform, Skalierung und Animation](media/08_modalanalyse/05_eigenform_skalierung_animation.png){width=900px}](media/08_modalanalyse/05_eigenform_skalierung_animation.png "Eigenform, Skalierung und Animation"){.glightbox}
+
+Welche Amplitude sich unter einer konkreten harmonischen Last einstellt, ist eine gesonderte Frage der Frequenzantwort. Dafür werden auch die Lastverteilung, Anregungsfrequenz und Dämpfung benötigt.
+
+### 6. Zusammenfassung der Partizipationsfaktoren
+
+Wählen Sie in den *Lösungsinformationen* die Ausgabe *Zusammenfassung der Partizipationsfaktoren*. Dort lassen sich unter anderem Beteiligungsfaktoren, effektive Massen und Massenanteile anzeigen.
+
+<!-- SCREENSHOT: 06_beteiligungsfaktoren.png
+Beim selben Balken in den Lösungsinformationen "Zusammenfassung der Partizipationsfaktoren" wählen.
+Detailfenster mit Auswahl und
+Tabellen für Beteiligungsfaktor, effektive Masse sowie Gesamtmassenanteile zeigen. Zwei Querrichtungen
+vergleichbar und Einheiten lesbar aufnehmen; bei Bedarf ergänzende Aufnahme.
+Diese PNG-Datei direkt ersetzen; Dateiname und Einbindung beibehalten.
+-->
+
+[![Zusammenfassung der Partizipationsfaktoren](media/08_modalanalyse/06_beteiligungsfaktoren.png){width=900px}](media/08_modalanalyse/06_beteiligungsfaktoren.png "Zusammenfassung der Partizipationsfaktoren"){.glightbox}
+
+??? note "Beteiligungsfaktor und effektive modale Masse"
+
+    Diese Größen helfen, Moden hinsichtlich einer **definierten Anregungsrichtung** einzuordnen. Bei einer gleichgerichteten Bewegung der Lagerung zeigen sie beispielsweise, welche Moden für die dadurch erzeugte Trägheitsanregung wesentlich sind.
+
+    | Größe | Praktische Aussage |
+    | :---- | :---- |
+    | Beteiligungsfaktor | Kopplung einer Mode an die betrachtete translatorische oder rotatorische Richtung |
+    | Effektive modale Masse | Richtungsbezogene Gewichtung dieser Beteiligung; keine räumlich abgetrennte Bauteilmasse |
+    | Summe der effektiven Massenanteile an der Gesamtmasse | Hinweis darauf, wie viel dieser richtungsbezogenen Beteiligung durch die berücksichtigten Moden erfasst wird |
+
+    **Richtungsvergleich:** Vergleichen Sie zwei Anregungsrichtungen und ordnen Sie auffällige Werte den Eigenformen zu.
+
+    Eine lokale Kraft hat eine eigene räumliche Lastverteilung. Ihre modale Anregung ergibt sich aus der Projektion auf die Eigenform, \(Q_i=\Phi_i^T p\). Deshalb kann auch eine Mode mit geringer effektiver Masse bei passender lokaler Krafteinleitung relevant sein.
+
+    ANSYS unterscheidet den kumulierten effektiven Massenanteil, der auf die berechneten Moden bezogen ist, vom Verhältnis der effektiven Masse zur Gesamtmasse. Ersterer erreicht am Ende der betrachteten Modenliste 1; daraus folgt keine vollständige Erfassung der Gesamtmasse. Ein pauschales „90 % erreicht, also ausreichend“ ersetzt weder die Prüfung der Anregung und des Frequenzbereichs noch die Konvergenz der interessierenden Antwortgröße [@AnsysModalParticipation; @AnsysMassTheory].
+
+### Weitere Varianten
+
+Bearbeiten Sie die übrigen Lagerungs- und Materialvarianten der Aufgabenstellung. Vergleichen Sie entsprechende Eigenformen; die Modennummer allein genügt nicht zur Zuordnung.
+
+## Aufgabenstellung Stahlplatte
+
+Verwenden Sie [stahlplatte.stp](media/08_modalanalyse/stahlplatte.stp). Prüfen Sie die Abmessungen: Länge **680 mm**, Breite **100 mm**, Dicke **3 mm**. Der Werkstoff sei *Baustahl*.
+
+1. Untersuchen Sie die Platte ohne Einspannung und ordnen Sie die Starrkörpermoden ein.
+2. Spannen Sie die linke Stirnfläche fest ein und bestimmen Sie die ersten **fünf Eigenfrequenzen und Eigenformen**.
+3. Spannen Sie beide Stirnflächen fest ein und bestimmen Sie ebenfalls die ersten **fünf Eigenfrequenzen und Eigenformen**. Vergleichen Sie die Formen mit dem einseitig eingespannten Fall.
+
+## Aufgabenstellung Getriebewelle
+
+Verwenden Sie [getriebewelle.stp](media/08_modalanalyse/getriebewelle.stp) und das selbst definierte Material *Aluminium_Modal* mit \(\rho=2{,}7\,\mathrm{kg/dm^3}\), \(E=70\,\mathrm{GPa}\) und \(\nu=0{,}35\).
+
+1. Berechnen Sie die ersten **zehn Eigenfrequenzen**. Realisieren Sie die Einspannung durch fixierte Lagerungen an beiden Enden.
+2. Diskutieren Sie, welche Eigenformen und Eigenfrequenzen für den Betrieb einer Maschine relevant sein könnten. Welche Informationen zur Anregung fehlen für eine abschließende Bewertung?
+3. Fügen Sie eine Punktmasse von **10 kg** mittig am größten Durchmesser der Welle hinzu. Wie verändern sich die Eigenfrequenzen und Eigenformen?
+
+### Punktmasse ergänzen
+
+Fügen Sie in Mechanical unter **Geometrie** eine **Punktmasse** ein. Legen Sie ihre Position mittig am größten Durchmesser der Welle fest, wählen Sie den Anbindungsbereich aus und tragen Sie die Masse von **10 kg** ein.
+
+Das Verhalten **Starr** beziehungsweise **Verformbar** beschreibt die Kopplung an die ausgewählte Geometrie:
+
+* **Starr:** Die angebundenen Geometriebereiche bewegen sich gemeinsam wie ein starrer Körper. Ihre relative Verformung wird unterdrückt. Dadurch kann die Kopplung die Welle im Anbindungsbereich zusätzlich versteifen.
+* **Verformbar:** Die angebundene Geometrie darf sich weiterhin verformen. Die Masse wird angekoppelt, ohne den ausgewählten Bereich starr zu setzen.
+
+In der Praxis ersetzt eine Punktmasse häufig ein Bauteil, dessen Geometrie nicht vollständig modelliert werden soll. Ist dieses Bauteil gegenüber der Welle sehr steif und verbindet es den Anbindungsbereich annähernd starr, ist die **starre Kopplung** eine passende Vereinfachung. Soll dagegen hauptsächlich eine zusätzliche Masse ohne entsprechende Versteifung berücksichtigt werden, ist die **verformbare Kopplung** geeignet [@AnsysRemotePointBehaviour].
+
+<!-- SCREENSHOT: 07_welle_punktmasse.png
+DE-Aufnahme vorhanden: Punktmasse unter Geometrie, Masse 10 kg und Verhalten Starr sind sichtbar.
+Bei einer Neuaufnahme Position, ausgewählte Geometrie und Detailfenster lesbar zeigen.
+Dateiname und Einbindung beibehalten.
+-->
+
+[![10-kg-Punktmasse an der Getriebewelle](media/08_modalanalyse/07_welle_punktmasse.png){width=900px}](media/08_modalanalyse/07_welle_punktmasse.png "10-kg-Punktmasse an der Getriebewelle"){.glightbox}
+
+## Aufgabenstellung Windenergieanlage
+
+Importieren Sie [windrad.stp](media/08_modalanalyse/windrad.stp). Die Baugruppe besteht aus Rotoreinheit, Gondel, Turm und Bodenplatte. Gesucht sind insbesondere die **Turmeigenfrequenzen**. Gondel und Rotoreinheit werden zur Vereinfachung in beiden Varianten als Starrkörper behandelt.
+
+1. Weisen Sie allen Bauteilen *Baustahl* zu und berechnen Sie die ersten **sechs Eigenfrequenzen**. Ordnen Sie die Eigenformen zu.
+2. Ändern Sie den Turmwerkstoff in Aluminium und den Rotorwerkstoff in Kunststoff. Welchen Einfluss hat die Materialwahl auf die Turmeigenfrequenzen?
+
+Die Bodenlagerung und die Kunststoffdefinition sind bewusst selbst zu wählen und zu begründen. Dokumentieren Sie die verwendeten Materialkennwerte, Kontakte und Kopplungen. Auch Starrkörper benötigen die zutreffende Masse und Massenträgheit; ihre Materialänderung kann deshalb die Turmeigenfrequenzen beeinflussen.
+
+### Starrkörper und Verbindungen
+
+Gondel und Rotor werden als Starrkörper modelliert. Sie können sich bewegen und drehen, verformen sich aber nicht. Ihre Masse und Massenträgheit werden bei der Berechnung weiterhin berücksichtigt.
+
+<!-- SCREENSHOT: 08_windenergie_starrkoerper_kopplung.png
+Gondel und Rotor als Starrkörper zeigen. Baum, Körperauswahl, Starrkörperdefinition und Verbindung zum
+verformbaren Turm aufnehmen; gegebenenfalls zweite Detailaufnahme. Freie Wahl der Bodenlagerung und des
+Kunststoffs erhalten. Keine Variante als einzig richtige Lösung darstellen.
+Diese PNG-Datei direkt ersetzen; Dateiname und Einbindung beibehalten.
+-->
+
+[![Starrkörper und Kopplungen der Windenergieanlage](media/08_modalanalyse/08_windenergie_starrkoerper_kopplung.png){width=900px}](media/08_modalanalyse/08_windenergie_starrkoerper_kopplung.png "Starrkörper und Kopplungen der Windenergieanlage"){.glightbox}
+
+Fest miteinander verbundene Bauteile können mit dem Kontakttyp *Verbund* modelliert werden. Eine Übersicht der Kontaktarten finden Sie im Abschnitt [Kontakte](02_installation_erste_schritte.md#kontakte).
+
+Die Kontakte finden Sie im Strukturbaum unter **Verbindungen → Kontakte**. Wählen Sie einen Kontaktbereich aus, um die zugehörigen Flächen und Einstellungen anzuzeigen, wie in der folgenden Abbildung dargestellt.
+
+<!-- SCREENSHOT: 09_windenergie_kontakte.png
+DE-Aufnahme vorhanden: Verbindungen und Kontakte im Strukturbaum sowie einen ausgewählten Kontaktbereich zeigen.
+Die Abbildung dient zur Orientierung in der Oberfläche und gibt keine Kontaktkonfiguration vor.
+Dateiname und Einbindung bei einer Neuaufnahme beibehalten.
+-->
+
+[![Kontakte unter Verbindungen im Strukturbaum](media/08_modalanalyse/09_windenergie_kontakte.png){width=900px}](media/08_modalanalyse/09_windenergie_kontakte.png "Kontakte unter Verbindungen im Strukturbaum"){.glightbox}
 
 !!! warning "Automatische Kontakterkennung"
-    ANSYS erkennt Kontakte in Baugruppen **automatisch**. Diese automatisch erzeugten Kontakte sollten jedoch **immer überprüft, angepasst und bei Bedarf gezielt überarbeitet** werden, da sie einen wesentlichen Einfluss auf die berechneten Eigenfrequenzen und Eigenformen haben.
-
-### Randbedingungen
-
-Randbedingungen haben einen wesentlichen Einfluss auf Eigenfrequenzen und Eigenformen.
-
-* typische Lagerungsfälle: frei, einseitig fest, beidseitig fest, allseitig fest...
-* zusätzliche Einspannungen erhöhen die effektive Steifigkeit und verschieben Eigenfrequenzen  
-* Randbedingungen definieren in der Modalanalyse direkt das dynamische System  
-* Änderungen der Randbedingungen führen daher zu deutlich veränderten Modenformen  
-
-Bei Baugruppen werden Randbedingungen häufig über Kontakte, Lagerungen oder idealisierte Fixierungen abgebildet.
-
-* auch hier erfolgt die Betrachtung linearisiert  
-* es werden kleine Schwingungen um einen Referenzzustand betrachtet  
-
-Die Wahl der Randbedingungen ist eine zentraler Modellierungsentscheidung und sollte möglichst an die reale Einbausituation angepasst werden.
-
-### Netz
-
-<!--
-* Bedeutung des Netzes für Modalanalysen
-* Lokale Verfeinerung an kritischen Geometrien
-* Einfluss der Trägheitsverteilung
--->
-
-### Lösereinstellungen
-
-<!--
-* Ziel: die ersten n Eigenfrequenzen
-* Auswahl des Frequenzbereichs
-* Skalierung der Modenformen
-* Nutzung der Animation für Filmsequenzen
--->
-
-## Aufgabenstellung
-
-* [biegebalken.stp](media/08_modalanalyse/biegebalken.stp)
-* [stahlplatte.stp](media/08_modalanalyse/stahlplatte.stp)
-* [getriebewelle.stp](media/08_modalanalyse/getriebewelle.stp)
-* [windrad.stp](media/08_modalanalyse/windrad.stp)
-
-### 1. Balken
-
-* Erste zehn Eigenformen vergleichen
-* Einfluss der Einspannung
-* Einfluss des Materials
-
-### 2. Stahlplatte
-
-* Erste fünf Moden
-* Interpretation typischer Plattenmoden
-* Vergleich der Moden bei freien und fixierten Kanten
-
-### 3. Getriebewelle
-
-* Einfluss der Einspannung. Wo und wie umgesetzt? Fix, externe, zylindrische Lagerung etc.  Fest-Loslagerung; rotationsfreiheitsgrad beeinflusst NUR die Starrkörpermoden.  
-* Einfluss von Punktmassen --> beeinflusst Wellenende nicht
-* Identifikation relevanter Moden für den Betrieb einer Maschine
-
-### 4. Windenergieanlage
-
-* Reduktion komplexer Baugruppen
-* Einfluss der Materialwahl
-* Strukturkritische Moden
+    Prüfen Sie die automatisch erzeugten Kontakte sowie die Verbindung der Starrkörper mit dem Turm. Übernehmen Sie die erkannten Verbindungen nicht ungeprüft.
 
 ## Diskussion der Ergebnisse
 
-* Veränderungen der Moden durch Masseverteilung, Steifigkeit, Randbedingungen
-* Interpretation typischer Modenformen
-* Bedeutung für Betriebsdrehzahlen und Sicherheit
-* Grenzen der Modalanalyse
+* Wie verändern Masseverteilung, Steifigkeit und Randbedingungen die entsprechenden Eigenfrequenzen und Eigenformen?
+* Sind Starrkörpermoden, lokale Moden und globale Biege- oder Torsionsmoden richtig zugeordnet?
+* Wie empfindlich sind die Ergebnisse gegenüber idealisierten Lagerungen, Materialkennwerten und Verbindungssteifigkeiten?
+* Welche Anregungsfrequenzen und Lastverteilungen müssten bekannt sein, um die Betriebsrelevanz zu beurteilen?
+* Welche Aussagen erlaubt die Modalanalyse, und welche erfordern eine Lastantwort oder einen Vergleich mit Messungen?
 
 ## Weiterführendes
 
-<!--
-* Einführung in Betriebsschwingungsanalyse
-* Experimentelle Modalanalyse
-* Modellreduktion für große Baugruppen
-* Mehrkörpermodell und Kopplung an FE Modelle
--->
+### Experimentelle Modalanalyse
+
+Die experimentelle Modalanalyse bestimmt Eigenfrequenzen, modale Dämpfungsgrade und Eigenformen aus gemessenen Eingangs- und Ausgangssignalen. Ein instrumentierter Impulshammer oder ein Shaker regt die Struktur an. Die Kraft wird gemessen, die Antwort beispielsweise mit Beschleunigungssensoren an definierten Orten und in definierten Richtungen erfasst [@BKModalParameters].
+
+[![Messaufbau der experimentellen Modalanalyse](media/08_modalanalyse/ema_messaufbau.svg){width=900px}](media/08_modalanalyse/ema_messaufbau.svg "Messaufbau der experimentellen Modalanalyse"){.glightbox}
+
+Aus den Messsignalen werden komplexe Frequenzgangfunktionen (FRFs) geschätzt. Wird die Beschleunigung auf die eingeleitete Kraft bezogen, hat die FRF die Einheit \((\mathrm{m/s^2})/\mathrm{N}\). Die FRF enthält Betrag und Phase; bei verrauschten Messungen werden geeignete Spektralschätzer verwendet, statt die Zeitverläufe einfach zu dividieren [@BKModalParameters; @ARTeMISModal].
+
+Für die räumliche Zuordnung gibt es zwei einfache Messabläufe: Beim **Roving Hammer** bleibt der Sensor an einem Referenzpunkt, während an verschiedenen Punkten angeschlagen wird. Beim **Roving Sensor** bleibt der Anregungspunkt fest und der Sensor wird versetzt. Position und Richtung jeder Messung werden dokumentiert; aus den zusammengehörigen FRFs wird die Eigenform bestimmt [@VRModalTesting].
+
+[![Auswertung der experimentellen Modalanalyse](media/08_modalanalyse/ema_auswertung.svg){width=900px}](media/08_modalanalyse/ema_auswertung.svg "Auswertung der experimentellen Modalanalyse"){.glightbox}
+
+Resonanzspitzen geben erste Hinweise auf Moden. Eine einzelne Spitze liefert aber keine vollständige Eigenform. Dafür sind räumlich verteilte Messungen erforderlich. Liegt der Anregungs- oder Messpunkt auf einem Schwingungsknoten, kann eine Mode kaum sichtbar sein. Dämpfung und benachbarte Moden erfordern eine geeignete Parameteridentifikation; moderne Verfahren passen hierzu ein modales Modell an die FRFs an [@BKModalParameters; @ARTeMISModal].
+
+Die Messqualität ist unter anderem hinsichtlich Frequenzauflösung, Anregungsbandbreite, Mehrfachschlägen, Fensterung und Kohärenz zu prüfen. Eine hohe Kohärenz allein ist noch kein vollständiger Qualitätsnachweis [@VRModalTesting].
+
+Beim Vergleich mit dem FE-Modell sind Mess- und Modellrandbedingungen abzugleichen. Abweichungen können durch Lagerung, Verbindungen, Materialdaten sowie zusätzliche Sensormassen entstehen. Ein solcher Vergleich prüft das Modell; ohne Messdaten liegt keine experimentelle Validierung vor. Die ungedämpfte FE-Modalanalyse liefert zudem keine gemessenen Dämpfungsgrade.
+
+### Übergang zur Frequenzantwort
+
+Die Modalanalyse beantwortet: **Welche Eigenformen und Eigenfrequenzen besitzt die Struktur?** Die harmonische Analyse ergänzt: **Wie groß sind Amplitude und Phase unter einer vorgegebenen harmonischen Last?** Für eine komplexe Lastamplitude \(\hat p\) gilt:
+
+\[
+\left(K-\omega^2M+\mathrm{i}\omega C\right)\hat u=\hat p
+\]
+
+Dies folgt aus dem Ansatz \(u(t)=\operatorname{Re}(\hat u\,\mathrm{e}^{\mathrm{i}\omega t})\) in der allgemeinen Bewegungsgleichung. Eine Modenüberlagerung nutzt die zuvor bestimmten Eigenformen als reduzierte Basis; die berücksichtigten Moden müssen für Last, Frequenzbereich und Antwortgröße geeignet sein [@AnsysHarmonicTheory].
 
 ## Quiz zur Selbstkontrolle
+
+<!-- markdownlint-disable MD033 -->
+
+<?quiz?>
+question: Welche Aussage erlaubt der Maximalwert einer skalierten Eigenform?
+answer: Er gibt die reale Auslenkung im Betrieb an.
+answer-correct: Er gehört zur Normierung; aussagekräftig ist die relative Verformungsverteilung.
+answer: Er bestimmt die Dämpfung.
+content:
+Die Eigenform ist skaliert. Erst eine Lastantwort mit festgelegter Anregung und Dämpfung liefert eine Betriebsauslenkung.
+<?/quiz?>
+
+<?quiz?>
+question: Wie viele Starrkörpermoden besitzt ein freier, zusammenhängender 3D-Körper?
+answer-correct: Sechs
+answer: Eine
+answer: Zehn
+content:
+Drei Translationen und drei Rotationen ergeben sechs Starrkörpermoden. Ihre Frequenzen liegen theoretisch bei null.
+<?/quiz?>
+
+<?quiz?>
+question: Was folgt aus einem hohen effektiven Massenanteil in einer Richtung?
+answer: Die reale Amplitude ist groß.
+answer: Jede lokale Kraft regt diese Mode stark an.
+answer-correct: Die Mode ist für die entsprechende richtungsbezogene Trägheitsanregung bedeutsam.
+content:
+Die effektive modale Masse bezieht sich auf eine Anregungsrichtung. Bei einer lokalen Kraft muss auch deren räumliche Verteilung berücksichtigt werden.
+<?/quiz?>
+
+<?quiz?>
+question: Welche zusätzliche Information benötigt eine harmonische Lastantwort?
+answer: Nur die Farbe der Eigenform
+answer-correct: Lastdefinition und Dämpfung sowie den betrachteten Frequenzbereich
+answer: Nur die Modennummer
+content:
+Eigenfrequenzen und Eigenformen allein bestimmen die Amplitude unter einer äußeren Kraft nicht.
+<?/quiz?>
+
+<!-- markdownlint-enable MD033 -->
 
 <!-- 
 wie geht's weiter:
@@ -509,5 +705,3 @@ wie geht's weiter:
 | **10** | **Kontakt & Baugruppen** | Grundlagen der Kontaktmodellierung (bonded, frictionless, frictional), Reibungseinfluss auf Spannungsverteilung, Anwendung an Flansch- oder Bolzenverbindungen, Netz- und Konvergenzaspekte. |
 | **11 (optional)** | **Moderne FEM / Ausblick** | Neue Entwicklungen: additive und generative Strukturen, vereinfachte Reduced-Order-Modelle, KI-gestützte Approximation physikalischer Modelle, Konzept des Digital Twin. |
 -->
-
-[![Under Construction](media/under_construction.png){width=600px}](media/under_construction.png "Under Construction"){.glightbox}
