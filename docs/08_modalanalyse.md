@@ -680,11 +680,65 @@ Die effektive modale Masse bezieht sich auf eine Anregungsrichtung. Bei einer lo
 
 <?quiz?>
 question: Welche zusätzliche Information benötigt eine harmonische Lastantwort?
-answer: Nur die Farbe der Eigenform
+answer: Nur die Eigenfrequenzen und Eigenformen
 answer-correct: Lastdefinition und Dämpfung sowie den betrachteten Frequenzbereich
-answer: Nur die Modennummer
+answer: Nur die effektiven modalen Massen
 content:
 Eigenfrequenzen und Eigenformen allein bestimmen die Amplitude unter einer äußeren Kraft nicht.
+<?/quiz?>
+
+<?quiz?>
+question: Welche Größen bestimmen die Eigenfrequenzen einer linearen, ungedämpften FE-Modalanalyse?
+answer-correct: Die Massen- und Steifigkeitsmatrix unter Berücksichtigung der Randbedingungen
+answer: Die Steifigkeitsmatrix und die vorgegebene Kraftamplitude
+answer: Die Massenmatrix und die vorgegebenen Dämpfungsgrade
+content:
+Die Eigenwertaufgabe enthält die Massen- und Steifigkeitsmatrix. Materialdaten, Geometrie, Verbindungen und Lagerungen gehen in das Modell ein. Der Darstellungsmaßstab verändert die Eigenfrequenzen nicht.
+<?/quiz?>
+
+<?quiz?>
+question: Wie lassen sich Eigenformen verschiedener Material- oder Lagerungsvarianten sinnvoll vergleichen?
+answer: Gleiche Modennummern beschreiben immer die gleiche Verformungsart.
+answer: Eigenformen mit gleichem angezeigtem Maximalwert gehören zusammen.
+answer-correct: Die Verformungsverteilungen werden verglichen; die Reihenfolge der Moden kann sich ändern.
+content:
+Eine Modennummer bezeichnet die Reihenfolge im jeweiligen Ergebnis. Für die Zuordnung sind die Eigenformen selbst zu betrachten, beispielsweise ihre Biege- oder Torsionsbewegung.
+<?/quiz?>
+
+<?quiz?>
+question: Was unterscheidet die starre von der verformbaren Kopplung einer Punktmasse an die Welle?
+answer: Bei starrer Kopplung wird die zusätzliche Masse nicht berücksichtigt.
+answer-correct: Die starre Kopplung unterdrückt die relative Verformung des Anbindungsbereichs und kann ihn zusätzlich versteifen.
+answer: Die verformbare Kopplung führt unabhängig vom Modell immer zu niedrigeren Eigenfrequenzen.
+content:
+Beide Kopplungen berücksichtigen die Punktmasse. Die starre Kopplung lässt die angebundenen Geometriebereiche gemeinsam wie einen starren Körper bewegen; die verformbare Kopplung erlaubt ihre Verformung.
+<?/quiz?>
+
+<?quiz?>
+question: Warum kann eine Materialänderung an einem als Starrkörper modellierten Rotor die Eigenfrequenzen der Windenergieanlage beeinflussen?
+answer-correct: Masse und Massenträgheit des Rotors bleiben im Modell wirksam.
+answer: Die Materialänderung hebt die Starrkörperannahme automatisch auf.
+answer: Der E-Modul bestimmt auch bei einem Starrkörper die Verformung des Rotors.
+content:
+Die Starrkörperannahme unterdrückt die Verformung, nicht die Bewegung. Eine Änderung der Dichte kann Masse und Massenträgheit verändern und dadurch die Eigenfrequenzen des Gesamtsystems beeinflussen.
+<?/quiz?>
+
+<?quiz?>
+question: Welche Aussage zur ungedämpften Modalanalyse ist richtig?
+answer: Sie berechnet die Dämpfungsgrade aus den Abständen zwischen den Eigenfrequenzen.
+answer: Sie bestimmt die Dämpfung aus dem angezeigten Maximalwert einer Eigenform.
+answer-correct: Sie liefert Eigenfrequenzen und Eigenformen, aber keine Dämpfungsgrade.
+content:
+In der ungedämpften Modalanalyse wird die Dämpfung nicht berücksichtigt. Dämpfungsgrade lassen sich beispielsweise durch eine experimentelle Modalanalyse bestimmen.
+<?/quiz?>
+
+<?quiz?>
+question: Was wird bei der experimentellen Modalanalyse benötigt, um eine räumliche Eigenform zu bestimmen?
+answer: Eine einzelne Resonanzfrequenz ohne Angaben zu Messorten und Richtungen
+answer-correct: Zusammengehörige Frequenzgangfunktionen an definierten Orten und in definierten Richtungen
+answer: Nur die maximale Beschleunigung an einem beliebigen Punkt
+content:
+Eine Resonanzspitze allein beschreibt keine vollständige Eigenform. Räumlich zugeordnete Messungen, beispielsweise mit versetztem Hammer oder Sensor, liefern die erforderlichen Informationen zur Verformungsverteilung.
 <?/quiz?>
 
 <!-- markdownlint-enable MD033 -->

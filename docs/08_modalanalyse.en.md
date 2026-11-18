@@ -677,11 +677,65 @@ Effective modal mass refers to an excitation direction. For a local force, its s
 
 <?quiz?>
 question: Which additional information is needed for a harmonic load response?
-answer: Only the colour of the mode shape
+answer: Only the natural frequencies and mode shapes
 answer-correct: The load definition and damping, together with the frequency range considered
-answer: Only the mode number
+answer: Only the effective modal masses
 content:
 Natural frequencies and mode shapes alone do not determine the amplitude under an external force.
+<?/quiz?>
+
+<?quiz?>
+question: Which quantities determine the natural frequencies in a linear, undamped FE modal analysis?
+answer-correct: The mass and stiffness matrices, accounting for the boundary conditions
+answer: The stiffness matrix and the prescribed force amplitude
+answer: The mass matrix and the prescribed damping ratios
+content:
+The eigenvalue problem contains the mass and stiffness matrices. Material properties, geometry, connections and supports enter the model. The display scale does not change the natural frequencies.
+<?/quiz?>
+
+<?quiz?>
+question: How can mode shapes from different material or support variants be compared meaningfully?
+answer: Identical mode numbers always describe the same type of deformation.
+answer: Mode shapes with the same displayed maximum value correspond to each other.
+answer-correct: Compare the deformation distributions; the order of the modes can change.
+content:
+A mode number indicates the order within a particular set of results. To establish correspondence, examine the mode shapes themselves, for example their bending or torsional motion.
+<?/quiz?>
+
+<?quiz?>
+question: What distinguishes rigid from deformable coupling of a point mass to the shaft?
+answer: Rigid coupling excludes the additional mass from the calculation.
+answer-correct: Rigid coupling suppresses relative deformation of the attachment region and can add stiffness to it.
+answer: Deformable coupling always gives lower natural frequencies, regardless of the model.
+content:
+Both couplings account for the point mass. Rigid coupling makes the attached geometry regions move together as a rigid body; deformable coupling allows them to deform.
+<?/quiz?>
+
+<?quiz?>
+question: Why can changing the material of a rotor modelled as a rigid body affect the natural frequencies of the wind turbine?
+answer-correct: The rotor's mass and mass moment of inertia remain active in the model.
+answer: Changing the material automatically removes the rigid body assumption.
+answer: Young's modulus determines the rotor deformation even when it is a rigid body.
+content:
+The rigid body assumption suppresses deformation, not motion. A change in density can change the mass and mass moment of inertia, thereby affecting the natural frequencies of the complete system.
+<?/quiz?>
+
+<?quiz?>
+question: Which statement about undamped modal analysis is correct?
+answer: It calculates damping ratios from the spacing between natural frequencies.
+answer: It determines damping from the displayed maximum value of a mode shape.
+answer-correct: It provides natural frequencies and mode shapes, but no damping ratios.
+content:
+Damping is not accounted for in undamped modal analysis. Damping ratios can, for example, be determined by experimental modal analysis.
+<?/quiz?>
+
+<?quiz?>
+question: What is needed to determine a spatial mode shape in experimental modal analysis?
+answer: A single resonance frequency without information about measurement positions and directions
+answer-correct: A related set of frequency response functions at defined positions and in defined directions
+answer: Only the maximum acceleration at an arbitrary point
+content:
+A resonance peak alone does not describe a complete mode shape. Spatially assigned measurements, for example with a roving hammer or sensor, provide the required information about the deformation distribution.
 <?/quiz?>
 
 <!-- markdownlint-enable MD033 -->
